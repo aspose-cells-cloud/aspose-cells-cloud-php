@@ -1,0 +1,50 @@
+# Picture
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**name** | **string** |  | [optional] 
+**mso_drawing_type** | **string** |  | [optional] 
+**auto_shape_type** | **string** |  | [optional] 
+**placement** | **string** |  | [optional] 
+**upper_left_row** | **int** |  | [optional] 
+**top** | **int** |  | [optional] 
+**upper_left_column** | **int** |  | [optional] 
+**left** | **int** |  | [optional] 
+**lower_right_row** | **int** |  | [optional] 
+**bottom** | **int** |  | [optional] 
+**lower_right_column** | **int** |  | [optional] 
+**right** | **int** |  | [optional] 
+**width** | **int** |  | [optional] 
+**height** | **int** |  | [optional] 
+**x** | **int** |  | [optional] 
+**y** | **int** |  | [optional] 
+**rotation_angle** | **double** |  | [optional] 
+**html_text** | **string** |  | [optional] 
+**text** | **string** |  | [optional] 
+**alternative_text** | **string** |  | [optional] 
+**text_horizontal_alignment** | **string** |  | [optional] 
+**text_horizontal_overflow** | **string** |  | [optional] 
+**text_orientation_type** | **string** |  | [optional] 
+**text_vertical_alignment** | **string** |  | [optional] 
+**text_vertical_overflow** | **string** |  | [optional] 
+**is_group** | **bool** |  | [optional] 
+**is_hidden** | **bool** |  | [optional] 
+**is_lock_aspect_ratio** | **bool** |  | [optional] 
+**is_locked** | **bool** |  | [optional] 
+**is_printable** | **bool** |  | [optional] 
+**is_text_wrapped** | **bool** |  | [optional] 
+**is_word_art** | **bool** |  | [optional] 
+**linked_cell** | **string** |  | [optional] 
+**z_order_position** | **int** |  | [optional] 
+**link** | [**\Aspose\Cells\Cloud\Model\Link**](Link.md) |  | [optional] 
+**border_line_color** | [**\Aspose\Cells\Cloud\Model\Color**](Color.md) |  | [optional] 
+**border_weight** | **double** |  | [optional] 
+**original_height** | **int** |  | [optional] 
+**original_width** | **int** |  | [optional] 
+**image_format** | **string** |  | [optional] 
+**source_full_name** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
