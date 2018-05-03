@@ -47,7 +47,20 @@ class CellsApiTestBase
         AsposeApp::$appSID = "66164C51-693E-4904-A121-545961673EC1";
         AsposeApp::$apiKey = "536e76768419db9585afdd37bb5f7533";
         $storage = new StorageApi();
-        $file = realpath(__DIR__ . '/../../../../../src/TestData/').'/'.$filename;
+        
+        $cwd = getcwd();
+        $parents = "/";
+        $png = "TestData/" . $filename;
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $png;
+            if (file_exists($path)) {
+                $file = $path;
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        
         $result = $storage->PutCreate($Path= $folder.'/'.$filename, $versionId = null, $storage = null, $file);
         return $result;
     }
