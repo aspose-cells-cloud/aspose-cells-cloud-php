@@ -1,5 +1,5 @@
 {
-	"name" : "aspose-cloud/php-sdk",
+	"name" : "aspose/cells-sdk-php",
 	"type" : "library",
 	"description" : "A PHP library for communicating with the Aspose.Cells Cloud API",
 	"keywords" : [
