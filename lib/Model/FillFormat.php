@@ -57,12 +57,12 @@ class FillFormat implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'solid_fill' => '\Aspose\Cells\Cloud\Model\SolidFill',
-        'pattern_fill' => '\Aspose\Cells\Cloud\Model\PatternFill',
         'texture_fill' => '\Aspose\Cells\Cloud\Model\TextureFill',
+        'image_data' => 'string',
+        'pattern_fill' => '\Aspose\Cells\Cloud\Model\PatternFill',
+        'solid_fill' => '\Aspose\Cells\Cloud\Model\SolidFill',
         'gradient_fill' => '\Aspose\Cells\Cloud\Model\GradientFill',
-        'image_data' => 'string'
+        'type' => 'string'
     ];
 
     /**
@@ -71,12 +71,12 @@ class FillFormat implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'solid_fill' => null,
-        'pattern_fill' => null,
         'texture_fill' => null,
+        'image_data' => 'byte',
+        'pattern_fill' => null,
+        'solid_fill' => null,
         'gradient_fill' => null,
-        'image_data' => 'byte'
+        'type' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class FillFormat implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'Type',
-        'solid_fill' => 'SolidFill',
-        'pattern_fill' => 'PatternFill',
         'texture_fill' => 'TextureFill',
+        'image_data' => 'ImageData',
+        'pattern_fill' => 'PatternFill',
+        'solid_fill' => 'SolidFill',
         'gradient_fill' => 'GradientFill',
-        'image_data' => 'ImageData'
+        'type' => 'Type'
     ];
 
     /**
@@ -120,12 +120,12 @@ class FillFormat implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'solid_fill' => 'setSolidFill',
-        'pattern_fill' => 'setPatternFill',
         'texture_fill' => 'setTextureFill',
+        'image_data' => 'setImageData',
+        'pattern_fill' => 'setPatternFill',
+        'solid_fill' => 'setSolidFill',
         'gradient_fill' => 'setGradientFill',
-        'image_data' => 'setImageData'
+        'type' => 'setType'
     ];
 
     /**
@@ -134,12 +134,12 @@ class FillFormat implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'solid_fill' => 'getSolidFill',
-        'pattern_fill' => 'getPatternFill',
         'texture_fill' => 'getTextureFill',
+        'image_data' => 'getImageData',
+        'pattern_fill' => 'getPatternFill',
+        'solid_fill' => 'getSolidFill',
         'gradient_fill' => 'getGradientFill',
-        'image_data' => 'getImageData'
+        'type' => 'getType'
     ];
 
     /**
@@ -202,12 +202,12 @@ class FillFormat implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['solid_fill'] = isset($data['solid_fill']) ? $data['solid_fill'] : null;
-        $this->container['pattern_fill'] = isset($data['pattern_fill']) ? $data['pattern_fill'] : null;
         $this->container['texture_fill'] = isset($data['texture_fill']) ? $data['texture_fill'] : null;
-        $this->container['gradient_fill'] = isset($data['gradient_fill']) ? $data['gradient_fill'] : null;
         $this->container['image_data'] = isset($data['image_data']) ? $data['image_data'] : null;
+        $this->container['pattern_fill'] = isset($data['pattern_fill']) ? $data['pattern_fill'] : null;
+        $this->container['solid_fill'] = isset($data['solid_fill']) ? $data['solid_fill'] : null;
+        $this->container['gradient_fill'] = isset($data['gradient_fill']) ? $data['gradient_fill'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -243,78 +243,6 @@ class FillFormat implements  ArrayAccess
 
 
     /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets solid_fill
-     *
-     * @return \Aspose\Cells\Cloud\Model\SolidFill
-     */
-    public function getSolidFill()
-    {
-        return $this->container['solid_fill'];
-    }
-
-    /**
-     * Sets solid_fill
-     *
-     * @param \Aspose\Cells\Cloud\Model\SolidFill $solid_fill solid_fill
-     *
-     * @return $this
-     */
-    public function setSolidFill($solid_fill)
-    {
-        $this->container['solid_fill'] = $solid_fill;
-
-        return $this;
-    }
-
-    /**
-     * Gets pattern_fill
-     *
-     * @return \Aspose\Cells\Cloud\Model\PatternFill
-     */
-    public function getPatternFill()
-    {
-        return $this->container['pattern_fill'];
-    }
-
-    /**
-     * Sets pattern_fill
-     *
-     * @param \Aspose\Cells\Cloud\Model\PatternFill $pattern_fill pattern_fill
-     *
-     * @return $this
-     */
-    public function setPatternFill($pattern_fill)
-    {
-        $this->container['pattern_fill'] = $pattern_fill;
-
-        return $this;
-    }
-
-    /**
      * Gets texture_fill
      *
      * @return \Aspose\Cells\Cloud\Model\TextureFill
@@ -334,30 +262,6 @@ class FillFormat implements  ArrayAccess
     public function setTextureFill($texture_fill)
     {
         $this->container['texture_fill'] = $texture_fill;
-
-        return $this;
-    }
-
-    /**
-     * Gets gradient_fill
-     *
-     * @return \Aspose\Cells\Cloud\Model\GradientFill
-     */
-    public function getGradientFill()
-    {
-        return $this->container['gradient_fill'];
-    }
-
-    /**
-     * Sets gradient_fill
-     *
-     * @param \Aspose\Cells\Cloud\Model\GradientFill $gradient_fill gradient_fill
-     *
-     * @return $this
-     */
-    public function setGradientFill($gradient_fill)
-    {
-        $this->container['gradient_fill'] = $gradient_fill;
 
         return $this;
     }
@@ -387,6 +291,102 @@ class FillFormat implements  ArrayAccess
         }
 
         $this->container['image_data'] = $image_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets pattern_fill
+     *
+     * @return \Aspose\Cells\Cloud\Model\PatternFill
+     */
+    public function getPatternFill()
+    {
+        return $this->container['pattern_fill'];
+    }
+
+    /**
+     * Sets pattern_fill
+     *
+     * @param \Aspose\Cells\Cloud\Model\PatternFill $pattern_fill pattern_fill
+     *
+     * @return $this
+     */
+    public function setPatternFill($pattern_fill)
+    {
+        $this->container['pattern_fill'] = $pattern_fill;
+
+        return $this;
+    }
+
+    /**
+     * Gets solid_fill
+     *
+     * @return \Aspose\Cells\Cloud\Model\SolidFill
+     */
+    public function getSolidFill()
+    {
+        return $this->container['solid_fill'];
+    }
+
+    /**
+     * Sets solid_fill
+     *
+     * @param \Aspose\Cells\Cloud\Model\SolidFill $solid_fill solid_fill
+     *
+     * @return $this
+     */
+    public function setSolidFill($solid_fill)
+    {
+        $this->container['solid_fill'] = $solid_fill;
+
+        return $this;
+    }
+
+    /**
+     * Gets gradient_fill
+     *
+     * @return \Aspose\Cells\Cloud\Model\GradientFill
+     */
+    public function getGradientFill()
+    {
+        return $this->container['gradient_fill'];
+    }
+
+    /**
+     * Sets gradient_fill
+     *
+     * @param \Aspose\Cells\Cloud\Model\GradientFill $gradient_fill gradient_fill
+     *
+     * @return $this
+     */
+    public function setGradientFill($gradient_fill)
+    {
+        $this->container['gradient_fill'] = $gradient_fill;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

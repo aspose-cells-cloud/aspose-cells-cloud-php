@@ -2222,6 +2222,7 @@ class CellsWorksheetsApi
      *
      * @param  string $name The document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  string $folder The document folder. (optional)
@@ -2230,9 +2231,9 @@ class CellsWorksheetsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorksheetsGetWorksheet($name, $sheet_name, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
+    public function cellsWorksheetsGetWorksheet($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
     {
-        list($response) = $this->cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $vertical_resolution, $horizontal_resolution, $folder);
+        list($response) = $this->cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder);
         return $response;
     }
 
@@ -2243,6 +2244,7 @@ class CellsWorksheetsApi
      *
      * @param  string $name The document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  string $folder The document folder. (optional)
@@ -2251,10 +2253,10 @@ class CellsWorksheetsApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
+    public function cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $vertical_resolution, $horizontal_resolution, $folder);
+        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2322,6 +2324,7 @@ class CellsWorksheetsApi
      *
      * @param  string $name The document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  string $folder The document folder. (optional)
@@ -2329,9 +2332,9 @@ class CellsWorksheetsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetsGetWorksheetAsync($name, $sheet_name, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
+    public function cellsWorksheetsGetWorksheetAsync($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
     {
-        return $this->cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $vertical_resolution, $horizontal_resolution, $folder)
+        return $this->cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2346,6 +2349,7 @@ class CellsWorksheetsApi
      *
      * @param  string $name The document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  string $folder The document folder. (optional)
@@ -2353,10 +2357,10 @@ class CellsWorksheetsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
+    public function cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $vertical_resolution, $horizontal_resolution, $folder);
+        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2400,6 +2404,7 @@ class CellsWorksheetsApi
      *
      * @param  string $name The document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  string $folder The document folder. (optional)
@@ -2407,7 +2412,7 @@ class CellsWorksheetsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
+    protected function cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2429,6 +2434,10 @@ class CellsWorksheetsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
         // query params
         if ($vertical_resolution !== null) {
             $queryParams['verticalResolution'] = ObjectSerializer::toQueryValue($vertical_resolution);

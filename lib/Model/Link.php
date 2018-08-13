@@ -58,9 +58,9 @@ class Link implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'href' => 'string',
+        'type' => 'string',
         'rel' => 'string',
-        'title' => 'string',
-        'type' => 'string'
+        'title' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class Link implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'href' => null,
+        'type' => null,
         'rel' => null,
-        'title' => null,
-        'type' => null
+        'title' => null
     ];
 
     /**
@@ -103,9 +103,9 @@ class Link implements  ArrayAccess
      */
     protected static $attributeMap = [
         'href' => 'Href',
+        'type' => 'Type',
         'rel' => 'Rel',
-        'title' => 'Title',
-        'type' => 'Type'
+        'title' => 'Title'
     ];
 
     /**
@@ -115,9 +115,9 @@ class Link implements  ArrayAccess
      */
     protected static $setters = [
         'href' => 'setHref',
+        'type' => 'setType',
         'rel' => 'setRel',
-        'title' => 'setTitle',
-        'type' => 'setType'
+        'title' => 'setTitle'
     ];
 
     /**
@@ -127,9 +127,9 @@ class Link implements  ArrayAccess
      */
     protected static $getters = [
         'href' => 'getHref',
+        'type' => 'getType',
         'rel' => 'getRel',
-        'title' => 'getTitle',
-        'type' => 'getType'
+        'title' => 'getTitle'
     ];
 
     /**
@@ -193,9 +193,9 @@ class Link implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['href'] = isset($data['href']) ? $data['href'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['rel'] = isset($data['rel']) ? $data['rel'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -248,6 +248,30 @@ class Link implements  ArrayAccess
     }
 
     /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
      * Gets rel
      *
      * @return string
@@ -291,30 +315,6 @@ class Link implements  ArrayAccess
     public function setTitle($title)
     {
         $this->container['title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
 
         return $this;
     }

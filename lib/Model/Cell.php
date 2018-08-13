@@ -59,22 +59,22 @@ class Cell implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
+        'style' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'html_string' => 'string',
         'name' => 'string',
-        'row' => 'int',
         'column' => 'int',
-        'value' => 'string',
-        'type' => 'string',
-        'formula' => 'string',
-        'is_formula' => 'bool',
-        'is_merged' => 'bool',
+        'worksheet' => 'string',
+        'is_in_table' => 'bool',
         'is_array_header' => 'bool',
+        'value' => 'string',
+        'is_formula' => 'bool',
+        'is_style_set' => 'bool',
         'is_in_array' => 'bool',
         'is_error_value' => 'bool',
-        'is_in_table' => 'bool',
-        'is_style_set' => 'bool',
-        'html_string' => 'string',
-        'style' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'worksheet' => 'string'
+        'is_merged' => 'bool',
+        'formula' => 'string',
+        'type' => 'string',
+        'row' => 'int'
     ];
 
     /**
@@ -84,22 +84,22 @@ class Cell implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
+        'style' => null,
+        'html_string' => null,
         'name' => null,
-        'row' => 'int32',
         'column' => 'int32',
-        'value' => null,
-        'type' => null,
-        'formula' => null,
-        'is_formula' => null,
-        'is_merged' => null,
+        'worksheet' => null,
+        'is_in_table' => null,
         'is_array_header' => null,
+        'value' => null,
+        'is_formula' => null,
+        'is_style_set' => null,
         'is_in_array' => null,
         'is_error_value' => null,
-        'is_in_table' => null,
-        'is_style_set' => null,
-        'html_string' => null,
-        'style' => null,
-        'worksheet' => null
+        'is_merged' => null,
+        'formula' => null,
+        'type' => null,
+        'row' => 'int32'
     ];
 
     /**
@@ -130,22 +130,22 @@ class Cell implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
+        'style' => 'Style',
+        'html_string' => 'HtmlString',
         'name' => 'Name',
-        'row' => 'Row',
         'column' => 'Column',
-        'value' => 'Value',
-        'type' => 'Type',
-        'formula' => 'Formula',
-        'is_formula' => 'IsFormula',
-        'is_merged' => 'IsMerged',
+        'worksheet' => 'Worksheet',
+        'is_in_table' => 'IsInTable',
         'is_array_header' => 'IsArrayHeader',
+        'value' => 'Value',
+        'is_formula' => 'IsFormula',
+        'is_style_set' => 'IsStyleSet',
         'is_in_array' => 'IsInArray',
         'is_error_value' => 'IsErrorValue',
-        'is_in_table' => 'IsInTable',
-        'is_style_set' => 'IsStyleSet',
-        'html_string' => 'HtmlString',
-        'style' => 'Style',
-        'worksheet' => 'Worksheet'
+        'is_merged' => 'IsMerged',
+        'formula' => 'Formula',
+        'type' => 'Type',
+        'row' => 'Row'
     ];
 
     /**
@@ -155,22 +155,22 @@ class Cell implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
+        'style' => 'setStyle',
+        'html_string' => 'setHtmlString',
         'name' => 'setName',
-        'row' => 'setRow',
         'column' => 'setColumn',
-        'value' => 'setValue',
-        'type' => 'setType',
-        'formula' => 'setFormula',
-        'is_formula' => 'setIsFormula',
-        'is_merged' => 'setIsMerged',
+        'worksheet' => 'setWorksheet',
+        'is_in_table' => 'setIsInTable',
         'is_array_header' => 'setIsArrayHeader',
+        'value' => 'setValue',
+        'is_formula' => 'setIsFormula',
+        'is_style_set' => 'setIsStyleSet',
         'is_in_array' => 'setIsInArray',
         'is_error_value' => 'setIsErrorValue',
-        'is_in_table' => 'setIsInTable',
-        'is_style_set' => 'setIsStyleSet',
-        'html_string' => 'setHtmlString',
-        'style' => 'setStyle',
-        'worksheet' => 'setWorksheet'
+        'is_merged' => 'setIsMerged',
+        'formula' => 'setFormula',
+        'type' => 'setType',
+        'row' => 'setRow'
     ];
 
     /**
@@ -180,22 +180,22 @@ class Cell implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
+        'style' => 'getStyle',
+        'html_string' => 'getHtmlString',
         'name' => 'getName',
-        'row' => 'getRow',
         'column' => 'getColumn',
-        'value' => 'getValue',
-        'type' => 'getType',
-        'formula' => 'getFormula',
-        'is_formula' => 'getIsFormula',
-        'is_merged' => 'getIsMerged',
+        'worksheet' => 'getWorksheet',
+        'is_in_table' => 'getIsInTable',
         'is_array_header' => 'getIsArrayHeader',
+        'value' => 'getValue',
+        'is_formula' => 'getIsFormula',
+        'is_style_set' => 'getIsStyleSet',
         'is_in_array' => 'getIsInArray',
         'is_error_value' => 'getIsErrorValue',
-        'is_in_table' => 'getIsInTable',
-        'is_style_set' => 'getIsStyleSet',
-        'html_string' => 'getHtmlString',
-        'style' => 'getStyle',
-        'worksheet' => 'getWorksheet'
+        'is_merged' => 'getIsMerged',
+        'formula' => 'getFormula',
+        'type' => 'getType',
+        'row' => 'getRow'
     ];
 
     /**
@@ -259,22 +259,22 @@ class Cell implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['html_string'] = isset($data['html_string']) ? $data['html_string'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
         $this->container['column'] = isset($data['column']) ? $data['column'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
-        $this->container['is_formula'] = isset($data['is_formula']) ? $data['is_formula'] : null;
-        $this->container['is_merged'] = isset($data['is_merged']) ? $data['is_merged'] : null;
+        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
+        $this->container['is_in_table'] = isset($data['is_in_table']) ? $data['is_in_table'] : null;
         $this->container['is_array_header'] = isset($data['is_array_header']) ? $data['is_array_header'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['is_formula'] = isset($data['is_formula']) ? $data['is_formula'] : null;
+        $this->container['is_style_set'] = isset($data['is_style_set']) ? $data['is_style_set'] : null;
         $this->container['is_in_array'] = isset($data['is_in_array']) ? $data['is_in_array'] : null;
         $this->container['is_error_value'] = isset($data['is_error_value']) ? $data['is_error_value'] : null;
-        $this->container['is_in_table'] = isset($data['is_in_table']) ? $data['is_in_table'] : null;
-        $this->container['is_style_set'] = isset($data['is_style_set']) ? $data['is_style_set'] : null;
-        $this->container['html_string'] = isset($data['html_string']) ? $data['html_string'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
-        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
+        $this->container['is_merged'] = isset($data['is_merged']) ? $data['is_merged'] : null;
+        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
     }
 
     /**
@@ -286,20 +286,20 @@ class Cell implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['row'] === null) {
-            $invalidProperties[] = "'row' can't be null";
-        }
         if ($this->container['column'] === null) {
             $invalidProperties[] = "'column' can't be null";
+        }
+        if ($this->container['is_in_table'] === null) {
+            $invalidProperties[] = "'is_in_table' can't be null";
+        }
+        if ($this->container['is_array_header'] === null) {
+            $invalidProperties[] = "'is_array_header' can't be null";
         }
         if ($this->container['is_formula'] === null) {
             $invalidProperties[] = "'is_formula' can't be null";
         }
-        if ($this->container['is_merged'] === null) {
-            $invalidProperties[] = "'is_merged' can't be null";
-        }
-        if ($this->container['is_array_header'] === null) {
-            $invalidProperties[] = "'is_array_header' can't be null";
+        if ($this->container['is_style_set'] === null) {
+            $invalidProperties[] = "'is_style_set' can't be null";
         }
         if ($this->container['is_in_array'] === null) {
             $invalidProperties[] = "'is_in_array' can't be null";
@@ -307,11 +307,11 @@ class Cell implements  ArrayAccess
         if ($this->container['is_error_value'] === null) {
             $invalidProperties[] = "'is_error_value' can't be null";
         }
-        if ($this->container['is_in_table'] === null) {
-            $invalidProperties[] = "'is_in_table' can't be null";
+        if ($this->container['is_merged'] === null) {
+            $invalidProperties[] = "'is_merged' can't be null";
         }
-        if ($this->container['is_style_set'] === null) {
-            $invalidProperties[] = "'is_style_set' can't be null";
+        if ($this->container['row'] === null) {
+            $invalidProperties[] = "'row' can't be null";
         }
         return $invalidProperties;
     }
@@ -325,19 +325,19 @@ class Cell implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['row'] === null) {
+        if ($this->container['column'] === null) {
             return false;
         }
-        if ($this->container['column'] === null) {
+        if ($this->container['is_in_table'] === null) {
+            return false;
+        }
+        if ($this->container['is_array_header'] === null) {
             return false;
         }
         if ($this->container['is_formula'] === null) {
             return false;
         }
-        if ($this->container['is_merged'] === null) {
-            return false;
-        }
-        if ($this->container['is_array_header'] === null) {
+        if ($this->container['is_style_set'] === null) {
             return false;
         }
         if ($this->container['is_in_array'] === null) {
@@ -346,10 +346,10 @@ class Cell implements  ArrayAccess
         if ($this->container['is_error_value'] === null) {
             return false;
         }
-        if ($this->container['is_in_table'] === null) {
+        if ($this->container['is_merged'] === null) {
             return false;
         }
-        if ($this->container['is_style_set'] === null) {
+        if ($this->container['row'] === null) {
             return false;
         }
         return true;
@@ -381,6 +381,54 @@ class Cell implements  ArrayAccess
     }
 
     /**
+     * Gets style
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
+     * Gets html_string
+     *
+     * @return string
+     */
+    public function getHtmlString()
+    {
+        return $this->container['html_string'];
+    }
+
+    /**
+     * Sets html_string
+     *
+     * @param string $html_string Gets and sets the html string which contains data and some formattings in this cell.
+     *
+     * @return $this
+     */
+    public function setHtmlString($html_string)
+    {
+        $this->container['html_string'] = $html_string;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string
@@ -400,30 +448,6 @@ class Cell implements  ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets row
-     *
-     * @return int
-     */
-    public function getRow()
-    {
-        return $this->container['row'];
-    }
-
-    /**
-     * Sets row
-     *
-     * @param int $row Gets row number (zero based) of the cell.
-     *
-     * @return $this
-     */
-    public function setRow($row)
-    {
-        $this->container['row'] = $row;
 
         return $this;
     }
@@ -453,6 +477,78 @@ class Cell implements  ArrayAccess
     }
 
     /**
+     * Gets worksheet
+     *
+     * @return string
+     */
+    public function getWorksheet()
+    {
+        return $this->container['worksheet'];
+    }
+
+    /**
+     * Sets worksheet
+     *
+     * @param string $worksheet Gets the parent worksheet.
+     *
+     * @return $this
+     */
+    public function setWorksheet($worksheet)
+    {
+        $this->container['worksheet'] = $worksheet;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_in_table
+     *
+     * @return bool
+     */
+    public function getIsInTable()
+    {
+        return $this->container['is_in_table'];
+    }
+
+    /**
+     * Sets is_in_table
+     *
+     * @param bool $is_in_table Indicates whethe this cell is part of table formula.
+     *
+     * @return $this
+     */
+    public function setIsInTable($is_in_table)
+    {
+        $this->container['is_in_table'] = $is_in_table;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_array_header
+     *
+     * @return bool
+     */
+    public function getIsArrayHeader()
+    {
+        return $this->container['is_array_header'];
+    }
+
+    /**
+     * Sets is_array_header
+     *
+     * @param bool $is_array_header Inidicates the cell's formula is and array formula and it is the first cell of the array.
+     *
+     * @return $this
+     */
+    public function setIsArrayHeader($is_array_header)
+    {
+        $this->container['is_array_header'] = $is_array_header;
+
+        return $this;
+    }
+
+    /**
      * Gets value
      *
      * @return string
@@ -472,54 +568,6 @@ class Cell implements  ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type Specifies a cell value type.
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets formula
-     *
-     * @return string
-     */
-    public function getFormula()
-    {
-        return $this->container['formula'];
-    }
-
-    /**
-     * Sets formula
-     *
-     * @param string $formula Gets or sets a formula of the Aspose.Cells.Cell.
-     *
-     * @return $this
-     */
-    public function setFormula($formula)
-    {
-        $this->container['formula'] = $formula;
 
         return $this;
     }
@@ -549,49 +597,25 @@ class Cell implements  ArrayAccess
     }
 
     /**
-     * Gets is_merged
+     * Gets is_style_set
      *
      * @return bool
      */
-    public function getIsMerged()
+    public function getIsStyleSet()
     {
-        return $this->container['is_merged'];
+        return $this->container['is_style_set'];
     }
 
     /**
-     * Sets is_merged
+     * Sets is_style_set
      *
-     * @param bool $is_merged Checks if a cell is part of a merged range or not.
+     * @param bool $is_style_set Indicates if the cell's style is set. If return false, it means this cell has a default cell format.
      *
      * @return $this
      */
-    public function setIsMerged($is_merged)
+    public function setIsStyleSet($is_style_set)
     {
-        $this->container['is_merged'] = $is_merged;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_array_header
-     *
-     * @return bool
-     */
-    public function getIsArrayHeader()
-    {
-        return $this->container['is_array_header'];
-    }
-
-    /**
-     * Sets is_array_header
-     *
-     * @param bool $is_array_header Inidicates the cell's formula is and array formula and it is the first cell of the array.
-     *
-     * @return $this
-     */
-    public function setIsArrayHeader($is_array_header)
-    {
-        $this->container['is_array_header'] = $is_array_header;
+        $this->container['is_style_set'] = $is_style_set;
 
         return $this;
     }
@@ -645,121 +669,97 @@ class Cell implements  ArrayAccess
     }
 
     /**
-     * Gets is_in_table
+     * Gets is_merged
      *
      * @return bool
      */
-    public function getIsInTable()
+    public function getIsMerged()
     {
-        return $this->container['is_in_table'];
+        return $this->container['is_merged'];
     }
 
     /**
-     * Sets is_in_table
+     * Sets is_merged
      *
-     * @param bool $is_in_table Indicates whethe this cell is part of table formula.
+     * @param bool $is_merged Checks if a cell is part of a merged range or not.
      *
      * @return $this
      */
-    public function setIsInTable($is_in_table)
+    public function setIsMerged($is_merged)
     {
-        $this->container['is_in_table'] = $is_in_table;
+        $this->container['is_merged'] = $is_merged;
 
         return $this;
     }
 
     /**
-     * Gets is_style_set
-     *
-     * @return bool
-     */
-    public function getIsStyleSet()
-    {
-        return $this->container['is_style_set'];
-    }
-
-    /**
-     * Sets is_style_set
-     *
-     * @param bool $is_style_set Indicates if the cell's style is set. If return false, it means this cell has a default cell format.
-     *
-     * @return $this
-     */
-    public function setIsStyleSet($is_style_set)
-    {
-        $this->container['is_style_set'] = $is_style_set;
-
-        return $this;
-    }
-
-    /**
-     * Gets html_string
+     * Gets formula
      *
      * @return string
      */
-    public function getHtmlString()
+    public function getFormula()
     {
-        return $this->container['html_string'];
+        return $this->container['formula'];
     }
 
     /**
-     * Sets html_string
+     * Sets formula
      *
-     * @param string $html_string Gets and sets the html string which contains data and some formattings in this cell.
+     * @param string $formula Gets or sets a formula of the Aspose.Cells.Cell.
      *
      * @return $this
      */
-    public function setHtmlString($html_string)
+    public function setFormula($formula)
     {
-        $this->container['html_string'] = $html_string;
+        $this->container['formula'] = $formula;
 
         return $this;
     }
 
     /**
-     * Gets style
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /**
-     * Sets style
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $style style
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
-
-        return $this;
-    }
-
-    /**
-     * Gets worksheet
+     * Gets type
      *
      * @return string
      */
-    public function getWorksheet()
+    public function getType()
     {
-        return $this->container['worksheet'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets worksheet
+     * Sets type
      *
-     * @param string $worksheet Gets the parent worksheet.
+     * @param string $type Specifies a cell value type.
      *
      * @return $this
      */
-    public function setWorksheet($worksheet)
+    public function setType($type)
     {
-        $this->container['worksheet'] = $worksheet;
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets row
+     *
+     * @return int
+     */
+    public function getRow()
+    {
+        return $this->container['row'];
+    }
+
+    /**
+     * Sets row
+     *
+     * @param int $row Gets row number (zero based) of the cell.
+     *
+     * @return $this
+     */
+    public function setRow($row)
+    {
+        $this->container['row'] = $row;
 
         return $this;
     }

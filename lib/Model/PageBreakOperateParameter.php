@@ -55,12 +55,12 @@ class PageBreakOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'page_break_type' => 'string',
         'index' => 'int',
-        'row' => 'int',
+        'end_index' => 'int',
         'column' => 'int',
         'start_index' => 'int',
-        'end_index' => 'int'
+        'page_break_type' => 'string',
+        'row' => 'int'
     ];
 
     /**
@@ -69,12 +69,12 @@ class PageBreakOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'page_break_type' => null,
         'index' => 'int32',
-        'row' => 'int32',
+        'end_index' => 'int32',
         'column' => 'int32',
         'start_index' => 'int32',
-        'end_index' => 'int32'
+        'page_break_type' => null,
+        'row' => 'int32'
     ];
 
     /**
@@ -104,12 +104,12 @@ class PageBreakOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'page_break_type' => 'PageBreakType',
         'index' => 'Index',
-        'row' => 'Row',
+        'end_index' => 'EndIndex',
         'column' => 'Column',
         'start_index' => 'StartIndex',
-        'end_index' => 'EndIndex'
+        'page_break_type' => 'PageBreakType',
+        'row' => 'Row'
     ];
 
     /**
@@ -118,12 +118,12 @@ class PageBreakOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $setters = [
-        'page_break_type' => 'setPageBreakType',
         'index' => 'setIndex',
-        'row' => 'setRow',
+        'end_index' => 'setEndIndex',
         'column' => 'setColumn',
         'start_index' => 'setStartIndex',
-        'end_index' => 'setEndIndex'
+        'page_break_type' => 'setPageBreakType',
+        'row' => 'setRow'
     ];
 
     /**
@@ -132,12 +132,12 @@ class PageBreakOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $getters = [
-        'page_break_type' => 'getPageBreakType',
         'index' => 'getIndex',
-        'row' => 'getRow',
+        'end_index' => 'getEndIndex',
         'column' => 'getColumn',
         'start_index' => 'getStartIndex',
-        'end_index' => 'getEndIndex'
+        'page_break_type' => 'getPageBreakType',
+        'row' => 'getRow'
     ];
 
     /**
@@ -196,12 +196,12 @@ class PageBreakOperateParameter extends OperateParameter
     {
         parent::__construct($data);
 
-        $this->container['page_break_type'] = isset($data['page_break_type']) ? $data['page_break_type'] : null;
         $this->container['index'] = isset($data['index']) ? $data['index'] : null;
-        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
+        $this->container['end_index'] = isset($data['end_index']) ? $data['end_index'] : null;
         $this->container['column'] = isset($data['column']) ? $data['column'] : null;
         $this->container['start_index'] = isset($data['start_index']) ? $data['start_index'] : null;
-        $this->container['end_index'] = isset($data['end_index']) ? $data['end_index'] : null;
+        $this->container['page_break_type'] = isset($data['page_break_type']) ? $data['page_break_type'] : null;
+        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
     }
 
     /**
@@ -233,30 +233,6 @@ class PageBreakOperateParameter extends OperateParameter
 
 
     /**
-     * Gets page_break_type
-     *
-     * @return string
-     */
-    public function getPageBreakType()
-    {
-        return $this->container['page_break_type'];
-    }
-
-    /**
-     * Sets page_break_type
-     *
-     * @param string $page_break_type page_break_type
-     *
-     * @return $this
-     */
-    public function setPageBreakType($page_break_type)
-    {
-        $this->container['page_break_type'] = $page_break_type;
-
-        return $this;
-    }
-
-    /**
      * Gets index
      *
      * @return int
@@ -281,25 +257,25 @@ class PageBreakOperateParameter extends OperateParameter
     }
 
     /**
-     * Gets row
+     * Gets end_index
      *
      * @return int
      */
-    public function getRow()
+    public function getEndIndex()
     {
-        return $this->container['row'];
+        return $this->container['end_index'];
     }
 
     /**
-     * Sets row
+     * Sets end_index
      *
-     * @param int $row row
+     * @param int $end_index end_index
      *
      * @return $this
      */
-    public function setRow($row)
+    public function setEndIndex($end_index)
     {
-        $this->container['row'] = $row;
+        $this->container['end_index'] = $end_index;
 
         return $this;
     }
@@ -353,25 +329,49 @@ class PageBreakOperateParameter extends OperateParameter
     }
 
     /**
-     * Gets end_index
+     * Gets page_break_type
      *
-     * @return int
+     * @return string
      */
-    public function getEndIndex()
+    public function getPageBreakType()
     {
-        return $this->container['end_index'];
+        return $this->container['page_break_type'];
     }
 
     /**
-     * Sets end_index
+     * Sets page_break_type
      *
-     * @param int $end_index end_index
+     * @param string $page_break_type page_break_type
      *
      * @return $this
      */
-    public function setEndIndex($end_index)
+    public function setPageBreakType($page_break_type)
     {
-        $this->container['end_index'] = $end_index;
+        $this->container['page_break_type'] = $page_break_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets row
+     *
+     * @return int
+     */
+    public function getRow()
+    {
+        return $this->container['row'];
+    }
+
+    /**
+     * Sets row
+     *
+     * @param int $row row
+     *
+     * @return $this
+     */
+    public function setRow($row)
+    {
+        $this->container['row'] = $row;
 
         return $this;
     }

@@ -56,8 +56,8 @@ class SmartMarkerTaskParameter extends TaskParameter
       */
     protected static $swaggerTypes = [
         'source_workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'xml_file' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'xml_file' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource'
     ];
 
     /**
@@ -67,8 +67,8 @@ class SmartMarkerTaskParameter extends TaskParameter
       */
     protected static $swaggerFormats = [
         'source_workbook' => null,
-        'destination_workbook' => null,
-        'xml_file' => null
+        'xml_file' => null,
+        'destination_workbook' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class SmartMarkerTaskParameter extends TaskParameter
      */
     protected static $attributeMap = [
         'source_workbook' => 'SourceWorkbook',
-        'destination_workbook' => 'DestinationWorkbook',
-        'xml_file' => 'xmlFile'
+        'xml_file' => 'xmlFile',
+        'destination_workbook' => 'DestinationWorkbook'
     ];
 
     /**
@@ -110,8 +110,8 @@ class SmartMarkerTaskParameter extends TaskParameter
      */
     protected static $setters = [
         'source_workbook' => 'setSourceWorkbook',
-        'destination_workbook' => 'setDestinationWorkbook',
-        'xml_file' => 'setXmlFile'
+        'xml_file' => 'setXmlFile',
+        'destination_workbook' => 'setDestinationWorkbook'
     ];
 
     /**
@@ -121,8 +121,8 @@ class SmartMarkerTaskParameter extends TaskParameter
      */
     protected static $getters = [
         'source_workbook' => 'getSourceWorkbook',
-        'destination_workbook' => 'getDestinationWorkbook',
-        'xml_file' => 'getXmlFile'
+        'xml_file' => 'getXmlFile',
+        'destination_workbook' => 'getDestinationWorkbook'
     ];
 
     /**
@@ -182,8 +182,8 @@ class SmartMarkerTaskParameter extends TaskParameter
         parent::__construct($data);
 
         $this->container['source_workbook'] = isset($data['source_workbook']) ? $data['source_workbook'] : null;
-        $this->container['destination_workbook'] = isset($data['destination_workbook']) ? $data['destination_workbook'] : null;
         $this->container['xml_file'] = isset($data['xml_file']) ? $data['xml_file'] : null;
+        $this->container['destination_workbook'] = isset($data['destination_workbook']) ? $data['destination_workbook'] : null;
     }
 
     /**
@@ -239,30 +239,6 @@ class SmartMarkerTaskParameter extends TaskParameter
     }
 
     /**
-     * Gets destination_workbook
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getDestinationWorkbook()
-    {
-        return $this->container['destination_workbook'];
-    }
-
-    /**
-     * Sets destination_workbook
-     *
-     * @param \Aspose\Cells\Cloud\Model\FileSource $destination_workbook destination_workbook
-     *
-     * @return $this
-     */
-    public function setDestinationWorkbook($destination_workbook)
-    {
-        $this->container['destination_workbook'] = $destination_workbook;
-
-        return $this;
-    }
-
-    /**
      * Gets xml_file
      *
      * @return \Aspose\Cells\Cloud\Model\FileSource
@@ -282,6 +258,30 @@ class SmartMarkerTaskParameter extends TaskParameter
     public function setXmlFile($xml_file)
     {
         $this->container['xml_file'] = $xml_file;
+
+        return $this;
+    }
+
+    /**
+     * Gets destination_workbook
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileSource
+     */
+    public function getDestinationWorkbook()
+    {
+        return $this->container['destination_workbook'];
+    }
+
+    /**
+     * Sets destination_workbook
+     *
+     * @param \Aspose\Cells\Cloud\Model\FileSource $destination_workbook destination_workbook
+     *
+     * @return $this
+     */
+    public function setDestinationWorkbook($destination_workbook)
+    {
+        $this->container['destination_workbook'] = $destination_workbook;
 
         return $this;
     }

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**operate** | **string** |  | [optional] 
 **source** | [**\Aspose\Cells\Cloud\Model\Range**](Range.md) |  | [optional] 
+**operate** | **string** |  | [optional] 
 **target** | [**\Aspose\Cells\Cloud\Model\Range**](Range.md) |  | [optional] 
 **paste_options** | [**\Aspose\Cells\Cloud\Model\PasteOptions**](PasteOptions.md) |  | [optional] 
 

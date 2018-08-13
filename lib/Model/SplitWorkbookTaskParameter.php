@@ -55,12 +55,12 @@ class SplitWorkbookTaskParameter extends TaskParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'destination_file_position' => '\Aspose\Cells\Cloud\Model\FileSource',
         'destination_file_format' => 'string',
-        'split_name_rule' => 'string',
+        'destination_file_position' => '\Aspose\Cells\Cloud\Model\FileSource',
         'vertical_resolution' => 'int',
-        'horizontal_resolution' => 'int'
+        'horizontal_resolution' => 'int',
+        'split_name_rule' => 'string',
+        'workbook' => '\Aspose\Cells\Cloud\Model\FileSource'
     ];
 
     /**
@@ -69,12 +69,12 @@ class SplitWorkbookTaskParameter extends TaskParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'workbook' => null,
-        'destination_file_position' => null,
         'destination_file_format' => null,
-        'split_name_rule' => null,
+        'destination_file_position' => null,
         'vertical_resolution' => 'int32',
-        'horizontal_resolution' => 'int32'
+        'horizontal_resolution' => 'int32',
+        'split_name_rule' => null,
+        'workbook' => null
     ];
 
     /**
@@ -104,12 +104,12 @@ class SplitWorkbookTaskParameter extends TaskParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'workbook' => 'Workbook',
-        'destination_file_position' => 'DestinationFilePosition',
         'destination_file_format' => 'DestinationFileFormat',
-        'split_name_rule' => 'SplitNameRule',
+        'destination_file_position' => 'DestinationFilePosition',
         'vertical_resolution' => 'VerticalResolution',
-        'horizontal_resolution' => 'HorizontalResolution'
+        'horizontal_resolution' => 'HorizontalResolution',
+        'split_name_rule' => 'SplitNameRule',
+        'workbook' => 'Workbook'
     ];
 
     /**
@@ -118,12 +118,12 @@ class SplitWorkbookTaskParameter extends TaskParameter
      * @var string[]
      */
     protected static $setters = [
-        'workbook' => 'setWorkbook',
-        'destination_file_position' => 'setDestinationFilePosition',
         'destination_file_format' => 'setDestinationFileFormat',
-        'split_name_rule' => 'setSplitNameRule',
+        'destination_file_position' => 'setDestinationFilePosition',
         'vertical_resolution' => 'setVerticalResolution',
-        'horizontal_resolution' => 'setHorizontalResolution'
+        'horizontal_resolution' => 'setHorizontalResolution',
+        'split_name_rule' => 'setSplitNameRule',
+        'workbook' => 'setWorkbook'
     ];
 
     /**
@@ -132,12 +132,12 @@ class SplitWorkbookTaskParameter extends TaskParameter
      * @var string[]
      */
     protected static $getters = [
-        'workbook' => 'getWorkbook',
-        'destination_file_position' => 'getDestinationFilePosition',
         'destination_file_format' => 'getDestinationFileFormat',
-        'split_name_rule' => 'getSplitNameRule',
+        'destination_file_position' => 'getDestinationFilePosition',
         'vertical_resolution' => 'getVerticalResolution',
-        'horizontal_resolution' => 'getHorizontalResolution'
+        'horizontal_resolution' => 'getHorizontalResolution',
+        'split_name_rule' => 'getSplitNameRule',
+        'workbook' => 'getWorkbook'
     ];
 
     /**
@@ -196,12 +196,12 @@ class SplitWorkbookTaskParameter extends TaskParameter
     {
         parent::__construct($data);
 
-        $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
-        $this->container['destination_file_position'] = isset($data['destination_file_position']) ? $data['destination_file_position'] : null;
         $this->container['destination_file_format'] = isset($data['destination_file_format']) ? $data['destination_file_format'] : null;
-        $this->container['split_name_rule'] = isset($data['split_name_rule']) ? $data['split_name_rule'] : null;
+        $this->container['destination_file_position'] = isset($data['destination_file_position']) ? $data['destination_file_position'] : null;
         $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
         $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
+        $this->container['split_name_rule'] = isset($data['split_name_rule']) ? $data['split_name_rule'] : null;
+        $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
     }
 
     /**
@@ -233,54 +233,6 @@ class SplitWorkbookTaskParameter extends TaskParameter
 
 
     /**
-     * Gets workbook
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getWorkbook()
-    {
-        return $this->container['workbook'];
-    }
-
-    /**
-     * Sets workbook
-     *
-     * @param \Aspose\Cells\Cloud\Model\FileSource $workbook workbook
-     *
-     * @return $this
-     */
-    public function setWorkbook($workbook)
-    {
-        $this->container['workbook'] = $workbook;
-
-        return $this;
-    }
-
-    /**
-     * Gets destination_file_position
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getDestinationFilePosition()
-    {
-        return $this->container['destination_file_position'];
-    }
-
-    /**
-     * Sets destination_file_position
-     *
-     * @param \Aspose\Cells\Cloud\Model\FileSource $destination_file_position destination_file_position
-     *
-     * @return $this
-     */
-    public function setDestinationFilePosition($destination_file_position)
-    {
-        $this->container['destination_file_position'] = $destination_file_position;
-
-        return $this;
-    }
-
-    /**
      * Gets destination_file_format
      *
      * @return string
@@ -305,25 +257,25 @@ class SplitWorkbookTaskParameter extends TaskParameter
     }
 
     /**
-     * Gets split_name_rule
+     * Gets destination_file_position
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\FileSource
      */
-    public function getSplitNameRule()
+    public function getDestinationFilePosition()
     {
-        return $this->container['split_name_rule'];
+        return $this->container['destination_file_position'];
     }
 
     /**
-     * Sets split_name_rule
+     * Sets destination_file_position
      *
-     * @param string $split_name_rule split_name_rule
+     * @param \Aspose\Cells\Cloud\Model\FileSource $destination_file_position destination_file_position
      *
      * @return $this
      */
-    public function setSplitNameRule($split_name_rule)
+    public function setDestinationFilePosition($destination_file_position)
     {
-        $this->container['split_name_rule'] = $split_name_rule;
+        $this->container['destination_file_position'] = $destination_file_position;
 
         return $this;
     }
@@ -372,6 +324,54 @@ class SplitWorkbookTaskParameter extends TaskParameter
     public function setHorizontalResolution($horizontal_resolution)
     {
         $this->container['horizontal_resolution'] = $horizontal_resolution;
+
+        return $this;
+    }
+
+    /**
+     * Gets split_name_rule
+     *
+     * @return string
+     */
+    public function getSplitNameRule()
+    {
+        return $this->container['split_name_rule'];
+    }
+
+    /**
+     * Sets split_name_rule
+     *
+     * @param string $split_name_rule split_name_rule
+     *
+     * @return $this
+     */
+    public function setSplitNameRule($split_name_rule)
+    {
+        $this->container['split_name_rule'] = $split_name_rule;
+
+        return $this;
+    }
+
+    /**
+     * Gets workbook
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileSource
+     */
+    public function getWorkbook()
+    {
+        return $this->container['workbook'];
+    }
+
+    /**
+     * Sets workbook
+     *
+     * @param \Aspose\Cells\Cloud\Model\FileSource $workbook workbook
+     *
+     * @return $this
+     */
+    public function setWorkbook($workbook)
+    {
+        $this->container['workbook'] = $workbook;
 
         return $this;
     }

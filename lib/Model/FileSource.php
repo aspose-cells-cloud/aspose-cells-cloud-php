@@ -57,8 +57,8 @@ class FileSource implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'file_source_type' => 'string',
-        'file_path' => 'string'
+        'file_path' => 'string',
+        'file_source_type' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class FileSource implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'file_source_type' => null,
-        'file_path' => null
+        'file_path' => null,
+        'file_source_type' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class FileSource implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'file_source_type' => 'FileSourceType',
-        'file_path' => 'FilePath'
+        'file_path' => 'FilePath',
+        'file_source_type' => 'FileSourceType'
     ];
 
     /**
@@ -108,8 +108,8 @@ class FileSource implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'file_source_type' => 'setFileSourceType',
-        'file_path' => 'setFilePath'
+        'file_path' => 'setFilePath',
+        'file_source_type' => 'setFileSourceType'
     ];
 
     /**
@@ -118,8 +118,8 @@ class FileSource implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'file_source_type' => 'getFileSourceType',
-        'file_path' => 'getFilePath'
+        'file_path' => 'getFilePath',
+        'file_source_type' => 'getFileSourceType'
     ];
 
     /**
@@ -182,8 +182,8 @@ class FileSource implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['file_source_type'] = isset($data['file_source_type']) ? $data['file_source_type'] : null;
         $this->container['file_path'] = isset($data['file_path']) ? $data['file_path'] : null;
+        $this->container['file_source_type'] = isset($data['file_source_type']) ? $data['file_source_type'] : null;
     }
 
     /**
@@ -212,30 +212,6 @@ class FileSource implements  ArrayAccess
 
 
     /**
-     * Gets file_source_type
-     *
-     * @return string
-     */
-    public function getFileSourceType()
-    {
-        return $this->container['file_source_type'];
-    }
-
-    /**
-     * Sets file_source_type
-     *
-     * @param string $file_source_type file_source_type
-     *
-     * @return $this
-     */
-    public function setFileSourceType($file_source_type)
-    {
-        $this->container['file_source_type'] = $file_source_type;
-
-        return $this;
-    }
-
-    /**
      * Gets file_path
      *
      * @return string
@@ -255,6 +231,30 @@ class FileSource implements  ArrayAccess
     public function setFilePath($file_path)
     {
         $this->container['file_path'] = $file_path;
+
+        return $this;
+    }
+
+    /**
+     * Gets file_source_type
+     *
+     * @return string
+     */
+    public function getFileSourceType()
+    {
+        return $this->container['file_source_type'];
+    }
+
+    /**
+     * Sets file_source_type
+     *
+     * @param string $file_source_type file_source_type
+     *
+     * @return $this
+     */
+    public function setFileSourceType($file_source_type)
+    {
+        $this->container['file_source_type'] = $file_source_type;
 
         return $this;
     }

@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**background_color** | [**\Aspose\Cells\Cloud\Model\Color**](Color.md) |  | [optional] 
-**fill_format** | [**\Aspose\Cells\Cloud\Model\FillFormat**](FillFormat.md) |  | [optional] 
 **foreground_color** | [**\Aspose\Cells\Cloud\Model\Color**](Color.md) |  | [optional] 
+**background_color** | [**\Aspose\Cells\Cloud\Model\Color**](Color.md) |  | [optional] 
 **format** | **string** |  | [optional] 
+**fill_format** | [**\Aspose\Cells\Cloud\Model\FillFormat**](FillFormat.md) |  | [optional] 
 **invert_if_negative** | **bool** |  | [optional] 
 **transparency** | **double** |  | [optional] 
 

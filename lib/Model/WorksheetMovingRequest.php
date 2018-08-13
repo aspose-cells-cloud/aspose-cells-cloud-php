@@ -58,8 +58,8 @@ class WorksheetMovingRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_worksheet' => 'string',
-        'position' => 'string'
+        'position' => 'string',
+        'destination_worksheet' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class WorksheetMovingRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_worksheet' => null,
-        'position' => null
+        'position' => null,
+        'destination_worksheet' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class WorksheetMovingRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'destination_worksheet' => 'DestinationWorksheet',
-        'position' => 'Position'
+        'position' => 'Position',
+        'destination_worksheet' => 'DestinationWorksheet'
     ];
 
     /**
@@ -109,8 +109,8 @@ class WorksheetMovingRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'destination_worksheet' => 'setDestinationWorksheet',
-        'position' => 'setPosition'
+        'position' => 'setPosition',
+        'destination_worksheet' => 'setDestinationWorksheet'
     ];
 
     /**
@@ -119,8 +119,8 @@ class WorksheetMovingRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'destination_worksheet' => 'getDestinationWorksheet',
-        'position' => 'getPosition'
+        'position' => 'getPosition',
+        'destination_worksheet' => 'getDestinationWorksheet'
     ];
 
     /**
@@ -183,8 +183,8 @@ class WorksheetMovingRequest implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
         $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
     }
 
     /**
@@ -213,30 +213,6 @@ class WorksheetMovingRequest implements  ArrayAccess
 
 
     /**
-     * Gets destination_worksheet
-     *
-     * @return string
-     */
-    public function getDestinationWorksheet()
-    {
-        return $this->container['destination_worksheet'];
-    }
-
-    /**
-     * Sets destination_worksheet
-     *
-     * @param string $destination_worksheet Destination worksheet name.
-     *
-     * @return $this
-     */
-    public function setDestinationWorksheet($destination_worksheet)
-    {
-        $this->container['destination_worksheet'] = $destination_worksheet;
-
-        return $this;
-    }
-
-    /**
      * Gets position
      *
      * @return string
@@ -256,6 +232,30 @@ class WorksheetMovingRequest implements  ArrayAccess
     public function setPosition($position)
     {
         $this->container['position'] = $position;
+
+        return $this;
+    }
+
+    /**
+     * Gets destination_worksheet
+     *
+     * @return string
+     */
+    public function getDestinationWorksheet()
+    {
+        return $this->container['destination_worksheet'];
+    }
+
+    /**
+     * Sets destination_worksheet
+     *
+     * @param string $destination_worksheet Destination worksheet name.
+     *
+     * @return $this
+     */
+    public function setDestinationWorksheet($destination_worksheet)
+    {
+        $this->container['destination_worksheet'] = $destination_worksheet;
 
         return $this;
     }

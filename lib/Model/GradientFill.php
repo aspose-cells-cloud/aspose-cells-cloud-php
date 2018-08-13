@@ -58,9 +58,9 @@ class GradientFill implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'fill_type' => 'string',
-        'direction_type' => 'string',
         'angle' => 'double',
-        'gradient_stops' => '\Aspose\Cells\Cloud\Model\GradientFillStop[]'
+        'gradient_stops' => '\Aspose\Cells\Cloud\Model\GradientFillStop[]',
+        'direction_type' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class GradientFill implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'fill_type' => null,
-        'direction_type' => null,
         'angle' => 'double',
-        'gradient_stops' => null
+        'gradient_stops' => null,
+        'direction_type' => null
     ];
 
     /**
@@ -103,9 +103,9 @@ class GradientFill implements  ArrayAccess
      */
     protected static $attributeMap = [
         'fill_type' => 'FillType',
-        'direction_type' => 'DirectionType',
         'angle' => 'Angle',
-        'gradient_stops' => 'GradientStops'
+        'gradient_stops' => 'GradientStops',
+        'direction_type' => 'DirectionType'
     ];
 
     /**
@@ -115,9 +115,9 @@ class GradientFill implements  ArrayAccess
      */
     protected static $setters = [
         'fill_type' => 'setFillType',
-        'direction_type' => 'setDirectionType',
         'angle' => 'setAngle',
-        'gradient_stops' => 'setGradientStops'
+        'gradient_stops' => 'setGradientStops',
+        'direction_type' => 'setDirectionType'
     ];
 
     /**
@@ -127,9 +127,9 @@ class GradientFill implements  ArrayAccess
      */
     protected static $getters = [
         'fill_type' => 'getFillType',
-        'direction_type' => 'getDirectionType',
         'angle' => 'getAngle',
-        'gradient_stops' => 'getGradientStops'
+        'gradient_stops' => 'getGradientStops',
+        'direction_type' => 'getDirectionType'
     ];
 
     /**
@@ -193,9 +193,9 @@ class GradientFill implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['fill_type'] = isset($data['fill_type']) ? $data['fill_type'] : null;
-        $this->container['direction_type'] = isset($data['direction_type']) ? $data['direction_type'] : null;
         $this->container['angle'] = isset($data['angle']) ? $data['angle'] : null;
         $this->container['gradient_stops'] = isset($data['gradient_stops']) ? $data['gradient_stops'] : null;
+        $this->container['direction_type'] = isset($data['direction_type']) ? $data['direction_type'] : null;
     }
 
     /**
@@ -248,30 +248,6 @@ class GradientFill implements  ArrayAccess
     }
 
     /**
-     * Gets direction_type
-     *
-     * @return string
-     */
-    public function getDirectionType()
-    {
-        return $this->container['direction_type'];
-    }
-
-    /**
-     * Sets direction_type
-     *
-     * @param string $direction_type direction_type
-     *
-     * @return $this
-     */
-    public function setDirectionType($direction_type)
-    {
-        $this->container['direction_type'] = $direction_type;
-
-        return $this;
-    }
-
-    /**
      * Gets angle
      *
      * @return double
@@ -315,6 +291,30 @@ class GradientFill implements  ArrayAccess
     public function setGradientStops($gradient_stops)
     {
         $this->container['gradient_stops'] = $gradient_stops;
+
+        return $this;
+    }
+
+    /**
+     * Gets direction_type
+     *
+     * @return string
+     */
+    public function getDirectionType()
+    {
+        return $this->container['direction_type'];
+    }
+
+    /**
+     * Sets direction_type
+     *
+     * @param string $direction_type direction_type
+     *
+     * @return $this
+     */
+    public function setDirectionType($direction_type)
+    {
+        $this->container['direction_type'] = $direction_type;
 
         return $this;
     }

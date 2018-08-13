@@ -58,8 +58,8 @@ class WorkbookProtectionRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'protection_type' => 'string',
-        'password' => 'string'
+        'password' => 'string',
+        'protection_type' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class WorkbookProtectionRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'protection_type' => null,
-        'password' => null
+        'password' => null,
+        'protection_type' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class WorkbookProtectionRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'protection_type' => 'ProtectionType',
-        'password' => 'Password'
+        'password' => 'Password',
+        'protection_type' => 'ProtectionType'
     ];
 
     /**
@@ -109,8 +109,8 @@ class WorkbookProtectionRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'protection_type' => 'setProtectionType',
-        'password' => 'setPassword'
+        'password' => 'setPassword',
+        'protection_type' => 'setProtectionType'
     ];
 
     /**
@@ -119,8 +119,8 @@ class WorkbookProtectionRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'protection_type' => 'getProtectionType',
-        'password' => 'getPassword'
+        'password' => 'getPassword',
+        'protection_type' => 'getProtectionType'
     ];
 
     /**
@@ -183,8 +183,8 @@ class WorkbookProtectionRequest implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
     }
 
     /**
@@ -213,30 +213,6 @@ class WorkbookProtectionRequest implements  ArrayAccess
 
 
     /**
-     * Gets protection_type
-     *
-     * @return string
-     */
-    public function getProtectionType()
-    {
-        return $this->container['protection_type'];
-    }
-
-    /**
-     * Sets protection_type
-     *
-     * @param string $protection_type Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS
-     *
-     * @return $this
-     */
-    public function setProtectionType($protection_type)
-    {
-        $this->container['protection_type'] = $protection_type;
-
-        return $this;
-    }
-
-    /**
      * Gets password
      *
      * @return string
@@ -256,6 +232,30 @@ class WorkbookProtectionRequest implements  ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets protection_type
+     *
+     * @return string
+     */
+    public function getProtectionType()
+    {
+        return $this->container['protection_type'];
+    }
+
+    /**
+     * Sets protection_type
+     *
+     * @param string $protection_type Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS
+     *
+     * @return $this
+     */
+    public function setProtectionType($protection_type)
+    {
+        $this->container['protection_type'] = $protection_type;
 
         return $this;
     }

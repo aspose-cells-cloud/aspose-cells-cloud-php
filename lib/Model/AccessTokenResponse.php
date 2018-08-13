@@ -57,14 +57,14 @@ class AccessTokenResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        '_expires' => 'string',
         'access_token' => 'string',
-        'token_type' => 'string',
-        'expires_in' => 'int',
-        'refresh_token' => 'string',
-        'client_id' => 'string',
-        'client_refresh_token_life_time_in_minutes' => 'string',
         '_issued' => 'string',
-        '_expires' => 'string'
+        'client_refresh_token_life_time_in_minutes' => 'string',
+        'expires_in' => 'int',
+        'token_type' => 'string',
+        'client_id' => 'string',
+        'refresh_token' => 'string'
     ];
 
     /**
@@ -73,14 +73,14 @@ class AccessTokenResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        '_expires' => null,
         'access_token' => null,
-        'token_type' => null,
-        'expires_in' => 'int64',
-        'refresh_token' => null,
-        'client_id' => null,
-        'client_refresh_token_life_time_in_minutes' => null,
         '_issued' => null,
-        '_expires' => null
+        'client_refresh_token_life_time_in_minutes' => null,
+        'expires_in' => 'int64',
+        'token_type' => null,
+        'client_id' => null,
+        'refresh_token' => null
     ];
 
     /**
@@ -110,14 +110,14 @@ class AccessTokenResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        '_expires' => '.expires',
         'access_token' => 'access_token',
-        'token_type' => 'token_type',
-        'expires_in' => 'expires_in',
-        'refresh_token' => 'refresh_token',
-        'client_id' => 'client_id',
-        'client_refresh_token_life_time_in_minutes' => 'clientRefreshTokenLifeTimeInMinutes',
         '_issued' => '.issued',
-        '_expires' => '.expires'
+        'client_refresh_token_life_time_in_minutes' => 'clientRefreshTokenLifeTimeInMinutes',
+        'expires_in' => 'expires_in',
+        'token_type' => 'token_type',
+        'client_id' => 'client_id',
+        'refresh_token' => 'refresh_token'
     ];
 
     /**
@@ -126,14 +126,14 @@ class AccessTokenResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        '_expires' => 'setExpires',
         'access_token' => 'setAccessToken',
-        'token_type' => 'setTokenType',
-        'expires_in' => 'setExpiresIn',
-        'refresh_token' => 'setRefreshToken',
-        'client_id' => 'setClientId',
-        'client_refresh_token_life_time_in_minutes' => 'setClientRefreshTokenLifeTimeInMinutes',
         '_issued' => 'setIssued',
-        '_expires' => 'setExpires'
+        'client_refresh_token_life_time_in_minutes' => 'setClientRefreshTokenLifeTimeInMinutes',
+        'expires_in' => 'setExpiresIn',
+        'token_type' => 'setTokenType',
+        'client_id' => 'setClientId',
+        'refresh_token' => 'setRefreshToken'
     ];
 
     /**
@@ -142,14 +142,14 @@ class AccessTokenResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        '_expires' => 'getExpires',
         'access_token' => 'getAccessToken',
-        'token_type' => 'getTokenType',
-        'expires_in' => 'getExpiresIn',
-        'refresh_token' => 'getRefreshToken',
-        'client_id' => 'getClientId',
-        'client_refresh_token_life_time_in_minutes' => 'getClientRefreshTokenLifeTimeInMinutes',
         '_issued' => 'getIssued',
-        '_expires' => 'getExpires'
+        'client_refresh_token_life_time_in_minutes' => 'getClientRefreshTokenLifeTimeInMinutes',
+        'expires_in' => 'getExpiresIn',
+        'token_type' => 'getTokenType',
+        'client_id' => 'getClientId',
+        'refresh_token' => 'getRefreshToken'
     ];
 
     /**
@@ -212,14 +212,14 @@ class AccessTokenResponse implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['access_token'] = isset($data['access_token']) ? $data['access_token'] : null;
-        $this->container['token_type'] = isset($data['token_type']) ? $data['token_type'] : null;
-        $this->container['expires_in'] = isset($data['expires_in']) ? $data['expires_in'] : null;
-        $this->container['refresh_token'] = isset($data['refresh_token']) ? $data['refresh_token'] : null;
-        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
-        $this->container['client_refresh_token_life_time_in_minutes'] = isset($data['client_refresh_token_life_time_in_minutes']) ? $data['client_refresh_token_life_time_in_minutes'] : null;
-        $this->container['_issued'] = isset($data['_issued']) ? $data['_issued'] : null;
         $this->container['_expires'] = isset($data['_expires']) ? $data['_expires'] : null;
+        $this->container['access_token'] = isset($data['access_token']) ? $data['access_token'] : null;
+        $this->container['_issued'] = isset($data['_issued']) ? $data['_issued'] : null;
+        $this->container['client_refresh_token_life_time_in_minutes'] = isset($data['client_refresh_token_life_time_in_minutes']) ? $data['client_refresh_token_life_time_in_minutes'] : null;
+        $this->container['expires_in'] = isset($data['expires_in']) ? $data['expires_in'] : null;
+        $this->container['token_type'] = isset($data['token_type']) ? $data['token_type'] : null;
+        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
+        $this->container['refresh_token'] = isset($data['refresh_token']) ? $data['refresh_token'] : null;
     }
 
     /**
@@ -248,6 +248,30 @@ class AccessTokenResponse implements  ArrayAccess
 
 
     /**
+     * Gets _expires
+     *
+     * @return string
+     */
+    public function getExpires()
+    {
+        return $this->container['_expires'];
+    }
+
+    /**
+     * Sets _expires
+     *
+     * @param string $_expires _expires
+     *
+     * @return $this
+     */
+    public function setExpires($_expires)
+    {
+        $this->container['_expires'] = $_expires;
+
+        return $this;
+    }
+
+    /**
      * Gets access_token
      *
      * @return string
@@ -267,126 +291,6 @@ class AccessTokenResponse implements  ArrayAccess
     public function setAccessToken($access_token)
     {
         $this->container['access_token'] = $access_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets token_type
-     *
-     * @return string
-     */
-    public function getTokenType()
-    {
-        return $this->container['token_type'];
-    }
-
-    /**
-     * Sets token_type
-     *
-     * @param string $token_type token_type
-     *
-     * @return $this
-     */
-    public function setTokenType($token_type)
-    {
-        $this->container['token_type'] = $token_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets expires_in
-     *
-     * @return int
-     */
-    public function getExpiresIn()
-    {
-        return $this->container['expires_in'];
-    }
-
-    /**
-     * Sets expires_in
-     *
-     * @param int $expires_in expires_in
-     *
-     * @return $this
-     */
-    public function setExpiresIn($expires_in)
-    {
-        $this->container['expires_in'] = $expires_in;
-
-        return $this;
-    }
-
-    /**
-     * Gets refresh_token
-     *
-     * @return string
-     */
-    public function getRefreshToken()
-    {
-        return $this->container['refresh_token'];
-    }
-
-    /**
-     * Sets refresh_token
-     *
-     * @param string $refresh_token refresh_token
-     *
-     * @return $this
-     */
-    public function setRefreshToken($refresh_token)
-    {
-        $this->container['refresh_token'] = $refresh_token;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_id
-     *
-     * @return string
-     */
-    public function getClientId()
-    {
-        return $this->container['client_id'];
-    }
-
-    /**
-     * Sets client_id
-     *
-     * @param string $client_id client_id
-     *
-     * @return $this
-     */
-    public function setClientId($client_id)
-    {
-        $this->container['client_id'] = $client_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets client_refresh_token_life_time_in_minutes
-     *
-     * @return string
-     */
-    public function getClientRefreshTokenLifeTimeInMinutes()
-    {
-        return $this->container['client_refresh_token_life_time_in_minutes'];
-    }
-
-    /**
-     * Sets client_refresh_token_life_time_in_minutes
-     *
-     * @param string $client_refresh_token_life_time_in_minutes client_refresh_token_life_time_in_minutes
-     *
-     * @return $this
-     */
-    public function setClientRefreshTokenLifeTimeInMinutes($client_refresh_token_life_time_in_minutes)
-    {
-        $this->container['client_refresh_token_life_time_in_minutes'] = $client_refresh_token_life_time_in_minutes;
 
         return $this;
     }
@@ -416,25 +320,121 @@ class AccessTokenResponse implements  ArrayAccess
     }
 
     /**
-     * Gets _expires
+     * Gets client_refresh_token_life_time_in_minutes
      *
      * @return string
      */
-    public function getExpires()
+    public function getClientRefreshTokenLifeTimeInMinutes()
     {
-        return $this->container['_expires'];
+        return $this->container['client_refresh_token_life_time_in_minutes'];
     }
 
     /**
-     * Sets _expires
+     * Sets client_refresh_token_life_time_in_minutes
      *
-     * @param string $_expires _expires
+     * @param string $client_refresh_token_life_time_in_minutes client_refresh_token_life_time_in_minutes
      *
      * @return $this
      */
-    public function setExpires($_expires)
+    public function setClientRefreshTokenLifeTimeInMinutes($client_refresh_token_life_time_in_minutes)
     {
-        $this->container['_expires'] = $_expires;
+        $this->container['client_refresh_token_life_time_in_minutes'] = $client_refresh_token_life_time_in_minutes;
+
+        return $this;
+    }
+
+    /**
+     * Gets expires_in
+     *
+     * @return int
+     */
+    public function getExpiresIn()
+    {
+        return $this->container['expires_in'];
+    }
+
+    /**
+     * Sets expires_in
+     *
+     * @param int $expires_in expires_in
+     *
+     * @return $this
+     */
+    public function setExpiresIn($expires_in)
+    {
+        $this->container['expires_in'] = $expires_in;
+
+        return $this;
+    }
+
+    /**
+     * Gets token_type
+     *
+     * @return string
+     */
+    public function getTokenType()
+    {
+        return $this->container['token_type'];
+    }
+
+    /**
+     * Sets token_type
+     *
+     * @param string $token_type token_type
+     *
+     * @return $this
+     */
+    public function setTokenType($token_type)
+    {
+        $this->container['token_type'] = $token_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_id
+     *
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->container['client_id'];
+    }
+
+    /**
+     * Sets client_id
+     *
+     * @param string $client_id client_id
+     *
+     * @return $this
+     */
+    public function setClientId($client_id)
+    {
+        $this->container['client_id'] = $client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets refresh_token
+     *
+     * @return string
+     */
+    public function getRefreshToken()
+    {
+        return $this->container['refresh_token'];
+    }
+
+    /**
+     * Sets refresh_token
+     *
+     * @param string $refresh_token refresh_token
+     *
+     * @return $this
+     */
+    public function setRefreshToken($refresh_token)
+    {
+        $this->container['refresh_token'] = $refresh_token;
 
         return $this;
     }

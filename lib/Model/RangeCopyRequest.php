@@ -57,8 +57,8 @@ class RangeCopyRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'operate' => 'string',
         'source' => '\Aspose\Cells\Cloud\Model\Range',
+        'operate' => 'string',
         'target' => '\Aspose\Cells\Cloud\Model\Range',
         'paste_options' => '\Aspose\Cells\Cloud\Model\PasteOptions'
     ];
@@ -69,8 +69,8 @@ class RangeCopyRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'operate' => null,
         'source' => null,
+        'operate' => null,
         'target' => null,
         'paste_options' => null
     ];
@@ -102,8 +102,8 @@ class RangeCopyRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'operate' => 'Operate',
         'source' => 'Source',
+        'operate' => 'Operate',
         'target' => 'Target',
         'paste_options' => 'PasteOptions'
     ];
@@ -114,8 +114,8 @@ class RangeCopyRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'operate' => 'setOperate',
         'source' => 'setSource',
+        'operate' => 'setOperate',
         'target' => 'setTarget',
         'paste_options' => 'setPasteOptions'
     ];
@@ -126,8 +126,8 @@ class RangeCopyRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'operate' => 'getOperate',
         'source' => 'getSource',
+        'operate' => 'getOperate',
         'target' => 'getTarget',
         'paste_options' => 'getPasteOptions'
     ];
@@ -192,8 +192,8 @@ class RangeCopyRequest implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['operate'] = isset($data['operate']) ? $data['operate'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['operate'] = isset($data['operate']) ? $data['operate'] : null;
         $this->container['target'] = isset($data['target']) ? $data['target'] : null;
         $this->container['paste_options'] = isset($data['paste_options']) ? $data['paste_options'] : null;
     }
@@ -224,30 +224,6 @@ class RangeCopyRequest implements  ArrayAccess
 
 
     /**
-     * Gets operate
-     *
-     * @return string
-     */
-    public function getOperate()
-    {
-        return $this->container['operate'];
-    }
-
-    /**
-     * Sets operate
-     *
-     * @param string $operate operate
-     *
-     * @return $this
-     */
-    public function setOperate($operate)
-    {
-        $this->container['operate'] = $operate;
-
-        return $this;
-    }
-
-    /**
      * Gets source
      *
      * @return \Aspose\Cells\Cloud\Model\Range
@@ -267,6 +243,30 @@ class RangeCopyRequest implements  ArrayAccess
     public function setSource($source)
     {
         $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets operate
+     *
+     * @return string
+     */
+    public function getOperate()
+    {
+        return $this->container['operate'];
+    }
+
+    /**
+     * Sets operate
+     *
+     * @param string $operate operate
+     *
+     * @return $this
+     */
+    public function setOperate($operate)
+    {
+        $this->container['operate'] = $operate;
 
         return $this;
     }

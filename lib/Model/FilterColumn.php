@@ -57,14 +57,14 @@ class FilterColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'field_index' => 'int',
         'filter_type' => 'string',
         'multiple_filters' => '\Aspose\Cells\Cloud\Model\MultipleFilters',
-        'color_filter' => '\Aspose\Cells\Cloud\Model\ColorFilter',
         'custom_filters' => '\Aspose\Cells\Cloud\Model\CustomFilter[]',
         'dynamic_filter' => '\Aspose\Cells\Cloud\Model\DynamicFilter',
-        'icon_filter' => '\Aspose\Cells\Cloud\Model\IconFilter',
+        'color_filter' => '\Aspose\Cells\Cloud\Model\ColorFilter',
+        'field_index' => 'int',
         'top10_filter' => '\Aspose\Cells\Cloud\Model\Top10Filter',
+        'icon_filter' => '\Aspose\Cells\Cloud\Model\IconFilter',
         'visibledropdown' => 'string'
     ];
 
@@ -74,14 +74,14 @@ class FilterColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'field_index' => 'int32',
         'filter_type' => null,
         'multiple_filters' => null,
-        'color_filter' => null,
         'custom_filters' => null,
         'dynamic_filter' => null,
-        'icon_filter' => null,
+        'color_filter' => null,
+        'field_index' => 'int32',
         'top10_filter' => null,
+        'icon_filter' => null,
         'visibledropdown' => null
     ];
 
@@ -112,14 +112,14 @@ class FilterColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'field_index' => 'FieldIndex',
         'filter_type' => 'FilterType',
         'multiple_filters' => 'MultipleFilters',
-        'color_filter' => 'ColorFilter',
         'custom_filters' => 'CustomFilters',
         'dynamic_filter' => 'DynamicFilter',
-        'icon_filter' => 'IconFilter',
+        'color_filter' => 'ColorFilter',
+        'field_index' => 'FieldIndex',
         'top10_filter' => 'Top10Filter',
+        'icon_filter' => 'IconFilter',
         'visibledropdown' => 'Visibledropdown'
     ];
 
@@ -129,14 +129,14 @@ class FilterColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'field_index' => 'setFieldIndex',
         'filter_type' => 'setFilterType',
         'multiple_filters' => 'setMultipleFilters',
-        'color_filter' => 'setColorFilter',
         'custom_filters' => 'setCustomFilters',
         'dynamic_filter' => 'setDynamicFilter',
-        'icon_filter' => 'setIconFilter',
+        'color_filter' => 'setColorFilter',
+        'field_index' => 'setFieldIndex',
         'top10_filter' => 'setTop10Filter',
+        'icon_filter' => 'setIconFilter',
         'visibledropdown' => 'setVisibledropdown'
     ];
 
@@ -146,14 +146,14 @@ class FilterColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'field_index' => 'getFieldIndex',
         'filter_type' => 'getFilterType',
         'multiple_filters' => 'getMultipleFilters',
-        'color_filter' => 'getColorFilter',
         'custom_filters' => 'getCustomFilters',
         'dynamic_filter' => 'getDynamicFilter',
-        'icon_filter' => 'getIconFilter',
+        'color_filter' => 'getColorFilter',
+        'field_index' => 'getFieldIndex',
         'top10_filter' => 'getTop10Filter',
+        'icon_filter' => 'getIconFilter',
         'visibledropdown' => 'getVisibledropdown'
     ];
 
@@ -217,14 +217,14 @@ class FilterColumn implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['field_index'] = isset($data['field_index']) ? $data['field_index'] : null;
         $this->container['filter_type'] = isset($data['filter_type']) ? $data['filter_type'] : null;
         $this->container['multiple_filters'] = isset($data['multiple_filters']) ? $data['multiple_filters'] : null;
-        $this->container['color_filter'] = isset($data['color_filter']) ? $data['color_filter'] : null;
         $this->container['custom_filters'] = isset($data['custom_filters']) ? $data['custom_filters'] : null;
         $this->container['dynamic_filter'] = isset($data['dynamic_filter']) ? $data['dynamic_filter'] : null;
-        $this->container['icon_filter'] = isset($data['icon_filter']) ? $data['icon_filter'] : null;
+        $this->container['color_filter'] = isset($data['color_filter']) ? $data['color_filter'] : null;
+        $this->container['field_index'] = isset($data['field_index']) ? $data['field_index'] : null;
         $this->container['top10_filter'] = isset($data['top10_filter']) ? $data['top10_filter'] : null;
+        $this->container['icon_filter'] = isset($data['icon_filter']) ? $data['icon_filter'] : null;
         $this->container['visibledropdown'] = isset($data['visibledropdown']) ? $data['visibledropdown'] : null;
     }
 
@@ -258,30 +258,6 @@ class FilterColumn implements  ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets field_index
-     *
-     * @return int
-     */
-    public function getFieldIndex()
-    {
-        return $this->container['field_index'];
-    }
-
-    /**
-     * Sets field_index
-     *
-     * @param int $field_index field_index
-     *
-     * @return $this
-     */
-    public function setFieldIndex($field_index)
-    {
-        $this->container['field_index'] = $field_index;
-
-        return $this;
-    }
 
     /**
      * Gets filter_type
@@ -327,30 +303,6 @@ class FilterColumn implements  ArrayAccess
     public function setMultipleFilters($multiple_filters)
     {
         $this->container['multiple_filters'] = $multiple_filters;
-
-        return $this;
-    }
-
-    /**
-     * Gets color_filter
-     *
-     * @return \Aspose\Cells\Cloud\Model\ColorFilter
-     */
-    public function getColorFilter()
-    {
-        return $this->container['color_filter'];
-    }
-
-    /**
-     * Sets color_filter
-     *
-     * @param \Aspose\Cells\Cloud\Model\ColorFilter $color_filter color_filter
-     *
-     * @return $this
-     */
-    public function setColorFilter($color_filter)
-    {
-        $this->container['color_filter'] = $color_filter;
 
         return $this;
     }
@@ -404,25 +356,49 @@ class FilterColumn implements  ArrayAccess
     }
 
     /**
-     * Gets icon_filter
+     * Gets color_filter
      *
-     * @return \Aspose\Cells\Cloud\Model\IconFilter
+     * @return \Aspose\Cells\Cloud\Model\ColorFilter
      */
-    public function getIconFilter()
+    public function getColorFilter()
     {
-        return $this->container['icon_filter'];
+        return $this->container['color_filter'];
     }
 
     /**
-     * Sets icon_filter
+     * Sets color_filter
      *
-     * @param \Aspose\Cells\Cloud\Model\IconFilter $icon_filter icon_filter
+     * @param \Aspose\Cells\Cloud\Model\ColorFilter $color_filter color_filter
      *
      * @return $this
      */
-    public function setIconFilter($icon_filter)
+    public function setColorFilter($color_filter)
     {
-        $this->container['icon_filter'] = $icon_filter;
+        $this->container['color_filter'] = $color_filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets field_index
+     *
+     * @return int
+     */
+    public function getFieldIndex()
+    {
+        return $this->container['field_index'];
+    }
+
+    /**
+     * Sets field_index
+     *
+     * @param int $field_index field_index
+     *
+     * @return $this
+     */
+    public function setFieldIndex($field_index)
+    {
+        $this->container['field_index'] = $field_index;
 
         return $this;
     }
@@ -447,6 +423,30 @@ class FilterColumn implements  ArrayAccess
     public function setTop10Filter($top10_filter)
     {
         $this->container['top10_filter'] = $top10_filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets icon_filter
+     *
+     * @return \Aspose\Cells\Cloud\Model\IconFilter
+     */
+    public function getIconFilter()
+    {
+        return $this->container['icon_filter'];
+    }
+
+    /**
+     * Sets icon_filter
+     *
+     * @param \Aspose\Cells\Cloud\Model\IconFilter $icon_filter icon_filter
+     *
+     * @return $this
+     */
+    public function setIconFilter($icon_filter)
+    {
+        $this->container['icon_filter'] = $icon_filter;
 
         return $this;
     }

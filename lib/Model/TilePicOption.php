@@ -57,11 +57,11 @@ class TilePicOption implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'offset_x' => 'double',
-        'offset_y' => 'double',
-        'scale_x' => 'double',
-        'scale_y' => 'double',
         'alignment_type' => 'string',
+        'offset_x' => 'double',
+        'scale_x' => 'double',
+        'offset_y' => 'double',
+        'scale_y' => 'double',
         'mirror_type' => 'string'
     ];
 
@@ -71,11 +71,11 @@ class TilePicOption implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'offset_x' => 'double',
-        'offset_y' => 'double',
-        'scale_x' => 'double',
-        'scale_y' => 'double',
         'alignment_type' => null,
+        'offset_x' => 'double',
+        'scale_x' => 'double',
+        'offset_y' => 'double',
+        'scale_y' => 'double',
         'mirror_type' => null
     ];
 
@@ -106,11 +106,11 @@ class TilePicOption implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'offset_x' => 'OffsetX',
-        'offset_y' => 'OffsetY',
-        'scale_x' => 'ScaleX',
-        'scale_y' => 'ScaleY',
         'alignment_type' => 'AlignmentType',
+        'offset_x' => 'OffsetX',
+        'scale_x' => 'ScaleX',
+        'offset_y' => 'OffsetY',
+        'scale_y' => 'ScaleY',
         'mirror_type' => 'MirrorType'
     ];
 
@@ -120,11 +120,11 @@ class TilePicOption implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'offset_x' => 'setOffsetX',
-        'offset_y' => 'setOffsetY',
-        'scale_x' => 'setScaleX',
-        'scale_y' => 'setScaleY',
         'alignment_type' => 'setAlignmentType',
+        'offset_x' => 'setOffsetX',
+        'scale_x' => 'setScaleX',
+        'offset_y' => 'setOffsetY',
+        'scale_y' => 'setScaleY',
         'mirror_type' => 'setMirrorType'
     ];
 
@@ -134,11 +134,11 @@ class TilePicOption implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'offset_x' => 'getOffsetX',
-        'offset_y' => 'getOffsetY',
-        'scale_x' => 'getScaleX',
-        'scale_y' => 'getScaleY',
         'alignment_type' => 'getAlignmentType',
+        'offset_x' => 'getOffsetX',
+        'scale_x' => 'getScaleX',
+        'offset_y' => 'getOffsetY',
+        'scale_y' => 'getScaleY',
         'mirror_type' => 'getMirrorType'
     ];
 
@@ -202,11 +202,11 @@ class TilePicOption implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['offset_x'] = isset($data['offset_x']) ? $data['offset_x'] : null;
-        $this->container['offset_y'] = isset($data['offset_y']) ? $data['offset_y'] : null;
-        $this->container['scale_x'] = isset($data['scale_x']) ? $data['scale_x'] : null;
-        $this->container['scale_y'] = isset($data['scale_y']) ? $data['scale_y'] : null;
         $this->container['alignment_type'] = isset($data['alignment_type']) ? $data['alignment_type'] : null;
+        $this->container['offset_x'] = isset($data['offset_x']) ? $data['offset_x'] : null;
+        $this->container['scale_x'] = isset($data['scale_x']) ? $data['scale_x'] : null;
+        $this->container['offset_y'] = isset($data['offset_y']) ? $data['offset_y'] : null;
+        $this->container['scale_y'] = isset($data['scale_y']) ? $data['scale_y'] : null;
         $this->container['mirror_type'] = isset($data['mirror_type']) ? $data['mirror_type'] : null;
     }
 
@@ -222,11 +222,11 @@ class TilePicOption implements  ArrayAccess
         if ($this->container['offset_x'] === null) {
             $invalidProperties[] = "'offset_x' can't be null";
         }
-        if ($this->container['offset_y'] === null) {
-            $invalidProperties[] = "'offset_y' can't be null";
-        }
         if ($this->container['scale_x'] === null) {
             $invalidProperties[] = "'scale_x' can't be null";
+        }
+        if ($this->container['offset_y'] === null) {
+            $invalidProperties[] = "'offset_y' can't be null";
         }
         if ($this->container['scale_y'] === null) {
             $invalidProperties[] = "'scale_y' can't be null";
@@ -246,10 +246,10 @@ class TilePicOption implements  ArrayAccess
         if ($this->container['offset_x'] === null) {
             return false;
         }
-        if ($this->container['offset_y'] === null) {
+        if ($this->container['scale_x'] === null) {
             return false;
         }
-        if ($this->container['scale_x'] === null) {
+        if ($this->container['offset_y'] === null) {
             return false;
         }
         if ($this->container['scale_y'] === null) {
@@ -258,6 +258,30 @@ class TilePicOption implements  ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets alignment_type
+     *
+     * @return string
+     */
+    public function getAlignmentType()
+    {
+        return $this->container['alignment_type'];
+    }
+
+    /**
+     * Sets alignment_type
+     *
+     * @param string $alignment_type alignment_type
+     *
+     * @return $this
+     */
+    public function setAlignmentType($alignment_type)
+    {
+        $this->container['alignment_type'] = $alignment_type;
+
+        return $this;
+    }
 
     /**
      * Gets offset_x
@@ -279,30 +303,6 @@ class TilePicOption implements  ArrayAccess
     public function setOffsetX($offset_x)
     {
         $this->container['offset_x'] = $offset_x;
-
-        return $this;
-    }
-
-    /**
-     * Gets offset_y
-     *
-     * @return double
-     */
-    public function getOffsetY()
-    {
-        return $this->container['offset_y'];
-    }
-
-    /**
-     * Sets offset_y
-     *
-     * @param double $offset_y offset_y
-     *
-     * @return $this
-     */
-    public function setOffsetY($offset_y)
-    {
-        $this->container['offset_y'] = $offset_y;
 
         return $this;
     }
@@ -332,6 +332,30 @@ class TilePicOption implements  ArrayAccess
     }
 
     /**
+     * Gets offset_y
+     *
+     * @return double
+     */
+    public function getOffsetY()
+    {
+        return $this->container['offset_y'];
+    }
+
+    /**
+     * Sets offset_y
+     *
+     * @param double $offset_y offset_y
+     *
+     * @return $this
+     */
+    public function setOffsetY($offset_y)
+    {
+        $this->container['offset_y'] = $offset_y;
+
+        return $this;
+    }
+
+    /**
      * Gets scale_y
      *
      * @return double
@@ -351,30 +375,6 @@ class TilePicOption implements  ArrayAccess
     public function setScaleY($scale_y)
     {
         $this->container['scale_y'] = $scale_y;
-
-        return $this;
-    }
-
-    /**
-     * Gets alignment_type
-     *
-     * @return string
-     */
-    public function getAlignmentType()
-    {
-        return $this->container['alignment_type'];
-    }
-
-    /**
-     * Sets alignment_type
-     *
-     * @param string $alignment_type alignment_type
-     *
-     * @return $this
-     */
-    public function setAlignmentType($alignment_type)
-    {
-        $this->container['alignment_type'] = $alignment_type;
 
         return $this;
     }

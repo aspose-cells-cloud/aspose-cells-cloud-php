@@ -58,8 +58,8 @@ class VerticalPageBreak implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'column' => 'int',
-        'end_row' => 'int',
-        'start_row' => 'int'
+        'start_row' => 'int',
+        'end_row' => 'int'
     ];
 
     /**
@@ -69,8 +69,8 @@ class VerticalPageBreak implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'column' => 'int32',
-        'end_row' => 'int32',
-        'start_row' => 'int32'
+        'start_row' => 'int32',
+        'end_row' => 'int32'
     ];
 
     /**
@@ -101,8 +101,8 @@ class VerticalPageBreak implements  ArrayAccess
      */
     protected static $attributeMap = [
         'column' => 'Column',
-        'end_row' => 'EndRow',
-        'start_row' => 'StartRow'
+        'start_row' => 'StartRow',
+        'end_row' => 'EndRow'
     ];
 
     /**
@@ -112,8 +112,8 @@ class VerticalPageBreak implements  ArrayAccess
      */
     protected static $setters = [
         'column' => 'setColumn',
-        'end_row' => 'setEndRow',
-        'start_row' => 'setStartRow'
+        'start_row' => 'setStartRow',
+        'end_row' => 'setEndRow'
     ];
 
     /**
@@ -123,8 +123,8 @@ class VerticalPageBreak implements  ArrayAccess
      */
     protected static $getters = [
         'column' => 'getColumn',
-        'end_row' => 'getEndRow',
-        'start_row' => 'getStartRow'
+        'start_row' => 'getStartRow',
+        'end_row' => 'getEndRow'
     ];
 
     /**
@@ -188,8 +188,8 @@ class VerticalPageBreak implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['column'] = isset($data['column']) ? $data['column'] : null;
-        $this->container['end_row'] = isset($data['end_row']) ? $data['end_row'] : null;
         $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
+        $this->container['end_row'] = isset($data['end_row']) ? $data['end_row'] : null;
     }
 
     /**
@@ -204,11 +204,11 @@ class VerticalPageBreak implements  ArrayAccess
         if ($this->container['column'] === null) {
             $invalidProperties[] = "'column' can't be null";
         }
-        if ($this->container['end_row'] === null) {
-            $invalidProperties[] = "'end_row' can't be null";
-        }
         if ($this->container['start_row'] === null) {
             $invalidProperties[] = "'start_row' can't be null";
+        }
+        if ($this->container['end_row'] === null) {
+            $invalidProperties[] = "'end_row' can't be null";
         }
         return $invalidProperties;
     }
@@ -225,10 +225,10 @@ class VerticalPageBreak implements  ArrayAccess
         if ($this->container['column'] === null) {
             return false;
         }
-        if ($this->container['end_row'] === null) {
+        if ($this->container['start_row'] === null) {
             return false;
         }
-        if ($this->container['start_row'] === null) {
+        if ($this->container['end_row'] === null) {
             return false;
         }
         return true;
@@ -260,30 +260,6 @@ class VerticalPageBreak implements  ArrayAccess
     }
 
     /**
-     * Gets end_row
-     *
-     * @return int
-     */
-    public function getEndRow()
-    {
-        return $this->container['end_row'];
-    }
-
-    /**
-     * Sets end_row
-     *
-     * @param int $end_row end_row
-     *
-     * @return $this
-     */
-    public function setEndRow($end_row)
-    {
-        $this->container['end_row'] = $end_row;
-
-        return $this;
-    }
-
-    /**
      * Gets start_row
      *
      * @return int
@@ -303,6 +279,30 @@ class VerticalPageBreak implements  ArrayAccess
     public function setStartRow($start_row)
     {
         $this->container['start_row'] = $start_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_row
+     *
+     * @return int
+     */
+    public function getEndRow()
+    {
+        return $this->container['end_row'];
+    }
+
+    /**
+     * Sets end_row
+     *
+     * @param int $end_row end_row
+     *
+     * @return $this
+     */
+    public function setEndRow($end_row)
+    {
+        $this->container['end_row'] = $end_row;
 
         return $this;
     }

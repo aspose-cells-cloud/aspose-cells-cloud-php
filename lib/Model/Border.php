@@ -57,9 +57,9 @@ class Border implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'line_style' => 'string',
         'color' => '\Aspose\Cells\Cloud\Model\Color',
-        'border_type' => 'string'
+        'border_type' => 'string',
+        'line_style' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class Border implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'line_style' => null,
         'color' => null,
-        'border_type' => null
+        'border_type' => null,
+        'line_style' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class Border implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'line_style' => 'LineStyle',
         'color' => 'Color',
-        'border_type' => 'BorderType'
+        'border_type' => 'BorderType',
+        'line_style' => 'LineStyle'
     ];
 
     /**
@@ -111,9 +111,9 @@ class Border implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'line_style' => 'setLineStyle',
         'color' => 'setColor',
-        'border_type' => 'setBorderType'
+        'border_type' => 'setBorderType',
+        'line_style' => 'setLineStyle'
     ];
 
     /**
@@ -122,9 +122,9 @@ class Border implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'line_style' => 'getLineStyle',
         'color' => 'getColor',
-        'border_type' => 'getBorderType'
+        'border_type' => 'getBorderType',
+        'line_style' => 'getLineStyle'
     ];
 
     /**
@@ -187,9 +187,9 @@ class Border implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['line_style'] = isset($data['line_style']) ? $data['line_style'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['border_type'] = isset($data['border_type']) ? $data['border_type'] : null;
+        $this->container['line_style'] = isset($data['line_style']) ? $data['line_style'] : null;
     }
 
     /**
@@ -216,30 +216,6 @@ class Border implements  ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets line_style
-     *
-     * @return string
-     */
-    public function getLineStyle()
-    {
-        return $this->container['line_style'];
-    }
-
-    /**
-     * Sets line_style
-     *
-     * @param string $line_style line_style
-     *
-     * @return $this
-     */
-    public function setLineStyle($line_style)
-    {
-        $this->container['line_style'] = $line_style;
-
-        return $this;
-    }
 
     /**
      * Gets color
@@ -285,6 +261,30 @@ class Border implements  ArrayAccess
     public function setBorderType($border_type)
     {
         $this->container['border_type'] = $border_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets line_style
+     *
+     * @return string
+     */
+    public function getLineStyle()
+    {
+        return $this->container['line_style'];
+    }
+
+    /**
+     * Sets line_style
+     *
+     * @param string $line_style line_style
+     *
+     * @return $this
+     */
+    public function setLineStyle($line_style)
+    {
+        $this->container['line_style'] = $line_style;
 
         return $this;
     }

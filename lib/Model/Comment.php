@@ -58,17 +58,17 @@ class Comment implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'cell_name' => 'string',
-        'author' => 'string',
-        'html_note' => 'string',
-        'note' => 'string',
         'auto_size' => 'bool',
+        'author' => 'string',
         'is_visible' => 'bool',
-        'width' => 'int',
-        'height' => 'int',
-        'text_horizontal_alignment' => 'string',
         'text_orientation_type' => 'string',
-        'text_vertical_alignment' => 'string'
+        'height' => 'int',
+        'note' => 'string',
+        'width' => 'int',
+        'text_vertical_alignment' => 'string',
+        'cell_name' => 'string',
+        'html_note' => 'string',
+        'text_horizontal_alignment' => 'string'
     ];
 
     /**
@@ -78,17 +78,17 @@ class Comment implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'cell_name' => null,
-        'author' => null,
-        'html_note' => null,
-        'note' => null,
         'auto_size' => null,
+        'author' => null,
         'is_visible' => null,
-        'width' => 'int32',
-        'height' => 'int32',
-        'text_horizontal_alignment' => null,
         'text_orientation_type' => null,
-        'text_vertical_alignment' => null
+        'height' => 'int32',
+        'note' => null,
+        'width' => 'int32',
+        'text_vertical_alignment' => null,
+        'cell_name' => null,
+        'html_note' => null,
+        'text_horizontal_alignment' => null
     ];
 
     /**
@@ -119,17 +119,17 @@ class Comment implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'cell_name' => 'CellName',
-        'author' => 'Author',
-        'html_note' => 'HtmlNote',
-        'note' => 'Note',
         'auto_size' => 'AutoSize',
+        'author' => 'Author',
         'is_visible' => 'IsVisible',
-        'width' => 'Width',
-        'height' => 'Height',
-        'text_horizontal_alignment' => 'TextHorizontalAlignment',
         'text_orientation_type' => 'TextOrientationType',
-        'text_vertical_alignment' => 'TextVerticalAlignment'
+        'height' => 'Height',
+        'note' => 'Note',
+        'width' => 'Width',
+        'text_vertical_alignment' => 'TextVerticalAlignment',
+        'cell_name' => 'CellName',
+        'html_note' => 'HtmlNote',
+        'text_horizontal_alignment' => 'TextHorizontalAlignment'
     ];
 
     /**
@@ -139,17 +139,17 @@ class Comment implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'cell_name' => 'setCellName',
-        'author' => 'setAuthor',
-        'html_note' => 'setHtmlNote',
-        'note' => 'setNote',
         'auto_size' => 'setAutoSize',
+        'author' => 'setAuthor',
         'is_visible' => 'setIsVisible',
-        'width' => 'setWidth',
-        'height' => 'setHeight',
-        'text_horizontal_alignment' => 'setTextHorizontalAlignment',
         'text_orientation_type' => 'setTextOrientationType',
-        'text_vertical_alignment' => 'setTextVerticalAlignment'
+        'height' => 'setHeight',
+        'note' => 'setNote',
+        'width' => 'setWidth',
+        'text_vertical_alignment' => 'setTextVerticalAlignment',
+        'cell_name' => 'setCellName',
+        'html_note' => 'setHtmlNote',
+        'text_horizontal_alignment' => 'setTextHorizontalAlignment'
     ];
 
     /**
@@ -159,17 +159,17 @@ class Comment implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'cell_name' => 'getCellName',
-        'author' => 'getAuthor',
-        'html_note' => 'getHtmlNote',
-        'note' => 'getNote',
         'auto_size' => 'getAutoSize',
+        'author' => 'getAuthor',
         'is_visible' => 'getIsVisible',
-        'width' => 'getWidth',
-        'height' => 'getHeight',
-        'text_horizontal_alignment' => 'getTextHorizontalAlignment',
         'text_orientation_type' => 'getTextOrientationType',
-        'text_vertical_alignment' => 'getTextVerticalAlignment'
+        'height' => 'getHeight',
+        'note' => 'getNote',
+        'width' => 'getWidth',
+        'text_vertical_alignment' => 'getTextVerticalAlignment',
+        'cell_name' => 'getCellName',
+        'html_note' => 'getHtmlNote',
+        'text_horizontal_alignment' => 'getTextHorizontalAlignment'
     ];
 
     /**
@@ -233,17 +233,17 @@ class Comment implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['cell_name'] = isset($data['cell_name']) ? $data['cell_name'] : null;
-        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
-        $this->container['html_note'] = isset($data['html_note']) ? $data['html_note'] : null;
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
         $this->container['auto_size'] = isset($data['auto_size']) ? $data['auto_size'] : null;
+        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
         $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
         $this->container['text_orientation_type'] = isset($data['text_orientation_type']) ? $data['text_orientation_type'] : null;
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
+        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['text_vertical_alignment'] = isset($data['text_vertical_alignment']) ? $data['text_vertical_alignment'] : null;
+        $this->container['cell_name'] = isset($data['cell_name']) ? $data['cell_name'] : null;
+        $this->container['html_note'] = isset($data['html_note']) ? $data['html_note'] : null;
+        $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
     }
 
     /**
@@ -296,25 +296,25 @@ class Comment implements  ArrayAccess
     }
 
     /**
-     * Gets cell_name
+     * Gets auto_size
      *
-     * @return string
+     * @return bool
      */
-    public function getCellName()
+    public function getAutoSize()
     {
-        return $this->container['cell_name'];
+        return $this->container['auto_size'];
     }
 
     /**
-     * Sets cell_name
+     * Sets auto_size
      *
-     * @param string $cell_name cell_name
+     * @param bool $auto_size auto_size
      *
      * @return $this
      */
-    public function setCellName($cell_name)
+    public function setAutoSize($auto_size)
     {
-        $this->container['cell_name'] = $cell_name;
+        $this->container['auto_size'] = $auto_size;
 
         return $this;
     }
@@ -344,78 +344,6 @@ class Comment implements  ArrayAccess
     }
 
     /**
-     * Gets html_note
-     *
-     * @return string
-     */
-    public function getHtmlNote()
-    {
-        return $this->container['html_note'];
-    }
-
-    /**
-     * Sets html_note
-     *
-     * @param string $html_note html_note
-     *
-     * @return $this
-     */
-    public function setHtmlNote($html_note)
-    {
-        $this->container['html_note'] = $html_note;
-
-        return $this;
-    }
-
-    /**
-     * Gets note
-     *
-     * @return string
-     */
-    public function getNote()
-    {
-        return $this->container['note'];
-    }
-
-    /**
-     * Sets note
-     *
-     * @param string $note note
-     *
-     * @return $this
-     */
-    public function setNote($note)
-    {
-        $this->container['note'] = $note;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_size
-     *
-     * @return bool
-     */
-    public function getAutoSize()
-    {
-        return $this->container['auto_size'];
-    }
-
-    /**
-     * Sets auto_size
-     *
-     * @param bool $auto_size auto_size
-     *
-     * @return $this
-     */
-    public function setAutoSize($auto_size)
-    {
-        $this->container['auto_size'] = $auto_size;
-
-        return $this;
-    }
-
-    /**
      * Gets is_visible
      *
      * @return bool
@@ -435,78 +363,6 @@ class Comment implements  ArrayAccess
     public function setIsVisible($is_visible)
     {
         $this->container['is_visible'] = $is_visible;
-
-        return $this;
-    }
-
-    /**
-     * Gets width
-     *
-     * @return int
-     */
-    public function getWidth()
-    {
-        return $this->container['width'];
-    }
-
-    /**
-     * Sets width
-     *
-     * @param int $width width
-     *
-     * @return $this
-     */
-    public function setWidth($width)
-    {
-        $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /**
-     * Gets height
-     *
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /**
-     * Sets height
-     *
-     * @param int $height height
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->container['height'] = $height;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_horizontal_alignment
-     *
-     * @return string
-     */
-    public function getTextHorizontalAlignment()
-    {
-        return $this->container['text_horizontal_alignment'];
-    }
-
-    /**
-     * Sets text_horizontal_alignment
-     *
-     * @param string $text_horizontal_alignment text_horizontal_alignment
-     *
-     * @return $this
-     */
-    public function setTextHorizontalAlignment($text_horizontal_alignment)
-    {
-        $this->container['text_horizontal_alignment'] = $text_horizontal_alignment;
 
         return $this;
     }
@@ -536,6 +392,78 @@ class Comment implements  ArrayAccess
     }
 
     /**
+     * Gets height
+     *
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /**
+     * Sets height
+     *
+     * @param int $height height
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->container['height'] = $height;
+
+        return $this;
+    }
+
+    /**
+     * Gets note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->container['note'];
+    }
+
+    /**
+     * Sets note
+     *
+     * @param string $note note
+     *
+     * @return $this
+     */
+    public function setNote($note)
+    {
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets width
+     *
+     * @return int
+     */
+    public function getWidth()
+    {
+        return $this->container['width'];
+    }
+
+    /**
+     * Sets width
+     *
+     * @param int $width width
+     *
+     * @return $this
+     */
+    public function setWidth($width)
+    {
+        $this->container['width'] = $width;
+
+        return $this;
+    }
+
+    /**
      * Gets text_vertical_alignment
      *
      * @return string
@@ -555,6 +483,78 @@ class Comment implements  ArrayAccess
     public function setTextVerticalAlignment($text_vertical_alignment)
     {
         $this->container['text_vertical_alignment'] = $text_vertical_alignment;
+
+        return $this;
+    }
+
+    /**
+     * Gets cell_name
+     *
+     * @return string
+     */
+    public function getCellName()
+    {
+        return $this->container['cell_name'];
+    }
+
+    /**
+     * Sets cell_name
+     *
+     * @param string $cell_name cell_name
+     *
+     * @return $this
+     */
+    public function setCellName($cell_name)
+    {
+        $this->container['cell_name'] = $cell_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets html_note
+     *
+     * @return string
+     */
+    public function getHtmlNote()
+    {
+        return $this->container['html_note'];
+    }
+
+    /**
+     * Sets html_note
+     *
+     * @param string $html_note html_note
+     *
+     * @return $this
+     */
+    public function setHtmlNote($html_note)
+    {
+        $this->container['html_note'] = $html_note;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_horizontal_alignment
+     *
+     * @return string
+     */
+    public function getTextHorizontalAlignment()
+    {
+        return $this->container['text_horizontal_alignment'];
+    }
+
+    /**
+     * Sets text_horizontal_alignment
+     *
+     * @param string $text_horizontal_alignment text_horizontal_alignment
+     *
+     * @return $this
+     */
+    public function setTextHorizontalAlignment($text_horizontal_alignment)
+    {
+        $this->container['text_horizontal_alignment'] = $text_horizontal_alignment;
 
         return $this;
     }

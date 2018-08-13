@@ -57,12 +57,12 @@ class OperateObjectPosition implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'sheet_name' => 'string',
         'chart_index' => 'int',
+        'list_object_index' => 'int',
+        'sheet_name' => 'string',
         'shape_index' => 'int',
         'cell_name' => 'string',
-        'list_object_index' => 'int'
+        'workbook' => '\Aspose\Cells\Cloud\Model\FileSource'
     ];
 
     /**
@@ -71,12 +71,12 @@ class OperateObjectPosition implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'workbook' => null,
-        'sheet_name' => null,
         'chart_index' => 'int32',
+        'list_object_index' => 'int32',
+        'sheet_name' => null,
         'shape_index' => 'int32',
         'cell_name' => null,
-        'list_object_index' => 'int32'
+        'workbook' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class OperateObjectPosition implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'workbook' => 'Workbook',
-        'sheet_name' => 'SheetName',
         'chart_index' => 'ChartIndex',
+        'list_object_index' => 'ListObjectIndex',
+        'sheet_name' => 'SheetName',
         'shape_index' => 'ShapeIndex',
         'cell_name' => 'CellName',
-        'list_object_index' => 'ListObjectIndex'
+        'workbook' => 'Workbook'
     ];
 
     /**
@@ -120,12 +120,12 @@ class OperateObjectPosition implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'workbook' => 'setWorkbook',
-        'sheet_name' => 'setSheetName',
         'chart_index' => 'setChartIndex',
+        'list_object_index' => 'setListObjectIndex',
+        'sheet_name' => 'setSheetName',
         'shape_index' => 'setShapeIndex',
         'cell_name' => 'setCellName',
-        'list_object_index' => 'setListObjectIndex'
+        'workbook' => 'setWorkbook'
     ];
 
     /**
@@ -134,12 +134,12 @@ class OperateObjectPosition implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'workbook' => 'getWorkbook',
-        'sheet_name' => 'getSheetName',
         'chart_index' => 'getChartIndex',
+        'list_object_index' => 'getListObjectIndex',
+        'sheet_name' => 'getSheetName',
         'shape_index' => 'getShapeIndex',
         'cell_name' => 'getCellName',
-        'list_object_index' => 'getListObjectIndex'
+        'workbook' => 'getWorkbook'
     ];
 
     /**
@@ -202,12 +202,12 @@ class OperateObjectPosition implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
-        $this->container['sheet_name'] = isset($data['sheet_name']) ? $data['sheet_name'] : null;
         $this->container['chart_index'] = isset($data['chart_index']) ? $data['chart_index'] : null;
+        $this->container['list_object_index'] = isset($data['list_object_index']) ? $data['list_object_index'] : null;
+        $this->container['sheet_name'] = isset($data['sheet_name']) ? $data['sheet_name'] : null;
         $this->container['shape_index'] = isset($data['shape_index']) ? $data['shape_index'] : null;
         $this->container['cell_name'] = isset($data['cell_name']) ? $data['cell_name'] : null;
-        $this->container['list_object_index'] = isset($data['list_object_index']) ? $data['list_object_index'] : null;
+        $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
     }
 
     /**
@@ -236,25 +236,49 @@ class OperateObjectPosition implements  ArrayAccess
 
 
     /**
-     * Gets workbook
+     * Gets chart_index
      *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
+     * @return int
      */
-    public function getWorkbook()
+    public function getChartIndex()
     {
-        return $this->container['workbook'];
+        return $this->container['chart_index'];
     }
 
     /**
-     * Sets workbook
+     * Sets chart_index
      *
-     * @param \Aspose\Cells\Cloud\Model\FileSource $workbook workbook
+     * @param int $chart_index chart_index
      *
      * @return $this
      */
-    public function setWorkbook($workbook)
+    public function setChartIndex($chart_index)
     {
-        $this->container['workbook'] = $workbook;
+        $this->container['chart_index'] = $chart_index;
+
+        return $this;
+    }
+
+    /**
+     * Gets list_object_index
+     *
+     * @return int
+     */
+    public function getListObjectIndex()
+    {
+        return $this->container['list_object_index'];
+    }
+
+    /**
+     * Sets list_object_index
+     *
+     * @param int $list_object_index list_object_index
+     *
+     * @return $this
+     */
+    public function setListObjectIndex($list_object_index)
+    {
+        $this->container['list_object_index'] = $list_object_index;
 
         return $this;
     }
@@ -279,30 +303,6 @@ class OperateObjectPosition implements  ArrayAccess
     public function setSheetName($sheet_name)
     {
         $this->container['sheet_name'] = $sheet_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets chart_index
-     *
-     * @return int
-     */
-    public function getChartIndex()
-    {
-        return $this->container['chart_index'];
-    }
-
-    /**
-     * Sets chart_index
-     *
-     * @param int $chart_index chart_index
-     *
-     * @return $this
-     */
-    public function setChartIndex($chart_index)
-    {
-        $this->container['chart_index'] = $chart_index;
 
         return $this;
     }
@@ -356,25 +356,25 @@ class OperateObjectPosition implements  ArrayAccess
     }
 
     /**
-     * Gets list_object_index
+     * Gets workbook
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\FileSource
      */
-    public function getListObjectIndex()
+    public function getWorkbook()
     {
-        return $this->container['list_object_index'];
+        return $this->container['workbook'];
     }
 
     /**
-     * Sets list_object_index
+     * Sets workbook
      *
-     * @param int $list_object_index list_object_index
+     * @param \Aspose\Cells\Cloud\Model\FileSource $workbook workbook
      *
      * @return $this
      */
-    public function setListObjectIndex($list_object_index)
+    public function setWorkbook($workbook)
     {
-        $this->container['list_object_index'] = $list_object_index;
+        $this->container['workbook'] = $workbook;
 
         return $this;
     }

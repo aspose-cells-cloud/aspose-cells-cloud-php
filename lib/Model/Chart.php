@@ -58,49 +58,49 @@ class Chart implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'auto_scaling' => 'bool',
-        'back_wall' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'category_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'chart_area' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'chart_data_table' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'chart_object' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'depth_percent' => 'int',
-        'elevation' => 'int',
         'first_slice_angle' => 'int',
         'floor' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'gap_depth' => 'int',
-        'gap_width' => 'int',
-        'height_percent' => 'int',
-        'hide_pivot_field_buttons' => 'bool',
-        'is3_d' => 'bool',
-        'is_rectangular_cornered' => 'bool',
-        'legend' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'name' => 'string',
-        'n_series' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'page_setup' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'perspective' => 'int',
-        'pivot_source' => 'string',
-        'placement' => 'string',
-        'plot_area' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'plot_empty_cells_type' => 'string',
-        'plot_visible_cells' => 'bool',
-        'print_size' => 'string',
-        'right_angle_axes' => 'bool',
-        'rotation_angle' => 'int',
+        'auto_scaling' => 'bool',
+        'style' => 'int',
+        'series_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'value_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'show_data_table' => 'bool',
+        'is3_d' => 'bool',
+        'chart_area' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'elevation' => 'int',
+        'side_wall' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'type' => 'string',
+        'title' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'walls' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'back_wall' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'chart_data_table' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'height_percent' => 'int',
+        'gap_width' => 'int',
+        'legend' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'chart_object' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'is_rectangular_cornered' => 'bool',
         'second_category_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'second_value_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'series_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'shapes' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'show_data_table' => 'bool',
-        'show_legend' => 'bool',
-        'side_wall' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'placement' => 'string',
+        'name' => 'string',
         'size_with_window' => 'bool',
-        'style' => 'int',
-        'title' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'type' => 'string',
-        'value_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'walls' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'walls_and_gridlines2_d' => 'bool'
+        'right_angle_axes' => 'bool',
+        'plot_visible_cells' => 'bool',
+        'show_legend' => 'bool',
+        'pivot_source' => 'string',
+        'depth_percent' => 'int',
+        'print_size' => 'string',
+        'gap_depth' => 'int',
+        'shapes' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'walls_and_gridlines2_d' => 'bool',
+        'n_series' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'rotation_angle' => 'int',
+        'plot_area' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'category_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'perspective' => 'int',
+        'hide_pivot_field_buttons' => 'bool',
+        'page_setup' => '\Aspose\Cells\Cloud\Model\LinkElement'
     ];
 
     /**
@@ -110,49 +110,49 @@ class Chart implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'auto_scaling' => null,
-        'back_wall' => null,
-        'category_axis' => null,
-        'chart_area' => null,
-        'chart_data_table' => null,
-        'chart_object' => null,
-        'depth_percent' => 'int32',
-        'elevation' => 'int32',
         'first_slice_angle' => 'int32',
         'floor' => null,
-        'gap_depth' => 'int32',
-        'gap_width' => 'int32',
-        'height_percent' => 'int32',
-        'hide_pivot_field_buttons' => null,
-        'is3_d' => null,
-        'is_rectangular_cornered' => null,
-        'legend' => null,
-        'name' => null,
-        'n_series' => null,
-        'page_setup' => null,
-        'perspective' => null,
-        'pivot_source' => null,
-        'placement' => null,
-        'plot_area' => null,
         'plot_empty_cells_type' => null,
-        'plot_visible_cells' => null,
-        'print_size' => null,
-        'right_angle_axes' => null,
-        'rotation_angle' => 'int32',
+        'auto_scaling' => null,
+        'style' => 'int32',
+        'series_axis' => null,
+        'value_axis' => null,
+        'show_data_table' => null,
+        'is3_d' => null,
+        'chart_area' => null,
+        'elevation' => 'int32',
+        'side_wall' => null,
+        'type' => null,
+        'title' => null,
+        'walls' => null,
+        'back_wall' => null,
+        'chart_data_table' => null,
+        'height_percent' => 'int32',
+        'gap_width' => 'int32',
+        'legend' => null,
+        'chart_object' => null,
+        'is_rectangular_cornered' => null,
         'second_category_axis' => null,
         'second_value_axis' => null,
-        'series_axis' => null,
-        'shapes' => null,
-        'show_data_table' => null,
-        'show_legend' => null,
-        'side_wall' => null,
+        'placement' => null,
+        'name' => null,
         'size_with_window' => null,
-        'style' => 'int32',
-        'title' => null,
-        'type' => null,
-        'value_axis' => null,
-        'walls' => null,
-        'walls_and_gridlines2_d' => null
+        'right_angle_axes' => null,
+        'plot_visible_cells' => null,
+        'show_legend' => null,
+        'pivot_source' => null,
+        'depth_percent' => 'int32',
+        'print_size' => null,
+        'gap_depth' => 'int32',
+        'shapes' => null,
+        'walls_and_gridlines2_d' => null,
+        'n_series' => null,
+        'rotation_angle' => 'int32',
+        'plot_area' => null,
+        'category_axis' => null,
+        'perspective' => null,
+        'hide_pivot_field_buttons' => null,
+        'page_setup' => null
     ];
 
     /**
@@ -183,49 +183,49 @@ class Chart implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'auto_scaling' => 'AutoScaling',
-        'back_wall' => 'BackWall',
-        'category_axis' => 'CategoryAxis',
-        'chart_area' => 'ChartArea',
-        'chart_data_table' => 'ChartDataTable',
-        'chart_object' => 'ChartObject',
-        'depth_percent' => 'DepthPercent',
-        'elevation' => 'Elevation',
         'first_slice_angle' => 'FirstSliceAngle',
         'floor' => 'Floor',
-        'gap_depth' => 'GapDepth',
-        'gap_width' => 'GapWidth',
-        'height_percent' => 'HeightPercent',
-        'hide_pivot_field_buttons' => 'HidePivotFieldButtons',
-        'is3_d' => 'Is3D',
-        'is_rectangular_cornered' => 'IsRectangularCornered',
-        'legend' => 'Legend',
-        'name' => 'Name',
-        'n_series' => 'NSeries',
-        'page_setup' => 'PageSetup',
-        'perspective' => 'Perspective',
-        'pivot_source' => 'PivotSource',
-        'placement' => 'Placement',
-        'plot_area' => 'PlotArea',
         'plot_empty_cells_type' => 'PlotEmptyCellsType',
-        'plot_visible_cells' => 'PlotVisibleCells',
-        'print_size' => 'PrintSize',
-        'right_angle_axes' => 'RightAngleAxes',
-        'rotation_angle' => 'RotationAngle',
+        'auto_scaling' => 'AutoScaling',
+        'style' => 'Style',
+        'series_axis' => 'SeriesAxis',
+        'value_axis' => 'ValueAxis',
+        'show_data_table' => 'ShowDataTable',
+        'is3_d' => 'Is3D',
+        'chart_area' => 'ChartArea',
+        'elevation' => 'Elevation',
+        'side_wall' => 'SideWall',
+        'type' => 'Type',
+        'title' => 'Title',
+        'walls' => 'Walls',
+        'back_wall' => 'BackWall',
+        'chart_data_table' => 'ChartDataTable',
+        'height_percent' => 'HeightPercent',
+        'gap_width' => 'GapWidth',
+        'legend' => 'Legend',
+        'chart_object' => 'ChartObject',
+        'is_rectangular_cornered' => 'IsRectangularCornered',
         'second_category_axis' => 'SecondCategoryAxis',
         'second_value_axis' => 'SecondValueAxis',
-        'series_axis' => 'SeriesAxis',
-        'shapes' => 'Shapes',
-        'show_data_table' => 'ShowDataTable',
-        'show_legend' => 'ShowLegend',
-        'side_wall' => 'SideWall',
+        'placement' => 'Placement',
+        'name' => 'Name',
         'size_with_window' => 'SizeWithWindow',
-        'style' => 'Style',
-        'title' => 'Title',
-        'type' => 'Type',
-        'value_axis' => 'ValueAxis',
-        'walls' => 'Walls',
-        'walls_and_gridlines2_d' => 'WallsAndGridlines2D'
+        'right_angle_axes' => 'RightAngleAxes',
+        'plot_visible_cells' => 'PlotVisibleCells',
+        'show_legend' => 'ShowLegend',
+        'pivot_source' => 'PivotSource',
+        'depth_percent' => 'DepthPercent',
+        'print_size' => 'PrintSize',
+        'gap_depth' => 'GapDepth',
+        'shapes' => 'Shapes',
+        'walls_and_gridlines2_d' => 'WallsAndGridlines2D',
+        'n_series' => 'NSeries',
+        'rotation_angle' => 'RotationAngle',
+        'plot_area' => 'PlotArea',
+        'category_axis' => 'CategoryAxis',
+        'perspective' => 'Perspective',
+        'hide_pivot_field_buttons' => 'HidePivotFieldButtons',
+        'page_setup' => 'PageSetup'
     ];
 
     /**
@@ -235,49 +235,49 @@ class Chart implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'auto_scaling' => 'setAutoScaling',
-        'back_wall' => 'setBackWall',
-        'category_axis' => 'setCategoryAxis',
-        'chart_area' => 'setChartArea',
-        'chart_data_table' => 'setChartDataTable',
-        'chart_object' => 'setChartObject',
-        'depth_percent' => 'setDepthPercent',
-        'elevation' => 'setElevation',
         'first_slice_angle' => 'setFirstSliceAngle',
         'floor' => 'setFloor',
-        'gap_depth' => 'setGapDepth',
-        'gap_width' => 'setGapWidth',
-        'height_percent' => 'setHeightPercent',
-        'hide_pivot_field_buttons' => 'setHidePivotFieldButtons',
-        'is3_d' => 'setIs3D',
-        'is_rectangular_cornered' => 'setIsRectangularCornered',
-        'legend' => 'setLegend',
-        'name' => 'setName',
-        'n_series' => 'setNSeries',
-        'page_setup' => 'setPageSetup',
-        'perspective' => 'setPerspective',
-        'pivot_source' => 'setPivotSource',
-        'placement' => 'setPlacement',
-        'plot_area' => 'setPlotArea',
         'plot_empty_cells_type' => 'setPlotEmptyCellsType',
-        'plot_visible_cells' => 'setPlotVisibleCells',
-        'print_size' => 'setPrintSize',
-        'right_angle_axes' => 'setRightAngleAxes',
-        'rotation_angle' => 'setRotationAngle',
+        'auto_scaling' => 'setAutoScaling',
+        'style' => 'setStyle',
+        'series_axis' => 'setSeriesAxis',
+        'value_axis' => 'setValueAxis',
+        'show_data_table' => 'setShowDataTable',
+        'is3_d' => 'setIs3D',
+        'chart_area' => 'setChartArea',
+        'elevation' => 'setElevation',
+        'side_wall' => 'setSideWall',
+        'type' => 'setType',
+        'title' => 'setTitle',
+        'walls' => 'setWalls',
+        'back_wall' => 'setBackWall',
+        'chart_data_table' => 'setChartDataTable',
+        'height_percent' => 'setHeightPercent',
+        'gap_width' => 'setGapWidth',
+        'legend' => 'setLegend',
+        'chart_object' => 'setChartObject',
+        'is_rectangular_cornered' => 'setIsRectangularCornered',
         'second_category_axis' => 'setSecondCategoryAxis',
         'second_value_axis' => 'setSecondValueAxis',
-        'series_axis' => 'setSeriesAxis',
-        'shapes' => 'setShapes',
-        'show_data_table' => 'setShowDataTable',
-        'show_legend' => 'setShowLegend',
-        'side_wall' => 'setSideWall',
+        'placement' => 'setPlacement',
+        'name' => 'setName',
         'size_with_window' => 'setSizeWithWindow',
-        'style' => 'setStyle',
-        'title' => 'setTitle',
-        'type' => 'setType',
-        'value_axis' => 'setValueAxis',
-        'walls' => 'setWalls',
-        'walls_and_gridlines2_d' => 'setWallsAndGridlines2D'
+        'right_angle_axes' => 'setRightAngleAxes',
+        'plot_visible_cells' => 'setPlotVisibleCells',
+        'show_legend' => 'setShowLegend',
+        'pivot_source' => 'setPivotSource',
+        'depth_percent' => 'setDepthPercent',
+        'print_size' => 'setPrintSize',
+        'gap_depth' => 'setGapDepth',
+        'shapes' => 'setShapes',
+        'walls_and_gridlines2_d' => 'setWallsAndGridlines2D',
+        'n_series' => 'setNSeries',
+        'rotation_angle' => 'setRotationAngle',
+        'plot_area' => 'setPlotArea',
+        'category_axis' => 'setCategoryAxis',
+        'perspective' => 'setPerspective',
+        'hide_pivot_field_buttons' => 'setHidePivotFieldButtons',
+        'page_setup' => 'setPageSetup'
     ];
 
     /**
@@ -287,49 +287,49 @@ class Chart implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'auto_scaling' => 'getAutoScaling',
-        'back_wall' => 'getBackWall',
-        'category_axis' => 'getCategoryAxis',
-        'chart_area' => 'getChartArea',
-        'chart_data_table' => 'getChartDataTable',
-        'chart_object' => 'getChartObject',
-        'depth_percent' => 'getDepthPercent',
-        'elevation' => 'getElevation',
         'first_slice_angle' => 'getFirstSliceAngle',
         'floor' => 'getFloor',
-        'gap_depth' => 'getGapDepth',
-        'gap_width' => 'getGapWidth',
-        'height_percent' => 'getHeightPercent',
-        'hide_pivot_field_buttons' => 'getHidePivotFieldButtons',
-        'is3_d' => 'getIs3D',
-        'is_rectangular_cornered' => 'getIsRectangularCornered',
-        'legend' => 'getLegend',
-        'name' => 'getName',
-        'n_series' => 'getNSeries',
-        'page_setup' => 'getPageSetup',
-        'perspective' => 'getPerspective',
-        'pivot_source' => 'getPivotSource',
-        'placement' => 'getPlacement',
-        'plot_area' => 'getPlotArea',
         'plot_empty_cells_type' => 'getPlotEmptyCellsType',
-        'plot_visible_cells' => 'getPlotVisibleCells',
-        'print_size' => 'getPrintSize',
-        'right_angle_axes' => 'getRightAngleAxes',
-        'rotation_angle' => 'getRotationAngle',
+        'auto_scaling' => 'getAutoScaling',
+        'style' => 'getStyle',
+        'series_axis' => 'getSeriesAxis',
+        'value_axis' => 'getValueAxis',
+        'show_data_table' => 'getShowDataTable',
+        'is3_d' => 'getIs3D',
+        'chart_area' => 'getChartArea',
+        'elevation' => 'getElevation',
+        'side_wall' => 'getSideWall',
+        'type' => 'getType',
+        'title' => 'getTitle',
+        'walls' => 'getWalls',
+        'back_wall' => 'getBackWall',
+        'chart_data_table' => 'getChartDataTable',
+        'height_percent' => 'getHeightPercent',
+        'gap_width' => 'getGapWidth',
+        'legend' => 'getLegend',
+        'chart_object' => 'getChartObject',
+        'is_rectangular_cornered' => 'getIsRectangularCornered',
         'second_category_axis' => 'getSecondCategoryAxis',
         'second_value_axis' => 'getSecondValueAxis',
-        'series_axis' => 'getSeriesAxis',
-        'shapes' => 'getShapes',
-        'show_data_table' => 'getShowDataTable',
-        'show_legend' => 'getShowLegend',
-        'side_wall' => 'getSideWall',
+        'placement' => 'getPlacement',
+        'name' => 'getName',
         'size_with_window' => 'getSizeWithWindow',
-        'style' => 'getStyle',
-        'title' => 'getTitle',
-        'type' => 'getType',
-        'value_axis' => 'getValueAxis',
-        'walls' => 'getWalls',
-        'walls_and_gridlines2_d' => 'getWallsAndGridlines2D'
+        'right_angle_axes' => 'getRightAngleAxes',
+        'plot_visible_cells' => 'getPlotVisibleCells',
+        'show_legend' => 'getShowLegend',
+        'pivot_source' => 'getPivotSource',
+        'depth_percent' => 'getDepthPercent',
+        'print_size' => 'getPrintSize',
+        'gap_depth' => 'getGapDepth',
+        'shapes' => 'getShapes',
+        'walls_and_gridlines2_d' => 'getWallsAndGridlines2D',
+        'n_series' => 'getNSeries',
+        'rotation_angle' => 'getRotationAngle',
+        'plot_area' => 'getPlotArea',
+        'category_axis' => 'getCategoryAxis',
+        'perspective' => 'getPerspective',
+        'hide_pivot_field_buttons' => 'getHidePivotFieldButtons',
+        'page_setup' => 'getPageSetup'
     ];
 
     /**
@@ -393,49 +393,49 @@ class Chart implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['auto_scaling'] = isset($data['auto_scaling']) ? $data['auto_scaling'] : null;
-        $this->container['back_wall'] = isset($data['back_wall']) ? $data['back_wall'] : null;
-        $this->container['category_axis'] = isset($data['category_axis']) ? $data['category_axis'] : null;
-        $this->container['chart_area'] = isset($data['chart_area']) ? $data['chart_area'] : null;
-        $this->container['chart_data_table'] = isset($data['chart_data_table']) ? $data['chart_data_table'] : null;
-        $this->container['chart_object'] = isset($data['chart_object']) ? $data['chart_object'] : null;
-        $this->container['depth_percent'] = isset($data['depth_percent']) ? $data['depth_percent'] : null;
-        $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
         $this->container['first_slice_angle'] = isset($data['first_slice_angle']) ? $data['first_slice_angle'] : null;
         $this->container['floor'] = isset($data['floor']) ? $data['floor'] : null;
-        $this->container['gap_depth'] = isset($data['gap_depth']) ? $data['gap_depth'] : null;
-        $this->container['gap_width'] = isset($data['gap_width']) ? $data['gap_width'] : null;
-        $this->container['height_percent'] = isset($data['height_percent']) ? $data['height_percent'] : null;
-        $this->container['hide_pivot_field_buttons'] = isset($data['hide_pivot_field_buttons']) ? $data['hide_pivot_field_buttons'] : null;
-        $this->container['is3_d'] = isset($data['is3_d']) ? $data['is3_d'] : null;
-        $this->container['is_rectangular_cornered'] = isset($data['is_rectangular_cornered']) ? $data['is_rectangular_cornered'] : null;
-        $this->container['legend'] = isset($data['legend']) ? $data['legend'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['n_series'] = isset($data['n_series']) ? $data['n_series'] : null;
-        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
-        $this->container['perspective'] = isset($data['perspective']) ? $data['perspective'] : null;
-        $this->container['pivot_source'] = isset($data['pivot_source']) ? $data['pivot_source'] : null;
-        $this->container['placement'] = isset($data['placement']) ? $data['placement'] : null;
-        $this->container['plot_area'] = isset($data['plot_area']) ? $data['plot_area'] : null;
         $this->container['plot_empty_cells_type'] = isset($data['plot_empty_cells_type']) ? $data['plot_empty_cells_type'] : null;
-        $this->container['plot_visible_cells'] = isset($data['plot_visible_cells']) ? $data['plot_visible_cells'] : null;
-        $this->container['print_size'] = isset($data['print_size']) ? $data['print_size'] : null;
-        $this->container['right_angle_axes'] = isset($data['right_angle_axes']) ? $data['right_angle_axes'] : null;
-        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
+        $this->container['auto_scaling'] = isset($data['auto_scaling']) ? $data['auto_scaling'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['series_axis'] = isset($data['series_axis']) ? $data['series_axis'] : null;
+        $this->container['value_axis'] = isset($data['value_axis']) ? $data['value_axis'] : null;
+        $this->container['show_data_table'] = isset($data['show_data_table']) ? $data['show_data_table'] : null;
+        $this->container['is3_d'] = isset($data['is3_d']) ? $data['is3_d'] : null;
+        $this->container['chart_area'] = isset($data['chart_area']) ? $data['chart_area'] : null;
+        $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
+        $this->container['side_wall'] = isset($data['side_wall']) ? $data['side_wall'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['walls'] = isset($data['walls']) ? $data['walls'] : null;
+        $this->container['back_wall'] = isset($data['back_wall']) ? $data['back_wall'] : null;
+        $this->container['chart_data_table'] = isset($data['chart_data_table']) ? $data['chart_data_table'] : null;
+        $this->container['height_percent'] = isset($data['height_percent']) ? $data['height_percent'] : null;
+        $this->container['gap_width'] = isset($data['gap_width']) ? $data['gap_width'] : null;
+        $this->container['legend'] = isset($data['legend']) ? $data['legend'] : null;
+        $this->container['chart_object'] = isset($data['chart_object']) ? $data['chart_object'] : null;
+        $this->container['is_rectangular_cornered'] = isset($data['is_rectangular_cornered']) ? $data['is_rectangular_cornered'] : null;
         $this->container['second_category_axis'] = isset($data['second_category_axis']) ? $data['second_category_axis'] : null;
         $this->container['second_value_axis'] = isset($data['second_value_axis']) ? $data['second_value_axis'] : null;
-        $this->container['series_axis'] = isset($data['series_axis']) ? $data['series_axis'] : null;
-        $this->container['shapes'] = isset($data['shapes']) ? $data['shapes'] : null;
-        $this->container['show_data_table'] = isset($data['show_data_table']) ? $data['show_data_table'] : null;
-        $this->container['show_legend'] = isset($data['show_legend']) ? $data['show_legend'] : null;
-        $this->container['side_wall'] = isset($data['side_wall']) ? $data['side_wall'] : null;
+        $this->container['placement'] = isset($data['placement']) ? $data['placement'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['size_with_window'] = isset($data['size_with_window']) ? $data['size_with_window'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['value_axis'] = isset($data['value_axis']) ? $data['value_axis'] : null;
-        $this->container['walls'] = isset($data['walls']) ? $data['walls'] : null;
+        $this->container['right_angle_axes'] = isset($data['right_angle_axes']) ? $data['right_angle_axes'] : null;
+        $this->container['plot_visible_cells'] = isset($data['plot_visible_cells']) ? $data['plot_visible_cells'] : null;
+        $this->container['show_legend'] = isset($data['show_legend']) ? $data['show_legend'] : null;
+        $this->container['pivot_source'] = isset($data['pivot_source']) ? $data['pivot_source'] : null;
+        $this->container['depth_percent'] = isset($data['depth_percent']) ? $data['depth_percent'] : null;
+        $this->container['print_size'] = isset($data['print_size']) ? $data['print_size'] : null;
+        $this->container['gap_depth'] = isset($data['gap_depth']) ? $data['gap_depth'] : null;
+        $this->container['shapes'] = isset($data['shapes']) ? $data['shapes'] : null;
         $this->container['walls_and_gridlines2_d'] = isset($data['walls_and_gridlines2_d']) ? $data['walls_and_gridlines2_d'] : null;
+        $this->container['n_series'] = isset($data['n_series']) ? $data['n_series'] : null;
+        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
+        $this->container['plot_area'] = isset($data['plot_area']) ? $data['plot_area'] : null;
+        $this->container['category_axis'] = isset($data['category_axis']) ? $data['category_axis'] : null;
+        $this->container['perspective'] = isset($data['perspective']) ? $data['perspective'] : null;
+        $this->container['hide_pivot_field_buttons'] = isset($data['hide_pivot_field_buttons']) ? $data['hide_pivot_field_buttons'] : null;
+        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
     }
 
     /**
@@ -483,198 +483,6 @@ class Chart implements  ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_scaling
-     *
-     * @return bool
-     */
-    public function getAutoScaling()
-    {
-        return $this->container['auto_scaling'];
-    }
-
-    /**
-     * Sets auto_scaling
-     *
-     * @param bool $auto_scaling True if Microsoft Excel scales a 3-D chart so that it's closer in size to the equivalent 2-D chart. The RightAngleAxes property must be True.
-     *
-     * @return $this
-     */
-    public function setAutoScaling($auto_scaling)
-    {
-        $this->container['auto_scaling'] = $auto_scaling;
-
-        return $this;
-    }
-
-    /**
-     * Gets back_wall
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getBackWall()
-    {
-        return $this->container['back_wall'];
-    }
-
-    /**
-     * Sets back_wall
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $back_wall back_wall
-     *
-     * @return $this
-     */
-    public function setBackWall($back_wall)
-    {
-        $this->container['back_wall'] = $back_wall;
-
-        return $this;
-    }
-
-    /**
-     * Gets category_axis
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getCategoryAxis()
-    {
-        return $this->container['category_axis'];
-    }
-
-    /**
-     * Sets category_axis
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $category_axis Gets the chart's X axis. The property is read only
-     *
-     * @return $this
-     */
-    public function setCategoryAxis($category_axis)
-    {
-        $this->container['category_axis'] = $category_axis;
-
-        return $this;
-    }
-
-    /**
-     * Gets chart_area
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getChartArea()
-    {
-        return $this->container['chart_area'];
-    }
-
-    /**
-     * Sets chart_area
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $chart_area Gets the chart area in the worksheet
-     *
-     * @return $this
-     */
-    public function setChartArea($chart_area)
-    {
-        $this->container['chart_area'] = $chart_area;
-
-        return $this;
-    }
-
-    /**
-     * Gets chart_data_table
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getChartDataTable()
-    {
-        return $this->container['chart_data_table'];
-    }
-
-    /**
-     * Sets chart_data_table
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $chart_data_table Represents the chart data table.
-     *
-     * @return $this
-     */
-    public function setChartDataTable($chart_data_table)
-    {
-        $this->container['chart_data_table'] = $chart_data_table;
-
-        return $this;
-    }
-
-    /**
-     * Gets chart_object
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getChartObject()
-    {
-        return $this->container['chart_object'];
-    }
-
-    /**
-     * Sets chart_object
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $chart_object Represents the chartShape;
-     *
-     * @return $this
-     */
-    public function setChartObject($chart_object)
-    {
-        $this->container['chart_object'] = $chart_object;
-
-        return $this;
-    }
-
-    /**
-     * Gets depth_percent
-     *
-     * @return int
-     */
-    public function getDepthPercent()
-    {
-        return $this->container['depth_percent'];
-    }
-
-    /**
-     * Sets depth_percent
-     *
-     * @param int $depth_percent Represents the depth of a 3-D chart as a percentage of the chart width (between 20 and 2000 percent).
-     *
-     * @return $this
-     */
-    public function setDepthPercent($depth_percent)
-    {
-        $this->container['depth_percent'] = $depth_percent;
-
-        return $this;
-    }
-
-    /**
-     * Gets elevation
-     *
-     * @return int
-     */
-    public function getElevation()
-    {
-        return $this->container['elevation'];
-    }
-
-    /**
-     * Sets elevation
-     *
-     * @param int $elevation Represents the elevation of the 3-D chart view, in degrees.
-     *
-     * @return $this
-     */
-    public function setElevation($elevation)
-    {
-        $this->container['elevation'] = $elevation;
 
         return $this;
     }
@@ -728,97 +536,145 @@ class Chart implements  ArrayAccess
     }
 
     /**
-     * Gets gap_depth
+     * Gets plot_empty_cells_type
      *
-     * @return int
+     * @return string
      */
-    public function getGapDepth()
+    public function getPlotEmptyCellsType()
     {
-        return $this->container['gap_depth'];
+        return $this->container['plot_empty_cells_type'];
     }
 
     /**
-     * Sets gap_depth
+     * Sets plot_empty_cells_type
      *
-     * @param int $gap_depth Gets or sets the distance between the data series in a 3-D chart, as a percentage of the marker width.The value of this property must be between 0 and 500.
+     * @param string $plot_empty_cells_type Gets and sets how to plot the empty cells.
      *
      * @return $this
      */
-    public function setGapDepth($gap_depth)
+    public function setPlotEmptyCellsType($plot_empty_cells_type)
     {
-        $this->container['gap_depth'] = $gap_depth;
+        $this->container['plot_empty_cells_type'] = $plot_empty_cells_type;
 
         return $this;
     }
 
     /**
-     * Gets gap_width
-     *
-     * @return int
-     */
-    public function getGapWidth()
-    {
-        return $this->container['gap_width'];
-    }
-
-    /**
-     * Sets gap_width
-     *
-     * @param int $gap_width Returns or sets the space between bar or column clusters, as a percentage of the bar or column width. The value of this property must be between 0 and 500.
-     *
-     * @return $this
-     */
-    public function setGapWidth($gap_width)
-    {
-        $this->container['gap_width'] = $gap_width;
-
-        return $this;
-    }
-
-    /**
-     * Gets height_percent
-     *
-     * @return int
-     */
-    public function getHeightPercent()
-    {
-        return $this->container['height_percent'];
-    }
-
-    /**
-     * Sets height_percent
-     *
-     * @param int $height_percent Returns or sets the height of a 3-D chart as a percentage of the chart width (between 5 and 500 percent).
-     *
-     * @return $this
-     */
-    public function setHeightPercent($height_percent)
-    {
-        $this->container['height_percent'] = $height_percent;
-
-        return $this;
-    }
-
-    /**
-     * Gets hide_pivot_field_buttons
+     * Gets auto_scaling
      *
      * @return bool
      */
-    public function getHidePivotFieldButtons()
+    public function getAutoScaling()
     {
-        return $this->container['hide_pivot_field_buttons'];
+        return $this->container['auto_scaling'];
     }
 
     /**
-     * Sets hide_pivot_field_buttons
+     * Sets auto_scaling
      *
-     * @param bool $hide_pivot_field_buttons Indicates whether hide the pivot chart field buttons only when the chart is PivotChart
+     * @param bool $auto_scaling True if Microsoft Excel scales a 3-D chart so that it's closer in size to the equivalent 2-D chart. The RightAngleAxes property must be True.
      *
      * @return $this
      */
-    public function setHidePivotFieldButtons($hide_pivot_field_buttons)
+    public function setAutoScaling($auto_scaling)
     {
-        $this->container['hide_pivot_field_buttons'] = $hide_pivot_field_buttons;
+        $this->container['auto_scaling'] = $auto_scaling;
+
+        return $this;
+    }
+
+    /**
+     * Gets style
+     *
+     * @return int
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param int $style Gets and sets the builtin style.
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
+     * Gets series_axis
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getSeriesAxis()
+    {
+        return $this->container['series_axis'];
+    }
+
+    /**
+     * Sets series_axis
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $series_axis Gets the chart's series axis.
+     *
+     * @return $this
+     */
+    public function setSeriesAxis($series_axis)
+    {
+        $this->container['series_axis'] = $series_axis;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_axis
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getValueAxis()
+    {
+        return $this->container['value_axis'];
+    }
+
+    /**
+     * Sets value_axis
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $value_axis Gets the chart's Y axis.
+     *
+     * @return $this
+     */
+    public function setValueAxis($value_axis)
+    {
+        $this->container['value_axis'] = $value_axis;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_data_table
+     *
+     * @return bool
+     */
+    public function getShowDataTable()
+    {
+        return $this->container['show_data_table'];
+    }
+
+    /**
+     * Sets show_data_table
+     *
+     * @param bool $show_data_table Gets or sets a value indicating whether the chart displays a data table.
+     *
+     * @return $this
+     */
+    public function setShowDataTable($show_data_table)
+    {
+        $this->container['show_data_table'] = $show_data_table;
 
         return $this;
     }
@@ -848,25 +704,241 @@ class Chart implements  ArrayAccess
     }
 
     /**
-     * Gets is_rectangular_cornered
+     * Gets chart_area
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getIsRectangularCornered()
+    public function getChartArea()
     {
-        return $this->container['is_rectangular_cornered'];
+        return $this->container['chart_area'];
     }
 
     /**
-     * Sets is_rectangular_cornered
+     * Sets chart_area
      *
-     * @param bool $is_rectangular_cornered Gets or sets a value indicating whether the chart displays a data table.
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $chart_area Gets the chart area in the worksheet
      *
      * @return $this
      */
-    public function setIsRectangularCornered($is_rectangular_cornered)
+    public function setChartArea($chart_area)
     {
-        $this->container['is_rectangular_cornered'] = $is_rectangular_cornered;
+        $this->container['chart_area'] = $chart_area;
+
+        return $this;
+    }
+
+    /**
+     * Gets elevation
+     *
+     * @return int
+     */
+    public function getElevation()
+    {
+        return $this->container['elevation'];
+    }
+
+    /**
+     * Sets elevation
+     *
+     * @param int $elevation Represents the elevation of the 3-D chart view, in degrees.
+     *
+     * @return $this
+     */
+    public function setElevation($elevation)
+    {
+        $this->container['elevation'] = $elevation;
+
+        return $this;
+    }
+
+    /**
+     * Gets side_wall
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getSideWall()
+    {
+        return $this->container['side_wall'];
+    }
+
+    /**
+     * Sets side_wall
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $side_wall side_wall
+     *
+     * @return $this
+     */
+    public function setSideWall($side_wall)
+    {
+        $this->container['side_wall'] = $side_wall;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Gets or sets a chart's type.
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets title
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $title Gets the chart's title.
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets walls
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getWalls()
+    {
+        return $this->container['walls'];
+    }
+
+    /**
+     * Sets walls
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $walls Returns a Walls object that represents the walls of a 3-D chart.
+     *
+     * @return $this
+     */
+    public function setWalls($walls)
+    {
+        $this->container['walls'] = $walls;
+
+        return $this;
+    }
+
+    /**
+     * Gets back_wall
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getBackWall()
+    {
+        return $this->container['back_wall'];
+    }
+
+    /**
+     * Sets back_wall
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $back_wall back_wall
+     *
+     * @return $this
+     */
+    public function setBackWall($back_wall)
+    {
+        $this->container['back_wall'] = $back_wall;
+
+        return $this;
+    }
+
+    /**
+     * Gets chart_data_table
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getChartDataTable()
+    {
+        return $this->container['chart_data_table'];
+    }
+
+    /**
+     * Sets chart_data_table
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $chart_data_table Represents the chart data table.
+     *
+     * @return $this
+     */
+    public function setChartDataTable($chart_data_table)
+    {
+        $this->container['chart_data_table'] = $chart_data_table;
+
+        return $this;
+    }
+
+    /**
+     * Gets height_percent
+     *
+     * @return int
+     */
+    public function getHeightPercent()
+    {
+        return $this->container['height_percent'];
+    }
+
+    /**
+     * Sets height_percent
+     *
+     * @param int $height_percent Returns or sets the height of a 3-D chart as a percentage of the chart width (between 5 and 500 percent).
+     *
+     * @return $this
+     */
+    public function setHeightPercent($height_percent)
+    {
+        $this->container['height_percent'] = $height_percent;
+
+        return $this;
+    }
+
+    /**
+     * Gets gap_width
+     *
+     * @return int
+     */
+    public function getGapWidth()
+    {
+        return $this->container['gap_width'];
+    }
+
+    /**
+     * Sets gap_width
+     *
+     * @param int $gap_width Returns or sets the space between bar or column clusters, as a percentage of the bar or column width. The value of this property must be between 0 and 500.
+     *
+     * @return $this
+     */
+    public function setGapWidth($gap_width)
+    {
+        $this->container['gap_width'] = $gap_width;
 
         return $this;
     }
@@ -896,289 +968,49 @@ class Chart implements  ArrayAccess
     }
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Gets and sets the name of the chart.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets n_series
+     * Gets chart_object
      *
      * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getNSeries()
+    public function getChartObject()
     {
-        return $this->container['n_series'];
+        return $this->container['chart_object'];
     }
 
     /**
-     * Sets n_series
+     * Sets chart_object
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $n_series Gets a SeriesCollection collection representing the data series in the chart.
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $chart_object Represents the chartShape;
      *
      * @return $this
      */
-    public function setNSeries($n_series)
+    public function setChartObject($chart_object)
     {
-        $this->container['n_series'] = $n_series;
+        $this->container['chart_object'] = $chart_object;
 
         return $this;
     }
 
     /**
-     * Gets page_setup
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getPageSetup()
-    {
-        return $this->container['page_setup'];
-    }
-
-    /**
-     * Sets page_setup
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $page_setup Represents the page setup description in this chart.
-     *
-     * @return $this
-     */
-    public function setPageSetup($page_setup)
-    {
-        $this->container['page_setup'] = $page_setup;
-
-        return $this;
-    }
-
-    /**
-     * Gets perspective
-     *
-     * @return int
-     */
-    public function getPerspective()
-    {
-        return $this->container['perspective'];
-    }
-
-    /**
-     * Sets perspective
-     *
-     * @param int $perspective Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.This property is ignored if the RightAngleAxes property is True.
-     *
-     * @return $this
-     */
-    public function setPerspective($perspective)
-    {
-        $this->container['perspective'] = $perspective;
-
-        return $this;
-    }
-
-    /**
-     * Gets pivot_source
-     *
-     * @return string
-     */
-    public function getPivotSource()
-    {
-        return $this->container['pivot_source'];
-    }
-
-    /**
-     * Sets pivot_source
-     *
-     * @param string $pivot_source The source is the data of the pivotTable.If PivotSource is not empty ,the chart is PivotChart.
-     *
-     * @return $this
-     */
-    public function setPivotSource($pivot_source)
-    {
-        $this->container['pivot_source'] = $pivot_source;
-
-        return $this;
-    }
-
-    /**
-     * Gets placement
-     *
-     * @return string
-     */
-    public function getPlacement()
-    {
-        return $this->container['placement'];
-    }
-
-    /**
-     * Sets placement
-     *
-     * @param string $placement Represents the way the chart is attached to the cells below it.
-     *
-     * @return $this
-     */
-    public function setPlacement($placement)
-    {
-        $this->container['placement'] = $placement;
-
-        return $this;
-    }
-
-    /**
-     * Gets plot_area
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getPlotArea()
-    {
-        return $this->container['plot_area'];
-    }
-
-    /**
-     * Sets plot_area
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $plot_area Gets the chart's plot area which includes axis tick lables.
-     *
-     * @return $this
-     */
-    public function setPlotArea($plot_area)
-    {
-        $this->container['plot_area'] = $plot_area;
-
-        return $this;
-    }
-
-    /**
-     * Gets plot_empty_cells_type
-     *
-     * @return string
-     */
-    public function getPlotEmptyCellsType()
-    {
-        return $this->container['plot_empty_cells_type'];
-    }
-
-    /**
-     * Sets plot_empty_cells_type
-     *
-     * @param string $plot_empty_cells_type Gets and sets how to plot the empty cells.
-     *
-     * @return $this
-     */
-    public function setPlotEmptyCellsType($plot_empty_cells_type)
-    {
-        $this->container['plot_empty_cells_type'] = $plot_empty_cells_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets plot_visible_cells
+     * Gets is_rectangular_cornered
      *
      * @return bool
      */
-    public function getPlotVisibleCells()
+    public function getIsRectangularCornered()
     {
-        return $this->container['plot_visible_cells'];
+        return $this->container['is_rectangular_cornered'];
     }
 
     /**
-     * Sets plot_visible_cells
+     * Sets is_rectangular_cornered
      *
-     * @param bool $plot_visible_cells Indicates whether only plot visible cells.
+     * @param bool $is_rectangular_cornered Gets or sets a value indicating whether the chart displays a data table.
      *
      * @return $this
      */
-    public function setPlotVisibleCells($plot_visible_cells)
+    public function setIsRectangularCornered($is_rectangular_cornered)
     {
-        $this->container['plot_visible_cells'] = $plot_visible_cells;
-
-        return $this;
-    }
-
-    /**
-     * Gets print_size
-     *
-     * @return string
-     */
-    public function getPrintSize()
-    {
-        return $this->container['print_size'];
-    }
-
-    /**
-     * Sets print_size
-     *
-     * @param string $print_size Gets and sets the printed chart size.
-     *
-     * @return $this
-     */
-    public function setPrintSize($print_size)
-    {
-        $this->container['print_size'] = $print_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets right_angle_axes
-     *
-     * @return bool
-     */
-    public function getRightAngleAxes()
-    {
-        return $this->container['right_angle_axes'];
-    }
-
-    /**
-     * Sets right_angle_axes
-     *
-     * @param bool $right_angle_axes True if the chart axes are at right angles.Applies only for 3-D charts(except Column3D and 3-D Pie Charts).
-     *
-     * @return $this
-     */
-    public function setRightAngleAxes($right_angle_axes)
-    {
-        $this->container['right_angle_axes'] = $right_angle_axes;
-
-        return $this;
-    }
-
-    /**
-     * Gets rotation_angle
-     *
-     * @return int
-     */
-    public function getRotationAngle()
-    {
-        return $this->container['rotation_angle'];
-    }
-
-    /**
-     * Sets rotation_angle
-     *
-     * @param int $rotation_angle Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
-     *
-     * @return $this
-     */
-    public function setRotationAngle($rotation_angle)
-    {
-        $this->container['rotation_angle'] = $rotation_angle;
+        $this->container['is_rectangular_cornered'] = $is_rectangular_cornered;
 
         return $this;
     }
@@ -1232,121 +1064,49 @@ class Chart implements  ArrayAccess
     }
 
     /**
-     * Gets series_axis
+     * Gets placement
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return string
      */
-    public function getSeriesAxis()
+    public function getPlacement()
     {
-        return $this->container['series_axis'];
+        return $this->container['placement'];
     }
 
     /**
-     * Sets series_axis
+     * Sets placement
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $series_axis Gets the chart's series axis.
+     * @param string $placement Represents the way the chart is attached to the cells below it.
      *
      * @return $this
      */
-    public function setSeriesAxis($series_axis)
+    public function setPlacement($placement)
     {
-        $this->container['series_axis'] = $series_axis;
+        $this->container['placement'] = $placement;
 
         return $this;
     }
 
     /**
-     * Gets shapes
+     * Gets name
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return string
      */
-    public function getShapes()
+    public function getName()
     {
-        return $this->container['shapes'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets shapes
+     * Sets name
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $shapes Returns all drawing shapes in this chart.
+     * @param string $name Gets and sets the name of the chart.
      *
      * @return $this
      */
-    public function setShapes($shapes)
+    public function setName($name)
     {
-        $this->container['shapes'] = $shapes;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_data_table
-     *
-     * @return bool
-     */
-    public function getShowDataTable()
-    {
-        return $this->container['show_data_table'];
-    }
-
-    /**
-     * Sets show_data_table
-     *
-     * @param bool $show_data_table Gets or sets a value indicating whether the chart displays a data table.
-     *
-     * @return $this
-     */
-    public function setShowDataTable($show_data_table)
-    {
-        $this->container['show_data_table'] = $show_data_table;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_legend
-     *
-     * @return bool
-     */
-    public function getShowLegend()
-    {
-        return $this->container['show_legend'];
-    }
-
-    /**
-     * Sets show_legend
-     *
-     * @param bool $show_legend Gets or sets a value indicating whether the chart legend will be displayed. Default is true.
-     *
-     * @return $this
-     */
-    public function setShowLegend($show_legend)
-    {
-        $this->container['show_legend'] = $show_legend;
-
-        return $this;
-    }
-
-    /**
-     * Gets side_wall
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getSideWall()
-    {
-        return $this->container['side_wall'];
-    }
-
-    /**
-     * Sets side_wall
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $side_wall side_wall
-     *
-     * @return $this
-     */
-    public function setSideWall($side_wall)
-    {
-        $this->container['side_wall'] = $side_wall;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -1376,121 +1136,193 @@ class Chart implements  ArrayAccess
     }
 
     /**
-     * Gets style
+     * Gets right_angle_axes
      *
-     * @return int
+     * @return bool
      */
-    public function getStyle()
+    public function getRightAngleAxes()
     {
-        return $this->container['style'];
+        return $this->container['right_angle_axes'];
     }
 
     /**
-     * Sets style
+     * Sets right_angle_axes
      *
-     * @param int $style Gets and sets the builtin style.
+     * @param bool $right_angle_axes True if the chart axes are at right angles.Applies only for 3-D charts(except Column3D and 3-D Pie Charts).
      *
      * @return $this
      */
-    public function setStyle($style)
+    public function setRightAngleAxes($right_angle_axes)
     {
-        $this->container['style'] = $style;
+        $this->container['right_angle_axes'] = $right_angle_axes;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets plot_visible_cells
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return bool
      */
-    public function getTitle()
+    public function getPlotVisibleCells()
     {
-        return $this->container['title'];
+        return $this->container['plot_visible_cells'];
     }
 
     /**
-     * Sets title
+     * Sets plot_visible_cells
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $title Gets the chart's title.
+     * @param bool $plot_visible_cells Indicates whether only plot visible cells.
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setPlotVisibleCells($plot_visible_cells)
     {
-        $this->container['title'] = $title;
+        $this->container['plot_visible_cells'] = $plot_visible_cells;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets show_legend
+     *
+     * @return bool
+     */
+    public function getShowLegend()
+    {
+        return $this->container['show_legend'];
+    }
+
+    /**
+     * Sets show_legend
+     *
+     * @param bool $show_legend Gets or sets a value indicating whether the chart legend will be displayed. Default is true.
+     *
+     * @return $this
+     */
+    public function setShowLegend($show_legend)
+    {
+        $this->container['show_legend'] = $show_legend;
+
+        return $this;
+    }
+
+    /**
+     * Gets pivot_source
      *
      * @return string
      */
-    public function getType()
+    public function getPivotSource()
     {
-        return $this->container['type'];
+        return $this->container['pivot_source'];
     }
 
     /**
-     * Sets type
+     * Sets pivot_source
      *
-     * @param string $type Gets or sets a chart's type.
+     * @param string $pivot_source The source is the data of the pivotTable.If PivotSource is not empty ,the chart is PivotChart.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setPivotSource($pivot_source)
     {
-        $this->container['type'] = $type;
+        $this->container['pivot_source'] = $pivot_source;
 
         return $this;
     }
 
     /**
-     * Gets value_axis
+     * Gets depth_percent
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return int
      */
-    public function getValueAxis()
+    public function getDepthPercent()
     {
-        return $this->container['value_axis'];
+        return $this->container['depth_percent'];
     }
 
     /**
-     * Sets value_axis
+     * Sets depth_percent
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $value_axis Gets the chart's Y axis.
+     * @param int $depth_percent Represents the depth of a 3-D chart as a percentage of the chart width (between 20 and 2000 percent).
      *
      * @return $this
      */
-    public function setValueAxis($value_axis)
+    public function setDepthPercent($depth_percent)
     {
-        $this->container['value_axis'] = $value_axis;
+        $this->container['depth_percent'] = $depth_percent;
 
         return $this;
     }
 
     /**
-     * Gets walls
+     * Gets print_size
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return string
      */
-    public function getWalls()
+    public function getPrintSize()
     {
-        return $this->container['walls'];
+        return $this->container['print_size'];
     }
 
     /**
-     * Sets walls
+     * Sets print_size
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $walls Returns a Walls object that represents the walls of a 3-D chart.
+     * @param string $print_size Gets and sets the printed chart size.
      *
      * @return $this
      */
-    public function setWalls($walls)
+    public function setPrintSize($print_size)
     {
-        $this->container['walls'] = $walls;
+        $this->container['print_size'] = $print_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets gap_depth
+     *
+     * @return int
+     */
+    public function getGapDepth()
+    {
+        return $this->container['gap_depth'];
+    }
+
+    /**
+     * Sets gap_depth
+     *
+     * @param int $gap_depth Gets or sets the distance between the data series in a 3-D chart, as a percentage of the marker width.The value of this property must be between 0 and 500.
+     *
+     * @return $this
+     */
+    public function setGapDepth($gap_depth)
+    {
+        $this->container['gap_depth'] = $gap_depth;
+
+        return $this;
+    }
+
+    /**
+     * Gets shapes
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getShapes()
+    {
+        return $this->container['shapes'];
+    }
+
+    /**
+     * Sets shapes
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $shapes Returns all drawing shapes in this chart.
+     *
+     * @return $this
+     */
+    public function setShapes($shapes)
+    {
+        $this->container['shapes'] = $shapes;
 
         return $this;
     }
@@ -1515,6 +1347,174 @@ class Chart implements  ArrayAccess
     public function setWallsAndGridlines2D($walls_and_gridlines2_d)
     {
         $this->container['walls_and_gridlines2_d'] = $walls_and_gridlines2_d;
+
+        return $this;
+    }
+
+    /**
+     * Gets n_series
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getNSeries()
+    {
+        return $this->container['n_series'];
+    }
+
+    /**
+     * Sets n_series
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $n_series Gets a SeriesCollection collection representing the data series in the chart.
+     *
+     * @return $this
+     */
+    public function setNSeries($n_series)
+    {
+        $this->container['n_series'] = $n_series;
+
+        return $this;
+    }
+
+    /**
+     * Gets rotation_angle
+     *
+     * @return int
+     */
+    public function getRotationAngle()
+    {
+        return $this->container['rotation_angle'];
+    }
+
+    /**
+     * Sets rotation_angle
+     *
+     * @param int $rotation_angle Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
+     *
+     * @return $this
+     */
+    public function setRotationAngle($rotation_angle)
+    {
+        $this->container['rotation_angle'] = $rotation_angle;
+
+        return $this;
+    }
+
+    /**
+     * Gets plot_area
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getPlotArea()
+    {
+        return $this->container['plot_area'];
+    }
+
+    /**
+     * Sets plot_area
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $plot_area Gets the chart's plot area which includes axis tick lables.
+     *
+     * @return $this
+     */
+    public function setPlotArea($plot_area)
+    {
+        $this->container['plot_area'] = $plot_area;
+
+        return $this;
+    }
+
+    /**
+     * Gets category_axis
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getCategoryAxis()
+    {
+        return $this->container['category_axis'];
+    }
+
+    /**
+     * Sets category_axis
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $category_axis Gets the chart's X axis. The property is read only
+     *
+     * @return $this
+     */
+    public function setCategoryAxis($category_axis)
+    {
+        $this->container['category_axis'] = $category_axis;
+
+        return $this;
+    }
+
+    /**
+     * Gets perspective
+     *
+     * @return int
+     */
+    public function getPerspective()
+    {
+        return $this->container['perspective'];
+    }
+
+    /**
+     * Sets perspective
+     *
+     * @param int $perspective Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.This property is ignored if the RightAngleAxes property is True.
+     *
+     * @return $this
+     */
+    public function setPerspective($perspective)
+    {
+        $this->container['perspective'] = $perspective;
+
+        return $this;
+    }
+
+    /**
+     * Gets hide_pivot_field_buttons
+     *
+     * @return bool
+     */
+    public function getHidePivotFieldButtons()
+    {
+        return $this->container['hide_pivot_field_buttons'];
+    }
+
+    /**
+     * Sets hide_pivot_field_buttons
+     *
+     * @param bool $hide_pivot_field_buttons Indicates whether hide the pivot chart field buttons only when the chart is PivotChart
+     *
+     * @return $this
+     */
+    public function setHidePivotFieldButtons($hide_pivot_field_buttons)
+    {
+        $this->container['hide_pivot_field_buttons'] = $hide_pivot_field_buttons;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_setup
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getPageSetup()
+    {
+        return $this->container['page_setup'];
+    }
+
+    /**
+     * Sets page_setup
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $page_setup Represents the page setup description in this chart.
+     *
+     * @return $this
+     */
+    public function setPageSetup($page_setup)
+    {
+        $this->container['page_setup'] = $page_setup;
 
         return $this;
     }

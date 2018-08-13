@@ -57,8 +57,8 @@ class ThemeColor implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'color_type' => 'string',
-        'tint' => 'double'
+        'tint' => 'double',
+        'color_type' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ThemeColor implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'color_type' => null,
-        'tint' => 'double'
+        'tint' => 'double',
+        'color_type' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ThemeColor implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'color_type' => 'ColorType',
-        'tint' => 'Tint'
+        'tint' => 'Tint',
+        'color_type' => 'ColorType'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ThemeColor implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'color_type' => 'setColorType',
-        'tint' => 'setTint'
+        'tint' => 'setTint',
+        'color_type' => 'setColorType'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ThemeColor implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'color_type' => 'getColorType',
-        'tint' => 'getTint'
+        'tint' => 'getTint',
+        'color_type' => 'getColorType'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ThemeColor implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['color_type'] = isset($data['color_type']) ? $data['color_type'] : null;
         $this->container['tint'] = isset($data['tint']) ? $data['tint'] : null;
+        $this->container['color_type'] = isset($data['color_type']) ? $data['color_type'] : null;
     }
 
     /**
@@ -212,30 +212,6 @@ class ThemeColor implements  ArrayAccess
 
 
     /**
-     * Gets color_type
-     *
-     * @return string
-     */
-    public function getColorType()
-    {
-        return $this->container['color_type'];
-    }
-
-    /**
-     * Sets color_type
-     *
-     * @param string $color_type color_type
-     *
-     * @return $this
-     */
-    public function setColorType($color_type)
-    {
-        $this->container['color_type'] = $color_type;
-
-        return $this;
-    }
-
-    /**
      * Gets tint
      *
      * @return double
@@ -255,6 +231,30 @@ class ThemeColor implements  ArrayAccess
     public function setTint($tint)
     {
         $this->container['tint'] = $tint;
+
+        return $this;
+    }
+
+    /**
+     * Gets color_type
+     *
+     * @return string
+     */
+    public function getColorType()
+    {
+        return $this->container['color_type'];
+    }
+
+    /**
+     * Sets color_type
+     *
+     * @param string $color_type color_type
+     *
+     * @return $this
+     */
+    public function setColorType($color_type)
+    {
+        $this->container['color_type'] = $color_type;
 
         return $this;
     }

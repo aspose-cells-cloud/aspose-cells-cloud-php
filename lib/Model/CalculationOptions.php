@@ -57,10 +57,10 @@ class CalculationOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'calc_stack_size' => 'int',
-        'ignore_error' => 'bool',
         'precision_strategy' => 'string',
-        'recursive' => 'bool'
+        'ignore_error' => 'bool',
+        'recursive' => 'bool',
+        'calc_stack_size' => 'int'
     ];
 
     /**
@@ -69,10 +69,10 @@ class CalculationOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'calc_stack_size' => 'int32',
-        'ignore_error' => null,
         'precision_strategy' => null,
-        'recursive' => null
+        'ignore_error' => null,
+        'recursive' => null,
+        'calc_stack_size' => 'int32'
     ];
 
     /**
@@ -102,10 +102,10 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'calc_stack_size' => 'CalcStackSize',
-        'ignore_error' => 'IgnoreError',
         'precision_strategy' => 'PrecisionStrategy',
-        'recursive' => 'Recursive'
+        'ignore_error' => 'IgnoreError',
+        'recursive' => 'Recursive',
+        'calc_stack_size' => 'CalcStackSize'
     ];
 
     /**
@@ -114,10 +114,10 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'calc_stack_size' => 'setCalcStackSize',
-        'ignore_error' => 'setIgnoreError',
         'precision_strategy' => 'setPrecisionStrategy',
-        'recursive' => 'setRecursive'
+        'ignore_error' => 'setIgnoreError',
+        'recursive' => 'setRecursive',
+        'calc_stack_size' => 'setCalcStackSize'
     ];
 
     /**
@@ -126,10 +126,10 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'calc_stack_size' => 'getCalcStackSize',
-        'ignore_error' => 'getIgnoreError',
         'precision_strategy' => 'getPrecisionStrategy',
-        'recursive' => 'getRecursive'
+        'ignore_error' => 'getIgnoreError',
+        'recursive' => 'getRecursive',
+        'calc_stack_size' => 'getCalcStackSize'
     ];
 
     /**
@@ -192,10 +192,10 @@ class CalculationOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
-        $this->container['ignore_error'] = isset($data['ignore_error']) ? $data['ignore_error'] : null;
         $this->container['precision_strategy'] = isset($data['precision_strategy']) ? $data['precision_strategy'] : null;
+        $this->container['ignore_error'] = isset($data['ignore_error']) ? $data['ignore_error'] : null;
         $this->container['recursive'] = isset($data['recursive']) ? $data['recursive'] : null;
+        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
     }
 
     /**
@@ -224,25 +224,25 @@ class CalculationOptions implements  ArrayAccess
 
 
     /**
-     * Gets calc_stack_size
+     * Gets precision_strategy
      *
-     * @return int
+     * @return string
      */
-    public function getCalcStackSize()
+    public function getPrecisionStrategy()
     {
-        return $this->container['calc_stack_size'];
+        return $this->container['precision_strategy'];
     }
 
     /**
-     * Sets calc_stack_size
+     * Sets precision_strategy
      *
-     * @param int $calc_stack_size calc_stack_size
+     * @param string $precision_strategy precision_strategy
      *
      * @return $this
      */
-    public function setCalcStackSize($calc_stack_size)
+    public function setPrecisionStrategy($precision_strategy)
     {
-        $this->container['calc_stack_size'] = $calc_stack_size;
+        $this->container['precision_strategy'] = $precision_strategy;
 
         return $this;
     }
@@ -272,30 +272,6 @@ class CalculationOptions implements  ArrayAccess
     }
 
     /**
-     * Gets precision_strategy
-     *
-     * @return string
-     */
-    public function getPrecisionStrategy()
-    {
-        return $this->container['precision_strategy'];
-    }
-
-    /**
-     * Sets precision_strategy
-     *
-     * @param string $precision_strategy precision_strategy
-     *
-     * @return $this
-     */
-    public function setPrecisionStrategy($precision_strategy)
-    {
-        $this->container['precision_strategy'] = $precision_strategy;
-
-        return $this;
-    }
-
-    /**
      * Gets recursive
      *
      * @return bool
@@ -315,6 +291,30 @@ class CalculationOptions implements  ArrayAccess
     public function setRecursive($recursive)
     {
         $this->container['recursive'] = $recursive;
+
+        return $this;
+    }
+
+    /**
+     * Gets calc_stack_size
+     *
+     * @return int
+     */
+    public function getCalcStackSize()
+    {
+        return $this->container['calc_stack_size'];
+    }
+
+    /**
+     * Sets calc_stack_size
+     *
+     * @param int $calc_stack_size calc_stack_size
+     *
+     * @return $this
+     */
+    public function setCalcStackSize($calc_stack_size)
+    {
+        $this->container['calc_stack_size'] = $calc_stack_size;
 
         return $this;
     }

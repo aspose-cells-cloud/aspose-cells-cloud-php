@@ -57,27 +57,27 @@ class Title implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'area' => '\Aspose\Cells\Cloud\Model\Area',
-        'auto_scale_font' => 'bool',
-        'background_mode' => 'string',
-        'border' => '\Aspose\Cells\Cloud\Model\Line',
-        'font' => '\Aspose\Cells\Cloud\Model\Font',
-        'is_automatic_size' => 'bool',
         'is_inner_mode' => 'bool',
-        'shadow' => 'bool',
         'shape_properties' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
-        'width' => 'int',
+        'auto_scale_font' => 'bool',
+        'area' => '\Aspose\Cells\Cloud\Model\Area',
         'height' => 'int',
-        'x' => 'int',
+        'width' => 'int',
+        'background_mode' => 'string',
+        'is_automatic_size' => 'bool',
         'y' => 'int',
+        'x' => 'int',
+        'shadow' => 'bool',
+        'font' => '\Aspose\Cells\Cloud\Model\Font',
+        'border' => '\Aspose\Cells\Cloud\Model\Line',
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'is_visible' => 'bool',
         'linked_source' => 'string',
-        'rotation_angle' => 'int',
         'text' => 'string',
+        'is_visible' => 'bool',
         'text_direction' => 'string',
-        'text_horizontal_alignment' => 'string',
-        'text_vertical_alignment' => 'string'
+        'rotation_angle' => 'int',
+        'text_vertical_alignment' => 'string',
+        'text_horizontal_alignment' => 'string'
     ];
 
     /**
@@ -86,27 +86,27 @@ class Title implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'area' => null,
-        'auto_scale_font' => null,
-        'background_mode' => null,
-        'border' => null,
-        'font' => null,
-        'is_automatic_size' => null,
         'is_inner_mode' => null,
-        'shadow' => null,
         'shape_properties' => null,
-        'width' => 'int32',
+        'auto_scale_font' => null,
+        'area' => null,
         'height' => 'int32',
-        'x' => 'int32',
+        'width' => 'int32',
+        'background_mode' => null,
+        'is_automatic_size' => null,
         'y' => 'int32',
+        'x' => 'int32',
+        'shadow' => null,
+        'font' => null,
+        'border' => null,
         'link' => null,
-        'is_visible' => null,
         'linked_source' => null,
-        'rotation_angle' => 'int32',
         'text' => null,
+        'is_visible' => null,
         'text_direction' => null,
-        'text_horizontal_alignment' => null,
-        'text_vertical_alignment' => null
+        'rotation_angle' => 'int32',
+        'text_vertical_alignment' => null,
+        'text_horizontal_alignment' => null
     ];
 
     /**
@@ -136,27 +136,27 @@ class Title implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'area' => 'Area',
-        'auto_scale_font' => 'AutoScaleFont',
-        'background_mode' => 'BackgroundMode',
-        'border' => 'Border',
-        'font' => 'Font',
-        'is_automatic_size' => 'IsAutomaticSize',
         'is_inner_mode' => 'IsInnerMode',
-        'shadow' => 'Shadow',
         'shape_properties' => 'ShapeProperties',
-        'width' => 'Width',
+        'auto_scale_font' => 'AutoScaleFont',
+        'area' => 'Area',
         'height' => 'Height',
-        'x' => 'X',
+        'width' => 'Width',
+        'background_mode' => 'BackgroundMode',
+        'is_automatic_size' => 'IsAutomaticSize',
         'y' => 'Y',
+        'x' => 'X',
+        'shadow' => 'Shadow',
+        'font' => 'Font',
+        'border' => 'Border',
         'link' => 'link',
-        'is_visible' => 'IsVisible',
         'linked_source' => 'LinkedSource',
-        'rotation_angle' => 'RotationAngle',
         'text' => 'Text',
+        'is_visible' => 'IsVisible',
         'text_direction' => 'TextDirection',
-        'text_horizontal_alignment' => 'TextHorizontalAlignment',
-        'text_vertical_alignment' => 'TextVerticalAlignment'
+        'rotation_angle' => 'RotationAngle',
+        'text_vertical_alignment' => 'TextVerticalAlignment',
+        'text_horizontal_alignment' => 'TextHorizontalAlignment'
     ];
 
     /**
@@ -165,27 +165,27 @@ class Title implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'area' => 'setArea',
-        'auto_scale_font' => 'setAutoScaleFont',
-        'background_mode' => 'setBackgroundMode',
-        'border' => 'setBorder',
-        'font' => 'setFont',
-        'is_automatic_size' => 'setIsAutomaticSize',
         'is_inner_mode' => 'setIsInnerMode',
-        'shadow' => 'setShadow',
         'shape_properties' => 'setShapeProperties',
-        'width' => 'setWidth',
+        'auto_scale_font' => 'setAutoScaleFont',
+        'area' => 'setArea',
         'height' => 'setHeight',
-        'x' => 'setX',
+        'width' => 'setWidth',
+        'background_mode' => 'setBackgroundMode',
+        'is_automatic_size' => 'setIsAutomaticSize',
         'y' => 'setY',
+        'x' => 'setX',
+        'shadow' => 'setShadow',
+        'font' => 'setFont',
+        'border' => 'setBorder',
         'link' => 'setLink',
-        'is_visible' => 'setIsVisible',
         'linked_source' => 'setLinkedSource',
-        'rotation_angle' => 'setRotationAngle',
         'text' => 'setText',
+        'is_visible' => 'setIsVisible',
         'text_direction' => 'setTextDirection',
-        'text_horizontal_alignment' => 'setTextHorizontalAlignment',
-        'text_vertical_alignment' => 'setTextVerticalAlignment'
+        'rotation_angle' => 'setRotationAngle',
+        'text_vertical_alignment' => 'setTextVerticalAlignment',
+        'text_horizontal_alignment' => 'setTextHorizontalAlignment'
     ];
 
     /**
@@ -194,27 +194,27 @@ class Title implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'area' => 'getArea',
-        'auto_scale_font' => 'getAutoScaleFont',
-        'background_mode' => 'getBackgroundMode',
-        'border' => 'getBorder',
-        'font' => 'getFont',
-        'is_automatic_size' => 'getIsAutomaticSize',
         'is_inner_mode' => 'getIsInnerMode',
-        'shadow' => 'getShadow',
         'shape_properties' => 'getShapeProperties',
-        'width' => 'getWidth',
+        'auto_scale_font' => 'getAutoScaleFont',
+        'area' => 'getArea',
         'height' => 'getHeight',
-        'x' => 'getX',
+        'width' => 'getWidth',
+        'background_mode' => 'getBackgroundMode',
+        'is_automatic_size' => 'getIsAutomaticSize',
         'y' => 'getY',
+        'x' => 'getX',
+        'shadow' => 'getShadow',
+        'font' => 'getFont',
+        'border' => 'getBorder',
         'link' => 'getLink',
-        'is_visible' => 'getIsVisible',
         'linked_source' => 'getLinkedSource',
-        'rotation_angle' => 'getRotationAngle',
         'text' => 'getText',
+        'is_visible' => 'getIsVisible',
         'text_direction' => 'getTextDirection',
-        'text_horizontal_alignment' => 'getTextHorizontalAlignment',
-        'text_vertical_alignment' => 'getTextVerticalAlignment'
+        'rotation_angle' => 'getRotationAngle',
+        'text_vertical_alignment' => 'getTextVerticalAlignment',
+        'text_horizontal_alignment' => 'getTextHorizontalAlignment'
     ];
 
     /**
@@ -277,27 +277,27 @@ class Title implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['auto_scale_font'] = isset($data['auto_scale_font']) ? $data['auto_scale_font'] : null;
-        $this->container['background_mode'] = isset($data['background_mode']) ? $data['background_mode'] : null;
-        $this->container['border'] = isset($data['border']) ? $data['border'] : null;
-        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
-        $this->container['is_automatic_size'] = isset($data['is_automatic_size']) ? $data['is_automatic_size'] : null;
         $this->container['is_inner_mode'] = isset($data['is_inner_mode']) ? $data['is_inner_mode'] : null;
-        $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
         $this->container['shape_properties'] = isset($data['shape_properties']) ? $data['shape_properties'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['auto_scale_font'] = isset($data['auto_scale_font']) ? $data['auto_scale_font'] : null;
+        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['x'] = isset($data['x']) ? $data['x'] : null;
+        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['background_mode'] = isset($data['background_mode']) ? $data['background_mode'] : null;
+        $this->container['is_automatic_size'] = isset($data['is_automatic_size']) ? $data['is_automatic_size'] : null;
         $this->container['y'] = isset($data['y']) ? $data['y'] : null;
+        $this->container['x'] = isset($data['x']) ? $data['x'] : null;
+        $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
+        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
+        $this->container['border'] = isset($data['border']) ? $data['border'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
         $this->container['linked_source'] = isset($data['linked_source']) ? $data['linked_source'] : null;
-        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
         $this->container['text_direction'] = isset($data['text_direction']) ? $data['text_direction'] : null;
-        $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
+        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
         $this->container['text_vertical_alignment'] = isset($data['text_vertical_alignment']) ? $data['text_vertical_alignment'] : null;
+        $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
     }
 
     /**
@@ -326,150 +326,6 @@ class Title implements  ArrayAccess
 
 
     /**
-     * Gets area
-     *
-     * @return \Aspose\Cells\Cloud\Model\Area
-     */
-    public function getArea()
-    {
-        return $this->container['area'];
-    }
-
-    /**
-     * Sets area
-     *
-     * @param \Aspose\Cells\Cloud\Model\Area $area area
-     *
-     * @return $this
-     */
-    public function setArea($area)
-    {
-        $this->container['area'] = $area;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_scale_font
-     *
-     * @return bool
-     */
-    public function getAutoScaleFont()
-    {
-        return $this->container['auto_scale_font'];
-    }
-
-    /**
-     * Sets auto_scale_font
-     *
-     * @param bool $auto_scale_font auto_scale_font
-     *
-     * @return $this
-     */
-    public function setAutoScaleFont($auto_scale_font)
-    {
-        $this->container['auto_scale_font'] = $auto_scale_font;
-
-        return $this;
-    }
-
-    /**
-     * Gets background_mode
-     *
-     * @return string
-     */
-    public function getBackgroundMode()
-    {
-        return $this->container['background_mode'];
-    }
-
-    /**
-     * Sets background_mode
-     *
-     * @param string $background_mode background_mode
-     *
-     * @return $this
-     */
-    public function setBackgroundMode($background_mode)
-    {
-        $this->container['background_mode'] = $background_mode;
-
-        return $this;
-    }
-
-    /**
-     * Gets border
-     *
-     * @return \Aspose\Cells\Cloud\Model\Line
-     */
-    public function getBorder()
-    {
-        return $this->container['border'];
-    }
-
-    /**
-     * Sets border
-     *
-     * @param \Aspose\Cells\Cloud\Model\Line $border border
-     *
-     * @return $this
-     */
-    public function setBorder($border)
-    {
-        $this->container['border'] = $border;
-
-        return $this;
-    }
-
-    /**
-     * Gets font
-     *
-     * @return \Aspose\Cells\Cloud\Model\Font
-     */
-    public function getFont()
-    {
-        return $this->container['font'];
-    }
-
-    /**
-     * Sets font
-     *
-     * @param \Aspose\Cells\Cloud\Model\Font $font font
-     *
-     * @return $this
-     */
-    public function setFont($font)
-    {
-        $this->container['font'] = $font;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_automatic_size
-     *
-     * @return bool
-     */
-    public function getIsAutomaticSize()
-    {
-        return $this->container['is_automatic_size'];
-    }
-
-    /**
-     * Sets is_automatic_size
-     *
-     * @param bool $is_automatic_size is_automatic_size
-     *
-     * @return $this
-     */
-    public function setIsAutomaticSize($is_automatic_size)
-    {
-        $this->container['is_automatic_size'] = $is_automatic_size;
-
-        return $this;
-    }
-
-    /**
      * Gets is_inner_mode
      *
      * @return bool
@@ -489,30 +345,6 @@ class Title implements  ArrayAccess
     public function setIsInnerMode($is_inner_mode)
     {
         $this->container['is_inner_mode'] = $is_inner_mode;
-
-        return $this;
-    }
-
-    /**
-     * Gets shadow
-     *
-     * @return bool
-     */
-    public function getShadow()
-    {
-        return $this->container['shadow'];
-    }
-
-    /**
-     * Sets shadow
-     *
-     * @param bool $shadow shadow
-     *
-     * @return $this
-     */
-    public function setShadow($shadow)
-    {
-        $this->container['shadow'] = $shadow;
 
         return $this;
     }
@@ -542,25 +374,49 @@ class Title implements  ArrayAccess
     }
 
     /**
-     * Gets width
+     * Gets auto_scale_font
      *
-     * @return int
+     * @return bool
      */
-    public function getWidth()
+    public function getAutoScaleFont()
     {
-        return $this->container['width'];
+        return $this->container['auto_scale_font'];
     }
 
     /**
-     * Sets width
+     * Sets auto_scale_font
      *
-     * @param int $width width
+     * @param bool $auto_scale_font auto_scale_font
      *
      * @return $this
      */
-    public function setWidth($width)
+    public function setAutoScaleFont($auto_scale_font)
     {
-        $this->container['width'] = $width;
+        $this->container['auto_scale_font'] = $auto_scale_font;
+
+        return $this;
+    }
+
+    /**
+     * Gets area
+     *
+     * @return \Aspose\Cells\Cloud\Model\Area
+     */
+    public function getArea()
+    {
+        return $this->container['area'];
+    }
+
+    /**
+     * Sets area
+     *
+     * @param \Aspose\Cells\Cloud\Model\Area $area area
+     *
+     * @return $this
+     */
+    public function setArea($area)
+    {
+        $this->container['area'] = $area;
 
         return $this;
     }
@@ -590,25 +446,73 @@ class Title implements  ArrayAccess
     }
 
     /**
-     * Gets x
+     * Gets width
      *
      * @return int
      */
-    public function getX()
+    public function getWidth()
     {
-        return $this->container['x'];
+        return $this->container['width'];
     }
 
     /**
-     * Sets x
+     * Sets width
      *
-     * @param int $x x
+     * @param int $width width
      *
      * @return $this
      */
-    public function setX($x)
+    public function setWidth($width)
     {
-        $this->container['x'] = $x;
+        $this->container['width'] = $width;
+
+        return $this;
+    }
+
+    /**
+     * Gets background_mode
+     *
+     * @return string
+     */
+    public function getBackgroundMode()
+    {
+        return $this->container['background_mode'];
+    }
+
+    /**
+     * Sets background_mode
+     *
+     * @param string $background_mode background_mode
+     *
+     * @return $this
+     */
+    public function setBackgroundMode($background_mode)
+    {
+        $this->container['background_mode'] = $background_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_automatic_size
+     *
+     * @return bool
+     */
+    public function getIsAutomaticSize()
+    {
+        return $this->container['is_automatic_size'];
+    }
+
+    /**
+     * Sets is_automatic_size
+     *
+     * @param bool $is_automatic_size is_automatic_size
+     *
+     * @return $this
+     */
+    public function setIsAutomaticSize($is_automatic_size)
+    {
+        $this->container['is_automatic_size'] = $is_automatic_size;
 
         return $this;
     }
@@ -638,6 +542,102 @@ class Title implements  ArrayAccess
     }
 
     /**
+     * Gets x
+     *
+     * @return int
+     */
+    public function getX()
+    {
+        return $this->container['x'];
+    }
+
+    /**
+     * Sets x
+     *
+     * @param int $x x
+     *
+     * @return $this
+     */
+    public function setX($x)
+    {
+        $this->container['x'] = $x;
+
+        return $this;
+    }
+
+    /**
+     * Gets shadow
+     *
+     * @return bool
+     */
+    public function getShadow()
+    {
+        return $this->container['shadow'];
+    }
+
+    /**
+     * Sets shadow
+     *
+     * @param bool $shadow shadow
+     *
+     * @return $this
+     */
+    public function setShadow($shadow)
+    {
+        $this->container['shadow'] = $shadow;
+
+        return $this;
+    }
+
+    /**
+     * Gets font
+     *
+     * @return \Aspose\Cells\Cloud\Model\Font
+     */
+    public function getFont()
+    {
+        return $this->container['font'];
+    }
+
+    /**
+     * Sets font
+     *
+     * @param \Aspose\Cells\Cloud\Model\Font $font font
+     *
+     * @return $this
+     */
+    public function setFont($font)
+    {
+        $this->container['font'] = $font;
+
+        return $this;
+    }
+
+    /**
+     * Gets border
+     *
+     * @return \Aspose\Cells\Cloud\Model\Line
+     */
+    public function getBorder()
+    {
+        return $this->container['border'];
+    }
+
+    /**
+     * Sets border
+     *
+     * @param \Aspose\Cells\Cloud\Model\Line $border border
+     *
+     * @return $this
+     */
+    public function setBorder($border)
+    {
+        $this->container['border'] = $border;
+
+        return $this;
+    }
+
+    /**
      * Gets link
      *
      * @return \Aspose\Cells\Cloud\Model\Link
@@ -657,30 +657,6 @@ class Title implements  ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_visible
-     *
-     * @return bool
-     */
-    public function getIsVisible()
-    {
-        return $this->container['is_visible'];
-    }
-
-    /**
-     * Sets is_visible
-     *
-     * @param bool $is_visible is_visible
-     *
-     * @return $this
-     */
-    public function setIsVisible($is_visible)
-    {
-        $this->container['is_visible'] = $is_visible;
 
         return $this;
     }
@@ -710,30 +686,6 @@ class Title implements  ArrayAccess
     }
 
     /**
-     * Gets rotation_angle
-     *
-     * @return int
-     */
-    public function getRotationAngle()
-    {
-        return $this->container['rotation_angle'];
-    }
-
-    /**
-     * Sets rotation_angle
-     *
-     * @param int $rotation_angle rotation_angle
-     *
-     * @return $this
-     */
-    public function setRotationAngle($rotation_angle)
-    {
-        $this->container['rotation_angle'] = $rotation_angle;
-
-        return $this;
-    }
-
-    /**
      * Gets text
      *
      * @return string
@@ -753,6 +705,30 @@ class Title implements  ArrayAccess
     public function setText($text)
     {
         $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_visible
+     *
+     * @return bool
+     */
+    public function getIsVisible()
+    {
+        return $this->container['is_visible'];
+    }
+
+    /**
+     * Sets is_visible
+     *
+     * @param bool $is_visible is_visible
+     *
+     * @return $this
+     */
+    public function setIsVisible($is_visible)
+    {
+        $this->container['is_visible'] = $is_visible;
 
         return $this;
     }
@@ -782,25 +758,25 @@ class Title implements  ArrayAccess
     }
 
     /**
-     * Gets text_horizontal_alignment
+     * Gets rotation_angle
      *
-     * @return string
+     * @return int
      */
-    public function getTextHorizontalAlignment()
+    public function getRotationAngle()
     {
-        return $this->container['text_horizontal_alignment'];
+        return $this->container['rotation_angle'];
     }
 
     /**
-     * Sets text_horizontal_alignment
+     * Sets rotation_angle
      *
-     * @param string $text_horizontal_alignment text_horizontal_alignment
+     * @param int $rotation_angle rotation_angle
      *
      * @return $this
      */
-    public function setTextHorizontalAlignment($text_horizontal_alignment)
+    public function setRotationAngle($rotation_angle)
     {
-        $this->container['text_horizontal_alignment'] = $text_horizontal_alignment;
+        $this->container['rotation_angle'] = $rotation_angle;
 
         return $this;
     }
@@ -825,6 +801,30 @@ class Title implements  ArrayAccess
     public function setTextVerticalAlignment($text_vertical_alignment)
     {
         $this->container['text_vertical_alignment'] = $text_vertical_alignment;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_horizontal_alignment
+     *
+     * @return string
+     */
+    public function getTextHorizontalAlignment()
+    {
+        return $this->container['text_horizontal_alignment'];
+    }
+
+    /**
+     * Sets text_horizontal_alignment
+     *
+     * @param string $text_horizontal_alignment text_horizontal_alignment
+     *
+     * @return $this
+     */
+    public function setTextHorizontalAlignment($text_horizontal_alignment)
+    {
+        $this->container['text_horizontal_alignment'] = $text_horizontal_alignment;
 
         return $this;
     }

@@ -219,12 +219,12 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1'; 
         $verticalResolution =100;  
         $horizontalResolution =90;
+        $format = "png";
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $verticalResolution, $horizontalResolution, $folder);
+        $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $format, $verticalResolution, $horizontalResolution, $folder);
         $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
-        $this->assertEquals(200, $json->Code);
+        $this->assertGreaterThan(6000, $result->getSize(), "png file size error");
     }
 
     /**

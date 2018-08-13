@@ -57,38 +57,38 @@ class Worksheet implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'links' => '\Aspose\Cells\Cloud\Model\Link[]',
-        'display_right_to_left' => 'bool',
-        'display_zeros' => 'bool',
-        'first_visible_column' => 'int',
-        'first_visible_row' => 'int',
-        'name' => 'string',
         'index' => 'int',
-        'is_gridlines_visible' => 'bool',
-        'is_outline_shown' => 'bool',
-        'is_page_break_preview' => 'bool',
+        'pictures' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'charts' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'comments' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'hyperlinks' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'is_visible' => 'bool',
-        'is_protected' => 'bool',
+        'view_type' => 'string',
+        'type' => 'string',
+        'is_gridlines_visible' => 'bool',
         'is_row_column_headers_visible' => 'bool',
-        'is_ruler_visible' => 'bool',
+        'is_page_break_preview' => 'bool',
+        'display_zeros' => 'bool',
+        'transition_evaluation' => 'bool',
+        'display_right_to_left' => 'bool',
+        'first_visible_column' => 'int',
+        'ole_objects' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'is_outline_shown' => 'bool',
+        'name' => 'string',
+        'auto_shapes' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'cells' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'validations' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'zoom' => 'int',
+        'conditional_formattings' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'is_selected' => 'bool',
         'tab_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'first_visible_row' => 'int',
         'transition_entry' => 'bool',
-        'transition_evaluation' => 'bool',
-        'type' => 'string',
-        'view_type' => 'string',
         'visibility_type' => 'string',
-        'zoom' => 'int',
-        'cells' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'charts' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'auto_shapes' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'ole_objects' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'comments' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'pictures' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'merged_cells' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'validations' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'conditional_formattings' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'hyperlinks' => '\Aspose\Cells\Cloud\Model\LinkElement'
+        'is_ruler_visible' => 'bool',
+        'links' => '\Aspose\Cells\Cloud\Model\Link[]',
+        'is_protected' => 'bool',
+        'merged_cells' => '\Aspose\Cells\Cloud\Model\LinkElement'
     ];
 
     /**
@@ -97,38 +97,38 @@ class Worksheet implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'links' => null,
-        'display_right_to_left' => null,
-        'display_zeros' => null,
-        'first_visible_column' => 'int32',
-        'first_visible_row' => 'int32',
-        'name' => null,
         'index' => 'int32',
-        'is_gridlines_visible' => null,
-        'is_outline_shown' => null,
-        'is_page_break_preview' => null,
+        'pictures' => null,
+        'charts' => null,
+        'comments' => null,
+        'hyperlinks' => null,
         'is_visible' => null,
-        'is_protected' => null,
+        'view_type' => null,
+        'type' => null,
+        'is_gridlines_visible' => null,
         'is_row_column_headers_visible' => null,
-        'is_ruler_visible' => null,
+        'is_page_break_preview' => null,
+        'display_zeros' => null,
+        'transition_evaluation' => null,
+        'display_right_to_left' => null,
+        'first_visible_column' => 'int32',
+        'ole_objects' => null,
+        'is_outline_shown' => null,
+        'name' => null,
+        'auto_shapes' => null,
+        'cells' => null,
+        'validations' => null,
+        'zoom' => 'int32',
+        'conditional_formattings' => null,
         'is_selected' => null,
         'tab_color' => null,
+        'first_visible_row' => 'int32',
         'transition_entry' => null,
-        'transition_evaluation' => null,
-        'type' => null,
-        'view_type' => null,
         'visibility_type' => null,
-        'zoom' => 'int32',
-        'cells' => null,
-        'charts' => null,
-        'auto_shapes' => null,
-        'ole_objects' => null,
-        'comments' => null,
-        'pictures' => null,
-        'merged_cells' => null,
-        'validations' => null,
-        'conditional_formattings' => null,
-        'hyperlinks' => null
+        'is_ruler_visible' => null,
+        'links' => null,
+        'is_protected' => null,
+        'merged_cells' => null
     ];
 
     /**
@@ -158,38 +158,38 @@ class Worksheet implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'links' => 'Links',
-        'display_right_to_left' => 'DisplayRightToLeft',
-        'display_zeros' => 'DisplayZeros',
-        'first_visible_column' => 'FirstVisibleColumn',
-        'first_visible_row' => 'FirstVisibleRow',
-        'name' => 'Name',
         'index' => 'Index',
-        'is_gridlines_visible' => 'IsGridlinesVisible',
-        'is_outline_shown' => 'IsOutlineShown',
-        'is_page_break_preview' => 'IsPageBreakPreview',
+        'pictures' => 'Pictures',
+        'charts' => 'Charts',
+        'comments' => 'Comments',
+        'hyperlinks' => 'Hyperlinks',
         'is_visible' => 'IsVisible',
-        'is_protected' => 'IsProtected',
+        'view_type' => 'ViewType',
+        'type' => 'Type',
+        'is_gridlines_visible' => 'IsGridlinesVisible',
         'is_row_column_headers_visible' => 'IsRowColumnHeadersVisible',
-        'is_ruler_visible' => 'IsRulerVisible',
+        'is_page_break_preview' => 'IsPageBreakPreview',
+        'display_zeros' => 'DisplayZeros',
+        'transition_evaluation' => 'TransitionEvaluation',
+        'display_right_to_left' => 'DisplayRightToLeft',
+        'first_visible_column' => 'FirstVisibleColumn',
+        'ole_objects' => 'OleObjects',
+        'is_outline_shown' => 'IsOutlineShown',
+        'name' => 'Name',
+        'auto_shapes' => 'AutoShapes',
+        'cells' => 'Cells',
+        'validations' => 'Validations',
+        'zoom' => 'Zoom',
+        'conditional_formattings' => 'ConditionalFormattings',
         'is_selected' => 'IsSelected',
         'tab_color' => 'TabColor',
+        'first_visible_row' => 'FirstVisibleRow',
         'transition_entry' => 'TransitionEntry',
-        'transition_evaluation' => 'TransitionEvaluation',
-        'type' => 'Type',
-        'view_type' => 'ViewType',
         'visibility_type' => 'VisibilityType',
-        'zoom' => 'Zoom',
-        'cells' => 'Cells',
-        'charts' => 'Charts',
-        'auto_shapes' => 'AutoShapes',
-        'ole_objects' => 'OleObjects',
-        'comments' => 'Comments',
-        'pictures' => 'Pictures',
-        'merged_cells' => 'MergedCells',
-        'validations' => 'Validations',
-        'conditional_formattings' => 'ConditionalFormattings',
-        'hyperlinks' => 'Hyperlinks'
+        'is_ruler_visible' => 'IsRulerVisible',
+        'links' => 'Links',
+        'is_protected' => 'IsProtected',
+        'merged_cells' => 'MergedCells'
     ];
 
     /**
@@ -198,38 +198,38 @@ class Worksheet implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'links' => 'setLinks',
-        'display_right_to_left' => 'setDisplayRightToLeft',
-        'display_zeros' => 'setDisplayZeros',
-        'first_visible_column' => 'setFirstVisibleColumn',
-        'first_visible_row' => 'setFirstVisibleRow',
-        'name' => 'setName',
         'index' => 'setIndex',
-        'is_gridlines_visible' => 'setIsGridlinesVisible',
-        'is_outline_shown' => 'setIsOutlineShown',
-        'is_page_break_preview' => 'setIsPageBreakPreview',
+        'pictures' => 'setPictures',
+        'charts' => 'setCharts',
+        'comments' => 'setComments',
+        'hyperlinks' => 'setHyperlinks',
         'is_visible' => 'setIsVisible',
-        'is_protected' => 'setIsProtected',
+        'view_type' => 'setViewType',
+        'type' => 'setType',
+        'is_gridlines_visible' => 'setIsGridlinesVisible',
         'is_row_column_headers_visible' => 'setIsRowColumnHeadersVisible',
-        'is_ruler_visible' => 'setIsRulerVisible',
+        'is_page_break_preview' => 'setIsPageBreakPreview',
+        'display_zeros' => 'setDisplayZeros',
+        'transition_evaluation' => 'setTransitionEvaluation',
+        'display_right_to_left' => 'setDisplayRightToLeft',
+        'first_visible_column' => 'setFirstVisibleColumn',
+        'ole_objects' => 'setOleObjects',
+        'is_outline_shown' => 'setIsOutlineShown',
+        'name' => 'setName',
+        'auto_shapes' => 'setAutoShapes',
+        'cells' => 'setCells',
+        'validations' => 'setValidations',
+        'zoom' => 'setZoom',
+        'conditional_formattings' => 'setConditionalFormattings',
         'is_selected' => 'setIsSelected',
         'tab_color' => 'setTabColor',
+        'first_visible_row' => 'setFirstVisibleRow',
         'transition_entry' => 'setTransitionEntry',
-        'transition_evaluation' => 'setTransitionEvaluation',
-        'type' => 'setType',
-        'view_type' => 'setViewType',
         'visibility_type' => 'setVisibilityType',
-        'zoom' => 'setZoom',
-        'cells' => 'setCells',
-        'charts' => 'setCharts',
-        'auto_shapes' => 'setAutoShapes',
-        'ole_objects' => 'setOleObjects',
-        'comments' => 'setComments',
-        'pictures' => 'setPictures',
-        'merged_cells' => 'setMergedCells',
-        'validations' => 'setValidations',
-        'conditional_formattings' => 'setConditionalFormattings',
-        'hyperlinks' => 'setHyperlinks'
+        'is_ruler_visible' => 'setIsRulerVisible',
+        'links' => 'setLinks',
+        'is_protected' => 'setIsProtected',
+        'merged_cells' => 'setMergedCells'
     ];
 
     /**
@@ -238,38 +238,38 @@ class Worksheet implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'links' => 'getLinks',
-        'display_right_to_left' => 'getDisplayRightToLeft',
-        'display_zeros' => 'getDisplayZeros',
-        'first_visible_column' => 'getFirstVisibleColumn',
-        'first_visible_row' => 'getFirstVisibleRow',
-        'name' => 'getName',
         'index' => 'getIndex',
-        'is_gridlines_visible' => 'getIsGridlinesVisible',
-        'is_outline_shown' => 'getIsOutlineShown',
-        'is_page_break_preview' => 'getIsPageBreakPreview',
+        'pictures' => 'getPictures',
+        'charts' => 'getCharts',
+        'comments' => 'getComments',
+        'hyperlinks' => 'getHyperlinks',
         'is_visible' => 'getIsVisible',
-        'is_protected' => 'getIsProtected',
+        'view_type' => 'getViewType',
+        'type' => 'getType',
+        'is_gridlines_visible' => 'getIsGridlinesVisible',
         'is_row_column_headers_visible' => 'getIsRowColumnHeadersVisible',
-        'is_ruler_visible' => 'getIsRulerVisible',
+        'is_page_break_preview' => 'getIsPageBreakPreview',
+        'display_zeros' => 'getDisplayZeros',
+        'transition_evaluation' => 'getTransitionEvaluation',
+        'display_right_to_left' => 'getDisplayRightToLeft',
+        'first_visible_column' => 'getFirstVisibleColumn',
+        'ole_objects' => 'getOleObjects',
+        'is_outline_shown' => 'getIsOutlineShown',
+        'name' => 'getName',
+        'auto_shapes' => 'getAutoShapes',
+        'cells' => 'getCells',
+        'validations' => 'getValidations',
+        'zoom' => 'getZoom',
+        'conditional_formattings' => 'getConditionalFormattings',
         'is_selected' => 'getIsSelected',
         'tab_color' => 'getTabColor',
+        'first_visible_row' => 'getFirstVisibleRow',
         'transition_entry' => 'getTransitionEntry',
-        'transition_evaluation' => 'getTransitionEvaluation',
-        'type' => 'getType',
-        'view_type' => 'getViewType',
         'visibility_type' => 'getVisibilityType',
-        'zoom' => 'getZoom',
-        'cells' => 'getCells',
-        'charts' => 'getCharts',
-        'auto_shapes' => 'getAutoShapes',
-        'ole_objects' => 'getOleObjects',
-        'comments' => 'getComments',
-        'pictures' => 'getPictures',
-        'merged_cells' => 'getMergedCells',
-        'validations' => 'getValidations',
-        'conditional_formattings' => 'getConditionalFormattings',
-        'hyperlinks' => 'getHyperlinks'
+        'is_ruler_visible' => 'getIsRulerVisible',
+        'links' => 'getLinks',
+        'is_protected' => 'getIsProtected',
+        'merged_cells' => 'getMergedCells'
     ];
 
     /**
@@ -332,38 +332,38 @@ class Worksheet implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['display_right_to_left'] = isset($data['display_right_to_left']) ? $data['display_right_to_left'] : null;
-        $this->container['display_zeros'] = isset($data['display_zeros']) ? $data['display_zeros'] : null;
-        $this->container['first_visible_column'] = isset($data['first_visible_column']) ? $data['first_visible_column'] : null;
-        $this->container['first_visible_row'] = isset($data['first_visible_row']) ? $data['first_visible_row'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['index'] = isset($data['index']) ? $data['index'] : null;
-        $this->container['is_gridlines_visible'] = isset($data['is_gridlines_visible']) ? $data['is_gridlines_visible'] : null;
-        $this->container['is_outline_shown'] = isset($data['is_outline_shown']) ? $data['is_outline_shown'] : null;
-        $this->container['is_page_break_preview'] = isset($data['is_page_break_preview']) ? $data['is_page_break_preview'] : null;
+        $this->container['pictures'] = isset($data['pictures']) ? $data['pictures'] : null;
+        $this->container['charts'] = isset($data['charts']) ? $data['charts'] : null;
+        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['hyperlinks'] = isset($data['hyperlinks']) ? $data['hyperlinks'] : null;
         $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
-        $this->container['is_protected'] = isset($data['is_protected']) ? $data['is_protected'] : null;
+        $this->container['view_type'] = isset($data['view_type']) ? $data['view_type'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['is_gridlines_visible'] = isset($data['is_gridlines_visible']) ? $data['is_gridlines_visible'] : null;
         $this->container['is_row_column_headers_visible'] = isset($data['is_row_column_headers_visible']) ? $data['is_row_column_headers_visible'] : null;
-        $this->container['is_ruler_visible'] = isset($data['is_ruler_visible']) ? $data['is_ruler_visible'] : null;
+        $this->container['is_page_break_preview'] = isset($data['is_page_break_preview']) ? $data['is_page_break_preview'] : null;
+        $this->container['display_zeros'] = isset($data['display_zeros']) ? $data['display_zeros'] : null;
+        $this->container['transition_evaluation'] = isset($data['transition_evaluation']) ? $data['transition_evaluation'] : null;
+        $this->container['display_right_to_left'] = isset($data['display_right_to_left']) ? $data['display_right_to_left'] : null;
+        $this->container['first_visible_column'] = isset($data['first_visible_column']) ? $data['first_visible_column'] : null;
+        $this->container['ole_objects'] = isset($data['ole_objects']) ? $data['ole_objects'] : null;
+        $this->container['is_outline_shown'] = isset($data['is_outline_shown']) ? $data['is_outline_shown'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['auto_shapes'] = isset($data['auto_shapes']) ? $data['auto_shapes'] : null;
+        $this->container['cells'] = isset($data['cells']) ? $data['cells'] : null;
+        $this->container['validations'] = isset($data['validations']) ? $data['validations'] : null;
+        $this->container['zoom'] = isset($data['zoom']) ? $data['zoom'] : null;
+        $this->container['conditional_formattings'] = isset($data['conditional_formattings']) ? $data['conditional_formattings'] : null;
         $this->container['is_selected'] = isset($data['is_selected']) ? $data['is_selected'] : null;
         $this->container['tab_color'] = isset($data['tab_color']) ? $data['tab_color'] : null;
+        $this->container['first_visible_row'] = isset($data['first_visible_row']) ? $data['first_visible_row'] : null;
         $this->container['transition_entry'] = isset($data['transition_entry']) ? $data['transition_entry'] : null;
-        $this->container['transition_evaluation'] = isset($data['transition_evaluation']) ? $data['transition_evaluation'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['view_type'] = isset($data['view_type']) ? $data['view_type'] : null;
         $this->container['visibility_type'] = isset($data['visibility_type']) ? $data['visibility_type'] : null;
-        $this->container['zoom'] = isset($data['zoom']) ? $data['zoom'] : null;
-        $this->container['cells'] = isset($data['cells']) ? $data['cells'] : null;
-        $this->container['charts'] = isset($data['charts']) ? $data['charts'] : null;
-        $this->container['auto_shapes'] = isset($data['auto_shapes']) ? $data['auto_shapes'] : null;
-        $this->container['ole_objects'] = isset($data['ole_objects']) ? $data['ole_objects'] : null;
-        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
-        $this->container['pictures'] = isset($data['pictures']) ? $data['pictures'] : null;
+        $this->container['is_ruler_visible'] = isset($data['is_ruler_visible']) ? $data['is_ruler_visible'] : null;
+        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
+        $this->container['is_protected'] = isset($data['is_protected']) ? $data['is_protected'] : null;
         $this->container['merged_cells'] = isset($data['merged_cells']) ? $data['merged_cells'] : null;
-        $this->container['validations'] = isset($data['validations']) ? $data['validations'] : null;
-        $this->container['conditional_formattings'] = isset($data['conditional_formattings']) ? $data['conditional_formattings'] : null;
-        $this->container['hyperlinks'] = isset($data['hyperlinks']) ? $data['hyperlinks'] : null;
     }
 
     /**
@@ -404,150 +404,6 @@ class Worksheet implements  ArrayAccess
 
 
     /**
-     * Gets links
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link[]
-     */
-    public function getLinks()
-    {
-        return $this->container['links'];
-    }
-
-    /**
-     * Sets links
-     *
-     * @param \Aspose\Cells\Cloud\Model\Link[] $links links
-     *
-     * @return $this
-     */
-    public function setLinks($links)
-    {
-        $this->container['links'] = $links;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_right_to_left
-     *
-     * @return bool
-     */
-    public function getDisplayRightToLeft()
-    {
-        return $this->container['display_right_to_left'];
-    }
-
-    /**
-     * Sets display_right_to_left
-     *
-     * @param bool $display_right_to_left Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.
-     *
-     * @return $this
-     */
-    public function setDisplayRightToLeft($display_right_to_left)
-    {
-        $this->container['display_right_to_left'] = $display_right_to_left;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_zeros
-     *
-     * @return bool
-     */
-    public function getDisplayZeros()
-    {
-        return $this->container['display_zeros'];
-    }
-
-    /**
-     * Sets display_zeros
-     *
-     * @param bool $display_zeros True if zero values are displayed.
-     *
-     * @return $this
-     */
-    public function setDisplayZeros($display_zeros)
-    {
-        $this->container['display_zeros'] = $display_zeros;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_visible_column
-     *
-     * @return int
-     */
-    public function getFirstVisibleColumn()
-    {
-        return $this->container['first_visible_column'];
-    }
-
-    /**
-     * Sets first_visible_column
-     *
-     * @param int $first_visible_column Represents first visible column index.
-     *
-     * @return $this
-     */
-    public function setFirstVisibleColumn($first_visible_column)
-    {
-        $this->container['first_visible_column'] = $first_visible_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_visible_row
-     *
-     * @return int
-     */
-    public function getFirstVisibleRow()
-    {
-        return $this->container['first_visible_row'];
-    }
-
-    /**
-     * Sets first_visible_row
-     *
-     * @param int $first_visible_row Represents first visible row index.
-     *
-     * @return $this
-     */
-    public function setFirstVisibleRow($first_visible_row)
-    {
-        $this->container['first_visible_row'] = $first_visible_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Gets or sets the name of the worksheet.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets index
      *
      * @return int
@@ -572,73 +428,97 @@ class Worksheet implements  ArrayAccess
     }
 
     /**
-     * Gets is_gridlines_visible
+     * Gets pictures
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getIsGridlinesVisible()
+    public function getPictures()
     {
-        return $this->container['is_gridlines_visible'];
+        return $this->container['pictures'];
     }
 
     /**
-     * Sets is_gridlines_visible
+     * Sets pictures
      *
-     * @param bool $is_gridlines_visible Gets or sets a value indicating whether the gridelines are visible.Default     is true.
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $pictures pictures
      *
      * @return $this
      */
-    public function setIsGridlinesVisible($is_gridlines_visible)
+    public function setPictures($pictures)
     {
-        $this->container['is_gridlines_visible'] = $is_gridlines_visible;
+        $this->container['pictures'] = $pictures;
 
         return $this;
     }
 
     /**
-     * Gets is_outline_shown
+     * Gets charts
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getIsOutlineShown()
+    public function getCharts()
     {
-        return $this->container['is_outline_shown'];
+        return $this->container['charts'];
     }
 
     /**
-     * Sets is_outline_shown
+     * Sets charts
      *
-     * @param bool $is_outline_shown Indicates whether show outline.
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $charts charts
      *
      * @return $this
      */
-    public function setIsOutlineShown($is_outline_shown)
+    public function setCharts($charts)
     {
-        $this->container['is_outline_shown'] = $is_outline_shown;
+        $this->container['charts'] = $charts;
 
         return $this;
     }
 
     /**
-     * Gets is_page_break_preview
+     * Gets comments
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getIsPageBreakPreview()
+    public function getComments()
     {
-        return $this->container['is_page_break_preview'];
+        return $this->container['comments'];
     }
 
     /**
-     * Sets is_page_break_preview
+     * Sets comments
      *
-     * @param bool $is_page_break_preview Indications the specified worksheet is shown in normal view or page break preview.
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $comments comments
      *
      * @return $this
      */
-    public function setIsPageBreakPreview($is_page_break_preview)
+    public function setComments($comments)
     {
-        $this->container['is_page_break_preview'] = $is_page_break_preview;
+        $this->container['comments'] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Gets hyperlinks
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getHyperlinks()
+    {
+        return $this->container['hyperlinks'];
+    }
+
+    /**
+     * Sets hyperlinks
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $hyperlinks hyperlinks
+     *
+     * @return $this
+     */
+    public function setHyperlinks($hyperlinks)
+    {
+        $this->container['hyperlinks'] = $hyperlinks;
 
         return $this;
     }
@@ -668,25 +548,73 @@ class Worksheet implements  ArrayAccess
     }
 
     /**
-     * Gets is_protected
+     * Gets view_type
      *
-     * @return bool
+     * @return string
      */
-    public function getIsProtected()
+    public function getViewType()
     {
-        return $this->container['is_protected'];
+        return $this->container['view_type'];
     }
 
     /**
-     * Sets is_protected
+     * Sets view_type
      *
-     * @param bool $is_protected Indicates if the worksheet is protected.
+     * @param string $view_type Gets and sets the view type.
      *
      * @return $this
      */
-    public function setIsProtected($is_protected)
+    public function setViewType($view_type)
     {
-        $this->container['is_protected'] = $is_protected;
+        $this->container['view_type'] = $view_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Represents worksheet type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_gridlines_visible
+     *
+     * @return bool
+     */
+    public function getIsGridlinesVisible()
+    {
+        return $this->container['is_gridlines_visible'];
+    }
+
+    /**
+     * Sets is_gridlines_visible
+     *
+     * @param bool $is_gridlines_visible Gets or sets a value indicating whether the gridelines are visible.Default     is true.
+     *
+     * @return $this
+     */
+    public function setIsGridlinesVisible($is_gridlines_visible)
+    {
+        $this->container['is_gridlines_visible'] = $is_gridlines_visible;
 
         return $this;
     }
@@ -716,25 +644,313 @@ class Worksheet implements  ArrayAccess
     }
 
     /**
-     * Gets is_ruler_visible
+     * Gets is_page_break_preview
      *
      * @return bool
      */
-    public function getIsRulerVisible()
+    public function getIsPageBreakPreview()
     {
-        return $this->container['is_ruler_visible'];
+        return $this->container['is_page_break_preview'];
     }
 
     /**
-     * Sets is_ruler_visible
+     * Sets is_page_break_preview
      *
-     * @param bool $is_ruler_visible Indicates whether the ruler is visible. Only apply for page break preview.
+     * @param bool $is_page_break_preview Indications the specified worksheet is shown in normal view or page break preview.
      *
      * @return $this
      */
-    public function setIsRulerVisible($is_ruler_visible)
+    public function setIsPageBreakPreview($is_page_break_preview)
     {
-        $this->container['is_ruler_visible'] = $is_ruler_visible;
+        $this->container['is_page_break_preview'] = $is_page_break_preview;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_zeros
+     *
+     * @return bool
+     */
+    public function getDisplayZeros()
+    {
+        return $this->container['display_zeros'];
+    }
+
+    /**
+     * Sets display_zeros
+     *
+     * @param bool $display_zeros True if zero values are displayed.
+     *
+     * @return $this
+     */
+    public function setDisplayZeros($display_zeros)
+    {
+        $this->container['display_zeros'] = $display_zeros;
+
+        return $this;
+    }
+
+    /**
+     * Gets transition_evaluation
+     *
+     * @return bool
+     */
+    public function getTransitionEvaluation()
+    {
+        return $this->container['transition_evaluation'];
+    }
+
+    /**
+     * Sets transition_evaluation
+     *
+     * @param bool $transition_evaluation Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.
+     *
+     * @return $this
+     */
+    public function setTransitionEvaluation($transition_evaluation)
+    {
+        $this->container['transition_evaluation'] = $transition_evaluation;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_right_to_left
+     *
+     * @return bool
+     */
+    public function getDisplayRightToLeft()
+    {
+        return $this->container['display_right_to_left'];
+    }
+
+    /**
+     * Sets display_right_to_left
+     *
+     * @param bool $display_right_to_left Indicates if the specified worksheet is displayed from right to left instead    of from left to right.  Default is false.
+     *
+     * @return $this
+     */
+    public function setDisplayRightToLeft($display_right_to_left)
+    {
+        $this->container['display_right_to_left'] = $display_right_to_left;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_visible_column
+     *
+     * @return int
+     */
+    public function getFirstVisibleColumn()
+    {
+        return $this->container['first_visible_column'];
+    }
+
+    /**
+     * Sets first_visible_column
+     *
+     * @param int $first_visible_column Represents first visible column index.
+     *
+     * @return $this
+     */
+    public function setFirstVisibleColumn($first_visible_column)
+    {
+        $this->container['first_visible_column'] = $first_visible_column;
+
+        return $this;
+    }
+
+    /**
+     * Gets ole_objects
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getOleObjects()
+    {
+        return $this->container['ole_objects'];
+    }
+
+    /**
+     * Sets ole_objects
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $ole_objects ole_objects
+     *
+     * @return $this
+     */
+    public function setOleObjects($ole_objects)
+    {
+        $this->container['ole_objects'] = $ole_objects;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_outline_shown
+     *
+     * @return bool
+     */
+    public function getIsOutlineShown()
+    {
+        return $this->container['is_outline_shown'];
+    }
+
+    /**
+     * Sets is_outline_shown
+     *
+     * @param bool $is_outline_shown Indicates whether show outline.
+     *
+     * @return $this
+     */
+    public function setIsOutlineShown($is_outline_shown)
+    {
+        $this->container['is_outline_shown'] = $is_outline_shown;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Gets or sets the name of the worksheet.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_shapes
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getAutoShapes()
+    {
+        return $this->container['auto_shapes'];
+    }
+
+    /**
+     * Sets auto_shapes
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $auto_shapes auto_shapes
+     *
+     * @return $this
+     */
+    public function setAutoShapes($auto_shapes)
+    {
+        $this->container['auto_shapes'] = $auto_shapes;
+
+        return $this;
+    }
+
+    /**
+     * Gets cells
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getCells()
+    {
+        return $this->container['cells'];
+    }
+
+    /**
+     * Sets cells
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $cells cells
+     *
+     * @return $this
+     */
+    public function setCells($cells)
+    {
+        $this->container['cells'] = $cells;
+
+        return $this;
+    }
+
+    /**
+     * Gets validations
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getValidations()
+    {
+        return $this->container['validations'];
+    }
+
+    /**
+     * Sets validations
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $validations validations
+     *
+     * @return $this
+     */
+    public function setValidations($validations)
+    {
+        $this->container['validations'] = $validations;
+
+        return $this;
+    }
+
+    /**
+     * Gets zoom
+     *
+     * @return int
+     */
+    public function getZoom()
+    {
+        return $this->container['zoom'];
+    }
+
+    /**
+     * Sets zoom
+     *
+     * @param int $zoom Represents the scaling factor in percent. It should be btween 10 and 400.
+     *
+     * @return $this
+     */
+    public function setZoom($zoom)
+    {
+        $this->container['zoom'] = $zoom;
+
+        return $this;
+    }
+
+    /**
+     * Gets conditional_formattings
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getConditionalFormattings()
+    {
+        return $this->container['conditional_formattings'];
+    }
+
+    /**
+     * Sets conditional_formattings
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $conditional_formattings conditional_formattings
+     *
+     * @return $this
+     */
+    public function setConditionalFormattings($conditional_formattings)
+    {
+        $this->container['conditional_formattings'] = $conditional_formattings;
 
         return $this;
     }
@@ -788,6 +1004,30 @@ class Worksheet implements  ArrayAccess
     }
 
     /**
+     * Gets first_visible_row
+     *
+     * @return int
+     */
+    public function getFirstVisibleRow()
+    {
+        return $this->container['first_visible_row'];
+    }
+
+    /**
+     * Sets first_visible_row
+     *
+     * @param int $first_visible_row Represents first visible row index.
+     *
+     * @return $this
+     */
+    public function setFirstVisibleRow($first_visible_row)
+    {
+        $this->container['first_visible_row'] = $first_visible_row;
+
+        return $this;
+    }
+
+    /**
      * Gets transition_entry
      *
      * @return bool
@@ -807,78 +1047,6 @@ class Worksheet implements  ArrayAccess
     public function setTransitionEntry($transition_entry)
     {
         $this->container['transition_entry'] = $transition_entry;
-
-        return $this;
-    }
-
-    /**
-     * Gets transition_evaluation
-     *
-     * @return bool
-     */
-    public function getTransitionEvaluation()
-    {
-        return $this->container['transition_evaluation'];
-    }
-
-    /**
-     * Sets transition_evaluation
-     *
-     * @param bool $transition_evaluation Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.
-     *
-     * @return $this
-     */
-    public function setTransitionEvaluation($transition_evaluation)
-    {
-        $this->container['transition_evaluation'] = $transition_evaluation;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type Represents worksheet type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets view_type
-     *
-     * @return string
-     */
-    public function getViewType()
-    {
-        return $this->container['view_type'];
-    }
-
-    /**
-     * Sets view_type
-     *
-     * @param string $view_type Gets and sets the view type.
-     *
-     * @return $this
-     */
-    public function setViewType($view_type)
-    {
-        $this->container['view_type'] = $view_type;
 
         return $this;
     }
@@ -908,169 +1076,73 @@ class Worksheet implements  ArrayAccess
     }
 
     /**
-     * Gets zoom
+     * Gets is_ruler_visible
      *
-     * @return int
+     * @return bool
      */
-    public function getZoom()
+    public function getIsRulerVisible()
     {
-        return $this->container['zoom'];
+        return $this->container['is_ruler_visible'];
     }
 
     /**
-     * Sets zoom
+     * Sets is_ruler_visible
      *
-     * @param int $zoom Represents the scaling factor in percent. It should be btween 10 and 400.
+     * @param bool $is_ruler_visible Indicates whether the ruler is visible. Only apply for page break preview.
      *
      * @return $this
      */
-    public function setZoom($zoom)
+    public function setIsRulerVisible($is_ruler_visible)
     {
-        $this->container['zoom'] = $zoom;
+        $this->container['is_ruler_visible'] = $is_ruler_visible;
 
         return $this;
     }
 
     /**
-     * Gets cells
+     * Gets links
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Link[]
      */
-    public function getCells()
+    public function getLinks()
     {
-        return $this->container['cells'];
+        return $this->container['links'];
     }
 
     /**
-     * Sets cells
+     * Sets links
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $cells cells
+     * @param \Aspose\Cells\Cloud\Model\Link[] $links links
      *
      * @return $this
      */
-    public function setCells($cells)
+    public function setLinks($links)
     {
-        $this->container['cells'] = $cells;
+        $this->container['links'] = $links;
 
         return $this;
     }
 
     /**
-     * Gets charts
+     * Gets is_protected
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return bool
      */
-    public function getCharts()
+    public function getIsProtected()
     {
-        return $this->container['charts'];
+        return $this->container['is_protected'];
     }
 
     /**
-     * Sets charts
+     * Sets is_protected
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $charts charts
+     * @param bool $is_protected Indicates if the worksheet is protected.
      *
      * @return $this
      */
-    public function setCharts($charts)
+    public function setIsProtected($is_protected)
     {
-        $this->container['charts'] = $charts;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_shapes
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getAutoShapes()
-    {
-        return $this->container['auto_shapes'];
-    }
-
-    /**
-     * Sets auto_shapes
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $auto_shapes auto_shapes
-     *
-     * @return $this
-     */
-    public function setAutoShapes($auto_shapes)
-    {
-        $this->container['auto_shapes'] = $auto_shapes;
-
-        return $this;
-    }
-
-    /**
-     * Gets ole_objects
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getOleObjects()
-    {
-        return $this->container['ole_objects'];
-    }
-
-    /**
-     * Sets ole_objects
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $ole_objects ole_objects
-     *
-     * @return $this
-     */
-    public function setOleObjects($ole_objects)
-    {
-        $this->container['ole_objects'] = $ole_objects;
-
-        return $this;
-    }
-
-    /**
-     * Gets comments
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getComments()
-    {
-        return $this->container['comments'];
-    }
-
-    /**
-     * Sets comments
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $comments comments
-     *
-     * @return $this
-     */
-    public function setComments($comments)
-    {
-        $this->container['comments'] = $comments;
-
-        return $this;
-    }
-
-    /**
-     * Gets pictures
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getPictures()
-    {
-        return $this->container['pictures'];
-    }
-
-    /**
-     * Sets pictures
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $pictures pictures
-     *
-     * @return $this
-     */
-    public function setPictures($pictures)
-    {
-        $this->container['pictures'] = $pictures;
+        $this->container['is_protected'] = $is_protected;
 
         return $this;
     }
@@ -1095,78 +1167,6 @@ class Worksheet implements  ArrayAccess
     public function setMergedCells($merged_cells)
     {
         $this->container['merged_cells'] = $merged_cells;
-
-        return $this;
-    }
-
-    /**
-     * Gets validations
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getValidations()
-    {
-        return $this->container['validations'];
-    }
-
-    /**
-     * Sets validations
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $validations validations
-     *
-     * @return $this
-     */
-    public function setValidations($validations)
-    {
-        $this->container['validations'] = $validations;
-
-        return $this;
-    }
-
-    /**
-     * Gets conditional_formattings
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getConditionalFormattings()
-    {
-        return $this->container['conditional_formattings'];
-    }
-
-    /**
-     * Sets conditional_formattings
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $conditional_formattings conditional_formattings
-     *
-     * @return $this
-     */
-    public function setConditionalFormattings($conditional_formattings)
-    {
-        $this->container['conditional_formattings'] = $conditional_formattings;
-
-        return $this;
-    }
-
-    /**
-     * Gets hyperlinks
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getHyperlinks()
-    {
-        return $this->container['hyperlinks'];
-    }
-
-    /**
-     * Sets hyperlinks
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $hyperlinks hyperlinks
-     *
-     * @return $this
-     */
-    public function setHyperlinks($hyperlinks)
-    {
-        $this->container['hyperlinks'] = $hyperlinks;
 
         return $this;
     }

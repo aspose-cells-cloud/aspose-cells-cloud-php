@@ -58,29 +58,29 @@ class Style implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'font' => '\Aspose\Cells\Cloud\Model\Font',
-        'name' => 'string',
-        'culture_custom' => 'string',
-        'custom' => 'string',
-        'background_color' => '\Aspose\Cells\Cloud\Model\Color',
-        'foreground_color' => '\Aspose\Cells\Cloud\Model\Color',
-        'is_formula_hidden' => 'bool',
-        'is_date_time' => 'bool',
-        'is_text_wrapped' => 'bool',
-        'is_gradient' => 'bool',
-        'is_locked' => 'bool',
-        'is_percent' => 'bool',
-        'shrink_to_fit' => 'bool',
-        'indent_level' => 'int',
-        'number' => 'int',
-        'rotation_angle' => 'int',
         'pattern' => 'string',
         'text_direction' => 'string',
-        'vertical_alignment' => 'string',
-        'horizontal_alignment' => 'string',
+        'custom' => 'string',
+        'shrink_to_fit' => 'bool',
+        'is_date_time' => 'bool',
+        'culture_custom' => 'string',
+        'rotation_angle' => 'int',
+        'indent_level' => 'int',
+        'is_percent' => 'bool',
+        'foreground_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'name' => 'string',
+        'foreground_theme_color' => '\Aspose\Cells\Cloud\Model\ThemeColor',
         'border_collection' => '\Aspose\Cells\Cloud\Model\Border[]',
+        'is_locked' => 'bool',
+        'vertical_alignment' => 'string',
+        'background_color' => '\Aspose\Cells\Cloud\Model\Color',
         'background_theme_color' => '\Aspose\Cells\Cloud\Model\ThemeColor',
-        'foreground_theme_color' => '\Aspose\Cells\Cloud\Model\ThemeColor'
+        'is_formula_hidden' => 'bool',
+        'is_gradient' => 'bool',
+        'number' => 'int',
+        'horizontal_alignment' => 'string',
+        'is_text_wrapped' => 'bool',
+        'font' => '\Aspose\Cells\Cloud\Model\Font'
     ];
 
     /**
@@ -90,29 +90,29 @@ class Style implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'font' => null,
-        'name' => null,
-        'culture_custom' => null,
-        'custom' => null,
-        'background_color' => null,
-        'foreground_color' => null,
-        'is_formula_hidden' => null,
-        'is_date_time' => null,
-        'is_text_wrapped' => null,
-        'is_gradient' => null,
-        'is_locked' => null,
-        'is_percent' => null,
-        'shrink_to_fit' => null,
-        'indent_level' => 'int32',
-        'number' => 'int32',
-        'rotation_angle' => 'int32',
         'pattern' => null,
         'text_direction' => null,
-        'vertical_alignment' => null,
-        'horizontal_alignment' => null,
+        'custom' => null,
+        'shrink_to_fit' => null,
+        'is_date_time' => null,
+        'culture_custom' => null,
+        'rotation_angle' => 'int32',
+        'indent_level' => 'int32',
+        'is_percent' => null,
+        'foreground_color' => null,
+        'name' => null,
+        'foreground_theme_color' => null,
         'border_collection' => null,
+        'is_locked' => null,
+        'vertical_alignment' => null,
+        'background_color' => null,
         'background_theme_color' => null,
-        'foreground_theme_color' => null
+        'is_formula_hidden' => null,
+        'is_gradient' => null,
+        'number' => 'int32',
+        'horizontal_alignment' => null,
+        'is_text_wrapped' => null,
+        'font' => null
     ];
 
     /**
@@ -143,29 +143,29 @@ class Style implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'font' => 'Font',
-        'name' => 'Name',
-        'culture_custom' => 'CultureCustom',
-        'custom' => 'Custom',
-        'background_color' => 'BackgroundColor',
-        'foreground_color' => 'ForegroundColor',
-        'is_formula_hidden' => 'IsFormulaHidden',
-        'is_date_time' => 'IsDateTime',
-        'is_text_wrapped' => 'IsTextWrapped',
-        'is_gradient' => 'IsGradient',
-        'is_locked' => 'IsLocked',
-        'is_percent' => 'IsPercent',
-        'shrink_to_fit' => 'ShrinkToFit',
-        'indent_level' => 'IndentLevel',
-        'number' => 'Number',
-        'rotation_angle' => 'RotationAngle',
         'pattern' => 'Pattern',
         'text_direction' => 'TextDirection',
-        'vertical_alignment' => 'VerticalAlignment',
-        'horizontal_alignment' => 'HorizontalAlignment',
+        'custom' => 'Custom',
+        'shrink_to_fit' => 'ShrinkToFit',
+        'is_date_time' => 'IsDateTime',
+        'culture_custom' => 'CultureCustom',
+        'rotation_angle' => 'RotationAngle',
+        'indent_level' => 'IndentLevel',
+        'is_percent' => 'IsPercent',
+        'foreground_color' => 'ForegroundColor',
+        'name' => 'Name',
+        'foreground_theme_color' => 'ForegroundThemeColor',
         'border_collection' => 'BorderCollection',
+        'is_locked' => 'IsLocked',
+        'vertical_alignment' => 'VerticalAlignment',
+        'background_color' => 'BackgroundColor',
         'background_theme_color' => 'BackgroundThemeColor',
-        'foreground_theme_color' => 'ForegroundThemeColor'
+        'is_formula_hidden' => 'IsFormulaHidden',
+        'is_gradient' => 'IsGradient',
+        'number' => 'Number',
+        'horizontal_alignment' => 'HorizontalAlignment',
+        'is_text_wrapped' => 'IsTextWrapped',
+        'font' => 'Font'
     ];
 
     /**
@@ -175,29 +175,29 @@ class Style implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'font' => 'setFont',
-        'name' => 'setName',
-        'culture_custom' => 'setCultureCustom',
-        'custom' => 'setCustom',
-        'background_color' => 'setBackgroundColor',
-        'foreground_color' => 'setForegroundColor',
-        'is_formula_hidden' => 'setIsFormulaHidden',
-        'is_date_time' => 'setIsDateTime',
-        'is_text_wrapped' => 'setIsTextWrapped',
-        'is_gradient' => 'setIsGradient',
-        'is_locked' => 'setIsLocked',
-        'is_percent' => 'setIsPercent',
-        'shrink_to_fit' => 'setShrinkToFit',
-        'indent_level' => 'setIndentLevel',
-        'number' => 'setNumber',
-        'rotation_angle' => 'setRotationAngle',
         'pattern' => 'setPattern',
         'text_direction' => 'setTextDirection',
-        'vertical_alignment' => 'setVerticalAlignment',
-        'horizontal_alignment' => 'setHorizontalAlignment',
+        'custom' => 'setCustom',
+        'shrink_to_fit' => 'setShrinkToFit',
+        'is_date_time' => 'setIsDateTime',
+        'culture_custom' => 'setCultureCustom',
+        'rotation_angle' => 'setRotationAngle',
+        'indent_level' => 'setIndentLevel',
+        'is_percent' => 'setIsPercent',
+        'foreground_color' => 'setForegroundColor',
+        'name' => 'setName',
+        'foreground_theme_color' => 'setForegroundThemeColor',
         'border_collection' => 'setBorderCollection',
+        'is_locked' => 'setIsLocked',
+        'vertical_alignment' => 'setVerticalAlignment',
+        'background_color' => 'setBackgroundColor',
         'background_theme_color' => 'setBackgroundThemeColor',
-        'foreground_theme_color' => 'setForegroundThemeColor'
+        'is_formula_hidden' => 'setIsFormulaHidden',
+        'is_gradient' => 'setIsGradient',
+        'number' => 'setNumber',
+        'horizontal_alignment' => 'setHorizontalAlignment',
+        'is_text_wrapped' => 'setIsTextWrapped',
+        'font' => 'setFont'
     ];
 
     /**
@@ -207,29 +207,29 @@ class Style implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'font' => 'getFont',
-        'name' => 'getName',
-        'culture_custom' => 'getCultureCustom',
-        'custom' => 'getCustom',
-        'background_color' => 'getBackgroundColor',
-        'foreground_color' => 'getForegroundColor',
-        'is_formula_hidden' => 'getIsFormulaHidden',
-        'is_date_time' => 'getIsDateTime',
-        'is_text_wrapped' => 'getIsTextWrapped',
-        'is_gradient' => 'getIsGradient',
-        'is_locked' => 'getIsLocked',
-        'is_percent' => 'getIsPercent',
-        'shrink_to_fit' => 'getShrinkToFit',
-        'indent_level' => 'getIndentLevel',
-        'number' => 'getNumber',
-        'rotation_angle' => 'getRotationAngle',
         'pattern' => 'getPattern',
         'text_direction' => 'getTextDirection',
-        'vertical_alignment' => 'getVerticalAlignment',
-        'horizontal_alignment' => 'getHorizontalAlignment',
+        'custom' => 'getCustom',
+        'shrink_to_fit' => 'getShrinkToFit',
+        'is_date_time' => 'getIsDateTime',
+        'culture_custom' => 'getCultureCustom',
+        'rotation_angle' => 'getRotationAngle',
+        'indent_level' => 'getIndentLevel',
+        'is_percent' => 'getIsPercent',
+        'foreground_color' => 'getForegroundColor',
+        'name' => 'getName',
+        'foreground_theme_color' => 'getForegroundThemeColor',
         'border_collection' => 'getBorderCollection',
+        'is_locked' => 'getIsLocked',
+        'vertical_alignment' => 'getVerticalAlignment',
+        'background_color' => 'getBackgroundColor',
         'background_theme_color' => 'getBackgroundThemeColor',
-        'foreground_theme_color' => 'getForegroundThemeColor'
+        'is_formula_hidden' => 'getIsFormulaHidden',
+        'is_gradient' => 'getIsGradient',
+        'number' => 'getNumber',
+        'horizontal_alignment' => 'getHorizontalAlignment',
+        'is_text_wrapped' => 'getIsTextWrapped',
+        'font' => 'getFont'
     ];
 
     /**
@@ -293,29 +293,29 @@ class Style implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['culture_custom'] = isset($data['culture_custom']) ? $data['culture_custom'] : null;
-        $this->container['custom'] = isset($data['custom']) ? $data['custom'] : null;
-        $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
-        $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : null;
-        $this->container['is_formula_hidden'] = isset($data['is_formula_hidden']) ? $data['is_formula_hidden'] : null;
-        $this->container['is_date_time'] = isset($data['is_date_time']) ? $data['is_date_time'] : null;
-        $this->container['is_text_wrapped'] = isset($data['is_text_wrapped']) ? $data['is_text_wrapped'] : null;
-        $this->container['is_gradient'] = isset($data['is_gradient']) ? $data['is_gradient'] : null;
-        $this->container['is_locked'] = isset($data['is_locked']) ? $data['is_locked'] : null;
-        $this->container['is_percent'] = isset($data['is_percent']) ? $data['is_percent'] : null;
-        $this->container['shrink_to_fit'] = isset($data['shrink_to_fit']) ? $data['shrink_to_fit'] : null;
-        $this->container['indent_level'] = isset($data['indent_level']) ? $data['indent_level'] : null;
-        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
-        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
         $this->container['pattern'] = isset($data['pattern']) ? $data['pattern'] : null;
         $this->container['text_direction'] = isset($data['text_direction']) ? $data['text_direction'] : null;
-        $this->container['vertical_alignment'] = isset($data['vertical_alignment']) ? $data['vertical_alignment'] : null;
-        $this->container['horizontal_alignment'] = isset($data['horizontal_alignment']) ? $data['horizontal_alignment'] : null;
-        $this->container['border_collection'] = isset($data['border_collection']) ? $data['border_collection'] : null;
-        $this->container['background_theme_color'] = isset($data['background_theme_color']) ? $data['background_theme_color'] : null;
+        $this->container['custom'] = isset($data['custom']) ? $data['custom'] : null;
+        $this->container['shrink_to_fit'] = isset($data['shrink_to_fit']) ? $data['shrink_to_fit'] : null;
+        $this->container['is_date_time'] = isset($data['is_date_time']) ? $data['is_date_time'] : null;
+        $this->container['culture_custom'] = isset($data['culture_custom']) ? $data['culture_custom'] : null;
+        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
+        $this->container['indent_level'] = isset($data['indent_level']) ? $data['indent_level'] : null;
+        $this->container['is_percent'] = isset($data['is_percent']) ? $data['is_percent'] : null;
+        $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['foreground_theme_color'] = isset($data['foreground_theme_color']) ? $data['foreground_theme_color'] : null;
+        $this->container['border_collection'] = isset($data['border_collection']) ? $data['border_collection'] : null;
+        $this->container['is_locked'] = isset($data['is_locked']) ? $data['is_locked'] : null;
+        $this->container['vertical_alignment'] = isset($data['vertical_alignment']) ? $data['vertical_alignment'] : null;
+        $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
+        $this->container['background_theme_color'] = isset($data['background_theme_color']) ? $data['background_theme_color'] : null;
+        $this->container['is_formula_hidden'] = isset($data['is_formula_hidden']) ? $data['is_formula_hidden'] : null;
+        $this->container['is_gradient'] = isset($data['is_gradient']) ? $data['is_gradient'] : null;
+        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['horizontal_alignment'] = isset($data['horizontal_alignment']) ? $data['horizontal_alignment'] : null;
+        $this->container['is_text_wrapped'] = isset($data['is_text_wrapped']) ? $data['is_text_wrapped'] : null;
+        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
     }
 
     /**
@@ -363,390 +363,6 @@ class Style implements  ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
-
-        return $this;
-    }
-
-    /**
-     * Gets font
-     *
-     * @return \Aspose\Cells\Cloud\Model\Font
-     */
-    public function getFont()
-    {
-        return $this->container['font'];
-    }
-
-    /**
-     * Sets font
-     *
-     * @param \Aspose\Cells\Cloud\Model\Font $font font
-     *
-     * @return $this
-     */
-    public function setFont($font)
-    {
-        $this->container['font'] = $font;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets culture_custom
-     *
-     * @return string
-     */
-    public function getCultureCustom()
-    {
-        return $this->container['culture_custom'];
-    }
-
-    /**
-     * Sets culture_custom
-     *
-     * @param string $culture_custom culture_custom
-     *
-     * @return $this
-     */
-    public function setCultureCustom($culture_custom)
-    {
-        $this->container['culture_custom'] = $culture_custom;
-
-        return $this;
-    }
-
-    /**
-     * Gets custom
-     *
-     * @return string
-     */
-    public function getCustom()
-    {
-        return $this->container['custom'];
-    }
-
-    /**
-     * Sets custom
-     *
-     * @param string $custom custom
-     *
-     * @return $this
-     */
-    public function setCustom($custom)
-    {
-        $this->container['custom'] = $custom;
-
-        return $this;
-    }
-
-    /**
-     * Gets background_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\Color
-     */
-    public function getBackgroundColor()
-    {
-        return $this->container['background_color'];
-    }
-
-    /**
-     * Sets background_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\Color $background_color background_color
-     *
-     * @return $this
-     */
-    public function setBackgroundColor($background_color)
-    {
-        $this->container['background_color'] = $background_color;
-
-        return $this;
-    }
-
-    /**
-     * Gets foreground_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\Color
-     */
-    public function getForegroundColor()
-    {
-        return $this->container['foreground_color'];
-    }
-
-    /**
-     * Sets foreground_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\Color $foreground_color foreground_color
-     *
-     * @return $this
-     */
-    public function setForegroundColor($foreground_color)
-    {
-        $this->container['foreground_color'] = $foreground_color;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_formula_hidden
-     *
-     * @return bool
-     */
-    public function getIsFormulaHidden()
-    {
-        return $this->container['is_formula_hidden'];
-    }
-
-    /**
-     * Sets is_formula_hidden
-     *
-     * @param bool $is_formula_hidden is_formula_hidden
-     *
-     * @return $this
-     */
-    public function setIsFormulaHidden($is_formula_hidden)
-    {
-        $this->container['is_formula_hidden'] = $is_formula_hidden;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_date_time
-     *
-     * @return bool
-     */
-    public function getIsDateTime()
-    {
-        return $this->container['is_date_time'];
-    }
-
-    /**
-     * Sets is_date_time
-     *
-     * @param bool $is_date_time is_date_time
-     *
-     * @return $this
-     */
-    public function setIsDateTime($is_date_time)
-    {
-        $this->container['is_date_time'] = $is_date_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_text_wrapped
-     *
-     * @return bool
-     */
-    public function getIsTextWrapped()
-    {
-        return $this->container['is_text_wrapped'];
-    }
-
-    /**
-     * Sets is_text_wrapped
-     *
-     * @param bool $is_text_wrapped is_text_wrapped
-     *
-     * @return $this
-     */
-    public function setIsTextWrapped($is_text_wrapped)
-    {
-        $this->container['is_text_wrapped'] = $is_text_wrapped;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_gradient
-     *
-     * @return bool
-     */
-    public function getIsGradient()
-    {
-        return $this->container['is_gradient'];
-    }
-
-    /**
-     * Sets is_gradient
-     *
-     * @param bool $is_gradient is_gradient
-     *
-     * @return $this
-     */
-    public function setIsGradient($is_gradient)
-    {
-        $this->container['is_gradient'] = $is_gradient;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_locked
-     *
-     * @return bool
-     */
-    public function getIsLocked()
-    {
-        return $this->container['is_locked'];
-    }
-
-    /**
-     * Sets is_locked
-     *
-     * @param bool $is_locked is_locked
-     *
-     * @return $this
-     */
-    public function setIsLocked($is_locked)
-    {
-        $this->container['is_locked'] = $is_locked;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_percent
-     *
-     * @return bool
-     */
-    public function getIsPercent()
-    {
-        return $this->container['is_percent'];
-    }
-
-    /**
-     * Sets is_percent
-     *
-     * @param bool $is_percent is_percent
-     *
-     * @return $this
-     */
-    public function setIsPercent($is_percent)
-    {
-        $this->container['is_percent'] = $is_percent;
-
-        return $this;
-    }
-
-    /**
-     * Gets shrink_to_fit
-     *
-     * @return bool
-     */
-    public function getShrinkToFit()
-    {
-        return $this->container['shrink_to_fit'];
-    }
-
-    /**
-     * Sets shrink_to_fit
-     *
-     * @param bool $shrink_to_fit shrink_to_fit
-     *
-     * @return $this
-     */
-    public function setShrinkToFit($shrink_to_fit)
-    {
-        $this->container['shrink_to_fit'] = $shrink_to_fit;
-
-        return $this;
-    }
-
-    /**
-     * Gets indent_level
-     *
-     * @return int
-     */
-    public function getIndentLevel()
-    {
-        return $this->container['indent_level'];
-    }
-
-    /**
-     * Sets indent_level
-     *
-     * @param int $indent_level indent_level
-     *
-     * @return $this
-     */
-    public function setIndentLevel($indent_level)
-    {
-        $this->container['indent_level'] = $indent_level;
-
-        return $this;
-    }
-
-    /**
-     * Gets number
-     *
-     * @return int
-     */
-    public function getNumber()
-    {
-        return $this->container['number'];
-    }
-
-    /**
-     * Sets number
-     *
-     * @param int $number number
-     *
-     * @return $this
-     */
-    public function setNumber($number)
-    {
-        $this->container['number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets rotation_angle
-     *
-     * @return int
-     */
-    public function getRotationAngle()
-    {
-        return $this->container['rotation_angle'];
-    }
-
-    /**
-     * Sets rotation_angle
-     *
-     * @param int $rotation_angle rotation_angle
-     *
-     * @return $this
-     */
-    public function setRotationAngle($rotation_angle)
-    {
-        $this->container['rotation_angle'] = $rotation_angle;
 
         return $this;
     }
@@ -800,49 +416,241 @@ class Style implements  ArrayAccess
     }
 
     /**
-     * Gets vertical_alignment
+     * Gets custom
      *
      * @return string
      */
-    public function getVerticalAlignment()
+    public function getCustom()
     {
-        return $this->container['vertical_alignment'];
+        return $this->container['custom'];
     }
 
     /**
-     * Sets vertical_alignment
+     * Sets custom
      *
-     * @param string $vertical_alignment vertical_alignment
+     * @param string $custom custom
      *
      * @return $this
      */
-    public function setVerticalAlignment($vertical_alignment)
+    public function setCustom($custom)
     {
-        $this->container['vertical_alignment'] = $vertical_alignment;
+        $this->container['custom'] = $custom;
 
         return $this;
     }
 
     /**
-     * Gets horizontal_alignment
+     * Gets shrink_to_fit
      *
-     * @return string
+     * @return bool
      */
-    public function getHorizontalAlignment()
+    public function getShrinkToFit()
     {
-        return $this->container['horizontal_alignment'];
+        return $this->container['shrink_to_fit'];
     }
 
     /**
-     * Sets horizontal_alignment
+     * Sets shrink_to_fit
      *
-     * @param string $horizontal_alignment horizontal_alignment
+     * @param bool $shrink_to_fit shrink_to_fit
      *
      * @return $this
      */
-    public function setHorizontalAlignment($horizontal_alignment)
+    public function setShrinkToFit($shrink_to_fit)
     {
-        $this->container['horizontal_alignment'] = $horizontal_alignment;
+        $this->container['shrink_to_fit'] = $shrink_to_fit;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_date_time
+     *
+     * @return bool
+     */
+    public function getIsDateTime()
+    {
+        return $this->container['is_date_time'];
+    }
+
+    /**
+     * Sets is_date_time
+     *
+     * @param bool $is_date_time is_date_time
+     *
+     * @return $this
+     */
+    public function setIsDateTime($is_date_time)
+    {
+        $this->container['is_date_time'] = $is_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets culture_custom
+     *
+     * @return string
+     */
+    public function getCultureCustom()
+    {
+        return $this->container['culture_custom'];
+    }
+
+    /**
+     * Sets culture_custom
+     *
+     * @param string $culture_custom culture_custom
+     *
+     * @return $this
+     */
+    public function setCultureCustom($culture_custom)
+    {
+        $this->container['culture_custom'] = $culture_custom;
+
+        return $this;
+    }
+
+    /**
+     * Gets rotation_angle
+     *
+     * @return int
+     */
+    public function getRotationAngle()
+    {
+        return $this->container['rotation_angle'];
+    }
+
+    /**
+     * Sets rotation_angle
+     *
+     * @param int $rotation_angle rotation_angle
+     *
+     * @return $this
+     */
+    public function setRotationAngle($rotation_angle)
+    {
+        $this->container['rotation_angle'] = $rotation_angle;
+
+        return $this;
+    }
+
+    /**
+     * Gets indent_level
+     *
+     * @return int
+     */
+    public function getIndentLevel()
+    {
+        return $this->container['indent_level'];
+    }
+
+    /**
+     * Sets indent_level
+     *
+     * @param int $indent_level indent_level
+     *
+     * @return $this
+     */
+    public function setIndentLevel($indent_level)
+    {
+        $this->container['indent_level'] = $indent_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_percent
+     *
+     * @return bool
+     */
+    public function getIsPercent()
+    {
+        return $this->container['is_percent'];
+    }
+
+    /**
+     * Sets is_percent
+     *
+     * @param bool $is_percent is_percent
+     *
+     * @return $this
+     */
+    public function setIsPercent($is_percent)
+    {
+        $this->container['is_percent'] = $is_percent;
+
+        return $this;
+    }
+
+    /**
+     * Gets foreground_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getForegroundColor()
+    {
+        return $this->container['foreground_color'];
+    }
+
+    /**
+     * Sets foreground_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $foreground_color foreground_color
+     *
+     * @return $this
+     */
+    public function setForegroundColor($foreground_color)
+    {
+        $this->container['foreground_color'] = $foreground_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets foreground_theme_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\ThemeColor
+     */
+    public function getForegroundThemeColor()
+    {
+        return $this->container['foreground_theme_color'];
+    }
+
+    /**
+     * Sets foreground_theme_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\ThemeColor $foreground_theme_color foreground_theme_color
+     *
+     * @return $this
+     */
+    public function setForegroundThemeColor($foreground_theme_color)
+    {
+        $this->container['foreground_theme_color'] = $foreground_theme_color;
 
         return $this;
     }
@@ -872,6 +680,78 @@ class Style implements  ArrayAccess
     }
 
     /**
+     * Gets is_locked
+     *
+     * @return bool
+     */
+    public function getIsLocked()
+    {
+        return $this->container['is_locked'];
+    }
+
+    /**
+     * Sets is_locked
+     *
+     * @param bool $is_locked is_locked
+     *
+     * @return $this
+     */
+    public function setIsLocked($is_locked)
+    {
+        $this->container['is_locked'] = $is_locked;
+
+        return $this;
+    }
+
+    /**
+     * Gets vertical_alignment
+     *
+     * @return string
+     */
+    public function getVerticalAlignment()
+    {
+        return $this->container['vertical_alignment'];
+    }
+
+    /**
+     * Sets vertical_alignment
+     *
+     * @param string $vertical_alignment vertical_alignment
+     *
+     * @return $this
+     */
+    public function setVerticalAlignment($vertical_alignment)
+    {
+        $this->container['vertical_alignment'] = $vertical_alignment;
+
+        return $this;
+    }
+
+    /**
+     * Gets background_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getBackgroundColor()
+    {
+        return $this->container['background_color'];
+    }
+
+    /**
+     * Sets background_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $background_color background_color
+     *
+     * @return $this
+     */
+    public function setBackgroundColor($background_color)
+    {
+        $this->container['background_color'] = $background_color;
+
+        return $this;
+    }
+
+    /**
      * Gets background_theme_color
      *
      * @return \Aspose\Cells\Cloud\Model\ThemeColor
@@ -896,25 +776,145 @@ class Style implements  ArrayAccess
     }
 
     /**
-     * Gets foreground_theme_color
+     * Gets is_formula_hidden
      *
-     * @return \Aspose\Cells\Cloud\Model\ThemeColor
+     * @return bool
      */
-    public function getForegroundThemeColor()
+    public function getIsFormulaHidden()
     {
-        return $this->container['foreground_theme_color'];
+        return $this->container['is_formula_hidden'];
     }
 
     /**
-     * Sets foreground_theme_color
+     * Sets is_formula_hidden
      *
-     * @param \Aspose\Cells\Cloud\Model\ThemeColor $foreground_theme_color foreground_theme_color
+     * @param bool $is_formula_hidden is_formula_hidden
      *
      * @return $this
      */
-    public function setForegroundThemeColor($foreground_theme_color)
+    public function setIsFormulaHidden($is_formula_hidden)
     {
-        $this->container['foreground_theme_color'] = $foreground_theme_color;
+        $this->container['is_formula_hidden'] = $is_formula_hidden;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_gradient
+     *
+     * @return bool
+     */
+    public function getIsGradient()
+    {
+        return $this->container['is_gradient'];
+    }
+
+    /**
+     * Sets is_gradient
+     *
+     * @param bool $is_gradient is_gradient
+     *
+     * @return $this
+     */
+    public function setIsGradient($is_gradient)
+    {
+        $this->container['is_gradient'] = $is_gradient;
+
+        return $this;
+    }
+
+    /**
+     * Gets number
+     *
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->container['number'];
+    }
+
+    /**
+     * Sets number
+     *
+     * @param int $number number
+     *
+     * @return $this
+     */
+    public function setNumber($number)
+    {
+        $this->container['number'] = $number;
+
+        return $this;
+    }
+
+    /**
+     * Gets horizontal_alignment
+     *
+     * @return string
+     */
+    public function getHorizontalAlignment()
+    {
+        return $this->container['horizontal_alignment'];
+    }
+
+    /**
+     * Sets horizontal_alignment
+     *
+     * @param string $horizontal_alignment horizontal_alignment
+     *
+     * @return $this
+     */
+    public function setHorizontalAlignment($horizontal_alignment)
+    {
+        $this->container['horizontal_alignment'] = $horizontal_alignment;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_text_wrapped
+     *
+     * @return bool
+     */
+    public function getIsTextWrapped()
+    {
+        return $this->container['is_text_wrapped'];
+    }
+
+    /**
+     * Sets is_text_wrapped
+     *
+     * @param bool $is_text_wrapped is_text_wrapped
+     *
+     * @return $this
+     */
+    public function setIsTextWrapped($is_text_wrapped)
+    {
+        $this->container['is_text_wrapped'] = $is_text_wrapped;
+
+        return $this;
+    }
+
+    /**
+     * Gets font
+     *
+     * @return \Aspose\Cells\Cloud\Model\Font
+     */
+    public function getFont()
+    {
+        return $this->container['font'];
+    }
+
+    /**
+     * Sets font
+     *
+     * @param \Aspose\Cells\Cloud\Model\Font $font font
+     *
+     * @return $this
+     */
+    public function setFont($font)
+    {
+        $this->container['font'] = $font;
 
         return $this;
     }

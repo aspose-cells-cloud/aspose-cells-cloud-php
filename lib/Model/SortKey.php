@@ -57,9 +57,9 @@ class SortKey implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'key' => 'int',
+        'custom_list' => 'string',
         'sort_order' => 'string',
-        'custom_list' => 'string'
+        'key' => 'int'
     ];
 
     /**
@@ -68,9 +68,9 @@ class SortKey implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'key' => 'int32',
+        'custom_list' => null,
         'sort_order' => null,
-        'custom_list' => null
+        'key' => 'int32'
     ];
 
     /**
@@ -100,9 +100,9 @@ class SortKey implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'Key',
+        'custom_list' => 'CustomList',
         'sort_order' => 'SortOrder',
-        'custom_list' => 'CustomList'
+        'key' => 'Key'
     ];
 
     /**
@@ -111,9 +111,9 @@ class SortKey implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
+        'custom_list' => 'setCustomList',
         'sort_order' => 'setSortOrder',
-        'custom_list' => 'setCustomList'
+        'key' => 'setKey'
     ];
 
     /**
@@ -122,9 +122,9 @@ class SortKey implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
+        'custom_list' => 'getCustomList',
         'sort_order' => 'getSortOrder',
-        'custom_list' => 'getCustomList'
+        'key' => 'getKey'
     ];
 
     /**
@@ -187,9 +187,9 @@ class SortKey implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['sort_order'] = isset($data['sort_order']) ? $data['sort_order'] : null;
         $this->container['custom_list'] = isset($data['custom_list']) ? $data['custom_list'] : null;
+        $this->container['sort_order'] = isset($data['sort_order']) ? $data['sort_order'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
     }
 
     /**
@@ -224,25 +224,25 @@ class SortKey implements  ArrayAccess
 
 
     /**
-     * Gets key
+     * Gets custom_list
      *
-     * @return int
+     * @return string
      */
-    public function getKey()
+    public function getCustomList()
     {
-        return $this->container['key'];
+        return $this->container['custom_list'];
     }
 
     /**
-     * Sets key
+     * Sets custom_list
      *
-     * @param int $key key
+     * @param string $custom_list custom_list
      *
      * @return $this
      */
-    public function setKey($key)
+    public function setCustomList($custom_list)
     {
-        $this->container['key'] = $key;
+        $this->container['custom_list'] = $custom_list;
 
         return $this;
     }
@@ -272,25 +272,25 @@ class SortKey implements  ArrayAccess
     }
 
     /**
-     * Gets custom_list
+     * Gets key
      *
-     * @return string
+     * @return int
      */
-    public function getCustomList()
+    public function getKey()
     {
-        return $this->container['custom_list'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets custom_list
+     * Sets key
      *
-     * @param string $custom_list custom_list
+     * @param int $key key
      *
      * @return $this
      */
-    public function setCustomList($custom_list)
+    public function setKey($key)
     {
-        $this->container['custom_list'] = $custom_list;
+        $this->container['key'] = $key;
 
         return $this;
     }

@@ -58,12 +58,12 @@ class CopyOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'refer_to_destination_sheet' => 'bool',
+        'copy_names' => 'bool',
+        'refer_to_sheet_with_same_name' => 'bool',
         'column_character_width' => 'bool',
         'copy_invalid_formulas_as_values' => 'bool',
-        'copy_names' => 'bool',
-        'extend_to_adjacent_range' => 'bool',
-        'refer_to_destination_sheet' => 'bool',
-        'refer_to_sheet_with_same_name' => 'bool'
+        'extend_to_adjacent_range' => 'bool'
     ];
 
     /**
@@ -72,12 +72,12 @@ class CopyOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'refer_to_destination_sheet' => null,
+        'copy_names' => null,
+        'refer_to_sheet_with_same_name' => null,
         'column_character_width' => null,
         'copy_invalid_formulas_as_values' => null,
-        'copy_names' => null,
-        'extend_to_adjacent_range' => null,
-        'refer_to_destination_sheet' => null,
-        'refer_to_sheet_with_same_name' => null
+        'extend_to_adjacent_range' => null
     ];
 
     /**
@@ -107,12 +107,12 @@ class CopyOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'refer_to_destination_sheet' => 'ReferToDestinationSheet',
+        'copy_names' => 'CopyNames',
+        'refer_to_sheet_with_same_name' => 'ReferToSheetWithSameName',
         'column_character_width' => 'ColumnCharacterWidth',
         'copy_invalid_formulas_as_values' => 'CopyInvalidFormulasAsValues',
-        'copy_names' => 'CopyNames',
-        'extend_to_adjacent_range' => 'ExtendToAdjacentRange',
-        'refer_to_destination_sheet' => 'ReferToDestinationSheet',
-        'refer_to_sheet_with_same_name' => 'ReferToSheetWithSameName'
+        'extend_to_adjacent_range' => 'ExtendToAdjacentRange'
     ];
 
     /**
@@ -121,12 +121,12 @@ class CopyOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'refer_to_destination_sheet' => 'setReferToDestinationSheet',
+        'copy_names' => 'setCopyNames',
+        'refer_to_sheet_with_same_name' => 'setReferToSheetWithSameName',
         'column_character_width' => 'setColumnCharacterWidth',
         'copy_invalid_formulas_as_values' => 'setCopyInvalidFormulasAsValues',
-        'copy_names' => 'setCopyNames',
-        'extend_to_adjacent_range' => 'setExtendToAdjacentRange',
-        'refer_to_destination_sheet' => 'setReferToDestinationSheet',
-        'refer_to_sheet_with_same_name' => 'setReferToSheetWithSameName'
+        'extend_to_adjacent_range' => 'setExtendToAdjacentRange'
     ];
 
     /**
@@ -135,12 +135,12 @@ class CopyOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'refer_to_destination_sheet' => 'getReferToDestinationSheet',
+        'copy_names' => 'getCopyNames',
+        'refer_to_sheet_with_same_name' => 'getReferToSheetWithSameName',
         'column_character_width' => 'getColumnCharacterWidth',
         'copy_invalid_formulas_as_values' => 'getCopyInvalidFormulasAsValues',
-        'copy_names' => 'getCopyNames',
-        'extend_to_adjacent_range' => 'getExtendToAdjacentRange',
-        'refer_to_destination_sheet' => 'getReferToDestinationSheet',
-        'refer_to_sheet_with_same_name' => 'getReferToSheetWithSameName'
+        'extend_to_adjacent_range' => 'getExtendToAdjacentRange'
     ];
 
     /**
@@ -203,12 +203,12 @@ class CopyOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['refer_to_destination_sheet'] = isset($data['refer_to_destination_sheet']) ? $data['refer_to_destination_sheet'] : null;
+        $this->container['copy_names'] = isset($data['copy_names']) ? $data['copy_names'] : null;
+        $this->container['refer_to_sheet_with_same_name'] = isset($data['refer_to_sheet_with_same_name']) ? $data['refer_to_sheet_with_same_name'] : null;
         $this->container['column_character_width'] = isset($data['column_character_width']) ? $data['column_character_width'] : null;
         $this->container['copy_invalid_formulas_as_values'] = isset($data['copy_invalid_formulas_as_values']) ? $data['copy_invalid_formulas_as_values'] : null;
-        $this->container['copy_names'] = isset($data['copy_names']) ? $data['copy_names'] : null;
         $this->container['extend_to_adjacent_range'] = isset($data['extend_to_adjacent_range']) ? $data['extend_to_adjacent_range'] : null;
-        $this->container['refer_to_destination_sheet'] = isset($data['refer_to_destination_sheet']) ? $data['refer_to_destination_sheet'] : null;
-        $this->container['refer_to_sheet_with_same_name'] = isset($data['refer_to_sheet_with_same_name']) ? $data['refer_to_sheet_with_same_name'] : null;
     }
 
     /**
@@ -235,6 +235,78 @@ class CopyOptions implements  ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets refer_to_destination_sheet
+     *
+     * @return bool
+     */
+    public function getReferToDestinationSheet()
+    {
+        return $this->container['refer_to_destination_sheet'];
+    }
+
+    /**
+     * Sets refer_to_destination_sheet
+     *
+     * @param bool $refer_to_destination_sheet When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart's data source will not be changed. True means the   copied chart's data source refers to the destination sheet.
+     *
+     * @return $this
+     */
+    public function setReferToDestinationSheet($refer_to_destination_sheet)
+    {
+        $this->container['refer_to_destination_sheet'] = $refer_to_destination_sheet;
+
+        return $this;
+    }
+
+    /**
+     * Gets copy_names
+     *
+     * @return bool
+     */
+    public function getCopyNames()
+    {
+        return $this->container['copy_names'];
+    }
+
+    /**
+     * Sets copy_names
+     *
+     * @param bool $copy_names Indicates whether copying the names.
+     *
+     * @return $this
+     */
+    public function setCopyNames($copy_names)
+    {
+        $this->container['copy_names'] = $copy_names;
+
+        return $this;
+    }
+
+    /**
+     * Gets refer_to_sheet_with_same_name
+     *
+     * @return bool
+     */
+    public function getReferToSheetWithSameName()
+    {
+        return $this->container['refer_to_sheet_with_same_name'];
+    }
+
+    /**
+     * Sets refer_to_sheet_with_same_name
+     *
+     * @param bool $refer_to_sheet_with_same_name refer_to_sheet_with_same_name
+     *
+     * @return $this
+     */
+    public function setReferToSheetWithSameName($refer_to_sheet_with_same_name)
+    {
+        $this->container['refer_to_sheet_with_same_name'] = $refer_to_sheet_with_same_name;
+
+        return $this;
+    }
 
     /**
      * Gets column_character_width
@@ -285,30 +357,6 @@ class CopyOptions implements  ArrayAccess
     }
 
     /**
-     * Gets copy_names
-     *
-     * @return bool
-     */
-    public function getCopyNames()
-    {
-        return $this->container['copy_names'];
-    }
-
-    /**
-     * Sets copy_names
-     *
-     * @param bool $copy_names Indicates whether copying the names.
-     *
-     * @return $this
-     */
-    public function setCopyNames($copy_names)
-    {
-        $this->container['copy_names'] = $copy_names;
-
-        return $this;
-    }
-
-    /**
      * Gets extend_to_adjacent_range
      *
      * @return bool
@@ -328,54 +376,6 @@ class CopyOptions implements  ArrayAccess
     public function setExtendToAdjacentRange($extend_to_adjacent_range)
     {
         $this->container['extend_to_adjacent_range'] = $extend_to_adjacent_range;
-
-        return $this;
-    }
-
-    /**
-     * Gets refer_to_destination_sheet
-     *
-     * @return bool
-     */
-    public function getReferToDestinationSheet()
-    {
-        return $this->container['refer_to_destination_sheet'];
-    }
-
-    /**
-     * Sets refer_to_destination_sheet
-     *
-     * @param bool $refer_to_destination_sheet When copying the range in the same file and the chart refers to the source sheet,   False means the copied chart's data source will not be changed. True means the   copied chart's data source refers to the destination sheet.
-     *
-     * @return $this
-     */
-    public function setReferToDestinationSheet($refer_to_destination_sheet)
-    {
-        $this->container['refer_to_destination_sheet'] = $refer_to_destination_sheet;
-
-        return $this;
-    }
-
-    /**
-     * Gets refer_to_sheet_with_same_name
-     *
-     * @return bool
-     */
-    public function getReferToSheetWithSameName()
-    {
-        return $this->container['refer_to_sheet_with_same_name'];
-    }
-
-    /**
-     * Sets refer_to_sheet_with_same_name
-     *
-     * @param bool $refer_to_sheet_with_same_name refer_to_sheet_with_same_name
-     *
-     * @return $this
-     */
-    public function setReferToSheetWithSameName($refer_to_sheet_with_same_name)
-    {
-        $this->container['refer_to_sheet_with_same_name'] = $refer_to_sheet_with_same_name;
 
         return $this;
     }

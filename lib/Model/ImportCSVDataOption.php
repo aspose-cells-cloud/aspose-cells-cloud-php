@@ -55,11 +55,11 @@ class ImportCSVDataOption extends ImportOption
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'separator_string' => 'string',
         'convert_numeric_data' => 'bool',
-        'first_row' => 'int',
         'first_column' => 'int',
         'source_file' => 'string',
+        'first_row' => 'int',
+        'separator_string' => 'string',
         'custom_parsers' => '\Aspose\Cells\Cloud\Model\CustomParserConfig[]'
     ];
 
@@ -69,11 +69,11 @@ class ImportCSVDataOption extends ImportOption
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'separator_string' => null,
         'convert_numeric_data' => null,
-        'first_row' => 'int32',
         'first_column' => 'int32',
         'source_file' => null,
+        'first_row' => 'int32',
+        'separator_string' => null,
         'custom_parsers' => null
     ];
 
@@ -104,11 +104,11 @@ class ImportCSVDataOption extends ImportOption
      * @var string[]
      */
     protected static $attributeMap = [
-        'separator_string' => 'SeparatorString',
         'convert_numeric_data' => 'ConvertNumericData',
-        'first_row' => 'FirstRow',
         'first_column' => 'FirstColumn',
         'source_file' => 'SourceFile',
+        'first_row' => 'FirstRow',
+        'separator_string' => 'SeparatorString',
         'custom_parsers' => 'CustomParsers'
     ];
 
@@ -118,11 +118,11 @@ class ImportCSVDataOption extends ImportOption
      * @var string[]
      */
     protected static $setters = [
-        'separator_string' => 'setSeparatorString',
         'convert_numeric_data' => 'setConvertNumericData',
-        'first_row' => 'setFirstRow',
         'first_column' => 'setFirstColumn',
         'source_file' => 'setSourceFile',
+        'first_row' => 'setFirstRow',
+        'separator_string' => 'setSeparatorString',
         'custom_parsers' => 'setCustomParsers'
     ];
 
@@ -132,11 +132,11 @@ class ImportCSVDataOption extends ImportOption
      * @var string[]
      */
     protected static $getters = [
-        'separator_string' => 'getSeparatorString',
         'convert_numeric_data' => 'getConvertNumericData',
-        'first_row' => 'getFirstRow',
         'first_column' => 'getFirstColumn',
         'source_file' => 'getSourceFile',
+        'first_row' => 'getFirstRow',
+        'separator_string' => 'getSeparatorString',
         'custom_parsers' => 'getCustomParsers'
     ];
 
@@ -196,11 +196,11 @@ class ImportCSVDataOption extends ImportOption
     {
         parent::__construct($data);
 
-        $this->container['separator_string'] = isset($data['separator_string']) ? $data['separator_string'] : null;
         $this->container['convert_numeric_data'] = isset($data['convert_numeric_data']) ? $data['convert_numeric_data'] : null;
-        $this->container['first_row'] = isset($data['first_row']) ? $data['first_row'] : null;
         $this->container['first_column'] = isset($data['first_column']) ? $data['first_column'] : null;
         $this->container['source_file'] = isset($data['source_file']) ? $data['source_file'] : null;
+        $this->container['first_row'] = isset($data['first_row']) ? $data['first_row'] : null;
+        $this->container['separator_string'] = isset($data['separator_string']) ? $data['separator_string'] : null;
         $this->container['custom_parsers'] = isset($data['custom_parsers']) ? $data['custom_parsers'] : null;
     }
 
@@ -233,30 +233,6 @@ class ImportCSVDataOption extends ImportOption
 
 
     /**
-     * Gets separator_string
-     *
-     * @return string
-     */
-    public function getSeparatorString()
-    {
-        return $this->container['separator_string'];
-    }
-
-    /**
-     * Sets separator_string
-     *
-     * @param string $separator_string separator_string
-     *
-     * @return $this
-     */
-    public function setSeparatorString($separator_string)
-    {
-        $this->container['separator_string'] = $separator_string;
-
-        return $this;
-    }
-
-    /**
      * Gets convert_numeric_data
      *
      * @return bool
@@ -276,30 +252,6 @@ class ImportCSVDataOption extends ImportOption
     public function setConvertNumericData($convert_numeric_data)
     {
         $this->container['convert_numeric_data'] = $convert_numeric_data;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_row
-     *
-     * @return int
-     */
-    public function getFirstRow()
-    {
-        return $this->container['first_row'];
-    }
-
-    /**
-     * Sets first_row
-     *
-     * @param int $first_row first_row
-     *
-     * @return $this
-     */
-    public function setFirstRow($first_row)
-    {
-        $this->container['first_row'] = $first_row;
 
         return $this;
     }
@@ -348,6 +300,54 @@ class ImportCSVDataOption extends ImportOption
     public function setSourceFile($source_file)
     {
         $this->container['source_file'] = $source_file;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_row
+     *
+     * @return int
+     */
+    public function getFirstRow()
+    {
+        return $this->container['first_row'];
+    }
+
+    /**
+     * Sets first_row
+     *
+     * @param int $first_row first_row
+     *
+     * @return $this
+     */
+    public function setFirstRow($first_row)
+    {
+        $this->container['first_row'] = $first_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets separator_string
+     *
+     * @return string
+     */
+    public function getSeparatorString()
+    {
+        return $this->container['separator_string'];
+    }
+
+    /**
+     * Sets separator_string
+     *
+     * @param string $separator_string separator_string
+     *
+     * @return $this
+     */
+    public function setSeparatorString($separator_string)
+    {
+        $this->container['separator_string'] = $separator_string;
 
         return $this;
     }

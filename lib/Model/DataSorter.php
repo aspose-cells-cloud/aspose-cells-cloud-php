@@ -58,8 +58,8 @@ class DataSorter implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'case_sensitive' => 'bool',
-        'has_headers' => 'bool',
         'key_list' => '\Aspose\Cells\Cloud\Model\SortKey[]',
+        'has_headers' => 'bool',
         'sort_left_to_right' => 'bool'
     ];
 
@@ -70,8 +70,8 @@ class DataSorter implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'case_sensitive' => null,
-        'has_headers' => null,
         'key_list' => null,
+        'has_headers' => null,
         'sort_left_to_right' => null
     ];
 
@@ -103,8 +103,8 @@ class DataSorter implements  ArrayAccess
      */
     protected static $attributeMap = [
         'case_sensitive' => 'CaseSensitive',
-        'has_headers' => 'HasHeaders',
         'key_list' => 'KeyList',
+        'has_headers' => 'HasHeaders',
         'sort_left_to_right' => 'SortLeftToRight'
     ];
 
@@ -115,8 +115,8 @@ class DataSorter implements  ArrayAccess
      */
     protected static $setters = [
         'case_sensitive' => 'setCaseSensitive',
-        'has_headers' => 'setHasHeaders',
         'key_list' => 'setKeyList',
+        'has_headers' => 'setHasHeaders',
         'sort_left_to_right' => 'setSortLeftToRight'
     ];
 
@@ -127,8 +127,8 @@ class DataSorter implements  ArrayAccess
      */
     protected static $getters = [
         'case_sensitive' => 'getCaseSensitive',
-        'has_headers' => 'getHasHeaders',
         'key_list' => 'getKeyList',
+        'has_headers' => 'getHasHeaders',
         'sort_left_to_right' => 'getSortLeftToRight'
     ];
 
@@ -193,8 +193,8 @@ class DataSorter implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['case_sensitive'] = isset($data['case_sensitive']) ? $data['case_sensitive'] : null;
-        $this->container['has_headers'] = isset($data['has_headers']) ? $data['has_headers'] : null;
         $this->container['key_list'] = isset($data['key_list']) ? $data['key_list'] : null;
+        $this->container['has_headers'] = isset($data['has_headers']) ? $data['has_headers'] : null;
         $this->container['sort_left_to_right'] = isset($data['sort_left_to_right']) ? $data['sort_left_to_right'] : null;
     }
 
@@ -248,30 +248,6 @@ class DataSorter implements  ArrayAccess
     }
 
     /**
-     * Gets has_headers
-     *
-     * @return bool
-     */
-    public function getHasHeaders()
-    {
-        return $this->container['has_headers'];
-    }
-
-    /**
-     * Sets has_headers
-     *
-     * @param bool $has_headers has_headers
-     *
-     * @return $this
-     */
-    public function setHasHeaders($has_headers)
-    {
-        $this->container['has_headers'] = $has_headers;
-
-        return $this;
-    }
-
-    /**
      * Gets key_list
      *
      * @return \Aspose\Cells\Cloud\Model\SortKey[]
@@ -291,6 +267,30 @@ class DataSorter implements  ArrayAccess
     public function setKeyList($key_list)
     {
         $this->container['key_list'] = $key_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_headers
+     *
+     * @return bool
+     */
+    public function getHasHeaders()
+    {
+        return $this->container['has_headers'];
+    }
+
+    /**
+     * Sets has_headers
+     *
+     * @param bool $has_headers has_headers
+     *
+     * @return $this
+     */
+    public function setHasHeaders($has_headers)
+    {
+        $this->container['has_headers'] = $has_headers;
 
         return $this;
     }

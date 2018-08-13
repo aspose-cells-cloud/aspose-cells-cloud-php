@@ -58,40 +58,40 @@ class Shape implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'name' => 'string',
-        'mso_drawing_type' => 'string',
-        'auto_shape_type' => 'string',
-        'placement' => 'string',
-        'upper_left_row' => 'int',
-        'top' => 'int',
-        'upper_left_column' => 'int',
-        'left' => 'int',
-        'lower_right_row' => 'int',
-        'bottom' => 'int',
-        'lower_right_column' => 'int',
-        'right' => 'int',
-        'width' => 'int',
-        'height' => 'int',
-        'x' => 'int',
-        'y' => 'int',
-        'rotation_angle' => 'double',
-        'html_text' => 'string',
-        'text' => 'string',
         'alternative_text' => 'string',
-        'text_horizontal_alignment' => 'string',
-        'text_horizontal_overflow' => 'string',
-        'text_orientation_type' => 'string',
+        'bottom' => 'int',
+        'top' => 'int',
+        'width' => 'int',
+        'html_text' => 'string',
         'text_vertical_alignment' => 'string',
-        'text_vertical_overflow' => 'string',
-        'is_group' => 'bool',
-        'is_hidden' => 'bool',
-        'is_lock_aspect_ratio' => 'bool',
-        'is_locked' => 'bool',
+        'auto_shape_type' => 'string',
         'is_printable' => 'bool',
-        'is_text_wrapped' => 'bool',
+        'upper_left_column' => 'int',
+        'is_lock_aspect_ratio' => 'bool',
+        'is_group' => 'bool',
+        'rotation_angle' => 'double',
+        'z_order_position' => 'int',
+        'text_horizontal_overflow' => 'string',
+        'mso_drawing_type' => 'string',
+        'text_orientation_type' => 'string',
+        'placement' => 'string',
+        'name' => 'string',
         'is_word_art' => 'bool',
         'linked_cell' => 'string',
-        'z_order_position' => 'int'
+        'upper_left_row' => 'int',
+        'is_locked' => 'bool',
+        'lower_right_row' => 'int',
+        'is_text_wrapped' => 'bool',
+        'y' => 'int',
+        'x' => 'int',
+        'is_hidden' => 'bool',
+        'left' => 'int',
+        'right' => 'int',
+        'text' => 'string',
+        'lower_right_column' => 'int',
+        'height' => 'int',
+        'text_horizontal_alignment' => 'string',
+        'text_vertical_overflow' => 'string'
     ];
 
     /**
@@ -101,40 +101,40 @@ class Shape implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'name' => null,
-        'mso_drawing_type' => null,
-        'auto_shape_type' => null,
-        'placement' => null,
-        'upper_left_row' => 'int32',
-        'top' => 'int32',
-        'upper_left_column' => 'int32',
-        'left' => 'int32',
-        'lower_right_row' => 'int32',
-        'bottom' => 'int32',
-        'lower_right_column' => 'int32',
-        'right' => 'int32',
-        'width' => 'int32',
-        'height' => 'int32',
-        'x' => 'int32',
-        'y' => 'int32',
-        'rotation_angle' => 'double',
-        'html_text' => null,
-        'text' => null,
         'alternative_text' => null,
-        'text_horizontal_alignment' => null,
-        'text_horizontal_overflow' => null,
-        'text_orientation_type' => null,
+        'bottom' => 'int32',
+        'top' => 'int32',
+        'width' => 'int32',
+        'html_text' => null,
         'text_vertical_alignment' => null,
-        'text_vertical_overflow' => null,
-        'is_group' => null,
-        'is_hidden' => null,
-        'is_lock_aspect_ratio' => null,
-        'is_locked' => null,
+        'auto_shape_type' => null,
         'is_printable' => null,
-        'is_text_wrapped' => null,
+        'upper_left_column' => 'int32',
+        'is_lock_aspect_ratio' => null,
+        'is_group' => null,
+        'rotation_angle' => 'double',
+        'z_order_position' => 'int32',
+        'text_horizontal_overflow' => null,
+        'mso_drawing_type' => null,
+        'text_orientation_type' => null,
+        'placement' => null,
+        'name' => null,
         'is_word_art' => null,
         'linked_cell' => null,
-        'z_order_position' => 'int32'
+        'upper_left_row' => 'int32',
+        'is_locked' => null,
+        'lower_right_row' => 'int32',
+        'is_text_wrapped' => null,
+        'y' => 'int32',
+        'x' => 'int32',
+        'is_hidden' => null,
+        'left' => 'int32',
+        'right' => 'int32',
+        'text' => null,
+        'lower_right_column' => 'int32',
+        'height' => 'int32',
+        'text_horizontal_alignment' => null,
+        'text_vertical_overflow' => null
     ];
 
     /**
@@ -165,40 +165,40 @@ class Shape implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'name' => 'Name',
-        'mso_drawing_type' => 'MsoDrawingType',
-        'auto_shape_type' => 'AutoShapeType',
-        'placement' => 'Placement',
-        'upper_left_row' => 'UpperLeftRow',
-        'top' => 'Top',
-        'upper_left_column' => 'UpperLeftColumn',
-        'left' => 'Left',
-        'lower_right_row' => 'LowerRightRow',
-        'bottom' => 'Bottom',
-        'lower_right_column' => 'LowerRightColumn',
-        'right' => 'Right',
-        'width' => 'Width',
-        'height' => 'Height',
-        'x' => 'X',
-        'y' => 'Y',
-        'rotation_angle' => 'RotationAngle',
-        'html_text' => 'HtmlText',
-        'text' => 'Text',
         'alternative_text' => 'AlternativeText',
-        'text_horizontal_alignment' => 'TextHorizontalAlignment',
-        'text_horizontal_overflow' => 'TextHorizontalOverflow',
-        'text_orientation_type' => 'TextOrientationType',
+        'bottom' => 'Bottom',
+        'top' => 'Top',
+        'width' => 'Width',
+        'html_text' => 'HtmlText',
         'text_vertical_alignment' => 'TextVerticalAlignment',
-        'text_vertical_overflow' => 'TextVerticalOverflow',
-        'is_group' => 'IsGroup',
-        'is_hidden' => 'IsHidden',
-        'is_lock_aspect_ratio' => 'IsLockAspectRatio',
-        'is_locked' => 'IsLocked',
+        'auto_shape_type' => 'AutoShapeType',
         'is_printable' => 'IsPrintable',
-        'is_text_wrapped' => 'IsTextWrapped',
+        'upper_left_column' => 'UpperLeftColumn',
+        'is_lock_aspect_ratio' => 'IsLockAspectRatio',
+        'is_group' => 'IsGroup',
+        'rotation_angle' => 'RotationAngle',
+        'z_order_position' => 'ZOrderPosition',
+        'text_horizontal_overflow' => 'TextHorizontalOverflow',
+        'mso_drawing_type' => 'MsoDrawingType',
+        'text_orientation_type' => 'TextOrientationType',
+        'placement' => 'Placement',
+        'name' => 'Name',
         'is_word_art' => 'IsWordArt',
         'linked_cell' => 'LinkedCell',
-        'z_order_position' => 'ZOrderPosition'
+        'upper_left_row' => 'UpperLeftRow',
+        'is_locked' => 'IsLocked',
+        'lower_right_row' => 'LowerRightRow',
+        'is_text_wrapped' => 'IsTextWrapped',
+        'y' => 'Y',
+        'x' => 'X',
+        'is_hidden' => 'IsHidden',
+        'left' => 'Left',
+        'right' => 'Right',
+        'text' => 'Text',
+        'lower_right_column' => 'LowerRightColumn',
+        'height' => 'Height',
+        'text_horizontal_alignment' => 'TextHorizontalAlignment',
+        'text_vertical_overflow' => 'TextVerticalOverflow'
     ];
 
     /**
@@ -208,40 +208,40 @@ class Shape implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'name' => 'setName',
-        'mso_drawing_type' => 'setMsoDrawingType',
-        'auto_shape_type' => 'setAutoShapeType',
-        'placement' => 'setPlacement',
-        'upper_left_row' => 'setUpperLeftRow',
-        'top' => 'setTop',
-        'upper_left_column' => 'setUpperLeftColumn',
-        'left' => 'setLeft',
-        'lower_right_row' => 'setLowerRightRow',
-        'bottom' => 'setBottom',
-        'lower_right_column' => 'setLowerRightColumn',
-        'right' => 'setRight',
-        'width' => 'setWidth',
-        'height' => 'setHeight',
-        'x' => 'setX',
-        'y' => 'setY',
-        'rotation_angle' => 'setRotationAngle',
-        'html_text' => 'setHtmlText',
-        'text' => 'setText',
         'alternative_text' => 'setAlternativeText',
-        'text_horizontal_alignment' => 'setTextHorizontalAlignment',
-        'text_horizontal_overflow' => 'setTextHorizontalOverflow',
-        'text_orientation_type' => 'setTextOrientationType',
+        'bottom' => 'setBottom',
+        'top' => 'setTop',
+        'width' => 'setWidth',
+        'html_text' => 'setHtmlText',
         'text_vertical_alignment' => 'setTextVerticalAlignment',
-        'text_vertical_overflow' => 'setTextVerticalOverflow',
-        'is_group' => 'setIsGroup',
-        'is_hidden' => 'setIsHidden',
-        'is_lock_aspect_ratio' => 'setIsLockAspectRatio',
-        'is_locked' => 'setIsLocked',
+        'auto_shape_type' => 'setAutoShapeType',
         'is_printable' => 'setIsPrintable',
-        'is_text_wrapped' => 'setIsTextWrapped',
+        'upper_left_column' => 'setUpperLeftColumn',
+        'is_lock_aspect_ratio' => 'setIsLockAspectRatio',
+        'is_group' => 'setIsGroup',
+        'rotation_angle' => 'setRotationAngle',
+        'z_order_position' => 'setZOrderPosition',
+        'text_horizontal_overflow' => 'setTextHorizontalOverflow',
+        'mso_drawing_type' => 'setMsoDrawingType',
+        'text_orientation_type' => 'setTextOrientationType',
+        'placement' => 'setPlacement',
+        'name' => 'setName',
         'is_word_art' => 'setIsWordArt',
         'linked_cell' => 'setLinkedCell',
-        'z_order_position' => 'setZOrderPosition'
+        'upper_left_row' => 'setUpperLeftRow',
+        'is_locked' => 'setIsLocked',
+        'lower_right_row' => 'setLowerRightRow',
+        'is_text_wrapped' => 'setIsTextWrapped',
+        'y' => 'setY',
+        'x' => 'setX',
+        'is_hidden' => 'setIsHidden',
+        'left' => 'setLeft',
+        'right' => 'setRight',
+        'text' => 'setText',
+        'lower_right_column' => 'setLowerRightColumn',
+        'height' => 'setHeight',
+        'text_horizontal_alignment' => 'setTextHorizontalAlignment',
+        'text_vertical_overflow' => 'setTextVerticalOverflow'
     ];
 
     /**
@@ -251,40 +251,40 @@ class Shape implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'name' => 'getName',
-        'mso_drawing_type' => 'getMsoDrawingType',
-        'auto_shape_type' => 'getAutoShapeType',
-        'placement' => 'getPlacement',
-        'upper_left_row' => 'getUpperLeftRow',
-        'top' => 'getTop',
-        'upper_left_column' => 'getUpperLeftColumn',
-        'left' => 'getLeft',
-        'lower_right_row' => 'getLowerRightRow',
-        'bottom' => 'getBottom',
-        'lower_right_column' => 'getLowerRightColumn',
-        'right' => 'getRight',
-        'width' => 'getWidth',
-        'height' => 'getHeight',
-        'x' => 'getX',
-        'y' => 'getY',
-        'rotation_angle' => 'getRotationAngle',
-        'html_text' => 'getHtmlText',
-        'text' => 'getText',
         'alternative_text' => 'getAlternativeText',
-        'text_horizontal_alignment' => 'getTextHorizontalAlignment',
-        'text_horizontal_overflow' => 'getTextHorizontalOverflow',
-        'text_orientation_type' => 'getTextOrientationType',
+        'bottom' => 'getBottom',
+        'top' => 'getTop',
+        'width' => 'getWidth',
+        'html_text' => 'getHtmlText',
         'text_vertical_alignment' => 'getTextVerticalAlignment',
-        'text_vertical_overflow' => 'getTextVerticalOverflow',
-        'is_group' => 'getIsGroup',
-        'is_hidden' => 'getIsHidden',
-        'is_lock_aspect_ratio' => 'getIsLockAspectRatio',
-        'is_locked' => 'getIsLocked',
+        'auto_shape_type' => 'getAutoShapeType',
         'is_printable' => 'getIsPrintable',
-        'is_text_wrapped' => 'getIsTextWrapped',
+        'upper_left_column' => 'getUpperLeftColumn',
+        'is_lock_aspect_ratio' => 'getIsLockAspectRatio',
+        'is_group' => 'getIsGroup',
+        'rotation_angle' => 'getRotationAngle',
+        'z_order_position' => 'getZOrderPosition',
+        'text_horizontal_overflow' => 'getTextHorizontalOverflow',
+        'mso_drawing_type' => 'getMsoDrawingType',
+        'text_orientation_type' => 'getTextOrientationType',
+        'placement' => 'getPlacement',
+        'name' => 'getName',
         'is_word_art' => 'getIsWordArt',
         'linked_cell' => 'getLinkedCell',
-        'z_order_position' => 'getZOrderPosition'
+        'upper_left_row' => 'getUpperLeftRow',
+        'is_locked' => 'getIsLocked',
+        'lower_right_row' => 'getLowerRightRow',
+        'is_text_wrapped' => 'getIsTextWrapped',
+        'y' => 'getY',
+        'x' => 'getX',
+        'is_hidden' => 'getIsHidden',
+        'left' => 'getLeft',
+        'right' => 'getRight',
+        'text' => 'getText',
+        'lower_right_column' => 'getLowerRightColumn',
+        'height' => 'getHeight',
+        'text_horizontal_alignment' => 'getTextHorizontalAlignment',
+        'text_vertical_overflow' => 'getTextVerticalOverflow'
     ];
 
     /**
@@ -348,40 +348,40 @@ class Shape implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['mso_drawing_type'] = isset($data['mso_drawing_type']) ? $data['mso_drawing_type'] : null;
-        $this->container['auto_shape_type'] = isset($data['auto_shape_type']) ? $data['auto_shape_type'] : null;
-        $this->container['placement'] = isset($data['placement']) ? $data['placement'] : null;
-        $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
-        $this->container['top'] = isset($data['top']) ? $data['top'] : null;
-        $this->container['upper_left_column'] = isset($data['upper_left_column']) ? $data['upper_left_column'] : null;
-        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
-        $this->container['lower_right_row'] = isset($data['lower_right_row']) ? $data['lower_right_row'] : null;
-        $this->container['bottom'] = isset($data['bottom']) ? $data['bottom'] : null;
-        $this->container['lower_right_column'] = isset($data['lower_right_column']) ? $data['lower_right_column'] : null;
-        $this->container['right'] = isset($data['right']) ? $data['right'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['x'] = isset($data['x']) ? $data['x'] : null;
-        $this->container['y'] = isset($data['y']) ? $data['y'] : null;
-        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
-        $this->container['html_text'] = isset($data['html_text']) ? $data['html_text'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['alternative_text'] = isset($data['alternative_text']) ? $data['alternative_text'] : null;
-        $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
-        $this->container['text_horizontal_overflow'] = isset($data['text_horizontal_overflow']) ? $data['text_horizontal_overflow'] : null;
-        $this->container['text_orientation_type'] = isset($data['text_orientation_type']) ? $data['text_orientation_type'] : null;
+        $this->container['bottom'] = isset($data['bottom']) ? $data['bottom'] : null;
+        $this->container['top'] = isset($data['top']) ? $data['top'] : null;
+        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
+        $this->container['html_text'] = isset($data['html_text']) ? $data['html_text'] : null;
         $this->container['text_vertical_alignment'] = isset($data['text_vertical_alignment']) ? $data['text_vertical_alignment'] : null;
-        $this->container['text_vertical_overflow'] = isset($data['text_vertical_overflow']) ? $data['text_vertical_overflow'] : null;
-        $this->container['is_group'] = isset($data['is_group']) ? $data['is_group'] : null;
-        $this->container['is_hidden'] = isset($data['is_hidden']) ? $data['is_hidden'] : null;
-        $this->container['is_lock_aspect_ratio'] = isset($data['is_lock_aspect_ratio']) ? $data['is_lock_aspect_ratio'] : null;
-        $this->container['is_locked'] = isset($data['is_locked']) ? $data['is_locked'] : null;
+        $this->container['auto_shape_type'] = isset($data['auto_shape_type']) ? $data['auto_shape_type'] : null;
         $this->container['is_printable'] = isset($data['is_printable']) ? $data['is_printable'] : null;
-        $this->container['is_text_wrapped'] = isset($data['is_text_wrapped']) ? $data['is_text_wrapped'] : null;
+        $this->container['upper_left_column'] = isset($data['upper_left_column']) ? $data['upper_left_column'] : null;
+        $this->container['is_lock_aspect_ratio'] = isset($data['is_lock_aspect_ratio']) ? $data['is_lock_aspect_ratio'] : null;
+        $this->container['is_group'] = isset($data['is_group']) ? $data['is_group'] : null;
+        $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
+        $this->container['z_order_position'] = isset($data['z_order_position']) ? $data['z_order_position'] : null;
+        $this->container['text_horizontal_overflow'] = isset($data['text_horizontal_overflow']) ? $data['text_horizontal_overflow'] : null;
+        $this->container['mso_drawing_type'] = isset($data['mso_drawing_type']) ? $data['mso_drawing_type'] : null;
+        $this->container['text_orientation_type'] = isset($data['text_orientation_type']) ? $data['text_orientation_type'] : null;
+        $this->container['placement'] = isset($data['placement']) ? $data['placement'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['is_word_art'] = isset($data['is_word_art']) ? $data['is_word_art'] : null;
         $this->container['linked_cell'] = isset($data['linked_cell']) ? $data['linked_cell'] : null;
-        $this->container['z_order_position'] = isset($data['z_order_position']) ? $data['z_order_position'] : null;
+        $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
+        $this->container['is_locked'] = isset($data['is_locked']) ? $data['is_locked'] : null;
+        $this->container['lower_right_row'] = isset($data['lower_right_row']) ? $data['lower_right_row'] : null;
+        $this->container['is_text_wrapped'] = isset($data['is_text_wrapped']) ? $data['is_text_wrapped'] : null;
+        $this->container['y'] = isset($data['y']) ? $data['y'] : null;
+        $this->container['x'] = isset($data['x']) ? $data['x'] : null;
+        $this->container['is_hidden'] = isset($data['is_hidden']) ? $data['is_hidden'] : null;
+        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
+        $this->container['right'] = isset($data['right']) ? $data['right'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['lower_right_column'] = isset($data['lower_right_column']) ? $data['lower_right_column'] : null;
+        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
+        $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
+        $this->container['text_vertical_overflow'] = isset($data['text_vertical_overflow']) ? $data['text_vertical_overflow'] : null;
     }
 
     /**
@@ -434,217 +434,25 @@ class Shape implements  ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets alternative_text
      *
      * @return string
      */
-    public function getName()
+    public function getAlternativeText()
     {
-        return $this->container['name'];
+        return $this->container['alternative_text'];
     }
 
     /**
-     * Sets name
+     * Sets alternative_text
      *
-     * @param string $name name
+     * @param string $alternative_text alternative_text
      *
      * @return $this
      */
-    public function setName($name)
+    public function setAlternativeText($alternative_text)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets mso_drawing_type
-     *
-     * @return string
-     */
-    public function getMsoDrawingType()
-    {
-        return $this->container['mso_drawing_type'];
-    }
-
-    /**
-     * Sets mso_drawing_type
-     *
-     * @param string $mso_drawing_type mso_drawing_type
-     *
-     * @return $this
-     */
-    public function setMsoDrawingType($mso_drawing_type)
-    {
-        $this->container['mso_drawing_type'] = $mso_drawing_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_shape_type
-     *
-     * @return string
-     */
-    public function getAutoShapeType()
-    {
-        return $this->container['auto_shape_type'];
-    }
-
-    /**
-     * Sets auto_shape_type
-     *
-     * @param string $auto_shape_type auto_shape_type
-     *
-     * @return $this
-     */
-    public function setAutoShapeType($auto_shape_type)
-    {
-        $this->container['auto_shape_type'] = $auto_shape_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets placement
-     *
-     * @return string
-     */
-    public function getPlacement()
-    {
-        return $this->container['placement'];
-    }
-
-    /**
-     * Sets placement
-     *
-     * @param string $placement placement
-     *
-     * @return $this
-     */
-    public function setPlacement($placement)
-    {
-        $this->container['placement'] = $placement;
-
-        return $this;
-    }
-
-    /**
-     * Gets upper_left_row
-     *
-     * @return int
-     */
-    public function getUpperLeftRow()
-    {
-        return $this->container['upper_left_row'];
-    }
-
-    /**
-     * Sets upper_left_row
-     *
-     * @param int $upper_left_row upper_left_row
-     *
-     * @return $this
-     */
-    public function setUpperLeftRow($upper_left_row)
-    {
-        $this->container['upper_left_row'] = $upper_left_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets top
-     *
-     * @return int
-     */
-    public function getTop()
-    {
-        return $this->container['top'];
-    }
-
-    /**
-     * Sets top
-     *
-     * @param int $top top
-     *
-     * @return $this
-     */
-    public function setTop($top)
-    {
-        $this->container['top'] = $top;
-
-        return $this;
-    }
-
-    /**
-     * Gets upper_left_column
-     *
-     * @return int
-     */
-    public function getUpperLeftColumn()
-    {
-        return $this->container['upper_left_column'];
-    }
-
-    /**
-     * Sets upper_left_column
-     *
-     * @param int $upper_left_column upper_left_column
-     *
-     * @return $this
-     */
-    public function setUpperLeftColumn($upper_left_column)
-    {
-        $this->container['upper_left_column'] = $upper_left_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets left
-     *
-     * @return int
-     */
-    public function getLeft()
-    {
-        return $this->container['left'];
-    }
-
-    /**
-     * Sets left
-     *
-     * @param int $left left
-     *
-     * @return $this
-     */
-    public function setLeft($left)
-    {
-        $this->container['left'] = $left;
-
-        return $this;
-    }
-
-    /**
-     * Gets lower_right_row
-     *
-     * @return int
-     */
-    public function getLowerRightRow()
-    {
-        return $this->container['lower_right_row'];
-    }
-
-    /**
-     * Sets lower_right_row
-     *
-     * @param int $lower_right_row lower_right_row
-     *
-     * @return $this
-     */
-    public function setLowerRightRow($lower_right_row)
-    {
-        $this->container['lower_right_row'] = $lower_right_row;
+        $this->container['alternative_text'] = $alternative_text;
 
         return $this;
     }
@@ -674,49 +482,25 @@ class Shape implements  ArrayAccess
     }
 
     /**
-     * Gets lower_right_column
+     * Gets top
      *
      * @return int
      */
-    public function getLowerRightColumn()
+    public function getTop()
     {
-        return $this->container['lower_right_column'];
+        return $this->container['top'];
     }
 
     /**
-     * Sets lower_right_column
+     * Sets top
      *
-     * @param int $lower_right_column lower_right_column
+     * @param int $top top
      *
      * @return $this
      */
-    public function setLowerRightColumn($lower_right_column)
+    public function setTop($top)
     {
-        $this->container['lower_right_column'] = $lower_right_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets right
-     *
-     * @return int
-     */
-    public function getRight()
-    {
-        return $this->container['right'];
-    }
-
-    /**
-     * Sets right
-     *
-     * @param int $right right
-     *
-     * @return $this
-     */
-    public function setRight($right)
-    {
-        $this->container['right'] = $right;
+        $this->container['top'] = $top;
 
         return $this;
     }
@@ -746,102 +530,6 @@ class Shape implements  ArrayAccess
     }
 
     /**
-     * Gets height
-     *
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /**
-     * Sets height
-     *
-     * @param int $height height
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->container['height'] = $height;
-
-        return $this;
-    }
-
-    /**
-     * Gets x
-     *
-     * @return int
-     */
-    public function getX()
-    {
-        return $this->container['x'];
-    }
-
-    /**
-     * Sets x
-     *
-     * @param int $x x
-     *
-     * @return $this
-     */
-    public function setX($x)
-    {
-        $this->container['x'] = $x;
-
-        return $this;
-    }
-
-    /**
-     * Gets y
-     *
-     * @return int
-     */
-    public function getY()
-    {
-        return $this->container['y'];
-    }
-
-    /**
-     * Sets y
-     *
-     * @param int $y y
-     *
-     * @return $this
-     */
-    public function setY($y)
-    {
-        $this->container['y'] = $y;
-
-        return $this;
-    }
-
-    /**
-     * Gets rotation_angle
-     *
-     * @return double
-     */
-    public function getRotationAngle()
-    {
-        return $this->container['rotation_angle'];
-    }
-
-    /**
-     * Sets rotation_angle
-     *
-     * @param double $rotation_angle rotation_angle
-     *
-     * @return $this
-     */
-    public function setRotationAngle($rotation_angle)
-    {
-        $this->container['rotation_angle'] = $rotation_angle;
-
-        return $this;
-    }
-
-    /**
      * Gets html_text
      *
      * @return string
@@ -861,126 +549,6 @@ class Shape implements  ArrayAccess
     public function setHtmlText($html_text)
     {
         $this->container['html_text'] = $html_text;
-
-        return $this;
-    }
-
-    /**
-     * Gets text
-     *
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string $text text
-     *
-     * @return $this
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets alternative_text
-     *
-     * @return string
-     */
-    public function getAlternativeText()
-    {
-        return $this->container['alternative_text'];
-    }
-
-    /**
-     * Sets alternative_text
-     *
-     * @param string $alternative_text alternative_text
-     *
-     * @return $this
-     */
-    public function setAlternativeText($alternative_text)
-    {
-        $this->container['alternative_text'] = $alternative_text;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_horizontal_alignment
-     *
-     * @return string
-     */
-    public function getTextHorizontalAlignment()
-    {
-        return $this->container['text_horizontal_alignment'];
-    }
-
-    /**
-     * Sets text_horizontal_alignment
-     *
-     * @param string $text_horizontal_alignment text_horizontal_alignment
-     *
-     * @return $this
-     */
-    public function setTextHorizontalAlignment($text_horizontal_alignment)
-    {
-        $this->container['text_horizontal_alignment'] = $text_horizontal_alignment;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_horizontal_overflow
-     *
-     * @return string
-     */
-    public function getTextHorizontalOverflow()
-    {
-        return $this->container['text_horizontal_overflow'];
-    }
-
-    /**
-     * Sets text_horizontal_overflow
-     *
-     * @param string $text_horizontal_overflow text_horizontal_overflow
-     *
-     * @return $this
-     */
-    public function setTextHorizontalOverflow($text_horizontal_overflow)
-    {
-        $this->container['text_horizontal_overflow'] = $text_horizontal_overflow;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_orientation_type
-     *
-     * @return string
-     */
-    public function getTextOrientationType()
-    {
-        return $this->container['text_orientation_type'];
-    }
-
-    /**
-     * Sets text_orientation_type
-     *
-     * @param string $text_orientation_type text_orientation_type
-     *
-     * @return $this
-     */
-    public function setTextOrientationType($text_orientation_type)
-    {
-        $this->container['text_orientation_type'] = $text_orientation_type;
 
         return $this;
     }
@@ -1010,121 +578,25 @@ class Shape implements  ArrayAccess
     }
 
     /**
-     * Gets text_vertical_overflow
+     * Gets auto_shape_type
      *
      * @return string
      */
-    public function getTextVerticalOverflow()
+    public function getAutoShapeType()
     {
-        return $this->container['text_vertical_overflow'];
+        return $this->container['auto_shape_type'];
     }
 
     /**
-     * Sets text_vertical_overflow
+     * Sets auto_shape_type
      *
-     * @param string $text_vertical_overflow text_vertical_overflow
+     * @param string $auto_shape_type auto_shape_type
      *
      * @return $this
      */
-    public function setTextVerticalOverflow($text_vertical_overflow)
+    public function setAutoShapeType($auto_shape_type)
     {
-        $this->container['text_vertical_overflow'] = $text_vertical_overflow;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_group
-     *
-     * @return bool
-     */
-    public function getIsGroup()
-    {
-        return $this->container['is_group'];
-    }
-
-    /**
-     * Sets is_group
-     *
-     * @param bool $is_group is_group
-     *
-     * @return $this
-     */
-    public function setIsGroup($is_group)
-    {
-        $this->container['is_group'] = $is_group;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_hidden
-     *
-     * @return bool
-     */
-    public function getIsHidden()
-    {
-        return $this->container['is_hidden'];
-    }
-
-    /**
-     * Sets is_hidden
-     *
-     * @param bool $is_hidden is_hidden
-     *
-     * @return $this
-     */
-    public function setIsHidden($is_hidden)
-    {
-        $this->container['is_hidden'] = $is_hidden;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_lock_aspect_ratio
-     *
-     * @return bool
-     */
-    public function getIsLockAspectRatio()
-    {
-        return $this->container['is_lock_aspect_ratio'];
-    }
-
-    /**
-     * Sets is_lock_aspect_ratio
-     *
-     * @param bool $is_lock_aspect_ratio is_lock_aspect_ratio
-     *
-     * @return $this
-     */
-    public function setIsLockAspectRatio($is_lock_aspect_ratio)
-    {
-        $this->container['is_lock_aspect_ratio'] = $is_lock_aspect_ratio;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_locked
-     *
-     * @return bool
-     */
-    public function getIsLocked()
-    {
-        return $this->container['is_locked'];
-    }
-
-    /**
-     * Sets is_locked
-     *
-     * @param bool $is_locked is_locked
-     *
-     * @return $this
-     */
-    public function setIsLocked($is_locked)
-    {
-        $this->container['is_locked'] = $is_locked;
+        $this->container['auto_shape_type'] = $auto_shape_type;
 
         return $this;
     }
@@ -1154,25 +626,241 @@ class Shape implements  ArrayAccess
     }
 
     /**
-     * Gets is_text_wrapped
+     * Gets upper_left_column
      *
-     * @return bool
+     * @return int
      */
-    public function getIsTextWrapped()
+    public function getUpperLeftColumn()
     {
-        return $this->container['is_text_wrapped'];
+        return $this->container['upper_left_column'];
     }
 
     /**
-     * Sets is_text_wrapped
+     * Sets upper_left_column
      *
-     * @param bool $is_text_wrapped is_text_wrapped
+     * @param int $upper_left_column upper_left_column
      *
      * @return $this
      */
-    public function setIsTextWrapped($is_text_wrapped)
+    public function setUpperLeftColumn($upper_left_column)
     {
-        $this->container['is_text_wrapped'] = $is_text_wrapped;
+        $this->container['upper_left_column'] = $upper_left_column;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_lock_aspect_ratio
+     *
+     * @return bool
+     */
+    public function getIsLockAspectRatio()
+    {
+        return $this->container['is_lock_aspect_ratio'];
+    }
+
+    /**
+     * Sets is_lock_aspect_ratio
+     *
+     * @param bool $is_lock_aspect_ratio is_lock_aspect_ratio
+     *
+     * @return $this
+     */
+    public function setIsLockAspectRatio($is_lock_aspect_ratio)
+    {
+        $this->container['is_lock_aspect_ratio'] = $is_lock_aspect_ratio;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_group
+     *
+     * @return bool
+     */
+    public function getIsGroup()
+    {
+        return $this->container['is_group'];
+    }
+
+    /**
+     * Sets is_group
+     *
+     * @param bool $is_group is_group
+     *
+     * @return $this
+     */
+    public function setIsGroup($is_group)
+    {
+        $this->container['is_group'] = $is_group;
+
+        return $this;
+    }
+
+    /**
+     * Gets rotation_angle
+     *
+     * @return double
+     */
+    public function getRotationAngle()
+    {
+        return $this->container['rotation_angle'];
+    }
+
+    /**
+     * Sets rotation_angle
+     *
+     * @param double $rotation_angle rotation_angle
+     *
+     * @return $this
+     */
+    public function setRotationAngle($rotation_angle)
+    {
+        $this->container['rotation_angle'] = $rotation_angle;
+
+        return $this;
+    }
+
+    /**
+     * Gets z_order_position
+     *
+     * @return int
+     */
+    public function getZOrderPosition()
+    {
+        return $this->container['z_order_position'];
+    }
+
+    /**
+     * Sets z_order_position
+     *
+     * @param int $z_order_position z_order_position
+     *
+     * @return $this
+     */
+    public function setZOrderPosition($z_order_position)
+    {
+        $this->container['z_order_position'] = $z_order_position;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_horizontal_overflow
+     *
+     * @return string
+     */
+    public function getTextHorizontalOverflow()
+    {
+        return $this->container['text_horizontal_overflow'];
+    }
+
+    /**
+     * Sets text_horizontal_overflow
+     *
+     * @param string $text_horizontal_overflow text_horizontal_overflow
+     *
+     * @return $this
+     */
+    public function setTextHorizontalOverflow($text_horizontal_overflow)
+    {
+        $this->container['text_horizontal_overflow'] = $text_horizontal_overflow;
+
+        return $this;
+    }
+
+    /**
+     * Gets mso_drawing_type
+     *
+     * @return string
+     */
+    public function getMsoDrawingType()
+    {
+        return $this->container['mso_drawing_type'];
+    }
+
+    /**
+     * Sets mso_drawing_type
+     *
+     * @param string $mso_drawing_type mso_drawing_type
+     *
+     * @return $this
+     */
+    public function setMsoDrawingType($mso_drawing_type)
+    {
+        $this->container['mso_drawing_type'] = $mso_drawing_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_orientation_type
+     *
+     * @return string
+     */
+    public function getTextOrientationType()
+    {
+        return $this->container['text_orientation_type'];
+    }
+
+    /**
+     * Sets text_orientation_type
+     *
+     * @param string $text_orientation_type text_orientation_type
+     *
+     * @return $this
+     */
+    public function setTextOrientationType($text_orientation_type)
+    {
+        $this->container['text_orientation_type'] = $text_orientation_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets placement
+     *
+     * @return string
+     */
+    public function getPlacement()
+    {
+        return $this->container['placement'];
+    }
+
+    /**
+     * Sets placement
+     *
+     * @param string $placement placement
+     *
+     * @return $this
+     */
+    public function setPlacement($placement)
+    {
+        $this->container['placement'] = $placement;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -1226,25 +914,337 @@ class Shape implements  ArrayAccess
     }
 
     /**
-     * Gets z_order_position
+     * Gets upper_left_row
      *
      * @return int
      */
-    public function getZOrderPosition()
+    public function getUpperLeftRow()
     {
-        return $this->container['z_order_position'];
+        return $this->container['upper_left_row'];
     }
 
     /**
-     * Sets z_order_position
+     * Sets upper_left_row
      *
-     * @param int $z_order_position z_order_position
+     * @param int $upper_left_row upper_left_row
      *
      * @return $this
      */
-    public function setZOrderPosition($z_order_position)
+    public function setUpperLeftRow($upper_left_row)
     {
-        $this->container['z_order_position'] = $z_order_position;
+        $this->container['upper_left_row'] = $upper_left_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_locked
+     *
+     * @return bool
+     */
+    public function getIsLocked()
+    {
+        return $this->container['is_locked'];
+    }
+
+    /**
+     * Sets is_locked
+     *
+     * @param bool $is_locked is_locked
+     *
+     * @return $this
+     */
+    public function setIsLocked($is_locked)
+    {
+        $this->container['is_locked'] = $is_locked;
+
+        return $this;
+    }
+
+    /**
+     * Gets lower_right_row
+     *
+     * @return int
+     */
+    public function getLowerRightRow()
+    {
+        return $this->container['lower_right_row'];
+    }
+
+    /**
+     * Sets lower_right_row
+     *
+     * @param int $lower_right_row lower_right_row
+     *
+     * @return $this
+     */
+    public function setLowerRightRow($lower_right_row)
+    {
+        $this->container['lower_right_row'] = $lower_right_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_text_wrapped
+     *
+     * @return bool
+     */
+    public function getIsTextWrapped()
+    {
+        return $this->container['is_text_wrapped'];
+    }
+
+    /**
+     * Sets is_text_wrapped
+     *
+     * @param bool $is_text_wrapped is_text_wrapped
+     *
+     * @return $this
+     */
+    public function setIsTextWrapped($is_text_wrapped)
+    {
+        $this->container['is_text_wrapped'] = $is_text_wrapped;
+
+        return $this;
+    }
+
+    /**
+     * Gets y
+     *
+     * @return int
+     */
+    public function getY()
+    {
+        return $this->container['y'];
+    }
+
+    /**
+     * Sets y
+     *
+     * @param int $y y
+     *
+     * @return $this
+     */
+    public function setY($y)
+    {
+        $this->container['y'] = $y;
+
+        return $this;
+    }
+
+    /**
+     * Gets x
+     *
+     * @return int
+     */
+    public function getX()
+    {
+        return $this->container['x'];
+    }
+
+    /**
+     * Sets x
+     *
+     * @param int $x x
+     *
+     * @return $this
+     */
+    public function setX($x)
+    {
+        $this->container['x'] = $x;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_hidden
+     *
+     * @return bool
+     */
+    public function getIsHidden()
+    {
+        return $this->container['is_hidden'];
+    }
+
+    /**
+     * Sets is_hidden
+     *
+     * @param bool $is_hidden is_hidden
+     *
+     * @return $this
+     */
+    public function setIsHidden($is_hidden)
+    {
+        $this->container['is_hidden'] = $is_hidden;
+
+        return $this;
+    }
+
+    /**
+     * Gets left
+     *
+     * @return int
+     */
+    public function getLeft()
+    {
+        return $this->container['left'];
+    }
+
+    /**
+     * Sets left
+     *
+     * @param int $left left
+     *
+     * @return $this
+     */
+    public function setLeft($left)
+    {
+        $this->container['left'] = $left;
+
+        return $this;
+    }
+
+    /**
+     * Gets right
+     *
+     * @return int
+     */
+    public function getRight()
+    {
+        return $this->container['right'];
+    }
+
+    /**
+     * Sets right
+     *
+     * @param int $right right
+     *
+     * @return $this
+     */
+    public function setRight($right)
+    {
+        $this->container['right'] = $right;
+
+        return $this;
+    }
+
+    /**
+     * Gets text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->container['text'];
+    }
+
+    /**
+     * Sets text
+     *
+     * @param string $text text
+     *
+     * @return $this
+     */
+    public function setText($text)
+    {
+        $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets lower_right_column
+     *
+     * @return int
+     */
+    public function getLowerRightColumn()
+    {
+        return $this->container['lower_right_column'];
+    }
+
+    /**
+     * Sets lower_right_column
+     *
+     * @param int $lower_right_column lower_right_column
+     *
+     * @return $this
+     */
+    public function setLowerRightColumn($lower_right_column)
+    {
+        $this->container['lower_right_column'] = $lower_right_column;
+
+        return $this;
+    }
+
+    /**
+     * Gets height
+     *
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->container['height'];
+    }
+
+    /**
+     * Sets height
+     *
+     * @param int $height height
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->container['height'] = $height;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_horizontal_alignment
+     *
+     * @return string
+     */
+    public function getTextHorizontalAlignment()
+    {
+        return $this->container['text_horizontal_alignment'];
+    }
+
+    /**
+     * Sets text_horizontal_alignment
+     *
+     * @param string $text_horizontal_alignment text_horizontal_alignment
+     *
+     * @return $this
+     */
+    public function setTextHorizontalAlignment($text_horizontal_alignment)
+    {
+        $this->container['text_horizontal_alignment'] = $text_horizontal_alignment;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_vertical_overflow
+     *
+     * @return string
+     */
+    public function getTextVerticalOverflow()
+    {
+        return $this->container['text_vertical_overflow'];
+    }
+
+    /**
+     * Sets text_vertical_overflow
+     *
+     * @param string $text_vertical_overflow text_vertical_overflow
+     *
+     * @return $this
+     */
+    public function setTextVerticalOverflow($text_vertical_overflow)
+    {
+        $this->container['text_vertical_overflow'] = $text_vertical_overflow;
 
         return $this;
     }

@@ -57,11 +57,11 @@ class FontSetting implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'font' => '\Aspose\Cells\Cloud\Model\Font',
-        'length' => 'int',
-        'start_index' => 'int',
         'text_options' => '\Aspose\Cells\Cloud\Model\TextOptions',
-        'type' => 'string'
+        'length' => 'int',
+        'font' => '\Aspose\Cells\Cloud\Model\Font',
+        'type' => 'string',
+        'start_index' => 'int'
     ];
 
     /**
@@ -70,11 +70,11 @@ class FontSetting implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'font' => null,
-        'length' => 'int32',
-        'start_index' => 'int32',
         'text_options' => null,
-        'type' => null
+        'length' => 'int32',
+        'font' => null,
+        'type' => null,
+        'start_index' => 'int32'
     ];
 
     /**
@@ -104,11 +104,11 @@ class FontSetting implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'font' => 'Font',
-        'length' => 'Length',
-        'start_index' => 'StartIndex',
         'text_options' => 'TextOptions',
-        'type' => 'Type'
+        'length' => 'Length',
+        'font' => 'Font',
+        'type' => 'Type',
+        'start_index' => 'StartIndex'
     ];
 
     /**
@@ -117,11 +117,11 @@ class FontSetting implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'font' => 'setFont',
-        'length' => 'setLength',
-        'start_index' => 'setStartIndex',
         'text_options' => 'setTextOptions',
-        'type' => 'setType'
+        'length' => 'setLength',
+        'font' => 'setFont',
+        'type' => 'setType',
+        'start_index' => 'setStartIndex'
     ];
 
     /**
@@ -130,11 +130,11 @@ class FontSetting implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'font' => 'getFont',
-        'length' => 'getLength',
-        'start_index' => 'getStartIndex',
         'text_options' => 'getTextOptions',
-        'type' => 'getType'
+        'length' => 'getLength',
+        'font' => 'getFont',
+        'type' => 'getType',
+        'start_index' => 'getStartIndex'
     ];
 
     /**
@@ -197,11 +197,11 @@ class FontSetting implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
-        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
-        $this->container['start_index'] = isset($data['start_index']) ? $data['start_index'] : null;
         $this->container['text_options'] = isset($data['text_options']) ? $data['text_options'] : null;
+        $this->container['length'] = isset($data['length']) ? $data['length'] : null;
+        $this->container['font'] = isset($data['font']) ? $data['font'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['start_index'] = isset($data['start_index']) ? $data['start_index'] : null;
     }
 
     /**
@@ -242,25 +242,25 @@ class FontSetting implements  ArrayAccess
 
 
     /**
-     * Gets font
+     * Gets text_options
      *
-     * @return \Aspose\Cells\Cloud\Model\Font
+     * @return \Aspose\Cells\Cloud\Model\TextOptions
      */
-    public function getFont()
+    public function getTextOptions()
     {
-        return $this->container['font'];
+        return $this->container['text_options'];
     }
 
     /**
-     * Sets font
+     * Sets text_options
      *
-     * @param \Aspose\Cells\Cloud\Model\Font $font font
+     * @param \Aspose\Cells\Cloud\Model\TextOptions $text_options text_options
      *
      * @return $this
      */
-    public function setFont($font)
+    public function setTextOptions($text_options)
     {
-        $this->container['font'] = $font;
+        $this->container['text_options'] = $text_options;
 
         return $this;
     }
@@ -290,49 +290,25 @@ class FontSetting implements  ArrayAccess
     }
 
     /**
-     * Gets start_index
+     * Gets font
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\Font
      */
-    public function getStartIndex()
+    public function getFont()
     {
-        return $this->container['start_index'];
+        return $this->container['font'];
     }
 
     /**
-     * Sets start_index
+     * Sets font
      *
-     * @param int $start_index start_index
+     * @param \Aspose\Cells\Cloud\Model\Font $font font
      *
      * @return $this
      */
-    public function setStartIndex($start_index)
+    public function setFont($font)
     {
-        $this->container['start_index'] = $start_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets text_options
-     *
-     * @return \Aspose\Cells\Cloud\Model\TextOptions
-     */
-    public function getTextOptions()
-    {
-        return $this->container['text_options'];
-    }
-
-    /**
-     * Sets text_options
-     *
-     * @param \Aspose\Cells\Cloud\Model\TextOptions $text_options text_options
-     *
-     * @return $this
-     */
-    public function setTextOptions($text_options)
-    {
-        $this->container['text_options'] = $text_options;
+        $this->container['font'] = $font;
 
         return $this;
     }
@@ -357,6 +333,30 @@ class FontSetting implements  ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_index
+     *
+     * @return int
+     */
+    public function getStartIndex()
+    {
+        return $this->container['start_index'];
+    }
+
+    /**
+     * Sets start_index
+     *
+     * @param int $start_index start_index
+     *
+     * @return $this
+     */
+    public function setStartIndex($start_index)
+    {
+        $this->container['start_index'] = $start_index;
 
         return $this;
     }

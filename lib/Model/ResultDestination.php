@@ -57,9 +57,9 @@ class ResultDestination implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_type' => 'string',
+        'output_file' => 'string',
         'input_file' => 'string',
-        'output_file' => 'string'
+        'destination_type' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ResultDestination implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_type' => null,
+        'output_file' => null,
         'input_file' => null,
-        'output_file' => null
+        'destination_type' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class ResultDestination implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'destination_type' => 'DestinationType',
+        'output_file' => 'OutputFile',
         'input_file' => 'InputFile',
-        'output_file' => 'OutputFile'
+        'destination_type' => 'DestinationType'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ResultDestination implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'destination_type' => 'setDestinationType',
+        'output_file' => 'setOutputFile',
         'input_file' => 'setInputFile',
-        'output_file' => 'setOutputFile'
+        'destination_type' => 'setDestinationType'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ResultDestination implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'destination_type' => 'getDestinationType',
+        'output_file' => 'getOutputFile',
         'input_file' => 'getInputFile',
-        'output_file' => 'getOutputFile'
+        'destination_type' => 'getDestinationType'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ResultDestination implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['destination_type'] = isset($data['destination_type']) ? $data['destination_type'] : null;
-        $this->container['input_file'] = isset($data['input_file']) ? $data['input_file'] : null;
         $this->container['output_file'] = isset($data['output_file']) ? $data['output_file'] : null;
+        $this->container['input_file'] = isset($data['input_file']) ? $data['input_file'] : null;
+        $this->container['destination_type'] = isset($data['destination_type']) ? $data['destination_type'] : null;
     }
 
     /**
@@ -218,25 +218,25 @@ class ResultDestination implements  ArrayAccess
 
 
     /**
-     * Gets destination_type
+     * Gets output_file
      *
      * @return string
      */
-    public function getDestinationType()
+    public function getOutputFile()
     {
-        return $this->container['destination_type'];
+        return $this->container['output_file'];
     }
 
     /**
-     * Sets destination_type
+     * Sets output_file
      *
-     * @param string $destination_type destination_type
+     * @param string $output_file output_file
      *
      * @return $this
      */
-    public function setDestinationType($destination_type)
+    public function setOutputFile($output_file)
     {
-        $this->container['destination_type'] = $destination_type;
+        $this->container['output_file'] = $output_file;
 
         return $this;
     }
@@ -266,25 +266,25 @@ class ResultDestination implements  ArrayAccess
     }
 
     /**
-     * Gets output_file
+     * Gets destination_type
      *
      * @return string
      */
-    public function getOutputFile()
+    public function getDestinationType()
     {
-        return $this->container['output_file'];
+        return $this->container['destination_type'];
     }
 
     /**
-     * Sets output_file
+     * Sets destination_type
      *
-     * @param string $output_file output_file
+     * @param string $destination_type destination_type
      *
      * @return $this
      */
-    public function setOutputFile($output_file)
+    public function setDestinationType($destination_type)
     {
-        $this->container['output_file'] = $output_file;
+        $this->container['destination_type'] = $destination_type;
 
         return $this;
     }

@@ -58,9 +58,9 @@ class WorkbookEncryptionRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'encryption_type' => 'string',
+        'password' => 'string',
         'key_length' => 'int',
-        'password' => 'string'
+        'encryption_type' => 'string'
     ];
 
     /**
@@ -69,9 +69,9 @@ class WorkbookEncryptionRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'encryption_type' => null,
+        'password' => null,
         'key_length' => 'int32',
-        'password' => null
+        'encryption_type' => null
     ];
 
     /**
@@ -101,9 +101,9 @@ class WorkbookEncryptionRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'encryption_type' => 'EncryptionType',
+        'password' => 'Password',
         'key_length' => 'KeyLength',
-        'password' => 'Password'
+        'encryption_type' => 'EncryptionType'
     ];
 
     /**
@@ -112,9 +112,9 @@ class WorkbookEncryptionRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'encryption_type' => 'setEncryptionType',
+        'password' => 'setPassword',
         'key_length' => 'setKeyLength',
-        'password' => 'setPassword'
+        'encryption_type' => 'setEncryptionType'
     ];
 
     /**
@@ -123,9 +123,9 @@ class WorkbookEncryptionRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'encryption_type' => 'getEncryptionType',
+        'password' => 'getPassword',
         'key_length' => 'getKeyLength',
-        'password' => 'getPassword'
+        'encryption_type' => 'getEncryptionType'
     ];
 
     /**
@@ -188,9 +188,9 @@ class WorkbookEncryptionRequest implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['encryption_type'] = isset($data['encryption_type']) ? $data['encryption_type'] : null;
-        $this->container['key_length'] = isset($data['key_length']) ? $data['key_length'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['key_length'] = isset($data['key_length']) ? $data['key_length'] : null;
+        $this->container['encryption_type'] = isset($data['encryption_type']) ? $data['encryption_type'] : null;
     }
 
     /**
@@ -225,25 +225,25 @@ class WorkbookEncryptionRequest implements  ArrayAccess
 
 
     /**
-     * Gets encryption_type
+     * Gets password
      *
      * @return string
      */
-    public function getEncryptionType()
+    public function getPassword()
     {
-        return $this->container['encryption_type'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets encryption_type
+     * Sets password
      *
-     * @param string $encryption_type Workbook encription type.
+     * @param string $password Encription password.
      *
      * @return $this
      */
-    public function setEncryptionType($encryption_type)
+    public function setPassword($password)
     {
-        $this->container['encryption_type'] = $encryption_type;
+        $this->container['password'] = $password;
 
         return $this;
     }
@@ -273,25 +273,25 @@ class WorkbookEncryptionRequest implements  ArrayAccess
     }
 
     /**
-     * Gets password
+     * Gets encryption_type
      *
      * @return string
      */
-    public function getPassword()
+    public function getEncryptionType()
     {
-        return $this->container['password'];
+        return $this->container['encryption_type'];
     }
 
     /**
-     * Sets password
+     * Sets encryption_type
      *
-     * @param string $password Encription password.
+     * @param string $encryption_type Workbook encription type.
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setEncryptionType($encryption_type)
     {
-        $this->container['password'] = $password;
+        $this->container['encryption_type'] = $encryption_type;
 
         return $this;
     }

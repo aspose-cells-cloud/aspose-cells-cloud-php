@@ -58,11 +58,11 @@ class Column implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'group_level' => 'int',
         'index' => 'int',
+        'style' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'group_level' => 'int',
         'is_hidden' => 'bool',
-        'width' => 'double',
-        'style' => '\Aspose\Cells\Cloud\Model\LinkElement'
+        'width' => 'double'
     ];
 
     /**
@@ -72,11 +72,11 @@ class Column implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'group_level' => 'int32',
         'index' => 'int32',
+        'style' => null,
+        'group_level' => 'int32',
         'is_hidden' => null,
-        'width' => 'double',
-        'style' => null
+        'width' => 'double'
     ];
 
     /**
@@ -107,11 +107,11 @@ class Column implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'group_level' => 'GroupLevel',
         'index' => 'Index',
+        'style' => 'Style',
+        'group_level' => 'GroupLevel',
         'is_hidden' => 'IsHidden',
-        'width' => 'Width',
-        'style' => 'Style'
+        'width' => 'Width'
     ];
 
     /**
@@ -121,11 +121,11 @@ class Column implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'group_level' => 'setGroupLevel',
         'index' => 'setIndex',
+        'style' => 'setStyle',
+        'group_level' => 'setGroupLevel',
         'is_hidden' => 'setIsHidden',
-        'width' => 'setWidth',
-        'style' => 'setStyle'
+        'width' => 'setWidth'
     ];
 
     /**
@@ -135,11 +135,11 @@ class Column implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'group_level' => 'getGroupLevel',
         'index' => 'getIndex',
+        'style' => 'getStyle',
+        'group_level' => 'getGroupLevel',
         'is_hidden' => 'getIsHidden',
-        'width' => 'getWidth',
-        'style' => 'getStyle'
+        'width' => 'getWidth'
     ];
 
     /**
@@ -203,11 +203,11 @@ class Column implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['group_level'] = isset($data['group_level']) ? $data['group_level'] : null;
         $this->container['index'] = isset($data['index']) ? $data['index'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['group_level'] = isset($data['group_level']) ? $data['group_level'] : null;
         $this->container['is_hidden'] = isset($data['is_hidden']) ? $data['is_hidden'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
     }
 
     /**
@@ -260,30 +260,6 @@ class Column implements  ArrayAccess
     }
 
     /**
-     * Gets group_level
-     *
-     * @return int
-     */
-    public function getGroupLevel()
-    {
-        return $this->container['group_level'];
-    }
-
-    /**
-     * Sets group_level
-     *
-     * @param int $group_level group_level
-     *
-     * @return $this
-     */
-    public function setGroupLevel($group_level)
-    {
-        $this->container['group_level'] = $group_level;
-
-        return $this;
-    }
-
-    /**
      * Gets index
      *
      * @return int
@@ -303,6 +279,54 @@ class Column implements  ArrayAccess
     public function setIndex($index)
     {
         $this->container['index'] = $index;
+
+        return $this;
+    }
+
+    /**
+     * Gets style
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
+     * Gets group_level
+     *
+     * @return int
+     */
+    public function getGroupLevel()
+    {
+        return $this->container['group_level'];
+    }
+
+    /**
+     * Sets group_level
+     *
+     * @param int $group_level group_level
+     *
+     * @return $this
+     */
+    public function setGroupLevel($group_level)
+    {
+        $this->container['group_level'] = $group_level;
 
         return $this;
     }
@@ -351,30 +375,6 @@ class Column implements  ArrayAccess
     public function setWidth($width)
     {
         $this->container['width'] = $width;
-
-        return $this;
-    }
-
-    /**
-     * Gets style
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /**
-     * Sets style
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $style style
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
 
         return $this;
     }

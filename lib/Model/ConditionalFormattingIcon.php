@@ -57,9 +57,9 @@ class ConditionalFormattingIcon implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'image_data' => 'string',
         'index' => 'int',
-        'type' => 'string'
+        'type' => 'string',
+        'image_data' => 'string'
     ];
 
     /**
@@ -68,9 +68,9 @@ class ConditionalFormattingIcon implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'image_data' => 'byte',
         'index' => 'int32',
-        'type' => null
+        'type' => null,
+        'image_data' => 'byte'
     ];
 
     /**
@@ -100,9 +100,9 @@ class ConditionalFormattingIcon implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'image_data' => 'ImageData',
         'index' => 'Index',
-        'type' => 'Type'
+        'type' => 'Type',
+        'image_data' => 'ImageData'
     ];
 
     /**
@@ -111,9 +111,9 @@ class ConditionalFormattingIcon implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'image_data' => 'setImageData',
         'index' => 'setIndex',
-        'type' => 'setType'
+        'type' => 'setType',
+        'image_data' => 'setImageData'
     ];
 
     /**
@@ -122,9 +122,9 @@ class ConditionalFormattingIcon implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'image_data' => 'getImageData',
         'index' => 'getIndex',
-        'type' => 'getType'
+        'type' => 'getType',
+        'image_data' => 'getImageData'
     ];
 
     /**
@@ -187,9 +187,9 @@ class ConditionalFormattingIcon implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['image_data'] = isset($data['image_data']) ? $data['image_data'] : null;
         $this->container['index'] = isset($data['index']) ? $data['index'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['image_data'] = isset($data['image_data']) ? $data['image_data'] : null;
     }
 
     /**
@@ -223,35 +223,6 @@ class ConditionalFormattingIcon implements  ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets image_data
-     *
-     * @return string
-     */
-    public function getImageData()
-    {
-        return $this->container['image_data'];
-    }
-
-    /**
-     * Sets image_data
-     *
-     * @param string $image_data Gets the icon set data.
-     *
-     * @return $this
-     */
-    public function setImageData($image_data)
-    {
-
-        if (!is_null($image_data) && (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $image_data))) {
-            throw new \InvalidArgumentException("invalid value for $image_data when calling ConditionalFormattingIcon., must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.");
-        }
-
-        $this->container['image_data'] = $image_data;
-
-        return $this;
-    }
 
     /**
      * Gets index
@@ -297,6 +268,35 @@ class ConditionalFormattingIcon implements  ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets image_data
+     *
+     * @return string
+     */
+    public function getImageData()
+    {
+        return $this->container['image_data'];
+    }
+
+    /**
+     * Sets image_data
+     *
+     * @param string $image_data Gets the icon set data.
+     *
+     * @return $this
+     */
+    public function setImageData($image_data)
+    {
+
+        if (!is_null($image_data) && (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $image_data))) {
+            throw new \InvalidArgumentException("invalid value for $image_data when calling ConditionalFormattingIcon., must conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.");
+        }
+
+        $this->container['image_data'] = $image_data;
 
         return $this;
     }

@@ -57,8 +57,8 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'totals_calculation' => 'string'
+        'totals_calculation' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null,
-        'totals_calculation' => null
+        'totals_calculation' => null,
+        'name' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'Name',
-        'totals_calculation' => 'TotalsCalculation'
+        'totals_calculation' => 'TotalsCalculation',
+        'name' => 'Name'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'totals_calculation' => 'setTotalsCalculation'
+        'totals_calculation' => 'setTotalsCalculation',
+        'name' => 'setName'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'totals_calculation' => 'getTotalsCalculation'
+        'totals_calculation' => 'getTotalsCalculation',
+        'name' => 'getName'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ListColumn implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -212,30 +212,6 @@ class ListColumn implements  ArrayAccess
 
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Gets and sets the name of the column.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets totals_calculation
      *
      * @return string
@@ -255,6 +231,30 @@ class ListColumn implements  ArrayAccess
     public function setTotalsCalculation($totals_calculation)
     {
         $this->container['totals_calculation'] = $totals_calculation;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Gets and sets the name of the column.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

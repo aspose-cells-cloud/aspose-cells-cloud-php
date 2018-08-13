@@ -58,8 +58,8 @@ class Columns implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'max_column' => 'int',
         'columns_count' => 'int',
+        'max_column' => 'int',
         'columns_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]'
     ];
 
@@ -70,8 +70,8 @@ class Columns implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'max_column' => 'int32',
         'columns_count' => 'int32',
+        'max_column' => 'int32',
         'columns_list' => null
     ];
 
@@ -103,8 +103,8 @@ class Columns implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'max_column' => 'MaxColumn',
         'columns_count' => 'ColumnsCount',
+        'max_column' => 'MaxColumn',
         'columns_list' => 'ColumnsList'
     ];
 
@@ -115,8 +115,8 @@ class Columns implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'max_column' => 'setMaxColumn',
         'columns_count' => 'setColumnsCount',
+        'max_column' => 'setMaxColumn',
         'columns_list' => 'setColumnsList'
     ];
 
@@ -127,8 +127,8 @@ class Columns implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'max_column' => 'getMaxColumn',
         'columns_count' => 'getColumnsCount',
+        'max_column' => 'getMaxColumn',
         'columns_list' => 'getColumnsList'
     ];
 
@@ -193,8 +193,8 @@ class Columns implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['max_column'] = isset($data['max_column']) ? $data['max_column'] : null;
         $this->container['columns_count'] = isset($data['columns_count']) ? $data['columns_count'] : null;
+        $this->container['max_column'] = isset($data['max_column']) ? $data['max_column'] : null;
         $this->container['columns_list'] = isset($data['columns_list']) ? $data['columns_list'] : null;
     }
 
@@ -207,11 +207,11 @@ class Columns implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['max_column'] === null) {
-            $invalidProperties[] = "'max_column' can't be null";
-        }
         if ($this->container['columns_count'] === null) {
             $invalidProperties[] = "'columns_count' can't be null";
+        }
+        if ($this->container['max_column'] === null) {
+            $invalidProperties[] = "'max_column' can't be null";
         }
         return $invalidProperties;
     }
@@ -225,10 +225,10 @@ class Columns implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['max_column'] === null) {
+        if ($this->container['columns_count'] === null) {
             return false;
         }
-        if ($this->container['columns_count'] === null) {
+        if ($this->container['max_column'] === null) {
             return false;
         }
         return true;
@@ -260,30 +260,6 @@ class Columns implements  ArrayAccess
     }
 
     /**
-     * Gets max_column
-     *
-     * @return int
-     */
-    public function getMaxColumn()
-    {
-        return $this->container['max_column'];
-    }
-
-    /**
-     * Sets max_column
-     *
-     * @param int $max_column max_column
-     *
-     * @return $this
-     */
-    public function setMaxColumn($max_column)
-    {
-        $this->container['max_column'] = $max_column;
-
-        return $this;
-    }
-
-    /**
      * Gets columns_count
      *
      * @return int
@@ -303,6 +279,30 @@ class Columns implements  ArrayAccess
     public function setColumnsCount($columns_count)
     {
         $this->container['columns_count'] = $columns_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_column
+     *
+     * @return int
+     */
+    public function getMaxColumn()
+    {
+        return $this->container['max_column'];
+    }
+
+    /**
+     * Sets max_column
+     *
+     * @param int $max_column max_column
+     *
+     * @return $this
+     */
+    public function setMaxColumn($max_column)
+    {
+        $this->container['max_column'] = $max_column;
 
         return $this;
     }

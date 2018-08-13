@@ -36,7 +36,7 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\OAuthApi;
 use \Aspose\Cells\Cloud\Api\CellsSaveAsApi;
-use \Aspose\Cells\Cloud\Model\Range;
+use \Aspose\Cells\Cloud\Model\PdfSaveOptions;
 
 /**
  * CellsSaveAsApiTest Class Doc Comment
@@ -91,6 +91,27 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';    
         $saveOptions = null;
         $newfilename = "newbook.xlsx";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns,$folder);
+        $this->assertEquals(200, $result['code']);
+    }
+    
+    /**
+     * Test case for cellsSaveAsPostDocumentSaveAs
+     *
+     * Convert document and save result to storage..
+     *
+     */
+    public function testCellsSaveAsPostDocumentSaveAsPDFTest()
+    {
+        $name ='Book1.xlsx';    
+        $saveOptions = new PdfSaveOptions();
+        $saveOptions->OnePagePerSheet = 'true';
+        $saveOptions->SaveFormat = "pdf";
+        $newfilename = "newbook.pdf";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
         $folder = "Temp";

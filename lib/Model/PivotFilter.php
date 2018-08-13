@@ -58,14 +58,14 @@ class PivotFilter implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auto_filter' => '\Aspose\Cells\Cloud\Model\AutoFilter',
         'evaluation_order' => 'int',
-        'field_index' => 'int',
-        'filter_type' => 'string',
-        'measure_fld_index' => 'int',
-        'member_property_field_index' => 'int',
         'name' => 'string',
+        'filter_type' => 'string',
+        'auto_filter' => '\Aspose\Cells\Cloud\Model\AutoFilter',
+        'field_index' => 'int',
+        'measure_fld_index' => 'int',
         'value1' => 'string',
+        'member_property_field_index' => 'int',
         'value2' => 'string'
     ];
 
@@ -75,14 +75,14 @@ class PivotFilter implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auto_filter' => null,
         'evaluation_order' => 'int32',
-        'field_index' => 'int32',
-        'filter_type' => null,
-        'measure_fld_index' => 'int32',
-        'member_property_field_index' => 'int32',
         'name' => null,
+        'filter_type' => null,
+        'auto_filter' => null,
+        'field_index' => 'int32',
+        'measure_fld_index' => 'int32',
         'value1' => null,
+        'member_property_field_index' => 'int32',
         'value2' => null
     ];
 
@@ -113,14 +113,14 @@ class PivotFilter implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auto_filter' => 'AutoFilter',
         'evaluation_order' => 'EvaluationOrder',
-        'field_index' => 'FieldIndex',
-        'filter_type' => 'FilterType',
-        'measure_fld_index' => 'MeasureFldIndex',
-        'member_property_field_index' => 'MemberPropertyFieldIndex',
         'name' => 'Name',
+        'filter_type' => 'FilterType',
+        'auto_filter' => 'AutoFilter',
+        'field_index' => 'FieldIndex',
+        'measure_fld_index' => 'MeasureFldIndex',
         'value1' => 'Value1',
+        'member_property_field_index' => 'MemberPropertyFieldIndex',
         'value2' => 'Value2'
     ];
 
@@ -130,14 +130,14 @@ class PivotFilter implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auto_filter' => 'setAutoFilter',
         'evaluation_order' => 'setEvaluationOrder',
-        'field_index' => 'setFieldIndex',
-        'filter_type' => 'setFilterType',
-        'measure_fld_index' => 'setMeasureFldIndex',
-        'member_property_field_index' => 'setMemberPropertyFieldIndex',
         'name' => 'setName',
+        'filter_type' => 'setFilterType',
+        'auto_filter' => 'setAutoFilter',
+        'field_index' => 'setFieldIndex',
+        'measure_fld_index' => 'setMeasureFldIndex',
         'value1' => 'setValue1',
+        'member_property_field_index' => 'setMemberPropertyFieldIndex',
         'value2' => 'setValue2'
     ];
 
@@ -147,14 +147,14 @@ class PivotFilter implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auto_filter' => 'getAutoFilter',
         'evaluation_order' => 'getEvaluationOrder',
-        'field_index' => 'getFieldIndex',
-        'filter_type' => 'getFilterType',
-        'measure_fld_index' => 'getMeasureFldIndex',
-        'member_property_field_index' => 'getMemberPropertyFieldIndex',
         'name' => 'getName',
+        'filter_type' => 'getFilterType',
+        'auto_filter' => 'getAutoFilter',
+        'field_index' => 'getFieldIndex',
+        'measure_fld_index' => 'getMeasureFldIndex',
         'value1' => 'getValue1',
+        'member_property_field_index' => 'getMemberPropertyFieldIndex',
         'value2' => 'getValue2'
     ];
 
@@ -218,14 +218,14 @@ class PivotFilter implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auto_filter'] = isset($data['auto_filter']) ? $data['auto_filter'] : null;
         $this->container['evaluation_order'] = isset($data['evaluation_order']) ? $data['evaluation_order'] : null;
-        $this->container['field_index'] = isset($data['field_index']) ? $data['field_index'] : null;
-        $this->container['filter_type'] = isset($data['filter_type']) ? $data['filter_type'] : null;
-        $this->container['measure_fld_index'] = isset($data['measure_fld_index']) ? $data['measure_fld_index'] : null;
-        $this->container['member_property_field_index'] = isset($data['member_property_field_index']) ? $data['member_property_field_index'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['filter_type'] = isset($data['filter_type']) ? $data['filter_type'] : null;
+        $this->container['auto_filter'] = isset($data['auto_filter']) ? $data['auto_filter'] : null;
+        $this->container['field_index'] = isset($data['field_index']) ? $data['field_index'] : null;
+        $this->container['measure_fld_index'] = isset($data['measure_fld_index']) ? $data['measure_fld_index'] : null;
         $this->container['value1'] = isset($data['value1']) ? $data['value1'] : null;
+        $this->container['member_property_field_index'] = isset($data['member_property_field_index']) ? $data['member_property_field_index'] : null;
         $this->container['value2'] = isset($data['value2']) ? $data['value2'] : null;
     }
 
@@ -255,30 +255,6 @@ class PivotFilter implements  ArrayAccess
 
 
     /**
-     * Gets auto_filter
-     *
-     * @return \Aspose\Cells\Cloud\Model\AutoFilter
-     */
-    public function getAutoFilter()
-    {
-        return $this->container['auto_filter'];
-    }
-
-    /**
-     * Sets auto_filter
-     *
-     * @param \Aspose\Cells\Cloud\Model\AutoFilter $auto_filter Gets the autofilter of the pivot filter.
-     *
-     * @return $this
-     */
-    public function setAutoFilter($auto_filter)
-    {
-        $this->container['auto_filter'] = $auto_filter;
-
-        return $this;
-    }
-
-    /**
      * Gets evaluation_order
      *
      * @return int
@@ -298,102 +274,6 @@ class PivotFilter implements  ArrayAccess
     public function setEvaluationOrder($evaluation_order)
     {
         $this->container['evaluation_order'] = $evaluation_order;
-
-        return $this;
-    }
-
-    /**
-     * Gets field_index
-     *
-     * @return int
-     */
-    public function getFieldIndex()
-    {
-        return $this->container['field_index'];
-    }
-
-    /**
-     * Sets field_index
-     *
-     * @param int $field_index Gets the field index of the pivot filter.
-     *
-     * @return $this
-     */
-    public function setFieldIndex($field_index)
-    {
-        $this->container['field_index'] = $field_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets filter_type
-     *
-     * @return string
-     */
-    public function getFilterType()
-    {
-        return $this->container['filter_type'];
-    }
-
-    /**
-     * Sets filter_type
-     *
-     * @param string $filter_type Gets the autofilter type of the pivot filter.
-     *
-     * @return $this
-     */
-    public function setFilterType($filter_type)
-    {
-        $this->container['filter_type'] = $filter_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets measure_fld_index
-     *
-     * @return int
-     */
-    public function getMeasureFldIndex()
-    {
-        return $this->container['measure_fld_index'];
-    }
-
-    /**
-     * Sets measure_fld_index
-     *
-     * @param int $measure_fld_index Gets the measure field index of the pivot filter.
-     *
-     * @return $this
-     */
-    public function setMeasureFldIndex($measure_fld_index)
-    {
-        $this->container['measure_fld_index'] = $measure_fld_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets member_property_field_index
-     *
-     * @return int
-     */
-    public function getMemberPropertyFieldIndex()
-    {
-        return $this->container['member_property_field_index'];
-    }
-
-    /**
-     * Sets member_property_field_index
-     *
-     * @param int $member_property_field_index Gets the member property field index of the pivot filter.
-     *
-     * @return $this
-     */
-    public function setMemberPropertyFieldIndex($member_property_field_index)
-    {
-        $this->container['member_property_field_index'] = $member_property_field_index;
 
         return $this;
     }
@@ -423,6 +303,102 @@ class PivotFilter implements  ArrayAccess
     }
 
     /**
+     * Gets filter_type
+     *
+     * @return string
+     */
+    public function getFilterType()
+    {
+        return $this->container['filter_type'];
+    }
+
+    /**
+     * Sets filter_type
+     *
+     * @param string $filter_type Gets the autofilter type of the pivot filter.
+     *
+     * @return $this
+     */
+    public function setFilterType($filter_type)
+    {
+        $this->container['filter_type'] = $filter_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_filter
+     *
+     * @return \Aspose\Cells\Cloud\Model\AutoFilter
+     */
+    public function getAutoFilter()
+    {
+        return $this->container['auto_filter'];
+    }
+
+    /**
+     * Sets auto_filter
+     *
+     * @param \Aspose\Cells\Cloud\Model\AutoFilter $auto_filter Gets the autofilter of the pivot filter.
+     *
+     * @return $this
+     */
+    public function setAutoFilter($auto_filter)
+    {
+        $this->container['auto_filter'] = $auto_filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets field_index
+     *
+     * @return int
+     */
+    public function getFieldIndex()
+    {
+        return $this->container['field_index'];
+    }
+
+    /**
+     * Sets field_index
+     *
+     * @param int $field_index Gets the field index of the pivot filter.
+     *
+     * @return $this
+     */
+    public function setFieldIndex($field_index)
+    {
+        $this->container['field_index'] = $field_index;
+
+        return $this;
+    }
+
+    /**
+     * Gets measure_fld_index
+     *
+     * @return int
+     */
+    public function getMeasureFldIndex()
+    {
+        return $this->container['measure_fld_index'];
+    }
+
+    /**
+     * Sets measure_fld_index
+     *
+     * @param int $measure_fld_index Gets the measure field index of the pivot filter.
+     *
+     * @return $this
+     */
+    public function setMeasureFldIndex($measure_fld_index)
+    {
+        $this->container['measure_fld_index'] = $measure_fld_index;
+
+        return $this;
+    }
+
+    /**
      * Gets value1
      *
      * @return string
@@ -442,6 +418,30 @@ class PivotFilter implements  ArrayAccess
     public function setValue1($value1)
     {
         $this->container['value1'] = $value1;
+
+        return $this;
+    }
+
+    /**
+     * Gets member_property_field_index
+     *
+     * @return int
+     */
+    public function getMemberPropertyFieldIndex()
+    {
+        return $this->container['member_property_field_index'];
+    }
+
+    /**
+     * Sets member_property_field_index
+     *
+     * @param int $member_property_field_index Gets the member property field index of the pivot filter.
+     *
+     * @return $this
+     */
+    public function setMemberPropertyFieldIndex($member_property_field_index)
+    {
+        $this->container['member_property_field_index'] = $member_property_field_index;
 
         return $this;
     }

@@ -56,8 +56,8 @@ class ConvertTaskParameter extends TaskParameter
       */
     protected static $swaggerTypes = [
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'destination_file' => 'string',
-        'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions'
+        'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions',
+        'destination_file' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ConvertTaskParameter extends TaskParameter
       */
     protected static $swaggerFormats = [
         'workbook' => null,
-        'destination_file' => null,
-        'save_options' => null
+        'save_options' => null,
+        'destination_file' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class ConvertTaskParameter extends TaskParameter
      */
     protected static $attributeMap = [
         'workbook' => 'Workbook',
-        'destination_file' => 'DestinationFile',
-        'save_options' => 'SaveOptions'
+        'save_options' => 'SaveOptions',
+        'destination_file' => 'DestinationFile'
     ];
 
     /**
@@ -110,8 +110,8 @@ class ConvertTaskParameter extends TaskParameter
      */
     protected static $setters = [
         'workbook' => 'setWorkbook',
-        'destination_file' => 'setDestinationFile',
-        'save_options' => 'setSaveOptions'
+        'save_options' => 'setSaveOptions',
+        'destination_file' => 'setDestinationFile'
     ];
 
     /**
@@ -121,8 +121,8 @@ class ConvertTaskParameter extends TaskParameter
      */
     protected static $getters = [
         'workbook' => 'getWorkbook',
-        'destination_file' => 'getDestinationFile',
-        'save_options' => 'getSaveOptions'
+        'save_options' => 'getSaveOptions',
+        'destination_file' => 'getDestinationFile'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ConvertTaskParameter extends TaskParameter
         parent::__construct($data);
 
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
-        $this->container['destination_file'] = isset($data['destination_file']) ? $data['destination_file'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
+        $this->container['destination_file'] = isset($data['destination_file']) ? $data['destination_file'] : null;
     }
 
     /**
@@ -239,30 +239,6 @@ class ConvertTaskParameter extends TaskParameter
     }
 
     /**
-     * Gets destination_file
-     *
-     * @return string
-     */
-    public function getDestinationFile()
-    {
-        return $this->container['destination_file'];
-    }
-
-    /**
-     * Sets destination_file
-     *
-     * @param string $destination_file destination_file
-     *
-     * @return $this
-     */
-    public function setDestinationFile($destination_file)
-    {
-        $this->container['destination_file'] = $destination_file;
-
-        return $this;
-    }
-
-    /**
      * Gets save_options
      *
      * @return \Aspose\Cells\Cloud\Model\SaveOptions
@@ -282,6 +258,30 @@ class ConvertTaskParameter extends TaskParameter
     public function setSaveOptions($save_options)
     {
         $this->container['save_options'] = $save_options;
+
+        return $this;
+    }
+
+    /**
+     * Gets destination_file
+     *
+     * @return string
+     */
+    public function getDestinationFile()
+    {
+        return $this->container['destination_file'];
+    }
+
+    /**
+     * Sets destination_file
+     *
+     * @param string $destination_file destination_file
+     *
+     * @return $this
+     */
+    public function setDestinationFile($destination_file)
+    {
+        $this->container['destination_file'] = $destination_file;
 
         return $this;
     }

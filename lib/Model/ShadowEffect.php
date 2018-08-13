@@ -57,13 +57,13 @@ class ShadowEffect implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'angle' => 'double',
-        'blur' => 'double',
-        'color' => '\Aspose\Cells\Cloud\Model\CellsColor',
         'distance' => 'double',
+        'angle' => 'double',
         'preset_type' => 'string',
-        'size' => 'double',
-        'transparency' => 'double'
+        'color' => '\Aspose\Cells\Cloud\Model\CellsColor',
+        'transparency' => 'double',
+        'blur' => 'double',
+        'size' => 'double'
     ];
 
     /**
@@ -72,13 +72,13 @@ class ShadowEffect implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'angle' => 'double',
-        'blur' => 'double',
-        'color' => null,
         'distance' => 'double',
+        'angle' => 'double',
         'preset_type' => null,
-        'size' => 'double',
-        'transparency' => 'double'
+        'color' => null,
+        'transparency' => 'double',
+        'blur' => 'double',
+        'size' => 'double'
     ];
 
     /**
@@ -108,13 +108,13 @@ class ShadowEffect implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'angle' => 'Angle',
-        'blur' => 'Blur',
-        'color' => 'Color',
         'distance' => 'Distance',
+        'angle' => 'Angle',
         'preset_type' => 'PresetType',
-        'size' => 'Size',
-        'transparency' => 'Transparency'
+        'color' => 'Color',
+        'transparency' => 'Transparency',
+        'blur' => 'Blur',
+        'size' => 'Size'
     ];
 
     /**
@@ -123,13 +123,13 @@ class ShadowEffect implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'angle' => 'setAngle',
-        'blur' => 'setBlur',
-        'color' => 'setColor',
         'distance' => 'setDistance',
+        'angle' => 'setAngle',
         'preset_type' => 'setPresetType',
-        'size' => 'setSize',
-        'transparency' => 'setTransparency'
+        'color' => 'setColor',
+        'transparency' => 'setTransparency',
+        'blur' => 'setBlur',
+        'size' => 'setSize'
     ];
 
     /**
@@ -138,13 +138,13 @@ class ShadowEffect implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'angle' => 'getAngle',
-        'blur' => 'getBlur',
-        'color' => 'getColor',
         'distance' => 'getDistance',
+        'angle' => 'getAngle',
         'preset_type' => 'getPresetType',
-        'size' => 'getSize',
-        'transparency' => 'getTransparency'
+        'color' => 'getColor',
+        'transparency' => 'getTransparency',
+        'blur' => 'getBlur',
+        'size' => 'getSize'
     ];
 
     /**
@@ -207,13 +207,13 @@ class ShadowEffect implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['angle'] = isset($data['angle']) ? $data['angle'] : null;
-        $this->container['blur'] = isset($data['blur']) ? $data['blur'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['distance'] = isset($data['distance']) ? $data['distance'] : null;
+        $this->container['angle'] = isset($data['angle']) ? $data['angle'] : null;
         $this->container['preset_type'] = isset($data['preset_type']) ? $data['preset_type'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['transparency'] = isset($data['transparency']) ? $data['transparency'] : null;
+        $this->container['blur'] = isset($data['blur']) ? $data['blur'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
     }
 
     /**
@@ -242,78 +242,6 @@ class ShadowEffect implements  ArrayAccess
 
 
     /**
-     * Gets angle
-     *
-     * @return double
-     */
-    public function getAngle()
-    {
-        return $this->container['angle'];
-    }
-
-    /**
-     * Sets angle
-     *
-     * @param double $angle angle
-     *
-     * @return $this
-     */
-    public function setAngle($angle)
-    {
-        $this->container['angle'] = $angle;
-
-        return $this;
-    }
-
-    /**
-     * Gets blur
-     *
-     * @return double
-     */
-    public function getBlur()
-    {
-        return $this->container['blur'];
-    }
-
-    /**
-     * Sets blur
-     *
-     * @param double $blur blur
-     *
-     * @return $this
-     */
-    public function setBlur($blur)
-    {
-        $this->container['blur'] = $blur;
-
-        return $this;
-    }
-
-    /**
-     * Gets color
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellsColor
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /**
-     * Sets color
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellsColor $color color
-     *
-     * @return $this
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
-
-    /**
      * Gets distance
      *
      * @return double
@@ -333,6 +261,30 @@ class ShadowEffect implements  ArrayAccess
     public function setDistance($distance)
     {
         $this->container['distance'] = $distance;
+
+        return $this;
+    }
+
+    /**
+     * Gets angle
+     *
+     * @return double
+     */
+    public function getAngle()
+    {
+        return $this->container['angle'];
+    }
+
+    /**
+     * Sets angle
+     *
+     * @param double $angle angle
+     *
+     * @return $this
+     */
+    public function setAngle($angle)
+    {
+        $this->container['angle'] = $angle;
 
         return $this;
     }
@@ -362,25 +314,25 @@ class ShadowEffect implements  ArrayAccess
     }
 
     /**
-     * Gets size
+     * Gets color
      *
-     * @return double
+     * @return \Aspose\Cells\Cloud\Model\CellsColor
      */
-    public function getSize()
+    public function getColor()
     {
-        return $this->container['size'];
+        return $this->container['color'];
     }
 
     /**
-     * Sets size
+     * Sets color
      *
-     * @param double $size size
+     * @param \Aspose\Cells\Cloud\Model\CellsColor $color color
      *
      * @return $this
      */
-    public function setSize($size)
+    public function setColor($color)
     {
-        $this->container['size'] = $size;
+        $this->container['color'] = $color;
 
         return $this;
     }
@@ -405,6 +357,54 @@ class ShadowEffect implements  ArrayAccess
     public function setTransparency($transparency)
     {
         $this->container['transparency'] = $transparency;
+
+        return $this;
+    }
+
+    /**
+     * Gets blur
+     *
+     * @return double
+     */
+    public function getBlur()
+    {
+        return $this->container['blur'];
+    }
+
+    /**
+     * Sets blur
+     *
+     * @param double $blur blur
+     *
+     * @return $this
+     */
+    public function setBlur($blur)
+    {
+        $this->container['blur'] = $blur;
+
+        return $this;
+    }
+
+    /**
+     * Gets size
+     *
+     * @return double
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /**
+     * Sets size
+     *
+     * @param double $size size
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
 
         return $this;
     }

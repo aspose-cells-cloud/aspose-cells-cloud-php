@@ -57,9 +57,9 @@ class HorizontalPageBreak implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'row' => 'int',
+        'start_column' => 'int',
         'end_column' => 'int',
-        'start_column' => 'int'
+        'row' => 'int'
     ];
 
     /**
@@ -68,9 +68,9 @@ class HorizontalPageBreak implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'row' => 'int32',
+        'start_column' => 'int32',
         'end_column' => 'int32',
-        'start_column' => 'int32'
+        'row' => 'int32'
     ];
 
     /**
@@ -100,9 +100,9 @@ class HorizontalPageBreak implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'row' => 'Row',
+        'start_column' => 'StartColumn',
         'end_column' => 'EndColumn',
-        'start_column' => 'StartColumn'
+        'row' => 'Row'
     ];
 
     /**
@@ -111,9 +111,9 @@ class HorizontalPageBreak implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'row' => 'setRow',
+        'start_column' => 'setStartColumn',
         'end_column' => 'setEndColumn',
-        'start_column' => 'setStartColumn'
+        'row' => 'setRow'
     ];
 
     /**
@@ -122,9 +122,9 @@ class HorizontalPageBreak implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'row' => 'getRow',
+        'start_column' => 'getStartColumn',
         'end_column' => 'getEndColumn',
-        'start_column' => 'getStartColumn'
+        'row' => 'getRow'
     ];
 
     /**
@@ -187,9 +187,9 @@ class HorizontalPageBreak implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
-        $this->container['end_column'] = isset($data['end_column']) ? $data['end_column'] : null;
         $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
+        $this->container['end_column'] = isset($data['end_column']) ? $data['end_column'] : null;
+        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
     }
 
     /**
@@ -201,14 +201,14 @@ class HorizontalPageBreak implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['row'] === null) {
-            $invalidProperties[] = "'row' can't be null";
+        if ($this->container['start_column'] === null) {
+            $invalidProperties[] = "'start_column' can't be null";
         }
         if ($this->container['end_column'] === null) {
             $invalidProperties[] = "'end_column' can't be null";
         }
-        if ($this->container['start_column'] === null) {
-            $invalidProperties[] = "'start_column' can't be null";
+        if ($this->container['row'] === null) {
+            $invalidProperties[] = "'row' can't be null";
         }
         return $invalidProperties;
     }
@@ -222,13 +222,13 @@ class HorizontalPageBreak implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['row'] === null) {
+        if ($this->container['start_column'] === null) {
             return false;
         }
         if ($this->container['end_column'] === null) {
             return false;
         }
-        if ($this->container['start_column'] === null) {
+        if ($this->container['row'] === null) {
             return false;
         }
         return true;
@@ -236,25 +236,25 @@ class HorizontalPageBreak implements  ArrayAccess
 
 
     /**
-     * Gets row
+     * Gets start_column
      *
      * @return int
      */
-    public function getRow()
+    public function getStartColumn()
     {
-        return $this->container['row'];
+        return $this->container['start_column'];
     }
 
     /**
-     * Sets row
+     * Sets start_column
      *
-     * @param int $row row
+     * @param int $start_column start_column
      *
      * @return $this
      */
-    public function setRow($row)
+    public function setStartColumn($start_column)
     {
-        $this->container['row'] = $row;
+        $this->container['start_column'] = $start_column;
 
         return $this;
     }
@@ -284,25 +284,25 @@ class HorizontalPageBreak implements  ArrayAccess
     }
 
     /**
-     * Gets start_column
+     * Gets row
      *
      * @return int
      */
-    public function getStartColumn()
+    public function getRow()
     {
-        return $this->container['start_column'];
+        return $this->container['row'];
     }
 
     /**
-     * Sets start_column
+     * Sets row
      *
-     * @param int $start_column start_column
+     * @param int $row row
      *
      * @return $this
      */
-    public function setStartColumn($start_column)
+    public function setRow($row)
     {
-        $this->container['start_column'] = $start_column;
+        $this->container['row'] = $row;
 
         return $this;
     }

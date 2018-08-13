@@ -57,13 +57,13 @@ class PatternFill implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'pattern' => 'string',
-        'background_cells_color' => '\Aspose\Cells\Cloud\Model\CellsColor',
-        'foreground_cells_color' => '\Aspose\Cells\Cloud\Model\CellsColor',
         'foreground_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'pattern' => 'string',
         'background_color' => '\Aspose\Cells\Cloud\Model\Color',
         'back_transparency' => 'double',
-        'fore_transparency' => 'double'
+        'background_cells_color' => '\Aspose\Cells\Cloud\Model\CellsColor',
+        'fore_transparency' => 'double',
+        'foreground_cells_color' => '\Aspose\Cells\Cloud\Model\CellsColor'
     ];
 
     /**
@@ -72,13 +72,13 @@ class PatternFill implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'pattern' => null,
-        'background_cells_color' => null,
-        'foreground_cells_color' => null,
         'foreground_color' => null,
+        'pattern' => null,
         'background_color' => null,
         'back_transparency' => 'double',
-        'fore_transparency' => 'double'
+        'background_cells_color' => null,
+        'fore_transparency' => 'double',
+        'foreground_cells_color' => null
     ];
 
     /**
@@ -108,13 +108,13 @@ class PatternFill implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'pattern' => 'Pattern',
-        'background_cells_color' => 'BackgroundCellsColor',
-        'foreground_cells_color' => 'ForegroundCellsColor',
         'foreground_color' => 'ForegroundColor',
+        'pattern' => 'Pattern',
         'background_color' => 'BackgroundColor',
         'back_transparency' => 'BackTransparency',
-        'fore_transparency' => 'ForeTransparency'
+        'background_cells_color' => 'BackgroundCellsColor',
+        'fore_transparency' => 'ForeTransparency',
+        'foreground_cells_color' => 'ForegroundCellsColor'
     ];
 
     /**
@@ -123,13 +123,13 @@ class PatternFill implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'pattern' => 'setPattern',
-        'background_cells_color' => 'setBackgroundCellsColor',
-        'foreground_cells_color' => 'setForegroundCellsColor',
         'foreground_color' => 'setForegroundColor',
+        'pattern' => 'setPattern',
         'background_color' => 'setBackgroundColor',
         'back_transparency' => 'setBackTransparency',
-        'fore_transparency' => 'setForeTransparency'
+        'background_cells_color' => 'setBackgroundCellsColor',
+        'fore_transparency' => 'setForeTransparency',
+        'foreground_cells_color' => 'setForegroundCellsColor'
     ];
 
     /**
@@ -138,13 +138,13 @@ class PatternFill implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'pattern' => 'getPattern',
-        'background_cells_color' => 'getBackgroundCellsColor',
-        'foreground_cells_color' => 'getForegroundCellsColor',
         'foreground_color' => 'getForegroundColor',
+        'pattern' => 'getPattern',
         'background_color' => 'getBackgroundColor',
         'back_transparency' => 'getBackTransparency',
-        'fore_transparency' => 'getForeTransparency'
+        'background_cells_color' => 'getBackgroundCellsColor',
+        'fore_transparency' => 'getForeTransparency',
+        'foreground_cells_color' => 'getForegroundCellsColor'
     ];
 
     /**
@@ -207,13 +207,13 @@ class PatternFill implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['pattern'] = isset($data['pattern']) ? $data['pattern'] : null;
-        $this->container['background_cells_color'] = isset($data['background_cells_color']) ? $data['background_cells_color'] : null;
-        $this->container['foreground_cells_color'] = isset($data['foreground_cells_color']) ? $data['foreground_cells_color'] : null;
         $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : null;
+        $this->container['pattern'] = isset($data['pattern']) ? $data['pattern'] : null;
         $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
         $this->container['back_transparency'] = isset($data['back_transparency']) ? $data['back_transparency'] : null;
+        $this->container['background_cells_color'] = isset($data['background_cells_color']) ? $data['background_cells_color'] : null;
         $this->container['fore_transparency'] = isset($data['fore_transparency']) ? $data['fore_transparency'] : null;
+        $this->container['foreground_cells_color'] = isset($data['foreground_cells_color']) ? $data['foreground_cells_color'] : null;
     }
 
     /**
@@ -242,78 +242,6 @@ class PatternFill implements  ArrayAccess
 
 
     /**
-     * Gets pattern
-     *
-     * @return string
-     */
-    public function getPattern()
-    {
-        return $this->container['pattern'];
-    }
-
-    /**
-     * Sets pattern
-     *
-     * @param string $pattern pattern
-     *
-     * @return $this
-     */
-    public function setPattern($pattern)
-    {
-        $this->container['pattern'] = $pattern;
-
-        return $this;
-    }
-
-    /**
-     * Gets background_cells_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellsColor
-     */
-    public function getBackgroundCellsColor()
-    {
-        return $this->container['background_cells_color'];
-    }
-
-    /**
-     * Sets background_cells_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellsColor $background_cells_color background_cells_color
-     *
-     * @return $this
-     */
-    public function setBackgroundCellsColor($background_cells_color)
-    {
-        $this->container['background_cells_color'] = $background_cells_color;
-
-        return $this;
-    }
-
-    /**
-     * Gets foreground_cells_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellsColor
-     */
-    public function getForegroundCellsColor()
-    {
-        return $this->container['foreground_cells_color'];
-    }
-
-    /**
-     * Sets foreground_cells_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellsColor $foreground_cells_color foreground_cells_color
-     *
-     * @return $this
-     */
-    public function setForegroundCellsColor($foreground_cells_color)
-    {
-        $this->container['foreground_cells_color'] = $foreground_cells_color;
-
-        return $this;
-    }
-
-    /**
      * Gets foreground_color
      *
      * @return \Aspose\Cells\Cloud\Model\Color
@@ -333,6 +261,30 @@ class PatternFill implements  ArrayAccess
     public function setForegroundColor($foreground_color)
     {
         $this->container['foreground_color'] = $foreground_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets pattern
+     *
+     * @return string
+     */
+    public function getPattern()
+    {
+        return $this->container['pattern'];
+    }
+
+    /**
+     * Sets pattern
+     *
+     * @param string $pattern pattern
+     *
+     * @return $this
+     */
+    public function setPattern($pattern)
+    {
+        $this->container['pattern'] = $pattern;
 
         return $this;
     }
@@ -386,6 +338,30 @@ class PatternFill implements  ArrayAccess
     }
 
     /**
+     * Gets background_cells_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\CellsColor
+     */
+    public function getBackgroundCellsColor()
+    {
+        return $this->container['background_cells_color'];
+    }
+
+    /**
+     * Sets background_cells_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\CellsColor $background_cells_color background_cells_color
+     *
+     * @return $this
+     */
+    public function setBackgroundCellsColor($background_cells_color)
+    {
+        $this->container['background_cells_color'] = $background_cells_color;
+
+        return $this;
+    }
+
+    /**
      * Gets fore_transparency
      *
      * @return double
@@ -405,6 +381,30 @@ class PatternFill implements  ArrayAccess
     public function setForeTransparency($fore_transparency)
     {
         $this->container['fore_transparency'] = $fore_transparency;
+
+        return $this;
+    }
+
+    /**
+     * Gets foreground_cells_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\CellsColor
+     */
+    public function getForegroundCellsColor()
+    {
+        return $this->container['foreground_cells_color'];
+    }
+
+    /**
+     * Sets foreground_cells_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\CellsColor $foreground_cells_color foreground_cells_color
+     *
+     * @return $this
+     */
+    public function setForegroundCellsColor($foreground_cells_color)
+    {
+        $this->container['foreground_cells_color'] = $foreground_cells_color;
 
         return $this;
     }

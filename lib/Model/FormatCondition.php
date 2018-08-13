@@ -58,20 +58,20 @@ class FormatCondition implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'priority' => 'int',
-        'type' => 'string',
-        'stop_if_true' => 'bool',
         'above_average' => '\Aspose\Cells\Cloud\Model\AboveAverage',
+        'formula2' => 'string',
+        'style' => '\Aspose\Cells\Cloud\Model\Style',
+        'formula1' => 'string',
         'color_scale' => '\Aspose\Cells\Cloud\Model\ColorScale',
         'data_bar' => '\Aspose\Cells\Cloud\Model\DataBar',
-        'formula1' => 'string',
-        'formula2' => 'string',
-        'icon_set' => '\Aspose\Cells\Cloud\Model\IconSet',
-        'operator' => 'string',
-        'style' => '\Aspose\Cells\Cloud\Model\Style',
         'text' => 'string',
-        'time_period' => 'string',
-        'top10' => '\Aspose\Cells\Cloud\Model\Top10'
+        'stop_if_true' => 'bool',
+        'priority' => 'int',
+        'top10' => '\Aspose\Cells\Cloud\Model\Top10',
+        'operator' => 'string',
+        'icon_set' => '\Aspose\Cells\Cloud\Model\IconSet',
+        'type' => 'string',
+        'time_period' => 'string'
     ];
 
     /**
@@ -81,20 +81,20 @@ class FormatCondition implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'priority' => 'int32',
-        'type' => null,
-        'stop_if_true' => null,
         'above_average' => null,
+        'formula2' => null,
+        'style' => null,
+        'formula1' => null,
         'color_scale' => null,
         'data_bar' => null,
-        'formula1' => null,
-        'formula2' => null,
-        'icon_set' => null,
-        'operator' => null,
-        'style' => null,
         'text' => null,
-        'time_period' => null,
-        'top10' => null
+        'stop_if_true' => null,
+        'priority' => 'int32',
+        'top10' => null,
+        'operator' => null,
+        'icon_set' => null,
+        'type' => null,
+        'time_period' => null
     ];
 
     /**
@@ -125,20 +125,20 @@ class FormatCondition implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'priority' => 'Priority',
-        'type' => 'Type',
-        'stop_if_true' => 'StopIfTrue',
         'above_average' => 'AboveAverage',
+        'formula2' => 'Formula2',
+        'style' => 'Style',
+        'formula1' => 'Formula1',
         'color_scale' => 'ColorScale',
         'data_bar' => 'DataBar',
-        'formula1' => 'Formula1',
-        'formula2' => 'Formula2',
-        'icon_set' => 'IconSet',
-        'operator' => 'Operator',
-        'style' => 'Style',
         'text' => 'Text',
-        'time_period' => 'TimePeriod',
-        'top10' => 'Top10'
+        'stop_if_true' => 'StopIfTrue',
+        'priority' => 'Priority',
+        'top10' => 'Top10',
+        'operator' => 'Operator',
+        'icon_set' => 'IconSet',
+        'type' => 'Type',
+        'time_period' => 'TimePeriod'
     ];
 
     /**
@@ -148,20 +148,20 @@ class FormatCondition implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'priority' => 'setPriority',
-        'type' => 'setType',
-        'stop_if_true' => 'setStopIfTrue',
         'above_average' => 'setAboveAverage',
+        'formula2' => 'setFormula2',
+        'style' => 'setStyle',
+        'formula1' => 'setFormula1',
         'color_scale' => 'setColorScale',
         'data_bar' => 'setDataBar',
-        'formula1' => 'setFormula1',
-        'formula2' => 'setFormula2',
-        'icon_set' => 'setIconSet',
-        'operator' => 'setOperator',
-        'style' => 'setStyle',
         'text' => 'setText',
-        'time_period' => 'setTimePeriod',
-        'top10' => 'setTop10'
+        'stop_if_true' => 'setStopIfTrue',
+        'priority' => 'setPriority',
+        'top10' => 'setTop10',
+        'operator' => 'setOperator',
+        'icon_set' => 'setIconSet',
+        'type' => 'setType',
+        'time_period' => 'setTimePeriod'
     ];
 
     /**
@@ -171,20 +171,20 @@ class FormatCondition implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'priority' => 'getPriority',
-        'type' => 'getType',
-        'stop_if_true' => 'getStopIfTrue',
         'above_average' => 'getAboveAverage',
+        'formula2' => 'getFormula2',
+        'style' => 'getStyle',
+        'formula1' => 'getFormula1',
         'color_scale' => 'getColorScale',
         'data_bar' => 'getDataBar',
-        'formula1' => 'getFormula1',
-        'formula2' => 'getFormula2',
-        'icon_set' => 'getIconSet',
-        'operator' => 'getOperator',
-        'style' => 'getStyle',
         'text' => 'getText',
-        'time_period' => 'getTimePeriod',
-        'top10' => 'getTop10'
+        'stop_if_true' => 'getStopIfTrue',
+        'priority' => 'getPriority',
+        'top10' => 'getTop10',
+        'operator' => 'getOperator',
+        'icon_set' => 'getIconSet',
+        'type' => 'getType',
+        'time_period' => 'getTimePeriod'
     ];
 
     /**
@@ -248,20 +248,20 @@ class FormatCondition implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['priority'] = isset($data['priority']) ? $data['priority'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['stop_if_true'] = isset($data['stop_if_true']) ? $data['stop_if_true'] : null;
         $this->container['above_average'] = isset($data['above_average']) ? $data['above_average'] : null;
+        $this->container['formula2'] = isset($data['formula2']) ? $data['formula2'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['formula1'] = isset($data['formula1']) ? $data['formula1'] : null;
         $this->container['color_scale'] = isset($data['color_scale']) ? $data['color_scale'] : null;
         $this->container['data_bar'] = isset($data['data_bar']) ? $data['data_bar'] : null;
-        $this->container['formula1'] = isset($data['formula1']) ? $data['formula1'] : null;
-        $this->container['formula2'] = isset($data['formula2']) ? $data['formula2'] : null;
-        $this->container['icon_set'] = isset($data['icon_set']) ? $data['icon_set'] : null;
-        $this->container['operator'] = isset($data['operator']) ? $data['operator'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['time_period'] = isset($data['time_period']) ? $data['time_period'] : null;
+        $this->container['stop_if_true'] = isset($data['stop_if_true']) ? $data['stop_if_true'] : null;
+        $this->container['priority'] = isset($data['priority']) ? $data['priority'] : null;
         $this->container['top10'] = isset($data['top10']) ? $data['top10'] : null;
+        $this->container['operator'] = isset($data['operator']) ? $data['operator'] : null;
+        $this->container['icon_set'] = isset($data['icon_set']) ? $data['icon_set'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['time_period'] = isset($data['time_period']) ? $data['time_period'] : null;
     }
 
     /**
@@ -314,78 +314,6 @@ class FormatCondition implements  ArrayAccess
     }
 
     /**
-     * Gets priority
-     *
-     * @return int
-     */
-    public function getPriority()
-    {
-        return $this->container['priority'];
-    }
-
-    /**
-     * Sets priority
-     *
-     * @param int $priority The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where '1' is the highest priority.
-     *
-     * @return $this
-     */
-    public function setPriority($priority)
-    {
-        $this->container['priority'] = $priority;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type Gets and sets whether the conditional format Type.
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets stop_if_true
-     *
-     * @return bool
-     */
-    public function getStopIfTrue()
-    {
-        return $this->container['stop_if_true'];
-    }
-
-    /**
-     * Sets stop_if_true
-     *
-     * @param bool $stop_if_true True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;
-     *
-     * @return $this
-     */
-    public function setStopIfTrue($stop_if_true)
-    {
-        $this->container['stop_if_true'] = $stop_if_true;
-
-        return $this;
-    }
-
-    /**
      * Gets above_average
      *
      * @return \Aspose\Cells\Cloud\Model\AboveAverage
@@ -405,6 +333,78 @@ class FormatCondition implements  ArrayAccess
     public function setAboveAverage($above_average)
     {
         $this->container['above_average'] = $above_average;
+
+        return $this;
+    }
+
+    /**
+     * Gets formula2
+     *
+     * @return string
+     */
+    public function getFormula2()
+    {
+        return $this->container['formula2'];
+    }
+
+    /**
+     * Sets formula2
+     *
+     * @param string $formula2 formula2
+     *
+     * @return $this
+     */
+    public function setFormula2($formula2)
+    {
+        $this->container['formula2'] = $formula2;
+
+        return $this;
+    }
+
+    /**
+     * Gets style
+     *
+     * @return \Aspose\Cells\Cloud\Model\Style
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param \Aspose\Cells\Cloud\Model\Style $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
+     * Gets formula1
+     *
+     * @return string
+     */
+    public function getFormula1()
+    {
+        return $this->container['formula1'];
+    }
+
+    /**
+     * Sets formula1
+     *
+     * @param string $formula1 formula1
+     *
+     * @return $this
+     */
+    public function setFormula1($formula1)
+    {
+        $this->container['formula1'] = $formula1;
 
         return $this;
     }
@@ -458,73 +458,97 @@ class FormatCondition implements  ArrayAccess
     }
 
     /**
-     * Gets formula1
+     * Gets text
      *
      * @return string
      */
-    public function getFormula1()
+    public function getText()
     {
-        return $this->container['formula1'];
+        return $this->container['text'];
     }
 
     /**
-     * Sets formula1
+     * Sets text
      *
-     * @param string $formula1 formula1
+     * @param string $text text
      *
      * @return $this
      */
-    public function setFormula1($formula1)
+    public function setText($text)
     {
-        $this->container['formula1'] = $formula1;
+        $this->container['text'] = $text;
 
         return $this;
     }
 
     /**
-     * Gets formula2
+     * Gets stop_if_true
      *
-     * @return string
+     * @return bool
      */
-    public function getFormula2()
+    public function getStopIfTrue()
     {
-        return $this->container['formula2'];
+        return $this->container['stop_if_true'];
     }
 
     /**
-     * Sets formula2
+     * Sets stop_if_true
      *
-     * @param string $formula2 formula2
+     * @param bool $stop_if_true True, no rules with lower priority may be applied over this rule, when this     rule evaluates to true.  Only applies for Excel 2007;
      *
      * @return $this
      */
-    public function setFormula2($formula2)
+    public function setStopIfTrue($stop_if_true)
     {
-        $this->container['formula2'] = $formula2;
+        $this->container['stop_if_true'] = $stop_if_true;
 
         return $this;
     }
 
     /**
-     * Gets icon_set
+     * Gets priority
      *
-     * @return \Aspose\Cells\Cloud\Model\IconSet
+     * @return int
      */
-    public function getIconSet()
+    public function getPriority()
     {
-        return $this->container['icon_set'];
+        return $this->container['priority'];
     }
 
     /**
-     * Sets icon_set
+     * Sets priority
      *
-     * @param \Aspose\Cells\Cloud\Model\IconSet $icon_set icon_set
+     * @param int $priority The priority of this conditional formatting rule. This value is used to determine     which format should be evaluated and rendered. Lower numeric values are higher     priority than higher numeric values, where '1' is the highest priority.
      *
      * @return $this
      */
-    public function setIconSet($icon_set)
+    public function setPriority($priority)
     {
-        $this->container['icon_set'] = $icon_set;
+        $this->container['priority'] = $priority;
+
+        return $this;
+    }
+
+    /**
+     * Gets top10
+     *
+     * @return \Aspose\Cells\Cloud\Model\Top10
+     */
+    public function getTop10()
+    {
+        return $this->container['top10'];
+    }
+
+    /**
+     * Sets top10
+     *
+     * @param \Aspose\Cells\Cloud\Model\Top10 $top10 top10
+     *
+     * @return $this
+     */
+    public function setTop10($top10)
+    {
+        $this->container['top10'] = $top10;
 
         return $this;
     }
@@ -554,49 +578,49 @@ class FormatCondition implements  ArrayAccess
     }
 
     /**
-     * Gets style
+     * Gets icon_set
      *
-     * @return \Aspose\Cells\Cloud\Model\Style
+     * @return \Aspose\Cells\Cloud\Model\IconSet
      */
-    public function getStyle()
+    public function getIconSet()
     {
-        return $this->container['style'];
+        return $this->container['icon_set'];
     }
 
     /**
-     * Sets style
+     * Sets icon_set
      *
-     * @param \Aspose\Cells\Cloud\Model\Style $style style
+     * @param \Aspose\Cells\Cloud\Model\IconSet $icon_set icon_set
      *
      * @return $this
      */
-    public function setStyle($style)
+    public function setIconSet($icon_set)
     {
-        $this->container['style'] = $style;
+        $this->container['icon_set'] = $icon_set;
 
         return $this;
     }
 
     /**
-     * Gets text
+     * Gets type
      *
      * @return string
      */
-    public function getText()
+    public function getType()
     {
-        return $this->container['text'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets text
+     * Sets type
      *
-     * @param string $text text
+     * @param string $type Gets and sets whether the conditional format Type.
      *
      * @return $this
      */
-    public function setText($text)
+    public function setType($type)
     {
-        $this->container['text'] = $text;
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -621,30 +645,6 @@ class FormatCondition implements  ArrayAccess
     public function setTimePeriod($time_period)
     {
         $this->container['time_period'] = $time_period;
-
-        return $this;
-    }
-
-    /**
-     * Gets top10
-     *
-     * @return \Aspose\Cells\Cloud\Model\Top10
-     */
-    public function getTop10()
-    {
-        return $this->container['top10'];
-    }
-
-    /**
-     * Sets top10
-     *
-     * @param \Aspose\Cells\Cloud\Model\Top10 $top10 top10
-     *
-     * @return $this
-     */
-    public function setTop10($top10)
-    {
-        $this->container['top10'] = $top10;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'border_color' => '\Aspose\Cells\Cloud\Model\Color',
         'range' => '\Aspose\Cells\Cloud\Model\Range',
-        'border_edge' => 'string',
         'border_style' => 'string',
-        'border_color' => '\Aspose\Cells\Cloud\Model\Color'
+        'border_edge' => 'string'
     ];
 
     /**
@@ -69,10 +69,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'border_color' => null,
         'range' => null,
-        'border_edge' => null,
         'border_style' => null,
-        'border_color' => null
+        'border_edge' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'border_color' => 'borderColor',
         'range' => 'Range',
-        'border_edge' => 'borderEdge',
         'border_style' => 'borderStyle',
-        'border_color' => 'borderColor'
+        'border_edge' => 'borderEdge'
     ];
 
     /**
@@ -114,10 +114,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'border_color' => 'setBorderColor',
         'range' => 'setRange',
-        'border_edge' => 'setBorderEdge',
         'border_style' => 'setBorderStyle',
-        'border_color' => 'setBorderColor'
+        'border_edge' => 'setBorderEdge'
     ];
 
     /**
@@ -126,10 +126,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'border_color' => 'getBorderColor',
         'range' => 'getRange',
-        'border_edge' => 'getBorderEdge',
         'border_style' => 'getBorderStyle',
-        'border_color' => 'getBorderColor'
+        'border_edge' => 'getBorderEdge'
     ];
 
     /**
@@ -192,10 +192,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
-        $this->container['border_edge'] = isset($data['border_edge']) ? $data['border_edge'] : null;
-        $this->container['border_style'] = isset($data['border_style']) ? $data['border_style'] : null;
         $this->container['border_color'] = isset($data['border_color']) ? $data['border_color'] : null;
+        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
+        $this->container['border_style'] = isset($data['border_style']) ? $data['border_style'] : null;
+        $this->container['border_edge'] = isset($data['border_edge']) ? $data['border_edge'] : null;
     }
 
     /**
@@ -224,6 +224,30 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
 
 
     /**
+     * Gets border_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getBorderColor()
+    {
+        return $this->container['border_color'];
+    }
+
+    /**
+     * Sets border_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $border_color border_color
+     *
+     * @return $this
+     */
+    public function setBorderColor($border_color)
+    {
+        $this->container['border_color'] = $border_color;
+
+        return $this;
+    }
+
+    /**
      * Gets range
      *
      * @return \Aspose\Cells\Cloud\Model\Range
@@ -243,30 +267,6 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
     public function setRange($range)
     {
         $this->container['range'] = $range;
-
-        return $this;
-    }
-
-    /**
-     * Gets border_edge
-     *
-     * @return string
-     */
-    public function getBorderEdge()
-    {
-        return $this->container['border_edge'];
-    }
-
-    /**
-     * Sets border_edge
-     *
-     * @param string $border_edge border_edge
-     *
-     * @return $this
-     */
-    public function setBorderEdge($border_edge)
-    {
-        $this->container['border_edge'] = $border_edge;
 
         return $this;
     }
@@ -296,25 +296,25 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
     }
 
     /**
-     * Gets border_color
+     * Gets border_edge
      *
-     * @return \Aspose\Cells\Cloud\Model\Color
+     * @return string
      */
-    public function getBorderColor()
+    public function getBorderEdge()
     {
-        return $this->container['border_color'];
+        return $this->container['border_edge'];
     }
 
     /**
-     * Sets border_color
+     * Sets border_edge
      *
-     * @param \Aspose\Cells\Cloud\Model\Color $border_color border_color
+     * @param string $border_edge border_edge
      *
      * @return $this
      */
-    public function setBorderColor($border_color)
+    public function setBorderEdge($border_edge)
     {
-        $this->container['border_color'] = $border_color;
+        $this->container['border_edge'] = $border_edge;
 
         return $this;
     }

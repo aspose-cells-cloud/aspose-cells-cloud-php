@@ -57,11 +57,11 @@ class ColorFilter implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filter_by_fill_color' => 'string',
-        'pattern' => 'string',
         'color' => '\Aspose\Cells\Cloud\Model\CellsColor',
+        'pattern' => 'string',
+        'background_color' => '\Aspose\Cells\Cloud\Model\CellsColor',
         'foreground_color_color' => '\Aspose\Cells\Cloud\Model\CellsColor',
-        'background_color' => '\Aspose\Cells\Cloud\Model\CellsColor'
+        'filter_by_fill_color' => 'string'
     ];
 
     /**
@@ -70,11 +70,11 @@ class ColorFilter implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filter_by_fill_color' => null,
-        'pattern' => null,
         'color' => null,
+        'pattern' => null,
+        'background_color' => null,
         'foreground_color_color' => null,
-        'background_color' => null
+        'filter_by_fill_color' => null
     ];
 
     /**
@@ -104,11 +104,11 @@ class ColorFilter implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'filter_by_fill_color' => 'FilterByFillColor',
-        'pattern' => 'Pattern',
         'color' => 'Color',
+        'pattern' => 'Pattern',
+        'background_color' => 'BackgroundColor',
         'foreground_color_color' => 'ForegroundColorColor',
-        'background_color' => 'BackgroundColor'
+        'filter_by_fill_color' => 'FilterByFillColor'
     ];
 
     /**
@@ -117,11 +117,11 @@ class ColorFilter implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'filter_by_fill_color' => 'setFilterByFillColor',
-        'pattern' => 'setPattern',
         'color' => 'setColor',
+        'pattern' => 'setPattern',
+        'background_color' => 'setBackgroundColor',
         'foreground_color_color' => 'setForegroundColorColor',
-        'background_color' => 'setBackgroundColor'
+        'filter_by_fill_color' => 'setFilterByFillColor'
     ];
 
     /**
@@ -130,11 +130,11 @@ class ColorFilter implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'filter_by_fill_color' => 'getFilterByFillColor',
-        'pattern' => 'getPattern',
         'color' => 'getColor',
+        'pattern' => 'getPattern',
+        'background_color' => 'getBackgroundColor',
         'foreground_color_color' => 'getForegroundColorColor',
-        'background_color' => 'getBackgroundColor'
+        'filter_by_fill_color' => 'getFilterByFillColor'
     ];
 
     /**
@@ -197,11 +197,11 @@ class ColorFilter implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['filter_by_fill_color'] = isset($data['filter_by_fill_color']) ? $data['filter_by_fill_color'] : null;
-        $this->container['pattern'] = isset($data['pattern']) ? $data['pattern'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['foreground_color_color'] = isset($data['foreground_color_color']) ? $data['foreground_color_color'] : null;
+        $this->container['pattern'] = isset($data['pattern']) ? $data['pattern'] : null;
         $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
+        $this->container['foreground_color_color'] = isset($data['foreground_color_color']) ? $data['foreground_color_color'] : null;
+        $this->container['filter_by_fill_color'] = isset($data['filter_by_fill_color']) ? $data['filter_by_fill_color'] : null;
     }
 
     /**
@@ -230,25 +230,25 @@ class ColorFilter implements  ArrayAccess
 
 
     /**
-     * Gets filter_by_fill_color
+     * Gets color
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\CellsColor
      */
-    public function getFilterByFillColor()
+    public function getColor()
     {
-        return $this->container['filter_by_fill_color'];
+        return $this->container['color'];
     }
 
     /**
-     * Sets filter_by_fill_color
+     * Sets color
      *
-     * @param string $filter_by_fill_color filter_by_fill_color
+     * @param \Aspose\Cells\Cloud\Model\CellsColor $color color
      *
      * @return $this
      */
-    public function setFilterByFillColor($filter_by_fill_color)
+    public function setColor($color)
     {
-        $this->container['filter_by_fill_color'] = $filter_by_fill_color;
+        $this->container['color'] = $color;
 
         return $this;
     }
@@ -278,25 +278,25 @@ class ColorFilter implements  ArrayAccess
     }
 
     /**
-     * Gets color
+     * Gets background_color
      *
      * @return \Aspose\Cells\Cloud\Model\CellsColor
      */
-    public function getColor()
+    public function getBackgroundColor()
     {
-        return $this->container['color'];
+        return $this->container['background_color'];
     }
 
     /**
-     * Sets color
+     * Sets background_color
      *
-     * @param \Aspose\Cells\Cloud\Model\CellsColor $color color
+     * @param \Aspose\Cells\Cloud\Model\CellsColor $background_color background_color
      *
      * @return $this
      */
-    public function setColor($color)
+    public function setBackgroundColor($background_color)
     {
-        $this->container['color'] = $color;
+        $this->container['background_color'] = $background_color;
 
         return $this;
     }
@@ -326,25 +326,25 @@ class ColorFilter implements  ArrayAccess
     }
 
     /**
-     * Gets background_color
+     * Gets filter_by_fill_color
      *
-     * @return \Aspose\Cells\Cloud\Model\CellsColor
+     * @return string
      */
-    public function getBackgroundColor()
+    public function getFilterByFillColor()
     {
-        return $this->container['background_color'];
+        return $this->container['filter_by_fill_color'];
     }
 
     /**
-     * Sets background_color
+     * Sets filter_by_fill_color
      *
-     * @param \Aspose\Cells\Cloud\Model\CellsColor $background_color background_color
+     * @param string $filter_by_fill_color filter_by_fill_color
      *
      * @return $this
      */
-    public function setBackgroundColor($background_color)
+    public function setFilterByFillColor($filter_by_fill_color)
     {
-        $this->container['background_color'] = $background_color;
+        $this->container['filter_by_fill_color'] = $filter_by_fill_color;
 
         return $this;
     }

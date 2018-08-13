@@ -407,7 +407,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorksheetsGetWorksheet**
-> \SplFileObject cellsWorksheetsGetWorksheet($name, $sheet_name, $vertical_resolution, $horizontal_resolution, $folder)
+> \SplFileObject cellsWorksheetsGetWorksheet($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder)
 
 Read worksheet info or export.
 
@@ -423,12 +423,13 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsWorksheetsApi(
 );
 $name = "name_example"; // string | The document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
+$format = "format_example"; // string | The exported file format.
 $vertical_resolution = 0; // int | Image vertical resolution.
 $horizontal_resolution = 0; // int | Image horizontal resolution.
 $folder = "folder_example"; // string | The document folder.
 
 try {
-    $result = $apiInstance->cellsWorksheetsGetWorksheet($name, $sheet_name, $vertical_resolution, $horizontal_resolution, $folder);
+    $result = $apiInstance->cellsWorksheetsGetWorksheet($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorksheetsApi->cellsWorksheetsGetWorksheet: ', $e->getMessage(), PHP_EOL;
@@ -442,6 +443,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. |
  **sheet_name** | **string**| The worksheet name. |
+ **format** | **string**| The exported file format. | [optional]
  **vertical_resolution** | **int**| Image vertical resolution. | [optional] [default to 0]
  **horizontal_resolution** | **int**| Image horizontal resolution. | [optional] [default to 0]
  **folder** | **string**| The document folder. | [optional]

@@ -57,9 +57,9 @@ class PasteOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'only_visible_cells' => 'bool',
         'paste_type' => 'string',
         'skip_blanks' => 'bool',
+        'only_visible_cells' => 'bool',
         'transpose' => 'bool'
     ];
 
@@ -69,9 +69,9 @@ class PasteOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'only_visible_cells' => null,
         'paste_type' => null,
         'skip_blanks' => null,
+        'only_visible_cells' => null,
         'transpose' => null
     ];
 
@@ -102,9 +102,9 @@ class PasteOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'only_visible_cells' => 'OnlyVisibleCells',
         'paste_type' => 'PasteType',
         'skip_blanks' => 'SkipBlanks',
+        'only_visible_cells' => 'OnlyVisibleCells',
         'transpose' => 'Transpose'
     ];
 
@@ -114,9 +114,9 @@ class PasteOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'only_visible_cells' => 'setOnlyVisibleCells',
         'paste_type' => 'setPasteType',
         'skip_blanks' => 'setSkipBlanks',
+        'only_visible_cells' => 'setOnlyVisibleCells',
         'transpose' => 'setTranspose'
     ];
 
@@ -126,9 +126,9 @@ class PasteOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'only_visible_cells' => 'getOnlyVisibleCells',
         'paste_type' => 'getPasteType',
         'skip_blanks' => 'getSkipBlanks',
+        'only_visible_cells' => 'getOnlyVisibleCells',
         'transpose' => 'getTranspose'
     ];
 
@@ -192,9 +192,9 @@ class PasteOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['only_visible_cells'] = isset($data['only_visible_cells']) ? $data['only_visible_cells'] : null;
         $this->container['paste_type'] = isset($data['paste_type']) ? $data['paste_type'] : null;
         $this->container['skip_blanks'] = isset($data['skip_blanks']) ? $data['skip_blanks'] : null;
+        $this->container['only_visible_cells'] = isset($data['only_visible_cells']) ? $data['only_visible_cells'] : null;
         $this->container['transpose'] = isset($data['transpose']) ? $data['transpose'] : null;
     }
 
@@ -222,30 +222,6 @@ class PasteOptions implements  ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets only_visible_cells
-     *
-     * @return bool
-     */
-    public function getOnlyVisibleCells()
-    {
-        return $this->container['only_visible_cells'];
-    }
-
-    /**
-     * Sets only_visible_cells
-     *
-     * @param bool $only_visible_cells only_visible_cells
-     *
-     * @return $this
-     */
-    public function setOnlyVisibleCells($only_visible_cells)
-    {
-        $this->container['only_visible_cells'] = $only_visible_cells;
-
-        return $this;
-    }
 
     /**
      * Gets paste_type
@@ -291,6 +267,30 @@ class PasteOptions implements  ArrayAccess
     public function setSkipBlanks($skip_blanks)
     {
         $this->container['skip_blanks'] = $skip_blanks;
+
+        return $this;
+    }
+
+    /**
+     * Gets only_visible_cells
+     *
+     * @return bool
+     */
+    public function getOnlyVisibleCells()
+    {
+        return $this->container['only_visible_cells'];
+    }
+
+    /**
+     * Sets only_visible_cells
+     *
+     * @param bool $only_visible_cells only_visible_cells
+     *
+     * @return $this
+     */
+    public function setOnlyVisibleCells($only_visible_cells)
+    {
+        $this->container['only_visible_cells'] = $only_visible_cells;
 
         return $this;
     }

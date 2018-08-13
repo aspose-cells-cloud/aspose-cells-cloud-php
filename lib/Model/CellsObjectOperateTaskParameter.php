@@ -55,9 +55,9 @@ class CellsObjectOperateTaskParameter extends TaskParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'operate_object' => '\Aspose\Cells\Cloud\Model\OperateObject',
         'operate_parameter' => '\Aspose\Cells\Cloud\Model\OperateParameter',
-        'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'operate_object' => '\Aspose\Cells\Cloud\Model\OperateObject'
     ];
 
     /**
@@ -66,9 +66,9 @@ class CellsObjectOperateTaskParameter extends TaskParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'operate_object' => null,
         'operate_parameter' => null,
-        'destination_workbook' => null
+        'destination_workbook' => null,
+        'operate_object' => null
     ];
 
     /**
@@ -98,9 +98,9 @@ class CellsObjectOperateTaskParameter extends TaskParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'operate_object' => 'OperateObject',
         'operate_parameter' => 'OperateParameter',
-        'destination_workbook' => 'DestinationWorkbook'
+        'destination_workbook' => 'DestinationWorkbook',
+        'operate_object' => 'OperateObject'
     ];
 
     /**
@@ -109,9 +109,9 @@ class CellsObjectOperateTaskParameter extends TaskParameter
      * @var string[]
      */
     protected static $setters = [
-        'operate_object' => 'setOperateObject',
         'operate_parameter' => 'setOperateParameter',
-        'destination_workbook' => 'setDestinationWorkbook'
+        'destination_workbook' => 'setDestinationWorkbook',
+        'operate_object' => 'setOperateObject'
     ];
 
     /**
@@ -120,9 +120,9 @@ class CellsObjectOperateTaskParameter extends TaskParameter
      * @var string[]
      */
     protected static $getters = [
-        'operate_object' => 'getOperateObject',
         'operate_parameter' => 'getOperateParameter',
-        'destination_workbook' => 'getDestinationWorkbook'
+        'destination_workbook' => 'getDestinationWorkbook',
+        'operate_object' => 'getOperateObject'
     ];
 
     /**
@@ -181,9 +181,9 @@ class CellsObjectOperateTaskParameter extends TaskParameter
     {
         parent::__construct($data);
 
-        $this->container['operate_object'] = isset($data['operate_object']) ? $data['operate_object'] : null;
         $this->container['operate_parameter'] = isset($data['operate_parameter']) ? $data['operate_parameter'] : null;
         $this->container['destination_workbook'] = isset($data['destination_workbook']) ? $data['destination_workbook'] : null;
+        $this->container['operate_object'] = isset($data['operate_object']) ? $data['operate_object'] : null;
     }
 
     /**
@@ -213,30 +213,6 @@ class CellsObjectOperateTaskParameter extends TaskParameter
         return true;
     }
 
-
-    /**
-     * Gets operate_object
-     *
-     * @return \Aspose\Cells\Cloud\Model\OperateObject
-     */
-    public function getOperateObject()
-    {
-        return $this->container['operate_object'];
-    }
-
-    /**
-     * Sets operate_object
-     *
-     * @param \Aspose\Cells\Cloud\Model\OperateObject $operate_object operate_object
-     *
-     * @return $this
-     */
-    public function setOperateObject($operate_object)
-    {
-        $this->container['operate_object'] = $operate_object;
-
-        return $this;
-    }
 
     /**
      * Gets operate_parameter
@@ -282,6 +258,30 @@ class CellsObjectOperateTaskParameter extends TaskParameter
     public function setDestinationWorkbook($destination_workbook)
     {
         $this->container['destination_workbook'] = $destination_workbook;
+
+        return $this;
+    }
+
+    /**
+     * Gets operate_object
+     *
+     * @return \Aspose\Cells\Cloud\Model\OperateObject
+     */
+    public function getOperateObject()
+    {
+        return $this->container['operate_object'];
+    }
+
+    /**
+     * Sets operate_object
+     *
+     * @param \Aspose\Cells\Cloud\Model\OperateObject $operate_object operate_object
+     *
+     * @return $this
+     */
+    public function setOperateObject($operate_object)
+    {
+        $this->container['operate_object'] = $operate_object;
 
         return $this;
     }

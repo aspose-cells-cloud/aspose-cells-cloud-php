@@ -58,10 +58,10 @@ class Hyperlink implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'address' => 'string',
-        'area' => '\Aspose\Cells\Cloud\Model\CellArea',
         'screen_tip' => 'string',
-        'text_to_display' => 'string'
+        'area' => '\Aspose\Cells\Cloud\Model\CellArea',
+        'text_to_display' => 'string',
+        'address' => 'string'
     ];
 
     /**
@@ -71,10 +71,10 @@ class Hyperlink implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'address' => null,
-        'area' => null,
         'screen_tip' => null,
-        'text_to_display' => null
+        'area' => null,
+        'text_to_display' => null,
+        'address' => null
     ];
 
     /**
@@ -105,10 +105,10 @@ class Hyperlink implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'address' => 'Address',
-        'area' => 'Area',
         'screen_tip' => 'ScreenTip',
-        'text_to_display' => 'TextToDisplay'
+        'area' => 'Area',
+        'text_to_display' => 'TextToDisplay',
+        'address' => 'Address'
     ];
 
     /**
@@ -118,10 +118,10 @@ class Hyperlink implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'address' => 'setAddress',
-        'area' => 'setArea',
         'screen_tip' => 'setScreenTip',
-        'text_to_display' => 'setTextToDisplay'
+        'area' => 'setArea',
+        'text_to_display' => 'setTextToDisplay',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -131,10 +131,10 @@ class Hyperlink implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'address' => 'getAddress',
-        'area' => 'getArea',
         'screen_tip' => 'getScreenTip',
-        'text_to_display' => 'getTextToDisplay'
+        'area' => 'getArea',
+        'text_to_display' => 'getTextToDisplay',
+        'address' => 'getAddress'
     ];
 
     /**
@@ -198,10 +198,10 @@ class Hyperlink implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
         $this->container['screen_tip'] = isset($data['screen_tip']) ? $data['screen_tip'] : null;
+        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
         $this->container['text_to_display'] = isset($data['text_to_display']) ? $data['text_to_display'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
     }
 
     /**
@@ -254,25 +254,25 @@ class Hyperlink implements  ArrayAccess
     }
 
     /**
-     * Gets address
+     * Gets screen_tip
      *
      * @return string
      */
-    public function getAddress()
+    public function getScreenTip()
     {
-        return $this->container['address'];
+        return $this->container['screen_tip'];
     }
 
     /**
-     * Sets address
+     * Sets screen_tip
      *
-     * @param string $address address
+     * @param string $screen_tip screen_tip
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setScreenTip($screen_tip)
     {
-        $this->container['address'] = $address;
+        $this->container['screen_tip'] = $screen_tip;
 
         return $this;
     }
@@ -302,30 +302,6 @@ class Hyperlink implements  ArrayAccess
     }
 
     /**
-     * Gets screen_tip
-     *
-     * @return string
-     */
-    public function getScreenTip()
-    {
-        return $this->container['screen_tip'];
-    }
-
-    /**
-     * Sets screen_tip
-     *
-     * @param string $screen_tip screen_tip
-     *
-     * @return $this
-     */
-    public function setScreenTip($screen_tip)
-    {
-        $this->container['screen_tip'] = $screen_tip;
-
-        return $this;
-    }
-
-    /**
      * Gets text_to_display
      *
      * @return string
@@ -345,6 +321,30 @@ class Hyperlink implements  ArrayAccess
     public function setTextToDisplay($text_to_display)
     {
         $this->container['text_to_display'] = $text_to_display;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string $address address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
 
         return $this;
     }

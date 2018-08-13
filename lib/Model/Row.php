@@ -58,13 +58,13 @@ class Row implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
+        'index' => 'int',
+        'style' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'group_level' => 'int',
         'height' => 'double',
-        'index' => 'int',
-        'is_blank' => 'bool',
         'is_height_matched' => 'bool',
         'is_hidden' => 'bool',
-        'style' => '\Aspose\Cells\Cloud\Model\LinkElement'
+        'is_blank' => 'bool'
     ];
 
     /**
@@ -74,13 +74,13 @@ class Row implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
+        'index' => 'int32',
+        'style' => null,
         'group_level' => 'int32',
         'height' => 'double',
-        'index' => 'int32',
-        'is_blank' => null,
         'is_height_matched' => null,
         'is_hidden' => null,
-        'style' => null
+        'is_blank' => null
     ];
 
     /**
@@ -111,13 +111,13 @@ class Row implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
+        'index' => 'Index',
+        'style' => 'Style',
         'group_level' => 'GroupLevel',
         'height' => 'Height',
-        'index' => 'Index',
-        'is_blank' => 'IsBlank',
         'is_height_matched' => 'IsHeightMatched',
         'is_hidden' => 'IsHidden',
-        'style' => 'Style'
+        'is_blank' => 'IsBlank'
     ];
 
     /**
@@ -127,13 +127,13 @@ class Row implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
+        'index' => 'setIndex',
+        'style' => 'setStyle',
         'group_level' => 'setGroupLevel',
         'height' => 'setHeight',
-        'index' => 'setIndex',
-        'is_blank' => 'setIsBlank',
         'is_height_matched' => 'setIsHeightMatched',
         'is_hidden' => 'setIsHidden',
-        'style' => 'setStyle'
+        'is_blank' => 'setIsBlank'
     ];
 
     /**
@@ -143,13 +143,13 @@ class Row implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
+        'index' => 'getIndex',
+        'style' => 'getStyle',
         'group_level' => 'getGroupLevel',
         'height' => 'getHeight',
-        'index' => 'getIndex',
-        'is_blank' => 'getIsBlank',
         'is_height_matched' => 'getIsHeightMatched',
         'is_hidden' => 'getIsHidden',
-        'style' => 'getStyle'
+        'is_blank' => 'getIsBlank'
     ];
 
     /**
@@ -213,13 +213,13 @@ class Row implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['index'] = isset($data['index']) ? $data['index'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
         $this->container['group_level'] = isset($data['group_level']) ? $data['group_level'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['index'] = isset($data['index']) ? $data['index'] : null;
-        $this->container['is_blank'] = isset($data['is_blank']) ? $data['is_blank'] : null;
         $this->container['is_height_matched'] = isset($data['is_height_matched']) ? $data['is_height_matched'] : null;
         $this->container['is_hidden'] = isset($data['is_hidden']) ? $data['is_hidden'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['is_blank'] = isset($data['is_blank']) ? $data['is_blank'] : null;
     }
 
     /**
@@ -267,6 +267,54 @@ class Row implements  ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets index
+     *
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->container['index'];
+    }
+
+    /**
+     * Sets index
+     *
+     * @param int $index index
+     *
+     * @return $this
+     */
+    public function setIndex($index)
+    {
+        $this->container['index'] = $index;
+
+        return $this;
+    }
+
+    /**
+     * Gets style
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
 
         return $this;
     }
@@ -320,54 +368,6 @@ class Row implements  ArrayAccess
     }
 
     /**
-     * Gets index
-     *
-     * @return int
-     */
-    public function getIndex()
-    {
-        return $this->container['index'];
-    }
-
-    /**
-     * Sets index
-     *
-     * @param int $index index
-     *
-     * @return $this
-     */
-    public function setIndex($index)
-    {
-        $this->container['index'] = $index;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_blank
-     *
-     * @return bool
-     */
-    public function getIsBlank()
-    {
-        return $this->container['is_blank'];
-    }
-
-    /**
-     * Sets is_blank
-     *
-     * @param bool $is_blank is_blank
-     *
-     * @return $this
-     */
-    public function setIsBlank($is_blank)
-    {
-        $this->container['is_blank'] = $is_blank;
-
-        return $this;
-    }
-
-    /**
      * Gets is_height_matched
      *
      * @return bool
@@ -416,25 +416,25 @@ class Row implements  ArrayAccess
     }
 
     /**
-     * Gets style
+     * Gets is_blank
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return bool
      */
-    public function getStyle()
+    public function getIsBlank()
     {
-        return $this->container['style'];
+        return $this->container['is_blank'];
     }
 
     /**
-     * Sets style
+     * Sets is_blank
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $style style
+     * @param bool $is_blank is_blank
      *
      * @return $this
      */
-    public function setStyle($style)
+    public function setIsBlank($is_blank)
     {
-        $this->container['style'] = $style;
+        $this->container['is_blank'] = $is_blank;
 
         return $this;
     }

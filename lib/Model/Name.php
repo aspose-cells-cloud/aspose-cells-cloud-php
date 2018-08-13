@@ -59,12 +59,12 @@ class Name implements  ArrayAccess
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
         'comment' => 'string',
+        'text' => 'string',
         'worksheet_index' => 'int',
-        'is_referred' => 'bool',
-        'is_visible' => 'bool',
         'r1_c1_refers_to' => 'string',
         'refers_to' => 'string',
-        'text' => 'string'
+        'is_referred' => 'bool',
+        'is_visible' => 'bool'
     ];
 
     /**
@@ -75,12 +75,12 @@ class Name implements  ArrayAccess
     protected static $swaggerFormats = [
         'link' => null,
         'comment' => null,
+        'text' => null,
         'worksheet_index' => 'int32',
-        'is_referred' => null,
-        'is_visible' => null,
         'r1_c1_refers_to' => null,
         'refers_to' => null,
-        'text' => null
+        'is_referred' => null,
+        'is_visible' => null
     ];
 
     /**
@@ -112,12 +112,12 @@ class Name implements  ArrayAccess
     protected static $attributeMap = [
         'link' => 'link',
         'comment' => 'Comment',
+        'text' => 'Text',
         'worksheet_index' => 'WorksheetIndex',
-        'is_referred' => 'IsReferred',
-        'is_visible' => 'IsVisible',
         'r1_c1_refers_to' => 'R1C1RefersTo',
         'refers_to' => 'RefersTo',
-        'text' => 'Text'
+        'is_referred' => 'IsReferred',
+        'is_visible' => 'IsVisible'
     ];
 
     /**
@@ -128,12 +128,12 @@ class Name implements  ArrayAccess
     protected static $setters = [
         'link' => 'setLink',
         'comment' => 'setComment',
+        'text' => 'setText',
         'worksheet_index' => 'setWorksheetIndex',
-        'is_referred' => 'setIsReferred',
-        'is_visible' => 'setIsVisible',
         'r1_c1_refers_to' => 'setR1C1RefersTo',
         'refers_to' => 'setRefersTo',
-        'text' => 'setText'
+        'is_referred' => 'setIsReferred',
+        'is_visible' => 'setIsVisible'
     ];
 
     /**
@@ -144,12 +144,12 @@ class Name implements  ArrayAccess
     protected static $getters = [
         'link' => 'getLink',
         'comment' => 'getComment',
+        'text' => 'getText',
         'worksheet_index' => 'getWorksheetIndex',
-        'is_referred' => 'getIsReferred',
-        'is_visible' => 'getIsVisible',
         'r1_c1_refers_to' => 'getR1C1RefersTo',
         'refers_to' => 'getRefersTo',
-        'text' => 'getText'
+        'is_referred' => 'getIsReferred',
+        'is_visible' => 'getIsVisible'
     ];
 
     /**
@@ -214,12 +214,12 @@ class Name implements  ArrayAccess
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
         $this->container['worksheet_index'] = isset($data['worksheet_index']) ? $data['worksheet_index'] : null;
-        $this->container['is_referred'] = isset($data['is_referred']) ? $data['is_referred'] : null;
-        $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
         $this->container['r1_c1_refers_to'] = isset($data['r1_c1_refers_to']) ? $data['r1_c1_refers_to'] : null;
         $this->container['refers_to'] = isset($data['refers_to']) ? $data['refers_to'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['is_referred'] = isset($data['is_referred']) ? $data['is_referred'] : null;
+        $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
     }
 
     /**
@@ -314,6 +314,30 @@ class Name implements  ArrayAccess
     }
 
     /**
+     * Gets text
+     *
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->container['text'];
+    }
+
+    /**
+     * Sets text
+     *
+     * @param string $text text
+     *
+     * @return $this
+     */
+    public function setText($text)
+    {
+        $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
      * Gets worksheet_index
      *
      * @return int
@@ -333,54 +357,6 @@ class Name implements  ArrayAccess
     public function setWorksheetIndex($worksheet_index)
     {
         $this->container['worksheet_index'] = $worksheet_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_referred
-     *
-     * @return bool
-     */
-    public function getIsReferred()
-    {
-        return $this->container['is_referred'];
-    }
-
-    /**
-     * Sets is_referred
-     *
-     * @param bool $is_referred is_referred
-     *
-     * @return $this
-     */
-    public function setIsReferred($is_referred)
-    {
-        $this->container['is_referred'] = $is_referred;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_visible
-     *
-     * @return bool
-     */
-    public function getIsVisible()
-    {
-        return $this->container['is_visible'];
-    }
-
-    /**
-     * Sets is_visible
-     *
-     * @param bool $is_visible is_visible
-     *
-     * @return $this
-     */
-    public function setIsVisible($is_visible)
-    {
-        $this->container['is_visible'] = $is_visible;
 
         return $this;
     }
@@ -434,25 +410,49 @@ class Name implements  ArrayAccess
     }
 
     /**
-     * Gets text
+     * Gets is_referred
      *
-     * @return string
+     * @return bool
      */
-    public function getText()
+    public function getIsReferred()
     {
-        return $this->container['text'];
+        return $this->container['is_referred'];
     }
 
     /**
-     * Sets text
+     * Sets is_referred
      *
-     * @param string $text text
+     * @param bool $is_referred is_referred
      *
      * @return $this
      */
-    public function setText($text)
+    public function setIsReferred($is_referred)
     {
-        $this->container['text'] = $text;
+        $this->container['is_referred'] = $is_referred;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_visible
+     *
+     * @return bool
+     */
+    public function getIsVisible()
+    {
+        return $this->container['is_visible'];
+    }
+
+    /**
+     * Sets is_visible
+     *
+     * @param bool $is_visible is_visible
+     *
+     * @return $this
+     */
+    public function setIsVisible($is_visible)
+    {
+        $this->container['is_visible'] = $is_visible;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class ImportOption implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_worksheet' => 'string',
-        'is_insert' => 'bool',
+        'source' => '\Aspose\Cells\Cloud\Model\FileSource',
         'import_data_type' => 'string',
-        'source' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'destination_worksheet' => 'string',
+        'is_insert' => 'bool'
     ];
 
     /**
@@ -69,10 +69,10 @@ class ImportOption implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_worksheet' => null,
-        'is_insert' => null,
+        'source' => null,
         'import_data_type' => null,
-        'source' => null
+        'destination_worksheet' => null,
+        'is_insert' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class ImportOption implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'destination_worksheet' => 'DestinationWorksheet',
-        'is_insert' => 'IsInsert',
+        'source' => 'Source',
         'import_data_type' => 'ImportDataType',
-        'source' => 'Source'
+        'destination_worksheet' => 'DestinationWorksheet',
+        'is_insert' => 'IsInsert'
     ];
 
     /**
@@ -114,10 +114,10 @@ class ImportOption implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'destination_worksheet' => 'setDestinationWorksheet',
-        'is_insert' => 'setIsInsert',
+        'source' => 'setSource',
         'import_data_type' => 'setImportDataType',
-        'source' => 'setSource'
+        'destination_worksheet' => 'setDestinationWorksheet',
+        'is_insert' => 'setIsInsert'
     ];
 
     /**
@@ -126,10 +126,10 @@ class ImportOption implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'destination_worksheet' => 'getDestinationWorksheet',
-        'is_insert' => 'getIsInsert',
+        'source' => 'getSource',
         'import_data_type' => 'getImportDataType',
-        'source' => 'getSource'
+        'destination_worksheet' => 'getDestinationWorksheet',
+        'is_insert' => 'getIsInsert'
     ];
 
     /**
@@ -192,10 +192,10 @@ class ImportOption implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
         $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
         $this->container['is_insert'] = isset($data['is_insert']) ? $data['is_insert'] : null;
-        $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
@@ -226,6 +226,54 @@ class ImportOption implements  ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets source
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileSource
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param \Aspose\Cells\Cloud\Model\FileSource $source source
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets import_data_type
+     *
+     * @return string
+     */
+    public function getImportDataType()
+    {
+        return $this->container['import_data_type'];
+    }
+
+    /**
+     * Sets import_data_type
+     *
+     * @param string $import_data_type import_data_type
+     *
+     * @return $this
+     */
+    public function setImportDataType($import_data_type)
+    {
+        $this->container['import_data_type'] = $import_data_type;
+
+        return $this;
+    }
 
     /**
      * Gets destination_worksheet
@@ -271,54 +319,6 @@ class ImportOption implements  ArrayAccess
     public function setIsInsert($is_insert)
     {
         $this->container['is_insert'] = $is_insert;
-
-        return $this;
-    }
-
-    /**
-     * Gets import_data_type
-     *
-     * @return string
-     */
-    public function getImportDataType()
-    {
-        return $this->container['import_data_type'];
-    }
-
-    /**
-     * Sets import_data_type
-     *
-     * @param string $import_data_type import_data_type
-     *
-     * @return $this
-     */
-    public function setImportDataType($import_data_type)
-    {
-        $this->container['import_data_type'] = $import_data_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     * @param \Aspose\Cells\Cloud\Model\FileSource $source source
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
 
         return $this;
     }

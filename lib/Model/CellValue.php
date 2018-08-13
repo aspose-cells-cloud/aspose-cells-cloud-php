@@ -59,9 +59,9 @@ class CellValue implements  ArrayAccess
     protected static $swaggerTypes = [
         'row_index' => 'int',
         'column_index' => 'int',
+        'style' => '\Aspose\Cells\Cloud\Model\Style',
         'type' => 'string',
-        'value' => 'string',
-        'style' => '\Aspose\Cells\Cloud\Model\Style'
+        'value' => 'string'
     ];
 
     /**
@@ -72,9 +72,9 @@ class CellValue implements  ArrayAccess
     protected static $swaggerFormats = [
         'row_index' => 'int32',
         'column_index' => 'int32',
+        'style' => null,
         'type' => null,
-        'value' => null,
-        'style' => null
+        'value' => null
     ];
 
     /**
@@ -106,9 +106,9 @@ class CellValue implements  ArrayAccess
     protected static $attributeMap = [
         'row_index' => 'rowIndex',
         'column_index' => 'columnIndex',
+        'style' => 'style',
         'type' => 'type',
-        'value' => 'value',
-        'style' => 'style'
+        'value' => 'value'
     ];
 
     /**
@@ -119,9 +119,9 @@ class CellValue implements  ArrayAccess
     protected static $setters = [
         'row_index' => 'setRowIndex',
         'column_index' => 'setColumnIndex',
+        'style' => 'setStyle',
         'type' => 'setType',
-        'value' => 'setValue',
-        'style' => 'setStyle'
+        'value' => 'setValue'
     ];
 
     /**
@@ -132,9 +132,9 @@ class CellValue implements  ArrayAccess
     protected static $getters = [
         'row_index' => 'getRowIndex',
         'column_index' => 'getColumnIndex',
+        'style' => 'getStyle',
         'type' => 'getType',
-        'value' => 'getValue',
-        'style' => 'getStyle'
+        'value' => 'getValue'
     ];
 
     /**
@@ -199,9 +199,9 @@ class CellValue implements  ArrayAccess
     {
         $this->container['row_index'] = isset($data['row_index']) ? $data['row_index'] : null;
         $this->container['column_index'] = isset($data['column_index']) ? $data['column_index'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
     }
 
     /**
@@ -278,6 +278,30 @@ class CellValue implements  ArrayAccess
     }
 
     /**
+     * Gets style
+     *
+     * @return \Aspose\Cells\Cloud\Model\Style
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param \Aspose\Cells\Cloud\Model\Style $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
      * Gets type
      *
      * @return string
@@ -321,30 +345,6 @@ class CellValue implements  ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets style
-     *
-     * @return \Aspose\Cells\Cloud\Model\Style
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /**
-     * Sets style
-     *
-     * @param \Aspose\Cells\Cloud\Model\Style $style style
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
 
         return $this;
     }

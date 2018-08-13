@@ -57,8 +57,8 @@ class SingleValue implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'value' => 'string',
-        'value_type' => '\Aspose\Cells\Cloud\Model\ValueType'
+        'value_type' => '\Aspose\Cells\Cloud\Model\ValueType',
+        'value' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class SingleValue implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'value' => null,
-        'value_type' => null
+        'value_type' => null,
+        'value' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class SingleValue implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'Value',
-        'value_type' => 'ValueType'
+        'value_type' => 'ValueType',
+        'value' => 'Value'
     ];
 
     /**
@@ -108,8 +108,8 @@ class SingleValue implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue',
-        'value_type' => 'setValueType'
+        'value_type' => 'setValueType',
+        'value' => 'setValue'
     ];
 
     /**
@@ -118,8 +118,8 @@ class SingleValue implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue',
-        'value_type' => 'getValueType'
+        'value_type' => 'getValueType',
+        'value' => 'getValue'
     ];
 
     /**
@@ -182,8 +182,8 @@ class SingleValue implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
         $this->container['value_type'] = isset($data['value_type']) ? $data['value_type'] : null;
+        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -212,30 +212,6 @@ class SingleValue implements  ArrayAccess
 
 
     /**
-     * Gets value
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string $value value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
      * Gets value_type
      *
      * @return \Aspose\Cells\Cloud\Model\ValueType
@@ -255,6 +231,30 @@ class SingleValue implements  ArrayAccess
     public function setValueType($value_type)
     {
         $this->container['value_type'] = $value_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->container['value'];
+    }
+
+    /**
+     * Sets value
+     *
+     * @param string $value value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->container['value'] = $value;
 
         return $this;
     }

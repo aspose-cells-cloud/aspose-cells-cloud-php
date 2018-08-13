@@ -55,10 +55,10 @@ class ImportIntArrayOption extends ImportOption
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'first_row' => 'int',
-        'first_column' => 'int',
+        'data' => 'int[]',
         'is_vertical' => 'bool',
-        'data' => 'int[]'
+        'first_row' => 'int',
+        'first_column' => 'int'
     ];
 
     /**
@@ -67,10 +67,10 @@ class ImportIntArrayOption extends ImportOption
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'first_row' => 'int32',
-        'first_column' => 'int32',
+        'data' => 'int32',
         'is_vertical' => null,
-        'data' => 'int32'
+        'first_row' => 'int32',
+        'first_column' => 'int32'
     ];
 
     /**
@@ -100,10 +100,10 @@ class ImportIntArrayOption extends ImportOption
      * @var string[]
      */
     protected static $attributeMap = [
-        'first_row' => 'FirstRow',
-        'first_column' => 'FirstColumn',
+        'data' => 'Data',
         'is_vertical' => 'IsVertical',
-        'data' => 'Data'
+        'first_row' => 'FirstRow',
+        'first_column' => 'FirstColumn'
     ];
 
     /**
@@ -112,10 +112,10 @@ class ImportIntArrayOption extends ImportOption
      * @var string[]
      */
     protected static $setters = [
-        'first_row' => 'setFirstRow',
-        'first_column' => 'setFirstColumn',
+        'data' => 'setData',
         'is_vertical' => 'setIsVertical',
-        'data' => 'setData'
+        'first_row' => 'setFirstRow',
+        'first_column' => 'setFirstColumn'
     ];
 
     /**
@@ -124,10 +124,10 @@ class ImportIntArrayOption extends ImportOption
      * @var string[]
      */
     protected static $getters = [
-        'first_row' => 'getFirstRow',
-        'first_column' => 'getFirstColumn',
+        'data' => 'getData',
         'is_vertical' => 'getIsVertical',
-        'data' => 'getData'
+        'first_row' => 'getFirstRow',
+        'first_column' => 'getFirstColumn'
     ];
 
     /**
@@ -186,10 +186,10 @@ class ImportIntArrayOption extends ImportOption
     {
         parent::__construct($data);
 
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['is_vertical'] = isset($data['is_vertical']) ? $data['is_vertical'] : null;
         $this->container['first_row'] = isset($data['first_row']) ? $data['first_row'] : null;
         $this->container['first_column'] = isset($data['first_column']) ? $data['first_column'] : null;
-        $this->container['is_vertical'] = isset($data['is_vertical']) ? $data['is_vertical'] : null;
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -219,6 +219,54 @@ class ImportIntArrayOption extends ImportOption
         return true;
     }
 
+
+    /**
+     * Gets data
+     *
+     * @return int[]
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param int[] $data data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_vertical
+     *
+     * @return bool
+     */
+    public function getIsVertical()
+    {
+        return $this->container['is_vertical'];
+    }
+
+    /**
+     * Sets is_vertical
+     *
+     * @param bool $is_vertical is_vertical
+     *
+     * @return $this
+     */
+    public function setIsVertical($is_vertical)
+    {
+        $this->container['is_vertical'] = $is_vertical;
+
+        return $this;
+    }
 
     /**
      * Gets first_row
@@ -264,54 +312,6 @@ class ImportIntArrayOption extends ImportOption
     public function setFirstColumn($first_column)
     {
         $this->container['first_column'] = $first_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_vertical
-     *
-     * @return bool
-     */
-    public function getIsVertical()
-    {
-        return $this->container['is_vertical'];
-    }
-
-    /**
-     * Sets is_vertical
-     *
-     * @param bool $is_vertical is_vertical
-     *
-     * @return $this
-     */
-    public function setIsVertical($is_vertical)
-    {
-        $this->container['is_vertical'] = $is_vertical;
-
-        return $this;
-    }
-
-    /**
-     * Gets data
-     *
-     * @return int[]
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param int[] $data data
-     *
-     * @return $this
-     */
-    public function setData($data)
-    {
-        $this->container['data'] = $data;
 
         return $this;
     }

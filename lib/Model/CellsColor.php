@@ -58,10 +58,10 @@ class CellsColor implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'color' => '\Aspose\Cells\Cloud\Model\Color',
-        'color_index' => 'int',
-        'is_shape_color' => 'bool',
+        'type' => 'string',
         'theme_color' => '\Aspose\Cells\Cloud\Model\ThemeColor',
-        'type' => 'string'
+        'is_shape_color' => 'bool',
+        'color_index' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class CellsColor implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'color' => null,
-        'color_index' => 'int32',
-        'is_shape_color' => null,
+        'type' => null,
         'theme_color' => null,
-        'type' => null
+        'is_shape_color' => null,
+        'color_index' => 'int32'
     ];
 
     /**
@@ -105,10 +105,10 @@ class CellsColor implements  ArrayAccess
      */
     protected static $attributeMap = [
         'color' => 'Color',
-        'color_index' => 'ColorIndex',
-        'is_shape_color' => 'IsShapeColor',
+        'type' => 'Type',
         'theme_color' => 'ThemeColor',
-        'type' => 'Type'
+        'is_shape_color' => 'IsShapeColor',
+        'color_index' => 'ColorIndex'
     ];
 
     /**
@@ -118,10 +118,10 @@ class CellsColor implements  ArrayAccess
      */
     protected static $setters = [
         'color' => 'setColor',
-        'color_index' => 'setColorIndex',
-        'is_shape_color' => 'setIsShapeColor',
+        'type' => 'setType',
         'theme_color' => 'setThemeColor',
-        'type' => 'setType'
+        'is_shape_color' => 'setIsShapeColor',
+        'color_index' => 'setColorIndex'
     ];
 
     /**
@@ -131,10 +131,10 @@ class CellsColor implements  ArrayAccess
      */
     protected static $getters = [
         'color' => 'getColor',
-        'color_index' => 'getColorIndex',
-        'is_shape_color' => 'getIsShapeColor',
+        'type' => 'getType',
         'theme_color' => 'getThemeColor',
-        'type' => 'getType'
+        'is_shape_color' => 'getIsShapeColor',
+        'color_index' => 'getColorIndex'
     ];
 
     /**
@@ -198,10 +198,10 @@ class CellsColor implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['color_index'] = isset($data['color_index']) ? $data['color_index'] : null;
-        $this->container['is_shape_color'] = isset($data['is_shape_color']) ? $data['is_shape_color'] : null;
-        $this->container['theme_color'] = isset($data['theme_color']) ? $data['theme_color'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['theme_color'] = isset($data['theme_color']) ? $data['theme_color'] : null;
+        $this->container['is_shape_color'] = isset($data['is_shape_color']) ? $data['is_shape_color'] : null;
+        $this->container['color_index'] = isset($data['color_index']) ? $data['color_index'] : null;
     }
 
     /**
@@ -254,49 +254,25 @@ class CellsColor implements  ArrayAccess
     }
 
     /**
-     * Gets color_index
+     * Gets type
      *
-     * @return int
+     * @return string
      */
-    public function getColorIndex()
+    public function getType()
     {
-        return $this->container['color_index'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets color_index
+     * Sets type
      *
-     * @param int $color_index color_index
+     * @param string $type type
      *
      * @return $this
      */
-    public function setColorIndex($color_index)
+    public function setType($type)
     {
-        $this->container['color_index'] = $color_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_shape_color
-     *
-     * @return bool
-     */
-    public function getIsShapeColor()
-    {
-        return $this->container['is_shape_color'];
-    }
-
-    /**
-     * Sets is_shape_color
-     *
-     * @param bool $is_shape_color is_shape_color
-     *
-     * @return $this
-     */
-    public function setIsShapeColor($is_shape_color)
-    {
-        $this->container['is_shape_color'] = $is_shape_color;
+        $this->container['type'] = $type;
 
         return $this;
     }
@@ -326,25 +302,49 @@ class CellsColor implements  ArrayAccess
     }
 
     /**
-     * Gets type
+     * Gets is_shape_color
      *
-     * @return string
+     * @return bool
      */
-    public function getType()
+    public function getIsShapeColor()
     {
-        return $this->container['type'];
+        return $this->container['is_shape_color'];
     }
 
     /**
-     * Sets type
+     * Sets is_shape_color
      *
-     * @param string $type type
+     * @param bool $is_shape_color is_shape_color
      *
      * @return $this
      */
-    public function setType($type)
+    public function setIsShapeColor($is_shape_color)
     {
-        $this->container['type'] = $type;
+        $this->container['is_shape_color'] = $is_shape_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets color_index
+     *
+     * @return int
+     */
+    public function getColorIndex()
+    {
+        return $this->container['color_index'];
+    }
+
+    /**
+     * Sets color_index
+     *
+     * @param int $color_index color_index
+     *
+     * @return $this
+     */
+    public function setColorIndex($color_index)
+    {
+        $this->container['color_index'] = $color_index;
 
         return $this;
     }

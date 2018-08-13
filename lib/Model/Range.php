@@ -58,13 +58,13 @@ class Range implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'column_count' => 'int',
-        'column_width' => 'double',
-        'first_column' => 'int',
-        'first_row' => 'int',
+        'row_height' => 'double',
         'name' => 'string',
+        'first_column' => 'int',
+        'column_width' => 'double',
         'refers_to' => 'string',
         'row_count' => 'int',
-        'row_height' => 'double',
+        'first_row' => 'int',
         'worksheet' => 'string'
     ];
 
@@ -75,13 +75,13 @@ class Range implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'column_count' => 'int32',
-        'column_width' => 'double',
-        'first_column' => 'int32',
-        'first_row' => 'int32',
+        'row_height' => 'double',
         'name' => null,
+        'first_column' => 'int32',
+        'column_width' => 'double',
         'refers_to' => null,
         'row_count' => 'int32',
-        'row_height' => 'double',
+        'first_row' => 'int32',
         'worksheet' => null
     ];
 
@@ -113,13 +113,13 @@ class Range implements  ArrayAccess
      */
     protected static $attributeMap = [
         'column_count' => 'ColumnCount',
-        'column_width' => 'ColumnWidth',
-        'first_column' => 'FirstColumn',
-        'first_row' => 'FirstRow',
+        'row_height' => 'RowHeight',
         'name' => 'Name',
+        'first_column' => 'FirstColumn',
+        'column_width' => 'ColumnWidth',
         'refers_to' => 'RefersTo',
         'row_count' => 'RowCount',
-        'row_height' => 'RowHeight',
+        'first_row' => 'FirstRow',
         'worksheet' => 'Worksheet'
     ];
 
@@ -130,13 +130,13 @@ class Range implements  ArrayAccess
      */
     protected static $setters = [
         'column_count' => 'setColumnCount',
-        'column_width' => 'setColumnWidth',
-        'first_column' => 'setFirstColumn',
-        'first_row' => 'setFirstRow',
+        'row_height' => 'setRowHeight',
         'name' => 'setName',
+        'first_column' => 'setFirstColumn',
+        'column_width' => 'setColumnWidth',
         'refers_to' => 'setRefersTo',
         'row_count' => 'setRowCount',
-        'row_height' => 'setRowHeight',
+        'first_row' => 'setFirstRow',
         'worksheet' => 'setWorksheet'
     ];
 
@@ -147,13 +147,13 @@ class Range implements  ArrayAccess
      */
     protected static $getters = [
         'column_count' => 'getColumnCount',
-        'column_width' => 'getColumnWidth',
-        'first_column' => 'getFirstColumn',
-        'first_row' => 'getFirstRow',
+        'row_height' => 'getRowHeight',
         'name' => 'getName',
+        'first_column' => 'getFirstColumn',
+        'column_width' => 'getColumnWidth',
         'refers_to' => 'getRefersTo',
         'row_count' => 'getRowCount',
-        'row_height' => 'getRowHeight',
+        'first_row' => 'getFirstRow',
         'worksheet' => 'getWorksheet'
     ];
 
@@ -218,13 +218,13 @@ class Range implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['column_count'] = isset($data['column_count']) ? $data['column_count'] : null;
-        $this->container['column_width'] = isset($data['column_width']) ? $data['column_width'] : null;
-        $this->container['first_column'] = isset($data['first_column']) ? $data['first_column'] : null;
-        $this->container['first_row'] = isset($data['first_row']) ? $data['first_row'] : null;
+        $this->container['row_height'] = isset($data['row_height']) ? $data['row_height'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['first_column'] = isset($data['first_column']) ? $data['first_column'] : null;
+        $this->container['column_width'] = isset($data['column_width']) ? $data['column_width'] : null;
         $this->container['refers_to'] = isset($data['refers_to']) ? $data['refers_to'] : null;
         $this->container['row_count'] = isset($data['row_count']) ? $data['row_count'] : null;
-        $this->container['row_height'] = isset($data['row_height']) ? $data['row_height'] : null;
+        $this->container['first_row'] = isset($data['first_row']) ? $data['first_row'] : null;
         $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
     }
 
@@ -240,20 +240,20 @@ class Range implements  ArrayAccess
         if ($this->container['column_count'] === null) {
             $invalidProperties[] = "'column_count' can't be null";
         }
-        if ($this->container['column_width'] === null) {
-            $invalidProperties[] = "'column_width' can't be null";
+        if ($this->container['row_height'] === null) {
+            $invalidProperties[] = "'row_height' can't be null";
         }
         if ($this->container['first_column'] === null) {
             $invalidProperties[] = "'first_column' can't be null";
         }
-        if ($this->container['first_row'] === null) {
-            $invalidProperties[] = "'first_row' can't be null";
+        if ($this->container['column_width'] === null) {
+            $invalidProperties[] = "'column_width' can't be null";
         }
         if ($this->container['row_count'] === null) {
             $invalidProperties[] = "'row_count' can't be null";
         }
-        if ($this->container['row_height'] === null) {
-            $invalidProperties[] = "'row_height' can't be null";
+        if ($this->container['first_row'] === null) {
+            $invalidProperties[] = "'first_row' can't be null";
         }
         return $invalidProperties;
     }
@@ -270,19 +270,19 @@ class Range implements  ArrayAccess
         if ($this->container['column_count'] === null) {
             return false;
         }
-        if ($this->container['column_width'] === null) {
+        if ($this->container['row_height'] === null) {
             return false;
         }
         if ($this->container['first_column'] === null) {
             return false;
         }
-        if ($this->container['first_row'] === null) {
+        if ($this->container['column_width'] === null) {
             return false;
         }
         if ($this->container['row_count'] === null) {
             return false;
         }
-        if ($this->container['row_height'] === null) {
+        if ($this->container['first_row'] === null) {
             return false;
         }
         return true;
@@ -314,25 +314,49 @@ class Range implements  ArrayAccess
     }
 
     /**
-     * Gets column_width
+     * Gets row_height
      *
      * @return double
      */
-    public function getColumnWidth()
+    public function getRowHeight()
     {
-        return $this->container['column_width'];
+        return $this->container['row_height'];
     }
 
     /**
-     * Sets column_width
+     * Sets row_height
      *
-     * @param double $column_width Sets or gets the column width of this range
+     * @param double $row_height Sets or gets the height of rows in this range
      *
      * @return $this
      */
-    public function setColumnWidth($column_width)
+    public function setRowHeight($row_height)
     {
-        $this->container['column_width'] = $column_width;
+        $this->container['row_height'] = $row_height;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Gets or sets the name of the range.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -362,49 +386,25 @@ class Range implements  ArrayAccess
     }
 
     /**
-     * Gets first_row
+     * Gets column_width
      *
-     * @return int
+     * @return double
      */
-    public function getFirstRow()
+    public function getColumnWidth()
     {
-        return $this->container['first_row'];
+        return $this->container['column_width'];
     }
 
     /**
-     * Sets first_row
+     * Sets column_width
      *
-     * @param int $first_row Gets the index of the first row of the range.
+     * @param double $column_width Sets or gets the column width of this range
      *
      * @return $this
      */
-    public function setFirstRow($first_row)
+    public function setColumnWidth($column_width)
     {
-        $this->container['first_row'] = $first_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Gets or sets the name of the range.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
+        $this->container['column_width'] = $column_width;
 
         return $this;
     }
@@ -458,25 +458,25 @@ class Range implements  ArrayAccess
     }
 
     /**
-     * Gets row_height
+     * Gets first_row
      *
-     * @return double
+     * @return int
      */
-    public function getRowHeight()
+    public function getFirstRow()
     {
-        return $this->container['row_height'];
+        return $this->container['first_row'];
     }
 
     /**
-     * Sets row_height
+     * Sets first_row
      *
-     * @param double $row_height Sets or gets the height of rows in this range
+     * @param int $first_row Gets the index of the first row of the range.
      *
      * @return $this
      */
-    public function setRowHeight($row_height)
+    public function setFirstRow($first_row)
     {
-        $this->container['row_height'] = $row_height;
+        $this->container['first_row'] = $first_row;
 
         return $this;
     }

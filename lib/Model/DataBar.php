@@ -58,17 +58,17 @@ class DataBar implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'axis_color' => '\Aspose\Cells\Cloud\Model\Color',
-        'axis_position' => 'string',
-        'bar_border' => '\Aspose\Cells\Cloud\Model\DataBarBorder',
-        'bar_fill_type' => 'string',
-        'color' => '\Aspose\Cells\Cloud\Model\Color',
         'direction' => 'string',
         'max_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
-        'max_length' => 'int',
-        'min_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
+        'color' => '\Aspose\Cells\Cloud\Model\Color',
         'min_length' => 'int',
+        'bar_fill_type' => 'string',
+        'min_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
+        'axis_position' => 'string',
         'negative_bar_format' => '\Aspose\Cells\Cloud\Model\NegativeBarFormat',
+        'bar_border' => '\Aspose\Cells\Cloud\Model\DataBarBorder',
+        'axis_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'max_length' => 'int',
         'show_value' => 'bool'
     ];
 
@@ -78,17 +78,17 @@ class DataBar implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'axis_color' => null,
-        'axis_position' => null,
-        'bar_border' => null,
-        'bar_fill_type' => null,
-        'color' => null,
         'direction' => null,
         'max_cfvo' => null,
-        'max_length' => 'int32',
-        'min_cfvo' => null,
+        'color' => null,
         'min_length' => 'int32',
+        'bar_fill_type' => null,
+        'min_cfvo' => null,
+        'axis_position' => null,
         'negative_bar_format' => null,
+        'bar_border' => null,
+        'axis_color' => null,
+        'max_length' => 'int32',
         'show_value' => null
     ];
 
@@ -119,17 +119,17 @@ class DataBar implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'axis_color' => 'AxisColor',
-        'axis_position' => 'AxisPosition',
-        'bar_border' => 'BarBorder',
-        'bar_fill_type' => 'BarFillType',
-        'color' => 'Color',
         'direction' => 'Direction',
         'max_cfvo' => 'MaxCfvo',
-        'max_length' => 'MaxLength',
-        'min_cfvo' => 'MinCfvo',
+        'color' => 'Color',
         'min_length' => 'MinLength',
+        'bar_fill_type' => 'BarFillType',
+        'min_cfvo' => 'MinCfvo',
+        'axis_position' => 'AxisPosition',
         'negative_bar_format' => 'NegativeBarFormat',
+        'bar_border' => 'BarBorder',
+        'axis_color' => 'AxisColor',
+        'max_length' => 'MaxLength',
         'show_value' => 'ShowValue'
     ];
 
@@ -139,17 +139,17 @@ class DataBar implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'axis_color' => 'setAxisColor',
-        'axis_position' => 'setAxisPosition',
-        'bar_border' => 'setBarBorder',
-        'bar_fill_type' => 'setBarFillType',
-        'color' => 'setColor',
         'direction' => 'setDirection',
         'max_cfvo' => 'setMaxCfvo',
-        'max_length' => 'setMaxLength',
-        'min_cfvo' => 'setMinCfvo',
+        'color' => 'setColor',
         'min_length' => 'setMinLength',
+        'bar_fill_type' => 'setBarFillType',
+        'min_cfvo' => 'setMinCfvo',
+        'axis_position' => 'setAxisPosition',
         'negative_bar_format' => 'setNegativeBarFormat',
+        'bar_border' => 'setBarBorder',
+        'axis_color' => 'setAxisColor',
+        'max_length' => 'setMaxLength',
         'show_value' => 'setShowValue'
     ];
 
@@ -159,17 +159,17 @@ class DataBar implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'axis_color' => 'getAxisColor',
-        'axis_position' => 'getAxisPosition',
-        'bar_border' => 'getBarBorder',
-        'bar_fill_type' => 'getBarFillType',
-        'color' => 'getColor',
         'direction' => 'getDirection',
         'max_cfvo' => 'getMaxCfvo',
-        'max_length' => 'getMaxLength',
-        'min_cfvo' => 'getMinCfvo',
+        'color' => 'getColor',
         'min_length' => 'getMinLength',
+        'bar_fill_type' => 'getBarFillType',
+        'min_cfvo' => 'getMinCfvo',
+        'axis_position' => 'getAxisPosition',
         'negative_bar_format' => 'getNegativeBarFormat',
+        'bar_border' => 'getBarBorder',
+        'axis_color' => 'getAxisColor',
+        'max_length' => 'getMaxLength',
         'show_value' => 'getShowValue'
     ];
 
@@ -233,17 +233,17 @@ class DataBar implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['axis_color'] = isset($data['axis_color']) ? $data['axis_color'] : null;
-        $this->container['axis_position'] = isset($data['axis_position']) ? $data['axis_position'] : null;
-        $this->container['bar_border'] = isset($data['bar_border']) ? $data['bar_border'] : null;
-        $this->container['bar_fill_type'] = isset($data['bar_fill_type']) ? $data['bar_fill_type'] : null;
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['direction'] = isset($data['direction']) ? $data['direction'] : null;
         $this->container['max_cfvo'] = isset($data['max_cfvo']) ? $data['max_cfvo'] : null;
-        $this->container['max_length'] = isset($data['max_length']) ? $data['max_length'] : null;
-        $this->container['min_cfvo'] = isset($data['min_cfvo']) ? $data['min_cfvo'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['min_length'] = isset($data['min_length']) ? $data['min_length'] : null;
+        $this->container['bar_fill_type'] = isset($data['bar_fill_type']) ? $data['bar_fill_type'] : null;
+        $this->container['min_cfvo'] = isset($data['min_cfvo']) ? $data['min_cfvo'] : null;
+        $this->container['axis_position'] = isset($data['axis_position']) ? $data['axis_position'] : null;
         $this->container['negative_bar_format'] = isset($data['negative_bar_format']) ? $data['negative_bar_format'] : null;
+        $this->container['bar_border'] = isset($data['bar_border']) ? $data['bar_border'] : null;
+        $this->container['axis_color'] = isset($data['axis_color']) ? $data['axis_color'] : null;
+        $this->container['max_length'] = isset($data['max_length']) ? $data['max_length'] : null;
         $this->container['show_value'] = isset($data['show_value']) ? $data['show_value'] : null;
     }
 
@@ -271,126 +271,6 @@ class DataBar implements  ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets axis_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\Color
-     */
-    public function getAxisColor()
-    {
-        return $this->container['axis_color'];
-    }
-
-    /**
-     * Sets axis_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\Color $axis_color Gets the color of the axis for cells with conditional formatting as data bars.
-     *
-     * @return $this
-     */
-    public function setAxisColor($axis_color)
-    {
-        $this->container['axis_color'] = $axis_color;
-
-        return $this;
-    }
-
-    /**
-     * Gets axis_position
-     *
-     * @return string
-     */
-    public function getAxisPosition()
-    {
-        return $this->container['axis_position'];
-    }
-
-    /**
-     * Sets axis_position
-     *
-     * @param string $axis_position Gets or sets the position of the axis of the data bars specified by a conditional    formatting rule.
-     *
-     * @return $this
-     */
-    public function setAxisPosition($axis_position)
-    {
-        $this->container['axis_position'] = $axis_position;
-
-        return $this;
-    }
-
-    /**
-     * Gets bar_border
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataBarBorder
-     */
-    public function getBarBorder()
-    {
-        return $this->container['bar_border'];
-    }
-
-    /**
-     * Sets bar_border
-     *
-     * @param \Aspose\Cells\Cloud\Model\DataBarBorder $bar_border Gets an object that specifies the border of a data bar.
-     *
-     * @return $this
-     */
-    public function setBarBorder($bar_border)
-    {
-        $this->container['bar_border'] = $bar_border;
-
-        return $this;
-    }
-
-    /**
-     * Gets bar_fill_type
-     *
-     * @return string
-     */
-    public function getBarFillType()
-    {
-        return $this->container['bar_fill_type'];
-    }
-
-    /**
-     * Sets bar_fill_type
-     *
-     * @param string $bar_fill_type Gets or sets how a data bar is filled with color.
-     *
-     * @return $this
-     */
-    public function setBarFillType($bar_fill_type)
-    {
-        $this->container['bar_fill_type'] = $bar_fill_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets color
-     *
-     * @return \Aspose\Cells\Cloud\Model\Color
-     */
-    public function getColor()
-    {
-        return $this->container['color'];
-    }
-
-    /**
-     * Sets color
-     *
-     * @param \Aspose\Cells\Cloud\Model\Color $color Get or set this DataBar's Color.
-     *
-     * @return $this
-     */
-    public function setColor($color)
-    {
-        $this->container['color'] = $color;
-
-        return $this;
-    }
 
     /**
      * Gets direction
@@ -441,49 +321,25 @@ class DataBar implements  ArrayAccess
     }
 
     /**
-     * Gets max_length
+     * Gets color
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\Color
      */
-    public function getMaxLength()
+    public function getColor()
     {
-        return $this->container['max_length'];
+        return $this->container['color'];
     }
 
     /**
-     * Sets max_length
+     * Sets color
      *
-     * @param int $max_length Represents the max length of data bar .
+     * @param \Aspose\Cells\Cloud\Model\Color $color Get or set this DataBar's Color.
      *
      * @return $this
      */
-    public function setMaxLength($max_length)
+    public function setColor($color)
     {
-        $this->container['max_length'] = $max_length;
-
-        return $this;
-    }
-
-    /**
-     * Gets min_cfvo
-     *
-     * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingValue
-     */
-    public function getMinCfvo()
-    {
-        return $this->container['min_cfvo'];
-    }
-
-    /**
-     * Sets min_cfvo
-     *
-     * @param \Aspose\Cells\Cloud\Model\ConditionalFormattingValue $min_cfvo Get or set this DataBar's min value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Max to it.
-     *
-     * @return $this
-     */
-    public function setMinCfvo($min_cfvo)
-    {
-        $this->container['min_cfvo'] = $min_cfvo;
+        $this->container['color'] = $color;
 
         return $this;
     }
@@ -513,6 +369,78 @@ class DataBar implements  ArrayAccess
     }
 
     /**
+     * Gets bar_fill_type
+     *
+     * @return string
+     */
+    public function getBarFillType()
+    {
+        return $this->container['bar_fill_type'];
+    }
+
+    /**
+     * Sets bar_fill_type
+     *
+     * @param string $bar_fill_type Gets or sets how a data bar is filled with color.
+     *
+     * @return $this
+     */
+    public function setBarFillType($bar_fill_type)
+    {
+        $this->container['bar_fill_type'] = $bar_fill_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_cfvo
+     *
+     * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingValue
+     */
+    public function getMinCfvo()
+    {
+        return $this->container['min_cfvo'];
+    }
+
+    /**
+     * Sets min_cfvo
+     *
+     * @param \Aspose\Cells\Cloud\Model\ConditionalFormattingValue $min_cfvo Get or set this DataBar's min value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Max to it.
+     *
+     * @return $this
+     */
+    public function setMinCfvo($min_cfvo)
+    {
+        $this->container['min_cfvo'] = $min_cfvo;
+
+        return $this;
+    }
+
+    /**
+     * Gets axis_position
+     *
+     * @return string
+     */
+    public function getAxisPosition()
+    {
+        return $this->container['axis_position'];
+    }
+
+    /**
+     * Sets axis_position
+     *
+     * @param string $axis_position Gets or sets the position of the axis of the data bars specified by a conditional    formatting rule.
+     *
+     * @return $this
+     */
+    public function setAxisPosition($axis_position)
+    {
+        $this->container['axis_position'] = $axis_position;
+
+        return $this;
+    }
+
+    /**
      * Gets negative_bar_format
      *
      * @return \Aspose\Cells\Cloud\Model\NegativeBarFormat
@@ -532,6 +460,78 @@ class DataBar implements  ArrayAccess
     public function setNegativeBarFormat($negative_bar_format)
     {
         $this->container['negative_bar_format'] = $negative_bar_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets bar_border
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataBarBorder
+     */
+    public function getBarBorder()
+    {
+        return $this->container['bar_border'];
+    }
+
+    /**
+     * Sets bar_border
+     *
+     * @param \Aspose\Cells\Cloud\Model\DataBarBorder $bar_border Gets an object that specifies the border of a data bar.
+     *
+     * @return $this
+     */
+    public function setBarBorder($bar_border)
+    {
+        $this->container['bar_border'] = $bar_border;
+
+        return $this;
+    }
+
+    /**
+     * Gets axis_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getAxisColor()
+    {
+        return $this->container['axis_color'];
+    }
+
+    /**
+     * Sets axis_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $axis_color Gets the color of the axis for cells with conditional formatting as data bars.
+     *
+     * @return $this
+     */
+    public function setAxisColor($axis_color)
+    {
+        $this->container['axis_color'] = $axis_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_length
+     *
+     * @return int
+     */
+    public function getMaxLength()
+    {
+        return $this->container['max_length'];
+    }
+
+    /**
+     * Sets max_length
+     *
+     * @param int $max_length Represents the max length of data bar .
+     *
+     * @return $this
+     */
+    public function setMaxLength($max_length)
+    {
+        $this->container['max_length'] = $max_length;
 
         return $this;
     }

@@ -58,12 +58,12 @@ class Cells implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'max_row' => 'int',
-        'max_column' => 'int',
-        'cell_count' => 'int',
         'rows' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'columns' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'cell_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]'
+        'cell_count' => 'int',
+        'max_row' => 'int',
+        'cell_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
+        'max_column' => 'int',
+        'columns' => '\Aspose\Cells\Cloud\Model\LinkElement'
     ];
 
     /**
@@ -73,12 +73,12 @@ class Cells implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'max_row' => 'int32',
-        'max_column' => 'int32',
-        'cell_count' => 'int32',
         'rows' => null,
-        'columns' => null,
-        'cell_list' => null
+        'cell_count' => 'int32',
+        'max_row' => 'int32',
+        'cell_list' => null,
+        'max_column' => 'int32',
+        'columns' => null
     ];
 
     /**
@@ -109,12 +109,12 @@ class Cells implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'max_row' => 'MaxRow',
-        'max_column' => 'MaxColumn',
-        'cell_count' => 'CellCount',
         'rows' => 'Rows',
-        'columns' => 'Columns',
-        'cell_list' => 'CellList'
+        'cell_count' => 'CellCount',
+        'max_row' => 'MaxRow',
+        'cell_list' => 'CellList',
+        'max_column' => 'MaxColumn',
+        'columns' => 'Columns'
     ];
 
     /**
@@ -124,12 +124,12 @@ class Cells implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'max_row' => 'setMaxRow',
-        'max_column' => 'setMaxColumn',
-        'cell_count' => 'setCellCount',
         'rows' => 'setRows',
-        'columns' => 'setColumns',
-        'cell_list' => 'setCellList'
+        'cell_count' => 'setCellCount',
+        'max_row' => 'setMaxRow',
+        'cell_list' => 'setCellList',
+        'max_column' => 'setMaxColumn',
+        'columns' => 'setColumns'
     ];
 
     /**
@@ -139,12 +139,12 @@ class Cells implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'max_row' => 'getMaxRow',
-        'max_column' => 'getMaxColumn',
-        'cell_count' => 'getCellCount',
         'rows' => 'getRows',
-        'columns' => 'getColumns',
-        'cell_list' => 'getCellList'
+        'cell_count' => 'getCellCount',
+        'max_row' => 'getMaxRow',
+        'cell_list' => 'getCellList',
+        'max_column' => 'getMaxColumn',
+        'columns' => 'getColumns'
     ];
 
     /**
@@ -208,12 +208,12 @@ class Cells implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['max_row'] = isset($data['max_row']) ? $data['max_row'] : null;
-        $this->container['max_column'] = isset($data['max_column']) ? $data['max_column'] : null;
-        $this->container['cell_count'] = isset($data['cell_count']) ? $data['cell_count'] : null;
         $this->container['rows'] = isset($data['rows']) ? $data['rows'] : null;
-        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
+        $this->container['cell_count'] = isset($data['cell_count']) ? $data['cell_count'] : null;
+        $this->container['max_row'] = isset($data['max_row']) ? $data['max_row'] : null;
         $this->container['cell_list'] = isset($data['cell_list']) ? $data['cell_list'] : null;
+        $this->container['max_column'] = isset($data['max_column']) ? $data['max_column'] : null;
+        $this->container['columns'] = isset($data['columns']) ? $data['columns'] : null;
     }
 
     /**
@@ -225,14 +225,14 @@ class Cells implements  ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['cell_count'] === null) {
+            $invalidProperties[] = "'cell_count' can't be null";
+        }
         if ($this->container['max_row'] === null) {
             $invalidProperties[] = "'max_row' can't be null";
         }
         if ($this->container['max_column'] === null) {
             $invalidProperties[] = "'max_column' can't be null";
-        }
-        if ($this->container['cell_count'] === null) {
-            $invalidProperties[] = "'cell_count' can't be null";
         }
         return $invalidProperties;
     }
@@ -246,13 +246,13 @@ class Cells implements  ArrayAccess
     public function valid()
     {
 
+        if ($this->container['cell_count'] === null) {
+            return false;
+        }
         if ($this->container['max_row'] === null) {
             return false;
         }
         if ($this->container['max_column'] === null) {
-            return false;
-        }
-        if ($this->container['cell_count'] === null) {
             return false;
         }
         return true;
@@ -284,49 +284,25 @@ class Cells implements  ArrayAccess
     }
 
     /**
-     * Gets max_row
+     * Gets rows
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getMaxRow()
+    public function getRows()
     {
-        return $this->container['max_row'];
+        return $this->container['rows'];
     }
 
     /**
-     * Sets max_row
+     * Sets rows
      *
-     * @param int $max_row max_row
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $rows rows
      *
      * @return $this
      */
-    public function setMaxRow($max_row)
+    public function setRows($rows)
     {
-        $this->container['max_row'] = $max_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_column
-     *
-     * @return int
-     */
-    public function getMaxColumn()
-    {
-        return $this->container['max_column'];
-    }
-
-    /**
-     * Sets max_column
-     *
-     * @param int $max_column Maximum column index of cell which contains data.
-     *
-     * @return $this
-     */
-    public function setMaxColumn($max_column)
-    {
-        $this->container['max_column'] = $max_column;
+        $this->container['rows'] = $rows;
 
         return $this;
     }
@@ -356,49 +332,25 @@ class Cells implements  ArrayAccess
     }
 
     /**
-     * Gets rows
+     * Gets max_row
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return int
      */
-    public function getRows()
+    public function getMaxRow()
     {
-        return $this->container['rows'];
+        return $this->container['max_row'];
     }
 
     /**
-     * Sets rows
+     * Sets max_row
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $rows rows
+     * @param int $max_row max_row
      *
      * @return $this
      */
-    public function setRows($rows)
+    public function setMaxRow($max_row)
     {
-        $this->container['rows'] = $rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets columns
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getColumns()
-    {
-        return $this->container['columns'];
-    }
-
-    /**
-     * Sets columns
-     *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $columns columns
-     *
-     * @return $this
-     */
-    public function setColumns($columns)
-    {
-        $this->container['columns'] = $columns;
+        $this->container['max_row'] = $max_row;
 
         return $this;
     }
@@ -423,6 +375,54 @@ class Cells implements  ArrayAccess
     public function setCellList($cell_list)
     {
         $this->container['cell_list'] = $cell_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_column
+     *
+     * @return int
+     */
+    public function getMaxColumn()
+    {
+        return $this->container['max_column'];
+    }
+
+    /**
+     * Sets max_column
+     *
+     * @param int $max_column Maximum column index of cell which contains data.
+     *
+     * @return $this
+     */
+    public function setMaxColumn($max_column)
+    {
+        $this->container['max_column'] = $max_column;
+
+        return $this;
+    }
+
+    /**
+     * Gets columns
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getColumns()
+    {
+        return $this->container['columns'];
+    }
+
+    /**
+     * Sets columns
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $columns columns
+     *
+     * @return $this
+     */
+    public function setColumns($columns)
+    {
+        $this->container['columns'] = $columns;
 
         return $this;
     }

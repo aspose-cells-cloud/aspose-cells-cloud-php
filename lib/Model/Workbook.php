@@ -57,16 +57,16 @@ class Workbook implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'file_name' => 'string',
         'links' => '\Aspose\Cells\Cloud\Model\Link[]',
-        'worksheets' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'default_style' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'settings' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'is_protected' => 'string',
+        'is_write_protected' => 'string',
+        'file_name' => 'string',
         'document_properties' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'names' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'settings' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'is_write_protected' => 'string',
-        'is_protected' => 'string',
+        'default_style' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'is_encryption' => 'string',
+        'worksheets' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'password' => 'string'
     ];
 
@@ -76,16 +76,16 @@ class Workbook implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'file_name' => null,
         'links' => null,
-        'worksheets' => null,
-        'default_style' => null,
+        'settings' => null,
+        'is_protected' => null,
+        'is_write_protected' => null,
+        'file_name' => null,
         'document_properties' => null,
         'names' => null,
-        'settings' => null,
-        'is_write_protected' => null,
-        'is_protected' => null,
+        'default_style' => null,
         'is_encryption' => null,
+        'worksheets' => null,
         'password' => null
     ];
 
@@ -116,16 +116,16 @@ class Workbook implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'file_name' => 'FileName',
         'links' => 'Links',
-        'worksheets' => 'Worksheets',
-        'default_style' => 'DefaultStyle',
+        'settings' => 'Settings',
+        'is_protected' => 'IsProtected',
+        'is_write_protected' => 'IsWriteProtected',
+        'file_name' => 'FileName',
         'document_properties' => 'DocumentProperties',
         'names' => 'Names',
-        'settings' => 'Settings',
-        'is_write_protected' => 'IsWriteProtected',
-        'is_protected' => 'IsProtected',
+        'default_style' => 'DefaultStyle',
         'is_encryption' => 'IsEncryption',
+        'worksheets' => 'Worksheets',
         'password' => 'Password'
     ];
 
@@ -135,16 +135,16 @@ class Workbook implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'file_name' => 'setFileName',
         'links' => 'setLinks',
-        'worksheets' => 'setWorksheets',
-        'default_style' => 'setDefaultStyle',
+        'settings' => 'setSettings',
+        'is_protected' => 'setIsProtected',
+        'is_write_protected' => 'setIsWriteProtected',
+        'file_name' => 'setFileName',
         'document_properties' => 'setDocumentProperties',
         'names' => 'setNames',
-        'settings' => 'setSettings',
-        'is_write_protected' => 'setIsWriteProtected',
-        'is_protected' => 'setIsProtected',
+        'default_style' => 'setDefaultStyle',
         'is_encryption' => 'setIsEncryption',
+        'worksheets' => 'setWorksheets',
         'password' => 'setPassword'
     ];
 
@@ -154,16 +154,16 @@ class Workbook implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'file_name' => 'getFileName',
         'links' => 'getLinks',
-        'worksheets' => 'getWorksheets',
-        'default_style' => 'getDefaultStyle',
+        'settings' => 'getSettings',
+        'is_protected' => 'getIsProtected',
+        'is_write_protected' => 'getIsWriteProtected',
+        'file_name' => 'getFileName',
         'document_properties' => 'getDocumentProperties',
         'names' => 'getNames',
-        'settings' => 'getSettings',
-        'is_write_protected' => 'getIsWriteProtected',
-        'is_protected' => 'getIsProtected',
+        'default_style' => 'getDefaultStyle',
         'is_encryption' => 'getIsEncryption',
+        'worksheets' => 'getWorksheets',
         'password' => 'getPassword'
     ];
 
@@ -227,16 +227,16 @@ class Workbook implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['worksheets'] = isset($data['worksheets']) ? $data['worksheets'] : null;
-        $this->container['default_style'] = isset($data['default_style']) ? $data['default_style'] : null;
+        $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
+        $this->container['is_protected'] = isset($data['is_protected']) ? $data['is_protected'] : null;
+        $this->container['is_write_protected'] = isset($data['is_write_protected']) ? $data['is_write_protected'] : null;
+        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
         $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;
         $this->container['names'] = isset($data['names']) ? $data['names'] : null;
-        $this->container['settings'] = isset($data['settings']) ? $data['settings'] : null;
-        $this->container['is_write_protected'] = isset($data['is_write_protected']) ? $data['is_write_protected'] : null;
-        $this->container['is_protected'] = isset($data['is_protected']) ? $data['is_protected'] : null;
+        $this->container['default_style'] = isset($data['default_style']) ? $data['default_style'] : null;
         $this->container['is_encryption'] = isset($data['is_encryption']) ? $data['is_encryption'] : null;
+        $this->container['worksheets'] = isset($data['worksheets']) ? $data['worksheets'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
@@ -266,30 +266,6 @@ class Workbook implements  ArrayAccess
 
 
     /**
-     * Gets file_name
-     *
-     * @return string
-     */
-    public function getFileName()
-    {
-        return $this->container['file_name'];
-    }
-
-    /**
-     * Sets file_name
-     *
-     * @param string $file_name file_name
-     *
-     * @return $this
-     */
-    public function setFileName($file_name)
-    {
-        $this->container['file_name'] = $file_name;
-
-        return $this;
-    }
-
-    /**
      * Gets links
      *
      * @return \Aspose\Cells\Cloud\Model\Link[]
@@ -314,49 +290,97 @@ class Workbook implements  ArrayAccess
     }
 
     /**
-     * Gets worksheets
+     * Gets settings
      *
      * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getWorksheets()
+    public function getSettings()
     {
-        return $this->container['worksheets'];
+        return $this->container['settings'];
     }
 
     /**
-     * Sets worksheets
+     * Sets settings
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $worksheets worksheets
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $settings settings
      *
      * @return $this
      */
-    public function setWorksheets($worksheets)
+    public function setSettings($settings)
     {
-        $this->container['worksheets'] = $worksheets;
+        $this->container['settings'] = $settings;
 
         return $this;
     }
 
     /**
-     * Gets default_style
+     * Gets is_protected
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return string
      */
-    public function getDefaultStyle()
+    public function getIsProtected()
     {
-        return $this->container['default_style'];
+        return $this->container['is_protected'];
     }
 
     /**
-     * Sets default_style
+     * Sets is_protected
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $default_style default_style
+     * @param string $is_protected is_protected
      *
      * @return $this
      */
-    public function setDefaultStyle($default_style)
+    public function setIsProtected($is_protected)
     {
-        $this->container['default_style'] = $default_style;
+        $this->container['is_protected'] = $is_protected;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_write_protected
+     *
+     * @return string
+     */
+    public function getIsWriteProtected()
+    {
+        return $this->container['is_write_protected'];
+    }
+
+    /**
+     * Sets is_write_protected
+     *
+     * @param string $is_write_protected is_write_protected
+     *
+     * @return $this
+     */
+    public function setIsWriteProtected($is_write_protected)
+    {
+        $this->container['is_write_protected'] = $is_write_protected;
+
+        return $this;
+    }
+
+    /**
+     * Gets file_name
+     *
+     * @return string
+     */
+    public function getFileName()
+    {
+        return $this->container['file_name'];
+    }
+
+    /**
+     * Sets file_name
+     *
+     * @param string $file_name file_name
+     *
+     * @return $this
+     */
+    public function setFileName($file_name)
+    {
+        $this->container['file_name'] = $file_name;
 
         return $this;
     }
@@ -410,73 +434,25 @@ class Workbook implements  ArrayAccess
     }
 
     /**
-     * Gets settings
+     * Gets default_style
      *
      * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getSettings()
+    public function getDefaultStyle()
     {
-        return $this->container['settings'];
+        return $this->container['default_style'];
     }
 
     /**
-     * Sets settings
+     * Sets default_style
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $settings settings
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $default_style default_style
      *
      * @return $this
      */
-    public function setSettings($settings)
+    public function setDefaultStyle($default_style)
     {
-        $this->container['settings'] = $settings;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_write_protected
-     *
-     * @return string
-     */
-    public function getIsWriteProtected()
-    {
-        return $this->container['is_write_protected'];
-    }
-
-    /**
-     * Sets is_write_protected
-     *
-     * @param string $is_write_protected is_write_protected
-     *
-     * @return $this
-     */
-    public function setIsWriteProtected($is_write_protected)
-    {
-        $this->container['is_write_protected'] = $is_write_protected;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_protected
-     *
-     * @return string
-     */
-    public function getIsProtected()
-    {
-        return $this->container['is_protected'];
-    }
-
-    /**
-     * Sets is_protected
-     *
-     * @param string $is_protected is_protected
-     *
-     * @return $this
-     */
-    public function setIsProtected($is_protected)
-    {
-        $this->container['is_protected'] = $is_protected;
+        $this->container['default_style'] = $default_style;
 
         return $this;
     }
@@ -501,6 +477,30 @@ class Workbook implements  ArrayAccess
     public function setIsEncryption($is_encryption)
     {
         $this->container['is_encryption'] = $is_encryption;
+
+        return $this;
+    }
+
+    /**
+     * Gets worksheets
+     *
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     */
+    public function getWorksheets()
+    {
+        return $this->container['worksheets'];
+    }
+
+    /**
+     * Sets worksheets
+     *
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $worksheets worksheets
+     *
+     * @return $this
+     */
+    public function setWorksheets($worksheets)
+    {
+        $this->container['worksheets'] = $worksheets;
 
         return $this;
     }

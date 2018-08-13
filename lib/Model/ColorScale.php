@@ -59,11 +59,11 @@ class ColorScale implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'max_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
-        'max_color' => '\Aspose\Cells\Cloud\Model\Color',
-        'mid_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
         'mid_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'min_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'mid_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
         'min_cfvo' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue',
-        'min_color' => '\Aspose\Cells\Cloud\Model\Color'
+        'max_color' => '\Aspose\Cells\Cloud\Model\Color'
     ];
 
     /**
@@ -73,11 +73,11 @@ class ColorScale implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'max_cfvo' => null,
-        'max_color' => null,
-        'mid_cfvo' => null,
         'mid_color' => null,
+        'min_color' => null,
+        'mid_cfvo' => null,
         'min_cfvo' => null,
-        'min_color' => null
+        'max_color' => null
     ];
 
     /**
@@ -108,11 +108,11 @@ class ColorScale implements  ArrayAccess
      */
     protected static $attributeMap = [
         'max_cfvo' => 'MaxCfvo',
-        'max_color' => 'MaxColor',
-        'mid_cfvo' => 'MidCfvo',
         'mid_color' => 'MidColor',
+        'min_color' => 'MinColor',
+        'mid_cfvo' => 'MidCfvo',
         'min_cfvo' => 'MinCfvo',
-        'min_color' => 'MinColor'
+        'max_color' => 'MaxColor'
     ];
 
     /**
@@ -122,11 +122,11 @@ class ColorScale implements  ArrayAccess
      */
     protected static $setters = [
         'max_cfvo' => 'setMaxCfvo',
-        'max_color' => 'setMaxColor',
-        'mid_cfvo' => 'setMidCfvo',
         'mid_color' => 'setMidColor',
+        'min_color' => 'setMinColor',
+        'mid_cfvo' => 'setMidCfvo',
         'min_cfvo' => 'setMinCfvo',
-        'min_color' => 'setMinColor'
+        'max_color' => 'setMaxColor'
     ];
 
     /**
@@ -136,11 +136,11 @@ class ColorScale implements  ArrayAccess
      */
     protected static $getters = [
         'max_cfvo' => 'getMaxCfvo',
-        'max_color' => 'getMaxColor',
-        'mid_cfvo' => 'getMidCfvo',
         'mid_color' => 'getMidColor',
+        'min_color' => 'getMinColor',
+        'mid_cfvo' => 'getMidCfvo',
         'min_cfvo' => 'getMinCfvo',
-        'min_color' => 'getMinColor'
+        'max_color' => 'getMaxColor'
     ];
 
     /**
@@ -204,11 +204,11 @@ class ColorScale implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['max_cfvo'] = isset($data['max_cfvo']) ? $data['max_cfvo'] : null;
-        $this->container['max_color'] = isset($data['max_color']) ? $data['max_color'] : null;
-        $this->container['mid_cfvo'] = isset($data['mid_cfvo']) ? $data['mid_cfvo'] : null;
         $this->container['mid_color'] = isset($data['mid_color']) ? $data['mid_color'] : null;
-        $this->container['min_cfvo'] = isset($data['min_cfvo']) ? $data['min_cfvo'] : null;
         $this->container['min_color'] = isset($data['min_color']) ? $data['min_color'] : null;
+        $this->container['mid_cfvo'] = isset($data['mid_cfvo']) ? $data['mid_cfvo'] : null;
+        $this->container['min_cfvo'] = isset($data['min_cfvo']) ? $data['min_cfvo'] : null;
+        $this->container['max_color'] = isset($data['max_color']) ? $data['max_color'] : null;
     }
 
     /**
@@ -261,25 +261,49 @@ class ColorScale implements  ArrayAccess
     }
 
     /**
-     * Gets max_color
+     * Gets mid_color
      *
      * @return \Aspose\Cells\Cloud\Model\Color
      */
-    public function getMaxColor()
+    public function getMidColor()
     {
-        return $this->container['max_color'];
+        return $this->container['mid_color'];
     }
 
     /**
-     * Sets max_color
+     * Sets mid_color
      *
-     * @param \Aspose\Cells\Cloud\Model\Color $max_color Get or set the max value object's corresponding color.
+     * @param \Aspose\Cells\Cloud\Model\Color $mid_color Get or set the mid value object's corresponding color.
      *
      * @return $this
      */
-    public function setMaxColor($max_color)
+    public function setMidColor($mid_color)
     {
-        $this->container['max_color'] = $max_color;
+        $this->container['mid_color'] = $mid_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getMinColor()
+    {
+        return $this->container['min_color'];
+    }
+
+    /**
+     * Sets min_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $min_color Get or set the min value object's corresponding color.
+     *
+     * @return $this
+     */
+    public function setMinColor($min_color)
+    {
+        $this->container['min_color'] = $min_color;
 
         return $this;
     }
@@ -309,30 +333,6 @@ class ColorScale implements  ArrayAccess
     }
 
     /**
-     * Gets mid_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\Color
-     */
-    public function getMidColor()
-    {
-        return $this->container['mid_color'];
-    }
-
-    /**
-     * Sets mid_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\Color $mid_color Get or set the mid value object's corresponding color.
-     *
-     * @return $this
-     */
-    public function setMidColor($mid_color)
-    {
-        $this->container['mid_color'] = $mid_color;
-
-        return $this;
-    }
-
-    /**
      * Gets min_cfvo
      *
      * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingValue
@@ -357,25 +357,25 @@ class ColorScale implements  ArrayAccess
     }
 
     /**
-     * Gets min_color
+     * Gets max_color
      *
      * @return \Aspose\Cells\Cloud\Model\Color
      */
-    public function getMinColor()
+    public function getMaxColor()
     {
-        return $this->container['min_color'];
+        return $this->container['max_color'];
     }
 
     /**
-     * Sets min_color
+     * Sets max_color
      *
-     * @param \Aspose\Cells\Cloud\Model\Color $min_color Get or set the min value object's corresponding color.
+     * @param \Aspose\Cells\Cloud\Model\Color $max_color Get or set the max value object's corresponding color.
      *
      * @return $this
      */
-    public function setMinColor($min_color)
+    public function setMaxColor($max_color)
     {
-        $this->container['min_color'] = $min_color;
+        $this->container['max_color'] = $max_color;
 
         return $this;
     }

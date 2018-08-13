@@ -57,10 +57,10 @@ class PageSection implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'section' => 'int',
-        'context' => 'string',
         'picture' => 'string',
+        'section' => 'int',
         'fisrt_page_context' => 'string',
+        'context' => 'string',
         'even_page_context' => 'string'
     ];
 
@@ -70,10 +70,10 @@ class PageSection implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'section' => 'int32',
-        'context' => null,
         'picture' => 'byte',
+        'section' => 'int32',
         'fisrt_page_context' => null,
+        'context' => null,
         'even_page_context' => null
     ];
 
@@ -104,10 +104,10 @@ class PageSection implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'section' => 'Section',
-        'context' => 'Context',
         'picture' => 'Picture',
+        'section' => 'Section',
         'fisrt_page_context' => 'FisrtPageContext',
+        'context' => 'Context',
         'even_page_context' => 'EvenPageContext'
     ];
 
@@ -117,10 +117,10 @@ class PageSection implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'section' => 'setSection',
-        'context' => 'setContext',
         'picture' => 'setPicture',
+        'section' => 'setSection',
         'fisrt_page_context' => 'setFisrtPageContext',
+        'context' => 'setContext',
         'even_page_context' => 'setEvenPageContext'
     ];
 
@@ -130,10 +130,10 @@ class PageSection implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'section' => 'getSection',
-        'context' => 'getContext',
         'picture' => 'getPicture',
+        'section' => 'getSection',
         'fisrt_page_context' => 'getFisrtPageContext',
+        'context' => 'getContext',
         'even_page_context' => 'getEvenPageContext'
     ];
 
@@ -197,10 +197,10 @@ class PageSection implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['section'] = isset($data['section']) ? $data['section'] : null;
-        $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['picture'] = isset($data['picture']) ? $data['picture'] : null;
+        $this->container['section'] = isset($data['section']) ? $data['section'] : null;
         $this->container['fisrt_page_context'] = isset($data['fisrt_page_context']) ? $data['fisrt_page_context'] : null;
+        $this->container['context'] = isset($data['context']) ? $data['context'] : null;
         $this->container['even_page_context'] = isset($data['even_page_context']) ? $data['even_page_context'] : null;
     }
 
@@ -213,13 +213,13 @@ class PageSection implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['section'] === null) {
-            $invalidProperties[] = "'section' can't be null";
-        }
         if (!is_null($this->container['picture']) && !preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['picture'])) {
             $invalidProperties[] = "invalid value for 'picture', must be conform to the pattern /^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/.";
         }
 
+        if ($this->container['section'] === null) {
+            $invalidProperties[] = "'section' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -232,63 +232,15 @@ class PageSection implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['section'] === null) {
+        if (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['picture'])) {
             return false;
         }
-        if (!preg_match("/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/", $this->container['picture'])) {
+        if ($this->container['section'] === null) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets section
-     *
-     * @return int
-     */
-    public function getSection()
-    {
-        return $this->container['section'];
-    }
-
-    /**
-     * Sets section
-     *
-     * @param int $section 0,1,2  left , middle ,right
-     *
-     * @return $this
-     */
-    public function setSection($section)
-    {
-        $this->container['section'] = $section;
-
-        return $this;
-    }
-
-    /**
-     * Gets context
-     *
-     * @return string
-     */
-    public function getContext()
-    {
-        return $this->container['context'];
-    }
-
-    /**
-     * Sets context
-     *
-     * @param string $context page context script
-     *
-     * @return $this
-     */
-    public function setContext($context)
-    {
-        $this->container['context'] = $context;
-
-        return $this;
-    }
 
     /**
      * Gets picture
@@ -320,6 +272,30 @@ class PageSection implements  ArrayAccess
     }
 
     /**
+     * Gets section
+     *
+     * @return int
+     */
+    public function getSection()
+    {
+        return $this->container['section'];
+    }
+
+    /**
+     * Sets section
+     *
+     * @param int $section 0,1,2  left , middle ,right
+     *
+     * @return $this
+     */
+    public function setSection($section)
+    {
+        $this->container['section'] = $section;
+
+        return $this;
+    }
+
+    /**
      * Gets fisrt_page_context
      *
      * @return string
@@ -339,6 +315,30 @@ class PageSection implements  ArrayAccess
     public function setFisrtPageContext($fisrt_page_context)
     {
         $this->container['fisrt_page_context'] = $fisrt_page_context;
+
+        return $this;
+    }
+
+    /**
+     * Gets context
+     *
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->container['context'];
+    }
+
+    /**
+     * Sets context
+     *
+     * @param string $context page context script
+     *
+     * @return $this
+     */
+    public function setContext($context)
+    {
+        $this->container['context'] = $context;
 
         return $this;
     }

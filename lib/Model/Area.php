@@ -57,10 +57,10 @@ class Area implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'background_color' => '\Aspose\Cells\Cloud\Model\Color',
-        'fill_format' => '\Aspose\Cells\Cloud\Model\FillFormat',
         'foreground_color' => '\Aspose\Cells\Cloud\Model\Color',
+        'background_color' => '\Aspose\Cells\Cloud\Model\Color',
         'format' => 'string',
+        'fill_format' => '\Aspose\Cells\Cloud\Model\FillFormat',
         'invert_if_negative' => 'bool',
         'transparency' => 'double'
     ];
@@ -71,10 +71,10 @@ class Area implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'background_color' => null,
-        'fill_format' => null,
         'foreground_color' => null,
+        'background_color' => null,
         'format' => null,
+        'fill_format' => null,
         'invert_if_negative' => null,
         'transparency' => 'double'
     ];
@@ -106,10 +106,10 @@ class Area implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'background_color' => 'BackgroundColor',
-        'fill_format' => 'FillFormat',
         'foreground_color' => 'ForegroundColor',
+        'background_color' => 'BackgroundColor',
         'format' => 'Format',
+        'fill_format' => 'FillFormat',
         'invert_if_negative' => 'InvertIfNegative',
         'transparency' => 'Transparency'
     ];
@@ -120,10 +120,10 @@ class Area implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'background_color' => 'setBackgroundColor',
-        'fill_format' => 'setFillFormat',
         'foreground_color' => 'setForegroundColor',
+        'background_color' => 'setBackgroundColor',
         'format' => 'setFormat',
+        'fill_format' => 'setFillFormat',
         'invert_if_negative' => 'setInvertIfNegative',
         'transparency' => 'setTransparency'
     ];
@@ -134,10 +134,10 @@ class Area implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'background_color' => 'getBackgroundColor',
-        'fill_format' => 'getFillFormat',
         'foreground_color' => 'getForegroundColor',
+        'background_color' => 'getBackgroundColor',
         'format' => 'getFormat',
+        'fill_format' => 'getFillFormat',
         'invert_if_negative' => 'getInvertIfNegative',
         'transparency' => 'getTransparency'
     ];
@@ -202,10 +202,10 @@ class Area implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
-        $this->container['fill_format'] = isset($data['fill_format']) ? $data['fill_format'] : null;
         $this->container['foreground_color'] = isset($data['foreground_color']) ? $data['foreground_color'] : null;
+        $this->container['background_color'] = isset($data['background_color']) ? $data['background_color'] : null;
         $this->container['format'] = isset($data['format']) ? $data['format'] : null;
+        $this->container['fill_format'] = isset($data['fill_format']) ? $data['fill_format'] : null;
         $this->container['invert_if_negative'] = isset($data['invert_if_negative']) ? $data['invert_if_negative'] : null;
         $this->container['transparency'] = isset($data['transparency']) ? $data['transparency'] : null;
     }
@@ -236,54 +236,6 @@ class Area implements  ArrayAccess
 
 
     /**
-     * Gets background_color
-     *
-     * @return \Aspose\Cells\Cloud\Model\Color
-     */
-    public function getBackgroundColor()
-    {
-        return $this->container['background_color'];
-    }
-
-    /**
-     * Sets background_color
-     *
-     * @param \Aspose\Cells\Cloud\Model\Color $background_color background_color
-     *
-     * @return $this
-     */
-    public function setBackgroundColor($background_color)
-    {
-        $this->container['background_color'] = $background_color;
-
-        return $this;
-    }
-
-    /**
-     * Gets fill_format
-     *
-     * @return \Aspose\Cells\Cloud\Model\FillFormat
-     */
-    public function getFillFormat()
-    {
-        return $this->container['fill_format'];
-    }
-
-    /**
-     * Sets fill_format
-     *
-     * @param \Aspose\Cells\Cloud\Model\FillFormat $fill_format fill_format
-     *
-     * @return $this
-     */
-    public function setFillFormat($fill_format)
-    {
-        $this->container['fill_format'] = $fill_format;
-
-        return $this;
-    }
-
-    /**
      * Gets foreground_color
      *
      * @return \Aspose\Cells\Cloud\Model\Color
@@ -308,6 +260,30 @@ class Area implements  ArrayAccess
     }
 
     /**
+     * Gets background_color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getBackgroundColor()
+    {
+        return $this->container['background_color'];
+    }
+
+    /**
+     * Sets background_color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $background_color background_color
+     *
+     * @return $this
+     */
+    public function setBackgroundColor($background_color)
+    {
+        $this->container['background_color'] = $background_color;
+
+        return $this;
+    }
+
+    /**
      * Gets format
      *
      * @return string
@@ -327,6 +303,30 @@ class Area implements  ArrayAccess
     public function setFormat($format)
     {
         $this->container['format'] = $format;
+
+        return $this;
+    }
+
+    /**
+     * Gets fill_format
+     *
+     * @return \Aspose\Cells\Cloud\Model\FillFormat
+     */
+    public function getFillFormat()
+    {
+        return $this->container['fill_format'];
+    }
+
+    /**
+     * Sets fill_format
+     *
+     * @param \Aspose\Cells\Cloud\Model\FillFormat $fill_format fill_format
+     *
+     * @return $this
+     */
+    public function setFillFormat($fill_format)
+    {
+        $this->container['fill_format'] = $fill_format;
 
         return $this;
     }

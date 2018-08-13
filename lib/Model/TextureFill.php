@@ -57,12 +57,12 @@ class TextureFill implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'transparency' => 'double',
         'scale' => 'double',
-        'tile_pic_option' => '\Aspose\Cells\Cloud\Model\TilePicOption',
+        'image' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'pic_format_option' => '\Aspose\Cells\Cloud\Model\PicFormatOption',
-        'image' => '\Aspose\Cells\Cloud\Model\LinkElement'
+        'tile_pic_option' => '\Aspose\Cells\Cloud\Model\TilePicOption',
+        'transparency' => 'double',
+        'type' => 'string'
     ];
 
     /**
@@ -71,12 +71,12 @@ class TextureFill implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'transparency' => 'double',
         'scale' => 'double',
-        'tile_pic_option' => null,
+        'image' => null,
         'pic_format_option' => null,
-        'image' => null
+        'tile_pic_option' => null,
+        'transparency' => 'double',
+        'type' => null
     ];
 
     /**
@@ -106,12 +106,12 @@ class TextureFill implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'Type',
-        'transparency' => 'Transparency',
         'scale' => 'Scale',
-        'tile_pic_option' => 'TilePicOption',
+        'image' => 'Image',
         'pic_format_option' => 'PicFormatOption',
-        'image' => 'Image'
+        'tile_pic_option' => 'TilePicOption',
+        'transparency' => 'Transparency',
+        'type' => 'Type'
     ];
 
     /**
@@ -120,12 +120,12 @@ class TextureFill implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'transparency' => 'setTransparency',
         'scale' => 'setScale',
-        'tile_pic_option' => 'setTilePicOption',
+        'image' => 'setImage',
         'pic_format_option' => 'setPicFormatOption',
-        'image' => 'setImage'
+        'tile_pic_option' => 'setTilePicOption',
+        'transparency' => 'setTransparency',
+        'type' => 'setType'
     ];
 
     /**
@@ -134,12 +134,12 @@ class TextureFill implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'transparency' => 'getTransparency',
         'scale' => 'getScale',
-        'tile_pic_option' => 'getTilePicOption',
+        'image' => 'getImage',
         'pic_format_option' => 'getPicFormatOption',
-        'image' => 'getImage'
+        'tile_pic_option' => 'getTilePicOption',
+        'transparency' => 'getTransparency',
+        'type' => 'getType'
     ];
 
     /**
@@ -202,12 +202,12 @@ class TextureFill implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['transparency'] = isset($data['transparency']) ? $data['transparency'] : null;
         $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
-        $this->container['tile_pic_option'] = isset($data['tile_pic_option']) ? $data['tile_pic_option'] : null;
-        $this->container['pic_format_option'] = isset($data['pic_format_option']) ? $data['pic_format_option'] : null;
         $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['pic_format_option'] = isset($data['pic_format_option']) ? $data['pic_format_option'] : null;
+        $this->container['tile_pic_option'] = isset($data['tile_pic_option']) ? $data['tile_pic_option'] : null;
+        $this->container['transparency'] = isset($data['transparency']) ? $data['transparency'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -236,54 +236,6 @@ class TextureFill implements  ArrayAccess
 
 
     /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets transparency
-     *
-     * @return double
-     */
-    public function getTransparency()
-    {
-        return $this->container['transparency'];
-    }
-
-    /**
-     * Sets transparency
-     *
-     * @param double $transparency transparency
-     *
-     * @return $this
-     */
-    public function setTransparency($transparency)
-    {
-        $this->container['transparency'] = $transparency;
-
-        return $this;
-    }
-
-    /**
      * Gets scale
      *
      * @return double
@@ -308,25 +260,25 @@ class TextureFill implements  ArrayAccess
     }
 
     /**
-     * Gets tile_pic_option
+     * Gets image
      *
-     * @return \Aspose\Cells\Cloud\Model\TilePicOption
+     * @return \Aspose\Cells\Cloud\Model\LinkElement
      */
-    public function getTilePicOption()
+    public function getImage()
     {
-        return $this->container['tile_pic_option'];
+        return $this->container['image'];
     }
 
     /**
-     * Sets tile_pic_option
+     * Sets image
      *
-     * @param \Aspose\Cells\Cloud\Model\TilePicOption $tile_pic_option tile_pic_option
+     * @param \Aspose\Cells\Cloud\Model\LinkElement $image image
      *
      * @return $this
      */
-    public function setTilePicOption($tile_pic_option)
+    public function setImage($image)
     {
-        $this->container['tile_pic_option'] = $tile_pic_option;
+        $this->container['image'] = $image;
 
         return $this;
     }
@@ -356,25 +308,73 @@ class TextureFill implements  ArrayAccess
     }
 
     /**
-     * Gets image
+     * Gets tile_pic_option
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\TilePicOption
      */
-    public function getImage()
+    public function getTilePicOption()
     {
-        return $this->container['image'];
+        return $this->container['tile_pic_option'];
     }
 
     /**
-     * Sets image
+     * Sets tile_pic_option
      *
-     * @param \Aspose\Cells\Cloud\Model\LinkElement $image image
+     * @param \Aspose\Cells\Cloud\Model\TilePicOption $tile_pic_option tile_pic_option
      *
      * @return $this
      */
-    public function setImage($image)
+    public function setTilePicOption($tile_pic_option)
     {
-        $this->container['image'] = $image;
+        $this->container['tile_pic_option'] = $tile_pic_option;
+
+        return $this;
+    }
+
+    /**
+     * Gets transparency
+     *
+     * @return double
+     */
+    public function getTransparency()
+    {
+        return $this->container['transparency'];
+    }
+
+    /**
+     * Sets transparency
+     *
+     * @param double $transparency transparency
+     *
+     * @return $this
+     */
+    public function setTransparency($transparency)
+    {
+        $this->container['transparency'] = $transparency;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

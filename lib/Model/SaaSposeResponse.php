@@ -57,8 +57,8 @@ class SaaSposeResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'int',
-        'status' => 'string'
+        'status' => 'string',
+        'code' => 'int'
     ];
 
     /**
@@ -67,8 +67,8 @@ class SaaSposeResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-        'status' => null
+        'status' => null,
+        'code' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class SaaSposeResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'status' => 'Status'
+        'status' => 'Status',
+        'code' => 'Code'
     ];
 
     /**
@@ -108,8 +108,8 @@ class SaaSposeResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'code' => 'setCode'
     ];
 
     /**
@@ -118,8 +118,8 @@ class SaaSposeResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'code' => 'getCode'
     ];
 
     /**
@@ -182,8 +182,8 @@ class SaaSposeResponse implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
@@ -222,30 +222,6 @@ class SaaSposeResponse implements  ArrayAccess
 
 
     /**
-     * Gets code
-     *
-     * @return int
-     */
-    public function getCode()
-    {
-        return $this->container['code'];
-    }
-
-    /**
-     * Sets code
-     *
-     * @param int $code code
-     *
-     * @return $this
-     */
-    public function setCode($code)
-    {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
      * Gets status
      *
      * @return string
@@ -265,6 +241,30 @@ class SaaSposeResponse implements  ArrayAccess
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     *
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param int $code code
+     *
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
 
         return $this;
     }

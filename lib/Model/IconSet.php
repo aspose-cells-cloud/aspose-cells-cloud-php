@@ -58,12 +58,12 @@ class IconSet implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'reverse' => 'bool',
         'cf_icons' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingIcon[]',
         'cfvos' => '\Aspose\Cells\Cloud\Model\ConditionalFormattingValue[]',
+        'icon_set_type' => 'string',
         'is_custom' => 'bool',
-        'reverse' => 'bool',
-        'show_value' => 'bool',
-        'icon_set_type' => 'string'
+        'show_value' => 'bool'
     ];
 
     /**
@@ -72,12 +72,12 @@ class IconSet implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'reverse' => null,
         'cf_icons' => null,
         'cfvos' => null,
+        'icon_set_type' => null,
         'is_custom' => null,
-        'reverse' => null,
-        'show_value' => null,
-        'icon_set_type' => null
+        'show_value' => null
     ];
 
     /**
@@ -107,12 +107,12 @@ class IconSet implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'reverse' => 'Reverse',
         'cf_icons' => 'CfIcons',
         'cfvos' => 'Cfvos',
+        'icon_set_type' => 'IconSetType',
         'is_custom' => 'IsCustom',
-        'reverse' => 'Reverse',
-        'show_value' => 'ShowValue',
-        'icon_set_type' => 'IconSetType'
+        'show_value' => 'ShowValue'
     ];
 
     /**
@@ -121,12 +121,12 @@ class IconSet implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'reverse' => 'setReverse',
         'cf_icons' => 'setCfIcons',
         'cfvos' => 'setCfvos',
+        'icon_set_type' => 'setIconSetType',
         'is_custom' => 'setIsCustom',
-        'reverse' => 'setReverse',
-        'show_value' => 'setShowValue',
-        'icon_set_type' => 'setIconSetType'
+        'show_value' => 'setShowValue'
     ];
 
     /**
@@ -135,12 +135,12 @@ class IconSet implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'reverse' => 'getReverse',
         'cf_icons' => 'getCfIcons',
         'cfvos' => 'getCfvos',
+        'icon_set_type' => 'getIconSetType',
         'is_custom' => 'getIsCustom',
-        'reverse' => 'getReverse',
-        'show_value' => 'getShowValue',
-        'icon_set_type' => 'getIconSetType'
+        'show_value' => 'getShowValue'
     ];
 
     /**
@@ -203,12 +203,12 @@ class IconSet implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['reverse'] = isset($data['reverse']) ? $data['reverse'] : null;
         $this->container['cf_icons'] = isset($data['cf_icons']) ? $data['cf_icons'] : null;
         $this->container['cfvos'] = isset($data['cfvos']) ? $data['cfvos'] : null;
-        $this->container['is_custom'] = isset($data['is_custom']) ? $data['is_custom'] : null;
-        $this->container['reverse'] = isset($data['reverse']) ? $data['reverse'] : null;
-        $this->container['show_value'] = isset($data['show_value']) ? $data['show_value'] : null;
         $this->container['icon_set_type'] = isset($data['icon_set_type']) ? $data['icon_set_type'] : null;
+        $this->container['is_custom'] = isset($data['is_custom']) ? $data['is_custom'] : null;
+        $this->container['show_value'] = isset($data['show_value']) ? $data['show_value'] : null;
     }
 
     /**
@@ -235,6 +235,30 @@ class IconSet implements  ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets reverse
+     *
+     * @return bool
+     */
+    public function getReverse()
+    {
+        return $this->container['reverse'];
+    }
+
+    /**
+     * Sets reverse
+     *
+     * @param bool $reverse Get or set the flag indicating whether to reverses the default order of the   icons in this icon set.  Default value is false.
+     *
+     * @return $this
+     */
+    public function setReverse($reverse)
+    {
+        $this->container['reverse'] = $reverse;
+
+        return $this;
+    }
 
     /**
      * Gets cf_icons
@@ -285,6 +309,30 @@ class IconSet implements  ArrayAccess
     }
 
     /**
+     * Gets icon_set_type
+     *
+     * @return string
+     */
+    public function getIconSetType()
+    {
+        return $this->container['icon_set_type'];
+    }
+
+    /**
+     * Sets icon_set_type
+     *
+     * @param string $icon_set_type Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos's count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.
+     *
+     * @return $this
+     */
+    public function setIconSetType($icon_set_type)
+    {
+        $this->container['icon_set_type'] = $icon_set_type;
+
+        return $this;
+    }
+
+    /**
      * Gets is_custom
      *
      * @return bool
@@ -309,30 +357,6 @@ class IconSet implements  ArrayAccess
     }
 
     /**
-     * Gets reverse
-     *
-     * @return bool
-     */
-    public function getReverse()
-    {
-        return $this->container['reverse'];
-    }
-
-    /**
-     * Sets reverse
-     *
-     * @param bool $reverse Get or set the flag indicating whether to reverses the default order of the   icons in this icon set.  Default value is false.
-     *
-     * @return $this
-     */
-    public function setReverse($reverse)
-    {
-        $this->container['reverse'] = $reverse;
-
-        return $this;
-    }
-
-    /**
      * Gets show_value
      *
      * @return bool
@@ -352,30 +376,6 @@ class IconSet implements  ArrayAccess
     public function setShowValue($show_value)
     {
         $this->container['show_value'] = $show_value;
-
-        return $this;
-    }
-
-    /**
-     * Gets icon_set_type
-     *
-     * @return string
-     */
-    public function getIconSetType()
-    {
-        return $this->container['icon_set_type'];
-    }
-
-    /**
-     * Sets icon_set_type
-     *
-     * @param string $icon_set_type Get or Set the icon set type to display.  Setting the type will auto check    if the current Cfvos's count is accord with the new type. If not accord,    old Cfvos will be cleaned and default Cfvos will be added.
-     *
-     * @return $this
-     */
-    public function setIconSetType($icon_set_type)
-    {
-        $this->container['icon_set_type'] = $icon_set_type;
 
         return $this;
     }

@@ -57,16 +57,16 @@ class Font implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'color' => '\Aspose\Cells\Cloud\Model\Color',
-        'double_size' => 'double',
-        'is_bold' => 'bool',
         'is_italic' => 'bool',
-        'is_strikeout' => 'bool',
+        'name' => 'string',
+        'double_size' => 'double',
+        'color' => '\Aspose\Cells\Cloud\Model\Color',
+        'is_bold' => 'bool',
         'is_subscript' => 'bool',
         'is_superscript' => 'bool',
-        'name' => 'string',
-        'size' => 'int',
-        'underline' => 'string'
+        'is_strikeout' => 'bool',
+        'underline' => 'string',
+        'size' => 'int'
     ];
 
     /**
@@ -75,16 +75,16 @@ class Font implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'color' => null,
-        'double_size' => 'double',
-        'is_bold' => null,
         'is_italic' => null,
-        'is_strikeout' => null,
+        'name' => null,
+        'double_size' => 'double',
+        'color' => null,
+        'is_bold' => null,
         'is_subscript' => null,
         'is_superscript' => null,
-        'name' => null,
-        'size' => 'int32',
-        'underline' => null
+        'is_strikeout' => null,
+        'underline' => null,
+        'size' => 'int32'
     ];
 
     /**
@@ -114,16 +114,16 @@ class Font implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'color' => 'Color',
-        'double_size' => 'DoubleSize',
-        'is_bold' => 'IsBold',
         'is_italic' => 'IsItalic',
-        'is_strikeout' => 'IsStrikeout',
+        'name' => 'Name',
+        'double_size' => 'DoubleSize',
+        'color' => 'Color',
+        'is_bold' => 'IsBold',
         'is_subscript' => 'IsSubscript',
         'is_superscript' => 'IsSuperscript',
-        'name' => 'Name',
-        'size' => 'Size',
-        'underline' => 'Underline'
+        'is_strikeout' => 'IsStrikeout',
+        'underline' => 'Underline',
+        'size' => 'Size'
     ];
 
     /**
@@ -132,16 +132,16 @@ class Font implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'color' => 'setColor',
-        'double_size' => 'setDoubleSize',
-        'is_bold' => 'setIsBold',
         'is_italic' => 'setIsItalic',
-        'is_strikeout' => 'setIsStrikeout',
+        'name' => 'setName',
+        'double_size' => 'setDoubleSize',
+        'color' => 'setColor',
+        'is_bold' => 'setIsBold',
         'is_subscript' => 'setIsSubscript',
         'is_superscript' => 'setIsSuperscript',
-        'name' => 'setName',
-        'size' => 'setSize',
-        'underline' => 'setUnderline'
+        'is_strikeout' => 'setIsStrikeout',
+        'underline' => 'setUnderline',
+        'size' => 'setSize'
     ];
 
     /**
@@ -150,16 +150,16 @@ class Font implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'color' => 'getColor',
-        'double_size' => 'getDoubleSize',
-        'is_bold' => 'getIsBold',
         'is_italic' => 'getIsItalic',
-        'is_strikeout' => 'getIsStrikeout',
+        'name' => 'getName',
+        'double_size' => 'getDoubleSize',
+        'color' => 'getColor',
+        'is_bold' => 'getIsBold',
         'is_subscript' => 'getIsSubscript',
         'is_superscript' => 'getIsSuperscript',
-        'name' => 'getName',
-        'size' => 'getSize',
-        'underline' => 'getUnderline'
+        'is_strikeout' => 'getIsStrikeout',
+        'underline' => 'getUnderline',
+        'size' => 'getSize'
     ];
 
     /**
@@ -222,16 +222,16 @@ class Font implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
-        $this->container['double_size'] = isset($data['double_size']) ? $data['double_size'] : null;
-        $this->container['is_bold'] = isset($data['is_bold']) ? $data['is_bold'] : null;
         $this->container['is_italic'] = isset($data['is_italic']) ? $data['is_italic'] : null;
-        $this->container['is_strikeout'] = isset($data['is_strikeout']) ? $data['is_strikeout'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['double_size'] = isset($data['double_size']) ? $data['double_size'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['is_bold'] = isset($data['is_bold']) ? $data['is_bold'] : null;
         $this->container['is_subscript'] = isset($data['is_subscript']) ? $data['is_subscript'] : null;
         $this->container['is_superscript'] = isset($data['is_superscript']) ? $data['is_superscript'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['is_strikeout'] = isset($data['is_strikeout']) ? $data['is_strikeout'] : null;
         $this->container['underline'] = isset($data['underline']) ? $data['underline'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
     }
 
     /**
@@ -260,25 +260,49 @@ class Font implements  ArrayAccess
 
 
     /**
-     * Gets color
+     * Gets is_italic
      *
-     * @return \Aspose\Cells\Cloud\Model\Color
+     * @return bool
      */
-    public function getColor()
+    public function getIsItalic()
     {
-        return $this->container['color'];
+        return $this->container['is_italic'];
     }
 
     /**
-     * Sets color
+     * Sets is_italic
      *
-     * @param \Aspose\Cells\Cloud\Model\Color $color color
+     * @param bool $is_italic is_italic
      *
      * @return $this
      */
-    public function setColor($color)
+    public function setIsItalic($is_italic)
     {
-        $this->container['color'] = $color;
+        $this->container['is_italic'] = $is_italic;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -308,6 +332,30 @@ class Font implements  ArrayAccess
     }
 
     /**
+     * Gets color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     * @param \Aspose\Cells\Cloud\Model\Color $color color
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /**
      * Gets is_bold
      *
      * @return bool
@@ -327,54 +375,6 @@ class Font implements  ArrayAccess
     public function setIsBold($is_bold)
     {
         $this->container['is_bold'] = $is_bold;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_italic
-     *
-     * @return bool
-     */
-    public function getIsItalic()
-    {
-        return $this->container['is_italic'];
-    }
-
-    /**
-     * Sets is_italic
-     *
-     * @param bool $is_italic is_italic
-     *
-     * @return $this
-     */
-    public function setIsItalic($is_italic)
-    {
-        $this->container['is_italic'] = $is_italic;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_strikeout
-     *
-     * @return bool
-     */
-    public function getIsStrikeout()
-    {
-        return $this->container['is_strikeout'];
-    }
-
-    /**
-     * Sets is_strikeout
-     *
-     * @param bool $is_strikeout is_strikeout
-     *
-     * @return $this
-     */
-    public function setIsStrikeout($is_strikeout)
-    {
-        $this->container['is_strikeout'] = $is_strikeout;
 
         return $this;
     }
@@ -428,49 +428,25 @@ class Font implements  ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets is_strikeout
      *
-     * @return string
+     * @return bool
      */
-    public function getName()
+    public function getIsStrikeout()
     {
-        return $this->container['name'];
+        return $this->container['is_strikeout'];
     }
 
     /**
-     * Sets name
+     * Sets is_strikeout
      *
-     * @param string $name name
+     * @param bool $is_strikeout is_strikeout
      *
      * @return $this
      */
-    public function setName($name)
+    public function setIsStrikeout($is_strikeout)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets size
-     *
-     * @return int
-     */
-    public function getSize()
-    {
-        return $this->container['size'];
-    }
-
-    /**
-     * Sets size
-     *
-     * @param int $size size
-     *
-     * @return $this
-     */
-    public function setSize($size)
-    {
-        $this->container['size'] = $size;
+        $this->container['is_strikeout'] = $is_strikeout;
 
         return $this;
     }
@@ -495,6 +471,30 @@ class Font implements  ArrayAccess
     public function setUnderline($underline)
     {
         $this->container['underline'] = $underline;
+
+        return $this;
+    }
+
+    /**
+     * Gets size
+     *
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->container['size'];
+    }
+
+    /**
+     * Sets size
+     *
+     * @param int $size size
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->container['size'] = $size;
 
         return $this;
     }

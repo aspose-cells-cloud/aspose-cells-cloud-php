@@ -57,8 +57,8 @@ class TaskDescription implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'task_type' => 'string',
-        'task_parameter' => '\Aspose\Cells\Cloud\Model\TaskParameter'
+        'task_parameter' => '\Aspose\Cells\Cloud\Model\TaskParameter',
+        'task_type' => 'string'
     ];
 
     /**
@@ -67,8 +67,8 @@ class TaskDescription implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'task_type' => null,
-        'task_parameter' => null
+        'task_parameter' => null,
+        'task_type' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class TaskDescription implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'task_type' => 'TaskType',
-        'task_parameter' => 'TaskParameter'
+        'task_parameter' => 'TaskParameter',
+        'task_type' => 'TaskType'
     ];
 
     /**
@@ -108,8 +108,8 @@ class TaskDescription implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'task_type' => 'setTaskType',
-        'task_parameter' => 'setTaskParameter'
+        'task_parameter' => 'setTaskParameter',
+        'task_type' => 'setTaskType'
     ];
 
     /**
@@ -118,8 +118,8 @@ class TaskDescription implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'task_type' => 'getTaskType',
-        'task_parameter' => 'getTaskParameter'
+        'task_parameter' => 'getTaskParameter',
+        'task_type' => 'getTaskType'
     ];
 
     /**
@@ -182,8 +182,8 @@ class TaskDescription implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['task_type'] = isset($data['task_type']) ? $data['task_type'] : null;
         $this->container['task_parameter'] = isset($data['task_parameter']) ? $data['task_parameter'] : null;
+        $this->container['task_type'] = isset($data['task_type']) ? $data['task_type'] : null;
     }
 
     /**
@@ -212,30 +212,6 @@ class TaskDescription implements  ArrayAccess
 
 
     /**
-     * Gets task_type
-     *
-     * @return string
-     */
-    public function getTaskType()
-    {
-        return $this->container['task_type'];
-    }
-
-    /**
-     * Sets task_type
-     *
-     * @param string $task_type task_type
-     *
-     * @return $this
-     */
-    public function setTaskType($task_type)
-    {
-        $this->container['task_type'] = $task_type;
-
-        return $this;
-    }
-
-    /**
      * Gets task_parameter
      *
      * @return \Aspose\Cells\Cloud\Model\TaskParameter
@@ -255,6 +231,30 @@ class TaskDescription implements  ArrayAccess
     public function setTaskParameter($task_parameter)
     {
         $this->container['task_parameter'] = $task_parameter;
+
+        return $this;
+    }
+
+    /**
+     * Gets task_type
+     *
+     * @return string
+     */
+    public function getTaskType()
+    {
+        return $this->container['task_type'];
+    }
+
+    /**
+     * Sets task_type
+     *
+     * @param string $task_type task_type
+     *
+     * @return $this
+     */
+    public function setTaskType($task_type)
+    {
+        $this->container['task_type'] = $task_type;
 
         return $this;
     }

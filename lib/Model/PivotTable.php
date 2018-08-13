@@ -58,74 +58,74 @@ class PivotTable implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'alt_text_description' => 'string',
-        'alt_text_title' => 'string',
-        'auto_format_type' => 'string',
-        'base_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
-        'column_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
-        'column_grand' => 'bool',
-        'column_header_caption' => 'string',
-        'column_range' => '\Aspose\Cells\Cloud\Model\CellArea',
-        'custom_list_sort' => 'bool',
-        'data_body_range' => '\Aspose\Cells\Cloud\Model\CellArea',
-        'data_field' => '\Aspose\Cells\Cloud\Model\PivotField',
-        'data_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
-        'data_source' => 'string[]',
-        'display_error_string' => 'bool',
-        'display_immediate_items' => 'bool',
-        'display_null_string' => 'bool',
-        'enable_data_value_editing' => 'bool',
-        'enable_drilldown' => 'bool',
-        'enable_field_dialog' => 'bool',
-        'enable_field_list' => 'bool',
-        'enable_wizard' => 'bool',
-        'error_string' => 'string',
-        'field_list_sort_ascending' => 'bool',
-        'grand_total_name' => 'string',
-        'has_blank_rows' => 'bool',
-        'indent' => 'int',
-        'is_auto_format' => 'bool',
-        'is_grid_drop_zones' => 'bool',
-        'is_multiple_field_filters' => 'bool',
-        'is_selected' => 'bool',
-        'item_print_titles' => 'bool',
-        'manual_update' => 'bool',
-        'merge_labels' => 'bool',
-        'missing_items_limit' => 'string',
-        'name' => 'string',
-        'null_string' => 'string',
-        'page_field_order' => 'string',
-        'page_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
-        'page_field_wrap_count' => 'int',
-        'pivot_filters' => '\Aspose\Cells\Cloud\Model\PivotFilter[]',
-        'pivot_table_style_name' => 'string',
-        'pivot_table_style_type' => 'string',
-        'preserve_formatting' => 'bool',
-        'print_drill' => 'bool',
-        'print_titles' => 'bool',
-        'refresh_data_flag' => 'bool',
-        'refresh_data_on_opening_file' => 'bool',
-        'row_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
-        'row_grand' => 'bool',
-        'row_header_caption' => 'string',
-        'row_range' => '\Aspose\Cells\Cloud\Model\CellArea',
-        'save_data' => 'bool',
-        'show_data_tips' => 'bool',
-        'show_drill' => 'bool',
-        'show_empty_col' => 'bool',
-        'show_empty_row' => 'bool',
-        'show_member_property_tips' => 'bool',
-        'show_pivot_style_column_header' => 'bool',
-        'show_pivot_style_column_stripes' => 'bool',
         'show_pivot_style_last_column' => 'bool',
-        'show_pivot_style_row_header' => 'bool',
-        'show_pivot_style_row_stripes' => 'bool',
-        'show_row_header_caption' => 'bool',
-        'show_values_row' => 'bool',
-        'subtotal_hidden_page_items' => 'bool',
-        'table_range1' => '\Aspose\Cells\Cloud\Model\CellArea',
+        'row_header_caption' => 'string',
+        'column_range' => '\Aspose\Cells\Cloud\Model\CellArea',
+        'refresh_data_on_opening_file' => 'bool',
+        'page_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
+        'data_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
+        'data_body_range' => '\Aspose\Cells\Cloud\Model\CellArea',
+        'show_drill' => 'bool',
+        'refresh_data_flag' => 'bool',
+        'column_grand' => 'bool',
+        'pivot_table_style_name' => 'string',
+        'pivot_filters' => '\Aspose\Cells\Cloud\Model\PivotFilter[]',
+        'null_string' => 'string',
+        'item_print_titles' => 'bool',
+        'display_null_string' => 'bool',
+        'enable_field_list' => 'bool',
         'table_range2' => '\Aspose\Cells\Cloud\Model\CellArea',
-        'tag' => 'string'
+        'row_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
+        'page_field_order' => 'string',
+        'auto_format_type' => 'string',
+        'enable_data_value_editing' => 'bool',
+        'show_pivot_style_row_header' => 'bool',
+        'is_grid_drop_zones' => 'bool',
+        'enable_wizard' => 'bool',
+        'show_member_property_tips' => 'bool',
+        'alt_text_description' => 'string',
+        'show_data_tips' => 'bool',
+        'print_titles' => 'bool',
+        'table_range1' => '\Aspose\Cells\Cloud\Model\CellArea',
+        'show_empty_row' => 'bool',
+        'is_multiple_field_filters' => 'bool',
+        'show_empty_col' => 'bool',
+        'show_row_header_caption' => 'bool',
+        'has_blank_rows' => 'bool',
+        'data_source' => 'string[]',
+        'tag' => 'string',
+        'enable_drilldown' => 'bool',
+        'indent' => 'int',
+        'name' => 'string',
+        'row_grand' => 'bool',
+        'grand_total_name' => 'string',
+        'display_error_string' => 'bool',
+        'row_range' => '\Aspose\Cells\Cloud\Model\CellArea',
+        'is_selected' => 'bool',
+        'column_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]',
+        'column_header_caption' => 'string',
+        'show_values_row' => 'bool',
+        'enable_field_dialog' => 'bool',
+        'missing_items_limit' => 'string',
+        'show_pivot_style_row_stripes' => 'bool',
+        'manual_update' => 'bool',
+        'is_auto_format' => 'bool',
+        'display_immediate_items' => 'bool',
+        'error_string' => 'string',
+        'custom_list_sort' => 'bool',
+        'merge_labels' => 'bool',
+        'page_field_wrap_count' => 'int',
+        'show_pivot_style_column_stripes' => 'bool',
+        'field_list_sort_ascending' => 'bool',
+        'alt_text_title' => 'string',
+        'preserve_formatting' => 'bool',
+        'pivot_table_style_type' => 'string',
+        'data_field' => '\Aspose\Cells\Cloud\Model\PivotField',
+        'save_data' => 'bool',
+        'subtotal_hidden_page_items' => 'bool',
+        'print_drill' => 'bool',
+        'show_pivot_style_column_header' => 'bool',
+        'base_fields' => '\Aspose\Cells\Cloud\Model\PivotField[]'
     ];
 
     /**
@@ -135,74 +135,74 @@ class PivotTable implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'alt_text_description' => null,
-        'alt_text_title' => null,
-        'auto_format_type' => null,
-        'base_fields' => null,
-        'column_fields' => null,
-        'column_grand' => null,
-        'column_header_caption' => null,
-        'column_range' => null,
-        'custom_list_sort' => null,
-        'data_body_range' => null,
-        'data_field' => null,
-        'data_fields' => null,
-        'data_source' => null,
-        'display_error_string' => null,
-        'display_immediate_items' => null,
-        'display_null_string' => null,
-        'enable_data_value_editing' => null,
-        'enable_drilldown' => null,
-        'enable_field_dialog' => null,
-        'enable_field_list' => null,
-        'enable_wizard' => null,
-        'error_string' => null,
-        'field_list_sort_ascending' => null,
-        'grand_total_name' => null,
-        'has_blank_rows' => null,
-        'indent' => 'int32',
-        'is_auto_format' => null,
-        'is_grid_drop_zones' => null,
-        'is_multiple_field_filters' => null,
-        'is_selected' => null,
-        'item_print_titles' => null,
-        'manual_update' => null,
-        'merge_labels' => null,
-        'missing_items_limit' => null,
-        'name' => null,
-        'null_string' => null,
-        'page_field_order' => null,
-        'page_fields' => null,
-        'page_field_wrap_count' => 'int32',
-        'pivot_filters' => null,
-        'pivot_table_style_name' => null,
-        'pivot_table_style_type' => null,
-        'preserve_formatting' => null,
-        'print_drill' => null,
-        'print_titles' => null,
-        'refresh_data_flag' => null,
-        'refresh_data_on_opening_file' => null,
-        'row_fields' => null,
-        'row_grand' => null,
-        'row_header_caption' => null,
-        'row_range' => null,
-        'save_data' => null,
-        'show_data_tips' => null,
-        'show_drill' => null,
-        'show_empty_col' => null,
-        'show_empty_row' => null,
-        'show_member_property_tips' => null,
-        'show_pivot_style_column_header' => null,
-        'show_pivot_style_column_stripes' => null,
         'show_pivot_style_last_column' => null,
-        'show_pivot_style_row_header' => null,
-        'show_pivot_style_row_stripes' => null,
-        'show_row_header_caption' => null,
-        'show_values_row' => null,
-        'subtotal_hidden_page_items' => null,
-        'table_range1' => null,
+        'row_header_caption' => null,
+        'column_range' => null,
+        'refresh_data_on_opening_file' => null,
+        'page_fields' => null,
+        'data_fields' => null,
+        'data_body_range' => null,
+        'show_drill' => null,
+        'refresh_data_flag' => null,
+        'column_grand' => null,
+        'pivot_table_style_name' => null,
+        'pivot_filters' => null,
+        'null_string' => null,
+        'item_print_titles' => null,
+        'display_null_string' => null,
+        'enable_field_list' => null,
         'table_range2' => null,
-        'tag' => null
+        'row_fields' => null,
+        'page_field_order' => null,
+        'auto_format_type' => null,
+        'enable_data_value_editing' => null,
+        'show_pivot_style_row_header' => null,
+        'is_grid_drop_zones' => null,
+        'enable_wizard' => null,
+        'show_member_property_tips' => null,
+        'alt_text_description' => null,
+        'show_data_tips' => null,
+        'print_titles' => null,
+        'table_range1' => null,
+        'show_empty_row' => null,
+        'is_multiple_field_filters' => null,
+        'show_empty_col' => null,
+        'show_row_header_caption' => null,
+        'has_blank_rows' => null,
+        'data_source' => null,
+        'tag' => null,
+        'enable_drilldown' => null,
+        'indent' => 'int32',
+        'name' => null,
+        'row_grand' => null,
+        'grand_total_name' => null,
+        'display_error_string' => null,
+        'row_range' => null,
+        'is_selected' => null,
+        'column_fields' => null,
+        'column_header_caption' => null,
+        'show_values_row' => null,
+        'enable_field_dialog' => null,
+        'missing_items_limit' => null,
+        'show_pivot_style_row_stripes' => null,
+        'manual_update' => null,
+        'is_auto_format' => null,
+        'display_immediate_items' => null,
+        'error_string' => null,
+        'custom_list_sort' => null,
+        'merge_labels' => null,
+        'page_field_wrap_count' => 'int32',
+        'show_pivot_style_column_stripes' => null,
+        'field_list_sort_ascending' => null,
+        'alt_text_title' => null,
+        'preserve_formatting' => null,
+        'pivot_table_style_type' => null,
+        'data_field' => null,
+        'save_data' => null,
+        'subtotal_hidden_page_items' => null,
+        'print_drill' => null,
+        'show_pivot_style_column_header' => null,
+        'base_fields' => null
     ];
 
     /**
@@ -233,74 +233,74 @@ class PivotTable implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'alt_text_description' => 'AltTextDescription',
-        'alt_text_title' => 'AltTextTitle',
-        'auto_format_type' => 'AutoFormatType',
-        'base_fields' => 'BaseFields',
-        'column_fields' => 'ColumnFields',
-        'column_grand' => 'ColumnGrand',
-        'column_header_caption' => 'ColumnHeaderCaption',
-        'column_range' => 'ColumnRange',
-        'custom_list_sort' => 'CustomListSort',
-        'data_body_range' => 'DataBodyRange',
-        'data_field' => 'DataField',
-        'data_fields' => 'DataFields',
-        'data_source' => 'DataSource',
-        'display_error_string' => 'DisplayErrorString',
-        'display_immediate_items' => 'DisplayImmediateItems',
-        'display_null_string' => 'DisplayNullString',
-        'enable_data_value_editing' => 'EnableDataValueEditing',
-        'enable_drilldown' => 'EnableDrilldown',
-        'enable_field_dialog' => 'EnableFieldDialog',
-        'enable_field_list' => 'EnableFieldList',
-        'enable_wizard' => 'EnableWizard',
-        'error_string' => 'ErrorString',
-        'field_list_sort_ascending' => 'FieldListSortAscending',
-        'grand_total_name' => 'GrandTotalName',
-        'has_blank_rows' => 'HasBlankRows',
-        'indent' => 'Indent',
-        'is_auto_format' => 'IsAutoFormat',
-        'is_grid_drop_zones' => 'IsGridDropZones',
-        'is_multiple_field_filters' => 'IsMultipleFieldFilters',
-        'is_selected' => 'IsSelected',
-        'item_print_titles' => 'ItemPrintTitles',
-        'manual_update' => 'ManualUpdate',
-        'merge_labels' => 'MergeLabels',
-        'missing_items_limit' => 'MissingItemsLimit',
-        'name' => 'Name',
-        'null_string' => 'NullString',
-        'page_field_order' => 'PageFieldOrder',
-        'page_fields' => 'PageFields',
-        'page_field_wrap_count' => 'PageFieldWrapCount',
-        'pivot_filters' => 'PivotFilters',
-        'pivot_table_style_name' => 'PivotTableStyleName',
-        'pivot_table_style_type' => 'PivotTableStyleType',
-        'preserve_formatting' => 'PreserveFormatting',
-        'print_drill' => 'PrintDrill',
-        'print_titles' => 'PrintTitles',
-        'refresh_data_flag' => 'RefreshDataFlag',
-        'refresh_data_on_opening_file' => 'RefreshDataOnOpeningFile',
-        'row_fields' => 'RowFields',
-        'row_grand' => 'RowGrand',
-        'row_header_caption' => 'RowHeaderCaption',
-        'row_range' => 'RowRange',
-        'save_data' => 'SaveData',
-        'show_data_tips' => 'ShowDataTips',
-        'show_drill' => 'ShowDrill',
-        'show_empty_col' => 'ShowEmptyCol',
-        'show_empty_row' => 'ShowEmptyRow',
-        'show_member_property_tips' => 'ShowMemberPropertyTips',
-        'show_pivot_style_column_header' => 'ShowPivotStyleColumnHeader',
-        'show_pivot_style_column_stripes' => 'ShowPivotStyleColumnStripes',
         'show_pivot_style_last_column' => 'ShowPivotStyleLastColumn',
-        'show_pivot_style_row_header' => 'ShowPivotStyleRowHeader',
-        'show_pivot_style_row_stripes' => 'ShowPivotStyleRowStripes',
-        'show_row_header_caption' => 'ShowRowHeaderCaption',
-        'show_values_row' => 'ShowValuesRow',
-        'subtotal_hidden_page_items' => 'SubtotalHiddenPageItems',
-        'table_range1' => 'TableRange1',
+        'row_header_caption' => 'RowHeaderCaption',
+        'column_range' => 'ColumnRange',
+        'refresh_data_on_opening_file' => 'RefreshDataOnOpeningFile',
+        'page_fields' => 'PageFields',
+        'data_fields' => 'DataFields',
+        'data_body_range' => 'DataBodyRange',
+        'show_drill' => 'ShowDrill',
+        'refresh_data_flag' => 'RefreshDataFlag',
+        'column_grand' => 'ColumnGrand',
+        'pivot_table_style_name' => 'PivotTableStyleName',
+        'pivot_filters' => 'PivotFilters',
+        'null_string' => 'NullString',
+        'item_print_titles' => 'ItemPrintTitles',
+        'display_null_string' => 'DisplayNullString',
+        'enable_field_list' => 'EnableFieldList',
         'table_range2' => 'TableRange2',
-        'tag' => 'Tag'
+        'row_fields' => 'RowFields',
+        'page_field_order' => 'PageFieldOrder',
+        'auto_format_type' => 'AutoFormatType',
+        'enable_data_value_editing' => 'EnableDataValueEditing',
+        'show_pivot_style_row_header' => 'ShowPivotStyleRowHeader',
+        'is_grid_drop_zones' => 'IsGridDropZones',
+        'enable_wizard' => 'EnableWizard',
+        'show_member_property_tips' => 'ShowMemberPropertyTips',
+        'alt_text_description' => 'AltTextDescription',
+        'show_data_tips' => 'ShowDataTips',
+        'print_titles' => 'PrintTitles',
+        'table_range1' => 'TableRange1',
+        'show_empty_row' => 'ShowEmptyRow',
+        'is_multiple_field_filters' => 'IsMultipleFieldFilters',
+        'show_empty_col' => 'ShowEmptyCol',
+        'show_row_header_caption' => 'ShowRowHeaderCaption',
+        'has_blank_rows' => 'HasBlankRows',
+        'data_source' => 'DataSource',
+        'tag' => 'Tag',
+        'enable_drilldown' => 'EnableDrilldown',
+        'indent' => 'Indent',
+        'name' => 'Name',
+        'row_grand' => 'RowGrand',
+        'grand_total_name' => 'GrandTotalName',
+        'display_error_string' => 'DisplayErrorString',
+        'row_range' => 'RowRange',
+        'is_selected' => 'IsSelected',
+        'column_fields' => 'ColumnFields',
+        'column_header_caption' => 'ColumnHeaderCaption',
+        'show_values_row' => 'ShowValuesRow',
+        'enable_field_dialog' => 'EnableFieldDialog',
+        'missing_items_limit' => 'MissingItemsLimit',
+        'show_pivot_style_row_stripes' => 'ShowPivotStyleRowStripes',
+        'manual_update' => 'ManualUpdate',
+        'is_auto_format' => 'IsAutoFormat',
+        'display_immediate_items' => 'DisplayImmediateItems',
+        'error_string' => 'ErrorString',
+        'custom_list_sort' => 'CustomListSort',
+        'merge_labels' => 'MergeLabels',
+        'page_field_wrap_count' => 'PageFieldWrapCount',
+        'show_pivot_style_column_stripes' => 'ShowPivotStyleColumnStripes',
+        'field_list_sort_ascending' => 'FieldListSortAscending',
+        'alt_text_title' => 'AltTextTitle',
+        'preserve_formatting' => 'PreserveFormatting',
+        'pivot_table_style_type' => 'PivotTableStyleType',
+        'data_field' => 'DataField',
+        'save_data' => 'SaveData',
+        'subtotal_hidden_page_items' => 'SubtotalHiddenPageItems',
+        'print_drill' => 'PrintDrill',
+        'show_pivot_style_column_header' => 'ShowPivotStyleColumnHeader',
+        'base_fields' => 'BaseFields'
     ];
 
     /**
@@ -310,74 +310,74 @@ class PivotTable implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'alt_text_description' => 'setAltTextDescription',
-        'alt_text_title' => 'setAltTextTitle',
-        'auto_format_type' => 'setAutoFormatType',
-        'base_fields' => 'setBaseFields',
-        'column_fields' => 'setColumnFields',
-        'column_grand' => 'setColumnGrand',
-        'column_header_caption' => 'setColumnHeaderCaption',
-        'column_range' => 'setColumnRange',
-        'custom_list_sort' => 'setCustomListSort',
-        'data_body_range' => 'setDataBodyRange',
-        'data_field' => 'setDataField',
-        'data_fields' => 'setDataFields',
-        'data_source' => 'setDataSource',
-        'display_error_string' => 'setDisplayErrorString',
-        'display_immediate_items' => 'setDisplayImmediateItems',
-        'display_null_string' => 'setDisplayNullString',
-        'enable_data_value_editing' => 'setEnableDataValueEditing',
-        'enable_drilldown' => 'setEnableDrilldown',
-        'enable_field_dialog' => 'setEnableFieldDialog',
-        'enable_field_list' => 'setEnableFieldList',
-        'enable_wizard' => 'setEnableWizard',
-        'error_string' => 'setErrorString',
-        'field_list_sort_ascending' => 'setFieldListSortAscending',
-        'grand_total_name' => 'setGrandTotalName',
-        'has_blank_rows' => 'setHasBlankRows',
-        'indent' => 'setIndent',
-        'is_auto_format' => 'setIsAutoFormat',
-        'is_grid_drop_zones' => 'setIsGridDropZones',
-        'is_multiple_field_filters' => 'setIsMultipleFieldFilters',
-        'is_selected' => 'setIsSelected',
-        'item_print_titles' => 'setItemPrintTitles',
-        'manual_update' => 'setManualUpdate',
-        'merge_labels' => 'setMergeLabels',
-        'missing_items_limit' => 'setMissingItemsLimit',
-        'name' => 'setName',
-        'null_string' => 'setNullString',
-        'page_field_order' => 'setPageFieldOrder',
-        'page_fields' => 'setPageFields',
-        'page_field_wrap_count' => 'setPageFieldWrapCount',
-        'pivot_filters' => 'setPivotFilters',
-        'pivot_table_style_name' => 'setPivotTableStyleName',
-        'pivot_table_style_type' => 'setPivotTableStyleType',
-        'preserve_formatting' => 'setPreserveFormatting',
-        'print_drill' => 'setPrintDrill',
-        'print_titles' => 'setPrintTitles',
-        'refresh_data_flag' => 'setRefreshDataFlag',
-        'refresh_data_on_opening_file' => 'setRefreshDataOnOpeningFile',
-        'row_fields' => 'setRowFields',
-        'row_grand' => 'setRowGrand',
-        'row_header_caption' => 'setRowHeaderCaption',
-        'row_range' => 'setRowRange',
-        'save_data' => 'setSaveData',
-        'show_data_tips' => 'setShowDataTips',
-        'show_drill' => 'setShowDrill',
-        'show_empty_col' => 'setShowEmptyCol',
-        'show_empty_row' => 'setShowEmptyRow',
-        'show_member_property_tips' => 'setShowMemberPropertyTips',
-        'show_pivot_style_column_header' => 'setShowPivotStyleColumnHeader',
-        'show_pivot_style_column_stripes' => 'setShowPivotStyleColumnStripes',
         'show_pivot_style_last_column' => 'setShowPivotStyleLastColumn',
-        'show_pivot_style_row_header' => 'setShowPivotStyleRowHeader',
-        'show_pivot_style_row_stripes' => 'setShowPivotStyleRowStripes',
-        'show_row_header_caption' => 'setShowRowHeaderCaption',
-        'show_values_row' => 'setShowValuesRow',
-        'subtotal_hidden_page_items' => 'setSubtotalHiddenPageItems',
-        'table_range1' => 'setTableRange1',
+        'row_header_caption' => 'setRowHeaderCaption',
+        'column_range' => 'setColumnRange',
+        'refresh_data_on_opening_file' => 'setRefreshDataOnOpeningFile',
+        'page_fields' => 'setPageFields',
+        'data_fields' => 'setDataFields',
+        'data_body_range' => 'setDataBodyRange',
+        'show_drill' => 'setShowDrill',
+        'refresh_data_flag' => 'setRefreshDataFlag',
+        'column_grand' => 'setColumnGrand',
+        'pivot_table_style_name' => 'setPivotTableStyleName',
+        'pivot_filters' => 'setPivotFilters',
+        'null_string' => 'setNullString',
+        'item_print_titles' => 'setItemPrintTitles',
+        'display_null_string' => 'setDisplayNullString',
+        'enable_field_list' => 'setEnableFieldList',
         'table_range2' => 'setTableRange2',
-        'tag' => 'setTag'
+        'row_fields' => 'setRowFields',
+        'page_field_order' => 'setPageFieldOrder',
+        'auto_format_type' => 'setAutoFormatType',
+        'enable_data_value_editing' => 'setEnableDataValueEditing',
+        'show_pivot_style_row_header' => 'setShowPivotStyleRowHeader',
+        'is_grid_drop_zones' => 'setIsGridDropZones',
+        'enable_wizard' => 'setEnableWizard',
+        'show_member_property_tips' => 'setShowMemberPropertyTips',
+        'alt_text_description' => 'setAltTextDescription',
+        'show_data_tips' => 'setShowDataTips',
+        'print_titles' => 'setPrintTitles',
+        'table_range1' => 'setTableRange1',
+        'show_empty_row' => 'setShowEmptyRow',
+        'is_multiple_field_filters' => 'setIsMultipleFieldFilters',
+        'show_empty_col' => 'setShowEmptyCol',
+        'show_row_header_caption' => 'setShowRowHeaderCaption',
+        'has_blank_rows' => 'setHasBlankRows',
+        'data_source' => 'setDataSource',
+        'tag' => 'setTag',
+        'enable_drilldown' => 'setEnableDrilldown',
+        'indent' => 'setIndent',
+        'name' => 'setName',
+        'row_grand' => 'setRowGrand',
+        'grand_total_name' => 'setGrandTotalName',
+        'display_error_string' => 'setDisplayErrorString',
+        'row_range' => 'setRowRange',
+        'is_selected' => 'setIsSelected',
+        'column_fields' => 'setColumnFields',
+        'column_header_caption' => 'setColumnHeaderCaption',
+        'show_values_row' => 'setShowValuesRow',
+        'enable_field_dialog' => 'setEnableFieldDialog',
+        'missing_items_limit' => 'setMissingItemsLimit',
+        'show_pivot_style_row_stripes' => 'setShowPivotStyleRowStripes',
+        'manual_update' => 'setManualUpdate',
+        'is_auto_format' => 'setIsAutoFormat',
+        'display_immediate_items' => 'setDisplayImmediateItems',
+        'error_string' => 'setErrorString',
+        'custom_list_sort' => 'setCustomListSort',
+        'merge_labels' => 'setMergeLabels',
+        'page_field_wrap_count' => 'setPageFieldWrapCount',
+        'show_pivot_style_column_stripes' => 'setShowPivotStyleColumnStripes',
+        'field_list_sort_ascending' => 'setFieldListSortAscending',
+        'alt_text_title' => 'setAltTextTitle',
+        'preserve_formatting' => 'setPreserveFormatting',
+        'pivot_table_style_type' => 'setPivotTableStyleType',
+        'data_field' => 'setDataField',
+        'save_data' => 'setSaveData',
+        'subtotal_hidden_page_items' => 'setSubtotalHiddenPageItems',
+        'print_drill' => 'setPrintDrill',
+        'show_pivot_style_column_header' => 'setShowPivotStyleColumnHeader',
+        'base_fields' => 'setBaseFields'
     ];
 
     /**
@@ -387,74 +387,74 @@ class PivotTable implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'alt_text_description' => 'getAltTextDescription',
-        'alt_text_title' => 'getAltTextTitle',
-        'auto_format_type' => 'getAutoFormatType',
-        'base_fields' => 'getBaseFields',
-        'column_fields' => 'getColumnFields',
-        'column_grand' => 'getColumnGrand',
-        'column_header_caption' => 'getColumnHeaderCaption',
-        'column_range' => 'getColumnRange',
-        'custom_list_sort' => 'getCustomListSort',
-        'data_body_range' => 'getDataBodyRange',
-        'data_field' => 'getDataField',
-        'data_fields' => 'getDataFields',
-        'data_source' => 'getDataSource',
-        'display_error_string' => 'getDisplayErrorString',
-        'display_immediate_items' => 'getDisplayImmediateItems',
-        'display_null_string' => 'getDisplayNullString',
-        'enable_data_value_editing' => 'getEnableDataValueEditing',
-        'enable_drilldown' => 'getEnableDrilldown',
-        'enable_field_dialog' => 'getEnableFieldDialog',
-        'enable_field_list' => 'getEnableFieldList',
-        'enable_wizard' => 'getEnableWizard',
-        'error_string' => 'getErrorString',
-        'field_list_sort_ascending' => 'getFieldListSortAscending',
-        'grand_total_name' => 'getGrandTotalName',
-        'has_blank_rows' => 'getHasBlankRows',
-        'indent' => 'getIndent',
-        'is_auto_format' => 'getIsAutoFormat',
-        'is_grid_drop_zones' => 'getIsGridDropZones',
-        'is_multiple_field_filters' => 'getIsMultipleFieldFilters',
-        'is_selected' => 'getIsSelected',
-        'item_print_titles' => 'getItemPrintTitles',
-        'manual_update' => 'getManualUpdate',
-        'merge_labels' => 'getMergeLabels',
-        'missing_items_limit' => 'getMissingItemsLimit',
-        'name' => 'getName',
-        'null_string' => 'getNullString',
-        'page_field_order' => 'getPageFieldOrder',
-        'page_fields' => 'getPageFields',
-        'page_field_wrap_count' => 'getPageFieldWrapCount',
-        'pivot_filters' => 'getPivotFilters',
-        'pivot_table_style_name' => 'getPivotTableStyleName',
-        'pivot_table_style_type' => 'getPivotTableStyleType',
-        'preserve_formatting' => 'getPreserveFormatting',
-        'print_drill' => 'getPrintDrill',
-        'print_titles' => 'getPrintTitles',
-        'refresh_data_flag' => 'getRefreshDataFlag',
-        'refresh_data_on_opening_file' => 'getRefreshDataOnOpeningFile',
-        'row_fields' => 'getRowFields',
-        'row_grand' => 'getRowGrand',
-        'row_header_caption' => 'getRowHeaderCaption',
-        'row_range' => 'getRowRange',
-        'save_data' => 'getSaveData',
-        'show_data_tips' => 'getShowDataTips',
-        'show_drill' => 'getShowDrill',
-        'show_empty_col' => 'getShowEmptyCol',
-        'show_empty_row' => 'getShowEmptyRow',
-        'show_member_property_tips' => 'getShowMemberPropertyTips',
-        'show_pivot_style_column_header' => 'getShowPivotStyleColumnHeader',
-        'show_pivot_style_column_stripes' => 'getShowPivotStyleColumnStripes',
         'show_pivot_style_last_column' => 'getShowPivotStyleLastColumn',
-        'show_pivot_style_row_header' => 'getShowPivotStyleRowHeader',
-        'show_pivot_style_row_stripes' => 'getShowPivotStyleRowStripes',
-        'show_row_header_caption' => 'getShowRowHeaderCaption',
-        'show_values_row' => 'getShowValuesRow',
-        'subtotal_hidden_page_items' => 'getSubtotalHiddenPageItems',
-        'table_range1' => 'getTableRange1',
+        'row_header_caption' => 'getRowHeaderCaption',
+        'column_range' => 'getColumnRange',
+        'refresh_data_on_opening_file' => 'getRefreshDataOnOpeningFile',
+        'page_fields' => 'getPageFields',
+        'data_fields' => 'getDataFields',
+        'data_body_range' => 'getDataBodyRange',
+        'show_drill' => 'getShowDrill',
+        'refresh_data_flag' => 'getRefreshDataFlag',
+        'column_grand' => 'getColumnGrand',
+        'pivot_table_style_name' => 'getPivotTableStyleName',
+        'pivot_filters' => 'getPivotFilters',
+        'null_string' => 'getNullString',
+        'item_print_titles' => 'getItemPrintTitles',
+        'display_null_string' => 'getDisplayNullString',
+        'enable_field_list' => 'getEnableFieldList',
         'table_range2' => 'getTableRange2',
-        'tag' => 'getTag'
+        'row_fields' => 'getRowFields',
+        'page_field_order' => 'getPageFieldOrder',
+        'auto_format_type' => 'getAutoFormatType',
+        'enable_data_value_editing' => 'getEnableDataValueEditing',
+        'show_pivot_style_row_header' => 'getShowPivotStyleRowHeader',
+        'is_grid_drop_zones' => 'getIsGridDropZones',
+        'enable_wizard' => 'getEnableWizard',
+        'show_member_property_tips' => 'getShowMemberPropertyTips',
+        'alt_text_description' => 'getAltTextDescription',
+        'show_data_tips' => 'getShowDataTips',
+        'print_titles' => 'getPrintTitles',
+        'table_range1' => 'getTableRange1',
+        'show_empty_row' => 'getShowEmptyRow',
+        'is_multiple_field_filters' => 'getIsMultipleFieldFilters',
+        'show_empty_col' => 'getShowEmptyCol',
+        'show_row_header_caption' => 'getShowRowHeaderCaption',
+        'has_blank_rows' => 'getHasBlankRows',
+        'data_source' => 'getDataSource',
+        'tag' => 'getTag',
+        'enable_drilldown' => 'getEnableDrilldown',
+        'indent' => 'getIndent',
+        'name' => 'getName',
+        'row_grand' => 'getRowGrand',
+        'grand_total_name' => 'getGrandTotalName',
+        'display_error_string' => 'getDisplayErrorString',
+        'row_range' => 'getRowRange',
+        'is_selected' => 'getIsSelected',
+        'column_fields' => 'getColumnFields',
+        'column_header_caption' => 'getColumnHeaderCaption',
+        'show_values_row' => 'getShowValuesRow',
+        'enable_field_dialog' => 'getEnableFieldDialog',
+        'missing_items_limit' => 'getMissingItemsLimit',
+        'show_pivot_style_row_stripes' => 'getShowPivotStyleRowStripes',
+        'manual_update' => 'getManualUpdate',
+        'is_auto_format' => 'getIsAutoFormat',
+        'display_immediate_items' => 'getDisplayImmediateItems',
+        'error_string' => 'getErrorString',
+        'custom_list_sort' => 'getCustomListSort',
+        'merge_labels' => 'getMergeLabels',
+        'page_field_wrap_count' => 'getPageFieldWrapCount',
+        'show_pivot_style_column_stripes' => 'getShowPivotStyleColumnStripes',
+        'field_list_sort_ascending' => 'getFieldListSortAscending',
+        'alt_text_title' => 'getAltTextTitle',
+        'preserve_formatting' => 'getPreserveFormatting',
+        'pivot_table_style_type' => 'getPivotTableStyleType',
+        'data_field' => 'getDataField',
+        'save_data' => 'getSaveData',
+        'subtotal_hidden_page_items' => 'getSubtotalHiddenPageItems',
+        'print_drill' => 'getPrintDrill',
+        'show_pivot_style_column_header' => 'getShowPivotStyleColumnHeader',
+        'base_fields' => 'getBaseFields'
     ];
 
     /**
@@ -518,74 +518,74 @@ class PivotTable implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['alt_text_description'] = isset($data['alt_text_description']) ? $data['alt_text_description'] : null;
-        $this->container['alt_text_title'] = isset($data['alt_text_title']) ? $data['alt_text_title'] : null;
-        $this->container['auto_format_type'] = isset($data['auto_format_type']) ? $data['auto_format_type'] : null;
-        $this->container['base_fields'] = isset($data['base_fields']) ? $data['base_fields'] : null;
-        $this->container['column_fields'] = isset($data['column_fields']) ? $data['column_fields'] : null;
-        $this->container['column_grand'] = isset($data['column_grand']) ? $data['column_grand'] : null;
-        $this->container['column_header_caption'] = isset($data['column_header_caption']) ? $data['column_header_caption'] : null;
-        $this->container['column_range'] = isset($data['column_range']) ? $data['column_range'] : null;
-        $this->container['custom_list_sort'] = isset($data['custom_list_sort']) ? $data['custom_list_sort'] : null;
-        $this->container['data_body_range'] = isset($data['data_body_range']) ? $data['data_body_range'] : null;
-        $this->container['data_field'] = isset($data['data_field']) ? $data['data_field'] : null;
-        $this->container['data_fields'] = isset($data['data_fields']) ? $data['data_fields'] : null;
-        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
-        $this->container['display_error_string'] = isset($data['display_error_string']) ? $data['display_error_string'] : null;
-        $this->container['display_immediate_items'] = isset($data['display_immediate_items']) ? $data['display_immediate_items'] : null;
-        $this->container['display_null_string'] = isset($data['display_null_string']) ? $data['display_null_string'] : null;
-        $this->container['enable_data_value_editing'] = isset($data['enable_data_value_editing']) ? $data['enable_data_value_editing'] : null;
-        $this->container['enable_drilldown'] = isset($data['enable_drilldown']) ? $data['enable_drilldown'] : null;
-        $this->container['enable_field_dialog'] = isset($data['enable_field_dialog']) ? $data['enable_field_dialog'] : null;
-        $this->container['enable_field_list'] = isset($data['enable_field_list']) ? $data['enable_field_list'] : null;
-        $this->container['enable_wizard'] = isset($data['enable_wizard']) ? $data['enable_wizard'] : null;
-        $this->container['error_string'] = isset($data['error_string']) ? $data['error_string'] : null;
-        $this->container['field_list_sort_ascending'] = isset($data['field_list_sort_ascending']) ? $data['field_list_sort_ascending'] : null;
-        $this->container['grand_total_name'] = isset($data['grand_total_name']) ? $data['grand_total_name'] : null;
-        $this->container['has_blank_rows'] = isset($data['has_blank_rows']) ? $data['has_blank_rows'] : null;
-        $this->container['indent'] = isset($data['indent']) ? $data['indent'] : null;
-        $this->container['is_auto_format'] = isset($data['is_auto_format']) ? $data['is_auto_format'] : null;
-        $this->container['is_grid_drop_zones'] = isset($data['is_grid_drop_zones']) ? $data['is_grid_drop_zones'] : null;
-        $this->container['is_multiple_field_filters'] = isset($data['is_multiple_field_filters']) ? $data['is_multiple_field_filters'] : null;
-        $this->container['is_selected'] = isset($data['is_selected']) ? $data['is_selected'] : null;
-        $this->container['item_print_titles'] = isset($data['item_print_titles']) ? $data['item_print_titles'] : null;
-        $this->container['manual_update'] = isset($data['manual_update']) ? $data['manual_update'] : null;
-        $this->container['merge_labels'] = isset($data['merge_labels']) ? $data['merge_labels'] : null;
-        $this->container['missing_items_limit'] = isset($data['missing_items_limit']) ? $data['missing_items_limit'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['null_string'] = isset($data['null_string']) ? $data['null_string'] : null;
-        $this->container['page_field_order'] = isset($data['page_field_order']) ? $data['page_field_order'] : null;
-        $this->container['page_fields'] = isset($data['page_fields']) ? $data['page_fields'] : null;
-        $this->container['page_field_wrap_count'] = isset($data['page_field_wrap_count']) ? $data['page_field_wrap_count'] : null;
-        $this->container['pivot_filters'] = isset($data['pivot_filters']) ? $data['pivot_filters'] : null;
-        $this->container['pivot_table_style_name'] = isset($data['pivot_table_style_name']) ? $data['pivot_table_style_name'] : null;
-        $this->container['pivot_table_style_type'] = isset($data['pivot_table_style_type']) ? $data['pivot_table_style_type'] : null;
-        $this->container['preserve_formatting'] = isset($data['preserve_formatting']) ? $data['preserve_formatting'] : null;
-        $this->container['print_drill'] = isset($data['print_drill']) ? $data['print_drill'] : null;
-        $this->container['print_titles'] = isset($data['print_titles']) ? $data['print_titles'] : null;
-        $this->container['refresh_data_flag'] = isset($data['refresh_data_flag']) ? $data['refresh_data_flag'] : null;
-        $this->container['refresh_data_on_opening_file'] = isset($data['refresh_data_on_opening_file']) ? $data['refresh_data_on_opening_file'] : null;
-        $this->container['row_fields'] = isset($data['row_fields']) ? $data['row_fields'] : null;
-        $this->container['row_grand'] = isset($data['row_grand']) ? $data['row_grand'] : null;
-        $this->container['row_header_caption'] = isset($data['row_header_caption']) ? $data['row_header_caption'] : null;
-        $this->container['row_range'] = isset($data['row_range']) ? $data['row_range'] : null;
-        $this->container['save_data'] = isset($data['save_data']) ? $data['save_data'] : null;
-        $this->container['show_data_tips'] = isset($data['show_data_tips']) ? $data['show_data_tips'] : null;
-        $this->container['show_drill'] = isset($data['show_drill']) ? $data['show_drill'] : null;
-        $this->container['show_empty_col'] = isset($data['show_empty_col']) ? $data['show_empty_col'] : null;
-        $this->container['show_empty_row'] = isset($data['show_empty_row']) ? $data['show_empty_row'] : null;
-        $this->container['show_member_property_tips'] = isset($data['show_member_property_tips']) ? $data['show_member_property_tips'] : null;
-        $this->container['show_pivot_style_column_header'] = isset($data['show_pivot_style_column_header']) ? $data['show_pivot_style_column_header'] : null;
-        $this->container['show_pivot_style_column_stripes'] = isset($data['show_pivot_style_column_stripes']) ? $data['show_pivot_style_column_stripes'] : null;
         $this->container['show_pivot_style_last_column'] = isset($data['show_pivot_style_last_column']) ? $data['show_pivot_style_last_column'] : null;
-        $this->container['show_pivot_style_row_header'] = isset($data['show_pivot_style_row_header']) ? $data['show_pivot_style_row_header'] : null;
-        $this->container['show_pivot_style_row_stripes'] = isset($data['show_pivot_style_row_stripes']) ? $data['show_pivot_style_row_stripes'] : null;
-        $this->container['show_row_header_caption'] = isset($data['show_row_header_caption']) ? $data['show_row_header_caption'] : null;
-        $this->container['show_values_row'] = isset($data['show_values_row']) ? $data['show_values_row'] : null;
-        $this->container['subtotal_hidden_page_items'] = isset($data['subtotal_hidden_page_items']) ? $data['subtotal_hidden_page_items'] : null;
-        $this->container['table_range1'] = isset($data['table_range1']) ? $data['table_range1'] : null;
+        $this->container['row_header_caption'] = isset($data['row_header_caption']) ? $data['row_header_caption'] : null;
+        $this->container['column_range'] = isset($data['column_range']) ? $data['column_range'] : null;
+        $this->container['refresh_data_on_opening_file'] = isset($data['refresh_data_on_opening_file']) ? $data['refresh_data_on_opening_file'] : null;
+        $this->container['page_fields'] = isset($data['page_fields']) ? $data['page_fields'] : null;
+        $this->container['data_fields'] = isset($data['data_fields']) ? $data['data_fields'] : null;
+        $this->container['data_body_range'] = isset($data['data_body_range']) ? $data['data_body_range'] : null;
+        $this->container['show_drill'] = isset($data['show_drill']) ? $data['show_drill'] : null;
+        $this->container['refresh_data_flag'] = isset($data['refresh_data_flag']) ? $data['refresh_data_flag'] : null;
+        $this->container['column_grand'] = isset($data['column_grand']) ? $data['column_grand'] : null;
+        $this->container['pivot_table_style_name'] = isset($data['pivot_table_style_name']) ? $data['pivot_table_style_name'] : null;
+        $this->container['pivot_filters'] = isset($data['pivot_filters']) ? $data['pivot_filters'] : null;
+        $this->container['null_string'] = isset($data['null_string']) ? $data['null_string'] : null;
+        $this->container['item_print_titles'] = isset($data['item_print_titles']) ? $data['item_print_titles'] : null;
+        $this->container['display_null_string'] = isset($data['display_null_string']) ? $data['display_null_string'] : null;
+        $this->container['enable_field_list'] = isset($data['enable_field_list']) ? $data['enable_field_list'] : null;
         $this->container['table_range2'] = isset($data['table_range2']) ? $data['table_range2'] : null;
+        $this->container['row_fields'] = isset($data['row_fields']) ? $data['row_fields'] : null;
+        $this->container['page_field_order'] = isset($data['page_field_order']) ? $data['page_field_order'] : null;
+        $this->container['auto_format_type'] = isset($data['auto_format_type']) ? $data['auto_format_type'] : null;
+        $this->container['enable_data_value_editing'] = isset($data['enable_data_value_editing']) ? $data['enable_data_value_editing'] : null;
+        $this->container['show_pivot_style_row_header'] = isset($data['show_pivot_style_row_header']) ? $data['show_pivot_style_row_header'] : null;
+        $this->container['is_grid_drop_zones'] = isset($data['is_grid_drop_zones']) ? $data['is_grid_drop_zones'] : null;
+        $this->container['enable_wizard'] = isset($data['enable_wizard']) ? $data['enable_wizard'] : null;
+        $this->container['show_member_property_tips'] = isset($data['show_member_property_tips']) ? $data['show_member_property_tips'] : null;
+        $this->container['alt_text_description'] = isset($data['alt_text_description']) ? $data['alt_text_description'] : null;
+        $this->container['show_data_tips'] = isset($data['show_data_tips']) ? $data['show_data_tips'] : null;
+        $this->container['print_titles'] = isset($data['print_titles']) ? $data['print_titles'] : null;
+        $this->container['table_range1'] = isset($data['table_range1']) ? $data['table_range1'] : null;
+        $this->container['show_empty_row'] = isset($data['show_empty_row']) ? $data['show_empty_row'] : null;
+        $this->container['is_multiple_field_filters'] = isset($data['is_multiple_field_filters']) ? $data['is_multiple_field_filters'] : null;
+        $this->container['show_empty_col'] = isset($data['show_empty_col']) ? $data['show_empty_col'] : null;
+        $this->container['show_row_header_caption'] = isset($data['show_row_header_caption']) ? $data['show_row_header_caption'] : null;
+        $this->container['has_blank_rows'] = isset($data['has_blank_rows']) ? $data['has_blank_rows'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
+        $this->container['enable_drilldown'] = isset($data['enable_drilldown']) ? $data['enable_drilldown'] : null;
+        $this->container['indent'] = isset($data['indent']) ? $data['indent'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['row_grand'] = isset($data['row_grand']) ? $data['row_grand'] : null;
+        $this->container['grand_total_name'] = isset($data['grand_total_name']) ? $data['grand_total_name'] : null;
+        $this->container['display_error_string'] = isset($data['display_error_string']) ? $data['display_error_string'] : null;
+        $this->container['row_range'] = isset($data['row_range']) ? $data['row_range'] : null;
+        $this->container['is_selected'] = isset($data['is_selected']) ? $data['is_selected'] : null;
+        $this->container['column_fields'] = isset($data['column_fields']) ? $data['column_fields'] : null;
+        $this->container['column_header_caption'] = isset($data['column_header_caption']) ? $data['column_header_caption'] : null;
+        $this->container['show_values_row'] = isset($data['show_values_row']) ? $data['show_values_row'] : null;
+        $this->container['enable_field_dialog'] = isset($data['enable_field_dialog']) ? $data['enable_field_dialog'] : null;
+        $this->container['missing_items_limit'] = isset($data['missing_items_limit']) ? $data['missing_items_limit'] : null;
+        $this->container['show_pivot_style_row_stripes'] = isset($data['show_pivot_style_row_stripes']) ? $data['show_pivot_style_row_stripes'] : null;
+        $this->container['manual_update'] = isset($data['manual_update']) ? $data['manual_update'] : null;
+        $this->container['is_auto_format'] = isset($data['is_auto_format']) ? $data['is_auto_format'] : null;
+        $this->container['display_immediate_items'] = isset($data['display_immediate_items']) ? $data['display_immediate_items'] : null;
+        $this->container['error_string'] = isset($data['error_string']) ? $data['error_string'] : null;
+        $this->container['custom_list_sort'] = isset($data['custom_list_sort']) ? $data['custom_list_sort'] : null;
+        $this->container['merge_labels'] = isset($data['merge_labels']) ? $data['merge_labels'] : null;
+        $this->container['page_field_wrap_count'] = isset($data['page_field_wrap_count']) ? $data['page_field_wrap_count'] : null;
+        $this->container['show_pivot_style_column_stripes'] = isset($data['show_pivot_style_column_stripes']) ? $data['show_pivot_style_column_stripes'] : null;
+        $this->container['field_list_sort_ascending'] = isset($data['field_list_sort_ascending']) ? $data['field_list_sort_ascending'] : null;
+        $this->container['alt_text_title'] = isset($data['alt_text_title']) ? $data['alt_text_title'] : null;
+        $this->container['preserve_formatting'] = isset($data['preserve_formatting']) ? $data['preserve_formatting'] : null;
+        $this->container['pivot_table_style_type'] = isset($data['pivot_table_style_type']) ? $data['pivot_table_style_type'] : null;
+        $this->container['data_field'] = isset($data['data_field']) ? $data['data_field'] : null;
+        $this->container['save_data'] = isset($data['save_data']) ? $data['save_data'] : null;
+        $this->container['subtotal_hidden_page_items'] = isset($data['subtotal_hidden_page_items']) ? $data['subtotal_hidden_page_items'] : null;
+        $this->container['print_drill'] = isset($data['print_drill']) ? $data['print_drill'] : null;
+        $this->container['show_pivot_style_column_header'] = isset($data['show_pivot_style_column_header']) ? $data['show_pivot_style_column_header'] : null;
+        $this->container['base_fields'] = isset($data['base_fields']) ? $data['base_fields'] : null;
     }
 
     /**
@@ -638,1177 +638,25 @@ class PivotTable implements  ArrayAccess
     }
 
     /**
-     * Gets alt_text_description
-     *
-     * @return string
-     */
-    public function getAltTextDescription()
-    {
-        return $this->container['alt_text_description'];
-    }
-
-    /**
-     * Sets alt_text_description
-     *
-     * @param string $alt_text_description alt_text_description
-     *
-     * @return $this
-     */
-    public function setAltTextDescription($alt_text_description)
-    {
-        $this->container['alt_text_description'] = $alt_text_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets alt_text_title
-     *
-     * @return string
-     */
-    public function getAltTextTitle()
-    {
-        return $this->container['alt_text_title'];
-    }
-
-    /**
-     * Sets alt_text_title
-     *
-     * @param string $alt_text_title alt_text_title
-     *
-     * @return $this
-     */
-    public function setAltTextTitle($alt_text_title)
-    {
-        $this->container['alt_text_title'] = $alt_text_title;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_format_type
-     *
-     * @return string
-     */
-    public function getAutoFormatType()
-    {
-        return $this->container['auto_format_type'];
-    }
-
-    /**
-     * Sets auto_format_type
-     *
-     * @param string $auto_format_type auto_format_type
-     *
-     * @return $this
-     */
-    public function setAutoFormatType($auto_format_type)
-    {
-        $this->container['auto_format_type'] = $auto_format_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets base_fields
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotField[]
-     */
-    public function getBaseFields()
-    {
-        return $this->container['base_fields'];
-    }
-
-    /**
-     * Sets base_fields
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotField[] $base_fields base_fields
-     *
-     * @return $this
-     */
-    public function setBaseFields($base_fields)
-    {
-        $this->container['base_fields'] = $base_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets column_fields
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotField[]
-     */
-    public function getColumnFields()
-    {
-        return $this->container['column_fields'];
-    }
-
-    /**
-     * Sets column_fields
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotField[] $column_fields column_fields
-     *
-     * @return $this
-     */
-    public function setColumnFields($column_fields)
-    {
-        $this->container['column_fields'] = $column_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets column_grand
+     * Gets show_pivot_style_last_column
      *
      * @return bool
      */
-    public function getColumnGrand()
+    public function getShowPivotStyleLastColumn()
     {
-        return $this->container['column_grand'];
+        return $this->container['show_pivot_style_last_column'];
     }
 
     /**
-     * Sets column_grand
+     * Sets show_pivot_style_last_column
      *
-     * @param bool $column_grand column_grand
-     *
-     * @return $this
-     */
-    public function setColumnGrand($column_grand)
-    {
-        $this->container['column_grand'] = $column_grand;
-
-        return $this;
-    }
-
-    /**
-     * Gets column_header_caption
-     *
-     * @return string
-     */
-    public function getColumnHeaderCaption()
-    {
-        return $this->container['column_header_caption'];
-    }
-
-    /**
-     * Sets column_header_caption
-     *
-     * @param string $column_header_caption column_header_caption
+     * @param bool $show_pivot_style_last_column show_pivot_style_last_column
      *
      * @return $this
      */
-    public function setColumnHeaderCaption($column_header_caption)
+    public function setShowPivotStyleLastColumn($show_pivot_style_last_column)
     {
-        $this->container['column_header_caption'] = $column_header_caption;
-
-        return $this;
-    }
-
-    /**
-     * Gets column_range
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellArea
-     */
-    public function getColumnRange()
-    {
-        return $this->container['column_range'];
-    }
-
-    /**
-     * Sets column_range
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellArea $column_range column_range
-     *
-     * @return $this
-     */
-    public function setColumnRange($column_range)
-    {
-        $this->container['column_range'] = $column_range;
-
-        return $this;
-    }
-
-    /**
-     * Gets custom_list_sort
-     *
-     * @return bool
-     */
-    public function getCustomListSort()
-    {
-        return $this->container['custom_list_sort'];
-    }
-
-    /**
-     * Sets custom_list_sort
-     *
-     * @param bool $custom_list_sort custom_list_sort
-     *
-     * @return $this
-     */
-    public function setCustomListSort($custom_list_sort)
-    {
-        $this->container['custom_list_sort'] = $custom_list_sort;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_body_range
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellArea
-     */
-    public function getDataBodyRange()
-    {
-        return $this->container['data_body_range'];
-    }
-
-    /**
-     * Sets data_body_range
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellArea $data_body_range data_body_range
-     *
-     * @return $this
-     */
-    public function setDataBodyRange($data_body_range)
-    {
-        $this->container['data_body_range'] = $data_body_range;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_field
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotField
-     */
-    public function getDataField()
-    {
-        return $this->container['data_field'];
-    }
-
-    /**
-     * Sets data_field
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotField $data_field data_field
-     *
-     * @return $this
-     */
-    public function setDataField($data_field)
-    {
-        $this->container['data_field'] = $data_field;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_fields
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotField[]
-     */
-    public function getDataFields()
-    {
-        return $this->container['data_fields'];
-    }
-
-    /**
-     * Sets data_fields
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotField[] $data_fields data_fields
-     *
-     * @return $this
-     */
-    public function setDataFields($data_fields)
-    {
-        $this->container['data_fields'] = $data_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_source
-     *
-     * @return string[]
-     */
-    public function getDataSource()
-    {
-        return $this->container['data_source'];
-    }
-
-    /**
-     * Sets data_source
-     *
-     * @param string[] $data_source data_source
-     *
-     * @return $this
-     */
-    public function setDataSource($data_source)
-    {
-        $this->container['data_source'] = $data_source;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_error_string
-     *
-     * @return bool
-     */
-    public function getDisplayErrorString()
-    {
-        return $this->container['display_error_string'];
-    }
-
-    /**
-     * Sets display_error_string
-     *
-     * @param bool $display_error_string display_error_string
-     *
-     * @return $this
-     */
-    public function setDisplayErrorString($display_error_string)
-    {
-        $this->container['display_error_string'] = $display_error_string;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_immediate_items
-     *
-     * @return bool
-     */
-    public function getDisplayImmediateItems()
-    {
-        return $this->container['display_immediate_items'];
-    }
-
-    /**
-     * Sets display_immediate_items
-     *
-     * @param bool $display_immediate_items display_immediate_items
-     *
-     * @return $this
-     */
-    public function setDisplayImmediateItems($display_immediate_items)
-    {
-        $this->container['display_immediate_items'] = $display_immediate_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_null_string
-     *
-     * @return bool
-     */
-    public function getDisplayNullString()
-    {
-        return $this->container['display_null_string'];
-    }
-
-    /**
-     * Sets display_null_string
-     *
-     * @param bool $display_null_string display_null_string
-     *
-     * @return $this
-     */
-    public function setDisplayNullString($display_null_string)
-    {
-        $this->container['display_null_string'] = $display_null_string;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_data_value_editing
-     *
-     * @return bool
-     */
-    public function getEnableDataValueEditing()
-    {
-        return $this->container['enable_data_value_editing'];
-    }
-
-    /**
-     * Sets enable_data_value_editing
-     *
-     * @param bool $enable_data_value_editing enable_data_value_editing
-     *
-     * @return $this
-     */
-    public function setEnableDataValueEditing($enable_data_value_editing)
-    {
-        $this->container['enable_data_value_editing'] = $enable_data_value_editing;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_drilldown
-     *
-     * @return bool
-     */
-    public function getEnableDrilldown()
-    {
-        return $this->container['enable_drilldown'];
-    }
-
-    /**
-     * Sets enable_drilldown
-     *
-     * @param bool $enable_drilldown enable_drilldown
-     *
-     * @return $this
-     */
-    public function setEnableDrilldown($enable_drilldown)
-    {
-        $this->container['enable_drilldown'] = $enable_drilldown;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_field_dialog
-     *
-     * @return bool
-     */
-    public function getEnableFieldDialog()
-    {
-        return $this->container['enable_field_dialog'];
-    }
-
-    /**
-     * Sets enable_field_dialog
-     *
-     * @param bool $enable_field_dialog enable_field_dialog
-     *
-     * @return $this
-     */
-    public function setEnableFieldDialog($enable_field_dialog)
-    {
-        $this->container['enable_field_dialog'] = $enable_field_dialog;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_field_list
-     *
-     * @return bool
-     */
-    public function getEnableFieldList()
-    {
-        return $this->container['enable_field_list'];
-    }
-
-    /**
-     * Sets enable_field_list
-     *
-     * @param bool $enable_field_list enable_field_list
-     *
-     * @return $this
-     */
-    public function setEnableFieldList($enable_field_list)
-    {
-        $this->container['enable_field_list'] = $enable_field_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_wizard
-     *
-     * @return bool
-     */
-    public function getEnableWizard()
-    {
-        return $this->container['enable_wizard'];
-    }
-
-    /**
-     * Sets enable_wizard
-     *
-     * @param bool $enable_wizard enable_wizard
-     *
-     * @return $this
-     */
-    public function setEnableWizard($enable_wizard)
-    {
-        $this->container['enable_wizard'] = $enable_wizard;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_string
-     *
-     * @return string
-     */
-    public function getErrorString()
-    {
-        return $this->container['error_string'];
-    }
-
-    /**
-     * Sets error_string
-     *
-     * @param string $error_string error_string
-     *
-     * @return $this
-     */
-    public function setErrorString($error_string)
-    {
-        $this->container['error_string'] = $error_string;
-
-        return $this;
-    }
-
-    /**
-     * Gets field_list_sort_ascending
-     *
-     * @return bool
-     */
-    public function getFieldListSortAscending()
-    {
-        return $this->container['field_list_sort_ascending'];
-    }
-
-    /**
-     * Sets field_list_sort_ascending
-     *
-     * @param bool $field_list_sort_ascending field_list_sort_ascending
-     *
-     * @return $this
-     */
-    public function setFieldListSortAscending($field_list_sort_ascending)
-    {
-        $this->container['field_list_sort_ascending'] = $field_list_sort_ascending;
-
-        return $this;
-    }
-
-    /**
-     * Gets grand_total_name
-     *
-     * @return string
-     */
-    public function getGrandTotalName()
-    {
-        return $this->container['grand_total_name'];
-    }
-
-    /**
-     * Sets grand_total_name
-     *
-     * @param string $grand_total_name grand_total_name
-     *
-     * @return $this
-     */
-    public function setGrandTotalName($grand_total_name)
-    {
-        $this->container['grand_total_name'] = $grand_total_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets has_blank_rows
-     *
-     * @return bool
-     */
-    public function getHasBlankRows()
-    {
-        return $this->container['has_blank_rows'];
-    }
-
-    /**
-     * Sets has_blank_rows
-     *
-     * @param bool $has_blank_rows has_blank_rows
-     *
-     * @return $this
-     */
-    public function setHasBlankRows($has_blank_rows)
-    {
-        $this->container['has_blank_rows'] = $has_blank_rows;
-
-        return $this;
-    }
-
-    /**
-     * Gets indent
-     *
-     * @return int
-     */
-    public function getIndent()
-    {
-        return $this->container['indent'];
-    }
-
-    /**
-     * Sets indent
-     *
-     * @param int $indent indent
-     *
-     * @return $this
-     */
-    public function setIndent($indent)
-    {
-        $this->container['indent'] = $indent;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_auto_format
-     *
-     * @return bool
-     */
-    public function getIsAutoFormat()
-    {
-        return $this->container['is_auto_format'];
-    }
-
-    /**
-     * Sets is_auto_format
-     *
-     * @param bool $is_auto_format is_auto_format
-     *
-     * @return $this
-     */
-    public function setIsAutoFormat($is_auto_format)
-    {
-        $this->container['is_auto_format'] = $is_auto_format;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_grid_drop_zones
-     *
-     * @return bool
-     */
-    public function getIsGridDropZones()
-    {
-        return $this->container['is_grid_drop_zones'];
-    }
-
-    /**
-     * Sets is_grid_drop_zones
-     *
-     * @param bool $is_grid_drop_zones is_grid_drop_zones
-     *
-     * @return $this
-     */
-    public function setIsGridDropZones($is_grid_drop_zones)
-    {
-        $this->container['is_grid_drop_zones'] = $is_grid_drop_zones;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_multiple_field_filters
-     *
-     * @return bool
-     */
-    public function getIsMultipleFieldFilters()
-    {
-        return $this->container['is_multiple_field_filters'];
-    }
-
-    /**
-     * Sets is_multiple_field_filters
-     *
-     * @param bool $is_multiple_field_filters is_multiple_field_filters
-     *
-     * @return $this
-     */
-    public function setIsMultipleFieldFilters($is_multiple_field_filters)
-    {
-        $this->container['is_multiple_field_filters'] = $is_multiple_field_filters;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_selected
-     *
-     * @return bool
-     */
-    public function getIsSelected()
-    {
-        return $this->container['is_selected'];
-    }
-
-    /**
-     * Sets is_selected
-     *
-     * @param bool $is_selected is_selected
-     *
-     * @return $this
-     */
-    public function setIsSelected($is_selected)
-    {
-        $this->container['is_selected'] = $is_selected;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_print_titles
-     *
-     * @return bool
-     */
-    public function getItemPrintTitles()
-    {
-        return $this->container['item_print_titles'];
-    }
-
-    /**
-     * Sets item_print_titles
-     *
-     * @param bool $item_print_titles item_print_titles
-     *
-     * @return $this
-     */
-    public function setItemPrintTitles($item_print_titles)
-    {
-        $this->container['item_print_titles'] = $item_print_titles;
-
-        return $this;
-    }
-
-    /**
-     * Gets manual_update
-     *
-     * @return bool
-     */
-    public function getManualUpdate()
-    {
-        return $this->container['manual_update'];
-    }
-
-    /**
-     * Sets manual_update
-     *
-     * @param bool $manual_update manual_update
-     *
-     * @return $this
-     */
-    public function setManualUpdate($manual_update)
-    {
-        $this->container['manual_update'] = $manual_update;
-
-        return $this;
-    }
-
-    /**
-     * Gets merge_labels
-     *
-     * @return bool
-     */
-    public function getMergeLabels()
-    {
-        return $this->container['merge_labels'];
-    }
-
-    /**
-     * Sets merge_labels
-     *
-     * @param bool $merge_labels merge_labels
-     *
-     * @return $this
-     */
-    public function setMergeLabels($merge_labels)
-    {
-        $this->container['merge_labels'] = $merge_labels;
-
-        return $this;
-    }
-
-    /**
-     * Gets missing_items_limit
-     *
-     * @return string
-     */
-    public function getMissingItemsLimit()
-    {
-        return $this->container['missing_items_limit'];
-    }
-
-    /**
-     * Sets missing_items_limit
-     *
-     * @param string $missing_items_limit missing_items_limit
-     *
-     * @return $this
-     */
-    public function setMissingItemsLimit($missing_items_limit)
-    {
-        $this->container['missing_items_limit'] = $missing_items_limit;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets null_string
-     *
-     * @return string
-     */
-    public function getNullString()
-    {
-        return $this->container['null_string'];
-    }
-
-    /**
-     * Sets null_string
-     *
-     * @param string $null_string null_string
-     *
-     * @return $this
-     */
-    public function setNullString($null_string)
-    {
-        $this->container['null_string'] = $null_string;
-
-        return $this;
-    }
-
-    /**
-     * Gets page_field_order
-     *
-     * @return string
-     */
-    public function getPageFieldOrder()
-    {
-        return $this->container['page_field_order'];
-    }
-
-    /**
-     * Sets page_field_order
-     *
-     * @param string $page_field_order page_field_order
-     *
-     * @return $this
-     */
-    public function setPageFieldOrder($page_field_order)
-    {
-        $this->container['page_field_order'] = $page_field_order;
-
-        return $this;
-    }
-
-    /**
-     * Gets page_fields
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotField[]
-     */
-    public function getPageFields()
-    {
-        return $this->container['page_fields'];
-    }
-
-    /**
-     * Sets page_fields
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotField[] $page_fields page_fields
-     *
-     * @return $this
-     */
-    public function setPageFields($page_fields)
-    {
-        $this->container['page_fields'] = $page_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets page_field_wrap_count
-     *
-     * @return int
-     */
-    public function getPageFieldWrapCount()
-    {
-        return $this->container['page_field_wrap_count'];
-    }
-
-    /**
-     * Sets page_field_wrap_count
-     *
-     * @param int $page_field_wrap_count page_field_wrap_count
-     *
-     * @return $this
-     */
-    public function setPageFieldWrapCount($page_field_wrap_count)
-    {
-        $this->container['page_field_wrap_count'] = $page_field_wrap_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets pivot_filters
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotFilter[]
-     */
-    public function getPivotFilters()
-    {
-        return $this->container['pivot_filters'];
-    }
-
-    /**
-     * Sets pivot_filters
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotFilter[] $pivot_filters pivot_filters
-     *
-     * @return $this
-     */
-    public function setPivotFilters($pivot_filters)
-    {
-        $this->container['pivot_filters'] = $pivot_filters;
-
-        return $this;
-    }
-
-    /**
-     * Gets pivot_table_style_name
-     *
-     * @return string
-     */
-    public function getPivotTableStyleName()
-    {
-        return $this->container['pivot_table_style_name'];
-    }
-
-    /**
-     * Sets pivot_table_style_name
-     *
-     * @param string $pivot_table_style_name pivot_table_style_name
-     *
-     * @return $this
-     */
-    public function setPivotTableStyleName($pivot_table_style_name)
-    {
-        $this->container['pivot_table_style_name'] = $pivot_table_style_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets pivot_table_style_type
-     *
-     * @return string
-     */
-    public function getPivotTableStyleType()
-    {
-        return $this->container['pivot_table_style_type'];
-    }
-
-    /**
-     * Sets pivot_table_style_type
-     *
-     * @param string $pivot_table_style_type pivot_table_style_type
-     *
-     * @return $this
-     */
-    public function setPivotTableStyleType($pivot_table_style_type)
-    {
-        $this->container['pivot_table_style_type'] = $pivot_table_style_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets preserve_formatting
-     *
-     * @return bool
-     */
-    public function getPreserveFormatting()
-    {
-        return $this->container['preserve_formatting'];
-    }
-
-    /**
-     * Sets preserve_formatting
-     *
-     * @param bool $preserve_formatting preserve_formatting
-     *
-     * @return $this
-     */
-    public function setPreserveFormatting($preserve_formatting)
-    {
-        $this->container['preserve_formatting'] = $preserve_formatting;
-
-        return $this;
-    }
-
-    /**
-     * Gets print_drill
-     *
-     * @return bool
-     */
-    public function getPrintDrill()
-    {
-        return $this->container['print_drill'];
-    }
-
-    /**
-     * Sets print_drill
-     *
-     * @param bool $print_drill print_drill
-     *
-     * @return $this
-     */
-    public function setPrintDrill($print_drill)
-    {
-        $this->container['print_drill'] = $print_drill;
-
-        return $this;
-    }
-
-    /**
-     * Gets print_titles
-     *
-     * @return bool
-     */
-    public function getPrintTitles()
-    {
-        return $this->container['print_titles'];
-    }
-
-    /**
-     * Sets print_titles
-     *
-     * @param bool $print_titles print_titles
-     *
-     * @return $this
-     */
-    public function setPrintTitles($print_titles)
-    {
-        $this->container['print_titles'] = $print_titles;
-
-        return $this;
-    }
-
-    /**
-     * Gets refresh_data_flag
-     *
-     * @return bool
-     */
-    public function getRefreshDataFlag()
-    {
-        return $this->container['refresh_data_flag'];
-    }
-
-    /**
-     * Sets refresh_data_flag
-     *
-     * @param bool $refresh_data_flag refresh_data_flag
-     *
-     * @return $this
-     */
-    public function setRefreshDataFlag($refresh_data_flag)
-    {
-        $this->container['refresh_data_flag'] = $refresh_data_flag;
-
-        return $this;
-    }
-
-    /**
-     * Gets refresh_data_on_opening_file
-     *
-     * @return bool
-     */
-    public function getRefreshDataOnOpeningFile()
-    {
-        return $this->container['refresh_data_on_opening_file'];
-    }
-
-    /**
-     * Sets refresh_data_on_opening_file
-     *
-     * @param bool $refresh_data_on_opening_file refresh_data_on_opening_file
-     *
-     * @return $this
-     */
-    public function setRefreshDataOnOpeningFile($refresh_data_on_opening_file)
-    {
-        $this->container['refresh_data_on_opening_file'] = $refresh_data_on_opening_file;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_fields
-     *
-     * @return \Aspose\Cells\Cloud\Model\PivotField[]
-     */
-    public function getRowFields()
-    {
-        return $this->container['row_fields'];
-    }
-
-    /**
-     * Sets row_fields
-     *
-     * @param \Aspose\Cells\Cloud\Model\PivotField[] $row_fields row_fields
-     *
-     * @return $this
-     */
-    public function setRowFields($row_fields)
-    {
-        $this->container['row_fields'] = $row_fields;
-
-        return $this;
-    }
-
-    /**
-     * Gets row_grand
-     *
-     * @return bool
-     */
-    public function getRowGrand()
-    {
-        return $this->container['row_grand'];
-    }
-
-    /**
-     * Sets row_grand
-     *
-     * @param bool $row_grand row_grand
-     *
-     * @return $this
-     */
-    public function setRowGrand($row_grand)
-    {
-        $this->container['row_grand'] = $row_grand;
+        $this->container['show_pivot_style_last_column'] = $show_pivot_style_last_column;
 
         return $this;
     }
@@ -1838,73 +686,121 @@ class PivotTable implements  ArrayAccess
     }
 
     /**
-     * Gets row_range
+     * Gets column_range
      *
      * @return \Aspose\Cells\Cloud\Model\CellArea
      */
-    public function getRowRange()
+    public function getColumnRange()
     {
-        return $this->container['row_range'];
+        return $this->container['column_range'];
     }
 
     /**
-     * Sets row_range
+     * Sets column_range
      *
-     * @param \Aspose\Cells\Cloud\Model\CellArea $row_range row_range
+     * @param \Aspose\Cells\Cloud\Model\CellArea $column_range column_range
      *
      * @return $this
      */
-    public function setRowRange($row_range)
+    public function setColumnRange($column_range)
     {
-        $this->container['row_range'] = $row_range;
+        $this->container['column_range'] = $column_range;
 
         return $this;
     }
 
     /**
-     * Gets save_data
+     * Gets refresh_data_on_opening_file
      *
      * @return bool
      */
-    public function getSaveData()
+    public function getRefreshDataOnOpeningFile()
     {
-        return $this->container['save_data'];
+        return $this->container['refresh_data_on_opening_file'];
     }
 
     /**
-     * Sets save_data
+     * Sets refresh_data_on_opening_file
      *
-     * @param bool $save_data save_data
+     * @param bool $refresh_data_on_opening_file refresh_data_on_opening_file
      *
      * @return $this
      */
-    public function setSaveData($save_data)
+    public function setRefreshDataOnOpeningFile($refresh_data_on_opening_file)
     {
-        $this->container['save_data'] = $save_data;
+        $this->container['refresh_data_on_opening_file'] = $refresh_data_on_opening_file;
 
         return $this;
     }
 
     /**
-     * Gets show_data_tips
+     * Gets page_fields
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\PivotField[]
      */
-    public function getShowDataTips()
+    public function getPageFields()
     {
-        return $this->container['show_data_tips'];
+        return $this->container['page_fields'];
     }
 
     /**
-     * Sets show_data_tips
+     * Sets page_fields
      *
-     * @param bool $show_data_tips show_data_tips
+     * @param \Aspose\Cells\Cloud\Model\PivotField[] $page_fields page_fields
      *
      * @return $this
      */
-    public function setShowDataTips($show_data_tips)
+    public function setPageFields($page_fields)
     {
-        $this->container['show_data_tips'] = $show_data_tips;
+        $this->container['page_fields'] = $page_fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_fields
+     *
+     * @return \Aspose\Cells\Cloud\Model\PivotField[]
+     */
+    public function getDataFields()
+    {
+        return $this->container['data_fields'];
+    }
+
+    /**
+     * Sets data_fields
+     *
+     * @param \Aspose\Cells\Cloud\Model\PivotField[] $data_fields data_fields
+     *
+     * @return $this
+     */
+    public function setDataFields($data_fields)
+    {
+        $this->container['data_fields'] = $data_fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_body_range
+     *
+     * @return \Aspose\Cells\Cloud\Model\CellArea
+     */
+    public function getDataBodyRange()
+    {
+        return $this->container['data_body_range'];
+    }
+
+    /**
+     * Sets data_body_range
+     *
+     * @param \Aspose\Cells\Cloud\Model\CellArea $data_body_range data_body_range
+     *
+     * @return $this
+     */
+    public function setDataBodyRange($data_body_range)
+    {
+        $this->container['data_body_range'] = $data_body_range;
 
         return $this;
     }
@@ -1934,289 +830,193 @@ class PivotTable implements  ArrayAccess
     }
 
     /**
-     * Gets show_empty_col
+     * Gets refresh_data_flag
      *
      * @return bool
      */
-    public function getShowEmptyCol()
+    public function getRefreshDataFlag()
     {
-        return $this->container['show_empty_col'];
+        return $this->container['refresh_data_flag'];
     }
 
     /**
-     * Sets show_empty_col
+     * Sets refresh_data_flag
      *
-     * @param bool $show_empty_col show_empty_col
+     * @param bool $refresh_data_flag refresh_data_flag
      *
      * @return $this
      */
-    public function setShowEmptyCol($show_empty_col)
+    public function setRefreshDataFlag($refresh_data_flag)
     {
-        $this->container['show_empty_col'] = $show_empty_col;
+        $this->container['refresh_data_flag'] = $refresh_data_flag;
 
         return $this;
     }
 
     /**
-     * Gets show_empty_row
+     * Gets column_grand
      *
      * @return bool
      */
-    public function getShowEmptyRow()
+    public function getColumnGrand()
     {
-        return $this->container['show_empty_row'];
+        return $this->container['column_grand'];
     }
 
     /**
-     * Sets show_empty_row
+     * Sets column_grand
      *
-     * @param bool $show_empty_row show_empty_row
+     * @param bool $column_grand column_grand
      *
      * @return $this
      */
-    public function setShowEmptyRow($show_empty_row)
+    public function setColumnGrand($column_grand)
     {
-        $this->container['show_empty_row'] = $show_empty_row;
+        $this->container['column_grand'] = $column_grand;
 
         return $this;
     }
 
     /**
-     * Gets show_member_property_tips
+     * Gets pivot_table_style_name
      *
-     * @return bool
+     * @return string
      */
-    public function getShowMemberPropertyTips()
+    public function getPivotTableStyleName()
     {
-        return $this->container['show_member_property_tips'];
+        return $this->container['pivot_table_style_name'];
     }
 
     /**
-     * Sets show_member_property_tips
+     * Sets pivot_table_style_name
      *
-     * @param bool $show_member_property_tips show_member_property_tips
+     * @param string $pivot_table_style_name pivot_table_style_name
      *
      * @return $this
      */
-    public function setShowMemberPropertyTips($show_member_property_tips)
+    public function setPivotTableStyleName($pivot_table_style_name)
     {
-        $this->container['show_member_property_tips'] = $show_member_property_tips;
+        $this->container['pivot_table_style_name'] = $pivot_table_style_name;
 
         return $this;
     }
 
     /**
-     * Gets show_pivot_style_column_header
+     * Gets pivot_filters
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\PivotFilter[]
      */
-    public function getShowPivotStyleColumnHeader()
+    public function getPivotFilters()
     {
-        return $this->container['show_pivot_style_column_header'];
+        return $this->container['pivot_filters'];
     }
 
     /**
-     * Sets show_pivot_style_column_header
+     * Sets pivot_filters
      *
-     * @param bool $show_pivot_style_column_header show_pivot_style_column_header
+     * @param \Aspose\Cells\Cloud\Model\PivotFilter[] $pivot_filters pivot_filters
      *
      * @return $this
      */
-    public function setShowPivotStyleColumnHeader($show_pivot_style_column_header)
+    public function setPivotFilters($pivot_filters)
     {
-        $this->container['show_pivot_style_column_header'] = $show_pivot_style_column_header;
+        $this->container['pivot_filters'] = $pivot_filters;
 
         return $this;
     }
 
     /**
-     * Gets show_pivot_style_column_stripes
+     * Gets null_string
      *
-     * @return bool
+     * @return string
      */
-    public function getShowPivotStyleColumnStripes()
+    public function getNullString()
     {
-        return $this->container['show_pivot_style_column_stripes'];
+        return $this->container['null_string'];
     }
 
     /**
-     * Sets show_pivot_style_column_stripes
+     * Sets null_string
      *
-     * @param bool $show_pivot_style_column_stripes show_pivot_style_column_stripes
+     * @param string $null_string null_string
      *
      * @return $this
      */
-    public function setShowPivotStyleColumnStripes($show_pivot_style_column_stripes)
+    public function setNullString($null_string)
     {
-        $this->container['show_pivot_style_column_stripes'] = $show_pivot_style_column_stripes;
+        $this->container['null_string'] = $null_string;
 
         return $this;
     }
 
     /**
-     * Gets show_pivot_style_last_column
+     * Gets item_print_titles
      *
      * @return bool
      */
-    public function getShowPivotStyleLastColumn()
+    public function getItemPrintTitles()
     {
-        return $this->container['show_pivot_style_last_column'];
+        return $this->container['item_print_titles'];
     }
 
     /**
-     * Sets show_pivot_style_last_column
+     * Sets item_print_titles
      *
-     * @param bool $show_pivot_style_last_column show_pivot_style_last_column
+     * @param bool $item_print_titles item_print_titles
      *
      * @return $this
      */
-    public function setShowPivotStyleLastColumn($show_pivot_style_last_column)
+    public function setItemPrintTitles($item_print_titles)
     {
-        $this->container['show_pivot_style_last_column'] = $show_pivot_style_last_column;
+        $this->container['item_print_titles'] = $item_print_titles;
 
         return $this;
     }
 
     /**
-     * Gets show_pivot_style_row_header
+     * Gets display_null_string
      *
      * @return bool
      */
-    public function getShowPivotStyleRowHeader()
+    public function getDisplayNullString()
     {
-        return $this->container['show_pivot_style_row_header'];
+        return $this->container['display_null_string'];
     }
 
     /**
-     * Sets show_pivot_style_row_header
+     * Sets display_null_string
      *
-     * @param bool $show_pivot_style_row_header show_pivot_style_row_header
+     * @param bool $display_null_string display_null_string
      *
      * @return $this
      */
-    public function setShowPivotStyleRowHeader($show_pivot_style_row_header)
+    public function setDisplayNullString($display_null_string)
     {
-        $this->container['show_pivot_style_row_header'] = $show_pivot_style_row_header;
+        $this->container['display_null_string'] = $display_null_string;
 
         return $this;
     }
 
     /**
-     * Gets show_pivot_style_row_stripes
+     * Gets enable_field_list
      *
      * @return bool
      */
-    public function getShowPivotStyleRowStripes()
+    public function getEnableFieldList()
     {
-        return $this->container['show_pivot_style_row_stripes'];
+        return $this->container['enable_field_list'];
     }
 
     /**
-     * Sets show_pivot_style_row_stripes
+     * Sets enable_field_list
      *
-     * @param bool $show_pivot_style_row_stripes show_pivot_style_row_stripes
+     * @param bool $enable_field_list enable_field_list
      *
      * @return $this
      */
-    public function setShowPivotStyleRowStripes($show_pivot_style_row_stripes)
+    public function setEnableFieldList($enable_field_list)
     {
-        $this->container['show_pivot_style_row_stripes'] = $show_pivot_style_row_stripes;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_row_header_caption
-     *
-     * @return bool
-     */
-    public function getShowRowHeaderCaption()
-    {
-        return $this->container['show_row_header_caption'];
-    }
-
-    /**
-     * Sets show_row_header_caption
-     *
-     * @param bool $show_row_header_caption show_row_header_caption
-     *
-     * @return $this
-     */
-    public function setShowRowHeaderCaption($show_row_header_caption)
-    {
-        $this->container['show_row_header_caption'] = $show_row_header_caption;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_values_row
-     *
-     * @return bool
-     */
-    public function getShowValuesRow()
-    {
-        return $this->container['show_values_row'];
-    }
-
-    /**
-     * Sets show_values_row
-     *
-     * @param bool $show_values_row show_values_row
-     *
-     * @return $this
-     */
-    public function setShowValuesRow($show_values_row)
-    {
-        $this->container['show_values_row'] = $show_values_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets subtotal_hidden_page_items
-     *
-     * @return bool
-     */
-    public function getSubtotalHiddenPageItems()
-    {
-        return $this->container['subtotal_hidden_page_items'];
-    }
-
-    /**
-     * Sets subtotal_hidden_page_items
-     *
-     * @param bool $subtotal_hidden_page_items subtotal_hidden_page_items
-     *
-     * @return $this
-     */
-    public function setSubtotalHiddenPageItems($subtotal_hidden_page_items)
-    {
-        $this->container['subtotal_hidden_page_items'] = $subtotal_hidden_page_items;
-
-        return $this;
-    }
-
-    /**
-     * Gets table_range1
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellArea
-     */
-    public function getTableRange1()
-    {
-        return $this->container['table_range1'];
-    }
-
-    /**
-     * Sets table_range1
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellArea $table_range1 table_range1
-     *
-     * @return $this
-     */
-    public function setTableRange1($table_range1)
-    {
-        $this->container['table_range1'] = $table_range1;
+        $this->container['enable_field_list'] = $enable_field_list;
 
         return $this;
     }
@@ -2246,6 +1046,438 @@ class PivotTable implements  ArrayAccess
     }
 
     /**
+     * Gets row_fields
+     *
+     * @return \Aspose\Cells\Cloud\Model\PivotField[]
+     */
+    public function getRowFields()
+    {
+        return $this->container['row_fields'];
+    }
+
+    /**
+     * Sets row_fields
+     *
+     * @param \Aspose\Cells\Cloud\Model\PivotField[] $row_fields row_fields
+     *
+     * @return $this
+     */
+    public function setRowFields($row_fields)
+    {
+        $this->container['row_fields'] = $row_fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_field_order
+     *
+     * @return string
+     */
+    public function getPageFieldOrder()
+    {
+        return $this->container['page_field_order'];
+    }
+
+    /**
+     * Sets page_field_order
+     *
+     * @param string $page_field_order page_field_order
+     *
+     * @return $this
+     */
+    public function setPageFieldOrder($page_field_order)
+    {
+        $this->container['page_field_order'] = $page_field_order;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_format_type
+     *
+     * @return string
+     */
+    public function getAutoFormatType()
+    {
+        return $this->container['auto_format_type'];
+    }
+
+    /**
+     * Sets auto_format_type
+     *
+     * @param string $auto_format_type auto_format_type
+     *
+     * @return $this
+     */
+    public function setAutoFormatType($auto_format_type)
+    {
+        $this->container['auto_format_type'] = $auto_format_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_data_value_editing
+     *
+     * @return bool
+     */
+    public function getEnableDataValueEditing()
+    {
+        return $this->container['enable_data_value_editing'];
+    }
+
+    /**
+     * Sets enable_data_value_editing
+     *
+     * @param bool $enable_data_value_editing enable_data_value_editing
+     *
+     * @return $this
+     */
+    public function setEnableDataValueEditing($enable_data_value_editing)
+    {
+        $this->container['enable_data_value_editing'] = $enable_data_value_editing;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_pivot_style_row_header
+     *
+     * @return bool
+     */
+    public function getShowPivotStyleRowHeader()
+    {
+        return $this->container['show_pivot_style_row_header'];
+    }
+
+    /**
+     * Sets show_pivot_style_row_header
+     *
+     * @param bool $show_pivot_style_row_header show_pivot_style_row_header
+     *
+     * @return $this
+     */
+    public function setShowPivotStyleRowHeader($show_pivot_style_row_header)
+    {
+        $this->container['show_pivot_style_row_header'] = $show_pivot_style_row_header;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_grid_drop_zones
+     *
+     * @return bool
+     */
+    public function getIsGridDropZones()
+    {
+        return $this->container['is_grid_drop_zones'];
+    }
+
+    /**
+     * Sets is_grid_drop_zones
+     *
+     * @param bool $is_grid_drop_zones is_grid_drop_zones
+     *
+     * @return $this
+     */
+    public function setIsGridDropZones($is_grid_drop_zones)
+    {
+        $this->container['is_grid_drop_zones'] = $is_grid_drop_zones;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_wizard
+     *
+     * @return bool
+     */
+    public function getEnableWizard()
+    {
+        return $this->container['enable_wizard'];
+    }
+
+    /**
+     * Sets enable_wizard
+     *
+     * @param bool $enable_wizard enable_wizard
+     *
+     * @return $this
+     */
+    public function setEnableWizard($enable_wizard)
+    {
+        $this->container['enable_wizard'] = $enable_wizard;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_member_property_tips
+     *
+     * @return bool
+     */
+    public function getShowMemberPropertyTips()
+    {
+        return $this->container['show_member_property_tips'];
+    }
+
+    /**
+     * Sets show_member_property_tips
+     *
+     * @param bool $show_member_property_tips show_member_property_tips
+     *
+     * @return $this
+     */
+    public function setShowMemberPropertyTips($show_member_property_tips)
+    {
+        $this->container['show_member_property_tips'] = $show_member_property_tips;
+
+        return $this;
+    }
+
+    /**
+     * Gets alt_text_description
+     *
+     * @return string
+     */
+    public function getAltTextDescription()
+    {
+        return $this->container['alt_text_description'];
+    }
+
+    /**
+     * Sets alt_text_description
+     *
+     * @param string $alt_text_description alt_text_description
+     *
+     * @return $this
+     */
+    public function setAltTextDescription($alt_text_description)
+    {
+        $this->container['alt_text_description'] = $alt_text_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_data_tips
+     *
+     * @return bool
+     */
+    public function getShowDataTips()
+    {
+        return $this->container['show_data_tips'];
+    }
+
+    /**
+     * Sets show_data_tips
+     *
+     * @param bool $show_data_tips show_data_tips
+     *
+     * @return $this
+     */
+    public function setShowDataTips($show_data_tips)
+    {
+        $this->container['show_data_tips'] = $show_data_tips;
+
+        return $this;
+    }
+
+    /**
+     * Gets print_titles
+     *
+     * @return bool
+     */
+    public function getPrintTitles()
+    {
+        return $this->container['print_titles'];
+    }
+
+    /**
+     * Sets print_titles
+     *
+     * @param bool $print_titles print_titles
+     *
+     * @return $this
+     */
+    public function setPrintTitles($print_titles)
+    {
+        $this->container['print_titles'] = $print_titles;
+
+        return $this;
+    }
+
+    /**
+     * Gets table_range1
+     *
+     * @return \Aspose\Cells\Cloud\Model\CellArea
+     */
+    public function getTableRange1()
+    {
+        return $this->container['table_range1'];
+    }
+
+    /**
+     * Sets table_range1
+     *
+     * @param \Aspose\Cells\Cloud\Model\CellArea $table_range1 table_range1
+     *
+     * @return $this
+     */
+    public function setTableRange1($table_range1)
+    {
+        $this->container['table_range1'] = $table_range1;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_empty_row
+     *
+     * @return bool
+     */
+    public function getShowEmptyRow()
+    {
+        return $this->container['show_empty_row'];
+    }
+
+    /**
+     * Sets show_empty_row
+     *
+     * @param bool $show_empty_row show_empty_row
+     *
+     * @return $this
+     */
+    public function setShowEmptyRow($show_empty_row)
+    {
+        $this->container['show_empty_row'] = $show_empty_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_multiple_field_filters
+     *
+     * @return bool
+     */
+    public function getIsMultipleFieldFilters()
+    {
+        return $this->container['is_multiple_field_filters'];
+    }
+
+    /**
+     * Sets is_multiple_field_filters
+     *
+     * @param bool $is_multiple_field_filters is_multiple_field_filters
+     *
+     * @return $this
+     */
+    public function setIsMultipleFieldFilters($is_multiple_field_filters)
+    {
+        $this->container['is_multiple_field_filters'] = $is_multiple_field_filters;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_empty_col
+     *
+     * @return bool
+     */
+    public function getShowEmptyCol()
+    {
+        return $this->container['show_empty_col'];
+    }
+
+    /**
+     * Sets show_empty_col
+     *
+     * @param bool $show_empty_col show_empty_col
+     *
+     * @return $this
+     */
+    public function setShowEmptyCol($show_empty_col)
+    {
+        $this->container['show_empty_col'] = $show_empty_col;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_row_header_caption
+     *
+     * @return bool
+     */
+    public function getShowRowHeaderCaption()
+    {
+        return $this->container['show_row_header_caption'];
+    }
+
+    /**
+     * Sets show_row_header_caption
+     *
+     * @param bool $show_row_header_caption show_row_header_caption
+     *
+     * @return $this
+     */
+    public function setShowRowHeaderCaption($show_row_header_caption)
+    {
+        $this->container['show_row_header_caption'] = $show_row_header_caption;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_blank_rows
+     *
+     * @return bool
+     */
+    public function getHasBlankRows()
+    {
+        return $this->container['has_blank_rows'];
+    }
+
+    /**
+     * Sets has_blank_rows
+     *
+     * @param bool $has_blank_rows has_blank_rows
+     *
+     * @return $this
+     */
+    public function setHasBlankRows($has_blank_rows)
+    {
+        $this->container['has_blank_rows'] = $has_blank_rows;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_source
+     *
+     * @return string[]
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     * @param string[] $data_source data_source
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
+    }
+
+    /**
      * Gets tag
      *
      * @return string
@@ -2265,6 +1497,774 @@ class PivotTable implements  ArrayAccess
     public function setTag($tag)
     {
         $this->container['tag'] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_drilldown
+     *
+     * @return bool
+     */
+    public function getEnableDrilldown()
+    {
+        return $this->container['enable_drilldown'];
+    }
+
+    /**
+     * Sets enable_drilldown
+     *
+     * @param bool $enable_drilldown enable_drilldown
+     *
+     * @return $this
+     */
+    public function setEnableDrilldown($enable_drilldown)
+    {
+        $this->container['enable_drilldown'] = $enable_drilldown;
+
+        return $this;
+    }
+
+    /**
+     * Gets indent
+     *
+     * @return int
+     */
+    public function getIndent()
+    {
+        return $this->container['indent'];
+    }
+
+    /**
+     * Sets indent
+     *
+     * @param int $indent indent
+     *
+     * @return $this
+     */
+    public function setIndent($indent)
+    {
+        $this->container['indent'] = $indent;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_grand
+     *
+     * @return bool
+     */
+    public function getRowGrand()
+    {
+        return $this->container['row_grand'];
+    }
+
+    /**
+     * Sets row_grand
+     *
+     * @param bool $row_grand row_grand
+     *
+     * @return $this
+     */
+    public function setRowGrand($row_grand)
+    {
+        $this->container['row_grand'] = $row_grand;
+
+        return $this;
+    }
+
+    /**
+     * Gets grand_total_name
+     *
+     * @return string
+     */
+    public function getGrandTotalName()
+    {
+        return $this->container['grand_total_name'];
+    }
+
+    /**
+     * Sets grand_total_name
+     *
+     * @param string $grand_total_name grand_total_name
+     *
+     * @return $this
+     */
+    public function setGrandTotalName($grand_total_name)
+    {
+        $this->container['grand_total_name'] = $grand_total_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_error_string
+     *
+     * @return bool
+     */
+    public function getDisplayErrorString()
+    {
+        return $this->container['display_error_string'];
+    }
+
+    /**
+     * Sets display_error_string
+     *
+     * @param bool $display_error_string display_error_string
+     *
+     * @return $this
+     */
+    public function setDisplayErrorString($display_error_string)
+    {
+        $this->container['display_error_string'] = $display_error_string;
+
+        return $this;
+    }
+
+    /**
+     * Gets row_range
+     *
+     * @return \Aspose\Cells\Cloud\Model\CellArea
+     */
+    public function getRowRange()
+    {
+        return $this->container['row_range'];
+    }
+
+    /**
+     * Sets row_range
+     *
+     * @param \Aspose\Cells\Cloud\Model\CellArea $row_range row_range
+     *
+     * @return $this
+     */
+    public function setRowRange($row_range)
+    {
+        $this->container['row_range'] = $row_range;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_selected
+     *
+     * @return bool
+     */
+    public function getIsSelected()
+    {
+        return $this->container['is_selected'];
+    }
+
+    /**
+     * Sets is_selected
+     *
+     * @param bool $is_selected is_selected
+     *
+     * @return $this
+     */
+    public function setIsSelected($is_selected)
+    {
+        $this->container['is_selected'] = $is_selected;
+
+        return $this;
+    }
+
+    /**
+     * Gets column_fields
+     *
+     * @return \Aspose\Cells\Cloud\Model\PivotField[]
+     */
+    public function getColumnFields()
+    {
+        return $this->container['column_fields'];
+    }
+
+    /**
+     * Sets column_fields
+     *
+     * @param \Aspose\Cells\Cloud\Model\PivotField[] $column_fields column_fields
+     *
+     * @return $this
+     */
+    public function setColumnFields($column_fields)
+    {
+        $this->container['column_fields'] = $column_fields;
+
+        return $this;
+    }
+
+    /**
+     * Gets column_header_caption
+     *
+     * @return string
+     */
+    public function getColumnHeaderCaption()
+    {
+        return $this->container['column_header_caption'];
+    }
+
+    /**
+     * Sets column_header_caption
+     *
+     * @param string $column_header_caption column_header_caption
+     *
+     * @return $this
+     */
+    public function setColumnHeaderCaption($column_header_caption)
+    {
+        $this->container['column_header_caption'] = $column_header_caption;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_values_row
+     *
+     * @return bool
+     */
+    public function getShowValuesRow()
+    {
+        return $this->container['show_values_row'];
+    }
+
+    /**
+     * Sets show_values_row
+     *
+     * @param bool $show_values_row show_values_row
+     *
+     * @return $this
+     */
+    public function setShowValuesRow($show_values_row)
+    {
+        $this->container['show_values_row'] = $show_values_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_field_dialog
+     *
+     * @return bool
+     */
+    public function getEnableFieldDialog()
+    {
+        return $this->container['enable_field_dialog'];
+    }
+
+    /**
+     * Sets enable_field_dialog
+     *
+     * @param bool $enable_field_dialog enable_field_dialog
+     *
+     * @return $this
+     */
+    public function setEnableFieldDialog($enable_field_dialog)
+    {
+        $this->container['enable_field_dialog'] = $enable_field_dialog;
+
+        return $this;
+    }
+
+    /**
+     * Gets missing_items_limit
+     *
+     * @return string
+     */
+    public function getMissingItemsLimit()
+    {
+        return $this->container['missing_items_limit'];
+    }
+
+    /**
+     * Sets missing_items_limit
+     *
+     * @param string $missing_items_limit missing_items_limit
+     *
+     * @return $this
+     */
+    public function setMissingItemsLimit($missing_items_limit)
+    {
+        $this->container['missing_items_limit'] = $missing_items_limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_pivot_style_row_stripes
+     *
+     * @return bool
+     */
+    public function getShowPivotStyleRowStripes()
+    {
+        return $this->container['show_pivot_style_row_stripes'];
+    }
+
+    /**
+     * Sets show_pivot_style_row_stripes
+     *
+     * @param bool $show_pivot_style_row_stripes show_pivot_style_row_stripes
+     *
+     * @return $this
+     */
+    public function setShowPivotStyleRowStripes($show_pivot_style_row_stripes)
+    {
+        $this->container['show_pivot_style_row_stripes'] = $show_pivot_style_row_stripes;
+
+        return $this;
+    }
+
+    /**
+     * Gets manual_update
+     *
+     * @return bool
+     */
+    public function getManualUpdate()
+    {
+        return $this->container['manual_update'];
+    }
+
+    /**
+     * Sets manual_update
+     *
+     * @param bool $manual_update manual_update
+     *
+     * @return $this
+     */
+    public function setManualUpdate($manual_update)
+    {
+        $this->container['manual_update'] = $manual_update;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_auto_format
+     *
+     * @return bool
+     */
+    public function getIsAutoFormat()
+    {
+        return $this->container['is_auto_format'];
+    }
+
+    /**
+     * Sets is_auto_format
+     *
+     * @param bool $is_auto_format is_auto_format
+     *
+     * @return $this
+     */
+    public function setIsAutoFormat($is_auto_format)
+    {
+        $this->container['is_auto_format'] = $is_auto_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_immediate_items
+     *
+     * @return bool
+     */
+    public function getDisplayImmediateItems()
+    {
+        return $this->container['display_immediate_items'];
+    }
+
+    /**
+     * Sets display_immediate_items
+     *
+     * @param bool $display_immediate_items display_immediate_items
+     *
+     * @return $this
+     */
+    public function setDisplayImmediateItems($display_immediate_items)
+    {
+        $this->container['display_immediate_items'] = $display_immediate_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_string
+     *
+     * @return string
+     */
+    public function getErrorString()
+    {
+        return $this->container['error_string'];
+    }
+
+    /**
+     * Sets error_string
+     *
+     * @param string $error_string error_string
+     *
+     * @return $this
+     */
+    public function setErrorString($error_string)
+    {
+        $this->container['error_string'] = $error_string;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_list_sort
+     *
+     * @return bool
+     */
+    public function getCustomListSort()
+    {
+        return $this->container['custom_list_sort'];
+    }
+
+    /**
+     * Sets custom_list_sort
+     *
+     * @param bool $custom_list_sort custom_list_sort
+     *
+     * @return $this
+     */
+    public function setCustomListSort($custom_list_sort)
+    {
+        $this->container['custom_list_sort'] = $custom_list_sort;
+
+        return $this;
+    }
+
+    /**
+     * Gets merge_labels
+     *
+     * @return bool
+     */
+    public function getMergeLabels()
+    {
+        return $this->container['merge_labels'];
+    }
+
+    /**
+     * Sets merge_labels
+     *
+     * @param bool $merge_labels merge_labels
+     *
+     * @return $this
+     */
+    public function setMergeLabels($merge_labels)
+    {
+        $this->container['merge_labels'] = $merge_labels;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_field_wrap_count
+     *
+     * @return int
+     */
+    public function getPageFieldWrapCount()
+    {
+        return $this->container['page_field_wrap_count'];
+    }
+
+    /**
+     * Sets page_field_wrap_count
+     *
+     * @param int $page_field_wrap_count page_field_wrap_count
+     *
+     * @return $this
+     */
+    public function setPageFieldWrapCount($page_field_wrap_count)
+    {
+        $this->container['page_field_wrap_count'] = $page_field_wrap_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_pivot_style_column_stripes
+     *
+     * @return bool
+     */
+    public function getShowPivotStyleColumnStripes()
+    {
+        return $this->container['show_pivot_style_column_stripes'];
+    }
+
+    /**
+     * Sets show_pivot_style_column_stripes
+     *
+     * @param bool $show_pivot_style_column_stripes show_pivot_style_column_stripes
+     *
+     * @return $this
+     */
+    public function setShowPivotStyleColumnStripes($show_pivot_style_column_stripes)
+    {
+        $this->container['show_pivot_style_column_stripes'] = $show_pivot_style_column_stripes;
+
+        return $this;
+    }
+
+    /**
+     * Gets field_list_sort_ascending
+     *
+     * @return bool
+     */
+    public function getFieldListSortAscending()
+    {
+        return $this->container['field_list_sort_ascending'];
+    }
+
+    /**
+     * Sets field_list_sort_ascending
+     *
+     * @param bool $field_list_sort_ascending field_list_sort_ascending
+     *
+     * @return $this
+     */
+    public function setFieldListSortAscending($field_list_sort_ascending)
+    {
+        $this->container['field_list_sort_ascending'] = $field_list_sort_ascending;
+
+        return $this;
+    }
+
+    /**
+     * Gets alt_text_title
+     *
+     * @return string
+     */
+    public function getAltTextTitle()
+    {
+        return $this->container['alt_text_title'];
+    }
+
+    /**
+     * Sets alt_text_title
+     *
+     * @param string $alt_text_title alt_text_title
+     *
+     * @return $this
+     */
+    public function setAltTextTitle($alt_text_title)
+    {
+        $this->container['alt_text_title'] = $alt_text_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets preserve_formatting
+     *
+     * @return bool
+     */
+    public function getPreserveFormatting()
+    {
+        return $this->container['preserve_formatting'];
+    }
+
+    /**
+     * Sets preserve_formatting
+     *
+     * @param bool $preserve_formatting preserve_formatting
+     *
+     * @return $this
+     */
+    public function setPreserveFormatting($preserve_formatting)
+    {
+        $this->container['preserve_formatting'] = $preserve_formatting;
+
+        return $this;
+    }
+
+    /**
+     * Gets pivot_table_style_type
+     *
+     * @return string
+     */
+    public function getPivotTableStyleType()
+    {
+        return $this->container['pivot_table_style_type'];
+    }
+
+    /**
+     * Sets pivot_table_style_type
+     *
+     * @param string $pivot_table_style_type pivot_table_style_type
+     *
+     * @return $this
+     */
+    public function setPivotTableStyleType($pivot_table_style_type)
+    {
+        $this->container['pivot_table_style_type'] = $pivot_table_style_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_field
+     *
+     * @return \Aspose\Cells\Cloud\Model\PivotField
+     */
+    public function getDataField()
+    {
+        return $this->container['data_field'];
+    }
+
+    /**
+     * Sets data_field
+     *
+     * @param \Aspose\Cells\Cloud\Model\PivotField $data_field data_field
+     *
+     * @return $this
+     */
+    public function setDataField($data_field)
+    {
+        $this->container['data_field'] = $data_field;
+
+        return $this;
+    }
+
+    /**
+     * Gets save_data
+     *
+     * @return bool
+     */
+    public function getSaveData()
+    {
+        return $this->container['save_data'];
+    }
+
+    /**
+     * Sets save_data
+     *
+     * @param bool $save_data save_data
+     *
+     * @return $this
+     */
+    public function setSaveData($save_data)
+    {
+        $this->container['save_data'] = $save_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets subtotal_hidden_page_items
+     *
+     * @return bool
+     */
+    public function getSubtotalHiddenPageItems()
+    {
+        return $this->container['subtotal_hidden_page_items'];
+    }
+
+    /**
+     * Sets subtotal_hidden_page_items
+     *
+     * @param bool $subtotal_hidden_page_items subtotal_hidden_page_items
+     *
+     * @return $this
+     */
+    public function setSubtotalHiddenPageItems($subtotal_hidden_page_items)
+    {
+        $this->container['subtotal_hidden_page_items'] = $subtotal_hidden_page_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets print_drill
+     *
+     * @return bool
+     */
+    public function getPrintDrill()
+    {
+        return $this->container['print_drill'];
+    }
+
+    /**
+     * Sets print_drill
+     *
+     * @param bool $print_drill print_drill
+     *
+     * @return $this
+     */
+    public function setPrintDrill($print_drill)
+    {
+        $this->container['print_drill'] = $print_drill;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_pivot_style_column_header
+     *
+     * @return bool
+     */
+    public function getShowPivotStyleColumnHeader()
+    {
+        return $this->container['show_pivot_style_column_header'];
+    }
+
+    /**
+     * Sets show_pivot_style_column_header
+     *
+     * @param bool $show_pivot_style_column_header show_pivot_style_column_header
+     *
+     * @return $this
+     */
+    public function setShowPivotStyleColumnHeader($show_pivot_style_column_header)
+    {
+        $this->container['show_pivot_style_column_header'] = $show_pivot_style_column_header;
+
+        return $this;
+    }
+
+    /**
+     * Gets base_fields
+     *
+     * @return \Aspose\Cells\Cloud\Model\PivotField[]
+     */
+    public function getBaseFields()
+    {
+        return $this->container['base_fields'];
+    }
+
+    /**
+     * Sets base_fields
+     *
+     * @param \Aspose\Cells\Cloud\Model\PivotField[] $base_fields base_fields
+     *
+     * @return $this
+     */
+    public function setBaseFields($base_fields)
+    {
+        $this->container['base_fields'] = $base_fields;
 
         return $this;
     }

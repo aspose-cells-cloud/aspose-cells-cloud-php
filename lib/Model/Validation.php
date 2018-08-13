@@ -58,22 +58,22 @@ class Validation implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'alert_style' => 'string',
-        'area_list' => '\Aspose\Cells\Cloud\Model\CellArea[]',
-        'error_message' => 'string',
-        'error_title' => 'string',
-        'formula1' => 'string',
         'formula2' => 'string',
-        'ignore_blank' => 'bool',
-        'in_cell_drop_down' => 'bool',
-        'input_message' => 'string',
-        'input_title' => 'string',
-        'operator' => 'string',
+        'formula1' => 'string',
         'show_error' => 'bool',
+        'error_message' => 'string',
+        'in_cell_drop_down' => 'bool',
         'show_input' => 'bool',
-        'type' => 'string',
+        'alert_style' => 'string',
+        'input_title' => 'string',
+        'ignore_blank' => 'bool',
+        'value2' => 'string',
         'value1' => 'string',
-        'value2' => 'string'
+        'operator' => 'string',
+        'error_title' => 'string',
+        'type' => 'string',
+        'input_message' => 'string',
+        'area_list' => '\Aspose\Cells\Cloud\Model\CellArea[]'
     ];
 
     /**
@@ -83,22 +83,22 @@ class Validation implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'alert_style' => null,
-        'area_list' => null,
-        'error_message' => null,
-        'error_title' => null,
-        'formula1' => null,
         'formula2' => null,
-        'ignore_blank' => null,
-        'in_cell_drop_down' => null,
-        'input_message' => null,
-        'input_title' => null,
-        'operator' => null,
+        'formula1' => null,
         'show_error' => null,
+        'error_message' => null,
+        'in_cell_drop_down' => null,
         'show_input' => null,
-        'type' => null,
+        'alert_style' => null,
+        'input_title' => null,
+        'ignore_blank' => null,
+        'value2' => null,
         'value1' => null,
-        'value2' => null
+        'operator' => null,
+        'error_title' => null,
+        'type' => null,
+        'input_message' => null,
+        'area_list' => null
     ];
 
     /**
@@ -129,22 +129,22 @@ class Validation implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'alert_style' => 'AlertStyle',
-        'area_list' => 'AreaList',
-        'error_message' => 'ErrorMessage',
-        'error_title' => 'ErrorTitle',
-        'formula1' => 'Formula1',
         'formula2' => 'Formula2',
-        'ignore_blank' => 'IgnoreBlank',
-        'in_cell_drop_down' => 'InCellDropDown',
-        'input_message' => 'InputMessage',
-        'input_title' => 'InputTitle',
-        'operator' => 'Operator',
+        'formula1' => 'Formula1',
         'show_error' => 'ShowError',
+        'error_message' => 'ErrorMessage',
+        'in_cell_drop_down' => 'InCellDropDown',
         'show_input' => 'ShowInput',
-        'type' => 'Type',
+        'alert_style' => 'AlertStyle',
+        'input_title' => 'InputTitle',
+        'ignore_blank' => 'IgnoreBlank',
+        'value2' => 'Value2',
         'value1' => 'Value1',
-        'value2' => 'Value2'
+        'operator' => 'Operator',
+        'error_title' => 'ErrorTitle',
+        'type' => 'Type',
+        'input_message' => 'InputMessage',
+        'area_list' => 'AreaList'
     ];
 
     /**
@@ -154,22 +154,22 @@ class Validation implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'alert_style' => 'setAlertStyle',
-        'area_list' => 'setAreaList',
-        'error_message' => 'setErrorMessage',
-        'error_title' => 'setErrorTitle',
-        'formula1' => 'setFormula1',
         'formula2' => 'setFormula2',
-        'ignore_blank' => 'setIgnoreBlank',
-        'in_cell_drop_down' => 'setInCellDropDown',
-        'input_message' => 'setInputMessage',
-        'input_title' => 'setInputTitle',
-        'operator' => 'setOperator',
+        'formula1' => 'setFormula1',
         'show_error' => 'setShowError',
+        'error_message' => 'setErrorMessage',
+        'in_cell_drop_down' => 'setInCellDropDown',
         'show_input' => 'setShowInput',
-        'type' => 'setType',
+        'alert_style' => 'setAlertStyle',
+        'input_title' => 'setInputTitle',
+        'ignore_blank' => 'setIgnoreBlank',
+        'value2' => 'setValue2',
         'value1' => 'setValue1',
-        'value2' => 'setValue2'
+        'operator' => 'setOperator',
+        'error_title' => 'setErrorTitle',
+        'type' => 'setType',
+        'input_message' => 'setInputMessage',
+        'area_list' => 'setAreaList'
     ];
 
     /**
@@ -179,22 +179,22 @@ class Validation implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'alert_style' => 'getAlertStyle',
-        'area_list' => 'getAreaList',
-        'error_message' => 'getErrorMessage',
-        'error_title' => 'getErrorTitle',
-        'formula1' => 'getFormula1',
         'formula2' => 'getFormula2',
-        'ignore_blank' => 'getIgnoreBlank',
-        'in_cell_drop_down' => 'getInCellDropDown',
-        'input_message' => 'getInputMessage',
-        'input_title' => 'getInputTitle',
-        'operator' => 'getOperator',
+        'formula1' => 'getFormula1',
         'show_error' => 'getShowError',
+        'error_message' => 'getErrorMessage',
+        'in_cell_drop_down' => 'getInCellDropDown',
         'show_input' => 'getShowInput',
-        'type' => 'getType',
+        'alert_style' => 'getAlertStyle',
+        'input_title' => 'getInputTitle',
+        'ignore_blank' => 'getIgnoreBlank',
+        'value2' => 'getValue2',
         'value1' => 'getValue1',
-        'value2' => 'getValue2'
+        'operator' => 'getOperator',
+        'error_title' => 'getErrorTitle',
+        'type' => 'getType',
+        'input_message' => 'getInputMessage',
+        'area_list' => 'getAreaList'
     ];
 
     /**
@@ -258,22 +258,22 @@ class Validation implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['alert_style'] = isset($data['alert_style']) ? $data['alert_style'] : null;
-        $this->container['area_list'] = isset($data['area_list']) ? $data['area_list'] : null;
-        $this->container['error_message'] = isset($data['error_message']) ? $data['error_message'] : null;
-        $this->container['error_title'] = isset($data['error_title']) ? $data['error_title'] : null;
-        $this->container['formula1'] = isset($data['formula1']) ? $data['formula1'] : null;
         $this->container['formula2'] = isset($data['formula2']) ? $data['formula2'] : null;
-        $this->container['ignore_blank'] = isset($data['ignore_blank']) ? $data['ignore_blank'] : null;
-        $this->container['in_cell_drop_down'] = isset($data['in_cell_drop_down']) ? $data['in_cell_drop_down'] : null;
-        $this->container['input_message'] = isset($data['input_message']) ? $data['input_message'] : null;
-        $this->container['input_title'] = isset($data['input_title']) ? $data['input_title'] : null;
-        $this->container['operator'] = isset($data['operator']) ? $data['operator'] : null;
+        $this->container['formula1'] = isset($data['formula1']) ? $data['formula1'] : null;
         $this->container['show_error'] = isset($data['show_error']) ? $data['show_error'] : null;
+        $this->container['error_message'] = isset($data['error_message']) ? $data['error_message'] : null;
+        $this->container['in_cell_drop_down'] = isset($data['in_cell_drop_down']) ? $data['in_cell_drop_down'] : null;
         $this->container['show_input'] = isset($data['show_input']) ? $data['show_input'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['value1'] = isset($data['value1']) ? $data['value1'] : null;
+        $this->container['alert_style'] = isset($data['alert_style']) ? $data['alert_style'] : null;
+        $this->container['input_title'] = isset($data['input_title']) ? $data['input_title'] : null;
+        $this->container['ignore_blank'] = isset($data['ignore_blank']) ? $data['ignore_blank'] : null;
         $this->container['value2'] = isset($data['value2']) ? $data['value2'] : null;
+        $this->container['value1'] = isset($data['value1']) ? $data['value1'] : null;
+        $this->container['operator'] = isset($data['operator']) ? $data['operator'] : null;
+        $this->container['error_title'] = isset($data['error_title']) ? $data['error_title'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['input_message'] = isset($data['input_message']) ? $data['input_message'] : null;
+        $this->container['area_list'] = isset($data['area_list']) ? $data['area_list'] : null;
     }
 
     /**
@@ -326,97 +326,25 @@ class Validation implements  ArrayAccess
     }
 
     /**
-     * Gets alert_style
+     * Gets formula2
      *
      * @return string
      */
-    public function getAlertStyle()
+    public function getFormula2()
     {
-        return $this->container['alert_style'];
+        return $this->container['formula2'];
     }
 
     /**
-     * Sets alert_style
+     * Sets formula2
      *
-     * @param string $alert_style Represents the validation alert style.Information,Stop,Warning
+     * @param string $formula2 Represents the value or expression associated with the second part of the    data validation.
      *
      * @return $this
      */
-    public function setAlertStyle($alert_style)
+    public function setFormula2($formula2)
     {
-        $this->container['alert_style'] = $alert_style;
-
-        return $this;
-    }
-
-    /**
-     * Gets area_list
-     *
-     * @return \Aspose\Cells\Cloud\Model\CellArea[]
-     */
-    public function getAreaList()
-    {
-        return $this->container['area_list'];
-    }
-
-    /**
-     * Sets area_list
-     *
-     * @param \Aspose\Cells\Cloud\Model\CellArea[] $area_list Represents a collection of Aspose.Cells.CellArea which contains the data     validation settings.
-     *
-     * @return $this
-     */
-    public function setAreaList($area_list)
-    {
-        $this->container['area_list'] = $area_list;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_message
-     *
-     * @return string
-     */
-    public function getErrorMessage()
-    {
-        return $this->container['error_message'];
-    }
-
-    /**
-     * Sets error_message
-     *
-     * @param string $error_message Represents the data validation error message.
-     *
-     * @return $this
-     */
-    public function setErrorMessage($error_message)
-    {
-        $this->container['error_message'] = $error_message;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_title
-     *
-     * @return string
-     */
-    public function getErrorTitle()
-    {
-        return $this->container['error_title'];
-    }
-
-    /**
-     * Sets error_title
-     *
-     * @param string $error_title Represents the title of the data-validation error dialog box.
-     *
-     * @return $this
-     */
-    public function setErrorTitle($error_title)
-    {
-        $this->container['error_title'] = $error_title;
+        $this->container['formula2'] = $formula2;
 
         return $this;
     }
@@ -446,49 +374,49 @@ class Validation implements  ArrayAccess
     }
 
     /**
-     * Gets formula2
+     * Gets show_error
      *
-     * @return string
+     * @return bool
      */
-    public function getFormula2()
+    public function getShowError()
     {
-        return $this->container['formula2'];
+        return $this->container['show_error'];
     }
 
     /**
-     * Sets formula2
+     * Sets show_error
      *
-     * @param string $formula2 Represents the value or expression associated with the second part of the    data validation.
+     * @param bool $show_error Indicates whether the data validation error message will be displayed whenever    the user enters invalid data.
      *
      * @return $this
      */
-    public function setFormula2($formula2)
+    public function setShowError($show_error)
     {
-        $this->container['formula2'] = $formula2;
+        $this->container['show_error'] = $show_error;
 
         return $this;
     }
 
     /**
-     * Gets ignore_blank
+     * Gets error_message
      *
-     * @return bool
+     * @return string
      */
-    public function getIgnoreBlank()
+    public function getErrorMessage()
     {
-        return $this->container['ignore_blank'];
+        return $this->container['error_message'];
     }
 
     /**
-     * Sets ignore_blank
+     * Sets error_message
      *
-     * @param bool $ignore_blank Indicates whether blank values are permitted by the range data validation.
+     * @param string $error_message Represents the data validation error message.
      *
      * @return $this
      */
-    public function setIgnoreBlank($ignore_blank)
+    public function setErrorMessage($error_message)
     {
-        $this->container['ignore_blank'] = $ignore_blank;
+        $this->container['error_message'] = $error_message;
 
         return $this;
     }
@@ -518,25 +446,49 @@ class Validation implements  ArrayAccess
     }
 
     /**
-     * Gets input_message
+     * Gets show_input
      *
-     * @return string
+     * @return bool
      */
-    public function getInputMessage()
+    public function getShowInput()
     {
-        return $this->container['input_message'];
+        return $this->container['show_input'];
     }
 
     /**
-     * Sets input_message
+     * Sets show_input
      *
-     * @param string $input_message Represents the data validation input message.
+     * @param bool $show_input Indicates whether the data validation input message will be displayed whenever    the user selects a cell in the data validation range.
      *
      * @return $this
      */
-    public function setInputMessage($input_message)
+    public function setShowInput($show_input)
     {
-        $this->container['input_message'] = $input_message;
+        $this->container['show_input'] = $show_input;
+
+        return $this;
+    }
+
+    /**
+     * Gets alert_style
+     *
+     * @return string
+     */
+    public function getAlertStyle()
+    {
+        return $this->container['alert_style'];
+    }
+
+    /**
+     * Sets alert_style
+     *
+     * @param string $alert_style Represents the validation alert style.Information,Stop,Warning
+     *
+     * @return $this
+     */
+    public function setAlertStyle($alert_style)
+    {
+        $this->container['alert_style'] = $alert_style;
 
         return $this;
     }
@@ -566,97 +518,49 @@ class Validation implements  ArrayAccess
     }
 
     /**
-     * Gets operator
-     *
-     * @return string
-     */
-    public function getOperator()
-    {
-        return $this->container['operator'];
-    }
-
-    /**
-     * Sets operator
-     *
-     * @param string $operator Represents the operator for the data validation. Between,Equal,GreaterThan,GreaterOrEqual,LessThan,LessOrEqual,None,NotBetween,NotEqual
-     *
-     * @return $this
-     */
-    public function setOperator($operator)
-    {
-        $this->container['operator'] = $operator;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_error
+     * Gets ignore_blank
      *
      * @return bool
      */
-    public function getShowError()
+    public function getIgnoreBlank()
     {
-        return $this->container['show_error'];
+        return $this->container['ignore_blank'];
     }
 
     /**
-     * Sets show_error
+     * Sets ignore_blank
      *
-     * @param bool $show_error Indicates whether the data validation error message will be displayed whenever    the user enters invalid data.
+     * @param bool $ignore_blank Indicates whether blank values are permitted by the range data validation.
      *
      * @return $this
      */
-    public function setShowError($show_error)
+    public function setIgnoreBlank($ignore_blank)
     {
-        $this->container['show_error'] = $show_error;
+        $this->container['ignore_blank'] = $ignore_blank;
 
         return $this;
     }
 
     /**
-     * Gets show_input
-     *
-     * @return bool
-     */
-    public function getShowInput()
-    {
-        return $this->container['show_input'];
-    }
-
-    /**
-     * Sets show_input
-     *
-     * @param bool $show_input Indicates whether the data validation input message will be displayed whenever    the user selects a cell in the data validation range.
-     *
-     * @return $this
-     */
-    public function setShowInput($show_input)
-    {
-        $this->container['show_input'] = $show_input;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets value2
      *
      * @return string
      */
-    public function getType()
+    public function getValue2()
     {
-        return $this->container['type'];
+        return $this->container['value2'];
     }
 
     /**
-     * Sets type
+     * Sets value2
      *
-     * @param string $type Represents the data validation type. AnyValue ,WholeNumber,Decimal,List,Date,Time,TextLength,Custom
+     * @param string $value2 Represents the first value associated with the data validation.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setValue2($value2)
     {
-        $this->container['type'] = $type;
+        $this->container['value2'] = $value2;
 
         return $this;
     }
@@ -686,25 +590,121 @@ class Validation implements  ArrayAccess
     }
 
     /**
-     * Gets value2
+     * Gets operator
      *
      * @return string
      */
-    public function getValue2()
+    public function getOperator()
     {
-        return $this->container['value2'];
+        return $this->container['operator'];
     }
 
     /**
-     * Sets value2
+     * Sets operator
      *
-     * @param string $value2 Represents the first value associated with the data validation.
+     * @param string $operator Represents the operator for the data validation. Between,Equal,GreaterThan,GreaterOrEqual,LessThan,LessOrEqual,None,NotBetween,NotEqual
      *
      * @return $this
      */
-    public function setValue2($value2)
+    public function setOperator($operator)
     {
-        $this->container['value2'] = $value2;
+        $this->container['operator'] = $operator;
+
+        return $this;
+    }
+
+    /**
+     * Gets error_title
+     *
+     * @return string
+     */
+    public function getErrorTitle()
+    {
+        return $this->container['error_title'];
+    }
+
+    /**
+     * Sets error_title
+     *
+     * @param string $error_title Represents the title of the data-validation error dialog box.
+     *
+     * @return $this
+     */
+    public function setErrorTitle($error_title)
+    {
+        $this->container['error_title'] = $error_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Represents the data validation type. AnyValue ,WholeNumber,Decimal,List,Date,Time,TextLength,Custom
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets input_message
+     *
+     * @return string
+     */
+    public function getInputMessage()
+    {
+        return $this->container['input_message'];
+    }
+
+    /**
+     * Sets input_message
+     *
+     * @param string $input_message Represents the data validation input message.
+     *
+     * @return $this
+     */
+    public function setInputMessage($input_message)
+    {
+        $this->container['input_message'] = $input_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets area_list
+     *
+     * @return \Aspose\Cells\Cloud\Model\CellArea[]
+     */
+    public function getAreaList()
+    {
+        return $this->container['area_list'];
+    }
+
+    /**
+     * Sets area_list
+     *
+     * @param \Aspose\Cells\Cloud\Model\CellArea[] $area_list Represents a collection of Aspose.Cells.CellArea which contains the data     validation settings.
+     *
+     * @return $this
+     */
+    public function setAreaList($area_list)
+    {
+        $this->container['area_list'] = $area_list;
 
         return $this;
     }

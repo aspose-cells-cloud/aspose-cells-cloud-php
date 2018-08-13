@@ -57,51 +57,51 @@ class WorkbookSettings implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auto_compress_pictures' => 'bool',
-        'auto_recover' => 'bool',
-        'build_version' => 'string',
-        'calc_mode' => 'string',
-        'calc_stack_size' => 'int',
-        'calculation_id' => 'string',
-        'check_comptiliblity' => 'bool',
-        'check_excel_restriction' => 'bool',
-        'crash_save' => 'bool',
-        'create_calc_chain' => 'bool',
-        'data_extract_load' => 'bool',
-        'date1904' => 'bool',
-        'display_drawing_objects' => 'string',
-        'enable_macros' => 'bool',
-        'first_visible_tab' => 'int',
-        'hide_pivot_field_list' => 'bool',
-        'is_default_encrypted' => 'bool',
-        'is_hidden' => 'bool',
-        'is_h_scroll_bar_visible' => 'bool',
-        'is_minimized' => 'bool',
-        'is_v_scroll_bar_visible' => 'bool',
-        'iteration' => 'bool',
-        'language_code' => 'string',
-        'max_change' => 'double',
-        'max_iteration' => 'int',
-        'memory_setting' => 'string',
-        'number_decimal_separator' => 'string',
         'number_group_separator' => 'string',
-        'parsing_formula_on_open' => 'bool',
-        'precision_as_displayed' => 'bool',
-        'recalculate_before_save' => 'bool',
+        'hide_pivot_field_list' => 'bool',
+        'is_minimized' => 'bool',
+        'calculation_id' => 'string',
         're_calculate_on_open' => 'bool',
-        'recommend_read_only' => 'bool',
-        'region' => 'string',
-        'remove_personal_information' => 'bool',
-        'repair_load' => 'bool',
-        'shared' => 'bool',
-        'sheet_tab_bar_width' => 'int',
-        'show_tabs' => 'bool',
-        'update_adjacent_cells_border' => 'bool',
-        'update_links_type' => 'string',
+        'check_excel_restriction' => 'bool',
+        'is_h_scroll_bar_visible' => 'bool',
         'window_height' => 'double',
         'window_left' => 'double',
+        'calc_stack_size' => 'int',
+        'shared' => 'bool',
+        'remove_personal_information' => 'bool',
+        'language_code' => 'string',
+        'enable_macros' => 'bool',
+        'is_default_encrypted' => 'bool',
+        'recalculate_before_save' => 'bool',
+        'parsing_formula_on_open' => 'bool',
         'window_top' => 'double',
-        'window_width' => 'double'
+        'region' => 'string',
+        'memory_setting' => 'string',
+        'update_adjacent_cells_border' => 'bool',
+        'crash_save' => 'bool',
+        'show_tabs' => 'bool',
+        'precision_as_displayed' => 'bool',
+        'calc_mode' => 'string',
+        'auto_compress_pictures' => 'bool',
+        'date1904' => 'bool',
+        'number_decimal_separator' => 'string',
+        'iteration' => 'bool',
+        'check_comptiliblity' => 'bool',
+        'auto_recover' => 'bool',
+        'max_change' => 'double',
+        'data_extract_load' => 'bool',
+        'first_visible_tab' => 'int',
+        'is_hidden' => 'bool',
+        'recommend_read_only' => 'bool',
+        'display_drawing_objects' => 'string',
+        'build_version' => 'string',
+        'is_v_scroll_bar_visible' => 'bool',
+        'window_width' => 'double',
+        'create_calc_chain' => 'bool',
+        'max_iteration' => 'int',
+        'repair_load' => 'bool',
+        'update_links_type' => 'string',
+        'sheet_tab_bar_width' => 'int'
     ];
 
     /**
@@ -110,51 +110,51 @@ class WorkbookSettings implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auto_compress_pictures' => null,
-        'auto_recover' => null,
-        'build_version' => null,
-        'calc_mode' => null,
-        'calc_stack_size' => 'int32',
-        'calculation_id' => null,
-        'check_comptiliblity' => null,
-        'check_excel_restriction' => null,
-        'crash_save' => null,
-        'create_calc_chain' => null,
-        'data_extract_load' => null,
-        'date1904' => null,
-        'display_drawing_objects' => null,
-        'enable_macros' => null,
-        'first_visible_tab' => 'int32',
-        'hide_pivot_field_list' => null,
-        'is_default_encrypted' => null,
-        'is_hidden' => null,
-        'is_h_scroll_bar_visible' => null,
-        'is_minimized' => null,
-        'is_v_scroll_bar_visible' => null,
-        'iteration' => null,
-        'language_code' => null,
-        'max_change' => 'double',
-        'max_iteration' => 'int32',
-        'memory_setting' => null,
-        'number_decimal_separator' => null,
         'number_group_separator' => null,
-        'parsing_formula_on_open' => null,
-        'precision_as_displayed' => null,
-        'recalculate_before_save' => null,
+        'hide_pivot_field_list' => null,
+        'is_minimized' => null,
+        'calculation_id' => null,
         're_calculate_on_open' => null,
-        'recommend_read_only' => null,
-        'region' => null,
-        'remove_personal_information' => null,
-        'repair_load' => null,
-        'shared' => null,
-        'sheet_tab_bar_width' => 'int32',
-        'show_tabs' => null,
-        'update_adjacent_cells_border' => null,
-        'update_links_type' => null,
+        'check_excel_restriction' => null,
+        'is_h_scroll_bar_visible' => null,
         'window_height' => 'double',
         'window_left' => 'double',
+        'calc_stack_size' => 'int32',
+        'shared' => null,
+        'remove_personal_information' => null,
+        'language_code' => null,
+        'enable_macros' => null,
+        'is_default_encrypted' => null,
+        'recalculate_before_save' => null,
+        'parsing_formula_on_open' => null,
         'window_top' => 'double',
-        'window_width' => 'double'
+        'region' => null,
+        'memory_setting' => null,
+        'update_adjacent_cells_border' => null,
+        'crash_save' => null,
+        'show_tabs' => null,
+        'precision_as_displayed' => null,
+        'calc_mode' => null,
+        'auto_compress_pictures' => null,
+        'date1904' => null,
+        'number_decimal_separator' => null,
+        'iteration' => null,
+        'check_comptiliblity' => null,
+        'auto_recover' => null,
+        'max_change' => 'double',
+        'data_extract_load' => null,
+        'first_visible_tab' => 'int32',
+        'is_hidden' => null,
+        'recommend_read_only' => null,
+        'display_drawing_objects' => null,
+        'build_version' => null,
+        'is_v_scroll_bar_visible' => null,
+        'window_width' => 'double',
+        'create_calc_chain' => null,
+        'max_iteration' => 'int32',
+        'repair_load' => null,
+        'update_links_type' => null,
+        'sheet_tab_bar_width' => 'int32'
     ];
 
     /**
@@ -184,51 +184,51 @@ class WorkbookSettings implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auto_compress_pictures' => 'AutoCompressPictures',
-        'auto_recover' => 'AutoRecover',
-        'build_version' => 'BuildVersion',
-        'calc_mode' => 'CalcMode',
-        'calc_stack_size' => 'CalcStackSize',
-        'calculation_id' => 'CalculationId',
-        'check_comptiliblity' => 'CheckComptiliblity',
-        'check_excel_restriction' => 'CheckExcelRestriction',
-        'crash_save' => 'CrashSave',
-        'create_calc_chain' => 'CreateCalcChain',
-        'data_extract_load' => 'DataExtractLoad',
-        'date1904' => 'Date1904',
-        'display_drawing_objects' => 'DisplayDrawingObjects',
-        'enable_macros' => 'EnableMacros',
-        'first_visible_tab' => 'FirstVisibleTab',
-        'hide_pivot_field_list' => 'HidePivotFieldList',
-        'is_default_encrypted' => 'IsDefaultEncrypted',
-        'is_hidden' => 'IsHidden',
-        'is_h_scroll_bar_visible' => 'IsHScrollBarVisible',
-        'is_minimized' => 'IsMinimized',
-        'is_v_scroll_bar_visible' => 'IsVScrollBarVisible',
-        'iteration' => 'Iteration',
-        'language_code' => 'LanguageCode',
-        'max_change' => 'MaxChange',
-        'max_iteration' => 'MaxIteration',
-        'memory_setting' => 'MemorySetting',
-        'number_decimal_separator' => 'NumberDecimalSeparator',
         'number_group_separator' => 'NumberGroupSeparator',
-        'parsing_formula_on_open' => 'ParsingFormulaOnOpen',
-        'precision_as_displayed' => 'PrecisionAsDisplayed',
-        'recalculate_before_save' => 'RecalculateBeforeSave',
+        'hide_pivot_field_list' => 'HidePivotFieldList',
+        'is_minimized' => 'IsMinimized',
+        'calculation_id' => 'CalculationId',
         're_calculate_on_open' => 'ReCalculateOnOpen',
-        'recommend_read_only' => 'RecommendReadOnly',
-        'region' => 'Region',
-        'remove_personal_information' => 'RemovePersonalInformation',
-        'repair_load' => 'RepairLoad',
-        'shared' => 'Shared',
-        'sheet_tab_bar_width' => 'SheetTabBarWidth',
-        'show_tabs' => 'ShowTabs',
-        'update_adjacent_cells_border' => 'UpdateAdjacentCellsBorder',
-        'update_links_type' => 'UpdateLinksType',
+        'check_excel_restriction' => 'CheckExcelRestriction',
+        'is_h_scroll_bar_visible' => 'IsHScrollBarVisible',
         'window_height' => 'WindowHeight',
         'window_left' => 'WindowLeft',
+        'calc_stack_size' => 'CalcStackSize',
+        'shared' => 'Shared',
+        'remove_personal_information' => 'RemovePersonalInformation',
+        'language_code' => 'LanguageCode',
+        'enable_macros' => 'EnableMacros',
+        'is_default_encrypted' => 'IsDefaultEncrypted',
+        'recalculate_before_save' => 'RecalculateBeforeSave',
+        'parsing_formula_on_open' => 'ParsingFormulaOnOpen',
         'window_top' => 'WindowTop',
-        'window_width' => 'WindowWidth'
+        'region' => 'Region',
+        'memory_setting' => 'MemorySetting',
+        'update_adjacent_cells_border' => 'UpdateAdjacentCellsBorder',
+        'crash_save' => 'CrashSave',
+        'show_tabs' => 'ShowTabs',
+        'precision_as_displayed' => 'PrecisionAsDisplayed',
+        'calc_mode' => 'CalcMode',
+        'auto_compress_pictures' => 'AutoCompressPictures',
+        'date1904' => 'Date1904',
+        'number_decimal_separator' => 'NumberDecimalSeparator',
+        'iteration' => 'Iteration',
+        'check_comptiliblity' => 'CheckComptiliblity',
+        'auto_recover' => 'AutoRecover',
+        'max_change' => 'MaxChange',
+        'data_extract_load' => 'DataExtractLoad',
+        'first_visible_tab' => 'FirstVisibleTab',
+        'is_hidden' => 'IsHidden',
+        'recommend_read_only' => 'RecommendReadOnly',
+        'display_drawing_objects' => 'DisplayDrawingObjects',
+        'build_version' => 'BuildVersion',
+        'is_v_scroll_bar_visible' => 'IsVScrollBarVisible',
+        'window_width' => 'WindowWidth',
+        'create_calc_chain' => 'CreateCalcChain',
+        'max_iteration' => 'MaxIteration',
+        'repair_load' => 'RepairLoad',
+        'update_links_type' => 'UpdateLinksType',
+        'sheet_tab_bar_width' => 'SheetTabBarWidth'
     ];
 
     /**
@@ -237,51 +237,51 @@ class WorkbookSettings implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auto_compress_pictures' => 'setAutoCompressPictures',
-        'auto_recover' => 'setAutoRecover',
-        'build_version' => 'setBuildVersion',
-        'calc_mode' => 'setCalcMode',
-        'calc_stack_size' => 'setCalcStackSize',
-        'calculation_id' => 'setCalculationId',
-        'check_comptiliblity' => 'setCheckComptiliblity',
-        'check_excel_restriction' => 'setCheckExcelRestriction',
-        'crash_save' => 'setCrashSave',
-        'create_calc_chain' => 'setCreateCalcChain',
-        'data_extract_load' => 'setDataExtractLoad',
-        'date1904' => 'setDate1904',
-        'display_drawing_objects' => 'setDisplayDrawingObjects',
-        'enable_macros' => 'setEnableMacros',
-        'first_visible_tab' => 'setFirstVisibleTab',
-        'hide_pivot_field_list' => 'setHidePivotFieldList',
-        'is_default_encrypted' => 'setIsDefaultEncrypted',
-        'is_hidden' => 'setIsHidden',
-        'is_h_scroll_bar_visible' => 'setIsHScrollBarVisible',
-        'is_minimized' => 'setIsMinimized',
-        'is_v_scroll_bar_visible' => 'setIsVScrollBarVisible',
-        'iteration' => 'setIteration',
-        'language_code' => 'setLanguageCode',
-        'max_change' => 'setMaxChange',
-        'max_iteration' => 'setMaxIteration',
-        'memory_setting' => 'setMemorySetting',
-        'number_decimal_separator' => 'setNumberDecimalSeparator',
         'number_group_separator' => 'setNumberGroupSeparator',
-        'parsing_formula_on_open' => 'setParsingFormulaOnOpen',
-        'precision_as_displayed' => 'setPrecisionAsDisplayed',
-        'recalculate_before_save' => 'setRecalculateBeforeSave',
+        'hide_pivot_field_list' => 'setHidePivotFieldList',
+        'is_minimized' => 'setIsMinimized',
+        'calculation_id' => 'setCalculationId',
         're_calculate_on_open' => 'setReCalculateOnOpen',
-        'recommend_read_only' => 'setRecommendReadOnly',
-        'region' => 'setRegion',
-        'remove_personal_information' => 'setRemovePersonalInformation',
-        'repair_load' => 'setRepairLoad',
-        'shared' => 'setShared',
-        'sheet_tab_bar_width' => 'setSheetTabBarWidth',
-        'show_tabs' => 'setShowTabs',
-        'update_adjacent_cells_border' => 'setUpdateAdjacentCellsBorder',
-        'update_links_type' => 'setUpdateLinksType',
+        'check_excel_restriction' => 'setCheckExcelRestriction',
+        'is_h_scroll_bar_visible' => 'setIsHScrollBarVisible',
         'window_height' => 'setWindowHeight',
         'window_left' => 'setWindowLeft',
+        'calc_stack_size' => 'setCalcStackSize',
+        'shared' => 'setShared',
+        'remove_personal_information' => 'setRemovePersonalInformation',
+        'language_code' => 'setLanguageCode',
+        'enable_macros' => 'setEnableMacros',
+        'is_default_encrypted' => 'setIsDefaultEncrypted',
+        'recalculate_before_save' => 'setRecalculateBeforeSave',
+        'parsing_formula_on_open' => 'setParsingFormulaOnOpen',
         'window_top' => 'setWindowTop',
-        'window_width' => 'setWindowWidth'
+        'region' => 'setRegion',
+        'memory_setting' => 'setMemorySetting',
+        'update_adjacent_cells_border' => 'setUpdateAdjacentCellsBorder',
+        'crash_save' => 'setCrashSave',
+        'show_tabs' => 'setShowTabs',
+        'precision_as_displayed' => 'setPrecisionAsDisplayed',
+        'calc_mode' => 'setCalcMode',
+        'auto_compress_pictures' => 'setAutoCompressPictures',
+        'date1904' => 'setDate1904',
+        'number_decimal_separator' => 'setNumberDecimalSeparator',
+        'iteration' => 'setIteration',
+        'check_comptiliblity' => 'setCheckComptiliblity',
+        'auto_recover' => 'setAutoRecover',
+        'max_change' => 'setMaxChange',
+        'data_extract_load' => 'setDataExtractLoad',
+        'first_visible_tab' => 'setFirstVisibleTab',
+        'is_hidden' => 'setIsHidden',
+        'recommend_read_only' => 'setRecommendReadOnly',
+        'display_drawing_objects' => 'setDisplayDrawingObjects',
+        'build_version' => 'setBuildVersion',
+        'is_v_scroll_bar_visible' => 'setIsVScrollBarVisible',
+        'window_width' => 'setWindowWidth',
+        'create_calc_chain' => 'setCreateCalcChain',
+        'max_iteration' => 'setMaxIteration',
+        'repair_load' => 'setRepairLoad',
+        'update_links_type' => 'setUpdateLinksType',
+        'sheet_tab_bar_width' => 'setSheetTabBarWidth'
     ];
 
     /**
@@ -290,51 +290,51 @@ class WorkbookSettings implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auto_compress_pictures' => 'getAutoCompressPictures',
-        'auto_recover' => 'getAutoRecover',
-        'build_version' => 'getBuildVersion',
-        'calc_mode' => 'getCalcMode',
-        'calc_stack_size' => 'getCalcStackSize',
-        'calculation_id' => 'getCalculationId',
-        'check_comptiliblity' => 'getCheckComptiliblity',
-        'check_excel_restriction' => 'getCheckExcelRestriction',
-        'crash_save' => 'getCrashSave',
-        'create_calc_chain' => 'getCreateCalcChain',
-        'data_extract_load' => 'getDataExtractLoad',
-        'date1904' => 'getDate1904',
-        'display_drawing_objects' => 'getDisplayDrawingObjects',
-        'enable_macros' => 'getEnableMacros',
-        'first_visible_tab' => 'getFirstVisibleTab',
-        'hide_pivot_field_list' => 'getHidePivotFieldList',
-        'is_default_encrypted' => 'getIsDefaultEncrypted',
-        'is_hidden' => 'getIsHidden',
-        'is_h_scroll_bar_visible' => 'getIsHScrollBarVisible',
-        'is_minimized' => 'getIsMinimized',
-        'is_v_scroll_bar_visible' => 'getIsVScrollBarVisible',
-        'iteration' => 'getIteration',
-        'language_code' => 'getLanguageCode',
-        'max_change' => 'getMaxChange',
-        'max_iteration' => 'getMaxIteration',
-        'memory_setting' => 'getMemorySetting',
-        'number_decimal_separator' => 'getNumberDecimalSeparator',
         'number_group_separator' => 'getNumberGroupSeparator',
-        'parsing_formula_on_open' => 'getParsingFormulaOnOpen',
-        'precision_as_displayed' => 'getPrecisionAsDisplayed',
-        'recalculate_before_save' => 'getRecalculateBeforeSave',
+        'hide_pivot_field_list' => 'getHidePivotFieldList',
+        'is_minimized' => 'getIsMinimized',
+        'calculation_id' => 'getCalculationId',
         're_calculate_on_open' => 'getReCalculateOnOpen',
-        'recommend_read_only' => 'getRecommendReadOnly',
-        'region' => 'getRegion',
-        'remove_personal_information' => 'getRemovePersonalInformation',
-        'repair_load' => 'getRepairLoad',
-        'shared' => 'getShared',
-        'sheet_tab_bar_width' => 'getSheetTabBarWidth',
-        'show_tabs' => 'getShowTabs',
-        'update_adjacent_cells_border' => 'getUpdateAdjacentCellsBorder',
-        'update_links_type' => 'getUpdateLinksType',
+        'check_excel_restriction' => 'getCheckExcelRestriction',
+        'is_h_scroll_bar_visible' => 'getIsHScrollBarVisible',
         'window_height' => 'getWindowHeight',
         'window_left' => 'getWindowLeft',
+        'calc_stack_size' => 'getCalcStackSize',
+        'shared' => 'getShared',
+        'remove_personal_information' => 'getRemovePersonalInformation',
+        'language_code' => 'getLanguageCode',
+        'enable_macros' => 'getEnableMacros',
+        'is_default_encrypted' => 'getIsDefaultEncrypted',
+        'recalculate_before_save' => 'getRecalculateBeforeSave',
+        'parsing_formula_on_open' => 'getParsingFormulaOnOpen',
         'window_top' => 'getWindowTop',
-        'window_width' => 'getWindowWidth'
+        'region' => 'getRegion',
+        'memory_setting' => 'getMemorySetting',
+        'update_adjacent_cells_border' => 'getUpdateAdjacentCellsBorder',
+        'crash_save' => 'getCrashSave',
+        'show_tabs' => 'getShowTabs',
+        'precision_as_displayed' => 'getPrecisionAsDisplayed',
+        'calc_mode' => 'getCalcMode',
+        'auto_compress_pictures' => 'getAutoCompressPictures',
+        'date1904' => 'getDate1904',
+        'number_decimal_separator' => 'getNumberDecimalSeparator',
+        'iteration' => 'getIteration',
+        'check_comptiliblity' => 'getCheckComptiliblity',
+        'auto_recover' => 'getAutoRecover',
+        'max_change' => 'getMaxChange',
+        'data_extract_load' => 'getDataExtractLoad',
+        'first_visible_tab' => 'getFirstVisibleTab',
+        'is_hidden' => 'getIsHidden',
+        'recommend_read_only' => 'getRecommendReadOnly',
+        'display_drawing_objects' => 'getDisplayDrawingObjects',
+        'build_version' => 'getBuildVersion',
+        'is_v_scroll_bar_visible' => 'getIsVScrollBarVisible',
+        'window_width' => 'getWindowWidth',
+        'create_calc_chain' => 'getCreateCalcChain',
+        'max_iteration' => 'getMaxIteration',
+        'repair_load' => 'getRepairLoad',
+        'update_links_type' => 'getUpdateLinksType',
+        'sheet_tab_bar_width' => 'getSheetTabBarWidth'
     ];
 
     /**
@@ -397,51 +397,51 @@ class WorkbookSettings implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auto_compress_pictures'] = isset($data['auto_compress_pictures']) ? $data['auto_compress_pictures'] : null;
-        $this->container['auto_recover'] = isset($data['auto_recover']) ? $data['auto_recover'] : null;
-        $this->container['build_version'] = isset($data['build_version']) ? $data['build_version'] : null;
-        $this->container['calc_mode'] = isset($data['calc_mode']) ? $data['calc_mode'] : null;
-        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
-        $this->container['calculation_id'] = isset($data['calculation_id']) ? $data['calculation_id'] : null;
-        $this->container['check_comptiliblity'] = isset($data['check_comptiliblity']) ? $data['check_comptiliblity'] : null;
-        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
-        $this->container['crash_save'] = isset($data['crash_save']) ? $data['crash_save'] : null;
-        $this->container['create_calc_chain'] = isset($data['create_calc_chain']) ? $data['create_calc_chain'] : null;
-        $this->container['data_extract_load'] = isset($data['data_extract_load']) ? $data['data_extract_load'] : null;
-        $this->container['date1904'] = isset($data['date1904']) ? $data['date1904'] : null;
-        $this->container['display_drawing_objects'] = isset($data['display_drawing_objects']) ? $data['display_drawing_objects'] : null;
-        $this->container['enable_macros'] = isset($data['enable_macros']) ? $data['enable_macros'] : null;
-        $this->container['first_visible_tab'] = isset($data['first_visible_tab']) ? $data['first_visible_tab'] : null;
-        $this->container['hide_pivot_field_list'] = isset($data['hide_pivot_field_list']) ? $data['hide_pivot_field_list'] : null;
-        $this->container['is_default_encrypted'] = isset($data['is_default_encrypted']) ? $data['is_default_encrypted'] : null;
-        $this->container['is_hidden'] = isset($data['is_hidden']) ? $data['is_hidden'] : null;
-        $this->container['is_h_scroll_bar_visible'] = isset($data['is_h_scroll_bar_visible']) ? $data['is_h_scroll_bar_visible'] : null;
-        $this->container['is_minimized'] = isset($data['is_minimized']) ? $data['is_minimized'] : null;
-        $this->container['is_v_scroll_bar_visible'] = isset($data['is_v_scroll_bar_visible']) ? $data['is_v_scroll_bar_visible'] : null;
-        $this->container['iteration'] = isset($data['iteration']) ? $data['iteration'] : null;
-        $this->container['language_code'] = isset($data['language_code']) ? $data['language_code'] : null;
-        $this->container['max_change'] = isset($data['max_change']) ? $data['max_change'] : null;
-        $this->container['max_iteration'] = isset($data['max_iteration']) ? $data['max_iteration'] : null;
-        $this->container['memory_setting'] = isset($data['memory_setting']) ? $data['memory_setting'] : null;
-        $this->container['number_decimal_separator'] = isset($data['number_decimal_separator']) ? $data['number_decimal_separator'] : null;
         $this->container['number_group_separator'] = isset($data['number_group_separator']) ? $data['number_group_separator'] : null;
-        $this->container['parsing_formula_on_open'] = isset($data['parsing_formula_on_open']) ? $data['parsing_formula_on_open'] : null;
-        $this->container['precision_as_displayed'] = isset($data['precision_as_displayed']) ? $data['precision_as_displayed'] : null;
-        $this->container['recalculate_before_save'] = isset($data['recalculate_before_save']) ? $data['recalculate_before_save'] : null;
+        $this->container['hide_pivot_field_list'] = isset($data['hide_pivot_field_list']) ? $data['hide_pivot_field_list'] : null;
+        $this->container['is_minimized'] = isset($data['is_minimized']) ? $data['is_minimized'] : null;
+        $this->container['calculation_id'] = isset($data['calculation_id']) ? $data['calculation_id'] : null;
         $this->container['re_calculate_on_open'] = isset($data['re_calculate_on_open']) ? $data['re_calculate_on_open'] : null;
-        $this->container['recommend_read_only'] = isset($data['recommend_read_only']) ? $data['recommend_read_only'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['remove_personal_information'] = isset($data['remove_personal_information']) ? $data['remove_personal_information'] : null;
-        $this->container['repair_load'] = isset($data['repair_load']) ? $data['repair_load'] : null;
-        $this->container['shared'] = isset($data['shared']) ? $data['shared'] : null;
-        $this->container['sheet_tab_bar_width'] = isset($data['sheet_tab_bar_width']) ? $data['sheet_tab_bar_width'] : null;
-        $this->container['show_tabs'] = isset($data['show_tabs']) ? $data['show_tabs'] : null;
-        $this->container['update_adjacent_cells_border'] = isset($data['update_adjacent_cells_border']) ? $data['update_adjacent_cells_border'] : null;
-        $this->container['update_links_type'] = isset($data['update_links_type']) ? $data['update_links_type'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['is_h_scroll_bar_visible'] = isset($data['is_h_scroll_bar_visible']) ? $data['is_h_scroll_bar_visible'] : null;
         $this->container['window_height'] = isset($data['window_height']) ? $data['window_height'] : null;
         $this->container['window_left'] = isset($data['window_left']) ? $data['window_left'] : null;
+        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
+        $this->container['shared'] = isset($data['shared']) ? $data['shared'] : null;
+        $this->container['remove_personal_information'] = isset($data['remove_personal_information']) ? $data['remove_personal_information'] : null;
+        $this->container['language_code'] = isset($data['language_code']) ? $data['language_code'] : null;
+        $this->container['enable_macros'] = isset($data['enable_macros']) ? $data['enable_macros'] : null;
+        $this->container['is_default_encrypted'] = isset($data['is_default_encrypted']) ? $data['is_default_encrypted'] : null;
+        $this->container['recalculate_before_save'] = isset($data['recalculate_before_save']) ? $data['recalculate_before_save'] : null;
+        $this->container['parsing_formula_on_open'] = isset($data['parsing_formula_on_open']) ? $data['parsing_formula_on_open'] : null;
         $this->container['window_top'] = isset($data['window_top']) ? $data['window_top'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['memory_setting'] = isset($data['memory_setting']) ? $data['memory_setting'] : null;
+        $this->container['update_adjacent_cells_border'] = isset($data['update_adjacent_cells_border']) ? $data['update_adjacent_cells_border'] : null;
+        $this->container['crash_save'] = isset($data['crash_save']) ? $data['crash_save'] : null;
+        $this->container['show_tabs'] = isset($data['show_tabs']) ? $data['show_tabs'] : null;
+        $this->container['precision_as_displayed'] = isset($data['precision_as_displayed']) ? $data['precision_as_displayed'] : null;
+        $this->container['calc_mode'] = isset($data['calc_mode']) ? $data['calc_mode'] : null;
+        $this->container['auto_compress_pictures'] = isset($data['auto_compress_pictures']) ? $data['auto_compress_pictures'] : null;
+        $this->container['date1904'] = isset($data['date1904']) ? $data['date1904'] : null;
+        $this->container['number_decimal_separator'] = isset($data['number_decimal_separator']) ? $data['number_decimal_separator'] : null;
+        $this->container['iteration'] = isset($data['iteration']) ? $data['iteration'] : null;
+        $this->container['check_comptiliblity'] = isset($data['check_comptiliblity']) ? $data['check_comptiliblity'] : null;
+        $this->container['auto_recover'] = isset($data['auto_recover']) ? $data['auto_recover'] : null;
+        $this->container['max_change'] = isset($data['max_change']) ? $data['max_change'] : null;
+        $this->container['data_extract_load'] = isset($data['data_extract_load']) ? $data['data_extract_load'] : null;
+        $this->container['first_visible_tab'] = isset($data['first_visible_tab']) ? $data['first_visible_tab'] : null;
+        $this->container['is_hidden'] = isset($data['is_hidden']) ? $data['is_hidden'] : null;
+        $this->container['recommend_read_only'] = isset($data['recommend_read_only']) ? $data['recommend_read_only'] : null;
+        $this->container['display_drawing_objects'] = isset($data['display_drawing_objects']) ? $data['display_drawing_objects'] : null;
+        $this->container['build_version'] = isset($data['build_version']) ? $data['build_version'] : null;
+        $this->container['is_v_scroll_bar_visible'] = isset($data['is_v_scroll_bar_visible']) ? $data['is_v_scroll_bar_visible'] : null;
         $this->container['window_width'] = isset($data['window_width']) ? $data['window_width'] : null;
+        $this->container['create_calc_chain'] = isset($data['create_calc_chain']) ? $data['create_calc_chain'] : null;
+        $this->container['max_iteration'] = isset($data['max_iteration']) ? $data['max_iteration'] : null;
+        $this->container['repair_load'] = isset($data['repair_load']) ? $data['repair_load'] : null;
+        $this->container['update_links_type'] = isset($data['update_links_type']) ? $data['update_links_type'] : null;
+        $this->container['sheet_tab_bar_width'] = isset($data['sheet_tab_bar_width']) ? $data['sheet_tab_bar_width'] : null;
     }
 
     /**
@@ -470,361 +470,25 @@ class WorkbookSettings implements  ArrayAccess
 
 
     /**
-     * Gets auto_compress_pictures
-     *
-     * @return bool
-     */
-    public function getAutoCompressPictures()
-    {
-        return $this->container['auto_compress_pictures'];
-    }
-
-    /**
-     * Sets auto_compress_pictures
-     *
-     * @param bool $auto_compress_pictures auto_compress_pictures
-     *
-     * @return $this
-     */
-    public function setAutoCompressPictures($auto_compress_pictures)
-    {
-        $this->container['auto_compress_pictures'] = $auto_compress_pictures;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_recover
-     *
-     * @return bool
-     */
-    public function getAutoRecover()
-    {
-        return $this->container['auto_recover'];
-    }
-
-    /**
-     * Sets auto_recover
-     *
-     * @param bool $auto_recover auto_recover
-     *
-     * @return $this
-     */
-    public function setAutoRecover($auto_recover)
-    {
-        $this->container['auto_recover'] = $auto_recover;
-
-        return $this;
-    }
-
-    /**
-     * Gets build_version
+     * Gets number_group_separator
      *
      * @return string
      */
-    public function getBuildVersion()
+    public function getNumberGroupSeparator()
     {
-        return $this->container['build_version'];
+        return $this->container['number_group_separator'];
     }
 
     /**
-     * Sets build_version
+     * Sets number_group_separator
      *
-     * @param string $build_version Specifies the incremental public release of the application.
+     * @param string $number_group_separator number_group_separator
      *
      * @return $this
      */
-    public function setBuildVersion($build_version)
+    public function setNumberGroupSeparator($number_group_separator)
     {
-        $this->container['build_version'] = $build_version;
-
-        return $this;
-    }
-
-    /**
-     * Gets calc_mode
-     *
-     * @return string
-     */
-    public function getCalcMode()
-    {
-        return $this->container['calc_mode'];
-    }
-
-    /**
-     * Sets calc_mode
-     *
-     * @param string $calc_mode It specifies whether to calculate formulas manually, automatically or automatically except for multiple table operations.
-     *
-     * @return $this
-     */
-    public function setCalcMode($calc_mode)
-    {
-        $this->container['calc_mode'] = $calc_mode;
-
-        return $this;
-    }
-
-    /**
-     * Gets calc_stack_size
-     *
-     * @return int
-     */
-    public function getCalcStackSize()
-    {
-        return $this->container['calc_stack_size'];
-    }
-
-    /**
-     * Sets calc_stack_size
-     *
-     * @param int $calc_stack_size Specifies the stack size for calculating cells recursively.  The large value for this size will give better performance when there are lots of cells need to be calculated recursively.  On the other hand, larger value will raise the stakes of StackOverflowException.  If use gets StackOverflowException when calculating formulas, this value should be decreased.
-     *
-     * @return $this
-     */
-    public function setCalcStackSize($calc_stack_size)
-    {
-        $this->container['calc_stack_size'] = $calc_stack_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets calculation_id
-     *
-     * @return string
-     */
-    public function getCalculationId()
-    {
-        return $this->container['calculation_id'];
-    }
-
-    /**
-     * Sets calculation_id
-     *
-     * @param string $calculation_id Specifies the version of the calculation engine used to calculate values in the workbook.
-     *
-     * @return $this
-     */
-    public function setCalculationId($calculation_id)
-    {
-        $this->container['calculation_id'] = $calculation_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets check_comptiliblity
-     *
-     * @return bool
-     */
-    public function getCheckComptiliblity()
-    {
-        return $this->container['check_comptiliblity'];
-    }
-
-    /**
-     * Sets check_comptiliblity
-     *
-     * @param bool $check_comptiliblity Indicates whether check comptiliblity when saving workbook.                           Remarks:  The default value is true.
-     *
-     * @return $this
-     */
-    public function setCheckComptiliblity($check_comptiliblity)
-    {
-        $this->container['check_comptiliblity'] = $check_comptiliblity;
-
-        return $this;
-    }
-
-    /**
-     * Gets check_excel_restriction
-     *
-     * @return bool
-     */
-    public function getCheckExcelRestriction()
-    {
-        return $this->container['check_excel_restriction'];
-    }
-
-    /**
-     * Sets check_excel_restriction
-     *
-     * @param bool $check_excel_restriction Whether check restriction of excel file when user modify cells related objects.  For example, excel does not allow inputting string value longer than 32K.  When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.  If this property is false, we will accept your input string value as the cell's value so that later you can output the complete string value for other file formats such as CSV.  However, if you have set such kind of value that is invalid for excel file format, you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
-     *
-     * @return $this
-     */
-    public function setCheckExcelRestriction($check_excel_restriction)
-    {
-        $this->container['check_excel_restriction'] = $check_excel_restriction;
-
-        return $this;
-    }
-
-    /**
-     * Gets crash_save
-     *
-     * @return bool
-     */
-    public function getCrashSave()
-    {
-        return $this->container['crash_save'];
-    }
-
-    /**
-     * Sets crash_save
-     *
-     * @param bool $crash_save crash_save
-     *
-     * @return $this
-     */
-    public function setCrashSave($crash_save)
-    {
-        $this->container['crash_save'] = $crash_save;
-
-        return $this;
-    }
-
-    /**
-     * Gets create_calc_chain
-     *
-     * @return bool
-     */
-    public function getCreateCalcChain()
-    {
-        return $this->container['create_calc_chain'];
-    }
-
-    /**
-     * Sets create_calc_chain
-     *
-     * @param bool $create_calc_chain Indicates whether create calculated formulas chain.
-     *
-     * @return $this
-     */
-    public function setCreateCalcChain($create_calc_chain)
-    {
-        $this->container['create_calc_chain'] = $create_calc_chain;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_extract_load
-     *
-     * @return bool
-     */
-    public function getDataExtractLoad()
-    {
-        return $this->container['data_extract_load'];
-    }
-
-    /**
-     * Sets data_extract_load
-     *
-     * @param bool $data_extract_load data_extract_load
-     *
-     * @return $this
-     */
-    public function setDataExtractLoad($data_extract_load)
-    {
-        $this->container['data_extract_load'] = $data_extract_load;
-
-        return $this;
-    }
-
-    /**
-     * Gets date1904
-     *
-     * @return bool
-     */
-    public function getDate1904()
-    {
-        return $this->container['date1904'];
-    }
-
-    /**
-     * Sets date1904
-     *
-     * @param bool $date1904 Gets or sets a value which represents if the workbook uses the 1904 date system.
-     *
-     * @return $this
-     */
-    public function setDate1904($date1904)
-    {
-        $this->container['date1904'] = $date1904;
-
-        return $this;
-    }
-
-    /**
-     * Gets display_drawing_objects
-     *
-     * @return string
-     */
-    public function getDisplayDrawingObjects()
-    {
-        return $this->container['display_drawing_objects'];
-    }
-
-    /**
-     * Sets display_drawing_objects
-     *
-     * @param string $display_drawing_objects Indicates whether and how to show objects in the workbook.
-     *
-     * @return $this
-     */
-    public function setDisplayDrawingObjects($display_drawing_objects)
-    {
-        $this->container['display_drawing_objects'] = $display_drawing_objects;
-
-        return $this;
-    }
-
-    /**
-     * Gets enable_macros
-     *
-     * @return bool
-     */
-    public function getEnableMacros()
-    {
-        return $this->container['enable_macros'];
-    }
-
-    /**
-     * Sets enable_macros
-     *
-     * @param bool $enable_macros enable_macros
-     *
-     * @return $this
-     */
-    public function setEnableMacros($enable_macros)
-    {
-        $this->container['enable_macros'] = $enable_macros;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_visible_tab
-     *
-     * @return int
-     */
-    public function getFirstVisibleTab()
-    {
-        return $this->container['first_visible_tab'];
-    }
-
-    /**
-     * Sets first_visible_tab
-     *
-     * @param int $first_visible_tab Gets or sets the first visible worksheet tab.
-     *
-     * @return $this
-     */
-    public function setFirstVisibleTab($first_visible_tab)
-    {
-        $this->container['first_visible_tab'] = $first_visible_tab;
+        $this->container['number_group_separator'] = $number_group_separator;
 
         return $this;
     }
@@ -854,78 +518,6 @@ class WorkbookSettings implements  ArrayAccess
     }
 
     /**
-     * Gets is_default_encrypted
-     *
-     * @return bool
-     */
-    public function getIsDefaultEncrypted()
-    {
-        return $this->container['is_default_encrypted'];
-    }
-
-    /**
-     * Sets is_default_encrypted
-     *
-     * @param bool $is_default_encrypted is_default_encrypted
-     *
-     * @return $this
-     */
-    public function setIsDefaultEncrypted($is_default_encrypted)
-    {
-        $this->container['is_default_encrypted'] = $is_default_encrypted;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_hidden
-     *
-     * @return bool
-     */
-    public function getIsHidden()
-    {
-        return $this->container['is_hidden'];
-    }
-
-    /**
-     * Sets is_hidden
-     *
-     * @param bool $is_hidden Indicates whether this workbook is hidden.
-     *
-     * @return $this
-     */
-    public function setIsHidden($is_hidden)
-    {
-        $this->container['is_hidden'] = $is_hidden;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_h_scroll_bar_visible
-     *
-     * @return bool
-     */
-    public function getIsHScrollBarVisible()
-    {
-        return $this->container['is_h_scroll_bar_visible'];
-    }
-
-    /**
-     * Sets is_h_scroll_bar_visible
-     *
-     * @param bool $is_h_scroll_bar_visible Gets or sets a value indicating whether the generated spreadsheet will contain a horizontal scroll bar.                           Remarks: The default value is true.
-     *
-     * @return $this
-     */
-    public function setIsHScrollBarVisible($is_h_scroll_bar_visible)
-    {
-        $this->container['is_h_scroll_bar_visible'] = $is_h_scroll_bar_visible;
-
-        return $this;
-    }
-
-    /**
      * Gets is_minimized
      *
      * @return bool
@@ -950,265 +542,25 @@ class WorkbookSettings implements  ArrayAccess
     }
 
     /**
-     * Gets is_v_scroll_bar_visible
-     *
-     * @return bool
-     */
-    public function getIsVScrollBarVisible()
-    {
-        return $this->container['is_v_scroll_bar_visible'];
-    }
-
-    /**
-     * Sets is_v_scroll_bar_visible
-     *
-     * @param bool $is_v_scroll_bar_visible Gets or sets a value indicating whether the generated spreadsheet will contain a vertical scroll bar.                           Remarks: The default value is true.
-     *
-     * @return $this
-     */
-    public function setIsVScrollBarVisible($is_v_scroll_bar_visible)
-    {
-        $this->container['is_v_scroll_bar_visible'] = $is_v_scroll_bar_visible;
-
-        return $this;
-    }
-
-    /**
-     * Gets iteration
-     *
-     * @return bool
-     */
-    public function getIteration()
-    {
-        return $this->container['iteration'];
-    }
-
-    /**
-     * Sets iteration
-     *
-     * @param bool $iteration Indicates if Aspose.Cells will use iteration to resolve circular references.
-     *
-     * @return $this
-     */
-    public function setIteration($iteration)
-    {
-        $this->container['iteration'] = $iteration;
-
-        return $this;
-    }
-
-    /**
-     * Gets language_code
+     * Gets calculation_id
      *
      * @return string
      */
-    public function getLanguageCode()
+    public function getCalculationId()
     {
-        return $this->container['language_code'];
+        return $this->container['calculation_id'];
     }
 
     /**
-     * Sets language_code
+     * Sets calculation_id
      *
-     * @param string $language_code Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+     * @param string $calculation_id Specifies the version of the calculation engine used to calculate values in the workbook.
      *
      * @return $this
      */
-    public function setLanguageCode($language_code)
+    public function setCalculationId($calculation_id)
     {
-        $this->container['language_code'] = $language_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_change
-     *
-     * @return double
-     */
-    public function getMaxChange()
-    {
-        return $this->container['max_change'];
-    }
-
-    /**
-     * Sets max_change
-     *
-     * @param double $max_change Returns or sets the maximum number of change that Microsoft Excel can use to resolve a circular reference.
-     *
-     * @return $this
-     */
-    public function setMaxChange($max_change)
-    {
-        $this->container['max_change'] = $max_change;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_iteration
-     *
-     * @return int
-     */
-    public function getMaxIteration()
-    {
-        return $this->container['max_iteration'];
-    }
-
-    /**
-     * Sets max_iteration
-     *
-     * @param int $max_iteration Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.
-     *
-     * @return $this
-     */
-    public function setMaxIteration($max_iteration)
-    {
-        $this->container['max_iteration'] = $max_iteration;
-
-        return $this;
-    }
-
-    /**
-     * Gets memory_setting
-     *
-     * @return string
-     */
-    public function getMemorySetting()
-    {
-        return $this->container['memory_setting'];
-    }
-
-    /**
-     * Sets memory_setting
-     *
-     * @param string $memory_setting memory_setting
-     *
-     * @return $this
-     */
-    public function setMemorySetting($memory_setting)
-    {
-        $this->container['memory_setting'] = $memory_setting;
-
-        return $this;
-    }
-
-    /**
-     * Gets number_decimal_separator
-     *
-     * @return string
-     */
-    public function getNumberDecimalSeparator()
-    {
-        return $this->container['number_decimal_separator'];
-    }
-
-    /**
-     * Sets number_decimal_separator
-     *
-     * @param string $number_decimal_separator number_decimal_separator
-     *
-     * @return $this
-     */
-    public function setNumberDecimalSeparator($number_decimal_separator)
-    {
-        $this->container['number_decimal_separator'] = $number_decimal_separator;
-
-        return $this;
-    }
-
-    /**
-     * Gets number_group_separator
-     *
-     * @return string
-     */
-    public function getNumberGroupSeparator()
-    {
-        return $this->container['number_group_separator'];
-    }
-
-    /**
-     * Sets number_group_separator
-     *
-     * @param string $number_group_separator number_group_separator
-     *
-     * @return $this
-     */
-    public function setNumberGroupSeparator($number_group_separator)
-    {
-        $this->container['number_group_separator'] = $number_group_separator;
-
-        return $this;
-    }
-
-    /**
-     * Gets parsing_formula_on_open
-     *
-     * @return bool
-     */
-    public function getParsingFormulaOnOpen()
-    {
-        return $this->container['parsing_formula_on_open'];
-    }
-
-    /**
-     * Sets parsing_formula_on_open
-     *
-     * @param bool $parsing_formula_on_open Indicates whether parsing the formula when reading the file.                           Remarks: Only applies for Excel Xlsx,Xltx, Xltm,Xlsm file because the formulas in the files are stored with a string formula.
-     *
-     * @return $this
-     */
-    public function setParsingFormulaOnOpen($parsing_formula_on_open)
-    {
-        $this->container['parsing_formula_on_open'] = $parsing_formula_on_open;
-
-        return $this;
-    }
-
-    /**
-     * Gets precision_as_displayed
-     *
-     * @return bool
-     */
-    public function getPrecisionAsDisplayed()
-    {
-        return $this->container['precision_as_displayed'];
-    }
-
-    /**
-     * Sets precision_as_displayed
-     *
-     * @param bool $precision_as_displayed True if calculations in this workbook will be done using only the precision of the numbers as they're displayed
-     *
-     * @return $this
-     */
-    public function setPrecisionAsDisplayed($precision_as_displayed)
-    {
-        $this->container['precision_as_displayed'] = $precision_as_displayed;
-
-        return $this;
-    }
-
-    /**
-     * Gets recalculate_before_save
-     *
-     * @return bool
-     */
-    public function getRecalculateBeforeSave()
-    {
-        return $this->container['recalculate_before_save'];
-    }
-
-    /**
-     * Sets recalculate_before_save
-     *
-     * @param bool $recalculate_before_save Indicates whether to recalculate before saving the document.
-     *
-     * @return $this
-     */
-    public function setRecalculateBeforeSave($recalculate_before_save)
-    {
-        $this->container['recalculate_before_save'] = $recalculate_before_save;
+        $this->container['calculation_id'] = $calculation_id;
 
         return $this;
     }
@@ -1238,217 +590,49 @@ class WorkbookSettings implements  ArrayAccess
     }
 
     /**
-     * Gets recommend_read_only
+     * Gets check_excel_restriction
      *
      * @return bool
      */
-    public function getRecommendReadOnly()
+    public function getCheckExcelRestriction()
     {
-        return $this->container['recommend_read_only'];
+        return $this->container['check_excel_restriction'];
     }
 
     /**
-     * Sets recommend_read_only
+     * Sets check_excel_restriction
      *
-     * @param bool $recommend_read_only Indicates if the Read Only Recommended option is selected.
+     * @param bool $check_excel_restriction Whether check restriction of excel file when user modify cells related objects.  For example, excel does not allow inputting string value longer than 32K.  When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.  If this property is false, we will accept your input string value as the cell's value so that later you can output the complete string value for other file formats such as CSV.  However, if you have set such kind of value that is invalid for excel file format, you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file.
      *
      * @return $this
      */
-    public function setRecommendReadOnly($recommend_read_only)
+    public function setCheckExcelRestriction($check_excel_restriction)
     {
-        $this->container['recommend_read_only'] = $recommend_read_only;
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
 
         return $this;
     }
 
     /**
-     * Gets region
-     *
-     * @return string
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /**
-     * Sets region
-     *
-     * @param string $region Gets or sets the system regional settings based on CountryCode at the time the file was saved.                           Remarks: If you do not want to use the region saved in the file, please reset it after reading the file.
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * Gets remove_personal_information
+     * Gets is_h_scroll_bar_visible
      *
      * @return bool
      */
-    public function getRemovePersonalInformation()
+    public function getIsHScrollBarVisible()
     {
-        return $this->container['remove_personal_information'];
+        return $this->container['is_h_scroll_bar_visible'];
     }
 
     /**
-     * Sets remove_personal_information
+     * Sets is_h_scroll_bar_visible
      *
-     * @param bool $remove_personal_information remove_personal_information
+     * @param bool $is_h_scroll_bar_visible Gets or sets a value indicating whether the generated spreadsheet will contain a horizontal scroll bar.                           Remarks: The default value is true.
      *
      * @return $this
      */
-    public function setRemovePersonalInformation($remove_personal_information)
+    public function setIsHScrollBarVisible($is_h_scroll_bar_visible)
     {
-        $this->container['remove_personal_information'] = $remove_personal_information;
-
-        return $this;
-    }
-
-    /**
-     * Gets repair_load
-     *
-     * @return bool
-     */
-    public function getRepairLoad()
-    {
-        return $this->container['repair_load'];
-    }
-
-    /**
-     * Sets repair_load
-     *
-     * @param bool $repair_load repair_load
-     *
-     * @return $this
-     */
-    public function setRepairLoad($repair_load)
-    {
-        $this->container['repair_load'] = $repair_load;
-
-        return $this;
-    }
-
-    /**
-     * Gets shared
-     *
-     * @return bool
-     */
-    public function getShared()
-    {
-        return $this->container['shared'];
-    }
-
-    /**
-     * Sets shared
-     *
-     * @param bool $shared Gets or sets a value that indicates whether the Workbook is shared.                           Remarks: The default value is false.
-     *
-     * @return $this
-     */
-    public function setShared($shared)
-    {
-        $this->container['shared'] = $shared;
-
-        return $this;
-    }
-
-    /**
-     * Gets sheet_tab_bar_width
-     *
-     * @return int
-     */
-    public function getSheetTabBarWidth()
-    {
-        return $this->container['sheet_tab_bar_width'];
-    }
-
-    /**
-     * Sets sheet_tab_bar_width
-     *
-     * @param int $sheet_tab_bar_width Width of worksheet tab bar (in 1/1000 of window width).
-     *
-     * @return $this
-     */
-    public function setSheetTabBarWidth($sheet_tab_bar_width)
-    {
-        $this->container['sheet_tab_bar_width'] = $sheet_tab_bar_width;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_tabs
-     *
-     * @return bool
-     */
-    public function getShowTabs()
-    {
-        return $this->container['show_tabs'];
-    }
-
-    /**
-     * Sets show_tabs
-     *
-     * @param bool $show_tabs Get or sets a value whether the Workbook tabs are displayed.                           Remarks: The default value is true.
-     *
-     * @return $this
-     */
-    public function setShowTabs($show_tabs)
-    {
-        $this->container['show_tabs'] = $show_tabs;
-
-        return $this;
-    }
-
-    /**
-     * Gets update_adjacent_cells_border
-     *
-     * @return bool
-     */
-    public function getUpdateAdjacentCellsBorder()
-    {
-        return $this->container['update_adjacent_cells_border'];
-    }
-
-    /**
-     * Sets update_adjacent_cells_border
-     *
-     * @param bool $update_adjacent_cells_border Indicates whether update adjacent cells' border.                           Remarks: The default value is true.  For example: the bottom border of the cell A1 is update, the top border of the cell A2 should be changed too.
-     *
-     * @return $this
-     */
-    public function setUpdateAdjacentCellsBorder($update_adjacent_cells_border)
-    {
-        $this->container['update_adjacent_cells_border'] = $update_adjacent_cells_border;
-
-        return $this;
-    }
-
-    /**
-     * Gets update_links_type
-     *
-     * @return string
-     */
-    public function getUpdateLinksType()
-    {
-        return $this->container['update_links_type'];
-    }
-
-    /**
-     * Sets update_links_type
-     *
-     * @param string $update_links_type update_links_type
-     *
-     * @return $this
-     */
-    public function setUpdateLinksType($update_links_type)
-    {
-        $this->container['update_links_type'] = $update_links_type;
+        $this->container['is_h_scroll_bar_visible'] = $is_h_scroll_bar_visible;
 
         return $this;
     }
@@ -1502,6 +686,198 @@ class WorkbookSettings implements  ArrayAccess
     }
 
     /**
+     * Gets calc_stack_size
+     *
+     * @return int
+     */
+    public function getCalcStackSize()
+    {
+        return $this->container['calc_stack_size'];
+    }
+
+    /**
+     * Sets calc_stack_size
+     *
+     * @param int $calc_stack_size Specifies the stack size for calculating cells recursively.  The large value for this size will give better performance when there are lots of cells need to be calculated recursively.  On the other hand, larger value will raise the stakes of StackOverflowException.  If use gets StackOverflowException when calculating formulas, this value should be decreased.
+     *
+     * @return $this
+     */
+    public function setCalcStackSize($calc_stack_size)
+    {
+        $this->container['calc_stack_size'] = $calc_stack_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets shared
+     *
+     * @return bool
+     */
+    public function getShared()
+    {
+        return $this->container['shared'];
+    }
+
+    /**
+     * Sets shared
+     *
+     * @param bool $shared Gets or sets a value that indicates whether the Workbook is shared.                           Remarks: The default value is false.
+     *
+     * @return $this
+     */
+    public function setShared($shared)
+    {
+        $this->container['shared'] = $shared;
+
+        return $this;
+    }
+
+    /**
+     * Gets remove_personal_information
+     *
+     * @return bool
+     */
+    public function getRemovePersonalInformation()
+    {
+        return $this->container['remove_personal_information'];
+    }
+
+    /**
+     * Sets remove_personal_information
+     *
+     * @param bool $remove_personal_information remove_personal_information
+     *
+     * @return $this
+     */
+    public function setRemovePersonalInformation($remove_personal_information)
+    {
+        $this->container['remove_personal_information'] = $remove_personal_information;
+
+        return $this;
+    }
+
+    /**
+     * Gets language_code
+     *
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->container['language_code'];
+    }
+
+    /**
+     * Sets language_code
+     *
+     * @param string $language_code Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
+     *
+     * @return $this
+     */
+    public function setLanguageCode($language_code)
+    {
+        $this->container['language_code'] = $language_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets enable_macros
+     *
+     * @return bool
+     */
+    public function getEnableMacros()
+    {
+        return $this->container['enable_macros'];
+    }
+
+    /**
+     * Sets enable_macros
+     *
+     * @param bool $enable_macros enable_macros
+     *
+     * @return $this
+     */
+    public function setEnableMacros($enable_macros)
+    {
+        $this->container['enable_macros'] = $enable_macros;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_default_encrypted
+     *
+     * @return bool
+     */
+    public function getIsDefaultEncrypted()
+    {
+        return $this->container['is_default_encrypted'];
+    }
+
+    /**
+     * Sets is_default_encrypted
+     *
+     * @param bool $is_default_encrypted is_default_encrypted
+     *
+     * @return $this
+     */
+    public function setIsDefaultEncrypted($is_default_encrypted)
+    {
+        $this->container['is_default_encrypted'] = $is_default_encrypted;
+
+        return $this;
+    }
+
+    /**
+     * Gets recalculate_before_save
+     *
+     * @return bool
+     */
+    public function getRecalculateBeforeSave()
+    {
+        return $this->container['recalculate_before_save'];
+    }
+
+    /**
+     * Sets recalculate_before_save
+     *
+     * @param bool $recalculate_before_save Indicates whether to recalculate before saving the document.
+     *
+     * @return $this
+     */
+    public function setRecalculateBeforeSave($recalculate_before_save)
+    {
+        $this->container['recalculate_before_save'] = $recalculate_before_save;
+
+        return $this;
+    }
+
+    /**
+     * Gets parsing_formula_on_open
+     *
+     * @return bool
+     */
+    public function getParsingFormulaOnOpen()
+    {
+        return $this->container['parsing_formula_on_open'];
+    }
+
+    /**
+     * Sets parsing_formula_on_open
+     *
+     * @param bool $parsing_formula_on_open Indicates whether parsing the formula when reading the file.                           Remarks: Only applies for Excel Xlsx,Xltx, Xltm,Xlsm file because the formulas in the files are stored with a string formula.
+     *
+     * @return $this
+     */
+    public function setParsingFormulaOnOpen($parsing_formula_on_open)
+    {
+        $this->container['parsing_formula_on_open'] = $parsing_formula_on_open;
+
+        return $this;
+    }
+
+    /**
      * Gets window_top
      *
      * @return double
@@ -1526,6 +902,510 @@ class WorkbookSettings implements  ArrayAccess
     }
 
     /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     * @param string $region Gets or sets the system regional settings based on CountryCode at the time the file was saved.                           Remarks: If you do not want to use the region saved in the file, please reset it after reading the file.
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
+
+        return $this;
+    }
+
+    /**
+     * Gets memory_setting
+     *
+     * @return string
+     */
+    public function getMemorySetting()
+    {
+        return $this->container['memory_setting'];
+    }
+
+    /**
+     * Sets memory_setting
+     *
+     * @param string $memory_setting memory_setting
+     *
+     * @return $this
+     */
+    public function setMemorySetting($memory_setting)
+    {
+        $this->container['memory_setting'] = $memory_setting;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_adjacent_cells_border
+     *
+     * @return bool
+     */
+    public function getUpdateAdjacentCellsBorder()
+    {
+        return $this->container['update_adjacent_cells_border'];
+    }
+
+    /**
+     * Sets update_adjacent_cells_border
+     *
+     * @param bool $update_adjacent_cells_border Indicates whether update adjacent cells' border.                           Remarks: The default value is true.  For example: the bottom border of the cell A1 is update, the top border of the cell A2 should be changed too.
+     *
+     * @return $this
+     */
+    public function setUpdateAdjacentCellsBorder($update_adjacent_cells_border)
+    {
+        $this->container['update_adjacent_cells_border'] = $update_adjacent_cells_border;
+
+        return $this;
+    }
+
+    /**
+     * Gets crash_save
+     *
+     * @return bool
+     */
+    public function getCrashSave()
+    {
+        return $this->container['crash_save'];
+    }
+
+    /**
+     * Sets crash_save
+     *
+     * @param bool $crash_save crash_save
+     *
+     * @return $this
+     */
+    public function setCrashSave($crash_save)
+    {
+        $this->container['crash_save'] = $crash_save;
+
+        return $this;
+    }
+
+    /**
+     * Gets show_tabs
+     *
+     * @return bool
+     */
+    public function getShowTabs()
+    {
+        return $this->container['show_tabs'];
+    }
+
+    /**
+     * Sets show_tabs
+     *
+     * @param bool $show_tabs Get or sets a value whether the Workbook tabs are displayed.                           Remarks: The default value is true.
+     *
+     * @return $this
+     */
+    public function setShowTabs($show_tabs)
+    {
+        $this->container['show_tabs'] = $show_tabs;
+
+        return $this;
+    }
+
+    /**
+     * Gets precision_as_displayed
+     *
+     * @return bool
+     */
+    public function getPrecisionAsDisplayed()
+    {
+        return $this->container['precision_as_displayed'];
+    }
+
+    /**
+     * Sets precision_as_displayed
+     *
+     * @param bool $precision_as_displayed True if calculations in this workbook will be done using only the precision of the numbers as they're displayed
+     *
+     * @return $this
+     */
+    public function setPrecisionAsDisplayed($precision_as_displayed)
+    {
+        $this->container['precision_as_displayed'] = $precision_as_displayed;
+
+        return $this;
+    }
+
+    /**
+     * Gets calc_mode
+     *
+     * @return string
+     */
+    public function getCalcMode()
+    {
+        return $this->container['calc_mode'];
+    }
+
+    /**
+     * Sets calc_mode
+     *
+     * @param string $calc_mode It specifies whether to calculate formulas manually, automatically or automatically except for multiple table operations.
+     *
+     * @return $this
+     */
+    public function setCalcMode($calc_mode)
+    {
+        $this->container['calc_mode'] = $calc_mode;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_compress_pictures
+     *
+     * @return bool
+     */
+    public function getAutoCompressPictures()
+    {
+        return $this->container['auto_compress_pictures'];
+    }
+
+    /**
+     * Sets auto_compress_pictures
+     *
+     * @param bool $auto_compress_pictures auto_compress_pictures
+     *
+     * @return $this
+     */
+    public function setAutoCompressPictures($auto_compress_pictures)
+    {
+        $this->container['auto_compress_pictures'] = $auto_compress_pictures;
+
+        return $this;
+    }
+
+    /**
+     * Gets date1904
+     *
+     * @return bool
+     */
+    public function getDate1904()
+    {
+        return $this->container['date1904'];
+    }
+
+    /**
+     * Sets date1904
+     *
+     * @param bool $date1904 Gets or sets a value which represents if the workbook uses the 1904 date system.
+     *
+     * @return $this
+     */
+    public function setDate1904($date1904)
+    {
+        $this->container['date1904'] = $date1904;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_decimal_separator
+     *
+     * @return string
+     */
+    public function getNumberDecimalSeparator()
+    {
+        return $this->container['number_decimal_separator'];
+    }
+
+    /**
+     * Sets number_decimal_separator
+     *
+     * @param string $number_decimal_separator number_decimal_separator
+     *
+     * @return $this
+     */
+    public function setNumberDecimalSeparator($number_decimal_separator)
+    {
+        $this->container['number_decimal_separator'] = $number_decimal_separator;
+
+        return $this;
+    }
+
+    /**
+     * Gets iteration
+     *
+     * @return bool
+     */
+    public function getIteration()
+    {
+        return $this->container['iteration'];
+    }
+
+    /**
+     * Sets iteration
+     *
+     * @param bool $iteration Indicates if Aspose.Cells will use iteration to resolve circular references.
+     *
+     * @return $this
+     */
+    public function setIteration($iteration)
+    {
+        $this->container['iteration'] = $iteration;
+
+        return $this;
+    }
+
+    /**
+     * Gets check_comptiliblity
+     *
+     * @return bool
+     */
+    public function getCheckComptiliblity()
+    {
+        return $this->container['check_comptiliblity'];
+    }
+
+    /**
+     * Sets check_comptiliblity
+     *
+     * @param bool $check_comptiliblity Indicates whether check comptiliblity when saving workbook.                           Remarks:  The default value is true.
+     *
+     * @return $this
+     */
+    public function setCheckComptiliblity($check_comptiliblity)
+    {
+        $this->container['check_comptiliblity'] = $check_comptiliblity;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_recover
+     *
+     * @return bool
+     */
+    public function getAutoRecover()
+    {
+        return $this->container['auto_recover'];
+    }
+
+    /**
+     * Sets auto_recover
+     *
+     * @param bool $auto_recover auto_recover
+     *
+     * @return $this
+     */
+    public function setAutoRecover($auto_recover)
+    {
+        $this->container['auto_recover'] = $auto_recover;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_change
+     *
+     * @return double
+     */
+    public function getMaxChange()
+    {
+        return $this->container['max_change'];
+    }
+
+    /**
+     * Sets max_change
+     *
+     * @param double $max_change Returns or sets the maximum number of change that Microsoft Excel can use to resolve a circular reference.
+     *
+     * @return $this
+     */
+    public function setMaxChange($max_change)
+    {
+        $this->container['max_change'] = $max_change;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_extract_load
+     *
+     * @return bool
+     */
+    public function getDataExtractLoad()
+    {
+        return $this->container['data_extract_load'];
+    }
+
+    /**
+     * Sets data_extract_load
+     *
+     * @param bool $data_extract_load data_extract_load
+     *
+     * @return $this
+     */
+    public function setDataExtractLoad($data_extract_load)
+    {
+        $this->container['data_extract_load'] = $data_extract_load;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_visible_tab
+     *
+     * @return int
+     */
+    public function getFirstVisibleTab()
+    {
+        return $this->container['first_visible_tab'];
+    }
+
+    /**
+     * Sets first_visible_tab
+     *
+     * @param int $first_visible_tab Gets or sets the first visible worksheet tab.
+     *
+     * @return $this
+     */
+    public function setFirstVisibleTab($first_visible_tab)
+    {
+        $this->container['first_visible_tab'] = $first_visible_tab;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_hidden
+     *
+     * @return bool
+     */
+    public function getIsHidden()
+    {
+        return $this->container['is_hidden'];
+    }
+
+    /**
+     * Sets is_hidden
+     *
+     * @param bool $is_hidden Indicates whether this workbook is hidden.
+     *
+     * @return $this
+     */
+    public function setIsHidden($is_hidden)
+    {
+        $this->container['is_hidden'] = $is_hidden;
+
+        return $this;
+    }
+
+    /**
+     * Gets recommend_read_only
+     *
+     * @return bool
+     */
+    public function getRecommendReadOnly()
+    {
+        return $this->container['recommend_read_only'];
+    }
+
+    /**
+     * Sets recommend_read_only
+     *
+     * @param bool $recommend_read_only Indicates if the Read Only Recommended option is selected.
+     *
+     * @return $this
+     */
+    public function setRecommendReadOnly($recommend_read_only)
+    {
+        $this->container['recommend_read_only'] = $recommend_read_only;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_drawing_objects
+     *
+     * @return string
+     */
+    public function getDisplayDrawingObjects()
+    {
+        return $this->container['display_drawing_objects'];
+    }
+
+    /**
+     * Sets display_drawing_objects
+     *
+     * @param string $display_drawing_objects Indicates whether and how to show objects in the workbook.
+     *
+     * @return $this
+     */
+    public function setDisplayDrawingObjects($display_drawing_objects)
+    {
+        $this->container['display_drawing_objects'] = $display_drawing_objects;
+
+        return $this;
+    }
+
+    /**
+     * Gets build_version
+     *
+     * @return string
+     */
+    public function getBuildVersion()
+    {
+        return $this->container['build_version'];
+    }
+
+    /**
+     * Sets build_version
+     *
+     * @param string $build_version Specifies the incremental public release of the application.
+     *
+     * @return $this
+     */
+    public function setBuildVersion($build_version)
+    {
+        $this->container['build_version'] = $build_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_v_scroll_bar_visible
+     *
+     * @return bool
+     */
+    public function getIsVScrollBarVisible()
+    {
+        return $this->container['is_v_scroll_bar_visible'];
+    }
+
+    /**
+     * Sets is_v_scroll_bar_visible
+     *
+     * @param bool $is_v_scroll_bar_visible Gets or sets a value indicating whether the generated spreadsheet will contain a vertical scroll bar.                           Remarks: The default value is true.
+     *
+     * @return $this
+     */
+    public function setIsVScrollBarVisible($is_v_scroll_bar_visible)
+    {
+        $this->container['is_v_scroll_bar_visible'] = $is_v_scroll_bar_visible;
+
+        return $this;
+    }
+
+    /**
      * Gets window_width
      *
      * @return double
@@ -1545,6 +1425,126 @@ class WorkbookSettings implements  ArrayAccess
     public function setWindowWidth($window_width)
     {
         $this->container['window_width'] = $window_width;
+
+        return $this;
+    }
+
+    /**
+     * Gets create_calc_chain
+     *
+     * @return bool
+     */
+    public function getCreateCalcChain()
+    {
+        return $this->container['create_calc_chain'];
+    }
+
+    /**
+     * Sets create_calc_chain
+     *
+     * @param bool $create_calc_chain Indicates whether create calculated formulas chain.
+     *
+     * @return $this
+     */
+    public function setCreateCalcChain($create_calc_chain)
+    {
+        $this->container['create_calc_chain'] = $create_calc_chain;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_iteration
+     *
+     * @return int
+     */
+    public function getMaxIteration()
+    {
+        return $this->container['max_iteration'];
+    }
+
+    /**
+     * Sets max_iteration
+     *
+     * @param int $max_iteration Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.
+     *
+     * @return $this
+     */
+    public function setMaxIteration($max_iteration)
+    {
+        $this->container['max_iteration'] = $max_iteration;
+
+        return $this;
+    }
+
+    /**
+     * Gets repair_load
+     *
+     * @return bool
+     */
+    public function getRepairLoad()
+    {
+        return $this->container['repair_load'];
+    }
+
+    /**
+     * Sets repair_load
+     *
+     * @param bool $repair_load repair_load
+     *
+     * @return $this
+     */
+    public function setRepairLoad($repair_load)
+    {
+        $this->container['repair_load'] = $repair_load;
+
+        return $this;
+    }
+
+    /**
+     * Gets update_links_type
+     *
+     * @return string
+     */
+    public function getUpdateLinksType()
+    {
+        return $this->container['update_links_type'];
+    }
+
+    /**
+     * Sets update_links_type
+     *
+     * @param string $update_links_type update_links_type
+     *
+     * @return $this
+     */
+    public function setUpdateLinksType($update_links_type)
+    {
+        $this->container['update_links_type'] = $update_links_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets sheet_tab_bar_width
+     *
+     * @return int
+     */
+    public function getSheetTabBarWidth()
+    {
+        return $this->container['sheet_tab_bar_width'];
+    }
+
+    /**
+     * Sets sheet_tab_bar_width
+     *
+     * @param int $sheet_tab_bar_width Width of worksheet tab bar (in 1/1000 of window width).
+     *
+     * @return $this
+     */
+    public function setSheetTabBarWidth($sheet_tab_bar_width)
+    {
+        $this->container['sheet_tab_bar_width'] = $sheet_tab_bar_width;
 
         return $this;
     }

@@ -58,8 +58,8 @@ class CustomParserConfig implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'column_index' => 'int',
-        'parse_method' => 'string',
-        'custom_style' => 'string'
+        'custom_style' => 'string',
+        'parse_method' => 'string'
     ];
 
     /**
@@ -69,8 +69,8 @@ class CustomParserConfig implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'column_index' => 'int32',
-        'parse_method' => null,
-        'custom_style' => null
+        'custom_style' => null,
+        'parse_method' => null
     ];
 
     /**
@@ -101,8 +101,8 @@ class CustomParserConfig implements  ArrayAccess
      */
     protected static $attributeMap = [
         'column_index' => 'ColumnIndex',
-        'parse_method' => 'ParseMethod',
-        'custom_style' => 'CustomStyle'
+        'custom_style' => 'CustomStyle',
+        'parse_method' => 'ParseMethod'
     ];
 
     /**
@@ -112,8 +112,8 @@ class CustomParserConfig implements  ArrayAccess
      */
     protected static $setters = [
         'column_index' => 'setColumnIndex',
-        'parse_method' => 'setParseMethod',
-        'custom_style' => 'setCustomStyle'
+        'custom_style' => 'setCustomStyle',
+        'parse_method' => 'setParseMethod'
     ];
 
     /**
@@ -123,8 +123,8 @@ class CustomParserConfig implements  ArrayAccess
      */
     protected static $getters = [
         'column_index' => 'getColumnIndex',
-        'parse_method' => 'getParseMethod',
-        'custom_style' => 'getCustomStyle'
+        'custom_style' => 'getCustomStyle',
+        'parse_method' => 'getParseMethod'
     ];
 
     /**
@@ -188,8 +188,8 @@ class CustomParserConfig implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['column_index'] = isset($data['column_index']) ? $data['column_index'] : null;
-        $this->container['parse_method'] = isset($data['parse_method']) ? $data['parse_method'] : null;
         $this->container['custom_style'] = isset($data['custom_style']) ? $data['custom_style'] : null;
+        $this->container['parse_method'] = isset($data['parse_method']) ? $data['parse_method'] : null;
     }
 
     /**
@@ -242,30 +242,6 @@ class CustomParserConfig implements  ArrayAccess
     }
 
     /**
-     * Gets parse_method
-     *
-     * @return string
-     */
-    public function getParseMethod()
-    {
-        return $this->container['parse_method'];
-    }
-
-    /**
-     * Sets parse_method
-     *
-     * @param string $parse_method parse_method
-     *
-     * @return $this
-     */
-    public function setParseMethod($parse_method)
-    {
-        $this->container['parse_method'] = $parse_method;
-
-        return $this;
-    }
-
-    /**
      * Gets custom_style
      *
      * @return string
@@ -285,6 +261,30 @@ class CustomParserConfig implements  ArrayAccess
     public function setCustomStyle($custom_style)
     {
         $this->container['custom_style'] = $custom_style;
+
+        return $this;
+    }
+
+    /**
+     * Gets parse_method
+     *
+     * @return string
+     */
+    public function getParseMethod()
+    {
+        return $this->container['parse_method'];
+    }
+
+    /**
+     * Sets parse_method
+     *
+     * @param string $parse_method parse_method
+     *
+     * @return $this
+     */
+    public function setParseMethod($parse_method)
+    {
+        $this->container['parse_method'] = $parse_method;
 
         return $this;
     }

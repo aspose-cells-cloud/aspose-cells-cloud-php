@@ -58,21 +58,21 @@ class ListObject implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'auto_filter' => '\Aspose\Cells\Cloud\Model\AutoFilter',
+        'show_totals' => 'bool',
+        'table_style_type' => 'string',
         'display_name' => 'string',
-        'start_column' => 'int',
-        'start_row' => 'int',
-        'end_column' => 'int',
-        'end_row' => 'int',
-        'list_columns' => '\Aspose\Cells\Cloud\Model\ListColumn[]',
         'show_header_row' => 'bool',
+        'start_column' => 'int',
+        'show_table_style_last_column' => 'bool',
         'show_table_style_column_stripes' => 'bool',
         'show_table_style_first_column' => 'bool',
-        'show_table_style_last_column' => 'bool',
+        'start_row' => 'int',
+        'auto_filter' => '\Aspose\Cells\Cloud\Model\AutoFilter',
         'show_table_style_row_stripes' => 'bool',
-        'show_totals' => 'bool',
+        'end_column' => 'int',
         'table_style_name' => 'string',
-        'table_style_type' => 'string'
+        'list_columns' => '\Aspose\Cells\Cloud\Model\ListColumn[]',
+        'end_row' => 'int'
     ];
 
     /**
@@ -82,21 +82,21 @@ class ListObject implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'auto_filter' => null,
+        'show_totals' => null,
+        'table_style_type' => null,
         'display_name' => null,
-        'start_column' => 'int32',
-        'start_row' => 'int32',
-        'end_column' => 'int32',
-        'end_row' => 'int32',
-        'list_columns' => null,
         'show_header_row' => null,
+        'start_column' => 'int32',
+        'show_table_style_last_column' => null,
         'show_table_style_column_stripes' => null,
         'show_table_style_first_column' => null,
-        'show_table_style_last_column' => null,
+        'start_row' => 'int32',
+        'auto_filter' => null,
         'show_table_style_row_stripes' => null,
-        'show_totals' => null,
+        'end_column' => 'int32',
         'table_style_name' => null,
-        'table_style_type' => null
+        'list_columns' => null,
+        'end_row' => 'int32'
     ];
 
     /**
@@ -127,21 +127,21 @@ class ListObject implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'auto_filter' => 'AutoFilter',
+        'show_totals' => 'ShowTotals',
+        'table_style_type' => 'TableStyleType',
         'display_name' => 'DisplayName',
-        'start_column' => 'StartColumn',
-        'start_row' => 'StartRow',
-        'end_column' => 'EndColumn',
-        'end_row' => 'EndRow',
-        'list_columns' => 'ListColumns',
         'show_header_row' => 'ShowHeaderRow',
+        'start_column' => 'StartColumn',
+        'show_table_style_last_column' => 'ShowTableStyleLastColumn',
         'show_table_style_column_stripes' => 'ShowTableStyleColumnStripes',
         'show_table_style_first_column' => 'ShowTableStyleFirstColumn',
-        'show_table_style_last_column' => 'ShowTableStyleLastColumn',
+        'start_row' => 'StartRow',
+        'auto_filter' => 'AutoFilter',
         'show_table_style_row_stripes' => 'ShowTableStyleRowStripes',
-        'show_totals' => 'ShowTotals',
+        'end_column' => 'EndColumn',
         'table_style_name' => 'TableStyleName',
-        'table_style_type' => 'TableStyleType'
+        'list_columns' => 'ListColumns',
+        'end_row' => 'EndRow'
     ];
 
     /**
@@ -151,21 +151,21 @@ class ListObject implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'auto_filter' => 'setAutoFilter',
+        'show_totals' => 'setShowTotals',
+        'table_style_type' => 'setTableStyleType',
         'display_name' => 'setDisplayName',
-        'start_column' => 'setStartColumn',
-        'start_row' => 'setStartRow',
-        'end_column' => 'setEndColumn',
-        'end_row' => 'setEndRow',
-        'list_columns' => 'setListColumns',
         'show_header_row' => 'setShowHeaderRow',
+        'start_column' => 'setStartColumn',
+        'show_table_style_last_column' => 'setShowTableStyleLastColumn',
         'show_table_style_column_stripes' => 'setShowTableStyleColumnStripes',
         'show_table_style_first_column' => 'setShowTableStyleFirstColumn',
-        'show_table_style_last_column' => 'setShowTableStyleLastColumn',
+        'start_row' => 'setStartRow',
+        'auto_filter' => 'setAutoFilter',
         'show_table_style_row_stripes' => 'setShowTableStyleRowStripes',
-        'show_totals' => 'setShowTotals',
+        'end_column' => 'setEndColumn',
         'table_style_name' => 'setTableStyleName',
-        'table_style_type' => 'setTableStyleType'
+        'list_columns' => 'setListColumns',
+        'end_row' => 'setEndRow'
     ];
 
     /**
@@ -175,21 +175,21 @@ class ListObject implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'auto_filter' => 'getAutoFilter',
+        'show_totals' => 'getShowTotals',
+        'table_style_type' => 'getTableStyleType',
         'display_name' => 'getDisplayName',
-        'start_column' => 'getStartColumn',
-        'start_row' => 'getStartRow',
-        'end_column' => 'getEndColumn',
-        'end_row' => 'getEndRow',
-        'list_columns' => 'getListColumns',
         'show_header_row' => 'getShowHeaderRow',
+        'start_column' => 'getStartColumn',
+        'show_table_style_last_column' => 'getShowTableStyleLastColumn',
         'show_table_style_column_stripes' => 'getShowTableStyleColumnStripes',
         'show_table_style_first_column' => 'getShowTableStyleFirstColumn',
-        'show_table_style_last_column' => 'getShowTableStyleLastColumn',
+        'start_row' => 'getStartRow',
+        'auto_filter' => 'getAutoFilter',
         'show_table_style_row_stripes' => 'getShowTableStyleRowStripes',
-        'show_totals' => 'getShowTotals',
+        'end_column' => 'getEndColumn',
         'table_style_name' => 'getTableStyleName',
-        'table_style_type' => 'getTableStyleType'
+        'list_columns' => 'getListColumns',
+        'end_row' => 'getEndRow'
     ];
 
     /**
@@ -253,21 +253,21 @@ class ListObject implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['auto_filter'] = isset($data['auto_filter']) ? $data['auto_filter'] : null;
+        $this->container['show_totals'] = isset($data['show_totals']) ? $data['show_totals'] : null;
+        $this->container['table_style_type'] = isset($data['table_style_type']) ? $data['table_style_type'] : null;
         $this->container['display_name'] = isset($data['display_name']) ? $data['display_name'] : null;
-        $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
-        $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
-        $this->container['end_column'] = isset($data['end_column']) ? $data['end_column'] : null;
-        $this->container['end_row'] = isset($data['end_row']) ? $data['end_row'] : null;
-        $this->container['list_columns'] = isset($data['list_columns']) ? $data['list_columns'] : null;
         $this->container['show_header_row'] = isset($data['show_header_row']) ? $data['show_header_row'] : null;
+        $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
+        $this->container['show_table_style_last_column'] = isset($data['show_table_style_last_column']) ? $data['show_table_style_last_column'] : null;
         $this->container['show_table_style_column_stripes'] = isset($data['show_table_style_column_stripes']) ? $data['show_table_style_column_stripes'] : null;
         $this->container['show_table_style_first_column'] = isset($data['show_table_style_first_column']) ? $data['show_table_style_first_column'] : null;
-        $this->container['show_table_style_last_column'] = isset($data['show_table_style_last_column']) ? $data['show_table_style_last_column'] : null;
+        $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
+        $this->container['auto_filter'] = isset($data['auto_filter']) ? $data['auto_filter'] : null;
         $this->container['show_table_style_row_stripes'] = isset($data['show_table_style_row_stripes']) ? $data['show_table_style_row_stripes'] : null;
-        $this->container['show_totals'] = isset($data['show_totals']) ? $data['show_totals'] : null;
+        $this->container['end_column'] = isset($data['end_column']) ? $data['end_column'] : null;
         $this->container['table_style_name'] = isset($data['table_style_name']) ? $data['table_style_name'] : null;
-        $this->container['table_style_type'] = isset($data['table_style_type']) ? $data['table_style_type'] : null;
+        $this->container['list_columns'] = isset($data['list_columns']) ? $data['list_columns'] : null;
+        $this->container['end_row'] = isset($data['end_row']) ? $data['end_row'] : null;
     }
 
     /**
@@ -320,25 +320,49 @@ class ListObject implements  ArrayAccess
     }
 
     /**
-     * Gets auto_filter
+     * Gets show_totals
      *
-     * @return \Aspose\Cells\Cloud\Model\AutoFilter
+     * @return bool
      */
-    public function getAutoFilter()
+    public function getShowTotals()
     {
-        return $this->container['auto_filter'];
+        return $this->container['show_totals'];
     }
 
     /**
-     * Sets auto_filter
+     * Sets show_totals
      *
-     * @param \Aspose\Cells\Cloud\Model\AutoFilter $auto_filter Gets auto filter.
+     * @param bool $show_totals Gets and sets whether this ListObject show total row.
      *
      * @return $this
      */
-    public function setAutoFilter($auto_filter)
+    public function setShowTotals($show_totals)
     {
-        $this->container['auto_filter'] = $auto_filter;
+        $this->container['show_totals'] = $show_totals;
+
+        return $this;
+    }
+
+    /**
+     * Gets table_style_type
+     *
+     * @return string
+     */
+    public function getTableStyleType()
+    {
+        return $this->container['table_style_type'];
+    }
+
+    /**
+     * Sets table_style_type
+     *
+     * @param string $table_style_type Gets and the built-in table style.
+     *
+     * @return $this
+     */
+    public function setTableStyleType($table_style_type)
+    {
+        $this->container['table_style_type'] = $table_style_type;
 
         return $this;
     }
@@ -368,6 +392,30 @@ class ListObject implements  ArrayAccess
     }
 
     /**
+     * Gets show_header_row
+     *
+     * @return bool
+     */
+    public function getShowHeaderRow()
+    {
+        return $this->container['show_header_row'];
+    }
+
+    /**
+     * Sets show_header_row
+     *
+     * @param bool $show_header_row Gets and sets whether this ListObject show header row.
+     *
+     * @return $this
+     */
+    public function setShowHeaderRow($show_header_row)
+    {
+        $this->container['show_header_row'] = $show_header_row;
+
+        return $this;
+    }
+
+    /**
      * Gets start_column
      *
      * @return int
@@ -392,121 +440,25 @@ class ListObject implements  ArrayAccess
     }
 
     /**
-     * Gets start_row
-     *
-     * @return int
-     */
-    public function getStartRow()
-    {
-        return $this->container['start_row'];
-    }
-
-    /**
-     * Sets start_row
-     *
-     * @param int $start_row Gets the start row of the range.
-     *
-     * @return $this
-     */
-    public function setStartRow($start_row)
-    {
-        $this->container['start_row'] = $start_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_column
-     *
-     * @return int
-     */
-    public function getEndColumn()
-    {
-        return $this->container['end_column'];
-    }
-
-    /**
-     * Sets end_column
-     *
-     * @param int $end_column Gets the end column of the range.
-     *
-     * @return $this
-     */
-    public function setEndColumn($end_column)
-    {
-        $this->container['end_column'] = $end_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_row
-     *
-     * @return int
-     */
-    public function getEndRow()
-    {
-        return $this->container['end_row'];
-    }
-
-    /**
-     * Sets end_row
-     *
-     * @param int $end_row Gets the end row of the range.
-     *
-     * @return $this
-     */
-    public function setEndRow($end_row)
-    {
-        $this->container['end_row'] = $end_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets list_columns
-     *
-     * @return \Aspose\Cells\Cloud\Model\ListColumn[]
-     */
-    public function getListColumns()
-    {
-        return $this->container['list_columns'];
-    }
-
-    /**
-     * Sets list_columns
-     *
-     * @param \Aspose\Cells\Cloud\Model\ListColumn[] $list_columns Gets ListColumns of the ListObject.
-     *
-     * @return $this
-     */
-    public function setListColumns($list_columns)
-    {
-        $this->container['list_columns'] = $list_columns;
-
-        return $this;
-    }
-
-    /**
-     * Gets show_header_row
+     * Gets show_table_style_last_column
      *
      * @return bool
      */
-    public function getShowHeaderRow()
+    public function getShowTableStyleLastColumn()
     {
-        return $this->container['show_header_row'];
+        return $this->container['show_table_style_last_column'];
     }
 
     /**
-     * Sets show_header_row
+     * Sets show_table_style_last_column
      *
-     * @param bool $show_header_row Gets and sets whether this ListObject show header row.
+     * @param bool $show_table_style_last_column Indicates whether the last column in the table should have the style applied.
      *
      * @return $this
      */
-    public function setShowHeaderRow($show_header_row)
+    public function setShowTableStyleLastColumn($show_table_style_last_column)
     {
-        $this->container['show_header_row'] = $show_header_row;
+        $this->container['show_table_style_last_column'] = $show_table_style_last_column;
 
         return $this;
     }
@@ -560,25 +512,49 @@ class ListObject implements  ArrayAccess
     }
 
     /**
-     * Gets show_table_style_last_column
+     * Gets start_row
      *
-     * @return bool
+     * @return int
      */
-    public function getShowTableStyleLastColumn()
+    public function getStartRow()
     {
-        return $this->container['show_table_style_last_column'];
+        return $this->container['start_row'];
     }
 
     /**
-     * Sets show_table_style_last_column
+     * Sets start_row
      *
-     * @param bool $show_table_style_last_column Indicates whether the last column in the table should have the style applied.
+     * @param int $start_row Gets the start row of the range.
      *
      * @return $this
      */
-    public function setShowTableStyleLastColumn($show_table_style_last_column)
+    public function setStartRow($start_row)
     {
-        $this->container['show_table_style_last_column'] = $show_table_style_last_column;
+        $this->container['start_row'] = $start_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_filter
+     *
+     * @return \Aspose\Cells\Cloud\Model\AutoFilter
+     */
+    public function getAutoFilter()
+    {
+        return $this->container['auto_filter'];
+    }
+
+    /**
+     * Sets auto_filter
+     *
+     * @param \Aspose\Cells\Cloud\Model\AutoFilter $auto_filter Gets auto filter.
+     *
+     * @return $this
+     */
+    public function setAutoFilter($auto_filter)
+    {
+        $this->container['auto_filter'] = $auto_filter;
 
         return $this;
     }
@@ -608,25 +584,25 @@ class ListObject implements  ArrayAccess
     }
 
     /**
-     * Gets show_totals
+     * Gets end_column
      *
-     * @return bool
+     * @return int
      */
-    public function getShowTotals()
+    public function getEndColumn()
     {
-        return $this->container['show_totals'];
+        return $this->container['end_column'];
     }
 
     /**
-     * Sets show_totals
+     * Sets end_column
      *
-     * @param bool $show_totals Gets and sets whether this ListObject show total row.
+     * @param int $end_column Gets the end column of the range.
      *
      * @return $this
      */
-    public function setShowTotals($show_totals)
+    public function setEndColumn($end_column)
     {
-        $this->container['show_totals'] = $show_totals;
+        $this->container['end_column'] = $end_column;
 
         return $this;
     }
@@ -656,25 +632,49 @@ class ListObject implements  ArrayAccess
     }
 
     /**
-     * Gets table_style_type
+     * Gets list_columns
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\ListColumn[]
      */
-    public function getTableStyleType()
+    public function getListColumns()
     {
-        return $this->container['table_style_type'];
+        return $this->container['list_columns'];
     }
 
     /**
-     * Sets table_style_type
+     * Sets list_columns
      *
-     * @param string $table_style_type Gets and the built-in table style.
+     * @param \Aspose\Cells\Cloud\Model\ListColumn[] $list_columns Gets ListColumns of the ListObject.
      *
      * @return $this
      */
-    public function setTableStyleType($table_style_type)
+    public function setListColumns($list_columns)
     {
-        $this->container['table_style_type'] = $table_style_type;
+        $this->container['list_columns'] = $list_columns;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_row
+     *
+     * @return int
+     */
+    public function getEndRow()
+    {
+        return $this->container['end_row'];
+    }
+
+    /**
+     * Sets end_row
+     *
+     * @param int $end_row Gets the end row of the range.
+     *
+     * @return $this
+     */
+    public function setEndRow($end_row)
+    {
+        $this->container['end_row'] = $end_row;
 
         return $this;
     }

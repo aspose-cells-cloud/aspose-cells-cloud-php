@@ -58,9 +58,9 @@ class CellsDocumentProperty implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
+        'built_in' => 'string',
         'name' => 'string',
-        'value' => 'string',
-        'built_in' => 'string'
+        'value' => 'string'
     ];
 
     /**
@@ -70,9 +70,9 @@ class CellsDocumentProperty implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
+        'built_in' => null,
         'name' => null,
-        'value' => null,
-        'built_in' => null
+        'value' => null
     ];
 
     /**
@@ -103,9 +103,9 @@ class CellsDocumentProperty implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
+        'built_in' => 'BuiltIn',
         'name' => 'Name',
-        'value' => 'Value',
-        'built_in' => 'BuiltIn'
+        'value' => 'Value'
     ];
 
     /**
@@ -115,9 +115,9 @@ class CellsDocumentProperty implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
+        'built_in' => 'setBuiltIn',
         'name' => 'setName',
-        'value' => 'setValue',
-        'built_in' => 'setBuiltIn'
+        'value' => 'setValue'
     ];
 
     /**
@@ -127,9 +127,9 @@ class CellsDocumentProperty implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
+        'built_in' => 'getBuiltIn',
         'name' => 'getName',
-        'value' => 'getValue',
-        'built_in' => 'getBuiltIn'
+        'value' => 'getValue'
     ];
 
     /**
@@ -193,9 +193,9 @@ class CellsDocumentProperty implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
     }
 
     /**
@@ -248,6 +248,30 @@ class CellsDocumentProperty implements  ArrayAccess
     }
 
     /**
+     * Gets built_in
+     *
+     * @return string
+     */
+    public function getBuiltIn()
+    {
+        return $this->container['built_in'];
+    }
+
+    /**
+     * Sets built_in
+     *
+     * @param string $built_in built_in
+     *
+     * @return $this
+     */
+    public function setBuiltIn($built_in)
+    {
+        $this->container['built_in'] = $built_in;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
      * @return string
@@ -291,30 +315,6 @@ class CellsDocumentProperty implements  ArrayAccess
     public function setValue($value)
     {
         $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets built_in
-     *
-     * @return string
-     */
-    public function getBuiltIn()
-    {
-        return $this->container['built_in'];
-    }
-
-    /**
-     * Sets built_in
-     *
-     * @param string $built_in built_in
-     *
-     * @return $this
-     */
-    public function setBuiltIn($built_in)
-    {
-        $this->container['built_in'] = $built_in;
 
         return $this;
     }

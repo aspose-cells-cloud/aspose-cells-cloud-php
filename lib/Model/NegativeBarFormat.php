@@ -59,8 +59,8 @@ class NegativeBarFormat implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'border_color' => '\Aspose\Cells\Cloud\Model\Color',
-        'border_color_type' => 'string',
         'color' => '\Aspose\Cells\Cloud\Model\Color',
+        'border_color_type' => 'string',
         'color_type' => 'string'
     ];
 
@@ -71,8 +71,8 @@ class NegativeBarFormat implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'border_color' => null,
-        'border_color_type' => null,
         'color' => null,
+        'border_color_type' => null,
         'color_type' => null
     ];
 
@@ -104,8 +104,8 @@ class NegativeBarFormat implements  ArrayAccess
      */
     protected static $attributeMap = [
         'border_color' => 'BorderColor',
-        'border_color_type' => 'BorderColorType',
         'color' => 'Color',
+        'border_color_type' => 'BorderColorType',
         'color_type' => 'ColorType'
     ];
 
@@ -116,8 +116,8 @@ class NegativeBarFormat implements  ArrayAccess
      */
     protected static $setters = [
         'border_color' => 'setBorderColor',
-        'border_color_type' => 'setBorderColorType',
         'color' => 'setColor',
+        'border_color_type' => 'setBorderColorType',
         'color_type' => 'setColorType'
     ];
 
@@ -128,8 +128,8 @@ class NegativeBarFormat implements  ArrayAccess
      */
     protected static $getters = [
         'border_color' => 'getBorderColor',
-        'border_color_type' => 'getBorderColorType',
         'color' => 'getColor',
+        'border_color_type' => 'getBorderColorType',
         'color_type' => 'getColorType'
     ];
 
@@ -194,8 +194,8 @@ class NegativeBarFormat implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['border_color'] = isset($data['border_color']) ? $data['border_color'] : null;
-        $this->container['border_color_type'] = isset($data['border_color_type']) ? $data['border_color_type'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
+        $this->container['border_color_type'] = isset($data['border_color_type']) ? $data['border_color_type'] : null;
         $this->container['color_type'] = isset($data['color_type']) ? $data['color_type'] : null;
     }
 
@@ -249,30 +249,6 @@ class NegativeBarFormat implements  ArrayAccess
     }
 
     /**
-     * Gets border_color_type
-     *
-     * @return string
-     */
-    public function getBorderColorType()
-    {
-        return $this->container['border_color_type'];
-    }
-
-    /**
-     * Sets border_color_type
-     *
-     * @param string $border_color_type Gets whether to use the same border color as positive data bars.
-     *
-     * @return $this
-     */
-    public function setBorderColorType($border_color_type)
-    {
-        $this->container['border_color_type'] = $border_color_type;
-
-        return $this;
-    }
-
-    /**
      * Gets color
      *
      * @return \Aspose\Cells\Cloud\Model\Color
@@ -292,6 +268,30 @@ class NegativeBarFormat implements  ArrayAccess
     public function setColor($color)
     {
         $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /**
+     * Gets border_color_type
+     *
+     * @return string
+     */
+    public function getBorderColorType()
+    {
+        return $this->container['border_color_type'];
+    }
+
+    /**
+     * Sets border_color_type
+     *
+     * @param string $border_color_type Gets whether to use the same border color as positive data bars.
+     *
+     * @return $this
+     */
+    public function setBorderColorType($border_color_type)
+    {
+        $this->container['border_color_type'] = $border_color_type;
 
         return $this;
     }

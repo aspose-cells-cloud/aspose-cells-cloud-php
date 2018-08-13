@@ -57,9 +57,9 @@ class AutoFitterOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auto_fit_merged_cells' => 'bool',
         'ignore_hidden' => 'bool',
-        'only_auto' => 'bool'
+        'only_auto' => 'bool',
+        'auto_fit_merged_cells' => 'bool'
     ];
 
     /**
@@ -68,9 +68,9 @@ class AutoFitterOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'auto_fit_merged_cells' => null,
         'ignore_hidden' => null,
-        'only_auto' => null
+        'only_auto' => null,
+        'auto_fit_merged_cells' => null
     ];
 
     /**
@@ -100,9 +100,9 @@ class AutoFitterOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'auto_fit_merged_cells' => 'AutoFitMergedCells',
         'ignore_hidden' => 'IgnoreHidden',
-        'only_auto' => 'OnlyAuto'
+        'only_auto' => 'OnlyAuto',
+        'auto_fit_merged_cells' => 'AutoFitMergedCells'
     ];
 
     /**
@@ -111,9 +111,9 @@ class AutoFitterOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'auto_fit_merged_cells' => 'setAutoFitMergedCells',
         'ignore_hidden' => 'setIgnoreHidden',
-        'only_auto' => 'setOnlyAuto'
+        'only_auto' => 'setOnlyAuto',
+        'auto_fit_merged_cells' => 'setAutoFitMergedCells'
     ];
 
     /**
@@ -122,9 +122,9 @@ class AutoFitterOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'auto_fit_merged_cells' => 'getAutoFitMergedCells',
         'ignore_hidden' => 'getIgnoreHidden',
-        'only_auto' => 'getOnlyAuto'
+        'only_auto' => 'getOnlyAuto',
+        'auto_fit_merged_cells' => 'getAutoFitMergedCells'
     ];
 
     /**
@@ -187,9 +187,9 @@ class AutoFitterOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['auto_fit_merged_cells'] = isset($data['auto_fit_merged_cells']) ? $data['auto_fit_merged_cells'] : null;
         $this->container['ignore_hidden'] = isset($data['ignore_hidden']) ? $data['ignore_hidden'] : null;
         $this->container['only_auto'] = isset($data['only_auto']) ? $data['only_auto'] : null;
+        $this->container['auto_fit_merged_cells'] = isset($data['auto_fit_merged_cells']) ? $data['auto_fit_merged_cells'] : null;
     }
 
     /**
@@ -201,14 +201,14 @@ class AutoFitterOptions implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['auto_fit_merged_cells'] === null) {
-            $invalidProperties[] = "'auto_fit_merged_cells' can't be null";
-        }
         if ($this->container['ignore_hidden'] === null) {
             $invalidProperties[] = "'ignore_hidden' can't be null";
         }
         if ($this->container['only_auto'] === null) {
             $invalidProperties[] = "'only_auto' can't be null";
+        }
+        if ($this->container['auto_fit_merged_cells'] === null) {
+            $invalidProperties[] = "'auto_fit_merged_cells' can't be null";
         }
         return $invalidProperties;
     }
@@ -222,42 +222,18 @@ class AutoFitterOptions implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['auto_fit_merged_cells'] === null) {
-            return false;
-        }
         if ($this->container['ignore_hidden'] === null) {
             return false;
         }
         if ($this->container['only_auto'] === null) {
             return false;
         }
+        if ($this->container['auto_fit_merged_cells'] === null) {
+            return false;
+        }
         return true;
     }
 
-
-    /**
-     * Gets auto_fit_merged_cells
-     *
-     * @return bool
-     */
-    public function getAutoFitMergedCells()
-    {
-        return $this->container['auto_fit_merged_cells'];
-    }
-
-    /**
-     * Sets auto_fit_merged_cells
-     *
-     * @param bool $auto_fit_merged_cells auto_fit_merged_cells
-     *
-     * @return $this
-     */
-    public function setAutoFitMergedCells($auto_fit_merged_cells)
-    {
-        $this->container['auto_fit_merged_cells'] = $auto_fit_merged_cells;
-
-        return $this;
-    }
 
     /**
      * Gets ignore_hidden
@@ -303,6 +279,30 @@ class AutoFitterOptions implements  ArrayAccess
     public function setOnlyAuto($only_auto)
     {
         $this->container['only_auto'] = $only_auto;
+
+        return $this;
+    }
+
+    /**
+     * Gets auto_fit_merged_cells
+     *
+     * @return bool
+     */
+    public function getAutoFitMergedCells()
+    {
+        return $this->container['auto_fit_merged_cells'];
+    }
+
+    /**
+     * Sets auto_fit_merged_cells
+     *
+     * @param bool $auto_fit_merged_cells auto_fit_merged_cells
+     *
+     * @return $this
+     */
+    public function setAutoFitMergedCells($auto_fit_merged_cells)
+    {
+        $this->container['auto_fit_merged_cells'] = $auto_fit_merged_cells;
 
         return $this;
     }

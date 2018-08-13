@@ -57,10 +57,10 @@ class CellArea implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'end_column' => 'int',
-        'end_row' => 'int',
+        'start_row' => 'int',
         'start_column' => 'int',
-        'start_row' => 'int'
+        'end_column' => 'int',
+        'end_row' => 'int'
     ];
 
     /**
@@ -69,10 +69,10 @@ class CellArea implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'end_column' => 'int32',
-        'end_row' => 'int32',
+        'start_row' => 'int32',
         'start_column' => 'int32',
-        'start_row' => 'int32'
+        'end_column' => 'int32',
+        'end_row' => 'int32'
     ];
 
     /**
@@ -102,10 +102,10 @@ class CellArea implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'end_column' => 'EndColumn',
-        'end_row' => 'EndRow',
+        'start_row' => 'StartRow',
         'start_column' => 'StartColumn',
-        'start_row' => 'StartRow'
+        'end_column' => 'EndColumn',
+        'end_row' => 'EndRow'
     ];
 
     /**
@@ -114,10 +114,10 @@ class CellArea implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'end_column' => 'setEndColumn',
-        'end_row' => 'setEndRow',
+        'start_row' => 'setStartRow',
         'start_column' => 'setStartColumn',
-        'start_row' => 'setStartRow'
+        'end_column' => 'setEndColumn',
+        'end_row' => 'setEndRow'
     ];
 
     /**
@@ -126,10 +126,10 @@ class CellArea implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'end_column' => 'getEndColumn',
-        'end_row' => 'getEndRow',
+        'start_row' => 'getStartRow',
         'start_column' => 'getStartColumn',
-        'start_row' => 'getStartRow'
+        'end_column' => 'getEndColumn',
+        'end_row' => 'getEndRow'
     ];
 
     /**
@@ -192,10 +192,10 @@ class CellArea implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
+        $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
         $this->container['end_column'] = isset($data['end_column']) ? $data['end_column'] : null;
         $this->container['end_row'] = isset($data['end_row']) ? $data['end_row'] : null;
-        $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
-        $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
     }
 
     /**
@@ -207,17 +207,17 @@ class CellArea implements  ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['start_row'] === null) {
+            $invalidProperties[] = "'start_row' can't be null";
+        }
+        if ($this->container['start_column'] === null) {
+            $invalidProperties[] = "'start_column' can't be null";
+        }
         if ($this->container['end_column'] === null) {
             $invalidProperties[] = "'end_column' can't be null";
         }
         if ($this->container['end_row'] === null) {
             $invalidProperties[] = "'end_row' can't be null";
-        }
-        if ($this->container['start_column'] === null) {
-            $invalidProperties[] = "'start_column' can't be null";
-        }
-        if ($this->container['start_row'] === null) {
-            $invalidProperties[] = "'start_row' can't be null";
         }
         return $invalidProperties;
     }
@@ -231,21 +231,69 @@ class CellArea implements  ArrayAccess
     public function valid()
     {
 
+        if ($this->container['start_row'] === null) {
+            return false;
+        }
+        if ($this->container['start_column'] === null) {
+            return false;
+        }
         if ($this->container['end_column'] === null) {
             return false;
         }
         if ($this->container['end_row'] === null) {
             return false;
         }
-        if ($this->container['start_column'] === null) {
-            return false;
-        }
-        if ($this->container['start_row'] === null) {
-            return false;
-        }
         return true;
     }
 
+
+    /**
+     * Gets start_row
+     *
+     * @return int
+     */
+    public function getStartRow()
+    {
+        return $this->container['start_row'];
+    }
+
+    /**
+     * Sets start_row
+     *
+     * @param int $start_row start_row
+     *
+     * @return $this
+     */
+    public function setStartRow($start_row)
+    {
+        $this->container['start_row'] = $start_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_column
+     *
+     * @return int
+     */
+    public function getStartColumn()
+    {
+        return $this->container['start_column'];
+    }
+
+    /**
+     * Sets start_column
+     *
+     * @param int $start_column start_column
+     *
+     * @return $this
+     */
+    public function setStartColumn($start_column)
+    {
+        $this->container['start_column'] = $start_column;
+
+        return $this;
+    }
 
     /**
      * Gets end_column
@@ -291,54 +339,6 @@ class CellArea implements  ArrayAccess
     public function setEndRow($end_row)
     {
         $this->container['end_row'] = $end_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_column
-     *
-     * @return int
-     */
-    public function getStartColumn()
-    {
-        return $this->container['start_column'];
-    }
-
-    /**
-     * Sets start_column
-     *
-     * @param int $start_column start_column
-     *
-     * @return $this
-     */
-    public function setStartColumn($start_column)
-    {
-        $this->container['start_column'] = $start_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_row
-     *
-     * @return int
-     */
-    public function getStartRow()
-    {
-        return $this->container['start_row'];
-    }
-
-    /**
-     * Sets start_row
-     *
-     * @param int $start_row start_row
-     *
-     * @return $this
-     */
-    public function setStartRow($start_row)
-    {
-        $this->container['start_row'] = $start_row;
 
         return $this;
     }

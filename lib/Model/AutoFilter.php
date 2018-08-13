@@ -58,8 +58,8 @@ class AutoFilter implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'filter_columns' => '\Aspose\Cells\Cloud\Model\FilterColumn[]',
         'range' => 'string',
+        'filter_columns' => '\Aspose\Cells\Cloud\Model\FilterColumn[]',
         'sorter' => '\Aspose\Cells\Cloud\Model\DataSorter'
     ];
 
@@ -70,8 +70,8 @@ class AutoFilter implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'filter_columns' => null,
         'range' => null,
+        'filter_columns' => null,
         'sorter' => null
     ];
 
@@ -103,8 +103,8 @@ class AutoFilter implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'filter_columns' => 'FilterColumns',
         'range' => 'Range',
+        'filter_columns' => 'FilterColumns',
         'sorter' => 'Sorter'
     ];
 
@@ -115,8 +115,8 @@ class AutoFilter implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'filter_columns' => 'setFilterColumns',
         'range' => 'setRange',
+        'filter_columns' => 'setFilterColumns',
         'sorter' => 'setSorter'
     ];
 
@@ -127,8 +127,8 @@ class AutoFilter implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'filter_columns' => 'getFilterColumns',
         'range' => 'getRange',
+        'filter_columns' => 'getFilterColumns',
         'sorter' => 'getSorter'
     ];
 
@@ -193,8 +193,8 @@ class AutoFilter implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['filter_columns'] = isset($data['filter_columns']) ? $data['filter_columns'] : null;
         $this->container['range'] = isset($data['range']) ? $data['range'] : null;
+        $this->container['filter_columns'] = isset($data['filter_columns']) ? $data['filter_columns'] : null;
         $this->container['sorter'] = isset($data['sorter']) ? $data['sorter'] : null;
     }
 
@@ -248,30 +248,6 @@ class AutoFilter implements  ArrayAccess
     }
 
     /**
-     * Gets filter_columns
-     *
-     * @return \Aspose\Cells\Cloud\Model\FilterColumn[]
-     */
-    public function getFilterColumns()
-    {
-        return $this->container['filter_columns'];
-    }
-
-    /**
-     * Sets filter_columns
-     *
-     * @param \Aspose\Cells\Cloud\Model\FilterColumn[] $filter_columns filter_columns
-     *
-     * @return $this
-     */
-    public function setFilterColumns($filter_columns)
-    {
-        $this->container['filter_columns'] = $filter_columns;
-
-        return $this;
-    }
-
-    /**
      * Gets range
      *
      * @return string
@@ -291,6 +267,30 @@ class AutoFilter implements  ArrayAccess
     public function setRange($range)
     {
         $this->container['range'] = $range;
+
+        return $this;
+    }
+
+    /**
+     * Gets filter_columns
+     *
+     * @return \Aspose\Cells\Cloud\Model\FilterColumn[]
+     */
+    public function getFilterColumns()
+    {
+        return $this->container['filter_columns'];
+    }
+
+    /**
+     * Sets filter_columns
+     *
+     * @param \Aspose\Cells\Cloud\Model\FilterColumn[] $filter_columns filter_columns
+     *
+     * @return $this
+     */
+    public function setFilterColumns($filter_columns)
+    {
+        $this->container['filter_columns'] = $filter_columns;
 
         return $this;
     }

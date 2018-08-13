@@ -57,25 +57,25 @@ class Line implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'style' => 'string',
+        'is_auto' => 'bool',
         'begin_arrow_length' => 'string',
-        'begin_arrow_width' => 'string',
-        'begin_type' => 'string',
-        'cap_type' => 'string',
+        'weight' => 'string',
+        'gradient_fill' => '\Aspose\Cells\Cloud\Model\GradientFill',
         'color' => '\Aspose\Cells\Cloud\Model\Color',
         'compound_type' => 'string',
-        'dash_type' => 'string',
-        'end_arrow_length' => 'string',
-        'end_arrow_width' => 'string',
-        'end_type' => 'string',
-        'gradient_fill' => '\Aspose\Cells\Cloud\Model\GradientFill',
-        'is_auto' => 'bool',
-        'is_automatic_color' => 'bool',
+        'weight_pt' => 'double',
         'is_visible' => 'bool',
         'join_type' => 'string',
-        'style' => 'string',
-        'transparency' => 'double',
-        'weight' => 'string',
-        'weight_pt' => 'double'
+        'end_arrow_length' => 'string',
+        'is_automatic_color' => 'bool',
+        'dash_type' => 'string',
+        'begin_type' => 'string',
+        'cap_type' => 'string',
+        'end_type' => 'string',
+        'begin_arrow_width' => 'string',
+        'end_arrow_width' => 'string',
+        'transparency' => 'double'
     ];
 
     /**
@@ -84,25 +84,25 @@ class Line implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'style' => null,
+        'is_auto' => null,
         'begin_arrow_length' => null,
-        'begin_arrow_width' => null,
-        'begin_type' => null,
-        'cap_type' => null,
+        'weight' => null,
+        'gradient_fill' => null,
         'color' => null,
         'compound_type' => null,
-        'dash_type' => null,
-        'end_arrow_length' => null,
-        'end_arrow_width' => null,
-        'end_type' => null,
-        'gradient_fill' => null,
-        'is_auto' => null,
-        'is_automatic_color' => null,
+        'weight_pt' => 'double',
         'is_visible' => null,
         'join_type' => null,
-        'style' => null,
-        'transparency' => 'double',
-        'weight' => null,
-        'weight_pt' => 'double'
+        'end_arrow_length' => null,
+        'is_automatic_color' => null,
+        'dash_type' => null,
+        'begin_type' => null,
+        'cap_type' => null,
+        'end_type' => null,
+        'begin_arrow_width' => null,
+        'end_arrow_width' => null,
+        'transparency' => 'double'
     ];
 
     /**
@@ -132,25 +132,25 @@ class Line implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'style' => 'Style',
+        'is_auto' => 'IsAuto',
         'begin_arrow_length' => 'BeginArrowLength',
-        'begin_arrow_width' => 'BeginArrowWidth',
-        'begin_type' => 'BeginType',
-        'cap_type' => 'CapType',
+        'weight' => 'Weight',
+        'gradient_fill' => 'GradientFill',
         'color' => 'Color',
         'compound_type' => 'CompoundType',
-        'dash_type' => 'DashType',
-        'end_arrow_length' => 'EndArrowLength',
-        'end_arrow_width' => 'EndArrowWidth',
-        'end_type' => 'EndType',
-        'gradient_fill' => 'GradientFill',
-        'is_auto' => 'IsAuto',
-        'is_automatic_color' => 'IsAutomaticColor',
+        'weight_pt' => 'WeightPt',
         'is_visible' => 'IsVisible',
         'join_type' => 'JoinType',
-        'style' => 'Style',
-        'transparency' => 'Transparency',
-        'weight' => 'Weight',
-        'weight_pt' => 'WeightPt'
+        'end_arrow_length' => 'EndArrowLength',
+        'is_automatic_color' => 'IsAutomaticColor',
+        'dash_type' => 'DashType',
+        'begin_type' => 'BeginType',
+        'cap_type' => 'CapType',
+        'end_type' => 'EndType',
+        'begin_arrow_width' => 'BeginArrowWidth',
+        'end_arrow_width' => 'EndArrowWidth',
+        'transparency' => 'Transparency'
     ];
 
     /**
@@ -159,25 +159,25 @@ class Line implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'style' => 'setStyle',
+        'is_auto' => 'setIsAuto',
         'begin_arrow_length' => 'setBeginArrowLength',
-        'begin_arrow_width' => 'setBeginArrowWidth',
-        'begin_type' => 'setBeginType',
-        'cap_type' => 'setCapType',
+        'weight' => 'setWeight',
+        'gradient_fill' => 'setGradientFill',
         'color' => 'setColor',
         'compound_type' => 'setCompoundType',
-        'dash_type' => 'setDashType',
-        'end_arrow_length' => 'setEndArrowLength',
-        'end_arrow_width' => 'setEndArrowWidth',
-        'end_type' => 'setEndType',
-        'gradient_fill' => 'setGradientFill',
-        'is_auto' => 'setIsAuto',
-        'is_automatic_color' => 'setIsAutomaticColor',
+        'weight_pt' => 'setWeightPt',
         'is_visible' => 'setIsVisible',
         'join_type' => 'setJoinType',
-        'style' => 'setStyle',
-        'transparency' => 'setTransparency',
-        'weight' => 'setWeight',
-        'weight_pt' => 'setWeightPt'
+        'end_arrow_length' => 'setEndArrowLength',
+        'is_automatic_color' => 'setIsAutomaticColor',
+        'dash_type' => 'setDashType',
+        'begin_type' => 'setBeginType',
+        'cap_type' => 'setCapType',
+        'end_type' => 'setEndType',
+        'begin_arrow_width' => 'setBeginArrowWidth',
+        'end_arrow_width' => 'setEndArrowWidth',
+        'transparency' => 'setTransparency'
     ];
 
     /**
@@ -186,25 +186,25 @@ class Line implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'style' => 'getStyle',
+        'is_auto' => 'getIsAuto',
         'begin_arrow_length' => 'getBeginArrowLength',
-        'begin_arrow_width' => 'getBeginArrowWidth',
-        'begin_type' => 'getBeginType',
-        'cap_type' => 'getCapType',
+        'weight' => 'getWeight',
+        'gradient_fill' => 'getGradientFill',
         'color' => 'getColor',
         'compound_type' => 'getCompoundType',
-        'dash_type' => 'getDashType',
-        'end_arrow_length' => 'getEndArrowLength',
-        'end_arrow_width' => 'getEndArrowWidth',
-        'end_type' => 'getEndType',
-        'gradient_fill' => 'getGradientFill',
-        'is_auto' => 'getIsAuto',
-        'is_automatic_color' => 'getIsAutomaticColor',
+        'weight_pt' => 'getWeightPt',
         'is_visible' => 'getIsVisible',
         'join_type' => 'getJoinType',
-        'style' => 'getStyle',
-        'transparency' => 'getTransparency',
-        'weight' => 'getWeight',
-        'weight_pt' => 'getWeightPt'
+        'end_arrow_length' => 'getEndArrowLength',
+        'is_automatic_color' => 'getIsAutomaticColor',
+        'dash_type' => 'getDashType',
+        'begin_type' => 'getBeginType',
+        'cap_type' => 'getCapType',
+        'end_type' => 'getEndType',
+        'begin_arrow_width' => 'getBeginArrowWidth',
+        'end_arrow_width' => 'getEndArrowWidth',
+        'transparency' => 'getTransparency'
     ];
 
     /**
@@ -267,25 +267,25 @@ class Line implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['is_auto'] = isset($data['is_auto']) ? $data['is_auto'] : null;
         $this->container['begin_arrow_length'] = isset($data['begin_arrow_length']) ? $data['begin_arrow_length'] : null;
-        $this->container['begin_arrow_width'] = isset($data['begin_arrow_width']) ? $data['begin_arrow_width'] : null;
-        $this->container['begin_type'] = isset($data['begin_type']) ? $data['begin_type'] : null;
-        $this->container['cap_type'] = isset($data['cap_type']) ? $data['cap_type'] : null;
+        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
+        $this->container['gradient_fill'] = isset($data['gradient_fill']) ? $data['gradient_fill'] : null;
         $this->container['color'] = isset($data['color']) ? $data['color'] : null;
         $this->container['compound_type'] = isset($data['compound_type']) ? $data['compound_type'] : null;
-        $this->container['dash_type'] = isset($data['dash_type']) ? $data['dash_type'] : null;
-        $this->container['end_arrow_length'] = isset($data['end_arrow_length']) ? $data['end_arrow_length'] : null;
-        $this->container['end_arrow_width'] = isset($data['end_arrow_width']) ? $data['end_arrow_width'] : null;
-        $this->container['end_type'] = isset($data['end_type']) ? $data['end_type'] : null;
-        $this->container['gradient_fill'] = isset($data['gradient_fill']) ? $data['gradient_fill'] : null;
-        $this->container['is_auto'] = isset($data['is_auto']) ? $data['is_auto'] : null;
-        $this->container['is_automatic_color'] = isset($data['is_automatic_color']) ? $data['is_automatic_color'] : null;
+        $this->container['weight_pt'] = isset($data['weight_pt']) ? $data['weight_pt'] : null;
         $this->container['is_visible'] = isset($data['is_visible']) ? $data['is_visible'] : null;
         $this->container['join_type'] = isset($data['join_type']) ? $data['join_type'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['end_arrow_length'] = isset($data['end_arrow_length']) ? $data['end_arrow_length'] : null;
+        $this->container['is_automatic_color'] = isset($data['is_automatic_color']) ? $data['is_automatic_color'] : null;
+        $this->container['dash_type'] = isset($data['dash_type']) ? $data['dash_type'] : null;
+        $this->container['begin_type'] = isset($data['begin_type']) ? $data['begin_type'] : null;
+        $this->container['cap_type'] = isset($data['cap_type']) ? $data['cap_type'] : null;
+        $this->container['end_type'] = isset($data['end_type']) ? $data['end_type'] : null;
+        $this->container['begin_arrow_width'] = isset($data['begin_arrow_width']) ? $data['begin_arrow_width'] : null;
+        $this->container['end_arrow_width'] = isset($data['end_arrow_width']) ? $data['end_arrow_width'] : null;
         $this->container['transparency'] = isset($data['transparency']) ? $data['transparency'] : null;
-        $this->container['weight'] = isset($data['weight']) ? $data['weight'] : null;
-        $this->container['weight_pt'] = isset($data['weight_pt']) ? $data['weight_pt'] : null;
     }
 
     /**
@@ -314,6 +314,54 @@ class Line implements  ArrayAccess
 
 
     /**
+     * Gets style
+     *
+     * @return string
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /**
+     * Sets style
+     *
+     * @param string $style style
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_auto
+     *
+     * @return bool
+     */
+    public function getIsAuto()
+    {
+        return $this->container['is_auto'];
+    }
+
+    /**
+     * Sets is_auto
+     *
+     * @param bool $is_auto is_auto
+     *
+     * @return $this
+     */
+    public function setIsAuto($is_auto)
+    {
+        $this->container['is_auto'] = $is_auto;
+
+        return $this;
+    }
+
+    /**
      * Gets begin_arrow_length
      *
      * @return string
@@ -338,73 +386,49 @@ class Line implements  ArrayAccess
     }
 
     /**
-     * Gets begin_arrow_width
+     * Gets weight
      *
      * @return string
      */
-    public function getBeginArrowWidth()
+    public function getWeight()
     {
-        return $this->container['begin_arrow_width'];
+        return $this->container['weight'];
     }
 
     /**
-     * Sets begin_arrow_width
+     * Sets weight
      *
-     * @param string $begin_arrow_width begin_arrow_width
+     * @param string $weight weight
      *
      * @return $this
      */
-    public function setBeginArrowWidth($begin_arrow_width)
+    public function setWeight($weight)
     {
-        $this->container['begin_arrow_width'] = $begin_arrow_width;
+        $this->container['weight'] = $weight;
 
         return $this;
     }
 
     /**
-     * Gets begin_type
+     * Gets gradient_fill
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\GradientFill
      */
-    public function getBeginType()
+    public function getGradientFill()
     {
-        return $this->container['begin_type'];
+        return $this->container['gradient_fill'];
     }
 
     /**
-     * Sets begin_type
+     * Sets gradient_fill
      *
-     * @param string $begin_type begin_type
+     * @param \Aspose\Cells\Cloud\Model\GradientFill $gradient_fill gradient_fill
      *
      * @return $this
      */
-    public function setBeginType($begin_type)
+    public function setGradientFill($gradient_fill)
     {
-        $this->container['begin_type'] = $begin_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets cap_type
-     *
-     * @return string
-     */
-    public function getCapType()
-    {
-        return $this->container['cap_type'];
-    }
-
-    /**
-     * Sets cap_type
-     *
-     * @param string $cap_type cap_type
-     *
-     * @return $this
-     */
-    public function setCapType($cap_type)
-    {
-        $this->container['cap_type'] = $cap_type;
+        $this->container['gradient_fill'] = $gradient_fill;
 
         return $this;
     }
@@ -458,169 +482,25 @@ class Line implements  ArrayAccess
     }
 
     /**
-     * Gets dash_type
+     * Gets weight_pt
      *
-     * @return string
+     * @return double
      */
-    public function getDashType()
+    public function getWeightPt()
     {
-        return $this->container['dash_type'];
+        return $this->container['weight_pt'];
     }
 
     /**
-     * Sets dash_type
+     * Sets weight_pt
      *
-     * @param string $dash_type dash_type
+     * @param double $weight_pt weight_pt
      *
      * @return $this
      */
-    public function setDashType($dash_type)
+    public function setWeightPt($weight_pt)
     {
-        $this->container['dash_type'] = $dash_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_arrow_length
-     *
-     * @return string
-     */
-    public function getEndArrowLength()
-    {
-        return $this->container['end_arrow_length'];
-    }
-
-    /**
-     * Sets end_arrow_length
-     *
-     * @param string $end_arrow_length end_arrow_length
-     *
-     * @return $this
-     */
-    public function setEndArrowLength($end_arrow_length)
-    {
-        $this->container['end_arrow_length'] = $end_arrow_length;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_arrow_width
-     *
-     * @return string
-     */
-    public function getEndArrowWidth()
-    {
-        return $this->container['end_arrow_width'];
-    }
-
-    /**
-     * Sets end_arrow_width
-     *
-     * @param string $end_arrow_width end_arrow_width
-     *
-     * @return $this
-     */
-    public function setEndArrowWidth($end_arrow_width)
-    {
-        $this->container['end_arrow_width'] = $end_arrow_width;
-
-        return $this;
-    }
-
-    /**
-     * Gets end_type
-     *
-     * @return string
-     */
-    public function getEndType()
-    {
-        return $this->container['end_type'];
-    }
-
-    /**
-     * Sets end_type
-     *
-     * @param string $end_type end_type
-     *
-     * @return $this
-     */
-    public function setEndType($end_type)
-    {
-        $this->container['end_type'] = $end_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets gradient_fill
-     *
-     * @return \Aspose\Cells\Cloud\Model\GradientFill
-     */
-    public function getGradientFill()
-    {
-        return $this->container['gradient_fill'];
-    }
-
-    /**
-     * Sets gradient_fill
-     *
-     * @param \Aspose\Cells\Cloud\Model\GradientFill $gradient_fill gradient_fill
-     *
-     * @return $this
-     */
-    public function setGradientFill($gradient_fill)
-    {
-        $this->container['gradient_fill'] = $gradient_fill;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_auto
-     *
-     * @return bool
-     */
-    public function getIsAuto()
-    {
-        return $this->container['is_auto'];
-    }
-
-    /**
-     * Sets is_auto
-     *
-     * @param bool $is_auto is_auto
-     *
-     * @return $this
-     */
-    public function setIsAuto($is_auto)
-    {
-        $this->container['is_auto'] = $is_auto;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_automatic_color
-     *
-     * @return bool
-     */
-    public function getIsAutomaticColor()
-    {
-        return $this->container['is_automatic_color'];
-    }
-
-    /**
-     * Sets is_automatic_color
-     *
-     * @param bool $is_automatic_color is_automatic_color
-     *
-     * @return $this
-     */
-    public function setIsAutomaticColor($is_automatic_color)
-    {
-        $this->container['is_automatic_color'] = $is_automatic_color;
+        $this->container['weight_pt'] = $weight_pt;
 
         return $this;
     }
@@ -674,25 +554,193 @@ class Line implements  ArrayAccess
     }
 
     /**
-     * Gets style
+     * Gets end_arrow_length
      *
      * @return string
      */
-    public function getStyle()
+    public function getEndArrowLength()
     {
-        return $this->container['style'];
+        return $this->container['end_arrow_length'];
     }
 
     /**
-     * Sets style
+     * Sets end_arrow_length
      *
-     * @param string $style style
+     * @param string $end_arrow_length end_arrow_length
      *
      * @return $this
      */
-    public function setStyle($style)
+    public function setEndArrowLength($end_arrow_length)
     {
-        $this->container['style'] = $style;
+        $this->container['end_arrow_length'] = $end_arrow_length;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_automatic_color
+     *
+     * @return bool
+     */
+    public function getIsAutomaticColor()
+    {
+        return $this->container['is_automatic_color'];
+    }
+
+    /**
+     * Sets is_automatic_color
+     *
+     * @param bool $is_automatic_color is_automatic_color
+     *
+     * @return $this
+     */
+    public function setIsAutomaticColor($is_automatic_color)
+    {
+        $this->container['is_automatic_color'] = $is_automatic_color;
+
+        return $this;
+    }
+
+    /**
+     * Gets dash_type
+     *
+     * @return string
+     */
+    public function getDashType()
+    {
+        return $this->container['dash_type'];
+    }
+
+    /**
+     * Sets dash_type
+     *
+     * @param string $dash_type dash_type
+     *
+     * @return $this
+     */
+    public function setDashType($dash_type)
+    {
+        $this->container['dash_type'] = $dash_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets begin_type
+     *
+     * @return string
+     */
+    public function getBeginType()
+    {
+        return $this->container['begin_type'];
+    }
+
+    /**
+     * Sets begin_type
+     *
+     * @param string $begin_type begin_type
+     *
+     * @return $this
+     */
+    public function setBeginType($begin_type)
+    {
+        $this->container['begin_type'] = $begin_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets cap_type
+     *
+     * @return string
+     */
+    public function getCapType()
+    {
+        return $this->container['cap_type'];
+    }
+
+    /**
+     * Sets cap_type
+     *
+     * @param string $cap_type cap_type
+     *
+     * @return $this
+     */
+    public function setCapType($cap_type)
+    {
+        $this->container['cap_type'] = $cap_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_type
+     *
+     * @return string
+     */
+    public function getEndType()
+    {
+        return $this->container['end_type'];
+    }
+
+    /**
+     * Sets end_type
+     *
+     * @param string $end_type end_type
+     *
+     * @return $this
+     */
+    public function setEndType($end_type)
+    {
+        $this->container['end_type'] = $end_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets begin_arrow_width
+     *
+     * @return string
+     */
+    public function getBeginArrowWidth()
+    {
+        return $this->container['begin_arrow_width'];
+    }
+
+    /**
+     * Sets begin_arrow_width
+     *
+     * @param string $begin_arrow_width begin_arrow_width
+     *
+     * @return $this
+     */
+    public function setBeginArrowWidth($begin_arrow_width)
+    {
+        $this->container['begin_arrow_width'] = $begin_arrow_width;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_arrow_width
+     *
+     * @return string
+     */
+    public function getEndArrowWidth()
+    {
+        return $this->container['end_arrow_width'];
+    }
+
+    /**
+     * Sets end_arrow_width
+     *
+     * @param string $end_arrow_width end_arrow_width
+     *
+     * @return $this
+     */
+    public function setEndArrowWidth($end_arrow_width)
+    {
+        $this->container['end_arrow_width'] = $end_arrow_width;
 
         return $this;
     }
@@ -717,54 +765,6 @@ class Line implements  ArrayAccess
     public function setTransparency($transparency)
     {
         $this->container['transparency'] = $transparency;
-
-        return $this;
-    }
-
-    /**
-     * Gets weight
-     *
-     * @return string
-     */
-    public function getWeight()
-    {
-        return $this->container['weight'];
-    }
-
-    /**
-     * Sets weight
-     *
-     * @param string $weight weight
-     *
-     * @return $this
-     */
-    public function setWeight($weight)
-    {
-        $this->container['weight'] = $weight;
-
-        return $this;
-    }
-
-    /**
-     * Gets weight_pt
-     *
-     * @return double
-     */
-    public function getWeightPt()
-    {
-        return $this->container['weight_pt'];
-    }
-
-    /**
-     * Sets weight_pt
-     *
-     * @param double $weight_pt weight_pt
-     *
-     * @return $this
-     */
-    public function setWeightPt($weight_pt)
-    {
-        $this->container['weight_pt'] = $weight_pt;
 
         return $this;
     }

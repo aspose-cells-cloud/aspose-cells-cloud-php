@@ -58,10 +58,10 @@ class MergedCell implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'end_column' => 'int',
-        'end_row' => 'int',
+        'start_row' => 'int',
         'start_column' => 'int',
-        'start_row' => 'int'
+        'end_column' => 'int',
+        'end_row' => 'int'
     ];
 
     /**
@@ -71,10 +71,10 @@ class MergedCell implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'end_column' => 'int32',
-        'end_row' => 'int32',
+        'start_row' => 'int32',
         'start_column' => 'int32',
-        'start_row' => 'int32'
+        'end_column' => 'int32',
+        'end_row' => 'int32'
     ];
 
     /**
@@ -105,10 +105,10 @@ class MergedCell implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'end_column' => 'EndColumn',
-        'end_row' => 'EndRow',
+        'start_row' => 'StartRow',
         'start_column' => 'StartColumn',
-        'start_row' => 'StartRow'
+        'end_column' => 'EndColumn',
+        'end_row' => 'EndRow'
     ];
 
     /**
@@ -118,10 +118,10 @@ class MergedCell implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'end_column' => 'setEndColumn',
-        'end_row' => 'setEndRow',
+        'start_row' => 'setStartRow',
         'start_column' => 'setStartColumn',
-        'start_row' => 'setStartRow'
+        'end_column' => 'setEndColumn',
+        'end_row' => 'setEndRow'
     ];
 
     /**
@@ -131,10 +131,10 @@ class MergedCell implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'end_column' => 'getEndColumn',
-        'end_row' => 'getEndRow',
+        'start_row' => 'getStartRow',
         'start_column' => 'getStartColumn',
-        'start_row' => 'getStartRow'
+        'end_column' => 'getEndColumn',
+        'end_row' => 'getEndRow'
     ];
 
     /**
@@ -198,10 +198,10 @@ class MergedCell implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
+        $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
         $this->container['end_column'] = isset($data['end_column']) ? $data['end_column'] : null;
         $this->container['end_row'] = isset($data['end_row']) ? $data['end_row'] : null;
-        $this->container['start_column'] = isset($data['start_column']) ? $data['start_column'] : null;
-        $this->container['start_row'] = isset($data['start_row']) ? $data['start_row'] : null;
     }
 
     /**
@@ -213,17 +213,17 @@ class MergedCell implements  ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['start_row'] === null) {
+            $invalidProperties[] = "'start_row' can't be null";
+        }
+        if ($this->container['start_column'] === null) {
+            $invalidProperties[] = "'start_column' can't be null";
+        }
         if ($this->container['end_column'] === null) {
             $invalidProperties[] = "'end_column' can't be null";
         }
         if ($this->container['end_row'] === null) {
             $invalidProperties[] = "'end_row' can't be null";
-        }
-        if ($this->container['start_column'] === null) {
-            $invalidProperties[] = "'start_column' can't be null";
-        }
-        if ($this->container['start_row'] === null) {
-            $invalidProperties[] = "'start_row' can't be null";
         }
         return $invalidProperties;
     }
@@ -237,16 +237,16 @@ class MergedCell implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['end_column'] === null) {
-            return false;
-        }
-        if ($this->container['end_row'] === null) {
+        if ($this->container['start_row'] === null) {
             return false;
         }
         if ($this->container['start_column'] === null) {
             return false;
         }
-        if ($this->container['start_row'] === null) {
+        if ($this->container['end_column'] === null) {
+            return false;
+        }
+        if ($this->container['end_row'] === null) {
             return false;
         }
         return true;
@@ -273,6 +273,54 @@ class MergedCell implements  ArrayAccess
     public function setLink($link)
     {
         $this->container['link'] = $link;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_row
+     *
+     * @return int
+     */
+    public function getStartRow()
+    {
+        return $this->container['start_row'];
+    }
+
+    /**
+     * Sets start_row
+     *
+     * @param int $start_row start_row
+     *
+     * @return $this
+     */
+    public function setStartRow($start_row)
+    {
+        $this->container['start_row'] = $start_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_column
+     *
+     * @return int
+     */
+    public function getStartColumn()
+    {
+        return $this->container['start_column'];
+    }
+
+    /**
+     * Sets start_column
+     *
+     * @param int $start_column start_column
+     *
+     * @return $this
+     */
+    public function setStartColumn($start_column)
+    {
+        $this->container['start_column'] = $start_column;
 
         return $this;
     }
@@ -321,54 +369,6 @@ class MergedCell implements  ArrayAccess
     public function setEndRow($end_row)
     {
         $this->container['end_row'] = $end_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_column
-     *
-     * @return int
-     */
-    public function getStartColumn()
-    {
-        return $this->container['start_column'];
-    }
-
-    /**
-     * Sets start_column
-     *
-     * @param int $start_column start_column
-     *
-     * @return $this
-     */
-    public function setStartColumn($start_column)
-    {
-        $this->container['start_column'] = $start_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets start_row
-     *
-     * @return int
-     */
-    public function getStartRow()
-    {
-        return $this->container['start_row'];
-    }
-
-    /**
-     * Sets start_row
-     *
-     * @param int $start_row start_row
-     *
-     * @return $this
-     */
-    public function setStartRow($start_row)
-    {
-        $this->container['start_row'] = $start_row;
 
         return $this;
     }

@@ -59,8 +59,8 @@ class Rows implements  ArrayAccess
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
         'max_row' => 'int',
-        'rows_count' => 'int',
-        'rows_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]'
+        'rows_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
+        'rows_count' => 'int'
     ];
 
     /**
@@ -71,8 +71,8 @@ class Rows implements  ArrayAccess
     protected static $swaggerFormats = [
         'link' => null,
         'max_row' => 'int32',
-        'rows_count' => 'int32',
-        'rows_list' => null
+        'rows_list' => null,
+        'rows_count' => 'int32'
     ];
 
     /**
@@ -104,8 +104,8 @@ class Rows implements  ArrayAccess
     protected static $attributeMap = [
         'link' => 'link',
         'max_row' => 'MaxRow',
-        'rows_count' => 'RowsCount',
-        'rows_list' => 'RowsList'
+        'rows_list' => 'RowsList',
+        'rows_count' => 'RowsCount'
     ];
 
     /**
@@ -116,8 +116,8 @@ class Rows implements  ArrayAccess
     protected static $setters = [
         'link' => 'setLink',
         'max_row' => 'setMaxRow',
-        'rows_count' => 'setRowsCount',
-        'rows_list' => 'setRowsList'
+        'rows_list' => 'setRowsList',
+        'rows_count' => 'setRowsCount'
     ];
 
     /**
@@ -128,8 +128,8 @@ class Rows implements  ArrayAccess
     protected static $getters = [
         'link' => 'getLink',
         'max_row' => 'getMaxRow',
-        'rows_count' => 'getRowsCount',
-        'rows_list' => 'getRowsList'
+        'rows_list' => 'getRowsList',
+        'rows_count' => 'getRowsCount'
     ];
 
     /**
@@ -194,8 +194,8 @@ class Rows implements  ArrayAccess
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
         $this->container['max_row'] = isset($data['max_row']) ? $data['max_row'] : null;
-        $this->container['rows_count'] = isset($data['rows_count']) ? $data['rows_count'] : null;
         $this->container['rows_list'] = isset($data['rows_list']) ? $data['rows_list'] : null;
+        $this->container['rows_count'] = isset($data['rows_count']) ? $data['rows_count'] : null;
     }
 
     /**
@@ -284,30 +284,6 @@ class Rows implements  ArrayAccess
     }
 
     /**
-     * Gets rows_count
-     *
-     * @return int
-     */
-    public function getRowsCount()
-    {
-        return $this->container['rows_count'];
-    }
-
-    /**
-     * Sets rows_count
-     *
-     * @param int $rows_count rows_count
-     *
-     * @return $this
-     */
-    public function setRowsCount($rows_count)
-    {
-        $this->container['rows_count'] = $rows_count;
-
-        return $this;
-    }
-
-    /**
      * Gets rows_list
      *
      * @return \Aspose\Cells\Cloud\Model\LinkElement[]
@@ -327,6 +303,30 @@ class Rows implements  ArrayAccess
     public function setRowsList($rows_list)
     {
         $this->container['rows_list'] = $rows_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets rows_count
+     *
+     * @return int
+     */
+    public function getRowsCount()
+    {
+        return $this->container['rows_count'];
+    }
+
+    /**
+     * Sets rows_count
+     *
+     * @param int $rows_count rows_count
+     *
+     * @return $this
+     */
+    public function setRowsCount($rows_count)
+    {
+        $this->container['rows_count'] = $rows_count;
 
         return $this;
     }

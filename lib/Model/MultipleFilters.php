@@ -57,8 +57,8 @@ class MultipleFilters implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'match_blank' => 'bool',
-        'multiple_filter_list' => '\Aspose\Cells\Cloud\Model\MultipleFilter[]'
+        'multiple_filter_list' => '\Aspose\Cells\Cloud\Model\MultipleFilter[]',
+        'match_blank' => 'bool'
     ];
 
     /**
@@ -67,8 +67,8 @@ class MultipleFilters implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'match_blank' => null,
-        'multiple_filter_list' => null
+        'multiple_filter_list' => null,
+        'match_blank' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class MultipleFilters implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'match_blank' => 'MatchBlank',
-        'multiple_filter_list' => 'MultipleFilterList'
+        'multiple_filter_list' => 'MultipleFilterList',
+        'match_blank' => 'MatchBlank'
     ];
 
     /**
@@ -108,8 +108,8 @@ class MultipleFilters implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'match_blank' => 'setMatchBlank',
-        'multiple_filter_list' => 'setMultipleFilterList'
+        'multiple_filter_list' => 'setMultipleFilterList',
+        'match_blank' => 'setMatchBlank'
     ];
 
     /**
@@ -118,8 +118,8 @@ class MultipleFilters implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'match_blank' => 'getMatchBlank',
-        'multiple_filter_list' => 'getMultipleFilterList'
+        'multiple_filter_list' => 'getMultipleFilterList',
+        'match_blank' => 'getMatchBlank'
     ];
 
     /**
@@ -182,8 +182,8 @@ class MultipleFilters implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['match_blank'] = isset($data['match_blank']) ? $data['match_blank'] : null;
         $this->container['multiple_filter_list'] = isset($data['multiple_filter_list']) ? $data['multiple_filter_list'] : null;
+        $this->container['match_blank'] = isset($data['match_blank']) ? $data['match_blank'] : null;
     }
 
     /**
@@ -212,30 +212,6 @@ class MultipleFilters implements  ArrayAccess
 
 
     /**
-     * Gets match_blank
-     *
-     * @return bool
-     */
-    public function getMatchBlank()
-    {
-        return $this->container['match_blank'];
-    }
-
-    /**
-     * Sets match_blank
-     *
-     * @param bool $match_blank match_blank
-     *
-     * @return $this
-     */
-    public function setMatchBlank($match_blank)
-    {
-        $this->container['match_blank'] = $match_blank;
-
-        return $this;
-    }
-
-    /**
      * Gets multiple_filter_list
      *
      * @return \Aspose\Cells\Cloud\Model\MultipleFilter[]
@@ -255,6 +231,30 @@ class MultipleFilters implements  ArrayAccess
     public function setMultipleFilterList($multiple_filter_list)
     {
         $this->container['multiple_filter_list'] = $multiple_filter_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets match_blank
+     *
+     * @return bool
+     */
+    public function getMatchBlank()
+    {
+        return $this->container['match_blank'];
+    }
+
+    /**
+     * Sets match_blank
+     *
+     * @param bool $match_blank match_blank
+     *
+     * @return $this
+     */
+    public function setMatchBlank($match_blank)
+    {
+        $this->container['match_blank'] = $match_blank;
 
         return $this;
     }

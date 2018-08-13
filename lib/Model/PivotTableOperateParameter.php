@@ -55,14 +55,14 @@ class PivotTableOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'source_data' => 'string',
-        'dest_cell_name' => 'string',
+        'pivot_field_columns' => 'int[]',
+        'pivot_table_index' => 'int',
         'table_name' => 'string',
         'use_same_source' => 'bool',
-        'pivot_table_index' => 'int',
+        'pivot_field_data' => 'int[]',
         'pivot_field_rows' => 'int[]',
-        'pivot_field_columns' => 'int[]',
-        'pivot_field_data' => 'int[]'
+        'dest_cell_name' => 'string',
+        'source_data' => 'string'
     ];
 
     /**
@@ -71,14 +71,14 @@ class PivotTableOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'source_data' => null,
-        'dest_cell_name' => null,
+        'pivot_field_columns' => 'int32',
+        'pivot_table_index' => 'int32',
         'table_name' => null,
         'use_same_source' => null,
-        'pivot_table_index' => 'int32',
+        'pivot_field_data' => 'int32',
         'pivot_field_rows' => 'int32',
-        'pivot_field_columns' => 'int32',
-        'pivot_field_data' => 'int32'
+        'dest_cell_name' => null,
+        'source_data' => null
     ];
 
     /**
@@ -108,14 +108,14 @@ class PivotTableOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_data' => 'SourceData',
-        'dest_cell_name' => 'DestCellName',
+        'pivot_field_columns' => 'PivotFieldColumns',
+        'pivot_table_index' => 'PivotTableIndex',
         'table_name' => 'TableName',
         'use_same_source' => 'UseSameSource',
-        'pivot_table_index' => 'PivotTableIndex',
+        'pivot_field_data' => 'PivotFieldData',
         'pivot_field_rows' => 'PivotFieldRows',
-        'pivot_field_columns' => 'PivotFieldColumns',
-        'pivot_field_data' => 'PivotFieldData'
+        'dest_cell_name' => 'DestCellName',
+        'source_data' => 'SourceData'
     ];
 
     /**
@@ -124,14 +124,14 @@ class PivotTableOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $setters = [
-        'source_data' => 'setSourceData',
-        'dest_cell_name' => 'setDestCellName',
+        'pivot_field_columns' => 'setPivotFieldColumns',
+        'pivot_table_index' => 'setPivotTableIndex',
         'table_name' => 'setTableName',
         'use_same_source' => 'setUseSameSource',
-        'pivot_table_index' => 'setPivotTableIndex',
+        'pivot_field_data' => 'setPivotFieldData',
         'pivot_field_rows' => 'setPivotFieldRows',
-        'pivot_field_columns' => 'setPivotFieldColumns',
-        'pivot_field_data' => 'setPivotFieldData'
+        'dest_cell_name' => 'setDestCellName',
+        'source_data' => 'setSourceData'
     ];
 
     /**
@@ -140,14 +140,14 @@ class PivotTableOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $getters = [
-        'source_data' => 'getSourceData',
-        'dest_cell_name' => 'getDestCellName',
+        'pivot_field_columns' => 'getPivotFieldColumns',
+        'pivot_table_index' => 'getPivotTableIndex',
         'table_name' => 'getTableName',
         'use_same_source' => 'getUseSameSource',
-        'pivot_table_index' => 'getPivotTableIndex',
+        'pivot_field_data' => 'getPivotFieldData',
         'pivot_field_rows' => 'getPivotFieldRows',
-        'pivot_field_columns' => 'getPivotFieldColumns',
-        'pivot_field_data' => 'getPivotFieldData'
+        'dest_cell_name' => 'getDestCellName',
+        'source_data' => 'getSourceData'
     ];
 
     /**
@@ -206,14 +206,14 @@ class PivotTableOperateParameter extends OperateParameter
     {
         parent::__construct($data);
 
-        $this->container['source_data'] = isset($data['source_data']) ? $data['source_data'] : null;
-        $this->container['dest_cell_name'] = isset($data['dest_cell_name']) ? $data['dest_cell_name'] : null;
+        $this->container['pivot_field_columns'] = isset($data['pivot_field_columns']) ? $data['pivot_field_columns'] : null;
+        $this->container['pivot_table_index'] = isset($data['pivot_table_index']) ? $data['pivot_table_index'] : null;
         $this->container['table_name'] = isset($data['table_name']) ? $data['table_name'] : null;
         $this->container['use_same_source'] = isset($data['use_same_source']) ? $data['use_same_source'] : null;
-        $this->container['pivot_table_index'] = isset($data['pivot_table_index']) ? $data['pivot_table_index'] : null;
-        $this->container['pivot_field_rows'] = isset($data['pivot_field_rows']) ? $data['pivot_field_rows'] : null;
-        $this->container['pivot_field_columns'] = isset($data['pivot_field_columns']) ? $data['pivot_field_columns'] : null;
         $this->container['pivot_field_data'] = isset($data['pivot_field_data']) ? $data['pivot_field_data'] : null;
+        $this->container['pivot_field_rows'] = isset($data['pivot_field_rows']) ? $data['pivot_field_rows'] : null;
+        $this->container['dest_cell_name'] = isset($data['dest_cell_name']) ? $data['dest_cell_name'] : null;
+        $this->container['source_data'] = isset($data['source_data']) ? $data['source_data'] : null;
     }
 
     /**
@@ -245,49 +245,49 @@ class PivotTableOperateParameter extends OperateParameter
 
 
     /**
-     * Gets source_data
+     * Gets pivot_field_columns
      *
-     * @return string
+     * @return int[]
      */
-    public function getSourceData()
+    public function getPivotFieldColumns()
     {
-        return $this->container['source_data'];
+        return $this->container['pivot_field_columns'];
     }
 
     /**
-     * Sets source_data
+     * Sets pivot_field_columns
      *
-     * @param string $source_data source_data
+     * @param int[] $pivot_field_columns pivot_field_columns
      *
      * @return $this
      */
-    public function setSourceData($source_data)
+    public function setPivotFieldColumns($pivot_field_columns)
     {
-        $this->container['source_data'] = $source_data;
+        $this->container['pivot_field_columns'] = $pivot_field_columns;
 
         return $this;
     }
 
     /**
-     * Gets dest_cell_name
+     * Gets pivot_table_index
      *
-     * @return string
+     * @return int
      */
-    public function getDestCellName()
+    public function getPivotTableIndex()
     {
-        return $this->container['dest_cell_name'];
+        return $this->container['pivot_table_index'];
     }
 
     /**
-     * Sets dest_cell_name
+     * Sets pivot_table_index
      *
-     * @param string $dest_cell_name dest_cell_name
+     * @param int $pivot_table_index pivot_table_index
      *
      * @return $this
      */
-    public function setDestCellName($dest_cell_name)
+    public function setPivotTableIndex($pivot_table_index)
     {
-        $this->container['dest_cell_name'] = $dest_cell_name;
+        $this->container['pivot_table_index'] = $pivot_table_index;
 
         return $this;
     }
@@ -341,25 +341,25 @@ class PivotTableOperateParameter extends OperateParameter
     }
 
     /**
-     * Gets pivot_table_index
+     * Gets pivot_field_data
      *
-     * @return int
+     * @return int[]
      */
-    public function getPivotTableIndex()
+    public function getPivotFieldData()
     {
-        return $this->container['pivot_table_index'];
+        return $this->container['pivot_field_data'];
     }
 
     /**
-     * Sets pivot_table_index
+     * Sets pivot_field_data
      *
-     * @param int $pivot_table_index pivot_table_index
+     * @param int[] $pivot_field_data pivot_field_data
      *
      * @return $this
      */
-    public function setPivotTableIndex($pivot_table_index)
+    public function setPivotFieldData($pivot_field_data)
     {
-        $this->container['pivot_table_index'] = $pivot_table_index;
+        $this->container['pivot_field_data'] = $pivot_field_data;
 
         return $this;
     }
@@ -389,49 +389,49 @@ class PivotTableOperateParameter extends OperateParameter
     }
 
     /**
-     * Gets pivot_field_columns
+     * Gets dest_cell_name
      *
-     * @return int[]
+     * @return string
      */
-    public function getPivotFieldColumns()
+    public function getDestCellName()
     {
-        return $this->container['pivot_field_columns'];
+        return $this->container['dest_cell_name'];
     }
 
     /**
-     * Sets pivot_field_columns
+     * Sets dest_cell_name
      *
-     * @param int[] $pivot_field_columns pivot_field_columns
+     * @param string $dest_cell_name dest_cell_name
      *
      * @return $this
      */
-    public function setPivotFieldColumns($pivot_field_columns)
+    public function setDestCellName($dest_cell_name)
     {
-        $this->container['pivot_field_columns'] = $pivot_field_columns;
+        $this->container['dest_cell_name'] = $dest_cell_name;
 
         return $this;
     }
 
     /**
-     * Gets pivot_field_data
+     * Gets source_data
      *
-     * @return int[]
+     * @return string
      */
-    public function getPivotFieldData()
+    public function getSourceData()
     {
-        return $this->container['pivot_field_data'];
+        return $this->container['source_data'];
     }
 
     /**
-     * Sets pivot_field_data
+     * Sets source_data
      *
-     * @param int[] $pivot_field_data pivot_field_data
+     * @param string $source_data source_data
      *
      * @return $this
      */
-    public function setPivotFieldData($pivot_field_data)
+    public function setSourceData($source_data)
     {
-        $this->container['pivot_field_data'] = $pivot_field_data;
+        $this->container['source_data'] = $source_data;
 
         return $this;
     }

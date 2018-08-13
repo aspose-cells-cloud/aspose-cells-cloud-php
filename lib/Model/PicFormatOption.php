@@ -57,12 +57,12 @@ class PicFormatOption implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'type' => 'string',
-        'scale' => 'double',
-        'left' => 'double',
         'right' => 'double',
+        'bottom' => 'double',
         'top' => 'double',
-        'bottom' => 'double'
+        'scale' => 'double',
+        'type' => 'string',
+        'left' => 'double'
     ];
 
     /**
@@ -71,12 +71,12 @@ class PicFormatOption implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'type' => null,
-        'scale' => 'double',
-        'left' => 'double',
         'right' => 'double',
+        'bottom' => 'double',
         'top' => 'double',
-        'bottom' => 'double'
+        'scale' => 'double',
+        'type' => null,
+        'left' => 'double'
     ];
 
     /**
@@ -106,12 +106,12 @@ class PicFormatOption implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'Type',
-        'scale' => 'Scale',
-        'left' => 'Left',
         'right' => 'Right',
+        'bottom' => 'Bottom',
         'top' => 'Top',
-        'bottom' => 'Bottom'
+        'scale' => 'Scale',
+        'type' => 'Type',
+        'left' => 'Left'
     ];
 
     /**
@@ -120,12 +120,12 @@ class PicFormatOption implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'scale' => 'setScale',
-        'left' => 'setLeft',
         'right' => 'setRight',
+        'bottom' => 'setBottom',
         'top' => 'setTop',
-        'bottom' => 'setBottom'
+        'scale' => 'setScale',
+        'type' => 'setType',
+        'left' => 'setLeft'
     ];
 
     /**
@@ -134,12 +134,12 @@ class PicFormatOption implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'scale' => 'getScale',
-        'left' => 'getLeft',
         'right' => 'getRight',
+        'bottom' => 'getBottom',
         'top' => 'getTop',
-        'bottom' => 'getBottom'
+        'scale' => 'getScale',
+        'type' => 'getType',
+        'left' => 'getLeft'
     ];
 
     /**
@@ -202,12 +202,12 @@ class PicFormatOption implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
-        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
         $this->container['right'] = isset($data['right']) ? $data['right'] : null;
-        $this->container['top'] = isset($data['top']) ? $data['top'] : null;
         $this->container['bottom'] = isset($data['bottom']) ? $data['bottom'] : null;
+        $this->container['top'] = isset($data['top']) ? $data['top'] : null;
+        $this->container['scale'] = isset($data['scale']) ? $data['scale'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['left'] = isset($data['left']) ? $data['left'] : null;
     }
 
     /**
@@ -236,78 +236,6 @@ class PicFormatOption implements  ArrayAccess
 
 
     /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->container['type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * Gets scale
-     *
-     * @return double
-     */
-    public function getScale()
-    {
-        return $this->container['scale'];
-    }
-
-    /**
-     * Sets scale
-     *
-     * @param double $scale scale
-     *
-     * @return $this
-     */
-    public function setScale($scale)
-    {
-        $this->container['scale'] = $scale;
-
-        return $this;
-    }
-
-    /**
-     * Gets left
-     *
-     * @return double
-     */
-    public function getLeft()
-    {
-        return $this->container['left'];
-    }
-
-    /**
-     * Sets left
-     *
-     * @param double $left left
-     *
-     * @return $this
-     */
-    public function setLeft($left)
-    {
-        $this->container['left'] = $left;
-
-        return $this;
-    }
-
-    /**
      * Gets right
      *
      * @return double
@@ -327,6 +255,30 @@ class PicFormatOption implements  ArrayAccess
     public function setRight($right)
     {
         $this->container['right'] = $right;
+
+        return $this;
+    }
+
+    /**
+     * Gets bottom
+     *
+     * @return double
+     */
+    public function getBottom()
+    {
+        return $this->container['bottom'];
+    }
+
+    /**
+     * Sets bottom
+     *
+     * @param double $bottom bottom
+     *
+     * @return $this
+     */
+    public function setBottom($bottom)
+    {
+        $this->container['bottom'] = $bottom;
 
         return $this;
     }
@@ -356,25 +308,73 @@ class PicFormatOption implements  ArrayAccess
     }
 
     /**
-     * Gets bottom
+     * Gets scale
      *
      * @return double
      */
-    public function getBottom()
+    public function getScale()
     {
-        return $this->container['bottom'];
+        return $this->container['scale'];
     }
 
     /**
-     * Sets bottom
+     * Sets scale
      *
-     * @param double $bottom bottom
+     * @param double $scale scale
      *
      * @return $this
      */
-    public function setBottom($bottom)
+    public function setScale($scale)
     {
-        $this->container['bottom'] = $bottom;
+        $this->container['scale'] = $scale;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets left
+     *
+     * @return double
+     */
+    public function getLeft()
+    {
+        return $this->container['left'];
+    }
+
+    /**
+     * Sets left
+     *
+     * @param double $left left
+     *
+     * @return $this
+     */
+    public function setLeft($left)
+    {
+        $this->container['left'] = $left;
 
         return $this;
     }

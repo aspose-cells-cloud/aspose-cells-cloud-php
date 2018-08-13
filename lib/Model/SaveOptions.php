@@ -42,7 +42,7 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
  */
 class SaveOptions implements  ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
       * The original name of the model.
@@ -57,14 +57,14 @@ class SaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'save_format' => 'string',
-        'cached_file_folder' => 'string',
-        'clear_data' => 'bool',
-        'create_directory' => 'bool',
         'enable_http_compression' => 'bool',
+        'save_format' => 'string',
+        'clear_data' => 'bool',
+        'cached_file_folder' => 'string',
+        'validate_merged_areas' => 'bool',
         'refresh_chart_cache' => 'bool',
-        'sort_names' => 'bool',
-        'validate_merged_areas' => 'bool'
+        'create_directory' => 'bool',
+        'sort_names' => 'bool'
     ];
 
     /**
@@ -73,14 +73,14 @@ class SaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'save_format' => null,
-        'cached_file_folder' => null,
-        'clear_data' => null,
-        'create_directory' => null,
         'enable_http_compression' => null,
+        'save_format' => null,
+        'clear_data' => null,
+        'cached_file_folder' => null,
+        'validate_merged_areas' => null,
         'refresh_chart_cache' => null,
-        'sort_names' => null,
-        'validate_merged_areas' => null
+        'create_directory' => null,
+        'sort_names' => null
     ];
 
     /**
@@ -110,14 +110,14 @@ class SaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'save_format' => 'SaveFormat',
-        'cached_file_folder' => 'CachedFileFolder',
-        'clear_data' => 'ClearData',
-        'create_directory' => 'CreateDirectory',
         'enable_http_compression' => 'EnableHTTPCompression',
+        'save_format' => 'SaveFormat',
+        'clear_data' => 'ClearData',
+        'cached_file_folder' => 'CachedFileFolder',
+        'validate_merged_areas' => 'ValidateMergedAreas',
         'refresh_chart_cache' => 'RefreshChartCache',
-        'sort_names' => 'SortNames',
-        'validate_merged_areas' => 'ValidateMergedAreas'
+        'create_directory' => 'CreateDirectory',
+        'sort_names' => 'SortNames'
     ];
 
     /**
@@ -126,14 +126,14 @@ class SaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'save_format' => 'setSaveFormat',
-        'cached_file_folder' => 'setCachedFileFolder',
-        'clear_data' => 'setClearData',
-        'create_directory' => 'setCreateDirectory',
         'enable_http_compression' => 'setEnableHttpCompression',
+        'save_format' => 'setSaveFormat',
+        'clear_data' => 'setClearData',
+        'cached_file_folder' => 'setCachedFileFolder',
+        'validate_merged_areas' => 'setValidateMergedAreas',
         'refresh_chart_cache' => 'setRefreshChartCache',
-        'sort_names' => 'setSortNames',
-        'validate_merged_areas' => 'setValidateMergedAreas'
+        'create_directory' => 'setCreateDirectory',
+        'sort_names' => 'setSortNames'
     ];
 
     /**
@@ -142,14 +142,14 @@ class SaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'save_format' => 'getSaveFormat',
-        'cached_file_folder' => 'getCachedFileFolder',
-        'clear_data' => 'getClearData',
-        'create_directory' => 'getCreateDirectory',
         'enable_http_compression' => 'getEnableHttpCompression',
+        'save_format' => 'getSaveFormat',
+        'clear_data' => 'getClearData',
+        'cached_file_folder' => 'getCachedFileFolder',
+        'validate_merged_areas' => 'getValidateMergedAreas',
         'refresh_chart_cache' => 'getRefreshChartCache',
-        'sort_names' => 'getSortNames',
-        'validate_merged_areas' => 'getValidateMergedAreas'
+        'create_directory' => 'getCreateDirectory',
+        'sort_names' => 'getSortNames'
     ];
 
     /**
@@ -212,14 +212,18 @@ class SaveOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
-        $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
-        $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
-        $this->container['create_directory'] = isset($data['create_directory']) ? $data['create_directory'] : null;
         $this->container['enable_http_compression'] = isset($data['enable_http_compression']) ? $data['enable_http_compression'] : null;
-        $this->container['refresh_chart_cache'] = isset($data['refresh_chart_cache']) ? $data['refresh_chart_cache'] : null;
-        $this->container['sort_names'] = isset($data['sort_names']) ? $data['sort_names'] : null;
+        $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
+        $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
+        $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['validate_merged_areas'] = isset($data['validate_merged_areas']) ? $data['validate_merged_areas'] : null;
+        $this->container['refresh_chart_cache'] = isset($data['refresh_chart_cache']) ? $data['refresh_chart_cache'] : null;
+        $this->container['create_directory'] = isset($data['create_directory']) ? $data['create_directory'] : null;
+        $this->container['sort_names'] = isset($data['sort_names']) ? $data['sort_names'] : null;
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -248,6 +252,30 @@ class SaveOptions implements  ArrayAccess
 
 
     /**
+     * Gets enable_http_compression
+     *
+     * @return bool
+     */
+    public function getEnableHttpCompression()
+    {
+        return $this->container['enable_http_compression'];
+    }
+
+    /**
+     * Sets enable_http_compression
+     *
+     * @param bool $enable_http_compression enable_http_compression
+     *
+     * @return $this
+     */
+    public function setEnableHttpCompression($enable_http_compression)
+    {
+        $this->container['enable_http_compression'] = $enable_http_compression;
+
+        return $this;
+    }
+
+    /**
      * Gets save_format
      *
      * @return string
@@ -267,30 +295,6 @@ class SaveOptions implements  ArrayAccess
     public function setSaveFormat($save_format)
     {
         $this->container['save_format'] = $save_format;
-
-        return $this;
-    }
-
-    /**
-     * Gets cached_file_folder
-     *
-     * @return string
-     */
-    public function getCachedFileFolder()
-    {
-        return $this->container['cached_file_folder'];
-    }
-
-    /**
-     * Sets cached_file_folder
-     *
-     * @param string $cached_file_folder The cached file folder is used to store some large data.
-     *
-     * @return $this
-     */
-    public function setCachedFileFolder($cached_file_folder)
-    {
-        $this->container['cached_file_folder'] = $cached_file_folder;
 
         return $this;
     }
@@ -320,49 +324,49 @@ class SaveOptions implements  ArrayAccess
     }
 
     /**
-     * Gets create_directory
+     * Gets cached_file_folder
      *
-     * @return bool
+     * @return string
      */
-    public function getCreateDirectory()
+    public function getCachedFileFolder()
     {
-        return $this->container['create_directory'];
+        return $this->container['cached_file_folder'];
     }
 
     /**
-     * Sets create_directory
+     * Sets cached_file_folder
      *
-     * @param bool $create_directory If true and the directory does not exist, the directory will be automatically created before saving the file.
+     * @param string $cached_file_folder The cached file folder is used to store some large data.
      *
      * @return $this
      */
-    public function setCreateDirectory($create_directory)
+    public function setCachedFileFolder($cached_file_folder)
     {
-        $this->container['create_directory'] = $create_directory;
+        $this->container['cached_file_folder'] = $cached_file_folder;
 
         return $this;
     }
 
     /**
-     * Gets enable_http_compression
+     * Gets validate_merged_areas
      *
      * @return bool
      */
-    public function getEnableHttpCompression()
+    public function getValidateMergedAreas()
     {
-        return $this->container['enable_http_compression'];
+        return $this->container['validate_merged_areas'];
     }
 
     /**
-     * Sets enable_http_compression
+     * Sets validate_merged_areas
      *
-     * @param bool $enable_http_compression enable_http_compression
+     * @param bool $validate_merged_areas Indicates whether validate merged areas before saving the file. The default value is false.
      *
      * @return $this
      */
-    public function setEnableHttpCompression($enable_http_compression)
+    public function setValidateMergedAreas($validate_merged_areas)
     {
-        $this->container['enable_http_compression'] = $enable_http_compression;
+        $this->container['validate_merged_areas'] = $validate_merged_areas;
 
         return $this;
     }
@@ -392,6 +396,30 @@ class SaveOptions implements  ArrayAccess
     }
 
     /**
+     * Gets create_directory
+     *
+     * @return bool
+     */
+    public function getCreateDirectory()
+    {
+        return $this->container['create_directory'];
+    }
+
+    /**
+     * Sets create_directory
+     *
+     * @param bool $create_directory If true and the directory does not exist, the directory will be automatically created before saving the file.
+     *
+     * @return $this
+     */
+    public function setCreateDirectory($create_directory)
+    {
+        $this->container['create_directory'] = $create_directory;
+
+        return $this;
+    }
+
+    /**
      * Gets sort_names
      *
      * @return bool
@@ -411,30 +439,6 @@ class SaveOptions implements  ArrayAccess
     public function setSortNames($sort_names)
     {
         $this->container['sort_names'] = $sort_names;
-
-        return $this;
-    }
-
-    /**
-     * Gets validate_merged_areas
-     *
-     * @return bool
-     */
-    public function getValidateMergedAreas()
-    {
-        return $this->container['validate_merged_areas'];
-    }
-
-    /**
-     * Sets validate_merged_areas
-     *
-     * @param bool $validate_merged_areas Indicates whether validate merged areas before saving the file. The default value is false.
-     *
-     * @return $this
-     */
-    public function setValidateMergedAreas($validate_merged_areas)
-    {
-        $this->container['validate_merged_areas'] = $validate_merged_areas;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class Top10Filter implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'criteria' => 'string',
+        'items' => 'int',
         'is_percent' => 'bool',
         'is_top' => 'bool',
-        'items' => 'int'
+        'criteria' => 'string'
     ];
 
     /**
@@ -69,10 +69,10 @@ class Top10Filter implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'criteria' => null,
+        'items' => 'int32',
         'is_percent' => null,
         'is_top' => null,
-        'items' => 'int32'
+        'criteria' => null
     ];
 
     /**
@@ -102,10 +102,10 @@ class Top10Filter implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'criteria' => 'Criteria',
+        'items' => 'Items',
         'is_percent' => 'IsPercent',
         'is_top' => 'IsTop',
-        'items' => 'Items'
+        'criteria' => 'Criteria'
     ];
 
     /**
@@ -114,10 +114,10 @@ class Top10Filter implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'criteria' => 'setCriteria',
+        'items' => 'setItems',
         'is_percent' => 'setIsPercent',
         'is_top' => 'setIsTop',
-        'items' => 'setItems'
+        'criteria' => 'setCriteria'
     ];
 
     /**
@@ -126,10 +126,10 @@ class Top10Filter implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'criteria' => 'getCriteria',
+        'items' => 'getItems',
         'is_percent' => 'getIsPercent',
         'is_top' => 'getIsTop',
-        'items' => 'getItems'
+        'criteria' => 'getCriteria'
     ];
 
     /**
@@ -192,10 +192,10 @@ class Top10Filter implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['criteria'] = isset($data['criteria']) ? $data['criteria'] : null;
+        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
         $this->container['is_percent'] = isset($data['is_percent']) ? $data['is_percent'] : null;
         $this->container['is_top'] = isset($data['is_top']) ? $data['is_top'] : null;
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
+        $this->container['criteria'] = isset($data['criteria']) ? $data['criteria'] : null;
     }
 
     /**
@@ -207,14 +207,14 @@ class Top10Filter implements  ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['items'] === null) {
+            $invalidProperties[] = "'items' can't be null";
+        }
         if ($this->container['is_percent'] === null) {
             $invalidProperties[] = "'is_percent' can't be null";
         }
         if ($this->container['is_top'] === null) {
             $invalidProperties[] = "'is_top' can't be null";
-        }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
         }
         return $invalidProperties;
     }
@@ -228,13 +228,13 @@ class Top10Filter implements  ArrayAccess
     public function valid()
     {
 
+        if ($this->container['items'] === null) {
+            return false;
+        }
         if ($this->container['is_percent'] === null) {
             return false;
         }
         if ($this->container['is_top'] === null) {
-            return false;
-        }
-        if ($this->container['items'] === null) {
             return false;
         }
         return true;
@@ -242,25 +242,25 @@ class Top10Filter implements  ArrayAccess
 
 
     /**
-     * Gets criteria
+     * Gets items
      *
-     * @return string
+     * @return int
      */
-    public function getCriteria()
+    public function getItems()
     {
-        return $this->container['criteria'];
+        return $this->container['items'];
     }
 
     /**
-     * Sets criteria
+     * Sets items
      *
-     * @param string $criteria criteria
+     * @param int $items items
      *
      * @return $this
      */
-    public function setCriteria($criteria)
+    public function setItems($items)
     {
-        $this->container['criteria'] = $criteria;
+        $this->container['items'] = $items;
 
         return $this;
     }
@@ -314,25 +314,25 @@ class Top10Filter implements  ArrayAccess
     }
 
     /**
-     * Gets items
+     * Gets criteria
      *
-     * @return int
+     * @return string
      */
-    public function getItems()
+    public function getCriteria()
     {
-        return $this->container['items'];
+        return $this->container['criteria'];
     }
 
     /**
-     * Sets items
+     * Sets criteria
      *
-     * @param int $items items
+     * @param string $criteria criteria
      *
      * @return $this
      */
-    public function setItems($items)
+    public function setCriteria($criteria)
     {
-        $this->container['items'] = $items;
+        $this->container['criteria'] = $criteria;
 
         return $this;
     }

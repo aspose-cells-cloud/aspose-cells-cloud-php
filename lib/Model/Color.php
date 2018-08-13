@@ -58,9 +58,9 @@ class Color implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'a' => 'int',
+        'b' => 'int',
         'r' => 'int',
-        'g' => 'int',
-        'b' => 'int'
+        'g' => 'int'
     ];
 
     /**
@@ -70,9 +70,9 @@ class Color implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'a' => 'byte',
+        'b' => 'byte',
         'r' => 'byte',
-        'g' => 'byte',
-        'b' => 'byte'
+        'g' => 'byte'
     ];
 
     /**
@@ -103,9 +103,9 @@ class Color implements  ArrayAccess
      */
     protected static $attributeMap = [
         'a' => 'A',
+        'b' => 'B',
         'r' => 'R',
-        'g' => 'G',
-        'b' => 'B'
+        'g' => 'G'
     ];
 
     /**
@@ -115,9 +115,9 @@ class Color implements  ArrayAccess
      */
     protected static $setters = [
         'a' => 'setA',
+        'b' => 'setB',
         'r' => 'setR',
-        'g' => 'setG',
-        'b' => 'setB'
+        'g' => 'setG'
     ];
 
     /**
@@ -127,9 +127,9 @@ class Color implements  ArrayAccess
      */
     protected static $getters = [
         'a' => 'getA',
+        'b' => 'getB',
         'r' => 'getR',
-        'g' => 'getG',
-        'b' => 'getB'
+        'g' => 'getG'
     ];
 
     /**
@@ -193,9 +193,9 @@ class Color implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['a'] = isset($data['a']) ? $data['a'] : null;
+        $this->container['b'] = isset($data['b']) ? $data['b'] : null;
         $this->container['r'] = isset($data['r']) ? $data['r'] : null;
         $this->container['g'] = isset($data['g']) ? $data['g'] : null;
-        $this->container['b'] = isset($data['b']) ? $data['b'] : null;
     }
 
     /**
@@ -210,14 +210,14 @@ class Color implements  ArrayAccess
         if ($this->container['a'] === null) {
             $invalidProperties[] = "'a' can't be null";
         }
+        if ($this->container['b'] === null) {
+            $invalidProperties[] = "'b' can't be null";
+        }
         if ($this->container['r'] === null) {
             $invalidProperties[] = "'r' can't be null";
         }
         if ($this->container['g'] === null) {
             $invalidProperties[] = "'g' can't be null";
-        }
-        if ($this->container['b'] === null) {
-            $invalidProperties[] = "'b' can't be null";
         }
         return $invalidProperties;
     }
@@ -234,13 +234,13 @@ class Color implements  ArrayAccess
         if ($this->container['a'] === null) {
             return false;
         }
+        if ($this->container['b'] === null) {
+            return false;
+        }
         if ($this->container['r'] === null) {
             return false;
         }
         if ($this->container['g'] === null) {
-            return false;
-        }
-        if ($this->container['b'] === null) {
             return false;
         }
         return true;
@@ -267,6 +267,30 @@ class Color implements  ArrayAccess
     public function setA($a)
     {
         $this->container['a'] = $a;
+
+        return $this;
+    }
+
+    /**
+     * Gets b
+     *
+     * @return int
+     */
+    public function getB()
+    {
+        return $this->container['b'];
+    }
+
+    /**
+     * Sets b
+     *
+     * @param int $b b
+     *
+     * @return $this
+     */
+    public function setB($b)
+    {
+        $this->container['b'] = $b;
 
         return $this;
     }
@@ -315,30 +339,6 @@ class Color implements  ArrayAccess
     public function setG($g)
     {
         $this->container['g'] = $g;
-
-        return $this;
-    }
-
-    /**
-     * Gets b
-     *
-     * @return int
-     */
-    public function getB()
-    {
-        return $this->container['b'];
-    }
-
-    /**
-     * Sets b
-     *
-     * @param int $b b
-     *
-     * @return $this
-     */
-    public function setB($b)
-    {
-        $this->container['b'] = $b;
 
         return $this;
     }

@@ -55,15 +55,15 @@ class ChartOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'chart_type' => 'string',
-        'upper_left_row' => 'int',
-        'lower_right_row' => 'int',
-        'lower_right_column' => 'int',
+        'string' => 'string',
         'area' => 'string',
-        'is_vertical' => 'bool',
         'category_data' => 'string',
+        'upper_left_row' => 'int',
+        'lower_right_column' => 'int',
+        'lower_right_row' => 'int',
         'is_auto_get_serial_name' => 'bool',
-        'string' => 'string'
+        'chart_type' => 'string',
+        'is_vertical' => 'bool'
     ];
 
     /**
@@ -72,15 +72,15 @@ class ChartOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'chart_type' => null,
-        'upper_left_row' => 'int32',
-        'lower_right_row' => 'int32',
-        'lower_right_column' => 'int32',
+        'string' => null,
         'area' => null,
-        'is_vertical' => null,
         'category_data' => null,
+        'upper_left_row' => 'int32',
+        'lower_right_column' => 'int32',
+        'lower_right_row' => 'int32',
         'is_auto_get_serial_name' => null,
-        'string' => null
+        'chart_type' => null,
+        'is_vertical' => null
     ];
 
     /**
@@ -110,15 +110,15 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'chart_type' => 'ChartType',
-        'upper_left_row' => 'UpperLeftRow',
-        'lower_right_row' => 'LowerRightRow',
-        'lower_right_column' => 'LowerRightColumn',
+        'string' => 'string',
         'area' => 'Area',
-        'is_vertical' => 'IsVertical',
         'category_data' => 'CategoryData',
+        'upper_left_row' => 'UpperLeftRow',
+        'lower_right_column' => 'LowerRightColumn',
+        'lower_right_row' => 'LowerRightRow',
         'is_auto_get_serial_name' => 'IsAutoGetSerialName',
-        'string' => 'string'
+        'chart_type' => 'ChartType',
+        'is_vertical' => 'IsVertical'
     ];
 
     /**
@@ -127,15 +127,15 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $setters = [
-        'chart_type' => 'setChartType',
-        'upper_left_row' => 'setUpperLeftRow',
-        'lower_right_row' => 'setLowerRightRow',
-        'lower_right_column' => 'setLowerRightColumn',
+        'string' => 'setString',
         'area' => 'setArea',
-        'is_vertical' => 'setIsVertical',
         'category_data' => 'setCategoryData',
+        'upper_left_row' => 'setUpperLeftRow',
+        'lower_right_column' => 'setLowerRightColumn',
+        'lower_right_row' => 'setLowerRightRow',
         'is_auto_get_serial_name' => 'setIsAutoGetSerialName',
-        'string' => 'setString'
+        'chart_type' => 'setChartType',
+        'is_vertical' => 'setIsVertical'
     ];
 
     /**
@@ -144,15 +144,15 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $getters = [
-        'chart_type' => 'getChartType',
-        'upper_left_row' => 'getUpperLeftRow',
-        'lower_right_row' => 'getLowerRightRow',
-        'lower_right_column' => 'getLowerRightColumn',
+        'string' => 'getString',
         'area' => 'getArea',
-        'is_vertical' => 'getIsVertical',
         'category_data' => 'getCategoryData',
+        'upper_left_row' => 'getUpperLeftRow',
+        'lower_right_column' => 'getLowerRightColumn',
+        'lower_right_row' => 'getLowerRightRow',
         'is_auto_get_serial_name' => 'getIsAutoGetSerialName',
-        'string' => 'getString'
+        'chart_type' => 'getChartType',
+        'is_vertical' => 'getIsVertical'
     ];
 
     /**
@@ -211,15 +211,15 @@ class ChartOperateParameter extends OperateParameter
     {
         parent::__construct($data);
 
-        $this->container['chart_type'] = isset($data['chart_type']) ? $data['chart_type'] : null;
-        $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
-        $this->container['lower_right_row'] = isset($data['lower_right_row']) ? $data['lower_right_row'] : null;
-        $this->container['lower_right_column'] = isset($data['lower_right_column']) ? $data['lower_right_column'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['is_vertical'] = isset($data['is_vertical']) ? $data['is_vertical'] : null;
-        $this->container['category_data'] = isset($data['category_data']) ? $data['category_data'] : null;
-        $this->container['is_auto_get_serial_name'] = isset($data['is_auto_get_serial_name']) ? $data['is_auto_get_serial_name'] : null;
         $this->container['string'] = isset($data['string']) ? $data['string'] : null;
+        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
+        $this->container['category_data'] = isset($data['category_data']) ? $data['category_data'] : null;
+        $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
+        $this->container['lower_right_column'] = isset($data['lower_right_column']) ? $data['lower_right_column'] : null;
+        $this->container['lower_right_row'] = isset($data['lower_right_row']) ? $data['lower_right_row'] : null;
+        $this->container['is_auto_get_serial_name'] = isset($data['is_auto_get_serial_name']) ? $data['is_auto_get_serial_name'] : null;
+        $this->container['chart_type'] = isset($data['chart_type']) ? $data['chart_type'] : null;
+        $this->container['is_vertical'] = isset($data['is_vertical']) ? $data['is_vertical'] : null;
     }
 
     /**
@@ -251,97 +251,25 @@ class ChartOperateParameter extends OperateParameter
 
 
     /**
-     * Gets chart_type
+     * Gets string
      *
      * @return string
      */
-    public function getChartType()
+    public function getString()
     {
-        return $this->container['chart_type'];
+        return $this->container['string'];
     }
 
     /**
-     * Sets chart_type
+     * Sets string
      *
-     * @param string $chart_type chart_type
+     * @param string $string string
      *
      * @return $this
      */
-    public function setChartType($chart_type)
+    public function setString($string)
     {
-        $this->container['chart_type'] = $chart_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets upper_left_row
-     *
-     * @return int
-     */
-    public function getUpperLeftRow()
-    {
-        return $this->container['upper_left_row'];
-    }
-
-    /**
-     * Sets upper_left_row
-     *
-     * @param int $upper_left_row upper_left_row
-     *
-     * @return $this
-     */
-    public function setUpperLeftRow($upper_left_row)
-    {
-        $this->container['upper_left_row'] = $upper_left_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets lower_right_row
-     *
-     * @return int
-     */
-    public function getLowerRightRow()
-    {
-        return $this->container['lower_right_row'];
-    }
-
-    /**
-     * Sets lower_right_row
-     *
-     * @param int $lower_right_row lower_right_row
-     *
-     * @return $this
-     */
-    public function setLowerRightRow($lower_right_row)
-    {
-        $this->container['lower_right_row'] = $lower_right_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets lower_right_column
-     *
-     * @return int
-     */
-    public function getLowerRightColumn()
-    {
-        return $this->container['lower_right_column'];
-    }
-
-    /**
-     * Sets lower_right_column
-     *
-     * @param int $lower_right_column lower_right_column
-     *
-     * @return $this
-     */
-    public function setLowerRightColumn($lower_right_column)
-    {
-        $this->container['lower_right_column'] = $lower_right_column;
+        $this->container['string'] = $string;
 
         return $this;
     }
@@ -371,30 +299,6 @@ class ChartOperateParameter extends OperateParameter
     }
 
     /**
-     * Gets is_vertical
-     *
-     * @return bool
-     */
-    public function getIsVertical()
-    {
-        return $this->container['is_vertical'];
-    }
-
-    /**
-     * Sets is_vertical
-     *
-     * @param bool $is_vertical is_vertical
-     *
-     * @return $this
-     */
-    public function setIsVertical($is_vertical)
-    {
-        $this->container['is_vertical'] = $is_vertical;
-
-        return $this;
-    }
-
-    /**
      * Gets category_data
      *
      * @return string
@@ -414,6 +318,78 @@ class ChartOperateParameter extends OperateParameter
     public function setCategoryData($category_data)
     {
         $this->container['category_data'] = $category_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets upper_left_row
+     *
+     * @return int
+     */
+    public function getUpperLeftRow()
+    {
+        return $this->container['upper_left_row'];
+    }
+
+    /**
+     * Sets upper_left_row
+     *
+     * @param int $upper_left_row upper_left_row
+     *
+     * @return $this
+     */
+    public function setUpperLeftRow($upper_left_row)
+    {
+        $this->container['upper_left_row'] = $upper_left_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets lower_right_column
+     *
+     * @return int
+     */
+    public function getLowerRightColumn()
+    {
+        return $this->container['lower_right_column'];
+    }
+
+    /**
+     * Sets lower_right_column
+     *
+     * @param int $lower_right_column lower_right_column
+     *
+     * @return $this
+     */
+    public function setLowerRightColumn($lower_right_column)
+    {
+        $this->container['lower_right_column'] = $lower_right_column;
+
+        return $this;
+    }
+
+    /**
+     * Gets lower_right_row
+     *
+     * @return int
+     */
+    public function getLowerRightRow()
+    {
+        return $this->container['lower_right_row'];
+    }
+
+    /**
+     * Sets lower_right_row
+     *
+     * @param int $lower_right_row lower_right_row
+     *
+     * @return $this
+     */
+    public function setLowerRightRow($lower_right_row)
+    {
+        $this->container['lower_right_row'] = $lower_right_row;
 
         return $this;
     }
@@ -443,25 +419,49 @@ class ChartOperateParameter extends OperateParameter
     }
 
     /**
-     * Gets string
+     * Gets chart_type
      *
      * @return string
      */
-    public function getString()
+    public function getChartType()
     {
-        return $this->container['string'];
+        return $this->container['chart_type'];
     }
 
     /**
-     * Sets string
+     * Sets chart_type
      *
-     * @param string $string string
+     * @param string $chart_type chart_type
      *
      * @return $this
      */
-    public function setString($string)
+    public function setChartType($chart_type)
     {
-        $this->container['string'] = $string;
+        $this->container['chart_type'] = $chart_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_vertical
+     *
+     * @return bool
+     */
+    public function getIsVertical()
+    {
+        return $this->container['is_vertical'];
+    }
+
+    /**
+     * Sets is_vertical
+     *
+     * @param bool $is_vertical is_vertical
+     *
+     * @return $this
+     */
+    public function setIsVertical($is_vertical)
+    {
+        $this->container['is_vertical'] = $is_vertical;
 
         return $this;
     }
