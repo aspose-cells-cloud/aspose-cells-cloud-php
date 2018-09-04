@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **cellsWorksheetValidationsDeleteWorksheetValidation**
-> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder)
+> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder, $storage)
 
 Delete worksheet validation by index.
 
@@ -30,9 +30,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $validation_index = 56; // int | The validation index.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder);
+    $result = $apiInstance->cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorksheetValidationsApi->cellsWorksheetValidationsDeleteWorksheetValidation: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **validation_index** | **int**| The validation index. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -65,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorksheetValidationsGetWorksheetValidation**
-> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder)
+> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder, $storage)
 
 Get worksheet validation by index.
 
@@ -83,9 +85,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $validation_index = 56; // int | The validation index.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder);
+    $result = $apiInstance->cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorksheetValidationsApi->cellsWorksheetValidationsGetWorksheetValidation: ', $e->getMessage(), PHP_EOL;
@@ -101,6 +104,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **validation_index** | **int**| The validation index. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -118,7 +122,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorksheetValidationsGetWorksheetValidations**
-> \Aspose\Cells\Cloud\Model\ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\ValidationsResponse cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder, $storage)
 
 Get worksheet validations.
 
@@ -135,9 +139,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsWorksheetValidationsApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $folder = "folder_example"; // string | Document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorksheetValidationsApi->cellsWorksheetValidationsGetWorksheetValidations: ', $e->getMessage(), PHP_EOL;
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| Worksheet name. |
  **folder** | **string**| Document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -169,7 +175,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorksheetValidationsPostWorksheetValidation**
-> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation, $folder)
+> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation, $folder, $storage)
 
 Update worksheet validation by index.
 
@@ -188,9 +194,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $validation_index = 56; // int | The validation index.
 $validation = new \Aspose\Cells\Cloud\Model\Validation(); // \Aspose\Cells\Cloud\Model\Validation | 
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation, $folder);
+    $result = $apiInstance->cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorksheetValidationsApi->cellsWorksheetValidationsPostWorksheetValidation: ', $e->getMessage(), PHP_EOL;
@@ -207,6 +214,7 @@ Name | Type | Description  | Notes
  **validation_index** | **int**| The validation index. |
  **validation** | [**\Aspose\Cells\Cloud\Model\Validation**](../Model/Validation.md)|  | [optional]
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -224,7 +232,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorksheetValidationsPutWorksheetValidation**
-> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range, $folder)
+> \Aspose\Cells\Cloud\Model\ValidationResponse cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range, $folder, $storage)
 
 Add worksheet validation at index.
 
@@ -242,9 +250,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $range = "range_example"; // string | Specified cells area
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range, $folder);
+    $result = $apiInstance->cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorksheetValidationsApi->cellsWorksheetValidationsPutWorksheetValidation: ', $e->getMessage(), PHP_EOL;
@@ -260,6 +269,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **range** | **string**| Specified cells area | [optional]
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

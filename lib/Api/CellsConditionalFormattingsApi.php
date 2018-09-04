@@ -91,14 +91,15 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $index index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder);
+        list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsync($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsync($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder)
+        return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder = null)
+    protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -408,14 +417,15 @@ class CellsConditionalFormattingsApi
      * @param  int $total_rows total_rows (required)
      * @param  int $total_columns total_columns (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
         return $response;
     }
 
@@ -431,15 +441,16 @@ class CellsConditionalFormattingsApi
      * @param  int $total_rows (required)
      * @param  int $total_columns (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -512,13 +523,14 @@ class CellsConditionalFormattingsApi
      * @param  int $total_rows (required)
      * @param  int $total_columns (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder)
+        return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -538,14 +550,15 @@ class CellsConditionalFormattingsApi
      * @param  int $total_rows (required)
      * @param  int $total_columns (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -594,11 +607,12 @@ class CellsConditionalFormattingsApi
      * @param  int $total_rows (required)
      * @param  int $total_columns (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -663,6 +677,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -759,14 +777,15 @@ class CellsConditionalFormattingsApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattings($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattings($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -778,15 +797,16 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -855,13 +875,14 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsync($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -877,14 +898,15 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -929,11 +951,12 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder = null)
+    protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -958,6 +981,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1055,14 +1082,15 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $index index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingResponse
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder);
+        list($response) = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
 
@@ -1075,15 +1103,16 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ConditionalFormattingResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingResponse';
-        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1153,13 +1182,14 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingAsync($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingAsync($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder)
+        return $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1176,14 +1206,15 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingResponse';
-        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1229,11 +1260,12 @@ class CellsConditionalFormattingsApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder = null)
+    protected function cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1264,6 +1296,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1368,14 +1404,15 @@ class CellsConditionalFormattingsApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattings($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattings($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1387,15 +1424,16 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse';
-        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1464,13 +1502,14 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsync($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1486,14 +1525,15 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse';
-        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1538,11 +1578,12 @@ class CellsConditionalFormattingsApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder = null)
+    protected function cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1567,6 +1608,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1665,14 +1710,15 @@ class CellsConditionalFormattingsApi
      * @param  string $cell_area cell_area (required)
      * @param  \Aspose\Cells\Cloud\Model\FormatCondition $formatcondition formatcondition (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition, $folder);
+        list($response) = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition, $folder, $storage);
         return $response;
     }
 
@@ -1686,15 +1732,16 @@ class CellsConditionalFormattingsApi
      * @param  string $cell_area (required)
      * @param  \Aspose\Cells\Cloud\Model\FormatCondition $formatcondition (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $formatcondition, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $formatcondition, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1765,13 +1812,14 @@ class CellsConditionalFormattingsApi
      * @param  string $cell_area (required)
      * @param  \Aspose\Cells\Cloud\Model\FormatCondition $formatcondition (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetConditionalFormattingAsync($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetConditionalFormattingAsync($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition, $folder)
+        return $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1789,14 +1837,15 @@ class CellsConditionalFormattingsApi
      * @param  string $cell_area (required)
      * @param  \Aspose\Cells\Cloud\Model\FormatCondition $formatcondition (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $formatcondition, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $formatcondition, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1843,11 +1892,12 @@ class CellsConditionalFormattingsApi
      * @param  string $cell_area (required)
      * @param  \Aspose\Cells\Cloud\Model\FormatCondition $formatcondition (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null)
+    protected function cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $formatcondition = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1882,6 +1932,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1987,14 +2041,15 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 formula1 (required)
      * @param  string $formula2 formula2 (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatCondition($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatCondition($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder);
+        list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder, $storage);
         return $response;
     }
 
@@ -2012,15 +2067,16 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2095,13 +2151,14 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionAsync($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionAsync($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsPutWorksheetFormatConditionAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder)
+        return $this->cellsConditionalFormattingsPutWorksheetFormatConditionAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2123,14 +2180,15 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2181,11 +2239,12 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null)
+    protected function cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2266,6 +2325,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2372,14 +2435,15 @@ class CellsConditionalFormattingsApi
      * @param  int $index index (required)
      * @param  string $cell_area cell_area (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionArea($name, $sheet_name, $index, $cell_area, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionArea($name, $sheet_name, $index, $cell_area, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder);
+        list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder, $storage);
         return $response;
     }
 
@@ -2393,15 +2457,16 @@ class CellsConditionalFormattingsApi
      * @param  int $index (required)
      * @param  string $cell_area (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2472,13 +2537,14 @@ class CellsConditionalFormattingsApi
      * @param  int $index (required)
      * @param  string $cell_area (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsync($name, $sheet_name, $index, $cell_area, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsync($name, $sheet_name, $index, $cell_area, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder)
+        return $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2496,14 +2562,15 @@ class CellsConditionalFormattingsApi
      * @param  int $index (required)
      * @param  string $cell_area (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2550,11 +2617,12 @@ class CellsConditionalFormattingsApi
      * @param  int $index (required)
      * @param  string $cell_area (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder = null)
+    protected function cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2595,6 +2663,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2704,14 +2776,15 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 formula1 (required)
      * @param  string $formula2 formula2 (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionCondition($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionCondition($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder);
+        list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder, $storage);
         return $response;
     }
 
@@ -2728,15 +2801,16 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2810,13 +2884,14 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsync($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsync($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
-        return $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsyncWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder)
+        return $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsyncWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2837,14 +2912,15 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsyncWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null)
+    public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsyncWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder);
+        $request = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2894,11 +2970,12 @@ class CellsConditionalFormattingsApi
      * @param  string $formula1 (required)
      * @param  string $formula2 (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null)
+    protected function cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2969,6 +3046,10 @@ class CellsConditionalFormattingsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

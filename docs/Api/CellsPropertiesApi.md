@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **cellsPropertiesDeleteDocumentProperties**
-> \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperties($name, $folder)
+> \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperties($name, $folder, $storage)
 
 Delete all custom document properties and clean built-in ones.
 
@@ -28,9 +28,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPropertiesApi(
 );
 $name = "name_example"; // string | The document name.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPropertiesDeleteDocumentProperties($name, $folder);
+    $result = $apiInstance->cellsPropertiesDeleteDocumentProperties($name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPropertiesApi->cellsPropertiesDeleteDocumentProperties: ', $e->getMessage(), PHP_EOL;
@@ -44,6 +45,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -61,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPropertiesDeleteDocumentProperty**
-> \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder)
+> \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder, $storage)
 
 Delete document property.
 
@@ -78,9 +80,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPropertiesApi(
 $name = "name_example"; // string | The document name.
 $property_name = "property_name_example"; // string | The property name.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder);
+    $result = $apiInstance->cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPropertiesApi->cellsPropertiesDeleteDocumentProperty: ', $e->getMessage(), PHP_EOL;
@@ -95,6 +98,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. |
  **property_name** | **string**| The property name. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -112,7 +116,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPropertiesGetDocumentProperties**
-> \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse cellsPropertiesGetDocumentProperties($name, $folder)
+> \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse cellsPropertiesGetDocumentProperties($name, $folder, $storage)
 
 Read document properties.
 
@@ -128,9 +132,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPropertiesApi(
 );
 $name = "name_example"; // string | The document name.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPropertiesGetDocumentProperties($name, $folder);
+    $result = $apiInstance->cellsPropertiesGetDocumentProperties($name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPropertiesApi->cellsPropertiesGetDocumentProperties: ', $e->getMessage(), PHP_EOL;
@@ -144,6 +149,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -161,7 +167,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPropertiesGetDocumentProperty**
-> \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse cellsPropertiesGetDocumentProperty($name, $property_name, $folder)
+> \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse cellsPropertiesGetDocumentProperty($name, $property_name, $folder, $storage)
 
 Read document property by name.
 
@@ -178,9 +184,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPropertiesApi(
 $name = "name_example"; // string | The document name.
 $property_name = "property_name_example"; // string | The property name.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPropertiesGetDocumentProperty($name, $property_name, $folder);
+    $result = $apiInstance->cellsPropertiesGetDocumentProperty($name, $property_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPropertiesApi->cellsPropertiesGetDocumentProperty: ', $e->getMessage(), PHP_EOL;
@@ -195,6 +202,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The document name. |
  **property_name** | **string**| The property name. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -212,7 +220,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPropertiesPutDocumentProperty**
-> \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse cellsPropertiesPutDocumentProperty($name, $property_name, $property, $folder)
+> \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse cellsPropertiesPutDocumentProperty($name, $property_name, $property, $folder, $storage)
 
 Set/create document property.
 
@@ -230,9 +238,10 @@ $name = "name_example"; // string | The document name.
 $property_name = "property_name_example"; // string | The property name.
 $property = new \Aspose\Cells\Cloud\Model\CellsDocumentProperty(); // \Aspose\Cells\Cloud\Model\CellsDocumentProperty | with new property value.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPropertiesPutDocumentProperty($name, $property_name, $property, $folder);
+    $result = $apiInstance->cellsPropertiesPutDocumentProperty($name, $property_name, $property, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPropertiesApi->cellsPropertiesPutDocumentProperty: ', $e->getMessage(), PHP_EOL;
@@ -248,6 +257,7 @@ Name | Type | Description  | Notes
  **property_name** | **string**| The property name. |
  **property** | [**\Aspose\Cells\Cloud\Model\CellsDocumentProperty**](../Model/CellsDocumentProperty.md)| with new property value. | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

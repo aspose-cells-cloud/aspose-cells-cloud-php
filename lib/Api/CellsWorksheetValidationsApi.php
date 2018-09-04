@@ -91,14 +91,15 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
-    public function cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder);
+        list($response) = $this->cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder);
+        $request = $this->cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsDeleteWorksheetValidationAsync($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsDeleteWorksheetValidationAsync($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
-        return $this->cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder)
+        return $this->cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder);
+        $request = $this->cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder = null)
+    protected function cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsWorksheetValidationsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -405,14 +414,15 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
-    public function cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder);
+        list($response) = $this->cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage);
         return $response;
     }
 
@@ -425,15 +435,16 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder);
+        $request = $this->cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,13 +514,14 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsGetWorksheetValidationAsync($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidationAsync($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
-        return $this->cellsWorksheetValidationsGetWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder)
+        return $this->cellsWorksheetValidationsGetWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -526,14 +538,15 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsGetWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder);
+        $request = $this->cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -579,11 +592,12 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $validation_index The validation index. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder = null)
+    protected function cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -614,6 +628,10 @@ class CellsWorksheetValidationsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -718,14 +736,15 @@ class CellsWorksheetValidationsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder Document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationsResponse
      */
-    public function cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -737,15 +756,16 @@ class CellsWorksheetValidationsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder Document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationsResponse';
-        $request = $this->cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -814,13 +834,14 @@ class CellsWorksheetValidationsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder Document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsGetWorksheetValidationsAsync($name, $sheet_name, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidationsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsWorksheetValidationsGetWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsWorksheetValidationsGetWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -836,14 +857,15 @@ class CellsWorksheetValidationsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder Document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsGetWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsWorksheetValidationsGetWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationsResponse';
-        $request = $this->cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -888,11 +910,12 @@ class CellsWorksheetValidationsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder Document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder = null)
+    protected function cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -917,6 +940,10 @@ class CellsWorksheetValidationsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1015,14 +1042,15 @@ class CellsWorksheetValidationsApi
      * @param  int $validation_index The validation index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Validation $validation validation (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
-    public function cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation = null, $folder = null)
+    public function cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $validation, $folder);
+        list($response) = $this->cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $validation, $folder, $storage);
         return $response;
     }
 
@@ -1036,15 +1064,16 @@ class CellsWorksheetValidationsApi
      * @param  int $validation_index The validation index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Validation $validation (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $validation = null, $folder = null)
+    public function cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation, $folder);
+        $request = $this->cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1115,13 +1144,14 @@ class CellsWorksheetValidationsApi
      * @param  int $validation_index The validation index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Validation $validation (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsPostWorksheetValidationAsync($name, $sheet_name, $validation_index, $validation = null, $folder = null)
+    public function cellsWorksheetValidationsPostWorksheetValidationAsync($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage = null)
     {
-        return $this->cellsWorksheetValidationsPostWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $validation, $folder)
+        return $this->cellsWorksheetValidationsPostWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $validation, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1139,14 +1169,15 @@ class CellsWorksheetValidationsApi
      * @param  int $validation_index The validation index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Validation $validation (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsPostWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $validation = null, $folder = null)
+    public function cellsWorksheetValidationsPostWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation, $folder);
+        $request = $this->cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1193,11 +1224,12 @@ class CellsWorksheetValidationsApi
      * @param  int $validation_index The validation index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Validation $validation (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation = null, $folder = null)
+    protected function cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1228,6 +1260,10 @@ class CellsWorksheetValidationsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1336,14 +1372,15 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $range Specified cells area (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
-    public function cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range = null, $folder = null)
+    public function cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo($name, $sheet_name, $range, $folder);
+        list($response) = $this->cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo($name, $sheet_name, $range, $folder, $storage);
         return $response;
     }
 
@@ -1356,15 +1393,16 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $range Specified cells area (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo($name, $sheet_name, $range = null, $folder = null)
+    public function cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range, $folder);
+        $request = $this->cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1434,13 +1472,14 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $range Specified cells area (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsPutWorksheetValidationAsync($name, $sheet_name, $range = null, $folder = null)
+    public function cellsWorksheetValidationsPutWorksheetValidationAsync($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
-        return $this->cellsWorksheetValidationsPutWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $range, $folder)
+        return $this->cellsWorksheetValidationsPutWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $range, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1457,14 +1496,15 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $range Specified cells area (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetValidationsPutWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $range = null, $folder = null)
+    public function cellsWorksheetValidationsPutWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
-        $request = $this->cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range, $folder);
+        $request = $this->cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1510,11 +1550,12 @@ class CellsWorksheetValidationsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $range Specified cells area (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range = null, $folder = null)
+    protected function cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1543,6 +1584,10 @@ class CellsWorksheetValidationsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

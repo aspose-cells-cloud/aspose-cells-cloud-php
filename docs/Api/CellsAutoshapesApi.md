@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **cellsAutoshapesGetWorksheetAutoshape**
-> \SplFileObject cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder)
+> \SplFileObject cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder, $storage)
 
 Get autoshape info.
 
@@ -27,9 +27,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $autoshape_number = 56; // int | The autoshape number.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder);
+    $result = $apiInstance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoshapesApi->cellsAutoshapesGetWorksheetAutoshape: ', $e->getMessage(), PHP_EOL;
@@ -45,6 +46,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **autoshape_number** | **int**| The autoshape number. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -62,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoshapesGetWorksheetAutoshapes**
-> \Aspose\Cells\Cloud\Model\AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\AutoShapesResponse cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder, $storage)
 
 Get worksheet autoshapes info.
 
@@ -79,9 +81,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsAutoshapesApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoshapesApi->cellsAutoshapesGetWorksheetAutoshapes: ', $e->getMessage(), PHP_EOL;
@@ -96,6 +99,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

@@ -90,14 +90,15 @@ class CellsPageSetupApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder = null)
+    public function cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupDeleteHeaderFooterWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPageSetupDeleteHeaderFooterWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -109,15 +110,16 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupDeleteHeaderFooterWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupDeleteHeaderFooterWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,13 +188,14 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupDeleteHeaderFooterAsync($name, $sheet_name, $folder = null)
+    public function cellsPageSetupDeleteHeaderFooterAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupDeleteHeaderFooterAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPageSetupDeleteHeaderFooterAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,14 +211,15 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupDeleteHeaderFooterAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupDeleteHeaderFooterAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -260,11 +264,12 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder = null)
+    protected function cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -289,6 +294,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -385,14 +394,15 @@ class CellsPageSetupApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PageSectionsResponse
      */
-    public function cellsPageSetupGetFooter($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetFooter($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupGetFooterWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPageSetupGetFooterWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -404,15 +414,16 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PageSectionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupGetFooterWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetFooterWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
-        $request = $this->cellsPageSetupGetFooterRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupGetFooterRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -481,13 +492,14 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupGetFooterAsync($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetFooterAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupGetFooterAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPageSetupGetFooterAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -503,14 +515,15 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupGetFooterAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetFooterAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
-        $request = $this->cellsPageSetupGetFooterRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupGetFooterRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -555,11 +568,12 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupGetFooterRequest($name, $sheet_name, $folder = null)
+    protected function cellsPageSetupGetFooterRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -584,6 +598,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -680,14 +698,15 @@ class CellsPageSetupApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PageSectionsResponse
      */
-    public function cellsPageSetupGetHeader($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetHeader($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupGetHeaderWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPageSetupGetHeaderWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -699,15 +718,16 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PageSectionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupGetHeaderWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetHeaderWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
-        $request = $this->cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -776,13 +796,14 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupGetHeaderAsync($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetHeaderAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupGetHeaderAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPageSetupGetHeaderAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -798,14 +819,15 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupGetHeaderAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetHeaderAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
-        $request = $this->cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -850,11 +872,12 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder = null)
+    protected function cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -879,6 +902,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -975,14 +1002,15 @@ class CellsPageSetupApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PageSetupResponse
      */
-    public function cellsPageSetupGetPageSetup($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetPageSetup($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupGetPageSetupWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPageSetupGetPageSetupWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -994,15 +1022,16 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PageSetupResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupGetPageSetupWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetPageSetupWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PageSetupResponse';
-        $request = $this->cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1071,13 +1100,14 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupGetPageSetupAsync($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetPageSetupAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupGetPageSetupAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPageSetupGetPageSetupAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1093,14 +1123,15 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupGetPageSetupAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageSetupGetPageSetupAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PageSetupResponse';
-        $request = $this->cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1145,11 +1176,12 @@ class CellsPageSetupApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder = null)
+    protected function cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1174,6 +1206,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1273,14 +1309,15 @@ class CellsPageSetupApi
      * @param  string $script script (required)
      * @param  bool $is_first_page is_first_page (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupPostFooterWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder);
+        list($response) = $this->cellsPageSetupPostFooterWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
         return $response;
     }
 
@@ -1295,15 +1332,16 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupPostFooterWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostFooterWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder);
+        $request = $this->cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1375,13 +1413,14 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupPostFooterAsync($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostFooterAsync($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupPostFooterAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder)
+        return $this->cellsPageSetupPostFooterAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1400,14 +1439,15 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupPostFooterAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostFooterAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder);
+        $request = $this->cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1455,11 +1495,12 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    protected function cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1514,6 +1555,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1613,14 +1658,15 @@ class CellsPageSetupApi
      * @param  string $script script (required)
      * @param  bool $is_first_page is_first_page (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupPostHeaderWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder);
+        list($response) = $this->cellsPageSetupPostHeaderWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
         return $response;
     }
 
@@ -1635,15 +1681,16 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupPostHeaderWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostHeaderWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder);
+        $request = $this->cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1715,13 +1762,14 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupPostHeaderAsync($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostHeaderAsync($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupPostHeaderAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder)
+        return $this->cellsPageSetupPostHeaderAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1740,14 +1788,15 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupPostHeaderAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    public function cellsPageSetupPostHeaderAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder);
+        $request = $this->cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1795,11 +1844,12 @@ class CellsPageSetupApi
      * @param  string $script (required)
      * @param  bool $is_first_page (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder = null)
+    protected function cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1854,6 +1904,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1951,14 +2005,15 @@ class CellsPageSetupApi
      * @param  string $sheet_name sheet_name (required)
      * @param  \Aspose\Cells\Cloud\Model\PageSetup $page_setup page_setup (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup = null, $folder = null)
+    public function cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageSetupPostPageSetupWithHttpInfo($name, $sheet_name, $page_setup, $folder);
+        list($response) = $this->cellsPageSetupPostPageSetupWithHttpInfo($name, $sheet_name, $page_setup, $folder, $storage);
         return $response;
     }
 
@@ -1971,15 +2026,16 @@ class CellsPageSetupApi
      * @param  string $sheet_name (required)
      * @param  \Aspose\Cells\Cloud\Model\PageSetup $page_setup (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageSetupPostPageSetupWithHttpInfo($name, $sheet_name, $page_setup = null, $folder = null)
+    public function cellsPageSetupPostPageSetupWithHttpInfo($name, $sheet_name, $page_setup = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup, $folder);
+        $request = $this->cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2049,13 +2105,14 @@ class CellsPageSetupApi
      * @param  string $sheet_name (required)
      * @param  \Aspose\Cells\Cloud\Model\PageSetup $page_setup (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupPostPageSetupAsync($name, $sheet_name, $page_setup = null, $folder = null)
+    public function cellsPageSetupPostPageSetupAsync($name, $sheet_name, $page_setup = null, $folder = null, $storage = null)
     {
-        return $this->cellsPageSetupPostPageSetupAsyncWithHttpInfo($name, $sheet_name, $page_setup, $folder)
+        return $this->cellsPageSetupPostPageSetupAsyncWithHttpInfo($name, $sheet_name, $page_setup, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2072,14 +2129,15 @@ class CellsPageSetupApi
      * @param  string $sheet_name (required)
      * @param  \Aspose\Cells\Cloud\Model\PageSetup $page_setup (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageSetupPostPageSetupAsyncWithHttpInfo($name, $sheet_name, $page_setup = null, $folder = null)
+    public function cellsPageSetupPostPageSetupAsyncWithHttpInfo($name, $sheet_name, $page_setup = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup, $folder);
+        $request = $this->cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2125,11 +2183,12 @@ class CellsPageSetupApi
      * @param  string $sheet_name (required)
      * @param  \Aspose\Cells\Cloud\Model\PageSetup $page_setup (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup = null, $folder = null)
+    protected function cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2154,6 +2213,10 @@ class CellsPageSetupApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

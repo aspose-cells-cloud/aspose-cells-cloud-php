@@ -98,14 +98,15 @@ class CellsAutoFilterApi
      * @param  int $minute minute (optional, default to 0)
      * @param  int $second second (optional, default to 0)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null)
+    public function cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder);
+        list($response) = $this->cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage);
         return $response;
     }
 
@@ -125,15 +126,16 @@ class CellsAutoFilterApi
      * @param  int $minute (optional, default to 0)
      * @param  int $second (optional, default to 0)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null)
+    public function cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder);
+        $request = $this->cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -210,13 +212,14 @@ class CellsAutoFilterApi
      * @param  int $minute (optional, default to 0)
      * @param  int $second (optional, default to 0)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterDeleteWorksheetDateFilterAsync($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null)
+    public function cellsAutoFilterDeleteWorksheetDateFilterAsync($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterDeleteWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder)
+        return $this->cellsAutoFilterDeleteWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,14 +243,15 @@ class CellsAutoFilterApi
      * @param  int $minute (optional, default to 0)
      * @param  int $second (optional, default to 0)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterDeleteWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null)
+    public function cellsAutoFilterDeleteWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder);
+        $request = $this->cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -300,11 +304,12 @@ class CellsAutoFilterApi
      * @param  int $minute (optional, default to 0)
      * @param  int $second (optional, default to 0)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null)
+    protected function cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -373,6 +378,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -471,14 +480,15 @@ class CellsAutoFilterApi
      * @param  int $field_index field_index (required)
      * @param  string $criteria criteria (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria = null, $folder = null)
+    public function cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterDeleteWorksheetFilterWithHttpInfo($name, $sheet_name, $field_index, $criteria, $folder);
+        list($response) = $this->cellsAutoFilterDeleteWorksheetFilterWithHttpInfo($name, $sheet_name, $field_index, $criteria, $folder, $storage);
         return $response;
     }
 
@@ -492,15 +502,16 @@ class CellsAutoFilterApi
      * @param  int $field_index (required)
      * @param  string $criteria (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterDeleteWorksheetFilterWithHttpInfo($name, $sheet_name, $field_index, $criteria = null, $folder = null)
+    public function cellsAutoFilterDeleteWorksheetFilterWithHttpInfo($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria, $folder);
+        $request = $this->cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -571,13 +582,14 @@ class CellsAutoFilterApi
      * @param  int $field_index (required)
      * @param  string $criteria (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterDeleteWorksheetFilterAsync($name, $sheet_name, $field_index, $criteria = null, $folder = null)
+    public function cellsAutoFilterDeleteWorksheetFilterAsync($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterDeleteWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $criteria, $folder)
+        return $this->cellsAutoFilterDeleteWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $criteria, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -595,14 +607,15 @@ class CellsAutoFilterApi
      * @param  int $field_index (required)
      * @param  string $criteria (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterDeleteWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $criteria = null, $folder = null)
+    public function cellsAutoFilterDeleteWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria, $folder);
+        $request = $this->cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -649,11 +662,12 @@ class CellsAutoFilterApi
      * @param  int $field_index (required)
      * @param  string $criteria (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria = null, $folder = null)
+    protected function cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -692,6 +706,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -788,14 +806,15 @@ class CellsAutoFilterApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AutoFilterResponse
      */
-    public function cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -807,15 +826,16 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AutoFilterResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\AutoFilterResponse';
-        $request = $this->cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder);
+        $request = $this->cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -884,13 +904,14 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterGetWorksheetAutoFilterAsync($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterGetWorksheetAutoFilterAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterGetWorksheetAutoFilterAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsAutoFilterGetWorksheetAutoFilterAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -906,14 +927,15 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterGetWorksheetAutoFilterAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterGetWorksheetAutoFilterAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\AutoFilterResponse';
-        $request = $this->cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder);
+        $request = $this->cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -958,11 +980,12 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder = null)
+    protected function cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -987,6 +1010,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1081,14 +1108,15 @@ class CellsAutoFilterApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1098,15 +1126,16 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder);
+        $request = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1175,13 +1204,14 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPostWorksheetAutoFilterRefreshAsync($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterPostWorksheetAutoFilterRefreshAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPostWorksheetAutoFilterRefreshAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsAutoFilterPostWorksheetAutoFilterRefreshAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1197,14 +1227,15 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPostWorksheetAutoFilterRefreshAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsAutoFilterPostWorksheetAutoFilterRefreshAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder);
+        $request = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1249,11 +1280,12 @@ class CellsAutoFilterApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder = null)
+    protected function cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1278,6 +1310,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1375,14 +1411,15 @@ class CellsAutoFilterApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $field_index field_index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder);
+        list($response) = $this->cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage);
         return $response;
     }
 
@@ -1395,15 +1432,16 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder);
+        $request = $this->cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1473,13 +1511,14 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPostWorksheetMatchBlanksAsync($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchBlanksAsync($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPostWorksheetMatchBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder)
+        return $this->cellsAutoFilterPostWorksheetMatchBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1496,14 +1535,15 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPostWorksheetMatchBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder);
+        $request = $this->cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1549,11 +1589,12 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder = null)
+    protected function cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1588,6 +1629,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1685,14 +1730,15 @@ class CellsAutoFilterApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $field_index field_index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder);
+        list($response) = $this->cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage);
         return $response;
     }
 
@@ -1705,15 +1751,16 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder);
+        $request = $this->cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1783,13 +1830,14 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPostWorksheetMatchNonBlanksAsync($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchNonBlanksAsync($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPostWorksheetMatchNonBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder)
+        return $this->cellsAutoFilterPostWorksheetMatchNonBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1806,14 +1854,15 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPostWorksheetMatchNonBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder = null)
+    public function cellsAutoFilterPostWorksheetMatchNonBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder);
+        $request = $this->cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1859,11 +1908,12 @@ class CellsAutoFilterApi
      * @param  string $sheet_name (required)
      * @param  int $field_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder = null)
+    protected function cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1898,6 +1948,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1997,14 +2051,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetColorFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetColorFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -2019,15 +2074,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetColorFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetColorFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2101,13 +2157,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetColorFilterAsync($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetColorFilterAsync($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetColorFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetColorFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2128,14 +2185,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetColorFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetColorFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2185,11 +2243,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2242,6 +2301,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2350,14 +2413,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -2378,15 +2442,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2464,13 +2529,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetCustomFilterAsync($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetCustomFilterAsync($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetCustomFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetCustomFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2495,14 +2561,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetCustomFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetCustomFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2556,11 +2623,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2645,6 +2713,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2752,14 +2824,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetDateFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetDateFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -2782,15 +2855,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetDateFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDateFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2870,13 +2944,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetDateFilterAsync($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDateFilterAsync($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2903,14 +2978,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2966,11 +3042,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3057,6 +3134,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3156,14 +3237,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -3178,15 +3260,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3260,13 +3343,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetDynamicFilterAsync($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDynamicFilterAsync($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetDynamicFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetDynamicFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3287,14 +3371,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetDynamicFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetDynamicFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3344,11 +3429,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3411,6 +3497,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3512,14 +3602,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -3536,15 +3627,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3618,13 +3710,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetFilterAsync($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterAsync($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3645,14 +3738,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3702,11 +3796,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3769,6 +3864,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3872,14 +3971,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -3898,15 +3998,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3982,13 +4083,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetFilterTop10Async($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterTop10Async($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetFilterTop10AsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetFilterTop10AsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4011,14 +4113,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetFilterTop10AsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetFilterTop10AsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4070,11 +4173,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4157,6 +4261,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4259,14 +4367,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks match_blanks (optional)
      * @param  bool $refresh refresh (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoFilterPutWorksheetIconFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder);
+        list($response) = $this->cellsAutoFilterPutWorksheetIconFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
 
@@ -4284,15 +4393,16 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoFilterPutWorksheetIconFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetIconFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4367,13 +4477,14 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetIconFilterAsync($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetIconFilterAsync($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
-        return $this->cellsAutoFilterPutWorksheetIconFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder)
+        return $this->cellsAutoFilterPutWorksheetIconFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4395,14 +4506,15 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoFilterPutWorksheetIconFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null)
+    public function cellsAutoFilterPutWorksheetIconFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder);
+        $request = $this->cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4453,11 +4565,12 @@ class CellsAutoFilterApi
      * @param  bool $match_blanks (optional)
      * @param  bool $refresh (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null)
+    protected function cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4530,6 +4643,10 @@ class CellsAutoFilterApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

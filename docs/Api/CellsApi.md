@@ -46,7 +46,7 @@ Method | HTTP request | Description
 
 
 # **cellsDeleteWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder)
+> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage)
 
 Delete worksheet columns.
 
@@ -66,9 +66,10 @@ $column_index = 56; // int | The column index.
 $columns = 56; // int | The columns.
 $update_reference = true; // bool | The update reference.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+    $result = $apiInstance->cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsDeleteWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -86,6 +87,7 @@ Name | Type | Description  | Notes
  **columns** | **int**| The columns. |
  **update_reference** | **bool**| The update reference. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -103,7 +105,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsDeleteWorksheetRow**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder, $storage)
 
 Delete worksheet row.
 
@@ -121,9 +123,10 @@ $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet bame.
 $row_index = 56; // int | The row index.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder);
+    $result = $apiInstance->cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsDeleteWorksheetRow: ', $e->getMessage(), PHP_EOL;
@@ -139,6 +142,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet bame. |
  **row_index** | **int**| The row index. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -156,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsDeleteWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage)
 
 Delete several worksheet rows.
 
@@ -176,9 +180,10 @@ $startrow = 56; // int | The begin row index to be operated.
 $total_rows = 1; // int | Number of rows to be operated.
 $update_reference = true; // bool | Indicates if update references in other worksheets.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+    $result = $apiInstance->cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsDeleteWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -196,6 +201,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. | [optional] [default to 1]
  **update_reference** | **bool**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -213,7 +219,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetCell**
-> \SplFileObject cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder)
+> object cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder, $storage)
 
 Read cell data by cell's name.
 
@@ -231,9 +237,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $cell_or_method_name = "cell_or_method_name_example"; // string | The cell's or method name. (Method name like firstcell, endcell etc.)
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder);
+    $result = $apiInstance->cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetCell: ', $e->getMessage(), PHP_EOL;
@@ -249,10 +256,11 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **cell_or_method_name** | **string**| The cell&#39;s or method name. (Method name like firstcell, endcell etc.) |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**object**
 
 ### Authorization
 
@@ -266,7 +274,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetCellStyle**
-> \Aspose\Cells\Cloud\Model\StyleResponse cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder)
+> \Aspose\Cells\Cloud\Model\StyleResponse cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder, $storage)
 
 Read cell's style info.
 
@@ -284,9 +292,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $cell_name = "cell_name_example"; // string | Cell's name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder);
+    $result = $apiInstance->cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetCellStyle: ', $e->getMessage(), PHP_EOL;
@@ -302,6 +311,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **cell_name** | **string**| Cell&#39;s name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -319,7 +329,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetCells**
-> \Aspose\Cells\Cloud\Model\CellsResponse cellsGetWorksheetCells($name, $sheet_name, $offest, $count, $folder)
+> \Aspose\Cells\Cloud\Model\CellsResponse cellsGetWorksheetCells($name, $sheet_name, $offest, $count, $folder, $storage)
 
 Get cells info.
 
@@ -338,9 +348,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $offest = 0; // int | Begginig offset.
 $count = 0; // int | Maximum amount of cells in the response.
 $folder = "folder_example"; // string | Document's folder name.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetCells($name, $sheet_name, $offest, $count, $folder);
+    $result = $apiInstance->cellsGetWorksheetCells($name, $sheet_name, $offest, $count, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetCells: ', $e->getMessage(), PHP_EOL;
@@ -357,6 +368,7 @@ Name | Type | Description  | Notes
  **offest** | **int**| Begginig offset. | [optional] [default to 0]
  **count** | **int**| Maximum amount of cells in the response. | [optional] [default to 0]
  **folder** | **string**| Document&#39;s folder name. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -374,7 +386,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetColumn**
-> \Aspose\Cells\Cloud\Model\ColumnResponse cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder)
+> \Aspose\Cells\Cloud\Model\ColumnResponse cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder, $storage)
 
 Read worksheet column data by column's index.
 
@@ -392,9 +404,10 @@ $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $column_index = 56; // int | The column index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder);
+    $result = $apiInstance->cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetColumn: ', $e->getMessage(), PHP_EOL;
@@ -410,6 +423,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. |
  **column_index** | **int**| The column index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -427,7 +441,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsGetWorksheetColumns($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsGetWorksheetColumns($name, $sheet_name, $folder, $storage)
 
 Read worksheet columns info.
 
@@ -444,9 +458,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
 $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | The workdook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetColumns($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsGetWorksheetColumns($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -461,6 +476,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| The workdook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -478,7 +494,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetRow**
-> \Aspose\Cells\Cloud\Model\RowResponse cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder)
+> \Aspose\Cells\Cloud\Model\RowResponse cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder, $storage)
 
 Read worksheet row data by row's index.
 
@@ -496,9 +512,10 @@ $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $row_index = 56; // int | The row index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder);
+    $result = $apiInstance->cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetRow: ', $e->getMessage(), PHP_EOL;
@@ -514,6 +531,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. |
  **row_index** | **int**| The row index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -531,7 +549,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsGetWorksheetRows**
-> \Aspose\Cells\Cloud\Model\RowsResponse cellsGetWorksheetRows($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\RowsResponse cellsGetWorksheetRows($name, $sheet_name, $folder, $storage)
 
 Read worksheet rows info.
 
@@ -548,9 +566,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
 $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | The workdook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsGetWorksheetRows($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsGetWorksheetRows($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsGetWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -565,6 +584,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The workbook name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| The workdook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -582,7 +602,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostCellCalculate**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCellCalculate($name, $sheet_name, $cell_name, $options, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCellCalculate($name, $sheet_name, $cell_name, $options, $folder, $storage)
 
 Cell calculate formula
 
@@ -601,9 +621,10 @@ $sheet_name = "sheet_name_example"; // string |
 $cell_name = "cell_name_example"; // string | 
 $options = new \Aspose\Cells\Cloud\Model\CalculationOptions(); // \Aspose\Cells\Cloud\Model\CalculationOptions | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostCellCalculate($name, $sheet_name, $cell_name, $options, $folder);
+    $result = $apiInstance->cellsPostCellCalculate($name, $sheet_name, $cell_name, $options, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostCellCalculate: ', $e->getMessage(), PHP_EOL;
@@ -620,6 +641,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**|  |
  **options** | [**\Aspose\Cells\Cloud\Model\CalculationOptions**](../Model/CalculationOptions.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -637,7 +659,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostCellCharacters**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCellCharacters($name, $sheet_name, $cell_name, $options, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCellCharacters($name, $sheet_name, $cell_name, $options, $folder, $storage)
 
 Set cell characters
 
@@ -656,9 +678,10 @@ $sheet_name = "sheet_name_example"; // string |
 $cell_name = "cell_name_example"; // string | 
 $options = array(new \Aspose\Cells\Cloud\Model\FontSetting()); // \Aspose\Cells\Cloud\Model\FontSetting[] | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostCellCharacters($name, $sheet_name, $cell_name, $options, $folder);
+    $result = $apiInstance->cellsPostCellCharacters($name, $sheet_name, $cell_name, $options, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostCellCharacters: ', $e->getMessage(), PHP_EOL;
@@ -675,6 +698,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**|  |
  **options** | [**\Aspose\Cells\Cloud\Model\FontSetting[]**](../Model/FontSetting.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -692,7 +716,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostClearContents**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostClearContents($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostClearContents($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage)
 
 Clear cells contents.
 
@@ -714,9 +738,10 @@ $start_column = 56; // int | The start column.
 $end_row = 56; // int | The end row.
 $end_column = 56; // int | The end column.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostClearContents($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+    $result = $apiInstance->cellsPostClearContents($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostClearContents: ', $e->getMessage(), PHP_EOL;
@@ -736,6 +761,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| The end row. | [optional]
  **end_column** | **int**| The end column. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -753,7 +779,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostClearFormats**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostClearFormats($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostClearFormats($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage)
 
 Clear cells contents.
 
@@ -775,9 +801,10 @@ $start_column = 56; // int | The start column.
 $end_row = 56; // int | The end row.
 $end_column = 56; // int | The end column.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostClearFormats($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+    $result = $apiInstance->cellsPostClearFormats($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostClearFormats: ', $e->getMessage(), PHP_EOL;
@@ -797,6 +824,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| The end row. | [optional]
  **end_column** | **int**| The end column. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -814,7 +842,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostColumnStyle**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostColumnStyle($name, $sheet_name, $column_index, $style, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostColumnStyle($name, $sheet_name, $column_index, $style, $folder, $storage)
 
 Set column style
 
@@ -833,9 +861,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $column_index = 56; // int | The column index.
 $style = new \Aspose\Cells\Cloud\Model\Style(); // \Aspose\Cells\Cloud\Model\Style | Style dto
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostColumnStyle($name, $sheet_name, $column_index, $style, $folder);
+    $result = $apiInstance->cellsPostColumnStyle($name, $sheet_name, $column_index, $style, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostColumnStyle: ', $e->getMessage(), PHP_EOL;
@@ -852,6 +881,7 @@ Name | Type | Description  | Notes
  **column_index** | **int**| The column index. |
  **style** | [**\Aspose\Cells\Cloud\Model\Style**](../Model/Style.md)| Style dto | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -869,7 +899,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostCopyCellIntoCell**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage)
 
 Copy cell into cell
 
@@ -891,9 +921,10 @@ $cellname = "cellname_example"; // string | Source cell name
 $row = 56; // int | Source row
 $column = 56; // int | Source column
 $folder = "folder_example"; // string | Folder name
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder);
+    $result = $apiInstance->cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostCopyCellIntoCell: ', $e->getMessage(), PHP_EOL;
@@ -913,6 +944,7 @@ Name | Type | Description  | Notes
  **row** | **int**| Source row | [optional]
  **column** | **int**| Source column | [optional]
  **folder** | **string**| Folder name | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -930,7 +962,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostCopyWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage)
 
 Copy worksheet columns.
 
@@ -951,9 +983,10 @@ $destination_column_index = 56; // int | Destination column index
 $column_number = 56; // int | The copied column number
 $worksheet = ""; // string | The Worksheet
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder);
+    $result = $apiInstance->cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostCopyWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -972,6 +1005,7 @@ Name | Type | Description  | Notes
  **column_number** | **int**| The copied column number |
  **worksheet** | **string**| The Worksheet | [optional] [default to ]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -989,7 +1023,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostCopyWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage)
 
 Copy worksheet rows.
 
@@ -1010,9 +1044,10 @@ $destination_row_index = 56; // int | Destination row index
 $row_number = 56; // int | The copied row number
 $worksheet = "worksheet_example"; // string | worksheet
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder);
+    $result = $apiInstance->cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostCopyWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -1031,6 +1066,7 @@ Name | Type | Description  | Notes
  **row_number** | **int**| The copied row number |
  **worksheet** | **string**| worksheet | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1048,7 +1084,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostGroupWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage)
 
 Group worksheet columns.
 
@@ -1068,9 +1104,10 @@ $first_index = 56; // int | The first column index to be operated.
 $last_index = 56; // int | The last column index to be operated.
 $hide = true; // bool | columns visible state
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+    $result = $apiInstance->cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostGroupWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -1088,6 +1125,7 @@ Name | Type | Description  | Notes
  **last_index** | **int**| The last column index to be operated. |
  **hide** | **bool**| columns visible state | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1105,7 +1143,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostGroupWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage)
 
 Group worksheet rows.
 
@@ -1125,9 +1163,10 @@ $first_index = 56; // int | The first row index to be operated.
 $last_index = 56; // int | The last row index to be operated.
 $hide = true; // bool | rows visible state
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+    $result = $apiInstance->cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostGroupWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -1145,6 +1184,7 @@ Name | Type | Description  | Notes
  **last_index** | **int**| The last row index to be operated. |
  **hide** | **bool**| rows visible state | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1162,7 +1202,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostHideWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder, $storage)
 
 Hide worksheet columns.
 
@@ -1181,9 +1221,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $start_column = 56; // int | The begin column index to be operated.
 $total_columns = 56; // int | Number of columns to be operated.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder);
+    $result = $apiInstance->cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostHideWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -1200,6 +1241,7 @@ Name | Type | Description  | Notes
  **start_column** | **int**| The begin column index to be operated. |
  **total_columns** | **int**| Number of columns to be operated. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1217,7 +1259,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostHideWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder, $storage)
 
 Hide worksheet rows.
 
@@ -1236,9 +1278,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $startrow = 56; // int | The begin row index to be operated.
 $total_rows = 56; // int | Number of rows to be operated.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder);
+    $result = $apiInstance->cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostHideWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -1255,6 +1298,7 @@ Name | Type | Description  | Notes
  **startrow** | **int**| The begin row index to be operated. |
  **total_rows** | **int**| Number of rows to be operated. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1272,7 +1316,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostRowStyle**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostRowStyle($name, $sheet_name, $row_index, $style, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostRowStyle($name, $sheet_name, $row_index, $style, $folder, $storage)
 
 Set row style.
 
@@ -1291,9 +1335,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $row_index = 56; // int | The row index.
 $style = new \Aspose\Cells\Cloud\Model\Style(); // \Aspose\Cells\Cloud\Model\Style | Style dto
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostRowStyle($name, $sheet_name, $row_index, $style, $folder);
+    $result = $apiInstance->cellsPostRowStyle($name, $sheet_name, $row_index, $style, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostRowStyle: ', $e->getMessage(), PHP_EOL;
@@ -1310,6 +1355,7 @@ Name | Type | Description  | Notes
  **row_index** | **int**| The row index. |
  **style** | [**\Aspose\Cells\Cloud\Model\Style**](../Model/Style.md)| Style dto | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1327,7 +1373,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostSetCellHtmlString**
-> \Aspose\Cells\Cloud\Model\CellResponse cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder)
+> \Aspose\Cells\Cloud\Model\CellResponse cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder, $storage)
 
 Set htmlstring value into cell
 
@@ -1345,9 +1391,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $cell_name = "cell_name_example"; // string | The cell name.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder);
+    $result = $apiInstance->cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostSetCellHtmlString: ', $e->getMessage(), PHP_EOL;
@@ -1363,6 +1410,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **cell_name** | **string**| The cell name. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1380,7 +1428,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostSetCellRangeValue**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder, $storage)
 
 Set cell range value
 
@@ -1400,9 +1448,10 @@ $cellarea = "cellarea_example"; // string | Cell area (like \"A1:C2\")
 $value = "value_example"; // string | Range value
 $type = "type_example"; // string | Value data type (like \"int\")
 $folder = "folder_example"; // string | Folder name
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder);
+    $result = $apiInstance->cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostSetCellRangeValue: ', $e->getMessage(), PHP_EOL;
@@ -1420,6 +1469,7 @@ Name | Type | Description  | Notes
  **value** | **string**| Range value |
  **type** | **string**| Value data type (like \&quot;int\&quot;) |
  **folder** | **string**| Folder name | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1437,7 +1487,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostSetWorksheetColumnWidth**
-> \Aspose\Cells\Cloud\Model\ColumnResponse cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder)
+> \Aspose\Cells\Cloud\Model\ColumnResponse cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder, $storage)
 
 Set worksheet column width.
 
@@ -1456,9 +1506,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $column_index = 56; // int | The column index.
 $width = 1.2; // double | The width.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder);
+    $result = $apiInstance->cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostSetWorksheetColumnWidth: ', $e->getMessage(), PHP_EOL;
@@ -1475,6 +1526,7 @@ Name | Type | Description  | Notes
  **column_index** | **int**| The column index. |
  **width** | **double**| The width. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1492,7 +1544,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUngroupWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder, $storage)
 
 Ungroup worksheet columns.
 
@@ -1511,9 +1563,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $first_index = 56; // int | The first column index to be operated.
 $last_index = 56; // int | The last column index to be operated.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder);
+    $result = $apiInstance->cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUngroupWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -1530,6 +1583,7 @@ Name | Type | Description  | Notes
  **first_index** | **int**| The first column index to be operated. |
  **last_index** | **int**| The last column index to be operated. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1547,7 +1601,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUngroupWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage)
 
 Ungroup worksheet rows.
 
@@ -1567,9 +1621,10 @@ $first_index = 56; // int | The first row index to be operated.
 $last_index = 56; // int | The last row index to be operated.
 $is_all = true; // bool | Is all row to be operated
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all, $folder);
+    $result = $apiInstance->cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUngroupWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -1587,6 +1642,7 @@ Name | Type | Description  | Notes
  **last_index** | **int**| The last row index to be operated. |
  **is_all** | **bool**| Is all row to be operated | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1604,7 +1660,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUnhideWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage)
 
 Unhide worksheet columns.
 
@@ -1624,9 +1680,10 @@ $startcolumn = 56; // int | The begin column index to be operated.
 $total_columns = 56; // int | Number of columns to be operated.
 $width = 50.0; // double | The new column width.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width, $folder);
+    $result = $apiInstance->cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUnhideWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -1644,6 +1701,7 @@ Name | Type | Description  | Notes
  **total_columns** | **int**| Number of columns to be operated. |
  **width** | **double**| The new column width. | [optional] [default to 50.0]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1661,7 +1719,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUnhideWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage)
 
 Unhide worksheet rows.
 
@@ -1681,9 +1739,10 @@ $startrow = 56; // int | The begin row index to be operated.
 $total_rows = 56; // int | Number of rows to be operated.
 $height = 15.0; // double | The new row height.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height, $folder);
+    $result = $apiInstance->cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUnhideWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -1701,6 +1760,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. |
  **height** | **double**| The new row height. | [optional] [default to 15.0]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1718,7 +1778,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUpdateWorksheetCellStyle**
-> \Aspose\Cells\Cloud\Model\StyleResponse cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style, $folder)
+> \Aspose\Cells\Cloud\Model\StyleResponse cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style, $folder, $storage)
 
 Update cell's style.
 
@@ -1737,9 +1797,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $cell_name = "cell_name_example"; // string | The cell name.
 $style = new \Aspose\Cells\Cloud\Model\Style(); // \Aspose\Cells\Cloud\Model\Style | with update style settings.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style, $folder);
+    $result = $apiInstance->cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUpdateWorksheetCellStyle: ', $e->getMessage(), PHP_EOL;
@@ -1756,6 +1817,7 @@ Name | Type | Description  | Notes
  **cell_name** | **string**| The cell name. |
  **style** | [**\Aspose\Cells\Cloud\Model\Style**](../Model/Style.md)| with update style settings. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1773,7 +1835,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUpdateWorksheetRangeStyle**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style, $folder, $storage)
 
 Update cell's range style.
 
@@ -1792,9 +1854,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $range = "range_example"; // string | The range.
 $style = new \Aspose\Cells\Cloud\Model\Style(); // \Aspose\Cells\Cloud\Model\Style | with update style settings.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style, $folder);
+    $result = $apiInstance->cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUpdateWorksheetRangeStyle: ', $e->getMessage(), PHP_EOL;
@@ -1811,6 +1874,7 @@ Name | Type | Description  | Notes
  **range** | **string**| The range. |
  **style** | [**\Aspose\Cells\Cloud\Model\Style**](../Model/Style.md)| with update style settings. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1828,7 +1892,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUpdateWorksheetRow**
-> \Aspose\Cells\Cloud\Model\RowResponse cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height, $folder)
+> \Aspose\Cells\Cloud\Model\RowResponse cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height, $folder, $storage)
 
 Update worksheet row.
 
@@ -1847,9 +1911,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $row_index = 56; // int | The row index.
 $height = 0.0; // double | The new row height.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height, $folder);
+    $result = $apiInstance->cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostUpdateWorksheetRow: ', $e->getMessage(), PHP_EOL;
@@ -1866,6 +1931,7 @@ Name | Type | Description  | Notes
  **row_index** | **int**| The row index. |
  **height** | **double**| The new row height. | [optional] [default to 0.0]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1883,7 +1949,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostWorksheetCellSetValue**
-> \Aspose\Cells\Cloud\Model\CellResponse cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value, $type, $formula, $folder)
+> \Aspose\Cells\Cloud\Model\CellResponse cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage)
 
 Set cell value.
 
@@ -1904,9 +1970,10 @@ $value = "value_example"; // string | The cell value.
 $type = "type_example"; // string | The value type.
 $formula = "formula_example"; // string | Formula for cell
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value, $type, $formula, $folder);
+    $result = $apiInstance->cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostWorksheetCellSetValue: ', $e->getMessage(), PHP_EOL;
@@ -1925,6 +1992,7 @@ Name | Type | Description  | Notes
  **type** | **string**| The value type. | [optional]
  **formula** | **string**| Formula for cell | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -1942,7 +2010,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostWorksheetMerge**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage)
 
 Merge cells.
 
@@ -1963,9 +2031,10 @@ $start_column = 56; // int | The start column.
 $total_rows = 56; // int | The total rows
 $total_columns = 56; // int | The total columns.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+    $result = $apiInstance->cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostWorksheetMerge: ', $e->getMessage(), PHP_EOL;
@@ -1984,6 +2053,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| The total rows |
  **total_columns** | **int**| The total columns. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -2001,7 +2071,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostWorksheetUnmerge**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage)
 
 Unmerge cells.
 
@@ -2022,9 +2092,10 @@ $start_column = 56; // int | The start column.
 $total_rows = 56; // int | The total rows
 $total_columns = 56; // int | The total columns.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+    $result = $apiInstance->cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostWorksheetUnmerge: ', $e->getMessage(), PHP_EOL;
@@ -2043,6 +2114,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| The total rows |
  **total_columns** | **int**| The total columns. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -2060,7 +2132,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPutInsertWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder)
+> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage)
 
 Insert worksheet columns.
 
@@ -2080,9 +2152,10 @@ $column_index = 56; // int | The column index.
 $columns = 56; // int | The columns.
 $update_reference = true; // bool | The update reference.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+    $result = $apiInstance->cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPutInsertWorksheetColumns: ', $e->getMessage(), PHP_EOL;
@@ -2100,6 +2173,7 @@ Name | Type | Description  | Notes
  **columns** | **int**| The columns. |
  **update_reference** | **bool**| The update reference. | [optional] [default to true]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -2117,7 +2191,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPutInsertWorksheetRow**
-> \Aspose\Cells\Cloud\Model\RowResponse cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder)
+> \Aspose\Cells\Cloud\Model\RowResponse cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder, $storage)
 
 Insert new worksheet row.
 
@@ -2135,9 +2209,10 @@ $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $row_index = 56; // int | The new row index.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder);
+    $result = $apiInstance->cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPutInsertWorksheetRow: ', $e->getMessage(), PHP_EOL;
@@ -2153,6 +2228,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. |
  **row_index** | **int**| The new row index. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -2170,7 +2246,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPutInsertWorksheetRows**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage)
 
 Insert several new worksheet rows.
 
@@ -2190,9 +2266,10 @@ $startrow = 56; // int | The begin row index to be operated.
 $total_rows = 1; // int | Number of rows to be operated.
 $update_reference = true; // bool | Indicates if update references in other worksheets.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+    $result = $apiInstance->cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPutInsertWorksheetRows: ', $e->getMessage(), PHP_EOL;
@@ -2210,6 +2287,7 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. | [optional] [default to 1]
  **update_reference** | **bool**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

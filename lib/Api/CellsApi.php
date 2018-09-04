@@ -93,14 +93,15 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnsResponse
      */
-    public function cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null)
+    public function cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+        list($response) = $this->cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
         return $response;
     }
 
@@ -115,15 +116,16 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null)
+    public function cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
-        $request = $this->cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+        $request = $this->cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -195,13 +197,14 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsDeleteWorksheetColumnsAsync($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null)
+    public function cellsDeleteWorksheetColumnsAsync($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage = null)
     {
-        return $this->cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder)
+        return $this->cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -220,14 +223,15 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null)
+    public function cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
-        $request = $this->cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+        $request = $this->cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -275,11 +279,12 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null)
+    protected function cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -330,6 +335,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -435,14 +444,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet bame. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder = null)
+    public function cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsDeleteWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder);
+        list($response) = $this->cellsDeleteWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage);
         return $response;
     }
 
@@ -455,15 +465,16 @@ class CellsApi
      * @param  string $sheet_name The worksheet bame. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsDeleteWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null)
+    public function cellsDeleteWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder);
+        $request = $this->cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -533,13 +544,14 @@ class CellsApi
      * @param  string $sheet_name The worksheet bame. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsDeleteWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null)
+    public function cellsDeleteWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
-        return $this->cellsDeleteWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder)
+        return $this->cellsDeleteWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -556,14 +568,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet bame. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsDeleteWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null)
+    public function cellsDeleteWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder);
+        $request = $this->cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -609,11 +622,12 @@ class CellsApi
      * @param  string $sheet_name The worksheet bame. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null)
+    protected function cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -644,6 +658,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -751,14 +769,15 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsDeleteWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+        list($response) = $this->cellsDeleteWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
         return $response;
     }
 
@@ -773,15 +792,16 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsDeleteWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsDeleteWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+        $request = $this->cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -853,13 +873,14 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsDeleteWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsDeleteWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
-        return $this->cellsDeleteWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder)
+        return $this->cellsDeleteWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -878,14 +899,15 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsDeleteWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsDeleteWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+        $request = $this->cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -933,11 +955,12 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    protected function cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -980,6 +1003,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1077,14 +1104,15 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_or_method_name The cell&#39;s or method name. (Method name like firstcell, endcell etc.) (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return object
      */
-    public function cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder = null)
+    public function cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetCellWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder);
+        list($response) = $this->cellsGetWorksheetCellWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder, $storage);
         return $response;
     }
 
@@ -1097,15 +1125,16 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_or_method_name The cell&#39;s or method name. (Method name like firstcell, endcell etc.) (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetCellWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder = null)
+    public function cellsGetWorksheetCellWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder = null, $storage = null)
     {
-        $returnType = '\SplFileObject';
-        $request = $this->cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder);
+        $returnType = 'object';
+        $request = $this->cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1156,7 +1185,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1175,13 +1204,14 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_or_method_name The cell&#39;s or method name. (Method name like firstcell, endcell etc.) (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetCellAsync($name, $sheet_name, $cell_or_method_name, $folder = null)
+    public function cellsGetWorksheetCellAsync($name, $sheet_name, $cell_or_method_name, $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetCellAsyncWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder)
+        return $this->cellsGetWorksheetCellAsyncWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1198,14 +1228,15 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_or_method_name The cell&#39;s or method name. (Method name like firstcell, endcell etc.) (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetCellAsyncWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder = null)
+    public function cellsGetWorksheetCellAsyncWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder = null, $storage = null)
     {
-        $returnType = '\SplFileObject';
-        $request = $this->cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder);
+        $returnType = 'object';
+        $request = $this->cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1251,11 +1282,12 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_or_method_name The cell&#39;s or method name. (Method name like firstcell, endcell etc.) (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder = null)
+    protected function cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1286,6 +1318,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1391,14 +1427,15 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name Cell&#39;s name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\StyleResponse
      */
-    public function cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $folder);
+        list($response) = $this->cellsGetWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage);
         return $response;
     }
 
@@ -1411,15 +1448,16 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name Cell&#39;s name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsGetWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
-        $request = $this->cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder);
+        $request = $this->cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1489,13 +1527,14 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name Cell&#39;s name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetCellStyleAsync($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsGetWorksheetCellStyleAsync($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder)
+        return $this->cellsGetWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1512,14 +1551,15 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name Cell&#39;s name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsGetWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
-        $request = $this->cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder);
+        $request = $this->cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1565,11 +1605,12 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name Cell&#39;s name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder = null)
+    protected function cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1600,6 +1641,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1706,14 +1751,15 @@ class CellsApi
      * @param  int $offest Begginig offset. (optional, default to 0)
      * @param  int $count Maximum amount of cells in the response. (optional, default to 0)
      * @param  string $folder Document&#39;s folder name. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsResponse
      */
-    public function cellsGetWorksheetCells($name, $sheet_name, $offest = '0', $count = '0', $folder = null)
+    public function cellsGetWorksheetCells($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetCellsWithHttpInfo($name, $sheet_name, $offest, $count, $folder);
+        list($response) = $this->cellsGetWorksheetCellsWithHttpInfo($name, $sheet_name, $offest, $count, $folder, $storage);
         return $response;
     }
 
@@ -1727,15 +1773,16 @@ class CellsApi
      * @param  int $offest Begginig offset. (optional, default to 0)
      * @param  int $count Maximum amount of cells in the response. (optional, default to 0)
      * @param  string $folder Document&#39;s folder name. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetCellsWithHttpInfo($name, $sheet_name, $offest = '0', $count = '0', $folder = null)
+    public function cellsGetWorksheetCellsWithHttpInfo($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsResponse';
-        $request = $this->cellsGetWorksheetCellsRequest($name, $sheet_name, $offest, $count, $folder);
+        $request = $this->cellsGetWorksheetCellsRequest($name, $sheet_name, $offest, $count, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1806,13 +1853,14 @@ class CellsApi
      * @param  int $offest Begginig offset. (optional, default to 0)
      * @param  int $count Maximum amount of cells in the response. (optional, default to 0)
      * @param  string $folder Document&#39;s folder name. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetCellsAsync($name, $sheet_name, $offest = '0', $count = '0', $folder = null)
+    public function cellsGetWorksheetCellsAsync($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetCellsAsyncWithHttpInfo($name, $sheet_name, $offest, $count, $folder)
+        return $this->cellsGetWorksheetCellsAsyncWithHttpInfo($name, $sheet_name, $offest, $count, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1830,14 +1878,15 @@ class CellsApi
      * @param  int $offest Begginig offset. (optional, default to 0)
      * @param  int $count Maximum amount of cells in the response. (optional, default to 0)
      * @param  string $folder Document&#39;s folder name. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetCellsAsyncWithHttpInfo($name, $sheet_name, $offest = '0', $count = '0', $folder = null)
+    public function cellsGetWorksheetCellsAsyncWithHttpInfo($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsResponse';
-        $request = $this->cellsGetWorksheetCellsRequest($name, $sheet_name, $offest, $count, $folder);
+        $request = $this->cellsGetWorksheetCellsRequest($name, $sheet_name, $offest, $count, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1884,11 +1933,12 @@ class CellsApi
      * @param  int $offest Begginig offset. (optional, default to 0)
      * @param  int $count Maximum amount of cells in the response. (optional, default to 0)
      * @param  string $folder Document&#39;s folder name. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetCellsRequest($name, $sheet_name, $offest = '0', $count = '0', $folder = null)
+    protected function cellsGetWorksheetCellsRequest($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1921,6 +1971,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2018,14 +2072,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $column_index The column index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnResponse
      */
-    public function cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder = null)
+    public function cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetColumnWithHttpInfo($name, $sheet_name, $column_index, $folder);
+        list($response) = $this->cellsGetWorksheetColumnWithHttpInfo($name, $sheet_name, $column_index, $folder, $storage);
         return $response;
     }
 
@@ -2038,15 +2093,16 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $column_index The column index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetColumnWithHttpInfo($name, $sheet_name, $column_index, $folder = null)
+    public function cellsGetWorksheetColumnWithHttpInfo($name, $sheet_name, $column_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
-        $request = $this->cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder);
+        $request = $this->cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2116,13 +2172,14 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $column_index The column index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetColumnAsync($name, $sheet_name, $column_index, $folder = null)
+    public function cellsGetWorksheetColumnAsync($name, $sheet_name, $column_index, $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetColumnAsyncWithHttpInfo($name, $sheet_name, $column_index, $folder)
+        return $this->cellsGetWorksheetColumnAsyncWithHttpInfo($name, $sheet_name, $column_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2139,14 +2196,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $column_index The column index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetColumnAsyncWithHttpInfo($name, $sheet_name, $column_index, $folder = null)
+    public function cellsGetWorksheetColumnAsyncWithHttpInfo($name, $sheet_name, $column_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
-        $request = $this->cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder);
+        $request = $this->cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2192,11 +2250,12 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $column_index The column index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder = null)
+    protected function cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2227,6 +2286,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2331,14 +2394,15 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnsResponse
      */
-    public function cellsGetWorksheetColumns($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetColumns($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetColumnsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsGetWorksheetColumnsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -2350,15 +2414,16 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetColumnsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetColumnsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
-        $request = $this->cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2427,13 +2492,14 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetColumnsAsync($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetColumnsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsGetWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2449,14 +2515,15 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
-        $request = $this->cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2501,11 +2568,12 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder = null)
+    protected function cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2530,6 +2598,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2627,14 +2699,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RowResponse
      */
-    public function cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder = null)
+    public function cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder);
+        list($response) = $this->cellsGetWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage);
         return $response;
     }
 
@@ -2647,15 +2720,16 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RowResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null)
+    public function cellsGetWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
-        $request = $this->cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder);
+        $request = $this->cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2725,13 +2799,14 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null)
+    public function cellsGetWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder)
+        return $this->cellsGetWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2748,14 +2823,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null)
+    public function cellsGetWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
-        $request = $this->cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder);
+        $request = $this->cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2801,11 +2877,12 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The row index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null)
+    protected function cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2836,6 +2913,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2940,14 +3021,15 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RowsResponse
      */
-    public function cellsGetWorksheetRows($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetRows($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsGetWorksheetRowsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsGetWorksheetRowsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -2959,15 +3041,16 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RowsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsGetWorksheetRowsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetRowsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowsResponse';
-        $request = $this->cellsGetWorksheetRowsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsGetWorksheetRowsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3036,13 +3119,14 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetRowsAsync($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetRowsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsGetWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsGetWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3058,14 +3142,15 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsGetWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsGetWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowsResponse';
-        $request = $this->cellsGetWorksheetRowsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsGetWorksheetRowsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3110,11 +3195,12 @@ class CellsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workdook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsGetWorksheetRowsRequest($name, $sheet_name, $folder = null)
+    protected function cellsGetWorksheetRowsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3139,6 +3225,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3237,14 +3327,15 @@ class CellsApi
      * @param  string $cell_name cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\CalculationOptions $options options (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostCellCalculate($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCalculate($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostCellCalculateWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder);
+        list($response) = $this->cellsPostCellCalculateWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage);
         return $response;
     }
 
@@ -3258,15 +3349,16 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\CalculationOptions $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostCellCalculateWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCalculateWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options, $folder);
+        $request = $this->cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3337,13 +3429,14 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\CalculationOptions $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCellCalculateAsync($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCalculateAsync($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostCellCalculateAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder)
+        return $this->cellsPostCellCalculateAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3361,14 +3454,15 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\CalculationOptions $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCellCalculateAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCalculateAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options, $folder);
+        $request = $this->cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3415,11 +3509,12 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\CalculationOptions $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    protected function cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3450,6 +3545,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3559,14 +3658,15 @@ class CellsApi
      * @param  string $cell_name cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\FontSetting[] $options options (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostCellCharacters($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCharacters($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostCellCharactersWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder);
+        list($response) = $this->cellsPostCellCharactersWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage);
         return $response;
     }
 
@@ -3580,15 +3680,16 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\FontSetting[] $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostCellCharactersWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCharactersWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options, $folder);
+        $request = $this->cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3659,13 +3760,14 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\FontSetting[] $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCellCharactersAsync($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCharactersAsync($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostCellCharactersAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder)
+        return $this->cellsPostCellCharactersAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3683,14 +3785,15 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\FontSetting[] $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCellCharactersAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    public function cellsPostCellCharactersAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options, $folder);
+        $request = $this->cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3737,11 +3840,12 @@ class CellsApi
      * @param  string $cell_name (required)
      * @param  \Aspose\Cells\Cloud\Model\FontSetting[] $options (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options = null, $folder = null)
+    protected function cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3772,6 +3876,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3884,14 +3992,15 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostClearContents($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearContents($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostClearContentsWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+        list($response) = $this->cellsPostClearContentsWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
         return $response;
     }
 
@@ -3908,15 +4017,16 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostClearContentsWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearContentsWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostClearContentsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+        $request = $this->cellsPostClearContentsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3990,13 +4100,14 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostClearContentsAsync($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearContentsAsync($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostClearContentsAsyncWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder)
+        return $this->cellsPostClearContentsAsyncWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4017,14 +4128,15 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostClearContentsAsyncWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearContentsAsyncWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostClearContentsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+        $request = $this->cellsPostClearContentsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4074,11 +4186,12 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostClearContentsRequest($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    protected function cellsPostClearContentsRequest($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4123,6 +4236,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4224,14 +4341,15 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostClearFormats($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearFormats($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostClearFormatsWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+        list($response) = $this->cellsPostClearFormatsWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
         return $response;
     }
 
@@ -4248,15 +4366,16 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostClearFormatsWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearFormatsWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostClearFormatsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+        $request = $this->cellsPostClearFormatsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4330,13 +4449,14 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostClearFormatsAsync($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearFormatsAsync($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostClearFormatsAsyncWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder)
+        return $this->cellsPostClearFormatsAsyncWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4357,14 +4477,15 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostClearFormatsAsyncWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    public function cellsPostClearFormatsAsyncWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostClearFormatsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder);
+        $request = $this->cellsPostClearFormatsRequest($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4414,11 +4535,12 @@ class CellsApi
      * @param  int $end_row The end row. (optional)
      * @param  int $end_column The end column. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostClearFormatsRequest($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null)
+    protected function cellsPostClearFormatsRequest($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4463,6 +4585,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4561,14 +4687,15 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostColumnStyle($name, $sheet_name, $column_index, $style = null, $folder = null)
+    public function cellsPostColumnStyle($name, $sheet_name, $column_index, $style = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostColumnStyleWithHttpInfo($name, $sheet_name, $column_index, $style, $folder);
+        list($response) = $this->cellsPostColumnStyleWithHttpInfo($name, $sheet_name, $column_index, $style, $folder, $storage);
         return $response;
     }
 
@@ -4582,15 +4709,16 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostColumnStyleWithHttpInfo($name, $sheet_name, $column_index, $style = null, $folder = null)
+    public function cellsPostColumnStyleWithHttpInfo($name, $sheet_name, $column_index, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style, $folder);
+        $request = $this->cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4661,13 +4789,14 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostColumnStyleAsync($name, $sheet_name, $column_index, $style = null, $folder = null)
+    public function cellsPostColumnStyleAsync($name, $sheet_name, $column_index, $style = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostColumnStyleAsyncWithHttpInfo($name, $sheet_name, $column_index, $style, $folder)
+        return $this->cellsPostColumnStyleAsyncWithHttpInfo($name, $sheet_name, $column_index, $style, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4685,14 +4814,15 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostColumnStyleAsyncWithHttpInfo($name, $sheet_name, $column_index, $style = null, $folder = null)
+    public function cellsPostColumnStyleAsyncWithHttpInfo($name, $sheet_name, $column_index, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style, $folder);
+        $request = $this->cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4739,11 +4869,12 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style = null, $folder = null)
+    protected function cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4774,6 +4905,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4886,14 +5021,15 @@ class CellsApi
      * @param  int $row Source row (optional)
      * @param  int $column Source column (optional)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null)
+    public function cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostCopyCellIntoCellWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder);
+        list($response) = $this->cellsPostCopyCellIntoCellWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage);
         return $response;
     }
 
@@ -4910,15 +5046,16 @@ class CellsApi
      * @param  int $row Source row (optional)
      * @param  int $column Source column (optional)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostCopyCellIntoCellWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null)
+    public function cellsPostCopyCellIntoCellWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder);
+        $request = $this->cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4992,13 +5129,14 @@ class CellsApi
      * @param  int $row Source row (optional)
      * @param  int $column Source column (optional)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCopyCellIntoCellAsync($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null)
+    public function cellsPostCopyCellIntoCellAsync($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostCopyCellIntoCellAsyncWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder)
+        return $this->cellsPostCopyCellIntoCellAsyncWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5019,14 +5157,15 @@ class CellsApi
      * @param  int $row Source row (optional)
      * @param  int $column Source column (optional)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCopyCellIntoCellAsyncWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null)
+    public function cellsPostCopyCellIntoCellAsyncWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder);
+        $request = $this->cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5076,11 +5215,12 @@ class CellsApi
      * @param  int $row Source row (optional)
      * @param  int $column Source column (optional)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null)
+    protected function cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -5133,6 +5273,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -5241,14 +5385,15 @@ class CellsApi
      * @param  int $column_number The copied column number (required)
      * @param  string $worksheet The Worksheet (optional, default to )
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null)
+    public function cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostCopyWorksheetColumnsWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder);
+        list($response) = $this->cellsPostCopyWorksheetColumnsWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage);
         return $response;
     }
 
@@ -5264,15 +5409,16 @@ class CellsApi
      * @param  int $column_number The copied column number (required)
      * @param  string $worksheet The Worksheet (optional, default to )
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostCopyWorksheetColumnsWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null)
+    public function cellsPostCopyWorksheetColumnsWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder);
+        $request = $this->cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5345,13 +5491,14 @@ class CellsApi
      * @param  int $column_number The copied column number (required)
      * @param  string $worksheet The Worksheet (optional, default to )
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCopyWorksheetColumnsAsync($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null)
+    public function cellsPostCopyWorksheetColumnsAsync($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage = null)
     {
-        return $this->cellsPostCopyWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder)
+        return $this->cellsPostCopyWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5371,14 +5518,15 @@ class CellsApi
      * @param  int $column_number The copied column number (required)
      * @param  string $worksheet The Worksheet (optional, default to )
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCopyWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null)
+    public function cellsPostCopyWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder);
+        $request = $this->cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5427,11 +5575,12 @@ class CellsApi
      * @param  int $column_number The copied column number (required)
      * @param  string $worksheet The Worksheet (optional, default to )
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null)
+    protected function cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -5490,6 +5639,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -5590,14 +5743,15 @@ class CellsApi
      * @param  int $row_number The copied row number (required)
      * @param  string $worksheet worksheet (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null)
+    public function cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostCopyWorksheetRowsWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder);
+        list($response) = $this->cellsPostCopyWorksheetRowsWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage);
         return $response;
     }
 
@@ -5613,15 +5767,16 @@ class CellsApi
      * @param  int $row_number The copied row number (required)
      * @param  string $worksheet worksheet (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostCopyWorksheetRowsWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null)
+    public function cellsPostCopyWorksheetRowsWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder);
+        $request = $this->cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5694,13 +5849,14 @@ class CellsApi
      * @param  int $row_number The copied row number (required)
      * @param  string $worksheet worksheet (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCopyWorksheetRowsAsync($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null)
+    public function cellsPostCopyWorksheetRowsAsync($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostCopyWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder)
+        return $this->cellsPostCopyWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5720,14 +5876,15 @@ class CellsApi
      * @param  int $row_number The copied row number (required)
      * @param  string $worksheet worksheet (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostCopyWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null)
+    public function cellsPostCopyWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder);
+        $request = $this->cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5776,11 +5933,12 @@ class CellsApi
      * @param  int $row_number The copied row number (required)
      * @param  string $worksheet worksheet (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null)
+    protected function cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -5839,6 +5997,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -5938,14 +6100,15 @@ class CellsApi
      * @param  int $last_index The last column index to be operated. (required)
      * @param  bool $hide columns visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostGroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+        list($response) = $this->cellsPostGroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
         return $response;
     }
 
@@ -5960,15 +6123,16 @@ class CellsApi
      * @param  int $last_index The last column index to be operated. (required)
      * @param  bool $hide columns visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostGroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+        $request = $this->cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6040,13 +6204,14 @@ class CellsApi
      * @param  int $last_index The last column index to be operated. (required)
      * @param  bool $hide columns visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostGroupWorksheetColumnsAsync($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetColumnsAsync($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostGroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder)
+        return $this->cellsPostGroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6065,14 +6230,15 @@ class CellsApi
      * @param  int $last_index The last column index to be operated. (required)
      * @param  bool $hide columns visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostGroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+        $request = $this->cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6120,11 +6286,12 @@ class CellsApi
      * @param  int $last_index The last column index to be operated. (required)
      * @param  bool $hide columns visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    protected function cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -6173,6 +6340,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -6272,14 +6443,15 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $hide rows visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostGroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+        list($response) = $this->cellsPostGroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
         return $response;
     }
 
@@ -6294,15 +6466,16 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $hide rows visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostGroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+        $request = $this->cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6374,13 +6547,14 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $hide rows visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostGroupWorksheetRowsAsync($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetRowsAsync($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostGroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder)
+        return $this->cellsPostGroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6399,14 +6573,15 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $hide rows visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostGroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    public function cellsPostGroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder);
+        $request = $this->cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6454,11 +6629,12 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $hide rows visible state (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null)
+    protected function cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -6507,6 +6683,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -6605,14 +6785,15 @@ class CellsApi
      * @param  int $start_column The begin column index to be operated. (required)
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder = null)
+    public function cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostHideWorksheetColumnsWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder);
+        list($response) = $this->cellsPostHideWorksheetColumnsWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder, $storage);
         return $response;
     }
 
@@ -6626,15 +6807,16 @@ class CellsApi
      * @param  int $start_column The begin column index to be operated. (required)
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostHideWorksheetColumnsWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder = null)
+    public function cellsPostHideWorksheetColumnsWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder);
+        $request = $this->cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6705,13 +6887,14 @@ class CellsApi
      * @param  int $start_column The begin column index to be operated. (required)
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostHideWorksheetColumnsAsync($name, $sheet_name, $start_column, $total_columns, $folder = null)
+    public function cellsPostHideWorksheetColumnsAsync($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage = null)
     {
-        return $this->cellsPostHideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder)
+        return $this->cellsPostHideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6729,14 +6912,15 @@ class CellsApi
      * @param  int $start_column The begin column index to be operated. (required)
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostHideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder = null)
+    public function cellsPostHideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder);
+        $request = $this->cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6783,11 +6967,12 @@ class CellsApi
      * @param  int $start_column The begin column index to be operated. (required)
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder = null)
+    protected function cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -6832,6 +7017,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -6930,14 +7119,15 @@ class CellsApi
      * @param  int $startrow The begin row index to be operated. (required)
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder = null)
+    public function cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostHideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder);
+        list($response) = $this->cellsPostHideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder, $storage);
         return $response;
     }
 
@@ -6951,15 +7141,16 @@ class CellsApi
      * @param  int $startrow The begin row index to be operated. (required)
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostHideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder = null)
+    public function cellsPostHideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder);
+        $request = $this->cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7030,13 +7221,14 @@ class CellsApi
      * @param  int $startrow The begin row index to be operated. (required)
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostHideWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows, $folder = null)
+    public function cellsPostHideWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage = null)
     {
-        return $this->cellsPostHideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder)
+        return $this->cellsPostHideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7054,14 +7246,15 @@ class CellsApi
      * @param  int $startrow The begin row index to be operated. (required)
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostHideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder = null)
+    public function cellsPostHideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder);
+        $request = $this->cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7108,11 +7301,12 @@ class CellsApi
      * @param  int $startrow The begin row index to be operated. (required)
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder = null)
+    protected function cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -7157,6 +7351,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -7255,14 +7453,15 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostRowStyle($name, $sheet_name, $row_index, $style = null, $folder = null)
+    public function cellsPostRowStyle($name, $sheet_name, $row_index, $style = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostRowStyleWithHttpInfo($name, $sheet_name, $row_index, $style, $folder);
+        list($response) = $this->cellsPostRowStyleWithHttpInfo($name, $sheet_name, $row_index, $style, $folder, $storage);
         return $response;
     }
 
@@ -7276,15 +7475,16 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostRowStyleWithHttpInfo($name, $sheet_name, $row_index, $style = null, $folder = null)
+    public function cellsPostRowStyleWithHttpInfo($name, $sheet_name, $row_index, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style, $folder);
+        $request = $this->cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7355,13 +7555,14 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostRowStyleAsync($name, $sheet_name, $row_index, $style = null, $folder = null)
+    public function cellsPostRowStyleAsync($name, $sheet_name, $row_index, $style = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostRowStyleAsyncWithHttpInfo($name, $sheet_name, $row_index, $style, $folder)
+        return $this->cellsPostRowStyleAsyncWithHttpInfo($name, $sheet_name, $row_index, $style, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7379,14 +7580,15 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostRowStyleAsyncWithHttpInfo($name, $sheet_name, $row_index, $style = null, $folder = null)
+    public function cellsPostRowStyleAsyncWithHttpInfo($name, $sheet_name, $row_index, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style, $folder);
+        $request = $this->cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7433,11 +7635,12 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style = null, $folder = null)
+    protected function cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -7468,6 +7671,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -7576,14 +7783,15 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name The cell name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellResponse
      */
-    public function cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $folder);
+        list($response) = $this->cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage);
         return $response;
     }
 
@@ -7596,15 +7804,16 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name The cell name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
-        $request = $this->cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder);
+        $request = $this->cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7674,13 +7883,14 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name The cell name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostSetCellHtmlStringAsync($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsPostSetCellHtmlStringAsync($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
-        return $this->cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder)
+        return $this->cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7697,14 +7907,15 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name The cell name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null)
+    public function cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
-        $request = $this->cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder);
+        $request = $this->cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7750,11 +7961,12 @@ class CellsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $cell_name The cell name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder = null)
+    protected function cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -7785,6 +7997,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -7892,14 +8108,15 @@ class CellsApi
      * @param  string $value Range value (required)
      * @param  string $type Value data type (like \&quot;int\&quot;) (required)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder = null)
+    public function cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostSetCellRangeValueWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder);
+        list($response) = $this->cellsPostSetCellRangeValueWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder, $storage);
         return $response;
     }
 
@@ -7914,15 +8131,16 @@ class CellsApi
      * @param  string $value Range value (required)
      * @param  string $type Value data type (like \&quot;int\&quot;) (required)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostSetCellRangeValueWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder = null)
+    public function cellsPostSetCellRangeValueWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder);
+        $request = $this->cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7994,13 +8212,14 @@ class CellsApi
      * @param  string $value Range value (required)
      * @param  string $type Value data type (like \&quot;int\&quot;) (required)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostSetCellRangeValueAsync($name, $sheet_name, $cellarea, $value, $type, $folder = null)
+    public function cellsPostSetCellRangeValueAsync($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage = null)
     {
-        return $this->cellsPostSetCellRangeValueAsyncWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder)
+        return $this->cellsPostSetCellRangeValueAsyncWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8019,14 +8238,15 @@ class CellsApi
      * @param  string $value Range value (required)
      * @param  string $type Value data type (like \&quot;int\&quot;) (required)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostSetCellRangeValueAsyncWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder = null)
+    public function cellsPostSetCellRangeValueAsyncWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder);
+        $request = $this->cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8074,11 +8294,12 @@ class CellsApi
      * @param  string $value Range value (required)
      * @param  string $type Value data type (like \&quot;int\&quot;) (required)
      * @param  string $folder Folder name (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder = null)
+    protected function cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -8133,6 +8354,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -8231,14 +8456,15 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  double $width The width. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnResponse
      */
-    public function cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder = null)
+    public function cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $folder);
+        list($response) = $this->cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $folder, $storage);
         return $response;
     }
 
@@ -8252,15 +8478,16 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  double $width The width. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $folder = null)
+    public function cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
-        $request = $this->cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder);
+        $request = $this->cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8331,13 +8558,14 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  double $width The width. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostSetWorksheetColumnWidthAsync($name, $sheet_name, $column_index, $width, $folder = null)
+    public function cellsPostSetWorksheetColumnWidthAsync($name, $sheet_name, $column_index, $width, $folder = null, $storage = null)
     {
-        return $this->cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $folder)
+        return $this->cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8355,14 +8583,15 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  double $width The width. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $folder = null)
+    public function cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
-        $request = $this->cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder);
+        $request = $this->cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8409,11 +8638,12 @@ class CellsApi
      * @param  int $column_index The column index. (required)
      * @param  double $width The width. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder = null)
+    protected function cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -8454,6 +8684,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -8560,14 +8794,15 @@ class CellsApi
      * @param  int $first_index The first column index to be operated. (required)
      * @param  int $last_index The last column index to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder = null)
+    public function cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUngroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder);
+        list($response) = $this->cellsPostUngroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder, $storage);
         return $response;
     }
 
@@ -8581,15 +8816,16 @@ class CellsApi
      * @param  int $first_index The first column index to be operated. (required)
      * @param  int $last_index The last column index to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUngroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder = null)
+    public function cellsPostUngroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder);
+        $request = $this->cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8660,13 +8896,14 @@ class CellsApi
      * @param  int $first_index The first column index to be operated. (required)
      * @param  int $last_index The last column index to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUngroupWorksheetColumnsAsync($name, $sheet_name, $first_index, $last_index, $folder = null)
+    public function cellsPostUngroupWorksheetColumnsAsync($name, $sheet_name, $first_index, $last_index, $folder = null, $storage = null)
     {
-        return $this->cellsPostUngroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder)
+        return $this->cellsPostUngroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -8684,14 +8921,15 @@ class CellsApi
      * @param  int $first_index The first column index to be operated. (required)
      * @param  int $last_index The last column index to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUngroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder = null)
+    public function cellsPostUngroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder);
+        $request = $this->cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -8738,11 +8976,12 @@ class CellsApi
      * @param  int $first_index The first column index to be operated. (required)
      * @param  int $last_index The last column index to be operated. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder = null)
+    protected function cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -8787,6 +9026,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -8886,14 +9129,15 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $is_all Is all row to be operated (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null)
+    public function cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUngroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all, $folder);
+        list($response) = $this->cellsPostUngroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage);
         return $response;
     }
 
@@ -8908,15 +9152,16 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $is_all Is all row to be operated (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUngroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null)
+    public function cellsPostUngroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all, $folder);
+        $request = $this->cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -8988,13 +9233,14 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $is_all Is all row to be operated (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUngroupWorksheetRowsAsync($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null)
+    public function cellsPostUngroupWorksheetRowsAsync($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostUngroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all, $folder)
+        return $this->cellsPostUngroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9013,14 +9259,15 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $is_all Is all row to be operated (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUngroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null)
+    public function cellsPostUngroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all, $folder);
+        $request = $this->cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9068,11 +9315,12 @@ class CellsApi
      * @param  int $last_index The last row index to be operated. (required)
      * @param  bool $is_all Is all row to be operated (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null)
+    protected function cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -9121,6 +9369,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -9220,14 +9472,15 @@ class CellsApi
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  double $width The new column width. (optional, default to 50.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null)
+    public function cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUnhideWorksheetColumnsWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width, $folder);
+        list($response) = $this->cellsPostUnhideWorksheetColumnsWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage);
         return $response;
     }
 
@@ -9242,15 +9495,16 @@ class CellsApi
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  double $width The new column width. (optional, default to 50.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUnhideWorksheetColumnsWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null)
+    public function cellsPostUnhideWorksheetColumnsWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width, $folder);
+        $request = $this->cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9322,13 +9576,14 @@ class CellsApi
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  double $width The new column width. (optional, default to 50.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUnhideWorksheetColumnsAsync($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null)
+    public function cellsPostUnhideWorksheetColumnsAsync($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage = null)
     {
-        return $this->cellsPostUnhideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width, $folder)
+        return $this->cellsPostUnhideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9347,14 +9602,15 @@ class CellsApi
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  double $width The new column width. (optional, default to 50.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUnhideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null)
+    public function cellsPostUnhideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width, $folder);
+        $request = $this->cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9402,11 +9658,12 @@ class CellsApi
      * @param  int $total_columns Number of columns to be operated. (required)
      * @param  double $width The new column width. (optional, default to 50.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null)
+    protected function cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -9455,6 +9712,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -9554,14 +9815,15 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  double $height The new row height. (optional, default to 15.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null)
+    public function cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUnhideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height, $folder);
+        list($response) = $this->cellsPostUnhideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage);
         return $response;
     }
 
@@ -9576,15 +9838,16 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  double $height The new row height. (optional, default to 15.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUnhideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null)
+    public function cellsPostUnhideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height, $folder);
+        $request = $this->cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9656,13 +9919,14 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  double $height The new row height. (optional, default to 15.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUnhideWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null)
+    public function cellsPostUnhideWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage = null)
     {
-        return $this->cellsPostUnhideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height, $folder)
+        return $this->cellsPostUnhideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9681,14 +9945,15 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  double $height The new row height. (optional, default to 15.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUnhideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null)
+    public function cellsPostUnhideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height, $folder);
+        $request = $this->cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9736,11 +10001,12 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (required)
      * @param  double $height The new row height. (optional, default to 15.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null)
+    protected function cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -9789,6 +10055,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -9887,14 +10157,15 @@ class CellsApi
      * @param  string $cell_name The cell name. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\StyleResponse
      */
-    public function cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUpdateWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $style, $folder);
+        list($response) = $this->cellsPostUpdateWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $style, $folder, $storage);
         return $response;
     }
 
@@ -9908,15 +10179,16 @@ class CellsApi
      * @param  string $cell_name The cell name. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUpdateWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
-        $request = $this->cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style, $folder);
+        $request = $this->cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9987,13 +10259,14 @@ class CellsApi
      * @param  string $cell_name The cell name. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUpdateWorksheetCellStyleAsync($name, $sheet_name, $cell_name, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetCellStyleAsync($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostUpdateWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $style, $folder)
+        return $this->cellsPostUpdateWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $style, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10011,14 +10284,15 @@ class CellsApi
      * @param  string $cell_name The cell name. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUpdateWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
-        $request = $this->cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style, $folder);
+        $request = $this->cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10065,11 +10339,12 @@ class CellsApi
      * @param  string $cell_name The cell name. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style = null, $folder = null)
+    protected function cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -10100,6 +10375,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -10209,14 +10488,15 @@ class CellsApi
      * @param  string $range The range. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUpdateWorksheetRangeStyleWithHttpInfo($name, $sheet_name, $range, $style, $folder);
+        list($response) = $this->cellsPostUpdateWorksheetRangeStyleWithHttpInfo($name, $sheet_name, $range, $style, $folder, $storage);
         return $response;
     }
 
@@ -10230,15 +10510,16 @@ class CellsApi
      * @param  string $range The range. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUpdateWorksheetRangeStyleWithHttpInfo($name, $sheet_name, $range, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetRangeStyleWithHttpInfo($name, $sheet_name, $range, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style, $folder);
+        $request = $this->cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10309,13 +10590,14 @@ class CellsApi
      * @param  string $range The range. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUpdateWorksheetRangeStyleAsync($name, $sheet_name, $range, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetRangeStyleAsync($name, $sheet_name, $range, $style = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostUpdateWorksheetRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range, $style, $folder)
+        return $this->cellsPostUpdateWorksheetRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range, $style, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10333,14 +10615,15 @@ class CellsApi
      * @param  string $range The range. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUpdateWorksheetRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range, $style = null, $folder = null)
+    public function cellsPostUpdateWorksheetRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range, $style = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style, $folder);
+        $request = $this->cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10387,11 +10670,12 @@ class CellsApi
      * @param  string $range The range. (required)
      * @param  \Aspose\Cells\Cloud\Model\Style $style with update style settings. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style = null, $folder = null)
+    protected function cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -10426,6 +10710,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -10527,14 +10815,15 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  double $height The new row height. (optional, default to 0.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RowResponse
      */
-    public function cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height = '0.0', $folder = null)
+    public function cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height, $folder);
+        list($response) = $this->cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height, $folder, $storage);
         return $response;
     }
 
@@ -10548,15 +10837,16 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  double $height The new row height. (optional, default to 0.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RowResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $folder = null)
+    public function cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
-        $request = $this->cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height, $folder);
+        $request = $this->cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10627,13 +10917,14 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  double $height The new row height. (optional, default to 0.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUpdateWorksheetRowAsync($name, $sheet_name, $row_index, $height = '0.0', $folder = null)
+    public function cellsPostUpdateWorksheetRowAsync($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage = null)
     {
-        return $this->cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height, $folder)
+        return $this->cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10651,14 +10942,15 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  double $height The new row height. (optional, default to 0.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $folder = null)
+    public function cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
-        $request = $this->cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height, $folder);
+        $request = $this->cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10705,11 +10997,12 @@ class CellsApi
      * @param  int $row_index The row index. (required)
      * @param  double $height The new row height. (optional, default to 0.0)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height = '0.0', $folder = null)
+    protected function cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -10744,6 +11037,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -10852,14 +11149,15 @@ class CellsApi
      * @param  string $type The value type. (optional)
      * @param  string $formula Formula for cell (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellResponse
      */
-    public function cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null)
+    public function cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostWorksheetCellSetValueWithHttpInfo($name, $sheet_name, $cell_name, $value, $type, $formula, $folder);
+        list($response) = $this->cellsPostWorksheetCellSetValueWithHttpInfo($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage);
         return $response;
     }
 
@@ -10875,15 +11173,16 @@ class CellsApi
      * @param  string $type The value type. (optional)
      * @param  string $formula Formula for cell (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostWorksheetCellSetValueWithHttpInfo($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null)
+    public function cellsPostWorksheetCellSetValueWithHttpInfo($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
-        $request = $this->cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value, $type, $formula, $folder);
+        $request = $this->cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10956,13 +11255,14 @@ class CellsApi
      * @param  string $type The value type. (optional)
      * @param  string $formula Formula for cell (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostWorksheetCellSetValueAsync($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null)
+    public function cellsPostWorksheetCellSetValueAsync($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage = null)
     {
-        return $this->cellsPostWorksheetCellSetValueAsyncWithHttpInfo($name, $sheet_name, $cell_name, $value, $type, $formula, $folder)
+        return $this->cellsPostWorksheetCellSetValueAsyncWithHttpInfo($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10982,14 +11282,15 @@ class CellsApi
      * @param  string $type The value type. (optional)
      * @param  string $formula Formula for cell (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostWorksheetCellSetValueAsyncWithHttpInfo($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null)
+    public function cellsPostWorksheetCellSetValueAsyncWithHttpInfo($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
-        $request = $this->cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value, $type, $formula, $folder);
+        $request = $this->cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11038,11 +11339,12 @@ class CellsApi
      * @param  string $type The value type. (optional)
      * @param  string $formula Formula for cell (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null)
+    protected function cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -11085,6 +11387,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -11193,14 +11499,15 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostWorksheetMergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        list($response) = $this->cellsPostWorksheetMergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
         return $response;
     }
 
@@ -11216,15 +11523,16 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostWorksheetMergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetMergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        $request = $this->cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11297,13 +11605,14 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostWorksheetMergeAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetMergeAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
-        return $this->cellsPostWorksheetMergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder)
+        return $this->cellsPostWorksheetMergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11323,14 +11632,15 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostWorksheetMergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetMergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        $request = $this->cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11379,11 +11689,12 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    protected function cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -11448,6 +11759,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -11548,14 +11863,15 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPostWorksheetUnmergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        list($response) = $this->cellsPostWorksheetUnmergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
         return $response;
     }
 
@@ -11571,15 +11887,16 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPostWorksheetUnmergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetUnmergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        $request = $this->cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -11652,13 +11969,14 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostWorksheetUnmergeAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetUnmergeAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
-        return $this->cellsPostWorksheetUnmergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder)
+        return $this->cellsPostWorksheetUnmergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -11678,14 +11996,15 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPostWorksheetUnmergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    public function cellsPostWorksheetUnmergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder);
+        $request = $this->cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -11734,11 +12053,12 @@ class CellsApi
      * @param  int $total_rows The total rows (required)
      * @param  int $total_columns The total columns. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null)
+    protected function cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -11803,6 +12123,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -11902,14 +12226,15 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (optional, default to true)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnsResponse
      */
-    public function cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+        list($response) = $this->cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
         return $response;
     }
 
@@ -11924,15 +12249,16 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (optional, default to true)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
-        $request = $this->cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+        $request = $this->cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12004,13 +12330,14 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (optional, default to true)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPutInsertWorksheetColumnsAsync($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetColumnsAsync($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage = null)
     {
-        return $this->cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder)
+        return $this->cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12029,14 +12356,15 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (optional, default to true)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
-        $request = $this->cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder);
+        $request = $this->cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12084,11 +12412,12 @@ class CellsApi
      * @param  int $columns The columns. (required)
      * @param  bool $update_reference The update reference. (optional, default to true)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null)
+    protected function cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -12133,6 +12462,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -12238,14 +12571,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The new row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RowResponse
      */
-    public function cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder = null)
+    public function cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder);
+        list($response) = $this->cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage);
         return $response;
     }
 
@@ -12258,15 +12592,16 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The new row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RowResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null)
+    public function cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
-        $request = $this->cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder);
+        $request = $this->cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12336,13 +12671,14 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The new row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPutInsertWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null)
+    public function cellsPutInsertWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
-        return $this->cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder)
+        return $this->cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12359,14 +12695,15 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The new row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null)
+    public function cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
-        $request = $this->cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder);
+        $request = $this->cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12412,11 +12749,12 @@ class CellsApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $row_index The new row index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null)
+    protected function cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -12447,6 +12785,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -12554,14 +12896,15 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPutInsertWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+        list($response) = $this->cellsPutInsertWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
         return $response;
     }
 
@@ -12576,15 +12919,16 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPutInsertWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+        $request = $this->cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -12656,13 +13000,14 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPutInsertWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
-        return $this->cellsPutInsertWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder)
+        return $this->cellsPutInsertWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -12681,14 +13026,15 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPutInsertWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    public function cellsPutInsertWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder);
+        $request = $this->cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -12736,11 +13082,12 @@ class CellsApi
      * @param  int $total_rows Number of rows to be operated. (optional, default to 1)
      * @param  bool $update_reference Indicates if update references in other worksheets. (optional, default to true)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null)
+    protected function cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -12783,6 +13130,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

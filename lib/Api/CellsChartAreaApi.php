@@ -91,14 +91,15 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartAreaResponse
      */
-    public function cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartAreaGetChartAreaWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartAreaGetChartAreaWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartAreaResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartAreaGetChartAreaWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartAreaResponse';
-        $request = $this->cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartAreaGetChartAreaAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartAreaGetChartAreaAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartAreaGetChartAreaAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartAreaGetChartAreaAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartAreaResponse';
-        $request = $this->cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsChartAreaApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -405,14 +414,15 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\LineResponse
      */
-    public function cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartAreaGetChartAreaBorderWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartAreaGetChartAreaBorderWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -425,15 +435,16 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\LineResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartAreaGetChartAreaBorderWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaBorderWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\LineResponse';
-        $request = $this->cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,13 +514,14 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartAreaGetChartAreaBorderAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaBorderAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartAreaGetChartAreaBorderAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartAreaGetChartAreaBorderAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -526,14 +538,15 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartAreaGetChartAreaBorderAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaBorderAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\LineResponse';
-        $request = $this->cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -579,11 +592,12 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -614,6 +628,10 @@ class CellsChartAreaApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -719,14 +737,15 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FillFormatResponse
      */
-    public function cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartAreaGetChartAreaFillFormatWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartAreaGetChartAreaFillFormatWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -739,15 +758,16 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FillFormatResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartAreaGetChartAreaFillFormatWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaFillFormatWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FillFormatResponse';
-        $request = $this->cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -817,13 +837,14 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartAreaGetChartAreaFillFormatAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaFillFormatAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartAreaGetChartAreaFillFormatAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartAreaGetChartAreaFillFormatAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -840,14 +861,15 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartAreaGetChartAreaFillFormatAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartAreaGetChartAreaFillFormatAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FillFormatResponse';
-        $request = $this->cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -893,11 +915,12 @@ class CellsChartAreaApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder Workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -928,6 +951,10 @@ class CellsChartAreaApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

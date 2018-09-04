@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **cellsHypelinksDeleteWorksheetHyperlink**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder, $storage)
 
 Delete worksheet hyperlink by index.
 
@@ -31,9 +31,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $hyperlink_index = 56; // int | The hyperlink's index.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder);
+    $result = $apiInstance->cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsHypelinksApi->cellsHypelinksDeleteWorksheetHyperlink: ', $e->getMessage(), PHP_EOL;
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **hyperlink_index** | **int**| The hyperlink&#39;s index. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -66,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsHypelinksDeleteWorksheetHyperlinks**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder, $storage)
 
 Delete all hyperlinks in worksheet.
 
@@ -83,9 +85,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsHypelinksApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsHypelinksApi->cellsHypelinksDeleteWorksheetHyperlinks: ', $e->getMessage(), PHP_EOL;
@@ -100,6 +103,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| Worksheet name. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -117,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsHypelinksGetWorksheetHyperlink**
-> \Aspose\Cells\Cloud\Model\HyperlinkResponse cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder)
+> \Aspose\Cells\Cloud\Model\HyperlinkResponse cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder, $storage)
 
 Get worksheet hyperlink by index.
 
@@ -135,9 +139,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $hyperlink_index = 56; // int | The hyperlink's index.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder);
+    $result = $apiInstance->cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsHypelinksApi->cellsHypelinksGetWorksheetHyperlink: ', $e->getMessage(), PHP_EOL;
@@ -153,6 +158,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **hyperlink_index** | **int**| The hyperlink&#39;s index. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -170,7 +176,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsHypelinksGetWorksheetHyperlinks**
-> \Aspose\Cells\Cloud\Model\HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\HyperlinksResponse cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder, $storage)
 
 Get worksheet hyperlinks.
 
@@ -187,9 +193,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsHypelinksApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsHypelinksApi->cellsHypelinksGetWorksheetHyperlinks: ', $e->getMessage(), PHP_EOL;
@@ -204,6 +211,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -221,7 +229,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsHypelinksPostWorksheetHyperlink**
-> \Aspose\Cells\Cloud\Model\HyperlinkResponse cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink, $folder)
+> \Aspose\Cells\Cloud\Model\HyperlinkResponse cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage)
 
 Update worksheet hyperlink by index.
 
@@ -240,9 +248,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $hyperlink_index = 56; // int | The hyperlink's index.
 $hyperlink = new \Aspose\Cells\Cloud\Model\Hyperlink(); // \Aspose\Cells\Cloud\Model\Hyperlink | Hyperlink object
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink, $folder);
+    $result = $apiInstance->cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsHypelinksApi->cellsHypelinksPostWorksheetHyperlink: ', $e->getMessage(), PHP_EOL;
@@ -259,6 +268,7 @@ Name | Type | Description  | Notes
  **hyperlink_index** | **int**| The hyperlink&#39;s index. |
  **hyperlink** | [**\Aspose\Cells\Cloud\Model\Hyperlink**](../Model/Hyperlink.md)| Hyperlink object | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -276,7 +286,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsHypelinksPutWorksheetHyperlink**
-> \Aspose\Cells\Cloud\Model\HyperlinkResponse cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder)
+> \Aspose\Cells\Cloud\Model\HyperlinkResponse cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage)
 
 Add worksheet hyperlink.
 
@@ -298,9 +308,10 @@ $total_rows = 56; // int |
 $total_columns = 56; // int | 
 $address = "address_example"; // string | 
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder);
+    $result = $apiInstance->cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsHypelinksApi->cellsHypelinksPutWorksheetHyperlink: ', $e->getMessage(), PHP_EOL;
@@ -320,6 +331,7 @@ Name | Type | Description  | Notes
  **total_columns** | **int**|  |
  **address** | **string**|  |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

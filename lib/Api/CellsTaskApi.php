@@ -91,7 +91,7 @@ class CellsTaskApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return object
      */
     public function cellsTaskPostRunTask($task_data)
     {
@@ -108,11 +108,11 @@ class CellsTaskApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsTaskPostRunTaskWithHttpInfo($task_data)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'object';
         $request = $this->cellsTaskPostRunTaskRequest($task_data);
 
         try {
@@ -164,7 +164,7 @@ class CellsTaskApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -206,7 +206,7 @@ class CellsTaskApi
      */
     public function cellsTaskPostRunTaskAsyncWithHttpInfo($task_data)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'object';
         $request = $this->cellsTaskPostRunTaskRequest($task_data);
 
         return $this->client

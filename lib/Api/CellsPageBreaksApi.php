@@ -89,14 +89,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $index index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreak($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder);
+        list($response) = $this->cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
 
@@ -107,15 +108,16 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -185,13 +187,14 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreakAsync($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksDeleteHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder)
+        return $this->cellsPageBreaksDeleteHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,14 +211,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -261,11 +265,12 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder = null)
+    protected function cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -296,6 +301,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -399,14 +408,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $row row (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreaks($name, $sheet_name, $row = null, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreaks($name, $sheet_name, $row = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $row, $folder);
+        list($response) = $this->cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $row, $folder, $storage);
         return $response;
     }
 
@@ -417,15 +427,16 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $row = null, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $row = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row, $folder);
+        $request = $this->cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -495,13 +506,14 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreaksAsync($name, $sheet_name, $row = null, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreaksAsync($name, $sheet_name, $row = null, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksDeleteHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $row, $folder)
+        return $this->cellsPageBreaksDeleteHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $row, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -518,14 +530,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $row = null, $folder = null)
+    public function cellsPageBreaksDeleteHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $row = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row, $folder);
+        $request = $this->cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -571,11 +584,12 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row = null, $folder = null)
+    protected function cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -604,6 +618,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -699,14 +717,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $index index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageBreaksDeleteVerticalPageBreak($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder);
+        list($response) = $this->cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
 
@@ -717,15 +736,16 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -795,13 +815,14 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteVerticalPageBreakAsync($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksDeleteVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder)
+        return $this->cellsPageBreaksDeleteVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -818,14 +839,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -871,11 +893,12 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder = null)
+    protected function cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -906,6 +929,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1009,14 +1036,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $column column (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageBreaksDeleteVerticalPageBreaks($name, $sheet_name, $column = null, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreaks($name, $sheet_name, $column = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo($name, $sheet_name, $column, $folder);
+        list($response) = $this->cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo($name, $sheet_name, $column, $folder, $storage);
         return $response;
     }
 
@@ -1027,15 +1055,16 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo($name, $sheet_name, $column = null, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo($name, $sheet_name, $column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column, $folder);
+        $request = $this->cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1105,13 +1134,14 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteVerticalPageBreaksAsync($name, $sheet_name, $column = null, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreaksAsync($name, $sheet_name, $column = null, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksDeleteVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $column, $folder)
+        return $this->cellsPageBreaksDeleteVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $column, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1128,14 +1158,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksDeleteVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $column = null, $folder = null)
+    public function cellsPageBreaksDeleteVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column, $folder);
+        $request = $this->cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1181,11 +1212,12 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column = null, $folder = null)
+    protected function cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1214,6 +1246,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1309,14 +1345,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $index index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse
      */
-    public function cellsPageBreaksGetHorizontalPageBreak($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksGetHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder);
+        list($response) = $this->cellsPageBreaksGetHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
 
@@ -1327,15 +1364,16 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksGetHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse';
-        $request = $this->cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1405,13 +1443,14 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetHorizontalPageBreakAsync($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksGetHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder)
+        return $this->cellsPageBreaksGetHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1428,14 +1467,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse';
-        $request = $this->cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1481,11 +1521,12 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder = null)
+    protected function cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1516,6 +1557,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1618,14 +1663,15 @@ class CellsPageBreaksApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse
      */
-    public function cellsPageBreaksGetHorizontalPageBreaks($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreaks($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1635,15 +1681,16 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse';
-        $request = $this->cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1712,13 +1759,14 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetHorizontalPageBreaksAsync($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreaksAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksGetHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPageBreaksGetHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1734,14 +1782,15 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse';
-        $request = $this->cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1786,11 +1835,12 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder = null)
+    protected function cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1815,6 +1865,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1910,14 +1964,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $index index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\VerticalPageBreakResponse
      */
-    public function cellsPageBreaksGetVerticalPageBreak($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksGetVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder);
+        list($response) = $this->cellsPageBreaksGetVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
 
@@ -1928,15 +1983,16 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\VerticalPageBreakResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksGetVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreakResponse';
-        $request = $this->cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2006,13 +2062,14 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetVerticalPageBreakAsync($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksGetVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder)
+        return $this->cellsPageBreaksGetVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2029,14 +2086,15 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreakResponse';
-        $request = $this->cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder);
+        $request = $this->cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2082,11 +2140,12 @@ class CellsPageBreaksApi
      * @param  string $sheet_name (required)
      * @param  int $index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder = null)
+    protected function cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2117,6 +2176,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2219,14 +2282,15 @@ class CellsPageBreaksApi
      * @param  string $name name (required)
      * @param  string $sheet_name sheet_name (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse
      */
-    public function cellsPageBreaksGetVerticalPageBreaks($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreaks($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksGetVerticalPageBreaksWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPageBreaksGetVerticalPageBreaksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -2236,15 +2300,16 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksGetVerticalPageBreaksWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreaksWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse';
-        $request = $this->cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2313,13 +2378,14 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetVerticalPageBreaksAsync($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreaksAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksGetVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPageBreaksGetVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2335,14 +2401,15 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksGetVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPageBreaksGetVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse';
-        $request = $this->cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2387,11 +2454,12 @@ class CellsPageBreaksApi
      * @param  string $name (required)
      * @param  string $sheet_name (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder = null)
+    protected function cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2416,6 +2484,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2515,14 +2587,15 @@ class CellsPageBreaksApi
      * @param  int $start_column start_column (optional)
      * @param  int $end_column end_column (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageBreaksPutHorizontalPageBreak($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null)
+    public function cellsPageBreaksPutHorizontalPageBreak($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksPutHorizontalPageBreakWithHttpInfo($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder);
+        list($response) = $this->cellsPageBreaksPutHorizontalPageBreakWithHttpInfo($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder, $storage);
         return $response;
     }
 
@@ -2537,15 +2610,16 @@ class CellsPageBreaksApi
      * @param  int $start_column (optional)
      * @param  int $end_column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksPutHorizontalPageBreakWithHttpInfo($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null)
+    public function cellsPageBreaksPutHorizontalPageBreakWithHttpInfo($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder);
+        $request = $this->cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2619,13 +2693,14 @@ class CellsPageBreaksApi
      * @param  int $start_column (optional)
      * @param  int $end_column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksPutHorizontalPageBreakAsync($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null)
+    public function cellsPageBreaksPutHorizontalPageBreakAsync($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksPutHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder)
+        return $this->cellsPageBreaksPutHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2646,14 +2721,15 @@ class CellsPageBreaksApi
      * @param  int $start_column (optional)
      * @param  int $end_column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksPutHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null)
+    public function cellsPageBreaksPutHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder);
+        $request = $this->cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2703,11 +2779,12 @@ class CellsPageBreaksApi
      * @param  int $start_column (optional)
      * @param  int $end_column (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null)
+    protected function cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2752,6 +2829,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2851,14 +2932,15 @@ class CellsPageBreaksApi
      * @param  int $start_row start_row (optional)
      * @param  int $end_row end_row (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPageBreaksPutVerticalPageBreak($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null)
+    public function cellsPageBreaksPutVerticalPageBreak($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPageBreaksPutVerticalPageBreakWithHttpInfo($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder);
+        list($response) = $this->cellsPageBreaksPutVerticalPageBreakWithHttpInfo($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder, $storage);
         return $response;
     }
 
@@ -2873,15 +2955,16 @@ class CellsPageBreaksApi
      * @param  int $start_row (optional)
      * @param  int $end_row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPageBreaksPutVerticalPageBreakWithHttpInfo($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null)
+    public function cellsPageBreaksPutVerticalPageBreakWithHttpInfo($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder);
+        $request = $this->cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2955,13 +3038,14 @@ class CellsPageBreaksApi
      * @param  int $start_row (optional)
      * @param  int $end_row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksPutVerticalPageBreakAsync($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null)
+    public function cellsPageBreaksPutVerticalPageBreakAsync($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage = null)
     {
-        return $this->cellsPageBreaksPutVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder)
+        return $this->cellsPageBreaksPutVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2982,14 +3066,15 @@ class CellsPageBreaksApi
      * @param  int $start_row (optional)
      * @param  int $end_row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPageBreaksPutVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null)
+    public function cellsPageBreaksPutVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder);
+        $request = $this->cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3039,11 +3124,12 @@ class CellsPageBreaksApi
      * @param  int $start_row (optional)
      * @param  int $end_row (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null)
+    protected function cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3088,6 +3174,10 @@ class CellsPageBreaksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

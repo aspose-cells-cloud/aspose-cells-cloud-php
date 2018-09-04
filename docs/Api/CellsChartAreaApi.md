@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **cellsChartAreaGetChartArea**
-> \Aspose\Cells\Cloud\Model\ChartAreaResponse cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\ChartAreaResponse cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder, $storage)
 
 Get chart area info.
 
@@ -28,9 +28,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartAreaApi->cellsChartAreaGetChartArea: ', $e->getMessage(), PHP_EOL;
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -63,7 +65,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartAreaGetChartAreaBorder**
-> \Aspose\Cells\Cloud\Model\LineResponse cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\LineResponse cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder, $storage)
 
 Get chart area border info.
 
@@ -81,9 +83,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartAreaApi->cellsChartAreaGetChartAreaBorder: ', $e->getMessage(), PHP_EOL;
@@ -99,6 +102,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -116,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartAreaGetChartAreaFillFormat**
-> \Aspose\Cells\Cloud\Model\FillFormatResponse cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\FillFormatResponse cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder, $storage)
 
 Get chart area fill format info.
 
@@ -134,9 +138,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartAreaApi->cellsChartAreaGetChartAreaFillFormat: ', $e->getMessage(), PHP_EOL;
@@ -152,6 +157,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

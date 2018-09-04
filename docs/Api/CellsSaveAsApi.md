@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **cellsSaveAsPostDocumentSaveAs**
-> \Aspose\Cells\Cloud\Model\SaveResponse cellsSaveAsPostDocumentSaveAs($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder)
+> \Aspose\Cells\Cloud\Model\SaveResponse cellsSaveAsPostDocumentSaveAs($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage)
 
 Convert document and save result to storage.
 
@@ -28,9 +28,10 @@ $newfilename = "newfilename_example"; // string | The new file name.
 $is_auto_fit_rows = false; // bool | Autofit rows.
 $is_auto_fit_columns = false; // bool | Autofit columns.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsSaveAsPostDocumentSaveAs($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder);
+    $result = $apiInstance->cellsSaveAsPostDocumentSaveAs($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsSaveAsApi->cellsSaveAsPostDocumentSaveAs: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **is_auto_fit_rows** | **bool**| Autofit rows. | [optional] [default to false]
  **is_auto_fit_columns** | **bool**| Autofit columns. | [optional] [default to false]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

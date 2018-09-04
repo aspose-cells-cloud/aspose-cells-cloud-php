@@ -91,14 +91,15 @@ class CellsAutoshapesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $autoshape_number The autoshape number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo($name, $sheet_name, $autoshape_number, $folder);
+        list($response) = $this->cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo($name, $sheet_name, $autoshape_number, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsAutoshapesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $autoshape_number The autoshape number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo($name, $sheet_name, $autoshape_number, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo($name, $sheet_name, $autoshape_number, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $folder);
+        $request = $this->cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsAutoshapesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $autoshape_number The autoshape number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoshapesGetWorksheetAutoshapeAsync($name, $sheet_name, $autoshape_number, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapeAsync($name, $sheet_name, $autoshape_number, $folder = null, $storage = null)
     {
-        return $this->cellsAutoshapesGetWorksheetAutoshapeAsyncWithHttpInfo($name, $sheet_name, $autoshape_number, $folder)
+        return $this->cellsAutoshapesGetWorksheetAutoshapeAsyncWithHttpInfo($name, $sheet_name, $autoshape_number, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsAutoshapesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $autoshape_number The autoshape number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoshapesGetWorksheetAutoshapeAsyncWithHttpInfo($name, $sheet_name, $autoshape_number, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapeAsyncWithHttpInfo($name, $sheet_name, $autoshape_number, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $folder);
+        $request = $this->cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsAutoshapesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $autoshape_number The autoshape number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $folder = null)
+    protected function cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsAutoshapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -404,14 +413,15 @@ class CellsAutoshapesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AutoShapesResponse
      */
-    public function cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -423,15 +433,16 @@ class CellsAutoshapesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AutoShapesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\AutoShapesResponse';
-        $request = $this->cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -500,13 +511,14 @@ class CellsAutoshapesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoshapesGetWorksheetAutoshapesAsync($name, $sheet_name, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsAutoshapesGetWorksheetAutoshapesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsAutoshapesGetWorksheetAutoshapesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,14 +534,15 @@ class CellsAutoshapesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsAutoshapesGetWorksheetAutoshapesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsAutoshapesGetWorksheetAutoshapesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\AutoShapesResponse';
-        $request = $this->cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -574,11 +587,12 @@ class CellsAutoshapesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder = null)
+    protected function cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -603,6 +617,10 @@ class CellsAutoshapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

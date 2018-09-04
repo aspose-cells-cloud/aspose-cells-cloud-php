@@ -91,14 +91,15 @@ class CellsOleObjectsApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $ole_object_index Ole object index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsOleObjectsDeleteWorksheetOleObject($name, $sheet_name, $ole_object_index, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObject($name, $sheet_name, $ole_object_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsDeleteWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $folder);
+        list($response) = $this->cellsOleObjectsDeleteWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsOleObjectsApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $ole_object_index Ole object index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder);
+        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsOleObjectsApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $ole_object_index Ole object index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjectAsync($name, $sheet_name, $ole_object_index, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjectAsync($name, $sheet_name, $ole_object_index, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsDeleteWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $folder)
+        return $this->cellsOleObjectsDeleteWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsOleObjectsApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $ole_object_index Ole object index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder);
+        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsOleObjectsApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $ole_object_index Ole object index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder = null)
+    protected function cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsOleObjectsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -404,14 +413,15 @@ class CellsOleObjectsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worsheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjects($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjects($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsDeleteWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsOleObjectsDeleteWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -423,15 +433,16 @@ class CellsOleObjectsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worsheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -500,13 +511,14 @@ class CellsOleObjectsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worsheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjectsAsync($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjectsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsDeleteWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsOleObjectsDeleteWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,14 +534,15 @@ class CellsOleObjectsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worsheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsDeleteWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsDeleteWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -574,11 +587,12 @@ class CellsOleObjectsApi
      * @param  string $name The workbook name. (required)
      * @param  string $sheet_name The worsheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder = null)
+    protected function cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -603,6 +617,10 @@ class CellsOleObjectsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -700,14 +718,15 @@ class CellsOleObjectsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $folder);
+        list($response) = $this->cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $folder, $storage);
         return $response;
     }
 
@@ -720,15 +739,16 @@ class CellsOleObjectsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder);
+        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,13 +818,14 @@ class CellsOleObjectsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsGetWorksheetOleObjectAsync($name, $sheet_name, $object_number, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjectAsync($name, $sheet_name, $object_number, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $folder)
+        return $this->cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -821,14 +842,15 @@ class CellsOleObjectsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder);
+        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -874,11 +896,12 @@ class CellsOleObjectsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder = null)
+    protected function cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -909,6 +932,10 @@ class CellsOleObjectsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1013,14 +1040,15 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\OleObjectsResponse
      */
-    public function cellsOleObjectsGetWorksheetOleObjects($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjects($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsGetWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsOleObjectsGetWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1032,15 +1060,16 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\OleObjectsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsGetWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\OleObjectsResponse';
-        $request = $this->cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1109,13 +1138,14 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsGetWorksheetOleObjectsAsync($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjectsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsGetWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsOleObjectsGetWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1131,14 +1161,15 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsGetWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsOleObjectsGetWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\OleObjectsResponse';
-        $request = $this->cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1183,11 +1214,12 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder = null)
+    protected function cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1212,6 +1244,10 @@ class CellsOleObjectsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1310,14 +1346,15 @@ class CellsOleObjectsApi
      * @param  int $ole_object_index Ole object index (required)
      * @param  \Aspose\Cells\Cloud\Model\OleObject $ole Ole Object (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsOleObjectsPostUpdateWorksheetOleObject($name, $sheet_name, $ole_object_index, $ole = null, $folder = null)
+    public function cellsOleObjectsPostUpdateWorksheetOleObject($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsPostUpdateWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $ole, $folder);
+        list($response) = $this->cellsOleObjectsPostUpdateWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $ole, $folder, $storage);
         return $response;
     }
 
@@ -1331,15 +1368,16 @@ class CellsOleObjectsApi
      * @param  int $ole_object_index Ole object index (required)
      * @param  \Aspose\Cells\Cloud\Model\OleObject $ole Ole Object (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsPostUpdateWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $ole = null, $folder = null)
+    public function cellsOleObjectsPostUpdateWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole, $folder);
+        $request = $this->cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1410,13 +1448,14 @@ class CellsOleObjectsApi
      * @param  int $ole_object_index Ole object index (required)
      * @param  \Aspose\Cells\Cloud\Model\OleObject $ole Ole Object (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsPostUpdateWorksheetOleObjectAsync($name, $sheet_name, $ole_object_index, $ole = null, $folder = null)
+    public function cellsOleObjectsPostUpdateWorksheetOleObjectAsync($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsPostUpdateWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $ole, $folder)
+        return $this->cellsOleObjectsPostUpdateWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $ole, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1434,14 +1473,15 @@ class CellsOleObjectsApi
      * @param  int $ole_object_index Ole object index (required)
      * @param  \Aspose\Cells\Cloud\Model\OleObject $ole Ole Object (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsPostUpdateWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $ole = null, $folder = null)
+    public function cellsOleObjectsPostUpdateWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole, $folder);
+        $request = $this->cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1488,11 +1528,12 @@ class CellsOleObjectsApi
      * @param  int $ole_object_index Ole object index (required)
      * @param  \Aspose\Cells\Cloud\Model\OleObject $ole Ole Object (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole = null, $folder = null)
+    protected function cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1523,6 +1564,10 @@ class CellsOleObjectsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1637,14 +1682,15 @@ class CellsOleObjectsApi
      * @param  string $ole_file OLE filename (optional)
      * @param  string $image_file Image filename (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\OleObjectResponse
      */
-    public function cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null)
+    public function cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder);
+        list($response) = $this->cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage);
         return $response;
     }
 
@@ -1663,15 +1709,16 @@ class CellsOleObjectsApi
      * @param  string $ole_file OLE filename (optional)
      * @param  string $image_file Image filename (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\OleObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null)
+    public function cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\OleObjectResponse';
-        $request = $this->cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder);
+        $request = $this->cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1747,13 +1794,14 @@ class CellsOleObjectsApi
      * @param  string $ole_file OLE filename (optional)
      * @param  string $image_file Image filename (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsPutWorksheetOleObjectAsync($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null)
+    public function cellsOleObjectsPutWorksheetOleObjectAsync($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder)
+        return $this->cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1776,14 +1824,15 @@ class CellsOleObjectsApi
      * @param  string $ole_file OLE filename (optional)
      * @param  string $image_file Image filename (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null)
+    public function cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\OleObjectResponse';
-        $request = $this->cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder);
+        $request = $this->cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1835,11 +1884,12 @@ class CellsOleObjectsApi
      * @param  string $ole_file OLE filename (optional)
      * @param  string $image_file Image filename (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null)
+    protected function cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1888,6 +1938,10 @@ class CellsOleObjectsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

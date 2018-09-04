@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **cellsListObjectsDeleteWorksheetListObject**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsDeleteWorksheetListObject($name, $sheet_name, $list_object_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsDeleteWorksheetListObject($name, $sheet_name, $list_object_index, $folder, $storage)
 
 Delete worksheet list object by index
 
@@ -34,9 +34,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $list_object_index = 56; // int | List object index
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsDeleteWorksheetListObject($name, $sheet_name, $list_object_index, $folder);
+    $result = $apiInstance->cellsListObjectsDeleteWorksheetListObject($name, $sheet_name, $list_object_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsDeleteWorksheetListObject: ', $e->getMessage(), PHP_EOL;
@@ -52,6 +53,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. |
  **list_object_index** | **int**| List object index |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -69,7 +71,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsDeleteWorksheetListObjects**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name, $folder, $storage)
 
 Delete worksheet list objects
 
@@ -86,9 +88,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsListObjectsApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsDeleteWorksheetListObjects: ', $e->getMessage(), PHP_EOL;
@@ -103,6 +106,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -120,7 +124,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsGetWorksheetListObject**
-> \Aspose\Cells\Cloud\Model\ListObjectResponse cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $folder)
+> \Aspose\Cells\Cloud\Model\ListObjectResponse cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $folder, $storage)
 
 Get worksheet list object info by index.
 
@@ -138,9 +142,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $listobjectindex = 56; // int | list object index.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $folder);
+    $result = $apiInstance->cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsGetWorksheetListObject: ', $e->getMessage(), PHP_EOL;
@@ -156,6 +161,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worksheet name. |
  **listobjectindex** | **int**| list object index. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -173,7 +179,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsGetWorksheetListObjects**
-> \Aspose\Cells\Cloud\Model\ListObjectsResponse cellsListObjectsGetWorksheetListObjects($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\ListObjectsResponse cellsListObjectsGetWorksheetListObjects($name, $sheet_name, $folder, $storage)
 
 Get worksheet listobjects info.
 
@@ -190,9 +196,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsListObjectsApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsGetWorksheetListObjects($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsListObjectsGetWorksheetListObjects($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsGetWorksheetListObjects: ', $e->getMessage(), PHP_EOL;
@@ -207,6 +214,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -224,7 +232,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsPostWorksheetListObject**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObject($name, $sheet_name, $list_object_index, $list_object, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObject($name, $sheet_name, $list_object_index, $list_object, $folder, $storage)
 
 Update  list object
 
@@ -243,9 +251,10 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $list_object_index = 56; // int | list Object index
 $list_object = new \Aspose\Cells\Cloud\Model\ListObject(); // \Aspose\Cells\Cloud\Model\ListObject | listObject dto in request body.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsPostWorksheetListObject($name, $sheet_name, $list_object_index, $list_object, $folder);
+    $result = $apiInstance->cellsListObjectsPostWorksheetListObject($name, $sheet_name, $list_object_index, $list_object, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsPostWorksheetListObject: ', $e->getMessage(), PHP_EOL;
@@ -262,6 +271,7 @@ Name | Type | Description  | Notes
  **list_object_index** | **int**| list Object index |
  **list_object** | [**\Aspose\Cells\Cloud\Model\ListObject**](../Model/ListObject.md)| listObject dto in request body. | [optional]
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -279,7 +289,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsPostWorksheetListObjectConvertToRange**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name, $list_object_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name, $list_object_index, $folder, $storage)
 
 
 
@@ -297,9 +307,10 @@ $name = "name_example"; // string |
 $sheet_name = "sheet_name_example"; // string | 
 $list_object_index = 56; // int | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name, $list_object_index, $folder);
+    $result = $apiInstance->cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name, $list_object_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsPostWorksheetListObjectConvertToRange: ', $e->getMessage(), PHP_EOL;
@@ -315,6 +326,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  |
  **list_object_index** | **int**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -332,7 +344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsPostWorksheetListObjectSortTable**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name, $list_object_index, $data_sorter, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name, $list_object_index, $data_sorter, $folder, $storage)
 
 
 
@@ -351,9 +363,10 @@ $sheet_name = "sheet_name_example"; // string |
 $list_object_index = 56; // int | 
 $data_sorter = new \Aspose\Cells\Cloud\Model\DataSorter(); // \Aspose\Cells\Cloud\Model\DataSorter | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name, $list_object_index, $data_sorter, $folder);
+    $result = $apiInstance->cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name, $list_object_index, $data_sorter, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsPostWorksheetListObjectSortTable: ', $e->getMessage(), PHP_EOL;
@@ -370,6 +383,7 @@ Name | Type | Description  | Notes
  **list_object_index** | **int**|  |
  **data_sorter** | [**\Aspose\Cells\Cloud\Model\DataSorter**](../Model/DataSorter.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -387,7 +401,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name, $list_object_index, $destsheet_name, $request, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name, $list_object_index, $destsheet_name, $request, $folder, $storage)
 
 
 
@@ -407,9 +421,10 @@ $list_object_index = 56; // int |
 $destsheet_name = "destsheet_name_example"; // string | 
 $request = new \Aspose\Cells\Cloud\Model\CreatePivotTableRequest(); // \Aspose\Cells\Cloud\Model\CreatePivotTableRequest | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name, $list_object_index, $destsheet_name, $request, $folder);
+    $result = $apiInstance->cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name, $list_object_index, $destsheet_name, $request, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable: ', $e->getMessage(), PHP_EOL;
@@ -427,6 +442,7 @@ Name | Type | Description  | Notes
  **destsheet_name** | **string**|  |
  **request** | [**\Aspose\Cells\Cloud\Model\CreatePivotTableRequest**](../Model/CreatePivotTableRequest.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -444,7 +460,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsListObjectsPutWorksheetListObject**
-> \Aspose\Cells\Cloud\Model\ListObjectResponse cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $folder, $has_headers)
+> \Aspose\Cells\Cloud\Model\ListObjectResponse cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $folder, $storage, $has_headers)
 
 Add a list object into worksheet.
 
@@ -465,10 +481,11 @@ $start_column = 56; // int | The start row of the list range.
 $end_row = 56; // int | The start row of the list range.
 $end_column = 56; // int | The start row of the list range.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 $has_headers = true; // bool | Whether the range has headers.
 
 try {
-    $result = $apiInstance->cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $folder, $has_headers);
+    $result = $apiInstance->cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $folder, $storage, $has_headers);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsListObjectsApi->cellsListObjectsPutWorksheetListObject: ', $e->getMessage(), PHP_EOL;
@@ -487,6 +504,7 @@ Name | Type | Description  | Notes
  **end_row** | **int**| The start row of the list range. |
  **end_column** | **int**| The start row of the list range. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
  **has_headers** | **bool**| Whether the range has headers. | [optional] [default to true]
 
 ### Return type

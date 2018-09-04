@@ -156,9 +156,7 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
         $result = $this->instance->cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder);
-        $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
-        $this->assertEquals(200, $json->Code);
+        $this->assertEquals(200, $result['Code']);
     }
 
     /**
@@ -728,12 +726,20 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $cellName = 'C1'; 
-        $value = '1';
-        $type ='Date';
+        $value = '2018/10/09';
+        $type ='DateTime';
         $formula = '=Now()';
         $folder = "Temp";
         CellsApiTestBase::ready( $name , $folder);
         $result = $this->instance->cellsPostWorksheetCellSetValue($name, $sheet_name, $cellName, $value,$type ,$formula ,  $folder);
+        $value = '1';
+        $type ='int';
+        $folder = "Temp";
+        $result = $this->instance->cellsPostWorksheetCellSetValue($name, $sheet_name, $cellName, $value,$type ,null ,  $folder);
+        $value = '1';
+        $type ='String';
+        $folder = "Temp";
+        $result = $this->instance->cellsPostWorksheetCellSetValue($name, $sheet_name, $cellName, $value,$type ,null ,  $folder);
         $this->assertEquals(200, $result['code']);
     }
 

@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 
 # **cellsChartsDeleteWorksheetChartLegend**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder, $storage)
 
 Hide legend in chart
 
@@ -39,9 +39,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsDeleteWorksheetChartLegend: ', $e->getMessage(), PHP_EOL;
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -74,7 +76,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsDeleteWorksheetChartTitle**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder, $storage)
 
 Hide title in chart
 
@@ -92,9 +94,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsDeleteWorksheetChartTitle: ', $e->getMessage(), PHP_EOL;
@@ -110,6 +113,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -127,7 +131,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsDeleteWorksheetClearCharts**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder, $storage)
 
 Clear the charts.
 
@@ -144,9 +148,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsChartsApi(
 $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsDeleteWorksheetClearCharts: ', $e->getMessage(), PHP_EOL;
@@ -161,6 +166,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Workbook name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -178,7 +184,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsDeleteWorksheetDeleteChart**
-> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder, $storage)
 
 Delete worksheet chart by index.
 
@@ -196,9 +202,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsDeleteWorksheetDeleteChart: ', $e->getMessage(), PHP_EOL;
@@ -214,6 +221,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -231,7 +239,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsGetWorksheetChart**
-> \SplFileObject cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format, $folder)
+> \SplFileObject cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format, $folder, $storage)
 
 Get chart info.
 
@@ -250,9 +258,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_number = 56; // int | The chart number.
 $format = "format_example"; // string | The exported file format.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format, $folder);
+    $result = $apiInstance->cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsGetWorksheetChart: ', $e->getMessage(), PHP_EOL;
@@ -269,6 +278,7 @@ Name | Type | Description  | Notes
  **chart_number** | **int**| The chart number. |
  **format** | **string**| The exported file format. | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -286,7 +296,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsGetWorksheetChartLegend**
-> \Aspose\Cells\Cloud\Model\LegendResponse cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\LegendResponse cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder, $storage)
 
 Get chart legend
 
@@ -304,9 +314,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsGetWorksheetChartLegend: ', $e->getMessage(), PHP_EOL;
@@ -322,6 +333,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -339,7 +351,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsGetWorksheetChartTitle**
-> \Aspose\Cells\Cloud\Model\TitleResponse cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\TitleResponse cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder, $storage)
 
 Get chart title
 
@@ -357,9 +369,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsGetWorksheetChartTitle: ', $e->getMessage(), PHP_EOL;
@@ -375,6 +388,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -392,7 +406,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsGetWorksheetCharts**
-> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsGetWorksheetCharts($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsGetWorksheetCharts($name, $sheet_name, $folder, $storage)
 
 Get worksheet charts info.
 
@@ -409,9 +423,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsChartsApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsGetWorksheetCharts($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsChartsGetWorksheetCharts($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsGetWorksheetCharts: ', $e->getMessage(), PHP_EOL;
@@ -426,6 +441,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -443,7 +459,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPostWorksheetChart**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart, $folder, $storage)
 
 Update chart propreties
 
@@ -462,9 +478,10 @@ $sheet_name = "sheet_name_example"; // string |
 $chart_index = 56; // int | 
 $chart = new \Aspose\Cells\Cloud\Model\Chart(); // \Aspose\Cells\Cloud\Model\Chart | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart, $folder);
+    $result = $apiInstance->cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsPostWorksheetChart: ', $e->getMessage(), PHP_EOL;
@@ -481,6 +498,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**|  |
  **chart** | [**\Aspose\Cells\Cloud\Model\Chart**](../Model/Chart.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -498,7 +516,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPostWorksheetChartLegend**
-> \Aspose\Cells\Cloud\Model\LegendResponse cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend, $folder)
+> \Aspose\Cells\Cloud\Model\LegendResponse cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend, $folder, $storage)
 
 Update chart legend
 
@@ -517,9 +535,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $legend = new \Aspose\Cells\Cloud\Model\Legend(); // \Aspose\Cells\Cloud\Model\Legend | 
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend, $folder);
+    $result = $apiInstance->cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsPostWorksheetChartLegend: ', $e->getMessage(), PHP_EOL;
@@ -536,6 +555,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**| The chart index. |
  **legend** | [**\Aspose\Cells\Cloud\Model\Legend**](../Model/Legend.md)|  | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -553,7 +573,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPostWorksheetChartTitle**
-> \Aspose\Cells\Cloud\Model\TitleResponse cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder)
+> \Aspose\Cells\Cloud\Model\TitleResponse cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder, $storage)
 
 Update chart title
 
@@ -572,9 +592,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $title = new \Aspose\Cells\Cloud\Model\Title(); // \Aspose\Cells\Cloud\Model\Title | Chart title
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder);
+    $result = $apiInstance->cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsPostWorksheetChartTitle: ', $e->getMessage(), PHP_EOL;
@@ -591,6 +612,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**| The chart index. |
  **title** | [**\Aspose\Cells\Cloud\Model\Title**](../Model/Title.md)| Chart title | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -608,7 +630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPutWorksheetAddChart**
-> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder)
+> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage)
 
 Add new chart to worksheet.
 
@@ -635,9 +657,10 @@ $category_data = "category_data_example"; // string | Gets or sets the range of 
 $is_auto_get_serial_name = true; // bool | Specifies whether auto update serial name.
 $title = "title_example"; // string | Specifies chart title name.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder);
+    $result = $apiInstance->cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsPutWorksheetAddChart: ', $e->getMessage(), PHP_EOL;
@@ -662,6 +685,7 @@ Name | Type | Description  | Notes
  **is_auto_get_serial_name** | **bool**| Specifies whether auto update serial name. | [optional] [default to true]
  **title** | **string**| Specifies chart title name. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -679,7 +703,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPutWorksheetChartLegend**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder, $storage)
 
 Show legend in chart
 
@@ -697,9 +721,10 @@ $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder);
+    $result = $apiInstance->cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsPutWorksheetChartLegend: ', $e->getMessage(), PHP_EOL;
@@ -715,6 +740,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **chart_index** | **int**| The chart index. |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -732,7 +758,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPutWorksheetChartTitle**
-> \Aspose\Cells\Cloud\Model\TitleResponse cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder)
+> \Aspose\Cells\Cloud\Model\TitleResponse cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder, $storage)
 
 Add chart title / Set chart title visible
 
@@ -751,9 +777,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $chart_index = 56; // int | The chart index.
 $title = new \Aspose\Cells\Cloud\Model\Title(); // \Aspose\Cells\Cloud\Model\Title | Chart title.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder);
+    $result = $apiInstance->cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsChartsApi->cellsChartsPutWorksheetChartTitle: ', $e->getMessage(), PHP_EOL;
@@ -770,6 +797,7 @@ Name | Type | Description  | Notes
  **chart_index** | **int**| The chart index. |
  **title** | [**\Aspose\Cells\Cloud\Model\Title**](../Model/Title.md)| Chart title. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

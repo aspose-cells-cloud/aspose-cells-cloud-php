@@ -42,7 +42,7 @@ class CellsApiTestBase
         }
         return self::$accessToken;
     }
-    public static function ready($filename , $folder)
+    public static function ready($filename , $folder, $storageName = null)
     {
         AsposeApp::$appSID = "66164C51-693E-4904-A121-545961673EC1";
         AsposeApp::$apiKey = "536e76768419db9585afdd37bb5f7533";
@@ -61,7 +61,7 @@ class CellsApiTestBase
             $parents = $parents . "../";
         }
         
-        $result = $storage->PutCreate($Path= $folder.'/'.$filename, $versionId = null, $storage = null, $file);
+        $result = $storage->PutCreate($Path= $folder.'/'.$filename, $versionId = null, $storage = $storageName, $file);
         return $result;
     }
 }

@@ -508,7 +508,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $outPath = null;      
         CellsApiTestBase::ready( $name ,$folder);
         $result = $this->instance->cellsWorkbookPutConvertWorkBook($format, $password,  $outPath);
-        $this->assertEquals(6730, $result->getSize());
+        $this->assertEquals(6732, $result->getSize());
     }
 
     /**

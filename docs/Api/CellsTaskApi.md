@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **cellsTaskPostRunTask**
-> \SplFileObject cellsTaskPostRunTask($task_data)
+> object cellsTaskPostRunTask($task_data)
 
 Run tasks
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**object**
 
 ### Authorization
 

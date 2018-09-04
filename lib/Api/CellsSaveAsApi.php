@@ -93,14 +93,15 @@ class CellsSaveAsApi
      * @param  bool $is_auto_fit_rows Autofit rows. (optional, default to false)
      * @param  bool $is_auto_fit_columns Autofit columns. (optional, default to false)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaveResponse
      */
-    public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null)
+    public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder);
+        list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage);
         return $response;
     }
 
@@ -115,15 +116,16 @@ class CellsSaveAsApi
      * @param  bool $is_auto_fit_rows Autofit rows. (optional, default to false)
      * @param  bool $is_auto_fit_columns Autofit columns. (optional, default to false)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null)
+    public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
-        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder);
+        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -195,13 +197,14 @@ class CellsSaveAsApi
      * @param  bool $is_auto_fit_rows Autofit rows. (optional, default to false)
      * @param  bool $is_auto_fit_columns Autofit columns. (optional, default to false)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null)
+    public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder)
+        return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -220,14 +223,15 @@ class CellsSaveAsApi
      * @param  bool $is_auto_fit_rows Autofit rows. (optional, default to false)
      * @param  bool $is_auto_fit_columns Autofit columns. (optional, default to false)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null)
+    public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
-        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder);
+        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -275,11 +279,12 @@ class CellsSaveAsApi
      * @param  bool $is_auto_fit_rows Autofit rows. (optional, default to false)
      * @param  bool $is_auto_fit_columns Autofit columns. (optional, default to false)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null)
+    protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -310,6 +315,10 @@ class CellsSaveAsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

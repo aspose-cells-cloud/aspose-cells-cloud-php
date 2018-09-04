@@ -62,7 +62,7 @@ $isAutoFitRows= 'true';
 $isAutoFitColumns= 'true';
 $folder = "Temp";
 
-$result = $saveAsAPI->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns,$folder);
+$result = $saveAsAPI->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
 ```
 
 ## Dependencies

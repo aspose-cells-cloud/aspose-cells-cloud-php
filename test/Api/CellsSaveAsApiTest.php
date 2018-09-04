@@ -95,7 +95,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $isAutoFitColumns= 'true';
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns,$folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
     }
     
@@ -116,7 +116,29 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $isAutoFitColumns= 'true';
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns,$folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+        $this->assertEquals(200, $result['code']);
+    }
+    
+    /**
+     * Test case for cellsSaveAsPostDocumentSaveAs
+     *
+     * Convert document and save result to storage..
+     *
+     */
+    public function testCellsSaveAsPostDocumentSaveAsPDFDropBoxTest()
+    {
+        $name ='Book1.xlsx';
+        $saveOptions = new PdfSaveOptions();
+        $saveOptions->OnePagePerSheet = 'true';
+        $saveOptions->SaveFormat = "pdf";
+        $newfilename = "newbook.pdf";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        $storage = "DropBox";
+        CellsApiTestBase::ready( $name ,$folder, $storage);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder, $storage);
         $this->assertEquals(200, $result['code']);
     }
 }

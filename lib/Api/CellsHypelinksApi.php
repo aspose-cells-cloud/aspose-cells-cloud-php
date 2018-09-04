@@ -91,14 +91,15 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder);
+        list($response) = $this->cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder);
+        $request = $this->cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
-        return $this->cellsHypelinksDeleteWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder)
+        return $this->cellsHypelinksDeleteWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder);
+        $request = $this->cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder = null)
+    protected function cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsHypelinksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -404,14 +413,15 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -423,15 +433,16 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -500,13 +511,14 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinksAsync($name, $sheet_name, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinksAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsHypelinksDeleteWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsHypelinksDeleteWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,14 +534,15 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksDeleteWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsHypelinksDeleteWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -574,11 +587,12 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder = null)
+    protected function cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -603,6 +617,10 @@ class CellsHypelinksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -700,14 +718,15 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HyperlinkResponse
      */
-    public function cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsHypelinksGetWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder);
+        list($response) = $this->cellsHypelinksGetWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage);
         return $response;
     }
 
@@ -720,15 +739,16 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsHypelinksGetWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
-        $request = $this->cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder);
+        $request = $this->cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,13 +818,14 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksGetWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
-        return $this->cellsHypelinksGetWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder)
+        return $this->cellsHypelinksGetWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -821,14 +842,15 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksGetWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
-        $request = $this->cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder);
+        $request = $this->cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -874,11 +896,12 @@ class CellsHypelinksApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder = null)
+    protected function cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -909,6 +932,10 @@ class CellsHypelinksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1013,14 +1040,15 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HyperlinksResponse
      */
-    public function cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsHypelinksGetWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsHypelinksGetWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1032,15 +1060,16 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsHypelinksGetWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinksResponse';
-        $request = $this->cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1109,13 +1138,14 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksGetWorksheetHyperlinksAsync($name, $sheet_name, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinksAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsHypelinksGetWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsHypelinksGetWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1131,14 +1161,15 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksGetWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsHypelinksGetWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinksResponse';
-        $request = $this->cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder);
+        $request = $this->cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1183,11 +1214,12 @@ class CellsHypelinksApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder = null)
+    protected function cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1212,6 +1244,10 @@ class CellsHypelinksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1310,14 +1346,15 @@ class CellsHypelinksApi
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Hyperlink $hyperlink Hyperlink object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HyperlinkResponse
      */
-    public function cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null)
+    public function cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink, $folder);
+        list($response) = $this->cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage);
         return $response;
     }
 
@@ -1331,15 +1368,16 @@ class CellsHypelinksApi
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Hyperlink $hyperlink Hyperlink object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null)
+    public function cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
-        $request = $this->cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink, $folder);
+        $request = $this->cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1410,13 +1448,14 @@ class CellsHypelinksApi
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Hyperlink $hyperlink Hyperlink object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksPostWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null)
+    public function cellsHypelinksPostWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage = null)
     {
-        return $this->cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink, $folder)
+        return $this->cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1434,14 +1473,15 @@ class CellsHypelinksApi
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Hyperlink $hyperlink Hyperlink object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null)
+    public function cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
-        $request = $this->cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink, $folder);
+        $request = $this->cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1488,11 +1528,12 @@ class CellsHypelinksApi
      * @param  int $hyperlink_index The hyperlink&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Hyperlink $hyperlink Hyperlink object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null)
+    protected function cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1523,6 +1564,10 @@ class CellsHypelinksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1635,14 +1680,15 @@ class CellsHypelinksApi
      * @param  int $total_columns total_columns (required)
      * @param  string $address address (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HyperlinkResponse
      */
-    public function cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null)
+    public function cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder);
+        list($response) = $this->cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage);
         return $response;
     }
 
@@ -1659,15 +1705,16 @@ class CellsHypelinksApi
      * @param  int $total_columns (required)
      * @param  string $address (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null)
+    public function cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
-        $request = $this->cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder);
+        $request = $this->cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1741,13 +1788,14 @@ class CellsHypelinksApi
      * @param  int $total_columns (required)
      * @param  string $address (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksPutWorksheetHyperlinkAsync($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null)
+    public function cellsHypelinksPutWorksheetHyperlinkAsync($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage = null)
     {
-        return $this->cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder)
+        return $this->cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1768,14 +1816,15 @@ class CellsHypelinksApi
      * @param  int $total_columns (required)
      * @param  string $address (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null)
+    public function cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
-        $request = $this->cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder);
+        $request = $this->cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1825,11 +1874,12 @@ class CellsHypelinksApi
      * @param  int $total_columns (required)
      * @param  string $address (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null)
+    protected function cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1904,6 +1954,10 @@ class CellsHypelinksApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

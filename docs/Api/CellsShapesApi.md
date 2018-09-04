@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **cellsShapesDeleteWorksheetShape**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder, $storage)
 
 Delete a shape in worksheet
 
@@ -31,9 +31,10 @@ $name = "name_example"; // string | document name.
 $sheet_name = "sheet_name_example"; // string | worksheet name.
 $shapeindex = 56; // int | shape index in worksheet shapes.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder);
+    $result = $apiInstance->cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsShapesApi->cellsShapesDeleteWorksheetShape: ', $e->getMessage(), PHP_EOL;
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name. |
  **shapeindex** | **int**| shape index in worksheet shapes. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -66,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsShapesDeleteWorksheetShapes**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder, $storage)
 
 delete all shapes in worksheet
 
@@ -83,9 +85,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsShapesApi(
 $name = "name_example"; // string | document name.
 $sheet_name = "sheet_name_example"; // string | worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsShapesApi->cellsShapesDeleteWorksheetShapes: ', $e->getMessage(), PHP_EOL;
@@ -100,6 +103,7 @@ Name | Type | Description  | Notes
  **name** | **string**| document name. |
  **sheet_name** | **string**| worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -117,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsShapesGetWorksheetShape**
-> \Aspose\Cells\Cloud\Model\ShapeResponse cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder)
+> \Aspose\Cells\Cloud\Model\ShapeResponse cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder, $storage)
 
 Get worksheet shape
 
@@ -135,9 +139,10 @@ $name = "name_example"; // string | document name.
 $sheet_name = "sheet_name_example"; // string | worksheet name.
 $shapeindex = 56; // int | shape index in worksheet shapes.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder);
+    $result = $apiInstance->cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsShapesApi->cellsShapesGetWorksheetShape: ', $e->getMessage(), PHP_EOL;
@@ -153,6 +158,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name. |
  **shapeindex** | **int**| shape index in worksheet shapes. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -170,7 +176,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsShapesGetWorksheetShapes**
-> \Aspose\Cells\Cloud\Model\ShapesResponse cellsShapesGetWorksheetShapes($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\ShapesResponse cellsShapesGetWorksheetShapes($name, $sheet_name, $folder, $storage)
 
 Get worksheet shapes
 
@@ -187,9 +193,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsShapesApi(
 $name = "name_example"; // string | document name.
 $sheet_name = "sheet_name_example"; // string | worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsShapesGetWorksheetShapes($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsShapesGetWorksheetShapes($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsShapesApi->cellsShapesGetWorksheetShapes: ', $e->getMessage(), PHP_EOL;
@@ -204,6 +211,7 @@ Name | Type | Description  | Notes
  **name** | **string**| document name. |
  **sheet_name** | **string**| worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -221,7 +229,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsShapesPostWorksheetShape**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto, $folder, $storage)
 
 Update a shape in worksheet
 
@@ -240,9 +248,10 @@ $sheet_name = "sheet_name_example"; // string | worksheet name.
 $shapeindex = 56; // int | shape index in worksheet shapes.
 $dto = new \Aspose\Cells\Cloud\Model\Shape(); // \Aspose\Cells\Cloud\Model\Shape | 
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto, $folder);
+    $result = $apiInstance->cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsShapesApi->cellsShapesPostWorksheetShape: ', $e->getMessage(), PHP_EOL;
@@ -259,6 +268,7 @@ Name | Type | Description  | Notes
  **shapeindex** | **int**| shape index in worksheet shapes. |
  **dto** | [**\Aspose\Cells\Cloud\Model\Shape**](../Model/Shape.md)|  | [optional]
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -276,7 +286,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsShapesPutWorksheetShape**
-> \Aspose\Cells\Cloud\Model\ShapeResponse cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder)
+> \Aspose\Cells\Cloud\Model\ShapeResponse cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage)
 
 Add shape in worksheet
 
@@ -300,9 +310,10 @@ $left = 56; // int | Represents the horizontal offset of Spinner from its left c
 $width = 56; // int | Represents the height of Spinner, in unit of pixel.
 $height = 56; // int | Represents the width of Spinner, in unit of pixel.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder);
+    $result = $apiInstance->cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsShapesApi->cellsShapesPutWorksheetShape: ', $e->getMessage(), PHP_EOL;
@@ -324,6 +335,7 @@ Name | Type | Description  | Notes
  **width** | **int**| Represents the height of Spinner, in unit of pixel. |
  **height** | **int**| Represents the width of Spinner, in unit of pixel. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

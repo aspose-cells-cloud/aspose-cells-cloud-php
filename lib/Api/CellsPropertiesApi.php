@@ -89,14 +89,15 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse
      */
-    public function cellsPropertiesDeleteDocumentProperties($name, $folder = null)
+    public function cellsPropertiesDeleteDocumentProperties($name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder);
+        list($response) = $this->cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
 
@@ -107,15 +108,16 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder = null)
+    public function cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
-        $request = $this->cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder);
+        $request = $this->cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -183,13 +185,14 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesDeleteDocumentPropertiesAsync($name, $folder = null)
+    public function cellsPropertiesDeleteDocumentPropertiesAsync($name, $folder = null, $storage = null)
     {
-        return $this->cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder)
+        return $this->cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -204,14 +207,15 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder = null)
+    public function cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
-        $request = $this->cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder);
+        $request = $this->cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,11 +259,12 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder = null)
+    protected function cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -278,6 +283,10 @@ class CellsPropertiesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -366,14 +375,15 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse
      */
-    public function cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder = null)
+    public function cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder);
+        list($response) = $this->cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder, $storage);
         return $response;
     }
 
@@ -385,15 +395,16 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder = null)
+    public function cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
-        $request = $this->cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder);
+        $request = $this->cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -462,13 +473,14 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesDeleteDocumentPropertyAsync($name, $property_name, $folder = null)
+    public function cellsPropertiesDeleteDocumentPropertyAsync($name, $property_name, $folder = null, $storage = null)
     {
-        return $this->cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder)
+        return $this->cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -484,14 +496,15 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null)
+    public function cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
-        $request = $this->cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder);
+        $request = $this->cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -536,11 +549,12 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder = null)
+    protected function cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -565,6 +579,10 @@ class CellsPropertiesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -660,14 +678,15 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse
      */
-    public function cellsPropertiesGetDocumentProperties($name, $folder = null)
+    public function cellsPropertiesGetDocumentProperties($name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPropertiesGetDocumentPropertiesWithHttpInfo($name, $folder);
+        list($response) = $this->cellsPropertiesGetDocumentPropertiesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
 
@@ -678,15 +697,16 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPropertiesGetDocumentPropertiesWithHttpInfo($name, $folder = null)
+    public function cellsPropertiesGetDocumentPropertiesWithHttpInfo($name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
-        $request = $this->cellsPropertiesGetDocumentPropertiesRequest($name, $folder);
+        $request = $this->cellsPropertiesGetDocumentPropertiesRequest($name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -754,13 +774,14 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesGetDocumentPropertiesAsync($name, $folder = null)
+    public function cellsPropertiesGetDocumentPropertiesAsync($name, $folder = null, $storage = null)
     {
-        return $this->cellsPropertiesGetDocumentPropertiesAsyncWithHttpInfo($name, $folder)
+        return $this->cellsPropertiesGetDocumentPropertiesAsyncWithHttpInfo($name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -775,14 +796,15 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesGetDocumentPropertiesAsyncWithHttpInfo($name, $folder = null)
+    public function cellsPropertiesGetDocumentPropertiesAsyncWithHttpInfo($name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
-        $request = $this->cellsPropertiesGetDocumentPropertiesRequest($name, $folder);
+        $request = $this->cellsPropertiesGetDocumentPropertiesRequest($name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -826,11 +848,12 @@ class CellsPropertiesApi
      *
      * @param  string $name The document name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPropertiesGetDocumentPropertiesRequest($name, $folder = null)
+    protected function cellsPropertiesGetDocumentPropertiesRequest($name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -849,6 +872,10 @@ class CellsPropertiesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -937,14 +964,15 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse
      */
-    public function cellsPropertiesGetDocumentProperty($name, $property_name, $folder = null)
+    public function cellsPropertiesGetDocumentProperty($name, $property_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPropertiesGetDocumentPropertyWithHttpInfo($name, $property_name, $folder);
+        list($response) = $this->cellsPropertiesGetDocumentPropertyWithHttpInfo($name, $property_name, $folder, $storage);
         return $response;
     }
 
@@ -956,15 +984,16 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPropertiesGetDocumentPropertyWithHttpInfo($name, $property_name, $folder = null)
+    public function cellsPropertiesGetDocumentPropertyWithHttpInfo($name, $property_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
-        $request = $this->cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder);
+        $request = $this->cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1033,13 +1062,14 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesGetDocumentPropertyAsync($name, $property_name, $folder = null)
+    public function cellsPropertiesGetDocumentPropertyAsync($name, $property_name, $folder = null, $storage = null)
     {
-        return $this->cellsPropertiesGetDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder)
+        return $this->cellsPropertiesGetDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1055,14 +1085,15 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesGetDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null)
+    public function cellsPropertiesGetDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
-        $request = $this->cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder);
+        $request = $this->cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1107,11 +1138,12 @@ class CellsPropertiesApi
      * @param  string $name The document name. (required)
      * @param  string $property_name The property name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder = null)
+    protected function cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1136,6 +1168,10 @@ class CellsPropertiesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1233,14 +1269,15 @@ class CellsPropertiesApi
      * @param  string $property_name The property name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CellsDocumentProperty $property with new property value. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse
      */
-    public function cellsPropertiesPutDocumentProperty($name, $property_name, $property = null, $folder = null)
+    public function cellsPropertiesPutDocumentProperty($name, $property_name, $property = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property, $folder);
+        list($response) = $this->cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property, $folder, $storage);
         return $response;
     }
 
@@ -1253,15 +1290,16 @@ class CellsPropertiesApi
      * @param  string $property_name The property name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CellsDocumentProperty $property with new property value. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property = null, $folder = null)
+    public function cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
-        $request = $this->cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property, $folder);
+        $request = $this->cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1331,13 +1369,14 @@ class CellsPropertiesApi
      * @param  string $property_name The property name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CellsDocumentProperty $property with new property value. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesPutDocumentPropertyAsync($name, $property_name, $property = null, $folder = null)
+    public function cellsPropertiesPutDocumentPropertyAsync($name, $property_name, $property = null, $folder = null, $storage = null)
     {
-        return $this->cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property, $folder)
+        return $this->cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1354,14 +1393,15 @@ class CellsPropertiesApi
      * @param  string $property_name The property name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CellsDocumentProperty $property with new property value. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property = null, $folder = null)
+    public function cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
-        $request = $this->cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property, $folder);
+        $request = $this->cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1407,11 +1447,12 @@ class CellsPropertiesApi
      * @param  string $property_name The property name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CellsDocumentProperty $property with new property value. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property = null, $folder = null)
+    protected function cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1436,6 +1477,10 @@ class CellsPropertiesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

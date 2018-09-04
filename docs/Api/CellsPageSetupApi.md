@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **cellsPageSetupDeleteHeaderFooter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder, $storage)
 
 clear header footer
 
@@ -31,9 +31,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPageSetupApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupDeleteHeaderFooter: ', $e->getMessage(), PHP_EOL;
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -65,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPageSetupGetFooter**
-> \Aspose\Cells\Cloud\Model\PageSectionsResponse cellsPageSetupGetFooter($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\PageSectionsResponse cellsPageSetupGetFooter($name, $sheet_name, $folder, $storage)
 
 get page footer information
 
@@ -82,9 +84,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPageSetupApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupGetFooter($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsPageSetupGetFooter($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupGetFooter: ', $e->getMessage(), PHP_EOL;
@@ -99,6 +102,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -116,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPageSetupGetHeader**
-> \Aspose\Cells\Cloud\Model\PageSectionsResponse cellsPageSetupGetHeader($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\PageSectionsResponse cellsPageSetupGetHeader($name, $sheet_name, $folder, $storage)
 
 get page header information
 
@@ -133,9 +137,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPageSetupApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupGetHeader($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsPageSetupGetHeader($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupGetHeader: ', $e->getMessage(), PHP_EOL;
@@ -150,6 +155,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -167,7 +173,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPageSetupGetPageSetup**
-> \Aspose\Cells\Cloud\Model\PageSetupResponse cellsPageSetupGetPageSetup($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\PageSetupResponse cellsPageSetupGetPageSetup($name, $sheet_name, $folder, $storage)
 
 Get Page Setup information.
 
@@ -184,9 +190,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPageSetupApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupGetPageSetup($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsPageSetupGetPageSetup($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupGetPageSetup: ', $e->getMessage(), PHP_EOL;
@@ -201,6 +208,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -218,7 +226,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPageSetupPostFooter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage)
 
 update  page footer information
 
@@ -238,9 +246,10 @@ $section = 56; // int |
 $script = "script_example"; // string | 
 $is_first_page = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder);
+    $result = $apiInstance->cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupPostFooter: ', $e->getMessage(), PHP_EOL;
@@ -258,6 +267,7 @@ Name | Type | Description  | Notes
  **script** | **string**|  |
  **is_first_page** | **bool**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -275,7 +285,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPageSetupPostHeader**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage)
 
 update  page header information
 
@@ -295,9 +305,10 @@ $section = 56; // int |
 $script = "script_example"; // string | 
 $is_first_page = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder);
+    $result = $apiInstance->cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupPostHeader: ', $e->getMessage(), PHP_EOL;
@@ -315,6 +326,7 @@ Name | Type | Description  | Notes
  **script** | **string**|  |
  **is_first_page** | **bool**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -332,7 +344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPageSetupPostPageSetup**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup, $folder, $storage)
 
 Update Page Setup information.
 
@@ -350,9 +362,10 @@ $name = "name_example"; // string |
 $sheet_name = "sheet_name_example"; // string | 
 $page_setup = new \Aspose\Cells\Cloud\Model\PageSetup(); // \Aspose\Cells\Cloud\Model\PageSetup | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup, $folder);
+    $result = $apiInstance->cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPageSetupApi->cellsPageSetupPostPageSetup: ', $e->getMessage(), PHP_EOL;
@@ -368,6 +381,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  |
  **page_setup** | [**\Aspose\Cells\Cloud\Model\PageSetup**](../Model/PageSetup.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

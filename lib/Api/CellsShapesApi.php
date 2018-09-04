@@ -91,14 +91,15 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsShapesDeleteWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder);
+        list($response) = $this->cellsShapesDeleteWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsShapesDeleteWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesDeleteWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder);
+        $request = $this->cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesDeleteWorksheetShapeAsync($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesDeleteWorksheetShapeAsync($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
-        return $this->cellsShapesDeleteWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder)
+        return $this->cellsShapesDeleteWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesDeleteWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesDeleteWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder);
+        $request = $this->cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder = null)
+    protected function cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsShapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -404,14 +413,15 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder = null)
+    public function cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsShapesDeleteWorksheetShapesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsShapesDeleteWorksheetShapesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -423,15 +433,16 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsShapesDeleteWorksheetShapesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsShapesDeleteWorksheetShapesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -500,13 +511,14 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesDeleteWorksheetShapesAsync($name, $sheet_name, $folder = null)
+    public function cellsShapesDeleteWorksheetShapesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsShapesDeleteWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsShapesDeleteWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,14 +534,15 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesDeleteWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsShapesDeleteWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -574,11 +587,12 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder = null)
+    protected function cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -603,6 +617,10 @@ class CellsShapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -700,14 +718,15 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ShapeResponse
      */
-    public function cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsShapesGetWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder);
+        list($response) = $this->cellsShapesGetWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage);
         return $response;
     }
 
@@ -720,15 +739,16 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ShapeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsShapesGetWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesGetWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
-        $request = $this->cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder);
+        $request = $this->cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,13 +818,14 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesGetWorksheetShapeAsync($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesGetWorksheetShapeAsync($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
-        return $this->cellsShapesGetWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder)
+        return $this->cellsShapesGetWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -821,14 +842,15 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesGetWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null)
+    public function cellsShapesGetWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
-        $request = $this->cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder);
+        $request = $this->cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -874,11 +896,12 @@ class CellsShapesApi
      * @param  string $sheet_name worksheet name. (required)
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder = null)
+    protected function cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -909,6 +932,10 @@ class CellsShapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1013,14 +1040,15 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ShapesResponse
      */
-    public function cellsShapesGetWorksheetShapes($name, $sheet_name, $folder = null)
+    public function cellsShapesGetWorksheetShapes($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsShapesGetWorksheetShapesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsShapesGetWorksheetShapesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1032,15 +1060,16 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ShapesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsShapesGetWorksheetShapesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsShapesGetWorksheetShapesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ShapesResponse';
-        $request = $this->cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1109,13 +1138,14 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesGetWorksheetShapesAsync($name, $sheet_name, $folder = null)
+    public function cellsShapesGetWorksheetShapesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsShapesGetWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsShapesGetWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1131,14 +1161,15 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesGetWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsShapesGetWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ShapesResponse';
-        $request = $this->cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1183,11 +1214,12 @@ class CellsShapesApi
      * @param  string $name document name. (required)
      * @param  string $sheet_name worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder = null)
+    protected function cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1212,6 +1244,10 @@ class CellsShapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1310,14 +1346,15 @@ class CellsShapesApi
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  \Aspose\Cells\Cloud\Model\Shape $dto dto (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto = null, $folder = null)
+    public function cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsShapesPostWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $dto, $folder);
+        list($response) = $this->cellsShapesPostWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $dto, $folder, $storage);
         return $response;
     }
 
@@ -1331,15 +1368,16 @@ class CellsShapesApi
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  \Aspose\Cells\Cloud\Model\Shape $dto (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsShapesPostWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $dto = null, $folder = null)
+    public function cellsShapesPostWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto, $folder);
+        $request = $this->cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1410,13 +1448,14 @@ class CellsShapesApi
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  \Aspose\Cells\Cloud\Model\Shape $dto (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesPostWorksheetShapeAsync($name, $sheet_name, $shapeindex, $dto = null, $folder = null)
+    public function cellsShapesPostWorksheetShapeAsync($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage = null)
     {
-        return $this->cellsShapesPostWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $dto, $folder)
+        return $this->cellsShapesPostWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $dto, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1434,14 +1473,15 @@ class CellsShapesApi
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  \Aspose\Cells\Cloud\Model\Shape $dto (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesPostWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $dto = null, $folder = null)
+    public function cellsShapesPostWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto, $folder);
+        $request = $this->cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1488,11 +1528,12 @@ class CellsShapesApi
      * @param  int $shapeindex shape index in worksheet shapes. (required)
      * @param  \Aspose\Cells\Cloud\Model\Shape $dto (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto = null, $folder = null)
+    protected function cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1523,6 +1564,10 @@ class CellsShapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1637,14 +1682,15 @@ class CellsShapesApi
      * @param  int $width Represents the height of Spinner, in unit of pixel. (required)
      * @param  int $height Represents the width of Spinner, in unit of pixel. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ShapeResponse
      */
-    public function cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null)
+    public function cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder);
+        list($response) = $this->cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage);
         return $response;
     }
 
@@ -1663,15 +1709,16 @@ class CellsShapesApi
      * @param  int $width Represents the height of Spinner, in unit of pixel. (required)
      * @param  int $height Represents the width of Spinner, in unit of pixel. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ShapeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null)
+    public function cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
-        $request = $this->cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder);
+        $request = $this->cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1747,13 +1794,14 @@ class CellsShapesApi
      * @param  int $width Represents the height of Spinner, in unit of pixel. (required)
      * @param  int $height Represents the width of Spinner, in unit of pixel. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesPutWorksheetShapeAsync($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null)
+    public function cellsShapesPutWorksheetShapeAsync($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null, $storage = null)
     {
-        return $this->cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder)
+        return $this->cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1776,14 +1824,15 @@ class CellsShapesApi
      * @param  int $width Represents the height of Spinner, in unit of pixel. (required)
      * @param  int $height Represents the width of Spinner, in unit of pixel. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null)
+    public function cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
-        $request = $this->cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder);
+        $request = $this->cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1835,11 +1884,12 @@ class CellsShapesApi
      * @param  int $width Represents the height of Spinner, in unit of pixel. (required)
      * @param  int $height Represents the width of Spinner, in unit of pixel. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null)
+    protected function cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1934,6 +1984,10 @@ class CellsShapesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

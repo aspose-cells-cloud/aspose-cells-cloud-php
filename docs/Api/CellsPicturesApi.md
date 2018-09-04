@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **cellsPicturesDeleteWorksheetPicture**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder, $storage)
 
 Delete a picture object in worksheet
 
@@ -31,9 +31,10 @@ $name = "name_example"; // string | The workbook name.
 $sheet_name = "sheet_name_example"; // string | The worsheet name.
 $picture_index = 56; // int | Picture index
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder);
+    $result = $apiInstance->cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesDeleteWorksheetPicture: ', $e->getMessage(), PHP_EOL;
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| The worsheet name. |
  **picture_index** | **int**| Picture index |
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -66,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPicturesDeleteWorksheetPictures**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder, $storage)
 
 Delete all pictures in worksheet.
 
@@ -83,9 +85,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPicturesApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesDeleteWorksheetPictures: ', $e->getMessage(), PHP_EOL;
@@ -100,6 +103,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| Worksheet name. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -117,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPicturesGetWorksheetPicture**
-> \SplFileObject cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder)
+> \SplFileObject cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder, $storage)
 
 GRead worksheet picture by number.
 
@@ -135,9 +139,10 @@ $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $picture_number = 56; // int | The picture number.
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder);
+    $result = $apiInstance->cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesGetWorksheetPicture: ', $e->getMessage(), PHP_EOL;
@@ -153,6 +158,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| Worksheet name. |
  **picture_number** | **int**| The picture number. |
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -170,7 +176,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPicturesGetWorksheetPictures**
-> \Aspose\Cells\Cloud\Model\PicturesResponse cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\PicturesResponse cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder, $storage)
 
 Read worksheet pictures.
 
@@ -187,9 +193,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPicturesApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesGetWorksheetPictures: ', $e->getMessage(), PHP_EOL;
@@ -204,6 +211,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| The worksheet name. |
  **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -221,7 +229,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPicturesPostWorksheetPicture**
-> \Aspose\Cells\Cloud\Model\PictureResponse cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture, $folder)
+> \Aspose\Cells\Cloud\Model\PictureResponse cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture, $folder, $storage)
 
 Update worksheet picture by index.
 
@@ -240,9 +248,10 @@ $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $picture_index = 56; // int | The picture's index.
 $picture = new \Aspose\Cells\Cloud\Model\Picture(); // \Aspose\Cells\Cloud\Model\Picture | Picture object
 $folder = "folder_example"; // string | The document folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture, $folder);
+    $result = $apiInstance->cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesPostWorksheetPicture: ', $e->getMessage(), PHP_EOL;
@@ -259,6 +268,7 @@ Name | Type | Description  | Notes
  **picture_index** | **int**| The picture&#39;s index. |
  **picture** | [**\Aspose\Cells\Cloud\Model\Picture**](../Model/Picture.md)| Picture object | [optional]
  **folder** | **string**| The document folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -276,7 +286,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPicturesPutWorksheetAddPicture**
-> \Aspose\Cells\Cloud\Model\PicturesResponse cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder)
+> \Aspose\Cells\Cloud\Model\PicturesResponse cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage)
 
 Add a new worksheet picture.
 
@@ -299,9 +309,10 @@ $lower_right_row = 0; // int | The image low right row.
 $lower_right_column = 0; // int | The image low right column.
 $picture_path = "picture_path_example"; // string | The picture path, if not provided the picture data is inspected in the request body.
 $folder = "folder_example"; // string | The workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder);
+    $result = $apiInstance->cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesPutWorksheetAddPicture: ', $e->getMessage(), PHP_EOL;
@@ -322,6 +333,7 @@ Name | Type | Description  | Notes
  **lower_right_column** | **int**| The image low right column. | [optional] [default to 0]
  **picture_path** | **string**| The picture path, if not provided the picture data is inspected in the request body. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

@@ -248,7 +248,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         $hasHeaders = 'true';  
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsListObjectsPutWorksheetListObject($name, $sheet_name,$startRow,$startColumn, $endRow, $endColumn,$folder,$hasHeaders);
+        $result = $this->instance->cellsListObjectsPutWorksheetListObject($name, $sheet_name,$startRow,$startColumn, $endRow, $endColumn,$folder,null,$hasHeaders);
         $this->assertEquals(200, $result['code']);
     }
 

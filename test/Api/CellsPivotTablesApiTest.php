@@ -463,7 +463,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $useSameSource = 'true';
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, null, $folder,$sourceData,$destCellName,$tableName,$useSameSource);
+        $result = $this->instance->cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, null, $folder,null, $sourceData,$destCellName,$tableName,$useSameSource);
         $this->assertEquals(200, $result['code']);
     }
 

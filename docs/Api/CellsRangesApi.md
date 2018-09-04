@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **cellsRangesGetWorksheetCellsRangeValue**
-> \Aspose\Cells\Cloud\Model\RangeValueResponse cellsRangesGetWorksheetCellsRangeValue($name, $sheet_name, $namerange, $first_row, $first_column, $row_count, $column_count, $folder)
+> \Aspose\Cells\Cloud\Model\RangeValueResponse cellsRangesGetWorksheetCellsRangeValue($name, $sheet_name, $namerange, $first_row, $first_column, $row_count, $column_count, $folder, $storage)
 
 Get cells list in a range by range name or row column indexes
 
@@ -39,9 +39,10 @@ $first_column = 56; // int | the first column of the range
 $row_count = 56; // int | the count of rows in the range
 $column_count = 56; // int | the count of columns in the range
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesGetWorksheetCellsRangeValue($name, $sheet_name, $namerange, $first_row, $first_column, $row_count, $column_count, $folder);
+    $result = $apiInstance->cellsRangesGetWorksheetCellsRangeValue($name, $sheet_name, $namerange, $first_row, $first_column, $row_count, $column_count, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesGetWorksheetCellsRangeValue: ', $e->getMessage(), PHP_EOL;
@@ -61,6 +62,7 @@ Name | Type | Description  | Notes
  **row_count** | **int**| the count of rows in the range | [optional]
  **column_count** | **int**| the count of columns in the range | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -78,7 +80,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeColumnWidth**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value, $range, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value, $range, $folder, $storage)
 
 Set column width of range
 
@@ -97,9 +99,10 @@ $sheet_name = "sheet_name_example"; // string |
 $value = 1.2; // double | 
 $range = new \Aspose\Cells\Cloud\Model\Range(); // \Aspose\Cells\Cloud\Model\Range | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value, $range, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value, $range, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeColumnWidth: ', $e->getMessage(), PHP_EOL;
@@ -116,6 +119,7 @@ Name | Type | Description  | Notes
  **value** | **double**|  |
  **range** | [**\Aspose\Cells\Cloud\Model\Range**](../Model/Range.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -133,7 +137,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeMerge**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name, $range, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name, $range, $folder, $storage)
 
 Combines a range of cells into a single cell.
 
@@ -151,9 +155,10 @@ $name = "name_example"; // string | workbook name
 $sheet_name = "sheet_name_example"; // string | worksheet name
 $range = new \Aspose\Cells\Cloud\Model\Range(); // \Aspose\Cells\Cloud\Model\Range | range in worksheet
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name, $range, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name, $range, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeMerge: ', $e->getMessage(), PHP_EOL;
@@ -169,6 +174,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name |
  **range** | [**\Aspose\Cells\Cloud\Model\Range**](../Model/Range.md)| range in worksheet | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -186,7 +192,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeMoveTo**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name, $dest_row, $dest_column, $range, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name, $dest_row, $dest_column, $range, $folder, $storage)
 
 Move the current range to the dest range.
 
@@ -206,9 +212,10 @@ $dest_row = 56; // int | The start row of the dest range.
 $dest_column = 56; // int | The start column of the dest range.
 $range = new \Aspose\Cells\Cloud\Model\Range(); // \Aspose\Cells\Cloud\Model\Range | range in worksheet
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name, $dest_row, $dest_column, $range, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name, $dest_row, $dest_column, $range, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeMoveTo: ', $e->getMessage(), PHP_EOL;
@@ -226,6 +233,7 @@ Name | Type | Description  | Notes
  **dest_column** | **int**| The start column of the dest range. |
  **range** | [**\Aspose\Cells\Cloud\Model\Range**](../Model/Range.md)| range in worksheet | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -243,7 +251,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeOutlineBorder**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name, $range_operate, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name, $range_operate, $folder, $storage)
 
 Sets outline border around a range of cells.
 
@@ -261,9 +269,10 @@ $name = "name_example"; // string | workbook name
 $sheet_name = "sheet_name_example"; // string | worksheet name
 $range_operate = new \Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest(); // \Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest | Range Set OutlineBorder Request
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name, $range_operate, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name, $range_operate, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeOutlineBorder: ', $e->getMessage(), PHP_EOL;
@@ -279,6 +288,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name |
  **range_operate** | [**\Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest**](../Model/RangeSetOutlineBorderRequest.md)| Range Set OutlineBorder Request | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -296,7 +306,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeRowHeight**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value, $range, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value, $range, $folder, $storage)
 
 set row height of range
 
@@ -315,9 +325,10 @@ $sheet_name = "sheet_name_example"; // string |
 $value = 1.2; // double | 
 $range = new \Aspose\Cells\Cloud\Model\Range(); // \Aspose\Cells\Cloud\Model\Range | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value, $range, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value, $range, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeRowHeight: ', $e->getMessage(), PHP_EOL;
@@ -334,6 +345,7 @@ Name | Type | Description  | Notes
  **value** | **double**|  |
  **range** | [**\Aspose\Cells\Cloud\Model\Range**](../Model/Range.md)|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -351,7 +363,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeStyle**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name, $range_operate, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name, $range_operate, $folder, $storage)
 
 Sets the style of the range.
 
@@ -369,9 +381,10 @@ $name = "name_example"; // string | workbook name
 $sheet_name = "sheet_name_example"; // string | worksheet name
 $range_operate = new \Aspose\Cells\Cloud\Model\RangeSetStyleRequest(); // \Aspose\Cells\Cloud\Model\RangeSetStyleRequest | Range Set Style Request
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name, $range_operate, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name, $range_operate, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeStyle: ', $e->getMessage(), PHP_EOL;
@@ -387,6 +400,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name |
  **range_operate** | [**\Aspose\Cells\Cloud\Model\RangeSetStyleRequest**](../Model/RangeSetStyleRequest.md)| Range Set Style Request | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -404,7 +418,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeUnmerge**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeUnmerge($name, $sheet_name, $range, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeUnmerge($name, $sheet_name, $range, $folder, $storage)
 
 Unmerges merged cells of this range.
 
@@ -422,9 +436,10 @@ $name = "name_example"; // string | workbook name
 $sheet_name = "sheet_name_example"; // string | worksheet name
 $range = new \Aspose\Cells\Cloud\Model\Range(); // \Aspose\Cells\Cloud\Model\Range | range in worksheet
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeUnmerge($name, $sheet_name, $range, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeUnmerge($name, $sheet_name, $range, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeUnmerge: ', $e->getMessage(), PHP_EOL;
@@ -440,6 +455,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name |
  **range** | [**\Aspose\Cells\Cloud\Model\Range**](../Model/Range.md)| range in worksheet | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -457,7 +473,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRangeValue**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name, $value, $range, $is_converted, $set_style, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name, $value, $range, $is_converted, $set_style, $folder, $storage)
 
 Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset.
 
@@ -478,9 +494,10 @@ $range = new \Aspose\Cells\Cloud\Model\Range(); // \Aspose\Cells\Cloud\Model\Ran
 $is_converted = false; // bool | True: converted to other data type if appropriate.
 $set_style = false; // bool | True: set the number format to cell's style when converting to other data type
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name, $value, $range, $is_converted, $set_style, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name, $value, $range, $is_converted, $set_style, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRangeValue: ', $e->getMessage(), PHP_EOL;
@@ -499,6 +516,7 @@ Name | Type | Description  | Notes
  **is_converted** | **bool**| True: converted to other data type if appropriate. | [optional] [default to false]
  **set_style** | **bool**| True: set the number format to cell&#39;s style when converting to other data type | [optional] [default to false]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -516,7 +534,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsRangesPostWorksheetCellsRanges**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $range_operate, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $range_operate, $folder, $storage)
 
 copy range in the worksheet
 
@@ -534,9 +552,10 @@ $name = "name_example"; // string | workbook name
 $sheet_name = "sheet_name_example"; // string | worksheet name
 $range_operate = new \Aspose\Cells\Cloud\Model\RangeCopyRequest(); // \Aspose\Cells\Cloud\Model\RangeCopyRequest | copydata,copystyle,copyto,copyvalue
 $folder = "folder_example"; // string | Workbook folder.
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $range_operate, $folder);
+    $result = $apiInstance->cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $range_operate, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsRangesApi->cellsRangesPostWorksheetCellsRanges: ', $e->getMessage(), PHP_EOL;
@@ -552,6 +571,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**| worksheet name |
  **range_operate** | [**\Aspose\Cells\Cloud\Model\RangeCopyRequest**](../Model/RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | [optional]
  **folder** | **string**| Workbook folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 

@@ -93,14 +93,15 @@ class CellsPivotTablesApi
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesDeletePivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null)
+    public function cellsPivotTablesDeletePivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesDeletePivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder);
+        list($response) = $this->cellsPivotTablesDeletePivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder, $storage);
         return $response;
     }
 
@@ -115,15 +116,16 @@ class CellsPivotTablesApi
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesDeletePivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null)
+    public function cellsPivotTablesDeletePivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder);
+        $request = $this->cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -195,13 +197,14 @@ class CellsPivotTablesApi
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeletePivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null)
+    public function cellsPivotTablesDeletePivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesDeletePivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder)
+        return $this->cellsPivotTablesDeletePivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -220,14 +223,15 @@ class CellsPivotTablesApi
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeletePivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null)
+    public function cellsPivotTablesDeletePivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder);
+        $request = $this->cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -275,11 +279,12 @@ class CellsPivotTablesApi
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null)
+    protected function cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -320,6 +325,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -428,14 +437,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTable($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTable($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder);
+        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage);
         return $response;
     }
 
@@ -448,15 +458,16 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -526,13 +537,14 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableAsync($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableAsync($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesDeleteWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder)
+        return $this->cellsPivotTablesDeleteWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -549,14 +561,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -602,11 +615,12 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder = null)
+    protected function cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -637,6 +651,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -744,14 +762,15 @@ class CellsPivotTablesApi
      * @param  int $field_index field_index (required)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -766,15 +785,16 @@ class CellsPivotTablesApi
      * @param  int $field_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -846,13 +866,14 @@ class CellsPivotTablesApi
      * @param  int $field_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesDeleteWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesDeleteWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -871,14 +892,15 @@ class CellsPivotTablesApi
      * @param  int $field_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -926,11 +948,12 @@ class CellsPivotTablesApi
      * @param  int $field_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -971,6 +994,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1085,14 +1112,15 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index pivot_table_index (required)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -1106,15 +1134,16 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1185,13 +1214,14 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFiltersAsync($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFiltersAsync($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1209,14 +1239,15 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1263,11 +1294,12 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1302,6 +1334,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1406,14 +1442,15 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTables($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTables($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1425,15 +1462,16 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1502,13 +1540,14 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTablesAsync($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTablesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesDeleteWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPivotTablesDeleteWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1524,14 +1563,15 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesDeleteWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesDeleteWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1576,11 +1616,12 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder = null)
+    protected function cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1605,6 +1646,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1704,14 +1749,15 @@ class CellsPivotTablesApi
      * @param  int $pivot_field_index The field index in the base fields. (required)
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotFieldResponse
      */
-    public function cellsPivotTablesGetPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null)
+    public function cellsPivotTablesGetPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesGetPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder);
+        list($response) = $this->cellsPivotTablesGetPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder, $storage);
         return $response;
     }
 
@@ -1726,15 +1772,16 @@ class CellsPivotTablesApi
      * @param  int $pivot_field_index The field index in the base fields. (required)
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotFieldResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesGetPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null)
+    public function cellsPivotTablesGetPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFieldResponse';
-        $request = $this->cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder);
+        $request = $this->cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1806,13 +1853,14 @@ class CellsPivotTablesApi
      * @param  int $pivot_field_index The field index in the base fields. (required)
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetPivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null)
+    public function cellsPivotTablesGetPivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesGetPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder)
+        return $this->cellsPivotTablesGetPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1831,14 +1879,15 @@ class CellsPivotTablesApi
      * @param  int $pivot_field_index The field index in the base fields. (required)
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null)
+    public function cellsPivotTablesGetPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFieldResponse';
-        $request = $this->cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder);
+        $request = $this->cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1886,11 +1935,12 @@ class CellsPivotTablesApi
      * @param  int $pivot_field_index The field index in the base fields. (required)
      * @param  string $pivot_field_type The fields area type. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null)
+    protected function cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1941,6 +1991,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2046,14 +2100,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivottable_index pivottable_index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotTableResponse
      */
-    public function cellsPivotTablesGetWorksheetPivotTable($name, $sheet_name, $pivottable_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTable($name, $sheet_name, $pivottable_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesGetWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivottable_index, $folder);
+        list($response) = $this->cellsPivotTablesGetWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivottable_index, $folder, $storage);
         return $response;
     }
 
@@ -2066,15 +2121,16 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivottable_index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotTableResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesGetWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivottable_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivottable_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2144,13 +2200,14 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivottable_index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTableAsync($name, $sheet_name, $pivottable_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableAsync($name, $sheet_name, $pivottable_index, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesGetWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivottable_index, $folder)
+        return $this->cellsPivotTablesGetWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivottable_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2167,14 +2224,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivottable_index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivottable_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivottable_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2220,11 +2278,12 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivottable_index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder = null)
+    protected function cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2255,6 +2314,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2359,14 +2422,15 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index pivot_table_index (required)
      * @param  int $filter_index filter_index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotFilterResponse
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder);
+        list($response) = $this->cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder, $storage);
         return $response;
     }
 
@@ -2378,15 +2442,16 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  int $filter_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotFilterResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFilterResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2457,13 +2522,14 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  int $filter_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesGetWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder)
+        return $this->cellsPivotTablesGetWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2481,14 +2547,15 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  int $filter_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFilterResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2535,11 +2602,12 @@ class CellsPivotTablesApi
      * @param  int $pivot_table_index (required)
      * @param  int $filter_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null)
+    protected function cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2576,6 +2644,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2687,14 +2759,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name sheet_name (required)
      * @param  int $pivot_table_index pivot_table_index (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotFiltersResponse
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder);
+        list($response) = $this->cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage);
         return $response;
     }
 
@@ -2705,15 +2778,16 @@ class CellsPivotTablesApi
      * @param  string $sheet_name (required)
      * @param  int $pivot_table_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotFiltersResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFiltersResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2783,13 +2857,14 @@ class CellsPivotTablesApi
      * @param  string $sheet_name (required)
      * @param  int $pivot_table_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFiltersAsync($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFiltersAsync($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesGetWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder)
+        return $this->cellsPivotTablesGetWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2806,14 +2881,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name (required)
      * @param  int $pivot_table_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFiltersResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2859,11 +2935,12 @@ class CellsPivotTablesApi
      * @param  string $sheet_name (required)
      * @param  int $pivot_table_index (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder = null)
+    protected function cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2894,6 +2971,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2998,14 +3079,15 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotTablesResponse
      */
-    public function cellsPivotTablesGetWorksheetPivotTables($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTables($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -3017,15 +3099,16 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotTablesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTablesResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3094,13 +3177,14 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTablesAsync($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTablesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesGetWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPivotTablesGetWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3116,14 +3200,15 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesGetWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPivotTablesGetWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTablesResponse';
-        $request = $this->cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3168,11 +3253,12 @@ class CellsPivotTablesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder = null)
+    protected function cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3197,6 +3283,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3298,14 +3388,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPostPivotTableCellStyle($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableCellStyle($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPostPivotTableCellStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesPostPivotTableCellStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -3322,15 +3413,16 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPostPivotTableCellStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableCellStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3404,13 +3496,14 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableCellStyleAsync($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableCellStyleAsync($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPostPivotTableCellStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesPostPivotTableCellStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3431,14 +3524,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableCellStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableCellStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3488,11 +3582,12 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3547,6 +3642,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3658,14 +3757,15 @@ class CellsPivotTablesApi
      * @param  bool $is_hide is_hide (required)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPostPivotTableFieldHideItem($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldHideItem($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -3681,15 +3781,16 @@ class CellsPivotTablesApi
      * @param  bool $is_hide (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3764,13 +3865,14 @@ class CellsPivotTablesApi
      * @param  bool $is_hide (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableFieldHideItemAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldHideItemAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPostPivotTableFieldHideItemAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesPostPivotTableFieldHideItemAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3792,14 +3894,15 @@ class CellsPivotTablesApi
      * @param  bool $is_hide (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableFieldHideItemAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldHideItemAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3850,11 +3953,12 @@ class CellsPivotTablesApi
      * @param  bool $is_hide (required)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3929,6 +4033,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4035,14 +4143,15 @@ class CellsPivotTablesApi
      * @param  string $from from (required)
      * @param  string $to to (required)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPostPivotTableFieldMoveTo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldMoveTo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder);
+        list($response) = $this->cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder, $storage);
         return $response;
     }
 
@@ -4056,15 +4165,16 @@ class CellsPivotTablesApi
      * @param  string $from (required)
      * @param  string $to (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4137,13 +4247,14 @@ class CellsPivotTablesApi
      * @param  string $from (required)
      * @param  string $to (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableFieldMoveToAsync($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldMoveToAsync($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPostPivotTableFieldMoveToAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder)
+        return $this->cellsPivotTablesPostPivotTableFieldMoveToAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4163,14 +4274,15 @@ class CellsPivotTablesApi
      * @param  string $from (required)
      * @param  string $to (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableFieldMoveToAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null)
+    public function cellsPivotTablesPostPivotTableFieldMoveToAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4219,11 +4331,12 @@ class CellsPivotTablesApi
      * @param  string $from (required)
      * @param  string $to (required)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null)
+    protected function cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4284,6 +4397,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4391,14 +4508,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPostPivotTableStyle($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableStyle($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPostPivotTableStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesPostPivotTableStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -4413,15 +4531,16 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPostPivotTableStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4493,13 +4612,14 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableStyleAsync($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableStyleAsync($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPostPivotTableStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesPostPivotTableStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4518,14 +4638,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostPivotTableStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPostPivotTableStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4573,11 +4694,12 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\Style $style Style dto in request body. (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4612,6 +4734,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4720,14 +4846,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPostWorksheetPivotTableCalculate($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableCalculate($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder);
+        list($response) = $this->cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage);
         return $response;
     }
 
@@ -4740,15 +4867,16 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder);
+        $request = $this->cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4818,13 +4946,14 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostWorksheetPivotTableCalculateAsync($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableCalculateAsync($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPostWorksheetPivotTableCalculateAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder)
+        return $this->cellsPivotTablesPostWorksheetPivotTableCalculateAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4841,14 +4970,15 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostWorksheetPivotTableCalculateAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableCalculateAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder);
+        $request = $this->cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4894,11 +5024,12 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $pivot_table_index Pivot table index (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder = null)
+    protected function cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4929,6 +5060,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -5035,14 +5170,15 @@ class CellsPivotTablesApi
      * @param  int $column column (optional)
      * @param  string $dest_cell_name dest_cell_name (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPostWorksheetPivotTableMove($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableMove($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder);
+        list($response) = $this->cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder, $storage);
         return $response;
     }
 
@@ -5056,15 +5192,16 @@ class CellsPivotTablesApi
      * @param  int $column (optional)
      * @param  string $dest_cell_name (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder);
+        $request = $this->cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5137,13 +5274,14 @@ class CellsPivotTablesApi
      * @param  int $column (optional)
      * @param  string $dest_cell_name (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostWorksheetPivotTableMoveAsync($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableMoveAsync($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPostWorksheetPivotTableMoveAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder)
+        return $this->cellsPivotTablesPostWorksheetPivotTableMoveAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5163,14 +5301,15 @@ class CellsPivotTablesApi
      * @param  int $column (optional)
      * @param  string $dest_cell_name (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPostWorksheetPivotTableMoveAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null)
+    public function cellsPivotTablesPostWorksheetPivotTableMoveAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder);
+        $request = $this->cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5219,11 +5358,12 @@ class CellsPivotTablesApi
      * @param  int $column (optional)
      * @param  string $dest_cell_name (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null)
+    protected function cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -5266,6 +5406,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -5374,14 +5518,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPutPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPutPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesPutPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -5397,15 +5542,16 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPutPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5478,13 +5624,14 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPutPivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutPivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPutPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesPutPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5504,14 +5651,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPutPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5560,11 +5708,12 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotTableFieldRequest $request Dto that conrains field indexes (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -5609,6 +5758,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -5717,6 +5870,7 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CreatePivotTableRequest $request CreatePivotTableRequest dto in request body. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      * @param  string $source_data The data for the new PivotTable cache. (optional)
      * @param  string $dest_cell_name The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param  string $table_name The name of the new PivotTable report. (optional)
@@ -5726,9 +5880,9 @@ class CellsPivotTablesApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotTableResponse
      */
-    public function cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, $request = null, $folder = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
+    public function cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, $request = null, $folder = null, $storage = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
-        list($response) = $this->cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request, $folder, $source_data, $dest_cell_name, $table_name, $use_same_source);
+        list($response) = $this->cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request, $folder, $storage, $source_data, $dest_cell_name, $table_name, $use_same_source);
         return $response;
     }
 
@@ -5741,6 +5895,7 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CreatePivotTableRequest $request CreatePivotTableRequest dto in request body. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      * @param  string $source_data The data for the new PivotTable cache. (optional)
      * @param  string $dest_cell_name The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param  string $table_name The name of the new PivotTable report. (optional)
@@ -5750,10 +5905,10 @@ class CellsPivotTablesApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotTableResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
+    public function cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $storage = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
-        $request = $this->cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request, $folder, $source_data, $dest_cell_name, $table_name, $use_same_source);
+        $request = $this->cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request, $folder, $storage, $source_data, $dest_cell_name, $table_name, $use_same_source);
 
         try {
             $options = $this->createHttpClientOption();
@@ -5823,6 +5978,7 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CreatePivotTableRequest $request CreatePivotTableRequest dto in request body. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      * @param  string $source_data The data for the new PivotTable cache. (optional)
      * @param  string $dest_cell_name The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param  string $table_name The name of the new PivotTable report. (optional)
@@ -5831,9 +5987,9 @@ class CellsPivotTablesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPutWorksheetPivotTableAsync($name, $sheet_name, $request = null, $folder = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
+    public function cellsPivotTablesPutWorksheetPivotTableAsync($name, $sheet_name, $request = null, $folder = null, $storage = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
-        return $this->cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request, $folder, $source_data, $dest_cell_name, $table_name, $use_same_source)
+        return $this->cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request, $folder, $storage, $source_data, $dest_cell_name, $table_name, $use_same_source)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5850,6 +6006,7 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CreatePivotTableRequest $request CreatePivotTableRequest dto in request body. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      * @param  string $source_data The data for the new PivotTable cache. (optional)
      * @param  string $dest_cell_name The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param  string $table_name The name of the new PivotTable report. (optional)
@@ -5858,10 +6015,10 @@ class CellsPivotTablesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
+    public function cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $storage = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
-        $request = $this->cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request, $folder, $source_data, $dest_cell_name, $table_name, $use_same_source);
+        $request = $this->cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request, $folder, $storage, $source_data, $dest_cell_name, $table_name, $use_same_source);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5907,6 +6064,7 @@ class CellsPivotTablesApi
      * @param  string $sheet_name The worksheet name. (required)
      * @param  \Aspose\Cells\Cloud\Model\CreatePivotTableRequest $request CreatePivotTableRequest dto in request body. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      * @param  string $source_data The data for the new PivotTable cache. (optional)
      * @param  string $dest_cell_name The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
      * @param  string $table_name The name of the new PivotTable report. (optional)
@@ -5915,7 +6073,7 @@ class CellsPivotTablesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request = null, $folder = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
+    protected function cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request = null, $folder = null, $storage = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -5940,6 +6098,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
         // query params
         if ($source_data !== null) {
@@ -6058,14 +6220,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotFilter $filter filter (optional)
      * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder);
+        list($response) = $this->cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder, $storage);
         return $response;
     }
 
@@ -6080,15 +6243,16 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotFilter $filter (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6160,13 +6324,14 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotFilter $filter (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPutWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
-        return $this->cellsPivotTablesPutWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder)
+        return $this->cellsPivotTablesPutWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6185,14 +6350,15 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotFilter $filter (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPivotTablesPutWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null)
+    public function cellsPivotTablesPutWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder);
+        $request = $this->cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6240,11 +6406,12 @@ class CellsPivotTablesApi
      * @param  \Aspose\Cells\Cloud\Model\PivotFilter $filter (optional)
      * @param  bool $need_re_calculate (optional, default to false)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null)
+    protected function cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -6279,6 +6446,10 @@ class CellsPivotTablesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

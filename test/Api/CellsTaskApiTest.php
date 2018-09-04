@@ -116,8 +116,6 @@ class CellsTaskApiTest extends \PHPUnit_Framework_TestCase
         $tasks =  array($task1);
         $taskData->setTasks($tasks);
         $result = $this->instance->cellsTaskPostRunTask($taskData);
-        $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
-        $this->assertEquals("Split workbook task succeed to run.\nSplit workbook task succeed to run.\n", $json->Description);
+        $this->assertEquals("Split workbook task succeed to run.\nSplit workbook task succeed to run.\n", $result['Description']);
     }
 }

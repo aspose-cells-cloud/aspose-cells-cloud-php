@@ -91,14 +91,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsDeleteWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartsDeleteWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsDeleteWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartsDeleteWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartsDeleteWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -405,14 +414,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsDeleteWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartsDeleteWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -425,15 +435,16 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsDeleteWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,13 +514,14 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartsDeleteWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartsDeleteWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -526,14 +538,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -579,11 +592,12 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -614,6 +628,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -718,14 +736,15 @@ class CellsChartsApi
      * @param  string $name Workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder = null)
+    public function cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsDeleteWorksheetClearChartsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsChartsDeleteWorksheetClearChartsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -737,15 +756,16 @@ class CellsChartsApi
      * @param  string $name Workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsDeleteWorksheetClearChartsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsChartsDeleteWorksheetClearChartsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -814,13 +834,14 @@ class CellsChartsApi
      * @param  string $name Workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetClearChartsAsync($name, $sheet_name, $folder = null)
+    public function cellsChartsDeleteWorksheetClearChartsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsChartsDeleteWorksheetClearChartsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsChartsDeleteWorksheetClearChartsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -836,14 +857,15 @@ class CellsChartsApi
      * @param  string $name Workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetClearChartsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsChartsDeleteWorksheetClearChartsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -888,11 +910,12 @@ class CellsChartsApi
      * @param  string $name Workbook name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder = null)
+    protected function cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -917,6 +940,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1014,14 +1041,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartsResponse
      */
-    public function cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -1034,15 +1062,16 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1112,13 +1141,14 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetDeleteChartAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetDeleteChartAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1135,14 +1165,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1188,11 +1219,12 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1223,6 +1255,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1329,14 +1365,15 @@ class CellsChartsApi
      * @param  int $chart_number The chart number. (required)
      * @param  string $format The exported file format. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format = null, $folder = null)
+    public function cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsGetWorksheetChartWithHttpInfo($name, $sheet_name, $chart_number, $format, $folder);
+        list($response) = $this->cellsChartsGetWorksheetChartWithHttpInfo($name, $sheet_name, $chart_number, $format, $folder, $storage);
         return $response;
     }
 
@@ -1350,15 +1387,16 @@ class CellsChartsApi
      * @param  int $chart_number The chart number. (required)
      * @param  string $format The exported file format. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsGetWorksheetChartWithHttpInfo($name, $sheet_name, $chart_number, $format = null, $folder = null)
+    public function cellsChartsGetWorksheetChartWithHttpInfo($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format, $folder);
+        $request = $this->cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1429,13 +1467,14 @@ class CellsChartsApi
      * @param  int $chart_number The chart number. (required)
      * @param  string $format The exported file format. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartAsync($name, $sheet_name, $chart_number, $format = null, $folder = null)
+    public function cellsChartsGetWorksheetChartAsync($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage = null)
     {
-        return $this->cellsChartsGetWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_number, $format, $folder)
+        return $this->cellsChartsGetWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_number, $format, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1453,14 +1492,15 @@ class CellsChartsApi
      * @param  int $chart_number The chart number. (required)
      * @param  string $format The exported file format. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_number, $format = null, $folder = null)
+    public function cellsChartsGetWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format, $folder);
+        $request = $this->cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1507,11 +1547,12 @@ class CellsChartsApi
      * @param  int $chart_number The chart number. (required)
      * @param  string $format The exported file format. (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format = null, $folder = null)
+    protected function cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1546,6 +1587,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1651,14 +1696,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\LegendResponse
      */
-    public function cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsGetWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartsGetWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -1671,15 +1717,16 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\LegendResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsGetWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
-        $request = $this->cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1749,13 +1796,14 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartsGetWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartsGetWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1772,14 +1820,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
-        $request = $this->cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1825,11 +1874,12 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1860,6 +1910,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1965,14 +2019,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TitleResponse
      */
-    public function cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsGetWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartsGetWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -1985,15 +2040,16 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TitleResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsGetWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
-        $request = $this->cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2063,13 +2119,14 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartsGetWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartsGetWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2086,14 +2143,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsGetWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
-        $request = $this->cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2139,11 +2197,12 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2174,6 +2233,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2278,14 +2341,15 @@ class CellsChartsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartsResponse
      */
-    public function cellsChartsGetWorksheetCharts($name, $sheet_name, $folder = null)
+    public function cellsChartsGetWorksheetCharts($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsGetWorksheetChartsWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsChartsGetWorksheetChartsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -2297,15 +2361,16 @@ class CellsChartsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsGetWorksheetChartsWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsChartsGetWorksheetChartsWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2374,13 +2439,14 @@ class CellsChartsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartsAsync($name, $sheet_name, $folder = null)
+    public function cellsChartsGetWorksheetChartsAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsChartsGetWorksheetChartsAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsChartsGetWorksheetChartsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2396,14 +2462,15 @@ class CellsChartsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsGetWorksheetChartsAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsChartsGetWorksheetChartsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder);
+        $request = $this->cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2448,11 +2515,12 @@ class CellsChartsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder = null)
+    protected function cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2477,6 +2545,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2575,14 +2647,15 @@ class CellsChartsApi
      * @param  int $chart_index chart_index (required)
      * @param  \Aspose\Cells\Cloud\Model\Chart $chart chart (optional)
      * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart = null, $folder = null)
+    public function cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsPostWorksheetChartWithHttpInfo($name, $sheet_name, $chart_index, $chart, $folder);
+        list($response) = $this->cellsChartsPostWorksheetChartWithHttpInfo($name, $sheet_name, $chart_index, $chart, $folder, $storage);
         return $response;
     }
 
@@ -2596,15 +2669,16 @@ class CellsChartsApi
      * @param  int $chart_index (required)
      * @param  \Aspose\Cells\Cloud\Model\Chart $chart (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPostWorksheetChartWithHttpInfo($name, $sheet_name, $chart_index, $chart = null, $folder = null)
+    public function cellsChartsPostWorksheetChartWithHttpInfo($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart, $folder);
+        $request = $this->cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2675,13 +2749,14 @@ class CellsChartsApi
      * @param  int $chart_index (required)
      * @param  \Aspose\Cells\Cloud\Model\Chart $chart (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPostWorksheetChartAsync($name, $sheet_name, $chart_index, $chart = null, $folder = null)
+    public function cellsChartsPostWorksheetChartAsync($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage = null)
     {
-        return $this->cellsChartsPostWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $chart, $folder)
+        return $this->cellsChartsPostWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $chart, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2699,14 +2774,15 @@ class CellsChartsApi
      * @param  int $chart_index (required)
      * @param  \Aspose\Cells\Cloud\Model\Chart $chart (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPostWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $chart = null, $folder = null)
+    public function cellsChartsPostWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart, $folder);
+        $request = $this->cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2753,11 +2829,12 @@ class CellsChartsApi
      * @param  int $chart_index (required)
      * @param  \Aspose\Cells\Cloud\Model\Chart $chart (optional)
      * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart = null, $folder = null)
+    protected function cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -2788,6 +2865,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -2897,14 +2978,15 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Legend $legend legend (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\LegendResponse
      */
-    public function cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend = null, $folder = null)
+    public function cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend, $folder);
+        list($response) = $this->cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend, $folder, $storage);
         return $response;
     }
 
@@ -2918,15 +3000,16 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Legend $legend (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\LegendResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null)
+    public function cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
-        $request = $this->cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend, $folder);
+        $request = $this->cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2997,13 +3080,14 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Legend $legend (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPostWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $legend = null, $folder = null)
+    public function cellsChartsPostWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage = null)
     {
-        return $this->cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend, $folder)
+        return $this->cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3021,14 +3105,15 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Legend $legend (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null)
+    public function cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
-        $request = $this->cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend, $folder);
+        $request = $this->cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3075,11 +3160,12 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Legend $legend (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend = null, $folder = null)
+    protected function cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3110,6 +3196,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3219,14 +3309,15 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TitleResponse
      */
-    public function cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder);
+        list($response) = $this->cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage);
         return $response;
     }
 
@@ -3240,15 +3331,16 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TitleResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
-        $request = $this->cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder);
+        $request = $this->cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3319,13 +3411,14 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPostWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPostWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
-        return $this->cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder)
+        return $this->cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3343,14 +3436,15 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
-        $request = $this->cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder);
+        $request = $this->cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3397,11 +3491,12 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    protected function cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3432,6 +3527,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3549,14 +3648,15 @@ class CellsChartsApi
      * @param  bool $is_auto_get_serial_name Specifies whether auto update serial name. (optional, default to true)
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartsResponse
      */
-    public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null)
+    public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder);
+        list($response) = $this->cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage);
         return $response;
     }
 
@@ -3578,15 +3678,16 @@ class CellsChartsApi
      * @param  bool $is_auto_get_serial_name Specifies whether auto update serial name. (optional, default to true)
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null)
+    public function cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder);
+        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3665,13 +3766,14 @@ class CellsChartsApi
      * @param  bool $is_auto_get_serial_name Specifies whether auto update serial name. (optional, default to true)
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetAddChartAsync($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null)
+    public function cellsChartsPutWorksheetAddChartAsync($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage = null)
     {
-        return $this->cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder)
+        return $this->cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3697,14 +3799,15 @@ class CellsChartsApi
      * @param  bool $is_auto_get_serial_name Specifies whether auto update serial name. (optional, default to true)
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null)
+    public function cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder);
+        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3759,11 +3862,12 @@ class CellsChartsApi
      * @param  bool $is_auto_get_serial_name Specifies whether auto update serial name. (optional, default to true)
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null)
+    protected function cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -3834,6 +3938,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -3931,14 +4039,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsPutWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder);
+        list($response) = $this->cellsChartsPutWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
 
@@ -3951,15 +4060,16 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPutWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsPutWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4029,13 +4139,14 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsPutWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
-        return $this->cellsChartsPutWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder)
+        return $this->cellsChartsPutWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4052,14 +4163,15 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null)
+    public function cellsChartsPutWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder);
+        $request = $this->cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4105,11 +4217,12 @@ class CellsChartsApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $chart_index The chart index. (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null)
+    protected function cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4140,6 +4253,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -4246,14 +4363,15 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TitleResponse
      */
-    public function cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder);
+        list($response) = $this->cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage);
         return $response;
     }
 
@@ -4267,15 +4385,16 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TitleResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
-        $request = $this->cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder);
+        $request = $this->cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4346,13 +4465,14 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPutWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
-        return $this->cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder)
+        return $this->cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4370,14 +4490,15 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    public function cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
-        $request = $this->cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder);
+        $request = $this->cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4424,11 +4545,12 @@ class CellsChartsApi
      * @param  int $chart_index The chart index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Title $title Chart title. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title = null, $folder = null)
+    protected function cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -4459,6 +4581,10 @@ class CellsChartsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

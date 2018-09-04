@@ -91,14 +91,15 @@ class CellsPicturesApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $picture_index Picture index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder = null)
+    public function cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesDeleteWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $folder);
+        list($response) = $this->cellsPicturesDeleteWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $folder, $storage);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class CellsPicturesApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $picture_index Picture index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesDeleteWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $folder = null)
+    public function cellsPicturesDeleteWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder);
+        $request = $this->cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class CellsPicturesApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $picture_index Picture index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesDeleteWorksheetPictureAsync($name, $sheet_name, $picture_index, $folder = null)
+    public function cellsPicturesDeleteWorksheetPictureAsync($name, $sheet_name, $picture_index, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesDeleteWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder)
+        return $this->cellsPicturesDeleteWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class CellsPicturesApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $picture_index Picture index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesDeleteWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder = null)
+    public function cellsPicturesDeleteWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder);
+        $request = $this->cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class CellsPicturesApi
      * @param  string $sheet_name The worsheet name. (required)
      * @param  int $picture_index Picture index (required)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder = null)
+    protected function cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -300,6 +305,10 @@ class CellsPicturesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -404,14 +413,15 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaaSposeResponse
      */
-    public function cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder = null)
+    public function cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesDeleteWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPicturesDeleteWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -423,15 +433,16 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaaSposeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesDeleteWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPicturesDeleteWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -500,13 +511,14 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesDeleteWorksheetPicturesAsync($name, $sheet_name, $folder = null)
+    public function cellsPicturesDeleteWorksheetPicturesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesDeleteWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPicturesDeleteWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,14 +534,15 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesDeleteWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPicturesDeleteWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaaSposeResponse';
-        $request = $this->cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -574,11 +587,12 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder = null)
+    protected function cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -603,6 +617,10 @@ class CellsPicturesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -700,14 +718,15 @@ class CellsPicturesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $picture_number The picture number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder = null)
+    public function cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_number, $folder);
+        list($response) = $this->cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_number, $folder, $storage);
         return $response;
     }
 
@@ -720,15 +739,16 @@ class CellsPicturesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $picture_number The picture number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_number, $folder = null)
+    public function cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_number, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder);
+        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -798,13 +818,14 @@ class CellsPicturesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $picture_number The picture number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesGetWorksheetPictureAsync($name, $sheet_name, $picture_number, $folder = null)
+    public function cellsPicturesGetWorksheetPictureAsync($name, $sheet_name, $picture_number, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_number, $folder)
+        return $this->cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_number, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -821,14 +842,15 @@ class CellsPicturesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $picture_number The picture number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_number, $folder = null)
+    public function cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_number, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder);
+        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -874,11 +896,12 @@ class CellsPicturesApi
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $picture_number The picture number. (required)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder = null)
+    protected function cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -909,6 +932,10 @@ class CellsPicturesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1013,14 +1040,15 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PicturesResponse
      */
-    public function cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder = null)
+    public function cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesGetWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder);
+        list($response) = $this->cellsPicturesGetWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
 
@@ -1032,15 +1060,16 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PicturesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesGetWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPicturesGetWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
-        $request = $this->cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1109,13 +1138,14 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesGetWorksheetPicturesAsync($name, $sheet_name, $folder = null)
+    public function cellsPicturesGetWorksheetPicturesAsync($name, $sheet_name, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesGetWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder)
+        return $this->cellsPicturesGetWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1131,14 +1161,15 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesGetWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder = null)
+    public function cellsPicturesGetWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
-        $request = $this->cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder);
+        $request = $this->cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1183,11 +1214,12 @@ class CellsPicturesApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder = null)
+    protected function cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1212,6 +1244,10 @@ class CellsPicturesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1310,14 +1346,15 @@ class CellsPicturesApi
      * @param  int $picture_index The picture&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Picture $picture Picture object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PictureResponse
      */
-    public function cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture = null, $folder = null)
+    public function cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture, $folder);
+        list($response) = $this->cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture, $folder, $storage);
         return $response;
     }
 
@@ -1331,15 +1368,16 @@ class CellsPicturesApi
      * @param  int $picture_index The picture&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Picture $picture Picture object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PictureResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null)
+    public function cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PictureResponse';
-        $request = $this->cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture, $folder);
+        $request = $this->cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1410,13 +1448,14 @@ class CellsPicturesApi
      * @param  int $picture_index The picture&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Picture $picture Picture object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesPostWorksheetPictureAsync($name, $sheet_name, $picture_index, $picture = null, $folder = null)
+    public function cellsPicturesPostWorksheetPictureAsync($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture, $folder)
+        return $this->cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1434,14 +1473,15 @@ class CellsPicturesApi
      * @param  int $picture_index The picture&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Picture $picture Picture object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null)
+    public function cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PictureResponse';
-        $request = $this->cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture, $folder);
+        $request = $this->cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1488,11 +1528,12 @@ class CellsPicturesApi
      * @param  int $picture_index The picture&#39;s index. (required)
      * @param  \Aspose\Cells\Cloud\Model\Picture $picture Picture object (optional)
      * @param  string $folder The document folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture = null, $folder = null)
+    protected function cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1523,6 +1564,10 @@ class CellsPicturesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params
@@ -1636,14 +1681,15 @@ class CellsPicturesApi
      * @param  int $lower_right_column The image low right column. (optional, default to 0)
      * @param  string $picture_path The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PicturesResponse
      */
-    public function cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null)
+    public function cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder);
+        list($response) = $this->cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage);
         return $response;
     }
 
@@ -1661,15 +1707,16 @@ class CellsPicturesApi
      * @param  int $lower_right_column The image low right column. (optional, default to 0)
      * @param  string $picture_path The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PicturesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null)
+    public function cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
-        $request = $this->cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder);
+        $request = $this->cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1744,13 +1791,14 @@ class CellsPicturesApi
      * @param  int $lower_right_column The image low right column. (optional, default to 0)
      * @param  string $picture_path The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesPutWorksheetAddPictureAsync($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null)
+    public function cellsPicturesPutWorksheetAddPictureAsync($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder)
+        return $this->cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1772,14 +1820,15 @@ class CellsPicturesApi
      * @param  int $lower_right_column The image low right column. (optional, default to 0)
      * @param  string $picture_path The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null)
+    public function cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
-        $request = $this->cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder);
+        $request = $this->cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1830,11 +1879,12 @@ class CellsPicturesApi
      * @param  int $lower_right_column The image low right column. (optional, default to 0)
      * @param  string $picture_path The picture path, if not provided the picture data is inspected in the request body. (optional)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null)
+    protected function cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1879,6 +1929,10 @@ class CellsPicturesApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
         }
 
         // path params

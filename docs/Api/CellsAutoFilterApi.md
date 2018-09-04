@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cellsAutoFilterDeleteWorksheetDateFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage)
 
 Removes a date filter.
 
@@ -45,9 +45,10 @@ $hour = 0; // int |
 $minute = 0; // int | 
 $second = 0; // int | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder);
+    $result = $apiInstance->cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterDeleteWorksheetDateFilter: ', $e->getMessage(), PHP_EOL;
@@ -70,6 +71,7 @@ Name | Type | Description  | Notes
  **minute** | **int**|  | [optional] [default to 0]
  **second** | **int**|  | [optional] [default to 0]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -87,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterDeleteWorksheetFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria, $folder, $storage)
 
 Delete a filter for a filter column.
 
@@ -106,9 +108,10 @@ $sheet_name = "sheet_name_example"; // string |
 $field_index = 56; // int | 
 $criteria = "criteria_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria, $folder);
+    $result = $apiInstance->cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterDeleteWorksheetFilter: ', $e->getMessage(), PHP_EOL;
@@ -125,6 +128,7 @@ Name | Type | Description  | Notes
  **field_index** | **int**|  |
  **criteria** | **string**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -142,7 +146,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterGetWorksheetAutoFilter**
-> \Aspose\Cells\Cloud\Model\AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\AutoFilterResponse cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder, $storage)
 
 Get Auto filter Description
 
@@ -159,9 +163,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsAutoFilterApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterGetWorksheetAutoFilter: ', $e->getMessage(), PHP_EOL;
@@ -176,6 +181,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -193,7 +199,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPostWorksheetAutoFilterRefresh**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder, $storage)
 
 
 
@@ -210,9 +216,10 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsAutoFilterApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder);
+    $result = $apiInstance->cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPostWorksheetAutoFilterRefresh: ', $e->getMessage(), PHP_EOL;
@@ -227,6 +234,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -244,7 +252,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPostWorksheetMatchBlanks**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder, $storage)
 
 Match all blank cell in the list.
 
@@ -262,9 +270,10 @@ $name = "name_example"; // string |
 $sheet_name = "sheet_name_example"; // string | 
 $field_index = 56; // int | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder);
+    $result = $apiInstance->cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPostWorksheetMatchBlanks: ', $e->getMessage(), PHP_EOL;
@@ -280,6 +289,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  |
  **field_index** | **int**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -297,7 +307,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPostWorksheetMatchNonBlanks**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder, $storage)
 
 Match all not blank cell in the list.
 
@@ -315,9 +325,10 @@ $name = "name_example"; // string |
 $sheet_name = "sheet_name_example"; // string | 
 $field_index = 56; // int | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder);
+    $result = $apiInstance->cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPostWorksheetMatchNonBlanks: ', $e->getMessage(), PHP_EOL;
@@ -333,6 +344,7 @@ Name | Type | Description  | Notes
  **sheet_name** | **string**|  |
  **field_index** | **int**|  |
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -350,7 +362,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetColorFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage)
 
 
 
@@ -372,9 +384,10 @@ $color_filter = new \Aspose\Cells\Cloud\Model\ColorFilterRequest(); // \Aspose\C
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetColorFilter: ', $e->getMessage(), PHP_EOL;
@@ -394,6 +407,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -411,7 +425,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetCustomFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage)
 
 Filters a list with a custom criteria.
 
@@ -437,9 +451,10 @@ $criteria2 = "criteria2_example"; // string |
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetCustomFilter: ', $e->getMessage(), PHP_EOL;
@@ -463,6 +478,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -480,7 +496,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetDateFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage)
 
 add date filter in worksheet
 
@@ -508,9 +524,10 @@ $second = 0; // int |
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetDateFilter: ', $e->getMessage(), PHP_EOL;
@@ -536,6 +553,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -553,7 +571,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetDynamicFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage)
 
 
 
@@ -575,9 +593,10 @@ $dynamic_filter_type = "dynamic_filter_type_example"; // string |
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetDynamicFilter: ', $e->getMessage(), PHP_EOL;
@@ -597,6 +616,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -614,7 +634,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage)
 
 Adds a filter for a filter column.
 
@@ -636,9 +656,10 @@ $criteria = "criteria_example"; // string |
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetFilter: ', $e->getMessage(), PHP_EOL;
@@ -658,6 +679,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -675,7 +697,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetFilterTop10**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage)
 
 Filter the top 10 item in the list
 
@@ -699,9 +721,10 @@ $item_count = 56; // int |
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetFilterTop10: ', $e->getMessage(), PHP_EOL;
@@ -723,6 +746,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
@@ -740,7 +764,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsAutoFilterPutWorksheetIconFilter**
-> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder)
+> \Aspose\Cells\Cloud\Model\SaaSposeResponse cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage)
 
 Adds an icon filter.
 
@@ -763,9 +787,10 @@ $icon_id = 56; // int |
 $match_blanks = true; // bool | 
 $refresh = true; // bool | 
 $folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder);
+    $result = $apiInstance->cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoFilterApi->cellsAutoFilterPutWorksheetIconFilter: ', $e->getMessage(), PHP_EOL;
@@ -786,6 +811,7 @@ Name | Type | Description  | Notes
  **match_blanks** | **bool**|  | [optional]
  **refresh** | **bool**|  | [optional]
  **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
 
 ### Return type
 
