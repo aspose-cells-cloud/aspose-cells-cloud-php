@@ -121,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsOleObjectsGetWorksheetOleObject**
-> \SplFileObject cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $folder, $storage)
+> \SplFileObject cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $format, $folder, $storage)
 
 Get OLE object info.
 
@@ -138,11 +138,12 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsOleObjectsApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $object_number = 56; // int | The object number.
+$format = "format_example"; // string | The exported object format.
 $folder = "folder_example"; // string | The document folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $folder, $storage);
+    $result = $apiInstance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $format, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsOleObjectsApi->cellsOleObjectsGetWorksheetOleObject: ', $e->getMessage(), PHP_EOL;
@@ -157,6 +158,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| Worksheet name. |
  **object_number** | **int**| The object number. |
+ **format** | **string**| The exported object format. | [optional]
  **folder** | **string**| The document folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 

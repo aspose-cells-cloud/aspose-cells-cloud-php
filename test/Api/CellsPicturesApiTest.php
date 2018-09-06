@@ -128,10 +128,26 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $pictureIndex = 0;         
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,$folder);
-        $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
+        $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,null,$folder);
+        $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
+    }
+    
+    /**
+     * Test case for cellsPicturesGetWorksheetPicture format
+     *
+     * GRead worksheet picture by number..
+     *
+     */
+    public function testCellsPicturesGetWorksheetPictureFormat()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet6';
+        $pictureIndex = 0;
+        $folder = "Temp";
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,"png",$folder);
+        $this->assertEquals(17400, $result->getSize());
     }
 
     /**

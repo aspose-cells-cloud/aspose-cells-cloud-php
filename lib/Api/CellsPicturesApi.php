@@ -716,7 +716,8 @@ class CellsPicturesApi
      *
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
-     * @param  int $picture_number The picture number. (required)
+     * @param  int $picture_index The picture index. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -724,9 +725,9 @@ class CellsPicturesApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder = null, $storage = null)
+    public function cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_number, $folder, $storage);
+        list($response) = $this->cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $format, $folder, $storage);
         return $response;
     }
 
@@ -737,7 +738,8 @@ class CellsPicturesApi
      *
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
-     * @param  int $picture_number The picture number. (required)
+     * @param  int $picture_index The picture index. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -745,10 +747,10 @@ class CellsPicturesApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_number, $folder = null, $storage = null)
+    public function cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder, $storage);
+        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_index, $format, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -816,16 +818,17 @@ class CellsPicturesApi
      *
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
-     * @param  int $picture_number The picture number. (required)
+     * @param  int $picture_index The picture index. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesGetWorksheetPictureAsync($name, $sheet_name, $picture_number, $folder = null, $storage = null)
+    public function cellsPicturesGetWorksheetPictureAsync($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage = null)
     {
-        return $this->cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_number, $folder, $storage)
+        return $this->cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $format, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -840,17 +843,18 @@ class CellsPicturesApi
      *
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
-     * @param  int $picture_number The picture number. (required)
+     * @param  int $picture_index The picture index. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_number, $folder = null, $storage = null)
+    public function cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder, $storage);
+        $request = $this->cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_index, $format, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -894,14 +898,15 @@ class CellsPicturesApi
      *
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
-     * @param  int $picture_number The picture number. (required)
+     * @param  int $picture_index The picture index. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_number, $folder = null, $storage = null)
+    protected function cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -915,20 +920,24 @@ class CellsPicturesApi
                 'Missing the required parameter $sheet_name when calling cellsPicturesGetWorksheetPicture'
             );
         }
-        // verify the required parameter 'picture_number' is set
-        if ($picture_number === null) {
+        // verify the required parameter 'picture_index' is set
+        if ($picture_index === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $picture_number when calling cellsPicturesGetWorksheetPicture'
+                'Missing the required parameter $picture_index when calling cellsPicturesGetWorksheetPicture'
             );
         }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber}';
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
@@ -955,10 +964,10 @@ class CellsPicturesApi
             );
         }
         // path params
-        if ($picture_number !== null) {
+        if ($picture_index !== null) {
             $resourcePath = str_replace(
-                '{' . 'pictureNumber' . '}',
-                ObjectSerializer::toPathValue($picture_number),
+                '{' . 'pictureIndex' . '}',
+                ObjectSerializer::toPathValue($picture_index),
                 $resourcePath
             );
         }

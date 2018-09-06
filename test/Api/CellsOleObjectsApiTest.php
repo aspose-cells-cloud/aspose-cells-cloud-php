@@ -127,10 +127,26 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $oleObjectIndex = 0;         
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,$folder);
-        $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
+        $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,null,$folder);
+        $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
+    }
+    
+    /**
+     * Test case for cellsOleObjectsGetWorksheetOleObject format
+     *
+     * Get OLE object info..
+     *
+     */
+    public function testCellsOleObjectsGetWorksheetOleObjectFormat()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet6';
+        $oleObjectIndex = 0;
+        $folder = "Temp";
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,"png",$folder);
+        $this->assertEquals(646, $result->getSize());
     }
 
     /**

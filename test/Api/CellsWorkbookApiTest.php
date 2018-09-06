@@ -181,10 +181,26 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,$isAutoFit, $folder);
-        $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,null,$isAutoFit, $folder);
+        $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
+    }
+    
+    /**
+     * Test case for cellsWorkbookGetWorkBook format
+     *
+     * Read workbook info or export..
+     *
+     */
+    public function testCellsWorkbookGetWorkbookFormat()
+    {
+        $name ='Book1.xlsx';
+        $folder = "Temp";
+        $password = null;
+        $isAutoFit = 'true';
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"xlsx",$isAutoFit, $folder);
+        $this->assertGreaterThan(120000, $result->getSize());
     }
 
     /**
@@ -402,8 +418,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $outPath = null;
         CellsApiTestBase::ready( $name ,$folder);
         $result = $this->instance->cellsWorkbookPostWorkbookGetSmartMarkerResult($name, $xmlFile,  $folder,$outPath);
-        $contents = $result->fread($result->getSize());
-        $json = json_decode($contents);
+        $json = json_decode($result);
         $this->assertEquals(200, $json->StatusCode);
     }
 

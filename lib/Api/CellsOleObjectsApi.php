@@ -717,6 +717,7 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -724,9 +725,9 @@ class CellsOleObjectsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $folder = null, $storage = null)
+    public function cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $format = null, $folder = null, $storage = null)
     {
-        list($response) = $this->cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $folder, $storage);
+        list($response) = $this->cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $format, $folder, $storage);
         return $response;
     }
 
@@ -738,6 +739,7 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -745,10 +747,10 @@ class CellsOleObjectsApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $folder = null, $storage = null)
+    public function cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $format = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder, $storage);
+        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $format, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -817,15 +819,16 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsGetWorksheetOleObjectAsync($name, $sheet_name, $object_number, $folder = null, $storage = null)
+    public function cellsOleObjectsGetWorksheetOleObjectAsync($name, $sheet_name, $object_number, $format = null, $folder = null, $storage = null)
     {
-        return $this->cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $folder, $storage)
+        return $this->cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $format, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -841,16 +844,17 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $folder = null, $storage = null)
+    public function cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $format = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder, $storage);
+        $request = $this->cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $format, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -895,13 +899,14 @@ class CellsOleObjectsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name Worksheet name. (required)
      * @param  int $object_number The object number. (required)
+     * @param  string $format The exported object format. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $folder = null, $storage = null)
+    protected function cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $format = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -929,6 +934,10 @@ class CellsOleObjectsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);

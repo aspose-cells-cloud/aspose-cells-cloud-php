@@ -1549,17 +1549,20 @@ class CellsWorkbookApi
      *
      * @param  string $name The document name. (required)
      * @param  string $password The document password. (optional)
+     * @param  string $format The exported file format. (optional)
      * @param  bool $is_auto_fit Set document rows to be autofit. (optional, default to false)
+     * @param  bool $only_save_table Only save table data. (optional, default to false)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
+     * @param  string $out_path The document output folder. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorkbookGetWorkbook($name, $password = null, $is_auto_fit = 'false', $folder = null, $storage = null)
+    public function cellsWorkbookGetWorkbook($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage = null, $out_path = null)
     {
-        list($response) = $this->cellsWorkbookGetWorkbookWithHttpInfo($name, $password, $is_auto_fit, $folder, $storage);
+        list($response) = $this->cellsWorkbookGetWorkbookWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path);
         return $response;
     }
 
@@ -1570,18 +1573,21 @@ class CellsWorkbookApi
      *
      * @param  string $name The document name. (required)
      * @param  string $password The document password. (optional)
+     * @param  string $format The exported file format. (optional)
      * @param  bool $is_auto_fit Set document rows to be autofit. (optional, default to false)
+     * @param  bool $only_save_table Only save table data. (optional, default to false)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
+     * @param  string $out_path The document output folder. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookGetWorkbookWithHttpInfo($name, $password = null, $is_auto_fit = 'false', $folder = null, $storage = null)
+    public function cellsWorkbookGetWorkbookWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage = null, $out_path = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $is_auto_fit, $folder, $storage);
+        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1649,16 +1655,19 @@ class CellsWorkbookApi
      *
      * @param  string $name The document name. (required)
      * @param  string $password The document password. (optional)
+     * @param  string $format The exported file format. (optional)
      * @param  bool $is_auto_fit Set document rows to be autofit. (optional, default to false)
+     * @param  bool $only_save_table Only save table data. (optional, default to false)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
+     * @param  string $out_path The document output folder. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookGetWorkbookAsync($name, $password = null, $is_auto_fit = 'false', $folder = null, $storage = null)
+    public function cellsWorkbookGetWorkbookAsync($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage = null, $out_path = null)
     {
-        return $this->cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password, $is_auto_fit, $folder, $storage)
+        return $this->cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1673,17 +1682,20 @@ class CellsWorkbookApi
      *
      * @param  string $name The document name. (required)
      * @param  string $password The document password. (optional)
+     * @param  string $format The exported file format. (optional)
      * @param  bool $is_auto_fit Set document rows to be autofit. (optional, default to false)
+     * @param  bool $only_save_table Only save table data. (optional, default to false)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
+     * @param  string $out_path The document output folder. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password = null, $is_auto_fit = 'false', $folder = null, $storage = null)
+    public function cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage = null, $out_path = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $is_auto_fit, $folder, $storage);
+        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1727,14 +1739,17 @@ class CellsWorkbookApi
      *
      * @param  string $name The document name. (required)
      * @param  string $password The document password. (optional)
+     * @param  string $format The exported file format. (optional)
      * @param  bool $is_auto_fit Set document rows to be autofit. (optional, default to false)
+     * @param  bool $only_save_table Only save table data. (optional, default to false)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
+     * @param  string $out_path The document output folder. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookGetWorkbookRequest($name, $password = null, $is_auto_fit = 'false', $folder = null, $storage = null)
+    protected function cellsWorkbookGetWorkbookRequest($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage = null, $out_path = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -1755,8 +1770,16 @@ class CellsWorkbookApi
             $queryParams['password'] = ObjectSerializer::toQueryValue($password);
         }
         // query params
+        if ($format !== null) {
+            $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
+        // query params
         if ($is_auto_fit !== null) {
             $queryParams['isAutoFit'] = ObjectSerializer::toQueryValue($is_auto_fit);
+        }
+        // query params
+        if ($only_save_table !== null) {
+            $queryParams['onlySaveTable'] = ObjectSerializer::toQueryValue($only_save_table);
         }
         // query params
         if ($folder !== null) {
@@ -1765,6 +1788,10 @@ class CellsWorkbookApi
         // query params
         if ($storage !== null) {
             $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
+        }
+        // query params
+        if ($out_path !== null) {
+            $queryParams['outPath'] = ObjectSerializer::toQueryValue($out_path);
         }
 
         // path params

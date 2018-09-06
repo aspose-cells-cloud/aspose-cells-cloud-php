@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**cellsPicturesDeleteWorksheetPicture**](CellsPicturesApi.md#cellsPicturesDeleteWorksheetPicture) | **DELETE** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | Delete a picture object in worksheet
 [**cellsPicturesDeleteWorksheetPictures**](CellsPicturesApi.md#cellsPicturesDeleteWorksheetPictures) | **DELETE** /cells/{name}/worksheets/{sheetName}/pictures | Delete all pictures in worksheet.
-[**cellsPicturesGetWorksheetPicture**](CellsPicturesApi.md#cellsPicturesGetWorksheetPicture) | **GET** /cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber} | GRead worksheet picture by number.
+[**cellsPicturesGetWorksheetPicture**](CellsPicturesApi.md#cellsPicturesGetWorksheetPicture) | **GET** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | GRead worksheet picture by number.
 [**cellsPicturesGetWorksheetPictures**](CellsPicturesApi.md#cellsPicturesGetWorksheetPictures) | **GET** /cells/{name}/worksheets/{sheetName}/pictures | Read worksheet pictures.
 [**cellsPicturesPostWorksheetPicture**](CellsPicturesApi.md#cellsPicturesPostWorksheetPicture) | **POST** /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex} | Update worksheet picture by index.
 [**cellsPicturesPutWorksheetAddPicture**](CellsPicturesApi.md#cellsPicturesPutWorksheetAddPicture) | **PUT** /cells/{name}/worksheets/{sheetName}/pictures | Add a new worksheet picture.
@@ -121,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPicturesGetWorksheetPicture**
-> \SplFileObject cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder, $storage)
+> \SplFileObject cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_index, $format, $folder, $storage)
 
 GRead worksheet picture by number.
 
@@ -137,12 +137,13 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsPicturesApi(
 );
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
-$picture_number = 56; // int | The picture number.
+$picture_index = 56; // int | The picture index.
+$format = "format_example"; // string | The exported object format.
 $folder = "folder_example"; // string | The document folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_number, $folder, $storage);
+    $result = $apiInstance->cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_index, $format, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsPicturesApi->cellsPicturesGetWorksheetPicture: ', $e->getMessage(), PHP_EOL;
@@ -156,7 +157,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Document name. |
  **sheet_name** | **string**| Worksheet name. |
- **picture_number** | **int**| The picture number. |
+ **picture_index** | **int**| The picture index. |
+ **format** | **string**| The exported object format. | [optional]
  **folder** | **string**| The document folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 

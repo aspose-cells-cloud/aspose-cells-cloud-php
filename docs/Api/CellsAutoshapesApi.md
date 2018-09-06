@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **cellsAutoshapesGetWorksheetAutoshape**
-> \SplFileObject cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder, $storage)
+> \SplFileObject cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $format, $folder, $storage)
 
 Get autoshape info.
 
@@ -26,11 +26,12 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsAutoshapesApi(
 $name = "name_example"; // string | Document name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $autoshape_number = 56; // int | The autoshape number.
+$format = "format_example"; // string | Exported format.
 $folder = "folder_example"; // string | The document folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $folder, $storage);
+    $result = $apiInstance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $format, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsAutoshapesApi->cellsAutoshapesGetWorksheetAutoshape: ', $e->getMessage(), PHP_EOL;
@@ -45,6 +46,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Document name. |
  **sheet_name** | **string**| Worksheet name. |
  **autoshape_number** | **int**| The autoshape number. |
+ **format** | **string**| Exported format. | [optional]
  **folder** | **string**| The document folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 

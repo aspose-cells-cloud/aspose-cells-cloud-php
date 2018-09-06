@@ -294,7 +294,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorkbookGetWorkbook**
-> \SplFileObject cellsWorkbookGetWorkbook($name, $password, $is_auto_fit, $folder, $storage)
+> \SplFileObject cellsWorkbookGetWorkbook($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path)
 
 Read workbook info or export.
 
@@ -310,12 +310,15 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsWorkbookApi(
 );
 $name = "name_example"; // string | The document name.
 $password = "password_example"; // string | The document password.
+$format = "format_example"; // string | The exported file format.
 $is_auto_fit = false; // bool | Set document rows to be autofit.
+$only_save_table = false; // bool | Only save table data.
 $folder = "folder_example"; // string | The document folder.
 $storage = "storage_example"; // string | storage name.
+$out_path = "out_path_example"; // string | The document output folder.
 
 try {
-    $result = $apiInstance->cellsWorkbookGetWorkbook($name, $password, $is_auto_fit, $folder, $storage);
+    $result = $apiInstance->cellsWorkbookGetWorkbook($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorkbookApi->cellsWorkbookGetWorkbook: ', $e->getMessage(), PHP_EOL;
@@ -329,9 +332,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| The document name. |
  **password** | **string**| The document password. | [optional]
+ **format** | **string**| The exported file format. | [optional]
  **is_auto_fit** | **bool**| Set document rows to be autofit. | [optional] [default to false]
+ **only_save_table** | **bool**| Only save table data. | [optional] [default to false]
  **folder** | **string**| The document folder. | [optional]
  **storage** | **string**| storage name. | [optional]
+ **out_path** | **string**| The document output folder. | [optional]
 
 ### Return type
 
