@@ -7,8 +7,7 @@ use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\Api\OAuthApi;
-use Aspose\Storage\StorageApi;
-use Aspose\Storage\AsposeApp;
+use Aspose\Storage\Api;
 
 /**
  * Configuration Class Doc Comment
@@ -32,8 +31,8 @@ class CellsApiTestBase
     {
         if(self::$accessToken === ''){
             $grantType = "client_credentials";
-            $clientId = "66164C51-693E-4904-A121-545961673EC1";
-            $clientSecret = "536e76768419db9585afdd37bb5f7533";
+            $clientId = "your sid";
+            $clientSecret = "your key";
             $api = new OAuthApi();
             $config = $api->getConfig();
             $config->setHost('https://api.aspose.cloud');
@@ -44,10 +43,10 @@ class CellsApiTestBase
     }
     public static function ready($filename , $folder, $storageName = null)
     {
-        AsposeApp::$appSID = "66164C51-693E-4904-A121-545961673EC1";
-        AsposeApp::$apiKey = "536e76768419db9585afdd37bb5f7533";
-        $storage = new StorageApi();
-        
+        $config=new \Aspose\Storage\Configuration();
+        $config->setAppSid("your sid");
+        $config->setAppKey("your key");
+        $storage = new Api\StorageApi($config);
         $cwd = getcwd();
         $parents = "/";
         $png = "TestData/" . $filename;
@@ -60,8 +59,10 @@ class CellsApiTestBase
             }
             $parents = $parents . "../";
         }
-        
-        $result = $storage->PutCreate($Path= $folder.'/'.$filename, $versionId = null, $storage = $storageName, $file);
+
+        $fullName=$folder . "/" .  $filename;
+        $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file );
+        $result = $storage->PutCreate($putRequest);
         return $result;
     }
 }

@@ -111,7 +111,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         CellsApiTestBase::ready( $name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name,$autoshapeNumber, "png", $folder);
-        $this->assertEquals(661, $result->getSize());
+        $this->assertEquals(663, $result->getSize());
     }
 
     /**

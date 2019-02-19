@@ -524,6 +524,24 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(200, $result['code']);
     }
 
+        /**
+     * Test case for cellsGetCellHtmlString
+     *
+     * Get htmlstring value into cell.
+     *
+     */
+    public function testCellsGetCellHtmlString()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet1';
+        $cellName = 'C1'; 
+        $folder = "Temp";
+        CellsApiTestBase::ready( $name ,$folder);
+        $result =  $this->instance->cellsGetCellHtmlString($name, $sheet_name, $cellName,$folder);
+//        $this->assertGreaterThan(0,$result->getSize());
+//        $this->assertLessThan()
+    }
+
     /**
      * Test case for cellsPostSetCellHtmlString
      *
