@@ -6969,6 +6969,7 @@ class CellsWorkbookApi
      *
      * Convert workbook from request content to some format.
      *
+     * @param  string $workbook workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -6977,9 +6978,9 @@ class CellsWorkbookApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorkbookPutConvertWorkbook($format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbook($workbook, $format = null, $password = null, $out_path = null)
     {
-        list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($format, $password, $out_path);
+        list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($workbook, $format, $password, $out_path);
         return $response;
     }
 
@@ -6988,6 +6989,7 @@ class CellsWorkbookApi
      *
      * Convert workbook from request content to some format.
      *
+     * @param  string $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -6996,10 +6998,10 @@ class CellsWorkbookApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookPutConvertWorkbookWithHttpInfo($format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbookWithHttpInfo($workbook, $format = null, $password = null, $out_path = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookPutConvertWorkbookRequest($format, $password, $out_path);
+        $request = $this->cellsWorkbookPutConvertWorkbookRequest($workbook, $format, $password, $out_path);
 
         try {
             $options = $this->createHttpClientOption();
@@ -7065,6 +7067,7 @@ class CellsWorkbookApi
      *
      * Convert workbook from request content to some format.
      *
+     * @param  string $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -7072,9 +7075,9 @@ class CellsWorkbookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutConvertWorkbookAsync($format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbookAsync($workbook, $format = null, $password = null, $out_path = null)
     {
-        return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($format, $password, $out_path)
+        return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($workbook, $format, $password, $out_path)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7087,6 +7090,7 @@ class CellsWorkbookApi
      *
      * Convert workbook from request content to some format.
      *
+     * @param  string $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -7094,10 +7098,10 @@ class CellsWorkbookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($workbook, $format = null, $password = null, $out_path = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookPutConvertWorkbookRequest($format, $password, $out_path);
+        $request = $this->cellsWorkbookPutConvertWorkbookRequest($workbook, $format, $password, $out_path);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -7139,6 +7143,7 @@ class CellsWorkbookApi
     /**
      * Create request for operation 'cellsWorkbookPutConvertWorkbook'
      *
+     * @param  string $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -7146,8 +7151,14 @@ class CellsWorkbookApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookPutConvertWorkbookRequest($format = null, $password = null, $out_path = null)
+    protected function cellsWorkbookPutConvertWorkbookRequest($workbook, $format = null, $password = null, $out_path = null)
     {
+        // verify the required parameter 'workbook' is set
+        if ($workbook === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $workbook when calling cellsWorkbookPutConvertWorkbook'
+            );
+        }
 
         $resourcePath = '/cells/convert';
         $formParams = [];
@@ -7172,6 +7183,9 @@ class CellsWorkbookApi
 
         // body params
         $_tempBody = null;
+        if (isset($workbook)) {
+            $_tempBody = $workbook;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(

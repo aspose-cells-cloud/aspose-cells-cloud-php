@@ -516,14 +516,23 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCellsWorkbookPutConvertWorkBook()
     {
-        $name ='Book1.xlsx';
-        $folder = "Temp";
-        $format ='xlsx';       
+        $format ='pdf';
         $password = null;
         $outPath = null;      
-        CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsWorkbookPutConvertWorkBook($format, $password,  $outPath);
-        $this->assertEquals(6746, $result->getSize());
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->cellsWorkbookPutConvertWorkBook( $file ,$format, $password,  $outPath);
+        $this->assertEquals(119592, $result->getSize());
     }
 
     /**

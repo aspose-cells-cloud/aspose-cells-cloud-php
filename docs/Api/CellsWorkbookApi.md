@@ -1268,7 +1268,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorkbookPutConvertWorkbook**
-> \SplFileObject cellsWorkbookPutConvertWorkbook($format, $password, $out_path)
+> \SplFileObject cellsWorkbookPutConvertWorkbook($workbook, $format, $password, $out_path)
 
 Convert workbook from request content to some format.
 
@@ -1282,12 +1282,13 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsWorkbookApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$workbook = "B"; // string | 
 $format = "format_example"; // string | The format to convert.
 $password = "password_example"; // string | The workbook password.
 $out_path = "out_path_example"; // string | Path to save result
 
 try {
-    $result = $apiInstance->cellsWorkbookPutConvertWorkbook($format, $password, $out_path);
+    $result = $apiInstance->cellsWorkbookPutConvertWorkbook($workbook, $format, $password, $out_path);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsWorkbookApi->cellsWorkbookPutConvertWorkbook: ', $e->getMessage(), PHP_EOL;
@@ -1299,6 +1300,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **workbook** | **string**|  |
  **format** | **string**| The format to convert. | [optional]
  **password** | **string**| The workbook password. | [optional]
  **out_path** | **string**| Path to save result | [optional]

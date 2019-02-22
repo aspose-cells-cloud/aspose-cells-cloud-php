@@ -31,8 +31,8 @@ class CellsApiTestBase
     {
         if(self::$accessToken === ''){
             $grantType = "client_credentials";
-            $clientId = "your sid";
-            $clientSecret = "your key";
+            $clientId = "66164C51-693E-4904-A121-545961673EC1";
+            $clientSecret = "536e76768419db9585afdd37bb5f7533";
             $api = new OAuthApi();
             $config = $api->getConfig();
             $config->setHost('https://api.aspose.cloud');
@@ -44,8 +44,8 @@ class CellsApiTestBase
     public static function ready($filename , $folder, $storageName = null)
     {
         $config=new \Aspose\Storage\Configuration();
-        $config->setAppSid("your sid");
-        $config->setAppKey("your key");
+        $config->setAppSid("66164C51-693E-4904-A121-545961673EC1");
+        $config->setAppKey("536e76768419db9585afdd37bb5f7533");
         $storage = new Api\StorageApi($config);
         $cwd = getcwd();
         $parents = "/";
