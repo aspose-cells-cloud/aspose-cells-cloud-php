@@ -37,7 +37,7 @@ use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\OAuthApi;
 use \Aspose\Cells\Cloud\Api\CellsSaveAsApi;
 use \Aspose\Cells\Cloud\Model\PdfSaveOptions;
-
+use \Aspose\Cells\Cloud\Model\MarkdownSaveOptions;
 /**
  * CellsSaveAsApiTest Class Doc Comment
  *
@@ -98,7 +98,24 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
     }
-    
+    /**
+     * Test case for cellsSaveAsPostDocumentSaveAsMD
+     *
+     * Convert document and save result to storage..
+     *
+     */
+    public function testCellsSaveAsPostDocumentSaveAsMD()
+    {
+        $name ='Book1.xlsx';
+        $saveOptions = null;
+        $newfilename = "newbook.x.md";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+        $this->assertEquals(200, $result['code']);
+    }
     /**
      * Test case for cellsSaveAsPostDocumentSaveAs
      *
@@ -119,7 +136,24 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
     }
-    
+    /**
+     * Test case for cellsSaveAsPostDocumentSaveAs
+     *
+     * Convert document and save result to storage..
+     *
+     */
+    public function testCellsSaveAsPostDocumentSaveAsMDTest()
+    {
+        $name ='Book1.xlsx';
+        $saveOptions = new MarkdownSaveOptions();
+        $newfilename = "newbook.pdf.md";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+        $this->assertEquals(200, $result['code']);
+    }
     /**
      * Test case for cellsSaveAsPostDocumentSaveAs
      *

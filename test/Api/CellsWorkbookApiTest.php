@@ -204,6 +204,22 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for cellsWorkbookGetWorkBook format  MD
+     *
+     * Read workbook info or export..
+     *
+     */
+    public function testCellsWorkbookGetMDFormat()
+    {
+        $name ='Book1.xlsx';
+        $folder = "Temp";
+        $password = null;
+        $isAutoFit = 'true';
+        CellsApiTestBase::ready( $name ,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"md",$isAutoFit, $folder);
+        $this->assertGreaterThan(100, $result->getSize());
+    }
+    /**
      * Test case for cellsWorkbookGetWorkBookDefaultStyle
      *
      * Read workbook default style info..
@@ -532,7 +548,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
             $parents = $parents . "../";
         }
         $result = $this->instance->cellsWorkbookPutConvertWorkBook( $file ,$format, $password,  $outPath);
-        $this->assertEquals(119592, $result->getSize());
+        $this->assertEquals(125571, $result->getSize());
     }
 
     /**

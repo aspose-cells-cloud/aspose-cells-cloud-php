@@ -10,8 +10,8 @@
 	"homepage" : "https://github.com/aspose-cells-cloud/aspose-cells-cloud-php",
 	"license" : "MIT",
 	"authors" : [{
-			"name" : "nickliu",
-			"homepage" : "https://github.com/aspose-cells-cloud"
+			"name" : "aspose-cells-cloud",
+			"homepage" : "https://github.com/aspose-cells-cloud/aspose-cells-cloud-php"
 		}
 	],
 	"require" : {
@@ -20,7 +20,7 @@
 		"ext-json" : "*",
 		"ext-mbstring" : "*",
 		"guzzlehttp/guzzle" : "^6.2",
-		"aspose/storage-sdk-php" : "1.0.*",
+		"aspose/storage-sdk-php" : "18.4",
 		"friendsofphp/php-cs-fixer" : "~1.12"
 	},
 	"require-dev" : {
