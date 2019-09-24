@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsPivotTablesApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\PivotTableFieldRequest;
 use \Aspose\Cells\Cloud\Model\Style;
 use \Aspose\Cells\Cloud\Model\Font;
@@ -67,9 +66,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsPivotTablesApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -101,7 +98,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $request = new PivotTableFieldRequest();
         $request->setData( array(1));
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesDeletePivotTableField($name, $sheet_name, $pivotTableIndex, $pivotFieldType,$request,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -121,7 +118,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $request = new PivotTableFieldRequest();
         $request->setData( array(1));
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTable($name, $sheet_name, $pivotTableIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -140,7 +137,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $fieldIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivotTableIndex,  $fieldIndex,$needReCalculate,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -159,7 +156,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $fieldIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTableFilters($name, $sheet_name,$pivotTableIndex,$needReCalculate, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -178,7 +175,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $fieldIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTables($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -198,7 +195,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $pivotFieldType = "Row";
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesGetPivotTableField($name, $sheet_name,$pivotTableIndex, $pivotFieldIndex,$pivotFieldType,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -217,7 +214,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $fieldIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesGetWorksheetPivotTable($name, $sheet_name,$pivotTableIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -253,7 +250,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         
         $pivotFilter->setAutoFilter ($autoFilter);
 
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name,$pivotTableIndex, $pivotFilter, $needReCalculate,$folder);
         $result = $this->instance->cellsPivotTablesGetWorksheetPivotTableFilter($name, $sheet_name,$pivotTableIndex, $filterIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -273,7 +270,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $fieldIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesGetWorksheetPivotTableFilters($name, $sheet_name,$pivotTableIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -292,7 +289,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $fieldIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesGetWorksheetPivotTables($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -315,7 +312,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $style->getFont()->setSize (17);
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPostPivotTableCellStyle($name, $sheet_name, $pivotTableIndex ,$column,$row ,$style,$needReCalculate  ,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -337,7 +334,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $isHide = 'true';
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPostPivotTableFieldHideItem($name, $sheet_name, $pivotTableIndex ,$pivotFieldType,$fieldIndex ,$itemIndex,$isHide,$needReCalculate  ,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -357,7 +354,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $from = "Row";
         $to = "Column";
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPostPivotTableFieldMoveTo($name, $sheet_name, $pivotTableIndex ,$fieldIndex ,$from,$to ,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -378,7 +375,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $style->getFont()->setSize (17);
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPostPivotTableStyle($name, $sheet_name, $pivotTableIndex ,$style,$needReCalculate,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -396,7 +393,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $pivotTableIndex = 0;
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPostWorksheetPivotTableCalculate($name, $sheet_name, $pivotTableIndex ,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -417,7 +414,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $destCellName = 'C10';
         $needReCalculate = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPostWorksheetPivotTableMove($name, $sheet_name, $pivotTableIndex ,$column,$row ,$destCellName ,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -433,12 +430,12 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $name ='TestCase.xlsx';
         $sheet_name ='Sheet4';
         $pivotTableIndex = 0;
-        $pivotFieldType = "row";
+        $pivotFieldType = "Row";
         $request = new PivotTableFieldRequest();
         $request->setData( array(1));
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsPivotTablesPutPivotTableField($name, $sheet_name, $pivotTableIndex, $pivotFieldType,$request,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsPivotTablesPutPivotTableField($name, $sheet_name, $pivotTableIndex, $pivotFieldType,$request,null,$folder);
         $this->assertEquals(200, $result['code']);
     }
 
@@ -462,7 +459,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $tableName = "TestPivot";
         $useSameSource = 'true';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, null, $folder,null, $sourceData,$destCellName,$tableName,$useSameSource);
         $this->assertEquals(200, $result['code']);
     }
@@ -497,7 +494,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $autoFilter->FilterColumns = array ( $filterColumn);
         $pivotFilter->setAutoFilter ($autoFilter);
 
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name,$pivotTableIndex, $pivotFilter, $needReCalculate,$folder);
         $this->assertEquals(200, $result['code']);    
     }

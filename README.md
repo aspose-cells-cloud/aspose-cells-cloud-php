@@ -1,75 +1,113 @@
-# Aspose.Cells Cloud SDK for PHP
+# Aspose.Cells Cloud SDK for PHP [![NuGet](https://img.shields.io/nuget/v/Aspose.Cells-Cloud.svg)](https://www.nuget.org/packages/Aspose.Cells-Cloud/)
+
+- API version: 3.0
+- SDK version: 19.9
+
 This repository contains Aspose.Cells Cloud SDK for PHP source code. This SDK allows you to work with Aspose.Cells Cloud REST APIs in your PHP applications quickly and easily, with zero initial cost.
 
-## Key Features
-* Convert spreadsheets to different formats
-* Create spreadsheets from templates, XML or smart markers
-* Split spreadsheets to single worksheet spreadsheets
-* Manipulate rows, columns, cells & data
-* Set complex formulae
-* Extract charts, pictures, shapes & other objects as images
-* Export worksheets to images
+
+
+# Key Features
+
+- Conversion between various document-related formats (20+ formats supported), including PDF<->Excel conversion
+
+- Splitting Excel documents
+
+- Accessing Excel document metadata and statistics
+
+- Find and replace
+
+- Watermarks and protection
+
+- Full read & write access to Cells Object Model, including workbook, worksheet, cell, shapes, tables, list object ,ole Object,headers/footers and many others
+
+  
 
 See [API Reference](https://apireference.aspose.cloud/cells/) for full API specification.
 
-## How to use the SDK?
-The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/cells-sdk-php) (recommended).
+
+
+# Storage API support
+
+#### Since version 19.9 SDK includes support of storage operations for better user experience and unification, so now there's no need to use 2 different SDKs!
+
+It gives you an ability to:
+
+- Upload, download, copy, move and delete files, including versions handling (if you are using Cloud storage that supports this feature - true by default)
+- Create, copy, move and delete folders
+- Copy and move files and folders accross separate storages in scope of a single operation
+- Check if certain file, folder or storage exists
+
+# Licensing
+
+All Aspose.Cells Cloud SDKs are licensed under [MIT License](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE).
+
+
+
+# How to use the SDK?
+
+The complete source code is available in this repository folder. You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/cells-sdk-php) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/display/cellscloud/Available+SDKs).
+
+ 
 
 ### Prerequisites
 
-To use Aspose Cells for Cloud PHP SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+ 
+
+To use Aspose Cells Cloud SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+
+ 
 
 ### Installation
 
 #### Via Composer:
-*cells-sdk-php* is available on Packagist as the
-[`cells-sdk-php`](https://packagist.org/packages/aspose/cells-sdk-php) package. Run the following command:
-```bash
+
+*cells-sdk-php* is available on Packagist as the [`cells-sdk-php`](https://packagist.org/packages/aspose/cells-sdk-php) package. Run the following command:
+
+```
 composer require aspose/cells-sdk-php
 ```
 
 To use the SDK, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
 
-```php
+```
 require_once('vendor/autoload.php');
 ```
 
+
+
 ### Sample usage
 
-```php
-namespace Aspose\Cells\Cloud;
+ 
 
-require_once('vendor\autoload.php');
-use Aspose\Cells\Cloud\Api\OAuthApi;
-use Aspose\Cells\Cloud\Api\CellsSaveAsApi;
-
-$grantType = "client_credentials";
-$clientId = "your clientId";
-$clientSecret = "your clientSecret";
-$api = new OAuthApi();
-$config = $api->getConfig();
-$config->setHost('https://api.aspose.cloud');
-$accessTokenResponse = $api->oAuthPost($grantType, $clientId, $clientSecret);
-
-$saveAsAPI = new CellsSaveAsApi();
-$config = $saveAsAPI->getConfig();
-$config->setAccessToken($accessTokenResponse->getAccessToken());
-
-$name ='Book1.xlsx';
-$saveOptions = null;
-$newfilename = "newbook.xlsx";
-$isAutoFitRows= 'true';
-$isAutoFitColumns= 'true';
-$folder = "Temp";
-
-$result = $saveAsAPI->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+```
+        $saveAsAPI = new CellsApi("appsid","appkey");
+        $name ='Book1.xlsx';
+        $saveOptions = null;
+        $newfilename = "newbook.xlsx";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        $result = $saveAsAPI->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns,$folder);
 ```
 
-## Dependencies
-- PHP 5.6 or later
-- referenced packages (see [here](composer.json) for more details)
+# Tests
 
-## Contact Us
-Your feedback is very important to us. Please feel free to contact us using our [Support Forums](https://forum.aspose.cloud/c/cells).
+[Tests](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/test/Api) contain various examples of using the SDK.
 
 
+
+# Contact Us
+
+Your feedback is very important to us. Please feel free to contact via
+
+- [**Free Support Forum**](https://forum.aspose.cloud/c/cells)
+- [**Paid Support Helpdesk**](https://helpdesk.aspose.cloud/)
+
+# Resources
+
+- [**Web API reference**](https://apireference.aspose.cloud/cells/)
+- [**Website**](https://www.aspose.cloud)
+- [**Product Home**](https://products.aspose.cloud/cells)
+- [**Documentation**](https://docs.aspose.cloud/display/cellscloud/Home)
+- [**Blog**](https://blog.aspose.cloud/category/cells/)

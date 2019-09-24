@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsPageBreaksApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 
 /**
  * CellsPageBreaksApiTest Class Doc Comment
@@ -60,9 +59,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsPageBreaksApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -91,7 +88,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksDeleteHorizontalPageBreak($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -108,7 +105,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $row = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksDeleteHorizontalPageBreaks($name, $sheet_name,$row,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -125,7 +122,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksDeleteVerticalPageBreak($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -142,7 +139,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $column = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksDeleteVerticalPageBreaks($name, $sheet_name,$column,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -159,7 +156,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksGetHorizontalPageBreak($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -176,7 +173,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';  
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksGetHorizontalPageBreaks($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -193,7 +190,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksGetVerticalPageBreak($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -210,7 +207,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksGetVerticalPageBreaks($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -231,7 +228,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $startColumn = 1;  
         $endColumn = 1;      
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksPutHorizontalPageBreak($name, $sheet_name, $cellname,$row, $column ,$startColumn,$endColumn,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -252,7 +249,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
         $startRow = 1;  
         $endRow = 1;      
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageBreaksPutVerticalPageBreak($name, $sheet_name, $cellname,$row, $column ,$startRow,$endRow,$folder);
         $this->assertEquals(200, $result['code']);
     }

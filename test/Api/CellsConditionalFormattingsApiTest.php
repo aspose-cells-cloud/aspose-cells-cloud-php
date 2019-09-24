@@ -34,9 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
-use \Aspose\Cells\Cloud\Api\CellsConditionalFormattingsApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\FormatCondition;
 /**
  * CellsConditionalFormattingsApiTest Class Doc Comment
@@ -61,9 +59,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsConditionalFormattingsApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -92,7 +88,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsDeleteWorksheetConditionalFormatting($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -113,7 +109,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $totalRows = 4;
         $totalColumns = 6;     
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea($name, $sheet_name,$startRow,$startColumn, $totalRows,$totalColumns,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -129,7 +125,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';   
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsDeleteWorksheetConditionalFormattings($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -146,7 +142,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsGetWorksheetConditionalFormatting($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -163,7 +159,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsGetWorksheetConditionalFormattings($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -185,7 +181,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $formatcondition->setFormula1("v1");
         $formatcondition->setFormula2("v2");
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name,$cellArea,$formatcondition,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -208,7 +204,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $formula1 = "v1";     
         $formula2 = "v2";         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetFormatCondition($name, $sheet_name,$index , $cellArea,   $type,  $operatorType ,$formula1,$formula2, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -226,7 +222,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $index = 0;       
         $cellArea = "A1:C10";       
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetFormatConditionArea($name, $sheet_name, $index, $cellArea , $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -247,7 +243,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $formula1 = "v1";     
         $formula2 = "v2";         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetFormatConditionCondition($name, $sheet_name, $index , $type,  $operatorType ,$formula1,$formula2, $folder);
         $this->assertEquals(200, $result['code']);
     }

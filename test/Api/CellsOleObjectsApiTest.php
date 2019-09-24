@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsOleObjectsApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\OleObject;
 
 
@@ -62,9 +61,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsOleObjectsApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -93,7 +90,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsDeleteWorksheetOleObject($name, $sheet_name,$oleObjectIndex,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -109,7 +106,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsDeleteWorksheetOleObjects($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -126,7 +123,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,null,$folder);
         $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
@@ -144,9 +141,9 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,"png",$folder);
-        $this->assertEquals(646, $result->getSize());
+        $this->assertGreaterThan(0, $result->getSize());
     }
 
     /**
@@ -161,7 +158,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsGetWorksheetOleObjects($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -183,7 +180,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $ole->setHeight(90);
         $ole->setWidth(78);     
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsPostUpdateWorksheetOleObject($name, $sheet_name,$oleObjectIndex,$ole,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -207,7 +204,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $oleFile = 'OLEDoc.docx';  
         $imageFile = 'word.jpg';  
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole,$upperLeftRow,$upperLeftColumn ,$height,$width,$oleFile, $imageFile ,$folder);
         $this->assertEquals(200, $result['code']);
     }

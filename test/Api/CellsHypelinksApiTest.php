@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsHypelinksApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\Hyperlink;
 
 /**
@@ -61,9 +60,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsHypelinksApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -92,7 +89,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksDeleteWorkSheetHyperlink($name, $sheet_name,$hyperlinkIndex,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -109,7 +106,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksDeleteWorkSheetHyperlinks($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -125,7 +122,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksGetWorkSheetHyperlink($name, $sheet_name,$hyperlinkIndex,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -142,7 +139,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksGetWorkSheetHyperlinks($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -161,7 +158,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         $hyperlink = new Hyperlink();
         $hyperlink->setAddress('http://wwww.aspose.com');
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksPostWorkSheetHyperlink($name, $sheet_name, $hyperlinkIndex ,  $hyperlink , $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -182,7 +179,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $totalColumns = 3; 
         $address = 'http://www.aspose.com';    
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksPutWorkSheetHyperlink($name, $sheet_name,$firstRow,$firstColumn,$totalRows,$totalColumns,$address,$folder);
         $this->assertEquals(200, $result['code']);
     }

@@ -35,8 +35,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsWorksheetValidationsApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\Validation;
 
 /**
@@ -62,9 +61,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsWorksheetValidationsApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -93,7 +90,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $validationIndex = 0;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsDeleteWorkSheetValidation($name, $sheet_name, $validationIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -110,7 +107,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $validationIndex = 0;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsGetWorkSheetValidation($name, $sheet_name, $validationIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -127,7 +124,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $validationIndex = 0;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsGetWorkSheetValidations($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -146,7 +143,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $validation = new Validation();
         $validation->setIgnoreBlank ('true');
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsPostWorkSheetValidation($name, $sheet_name,$validationIndex, $validation,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -163,8 +160,8 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $range = 'A1:c10';      
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
-        $result = $this->instance->cellsWorksheetValidationsPutWorkSheetValidation($name, $sheet_name,$range,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorksheetValidationsPutWorkSheetValidation($name, $sheet_name,$range,null,$folder);
         $this->assertEquals(200, $result['code']);
     }
 }

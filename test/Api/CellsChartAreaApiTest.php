@@ -34,12 +34,8 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsChartAreaApi;
-// use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
-// use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
-// use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
-// use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
+
 /**
  * CellsChartAreaApiTest Class Doc Comment
  *
@@ -63,9 +59,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsChartAreaApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -94,7 +88,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartAreaGetChartArea($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -111,7 +105,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartAreaGetChartAreaBorder($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -128,7 +122,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartAreaGetChartAreaFillFormat($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
     }

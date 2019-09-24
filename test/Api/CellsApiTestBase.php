@@ -3,11 +3,8 @@
 namespace Aspose\Cells\Cloud;
 require_once('vendor\autoload.php');
 
-use Aspose\Cells\Cloud\Configuration;
-use Aspose\Cells\Cloud\ApiException;
-use Aspose\Cells\Cloud\ObjectSerializer;
-use Aspose\Cells\Cloud\Api\OAuthApi;
-use Aspose\Storage\Api;
+use \Aspose\Cells\Cloud\Api\CellsApi;
+
 
 /**
  * Configuration Class Doc Comment
@@ -33,7 +30,7 @@ class CellsApiTestBase
             $grantType = "client_credentials";
             $clientId = "66164C51-693E-4904-A121-545961673EC1";
             $clientSecret = "536e76768419db9585afdd37bb5f7533";
-            $api = new OAuthApi();
+            $api = new CellsApi();
             $config = $api->getConfig();
             $config->setHost('https://api.aspose.cloud');
             $AccessTokenResponse  =  $api->oAuthPost( $grantType, $clientId, $clientSecret);
@@ -41,12 +38,9 @@ class CellsApiTestBase
         }
         return self::$accessToken;
     }
-    public static function ready($filename , $folder, $storageName = null)
+
+    public static function ready($api , $filename , $folder, $storageName = null)
     {
-        $config=new \Aspose\Storage\Configuration();
-        $config->setAppSid("66164C51-693E-4904-A121-545961673EC1");
-        $config->setAppKey("536e76768419db9585afdd37bb5f7533");
-        $storage = new Api\StorageApi($config);
         $cwd = getcwd();
         $parents = "/";
         $png = "TestData/" . $filename;
@@ -60,9 +54,14 @@ class CellsApiTestBase
             $parents = $parents . "../";
         }
 
-        $fullName=$folder . "/" .  $filename;
-        $putRequest = new \Aspose\Storage\Model\Requests\PutCreateRequest($fullName, $file );
-        $result = $storage->PutCreate($putRequest);
+        if ( $folder == ""){
+            $fullName=$filename;
+        }else{
+            $fullName=$folder . "/" .  $filename;
+        }
+        $result = $api->uploadFile($fullName,$file);
         return $result;
     }
+
+
 }

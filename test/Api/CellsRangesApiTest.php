@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsRangesApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\Range;
 use \Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest;
 use \Aspose\Cells\Cloud\Model\RangeSetStyleRequest;
@@ -68,9 +67,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsRangesApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -98,7 +95,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         
         $firstRow = 0;
         $firstColumn = 0;
@@ -134,7 +131,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setFirstRow(1);
         $range->setRowCount(10);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value,$range,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -156,7 +153,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setFirstRow(1);
         $range->setRowCount(10);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name,$range,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -180,7 +177,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setFirstRow(1);
         $range->setRowCount(10);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name,$destRow, $destColumn,$range,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -209,7 +206,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setRowCount(10);
         $rangeOperate->setRange($range);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name,$rangeOperate,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -232,7 +229,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setFirstRow(1);
         $range->setRowCount(10);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value,$range,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -261,7 +258,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setRowCount(10);
         $rangeOperate->setRange($range);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name,$rangeOperate,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -284,7 +281,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setFirstRow(1);
         $range->setRowCount(10);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeUnMerge($name, $sheet_name,$range,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -309,7 +306,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $isConverted =true;
         $setStyle = true;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name,$value,$range,$isConverted, $setStyle,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -343,7 +340,7 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $rangeOperate->setSource($range);
         $rangeOperate->setTarget($range2);
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $rangeOperate,$folder);
         $this->assertEquals(200, $result['code']);
     }

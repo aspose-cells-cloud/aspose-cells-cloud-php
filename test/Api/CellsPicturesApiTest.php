@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsPicturesApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\Picture;
 
 /**
@@ -61,9 +60,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new  CellsPicturesApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -92,7 +89,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $index = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesDeleteWorkSheetPictures($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -109,7 +106,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $pictureIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesDeleteWorksheetPicture($name, $sheet_name,$pictureIndex,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -127,7 +124,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $pictureIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,null,$folder);
         $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
@@ -145,9 +142,9 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $pictureIndex = 0;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,"png",$folder);
-        $this->assertEquals(17400, $result->getSize());
+        $this->assertGreaterThan(0, $result->getSize());
     }
 
     /**
@@ -162,7 +159,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet6';
         $pictureIndex = 0;         
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesGetWorksheetPictures($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -181,7 +178,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $picture = new Picture ();
         $picture->setLeft(10);      
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesPostWorkSheetPicture($name, $sheet_name, $pictureIndex , $picture,$folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -203,7 +200,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $lowerRightColumn = 10;   
         $picturePath = 'WaterMark.png';        
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture,   $upperLeftRow,$upperLeftColumn ,$lowerRightRow,$lowerRightColumn,$picturePath, $folder);
         $this->assertEquals(200, $result['code']);
     }

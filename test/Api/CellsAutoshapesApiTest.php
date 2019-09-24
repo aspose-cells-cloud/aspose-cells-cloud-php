@@ -34,8 +34,7 @@ use \Aspose\Cells\Cloud\Configuration;
 use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
-use \Aspose\Cells\Cloud\Api\OAuthApi;
-use \Aspose\Cells\Cloud\Api\CellsAutoshapesApi;
+use \Aspose\Cells\Cloud\Api\CellsApi;
 
 /**
  * CellsAutoshapesApiTest Class Doc Comment
@@ -59,10 +58,8 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
      * Setup before running each test case
      */
     public function setUp()
-    {        
-        $this->instance = new CellsAutoshapesApi();
-        $config = $this->instance->getConfig();
-        $config ->setAccessToken(CellsApiTestBase::getAccessToken());
+    {
+        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
     }
 
     /**
@@ -91,7 +88,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet2';
         $autoshapeNumber = 4;  
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name,$autoshapeNumber, null, $folder);
         $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
@@ -109,7 +106,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet2';
         $autoshapeNumber = 4;
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name,$autoshapeNumber, "png", $folder);
         $this->assertEquals(663, $result->getSize());
     }
@@ -125,7 +122,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
         $folder = "Temp";
-        CellsApiTestBase::ready( $name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
     }
