@@ -24,20 +24,6 @@ class CellsApiTestBase
      *
      * @return string Access token for OAuth
      */
-    public static function getAccessToken()
-    {
-        if(self::$accessToken === ''){
-            $grantType = "client_credentials";
-            $clientId = "66164C51-693E-4904-A121-545961673EC1";
-            $clientSecret = "536e76768419db9585afdd37bb5f7533";
-            $api = new CellsApi();
-            $config = $api->getConfig();
-            $config->setHost('https://api.aspose.cloud');
-            $AccessTokenResponse  =  $api->oAuthPost( $grantType, $clientId, $clientSecret);
-            self::$accessToken = $AccessTokenResponse->getAccessToken();
-        }
-        return self::$accessToken;
-    }
 
     public static function ready($api , $filename , $folder, $storageName = null)
     {

@@ -551,8 +551,9 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $cellName = 'C1'; 
         $folder = "Temp";
+        $html_string = "https://api.aspose.cloud/v3.0/cells";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result =  $this->instance->cellsPostSetCellHtmlString($name, $sheet_name, $cellName,$folder);
+        $result =  $this->instance->cellsPostSetCellHtmlString($name, $sheet_name, $cellName,$html_string,$folder);
         $this->assertEquals(200, $result['code']);
     }
 

@@ -198,6 +198,7 @@ Method | HTTP request | Description
 [**cellsWorkbookPutDocumentProtectFromChanges**](CellsApi.md#cellsWorkbookPutDocumentProtectFromChanges) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
 [**cellsWorkbookPutWorkbookCreate**](CellsApi.md#cellsWorkbookPutWorkbookCreate) | **PUT** /cells/{name} | Create new workbook using deferent methods.
 [**cellsWorksheetValidationsDeleteWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
+[**cellsWorksheetValidationsDeleteWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**cellsWorksheetValidationsGetWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsGetWorksheetValidation) | **GET** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
 [**cellsWorksheetValidationsGetWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsGetWorksheetValidations) | **GET** /cells/{name}/worksheets/{sheetName}/validations | Get worksheet validations.
 [**cellsWorksheetValidationsPostWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsPostWorksheetValidation) | **POST** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Update worksheet validation by index.
@@ -2408,7 +2409,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsConditionalFormattingsPutWorksheetConditionalFormatting**
-> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $formatcondition, $folder, $storage)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $format_condition, $folder, $storage)
 
 Add a condition formatting.
 
@@ -2425,12 +2426,12 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
 $name = "name_example"; // string | 
 $sheet_name = "sheet_name_example"; // string | 
 $cell_area = "cell_area_example"; // string | 
-$formatcondition = new \Aspose\Cells\Cloud\Model\FormatCondition(); // \Aspose\Cells\Cloud\Model\FormatCondition | 
+$format_condition = new \Aspose\Cells\Cloud\Model\FormatCondition(); // \Aspose\Cells\Cloud\Model\FormatCondition | 
 $folder = "folder_example"; // string | 
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $formatcondition, $folder, $storage);
+    $result = $apiInstance->cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $format_condition, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsConditionalFormattingsPutWorksheetConditionalFormatting: ', $e->getMessage(), PHP_EOL;
@@ -2445,7 +2446,7 @@ Name | Type | Description  | Notes
  **name** | **string**|  |
  **sheet_name** | **string**|  |
  **cell_area** | **string**|  |
- **formatcondition** | [**\Aspose\Cells\Cloud\Model\FormatCondition**](../Model/FormatCondition.md)|  | [optional]
+ **format_condition** | [**\Aspose\Cells\Cloud\Model\FormatCondition**](../Model/FormatCondition.md)|  | [optional]
  **folder** | **string**|  | [optional]
  **storage** | **string**| storage name. | [optional]
 
@@ -7615,7 +7616,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostSetCellHtmlString**
-> \Aspose\Cells\Cloud\Model\CellResponse cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder, $storage)
+> \Aspose\Cells\Cloud\Model\CellResponse cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $html_string, $folder, $storage)
 
 Set htmlstring value into cell
 
@@ -7632,11 +7633,12 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
 $name = "name_example"; // string | Workbook name.
 $sheet_name = "sheet_name_example"; // string | Worksheet name.
 $cell_name = "cell_name_example"; // string | The cell name.
+$html_string = "B"; // string | 
 $folder = "folder_example"; // string | The workbook folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $folder, $storage);
+    $result = $apiInstance->cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $html_string, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsPostSetCellHtmlString: ', $e->getMessage(), PHP_EOL;
@@ -7651,6 +7653,7 @@ Name | Type | Description  | Notes
  **name** | **string**| Workbook name. |
  **sheet_name** | **string**| Worksheet name. |
  **cell_name** | **string**| The cell name. |
+ **html_string** | **string**|  |
  **folder** | **string**| The workbook folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 
@@ -10572,7 +10575,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorkbookPostImportData**
-> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookPostImportData($name, $importdata, $folder, $storage)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookPostImportData($name, $import_data, $folder, $storage)
 
 
 
@@ -10587,12 +10590,12 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
     new GuzzleHttp\Client()
 );
 $name = "name_example"; // string | 
-$importdata = new \Aspose\Cells\Cloud\Model\ImportOption(); // \Aspose\Cells\Cloud\Model\ImportOption | 
+$import_data = new \Aspose\Cells\Cloud\Model\ImportOption(); // \Aspose\Cells\Cloud\Model\ImportOption | 
 $folder = "folder_example"; // string | 
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorkbookPostImportData($name, $importdata, $folder, $storage);
+    $result = $apiInstance->cellsWorkbookPostImportData($name, $import_data, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsWorkbookPostImportData: ', $e->getMessage(), PHP_EOL;
@@ -10605,7 +10608,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**|  |
- **importdata** | [**\Aspose\Cells\Cloud\Model\ImportOption**](../Model/ImportOption.md)|  |
+ **import_data** | [**\Aspose\Cells\Cloud\Model\ImportOption**](../Model/ImportOption.md)|  |
  **folder** | **string**|  | [optional]
  **storage** | **string**| storage name. | [optional]
 
@@ -11266,6 +11269,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Aspose\Cells\Cloud\Model\ValidationResponse**](../Model/ValidationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsWorksheetValidationsDeleteWorksheetValidations**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorksheetValidationsDeleteWorksheetValidations($name, $sheet_name, $folder, $storage)
+
+Clear all validation in worksheet.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | Document name.
+$sheet_name = "sheet_name_example"; // string | Worksheet name.
+$folder = "folder_example"; // string | Document's folder.
+$storage = "storage_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsWorksheetValidationsDeleteWorksheetValidations($name, $sheet_name, $folder, $storage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsWorksheetValidationsDeleteWorksheetValidations: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Document name. |
+ **sheet_name** | **string**| Worksheet name. |
+ **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 
