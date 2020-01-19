@@ -38,8 +38,8 @@ use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\ColorFilterRequest;
 use \Aspose\Cells\Cloud\Model\Color;
 use \Aspose\Cells\Cloud\Model\CellsColor;
-// use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
-// use \Aspose\Cells\Cloud\Api\CellsAutoFilterApi;
+use \Aspose\Cells\Cloud\Model\ThemeColor;
+
 /**
  * CellsAutoFilterApiTest Class Doc Comment
  *
@@ -98,7 +98,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $hour = 10;
         $minute = 10;
         $second = 10;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name,$fieldIndex, $dateTimeGroupingType,$year,$month,$day,$hour,$minute,$second,$folder);
         $this->assertEquals(200, $result['code']);
@@ -117,7 +117,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $fieldIndex = 0;  
         $criteria ="Day";       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name,$fieldIndex, $criteria,$folder);
         $this->assertEquals(200, $result['code']);
@@ -133,7 +133,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -149,7 +149,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -166,7 +166,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $fieldIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name,$fieldIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -184,7 +184,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $fieldIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name,$fieldIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -205,13 +205,36 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $colorFilter = new ColorFilterRequest();
         $color = new Color();
         $color->setR(255);
+        $color->setA(255);
+        $color->setB(255);
+        $color->setG(0);
         $cellColor = new CellsColor();
+        $themeColor = new ThemeColor();
+        $themeColor->setColorType("Text2");
+        $themeColor->setTint(1.0);
+        $cellColor->setType("Automatic");
         $cellColor->setColor($color );
+        $cellColor->setThemeColor($themeColor );
         $colorFilter->setForegroundColor($cellColor);
+
+        $color1 = new Color();
+        $color1->setR(255);
+        $color1->setA(255);
+        $color1->setB(255);
+        $color1->setG(0);
+        $cellColor1 = new CellsColor();
+        $themeColor1 = new ThemeColor();
+        $themeColor1->setColorType("Text2");
+        $themeColor1->setTint(1.0);
+        $cellColor1->setType("Automatic");
+        $cellColor1->setColor($color1 );
+        $cellColor1->setThemeColor($themeColor1 );
+        $colorFilter->setBackgroundColor($cellColor1);
+
         $colorFilter->setPattern('Solid' );
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name,$range ,$fieldIndex, $colorFilter , $matchBlanks, $refresh, $folder);
         $this->assertEquals(200, $result['code']);
@@ -236,7 +259,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $criteria2 =  "test";
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name,$range ,$fieldIndex, $operatorType1 , $criteria1,$isAnd, $operatorType2 , $criteria2,$matchBlanks, $refresh, $folder);
         $this->assertEquals(200, $result['code']);
@@ -263,7 +286,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $second = 10;
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range,$fieldIndex, $dateTimeGroupingType,$year,$month,$day,$hour,$minute,$second,$matchBlanks, $refresh,$folder);
         $this->assertEquals(200, $result['code']);
@@ -284,7 +307,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $dynamicFilterType ="May";        
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range,$fieldIndex, $dynamicFilterType,$matchBlanks, $refresh,$folder);
         $this->assertEquals(200, $result['code']);
@@ -306,7 +329,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $criteria ="May";        
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range,$fieldIndex, $criteria,$matchBlanks, $refresh,$folder);
         $this->assertEquals(200, $result['code']);
@@ -328,7 +351,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $itemCount =1;        
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range,$fieldIndex, $isTop,$isPercent, $itemCount, $matchBlanks, $refresh,$folder);
         $this->assertEquals(200, $result['code']);
@@ -350,7 +373,7 @@ class CellsAutoFilterApiTest extends \PHPUnit_Framework_TestCase
         $iconId =1;        
         $matchBlanks ='true';
         $refresh ='true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range,$fieldIndex, $iconSetType,$iconId, $matchBlanks, $refresh,$folder);
         $this->assertEquals(200, $result['code']);

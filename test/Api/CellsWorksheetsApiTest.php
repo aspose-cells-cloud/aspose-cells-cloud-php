@@ -96,7 +96,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $protectParameter = new ProtectSheetParameter();
         $protectParameter->setPassword ("12345") ;
         $protectParameter->setProtectionType ("All") ;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteUnprotectWorksheet($name, $sheet_name, $protectParameter, $folder);
         $this->assertEquals(200, $result['code']);
@@ -112,7 +112,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteWorkSheetBackground($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -129,7 +129,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
         $cellName = "C1";      
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteWorkSheetComment($name, $sheet_name, $cellName, $folder);
         $this->assertEquals(200, $result['code']);
@@ -145,7 +145,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';   
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteWorkSheetComments($name, $sheet_name,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -161,7 +161,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';   
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteWorksheet($name, $sheet_name,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -182,7 +182,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $column = 1;
         $freezedRows = 2;
         $freezedColumns = 2;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteWorksheetFreezePanes($name, $sheet_name, $row, $column, $freezedRows, $freezedColumns, $folder);
         $this->assertEquals(200, $result['code']);
@@ -198,7 +198,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';   
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetNamedRanges($name,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -217,7 +217,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $verticalResolution =100;  
         $horizontalResolution =90;
         $format = "png";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $format, $verticalResolution, $horizontalResolution, $folder);
         $contents = $result->fread($result->getSize());
@@ -235,7 +235,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
         $formula = "=NOW()";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheetCalculateFormula($name, $sheet_name, $formula, $folder);
         $this->assertEquals(200, $result['code']);
@@ -251,7 +251,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
         $cellName = "B3";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheetComment($name, $sheet_name, $cellName, $folder);
         $this->assertEquals(200, $result['code']);
@@ -268,7 +268,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
         $cellName = "B3";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheetComments($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -285,7 +285,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
         $mergedCellIndex =1;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheetMergedCell($name, $sheet_name,$mergedCellIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -301,7 +301,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheetMergedCells($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -317,7 +317,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheetTextItems($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -333,7 +333,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1'; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsGetWorkSheets($name,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -354,7 +354,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $autoFitterOptions = null;
         $firstRow = 1;
         $lastRow = 19;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostAutofitWorksheetColumns($name, $sheet_name,$firstColumn, $lastColumn, $autoFitterOptions, $firstRow, $lastRow,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -375,7 +375,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $lastColumn = 10;
         $autoFitterOptions = new AutoFitterOptions();
         $autoFitterOptions->setAutoFitMergedCells('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostAutofitWorksheetRow($name, $sheet_name, $rowIndex,$firstColumn, $lastColumn, $autoFitterOptions,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -396,7 +396,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $onlyAuto = 'true';
         $autoFitterOptions = new AutoFitterOptions();
         $autoFitterOptions->setAutoFitMergedCells('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostAutofitWorksheetRows($name, $sheet_name,  $autoFitterOptions, $startRow,$endRow, $onlyAuto, $folder);
         $this->assertEquals(200, $result['code']);
@@ -417,7 +417,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $options->setColumnCharacterWidth ('true') ;
         $sourceWorkbook = 'Book1.xlsx';
         $sourceFolder = "Temp";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostCopyWorksheet($name, $sheet_name,  $sourceSheet, $options,$sourceWorkbook, $sourceFolder, $folder);
         $this->assertEquals(200, $result['code']);
@@ -436,7 +436,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $moving = new WorksheetMovingRequest();
         $moving->setDestinationWorksheet('Sheet3') ;
         $moving->setPosition("after");
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostMoveWorksheet($name, $sheet_name,  $moving,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -453,7 +453,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name = "Book1.xlsx";
         $sheet_name ='Sheet1'; 
         $newname = "renametest";     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostRenameWorksheet($name, $sheet_name,  $newname,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -472,7 +472,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet = new Worksheet();
         $sheet->setIndex(1) ;
         $sheet->setIsGridlinesVisible("true");
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostUpdateWorksheetProperty($name, $sheet_name,  $sheet,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -489,7 +489,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name = "Book1.xlsx";
         $sheet_name ='Sheet1'; 
         $value = 1;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostUpdateWorksheetZoom($name, $sheet_name,  $value,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -508,7 +508,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $cellName = "B3";
         $comment = new Comment();
         $comment->setAuthor("Roy");
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostWorkSheetComment($name, $sheet_name,  $cellName, $comment, $folder);
         $this->assertEquals(200, $result['code']);
@@ -525,7 +525,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $name = "Book1.xlsx";
         $sheet_name ='Sheet1'; 
         $text = "B3";       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostWorkSheetTextSearch($name, $sheet_name,  $text,  $folder);
         $this->assertEquals(200, $result['code']);
@@ -544,7 +544,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $cellArea = 'A1:E10';   
         $dataSorter = new DataSorter();
         $dataSorter->setCaseSensitive('true');    
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostWorksheetRangeSort($name, $sheet_name,  $cellArea, $dataSorter, $folder);
         $this->assertEquals(200, $result['code']);
@@ -562,7 +562,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1'; 
         $oldValue = "1234";    
         $newValue = "wewew4";  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostWorsheetTextReplace($name, $sheet_name,  $oldValue, $newValue, $folder);
         $this->assertEquals(200, $result['code']);
@@ -580,7 +580,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1'; 
         $position = 1;  
         $sheettype = "VB"; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutAddNewWorksheet($name, $sheet_name,  $position, $sheettype, $folder);
         $this->assertEquals(201, $result['code']);
@@ -598,7 +598,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1'; 
         $isVisible = 'true';
         $sheettype = "VB"; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutChangeVisibilityWorksheet($name, $sheet_name,  $isVisible, $folder);
         $this->assertEquals(200, $result['code']);
@@ -617,7 +617,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $protectParameter = new ProtectSheetParameter();
         $protectParameter->setPassword ("12345") ;
         $protectParameter->setProtectionType("All") ;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutProtectWorksheet($name, $sheet_name,  $protectParameter, $folder);
         $this->assertEquals(200, $result['code']);
@@ -636,7 +636,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1'; 
         $isVisible = 'true';
         $sheettype = "VB"; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         
         $cwd = getcwd();
@@ -668,7 +668,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $cellName = "C1";
         $comment = new Comment();
         $comment->setAuthor("Roy");
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutWorkSheetComment($name, $sheet_name,  $cellName, $comment, $folder);
         $this->assertEquals(200, $result['code']);
@@ -688,7 +688,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $column = 1;
         $freezedRows = 4;
         $freezedColumns = 5;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutWorksheetFreezePanes($name, $sheet_name,  $row, $column,$freezedRows,$freezedColumns, $folder);
         $this->assertEquals(200, $result['code']);

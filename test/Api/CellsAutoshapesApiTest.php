@@ -87,7 +87,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
         $autoshapeNumber = 4;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name,$autoshapeNumber, null, $folder);
         $json = json_decode($result);
@@ -105,7 +105,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
         $autoshapeNumber = 4;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name,$autoshapeNumber, "png", $folder);
         $this->assertEquals(663, $result->getSize());
@@ -121,7 +121,7 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);

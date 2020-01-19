@@ -93,7 +93,7 @@ class CellsTaskApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $task1 = new TaskDescription();
         $task1->setTaskType('SplitWorkbook');

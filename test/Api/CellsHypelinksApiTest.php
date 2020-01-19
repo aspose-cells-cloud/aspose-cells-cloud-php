@@ -88,7 +88,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksDeleteWorkSheetHyperlink($name, $sheet_name,$hyperlinkIndex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -105,7 +105,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksDeleteWorkSheetHyperlinks($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -121,7 +121,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksGetWorkSheetHyperlink($name, $sheet_name,$hyperlinkIndex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -138,7 +138,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksGetWorkSheetHyperlinks($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -155,7 +155,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $hyperlinkIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         $hyperlink = new Hyperlink();
         $hyperlink->setAddress('http://wwww.aspose.com');
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -178,7 +178,7 @@ class CellsHypelinksApiTest extends \PHPUnit_Framework_TestCase
         $totalRows = 2; 
         $totalColumns = 3; 
         $address = 'http://www.aspose.com';    
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsHypelinksPutWorkSheetHyperlink($name, $sheet_name,$firstRow,$firstColumn,$totalRows,$totalColumns,$address,$folder);
         $this->assertEquals(200, $result['code']);

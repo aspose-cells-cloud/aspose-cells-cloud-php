@@ -95,7 +95,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $encryption->setPassword("123456");
         $encryption->setKeyLength( 128);
         $encryption->setEncryptionType( "XOR");      
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookDeleteDecryptDocument($name, $encryption,$folder);
         $this->assertEquals(200, $result['code']);
@@ -110,7 +110,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookDeleteDocumentUnProtectFromChanges()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookDeleteDocumentUnProtectFromChanges($name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -125,7 +125,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookDeleteUnProtectDocument()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $protection = new WorkbookProtectionRequest();
         $protection->setPassword ("123");
         $protection->setProtectionType( "All");
@@ -144,7 +144,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $name_name = "Name_2";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookDeleteWorkbookName($name, $name_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -159,7 +159,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookDeleteWorkbookNames()
     {
         $name ='Book1.xlsx';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookDeleteWorkbookNames($name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -174,7 +174,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkbook()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -192,7 +192,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkbookFormat()
     {
         $name ='Book1.xlsx';
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -209,7 +209,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetMDFormat()
     {
         $name ='Book1.xlsx';
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -225,7 +225,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkbookDefaultStyle()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -242,7 +242,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkBookName()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $nameName = "Name_2";
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -260,7 +260,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $name_name = "Name_2";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookGetWorkbookNameValue($name, $name_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -276,7 +276,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkBookNames()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -294,7 +294,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkBookTextItems()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -311,7 +311,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookGetWorkbookSettings()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -327,7 +327,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostAutofitWorkbookRows()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $autoFitterOptions = null;
         $startRow = 1;
         $endRow = 100;
@@ -346,7 +346,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostEncryptDocument()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $encryption = new WorkbookEncryptionRequest();
         $encryption->setPassword("123456");
         $encryption->setKeyLength( 128);
@@ -368,7 +368,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostImportData()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $data = new ImportIntArrayOption();
         $data->setDestinationWorksheet('Sheet1');
         $data->setFirstColumn(1);
@@ -390,7 +390,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostProtectDocument()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $protection = new WorkbookProtectionRequest();
         $protection->setPassword("123");
         $protection->setProtectionType( "All");
@@ -408,7 +408,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbookCalculateFormula()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $options = new CalculationOptions ();
         $options->setIgnoreError( 'true');
         $ignoreError = 'true';
@@ -426,7 +426,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbookGetSmartMarkerResult()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $xmlFile = "ReportData.xml";
         $outPath = null;
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -444,7 +444,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbookSettings()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $settings = new WorkbookSettings();
         $settings->setAutoCompressPictures( 'true');
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -461,7 +461,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbookSplit()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $format = "png";
         $from = 1;
         $to = 3;
@@ -481,7 +481,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbooksMerge()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $formatmergeWith = "myDocument.xlsx";      
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookPostWorkbooksMerge($name, $formatmergeWith,  $folder);
@@ -497,7 +497,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbooksTextReplace()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $oldValue = "!22";
         $newValue = "22";    
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -514,7 +514,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPostWorkbooksTextSearch()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $text = "!test";      
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookPostWorkbooksTextSearch($name, $text,  $folder);
@@ -557,7 +557,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPutDocumentProtectFromChanges()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         $password = new PasswordRequest();
         $password->setPassword ("123456");      
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
@@ -574,7 +574,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPutWorkbookCreate()
     {
         $templateFile ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         date_default_timezone_set("UTC");
         $name = "NewBook".date("Y-m-d-h-i-sa").".xlsx";    
         $dataFile = "ReportData.xml";  

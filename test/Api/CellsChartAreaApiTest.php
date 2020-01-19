@@ -87,7 +87,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartAreaGetChartArea($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -104,7 +104,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartAreaGetChartAreaBorder($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -121,7 +121,7 @@ class CellsChartAreaApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartAreaGetChartAreaFillFormat($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);

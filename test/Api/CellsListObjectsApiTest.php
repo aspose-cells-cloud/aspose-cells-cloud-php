@@ -90,7 +90,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet7';
         $listObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsDeleteWorksheetListObject($name, $sheet_name , $listObjectIndex , $folder);
         $this->assertEquals(200, $result['code']);
@@ -107,7 +107,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet7';
         $listObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -124,7 +124,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet7';
         $listObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsGetWorksheetListObject($name, $sheet_name,$listObjectIndex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -141,7 +141,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet7';
         $listObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsGetWorksheetListObjects($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -160,7 +160,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $listObjectIndex = 0;   
         $listObject = new ListObject();
         $listObject->setShowHeaderRow('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsPostWorksheetListObject($name, $sheet_name,$listObjectIndex,$listObject,$folder);
         $this->assertEquals(200, $result['code']);
@@ -177,7 +177,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet7';
         $listObjectIndex = 0;   
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name,$listObjectIndex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -196,7 +196,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $listObjectIndex = 0;   
         $dataSorter = new DataSorter();
         $dataSorter->setCaseSensitive('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name,$listObjectIndex,$dataSorter,$folder);
         $this->assertEquals(200, $result['code']);
@@ -222,7 +222,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $request->setPivotFieldRows(array(1));
         $request->setSourceData('=Sheet2!A1:E8');
         $request->setUseSameSource('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name,$listObjectIndex,$destsheetName, $request,$folder);
         $this->assertEquals(200, $result['code']);
@@ -242,7 +242,7 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $startColumn =1; 
         $endRow = 2; 
         $endColumn = 3;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         $hasHeaders = 'true';  
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsListObjectsPutWorksheetListObject($name, $sheet_name,$startRow,$startColumn, $endRow, $endColumn,$hasHeaders,null,$folder,null);

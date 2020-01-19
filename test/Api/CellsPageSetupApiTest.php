@@ -88,7 +88,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupDeleteHeaderFooter($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -105,7 +105,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupGetFooter($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -122,7 +122,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupGetHeader($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -139,7 +139,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupGetPageSetup($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -158,7 +158,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $section = 0;    
         $script = "test";
         $isFirstPage = 'true';     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupPostFooter($name, $sheet_name,$section, $script ,  $isFirstPage,$folder);
         $this->assertEquals(200, $result['code']);
@@ -177,7 +177,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $section = 1;    
         $script = "test";
         $isFirstPage = 'true';     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupPostHeader($name, $sheet_name,$section, $script ,  $isFirstPage,$folder);
         $this->assertEquals(200, $result['code']);
@@ -195,7 +195,7 @@ class CellsPageSetupApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $pageSetup = new PageSetup(); 
         $pageSetup->setBlackAndWhite('true') ;        
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPageSetupPostPageSetup($name, $sheet_name, $pageSetup,$folder);
         $this->assertEquals(200, $result['code']);

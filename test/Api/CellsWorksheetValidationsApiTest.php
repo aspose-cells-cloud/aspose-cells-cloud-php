@@ -89,7 +89,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $validationIndex = 0;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsDeleteWorkSheetValidation($name, $sheet_name, $validationIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -106,7 +106,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $validationIndex = 0;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsGetWorkSheetValidation($name, $sheet_name, $validationIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -123,7 +123,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $validationIndex = 0;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsGetWorkSheetValidations($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -142,7 +142,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $validationIndex = 0;
         $validation = new Validation();
         $validation->setIgnoreBlank ('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsPostWorkSheetValidation($name, $sheet_name,$validationIndex, $validation,$folder);
         $this->assertEquals(200, $result['code']);
@@ -159,7 +159,7 @@ class CellsWorksheetValidationsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $range = 'A1:c10';      
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetValidationsPutWorkSheetValidation($name, $sheet_name,$range,null,$folder);
         $this->assertEquals(200, $result['code']);

@@ -90,7 +90,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 1;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsDeleteWorksheetChartLegend($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -107,7 +107,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 1;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsDeleteWorksheetChartTitle($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -124,7 +124,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 1;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -141,7 +141,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -158,7 +158,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
         $format = "png";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsGetWorksheetChart($name, $sheet_name,$chartIndex, $format, $folder);
         $this->assertTrue($result->getSize() > 0, "");
@@ -175,7 +175,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsGetWorksheetChartLegend($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -192,7 +192,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsGetWorksheetChartTitle($name, $sheet_name,$chartIndex, $folder);
         $this->assertEquals(200, $result['code']);
@@ -209,7 +209,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsGetWorksheetCharts($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -228,7 +228,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $chartIndex = 0;  
         $chart = new Chart();
         $chart->setAutoScaling('true');
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsPostWorksheetChart($name, $sheet_name, $chartIndex , $chart , $folder);
         $this->assertEquals(200, $result['code']);
@@ -247,7 +247,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $chartIndex = 0;  
         $legend = new Legend();
         $legend->setWidth(10);
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chartIndex , $legend , $folder);
         $this->assertEquals(200, $result['code']);
@@ -266,7 +266,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $chartIndex = 0;  
         $legend = new Legend();
         $legend->setWidth(10);
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chartIndex , $legend , $folder);
         $this->assertEquals(200, $result['code']);
@@ -292,7 +292,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $categoryData = null;  
         $isAutoGetSerialName = null;  
         $title = null;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsPutWorksheetAddChart($name, $sheet_name, $chartType , $upperLeftRow , $upperLeftColumn, $lowerRightRow, $lowerRightColumn,         $area, $isVertical, $categoryData,$isAutoGetSerialName,$title, $folder);
         $this->assertEquals(200, $result['code']);
@@ -309,7 +309,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet3';
         $chartIndex = 0;  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chartIndex , $folder);
         $this->assertEquals(200, $result['code']);
@@ -328,7 +328,7 @@ class CellsChartsApiTest extends \PHPUnit_Framework_TestCase
         $chartIndex = 0;  
         $title = new Title();
         $title->setText(10);
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chartIndex ,$title, $folder);
         $this->assertEquals(200, $result['code']);

@@ -89,7 +89,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsDeleteWorksheetOleObject($name, $sheet_name,$oleObjectIndex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -105,7 +105,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsDeleteWorksheetOleObjects($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -122,7 +122,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,null,$folder);
         $json = json_decode($result);
@@ -140,7 +140,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsGetWorksheetOleObject($name, $sheet_name,$oleObjectIndex,"png",$folder);
         $this->assertGreaterThan(0, $result->getSize());
@@ -157,7 +157,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $oleObjectIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsGetWorksheetOleObjects($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -179,7 +179,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $ole->setRight (10);
         $ole->setHeight(90);
         $ole->setWidth(78);     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsPostUpdateWorksheetOleObject($name, $sheet_name,$oleObjectIndex,$ole,$folder);
         $this->assertEquals(200, $result['code']);
@@ -203,7 +203,7 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $width = 80;  
         $oleFile = 'OLEDoc.docx';  
         $imageFile = 'word.jpg';  
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole,$upperLeftRow,$upperLeftColumn ,$height,$width,$oleFile, $imageFile ,$folder);
         $this->assertEquals(200, $result['code']);

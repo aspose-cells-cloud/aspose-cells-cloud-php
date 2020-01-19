@@ -87,7 +87,7 @@ class CellsPropertiesApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsPropertiesDeleteDocumentProperties()
     {
         $name ='Book1.xlsx';      
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPropertiesDeleteDocumentProperties($name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -103,7 +103,7 @@ class CellsPropertiesApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx'; 
         $propertyName = "Author";    
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPropertiesDeleteDocumentProperty($name, $propertyName ,$folder);
         $this->assertEquals(200, $result['code']);
@@ -119,7 +119,7 @@ class CellsPropertiesApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsPropertiesGetDocumentProperties()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPropertiesGetDocumentProperties($name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -135,7 +135,7 @@ class CellsPropertiesApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $propertyName = "Author";       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPropertiesGetDocumentProperty($name,$propertyName,$folder);
         $this->assertEquals(200, $result['code']);
@@ -154,7 +154,7 @@ class CellsPropertiesApiTest extends \PHPUnit_Framework_TestCase
         $property = new CellsDocumentProperty();  
         $property->setName("Author");
         $property->setValue("Val") ;   
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPropertiesPutDocumentProperty($name,$propertyName ,$property,$folder);
         $this->assertEquals(201, $result['code']);

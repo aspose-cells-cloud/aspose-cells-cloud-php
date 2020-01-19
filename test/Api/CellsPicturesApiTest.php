@@ -88,7 +88,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesDeleteWorkSheetPictures($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -105,7 +105,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $pictureIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesDeleteWorksheetPicture($name, $sheet_name,$pictureIndex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -123,7 +123,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $pictureIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,null,$folder);
         $json = json_decode($result);
@@ -141,7 +141,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $pictureIndex = 0;
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesGetWorksheetPicture($name, $sheet_name,$pictureIndex,"png",$folder);
         $this->assertGreaterThan(0, $result->getSize());
@@ -158,7 +158,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet6';
         $pictureIndex = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesGetWorksheetPictures($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -177,7 +177,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $pictureIndex = 0;   
         $picture = new Picture ();
         $picture->setLeft(10);      
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesPostWorkSheetPicture($name, $sheet_name, $pictureIndex , $picture,$folder);
         $this->assertEquals(200, $result['code']);
@@ -199,7 +199,7 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $lowerRightRow = 10;   
         $lowerRightColumn = 10;   
         $picturePath = 'WaterMark.png';        
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture,   $upperLeftRow,$upperLeftColumn ,$lowerRightRow,$lowerRightColumn,$picturePath, $folder);
         $this->assertEquals(200, $result['code']);

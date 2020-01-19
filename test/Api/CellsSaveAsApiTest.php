@@ -90,7 +90,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $newfilename = "newbook.xlsx";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
@@ -108,7 +108,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $newfilename = "newbook.x.md";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
@@ -128,7 +128,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $newfilename = "newbook.pdf";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
@@ -143,10 +143,11 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $saveOptions = new MarkdownSaveOptions();
+        $saveOptions->SaveFormat = "markdown";
         $newfilename = "newbook.pdf.md";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
@@ -166,7 +167,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $newfilename = "newbook.pdf";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
-        $folder = "Temp";
+        $folder = "PhpTest";
         $storage = "DropBox";
         CellsApiTestBase::ready( $this->instance, $name ,$folder, $storage);
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder, $storage);

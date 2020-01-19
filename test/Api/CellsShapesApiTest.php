@@ -88,7 +88,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';  
         $sheet_name ='Sheet1';    
         $shapeindex = 0;       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -105,7 +105,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';  
         $sheet_name ='Sheet1';    
         $shapeindex = 0;       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -122,7 +122,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';  
         $sheet_name ='Sheet1';    
         $shapeindex = 0;       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex,$folder);
         $this->assertEquals(200, $result['code']);
@@ -139,7 +139,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';  
         $sheet_name ='Sheet1';    
         $shapeindex = 0;       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsShapesGetWorksheetShapes($name, $sheet_name, $folder);
         $this->assertEquals(200, $result['code']);
@@ -158,7 +158,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $shapeindex = 0;   
         $dto = new Shape();
         $dto->setLowerRightColumn( 10);    
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex,$dto,$folder);
         $this->assertEquals(200, $result['code']);
@@ -181,7 +181,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $left= 10;
         $width= 100; 
         $height= 90; 
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsShapesPutWorksheetShape($name, $sheet_name, $drawingType,$upperLeftRow,$upperLeftColumn, $top, $left, $width, $height,$folder);
         $this->assertEquals(200, $result['code']);

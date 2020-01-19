@@ -87,7 +87,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsDeleteWorksheetConditionalFormatting($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
@@ -108,7 +108,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $startColumn = 1;
         $totalRows = 4;
         $totalColumns = 6;     
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea($name, $sheet_name,$startRow,$startColumn, $totalRows,$totalColumns,$folder);
         $this->assertEquals(200, $result['code']);
@@ -124,7 +124,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';   
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsDeleteWorksheetConditionalFormattings($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -141,7 +141,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsGetWorksheetConditionalFormatting($name, $sheet_name,$index,$folder);
         $this->assertEquals(200, $result['code']);
@@ -158,7 +158,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
         $index = 0;         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsGetWorksheetConditionalFormattings($name, $sheet_name,$folder);
         $this->assertEquals(200, $result['code']);
@@ -180,7 +180,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $formatcondition->setOperator("Between");
         $formatcondition->setFormula1("v1");
         $formatcondition->setFormula2("v2");
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name,$cellArea,$formatcondition,$folder);
         $this->assertEquals(200, $result['code']);
@@ -203,7 +203,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $operatorType = "Between";     
         $formula1 = "v1";     
         $formula2 = "v2";         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetFormatCondition($name, $sheet_name,$index , $cellArea,   $type,  $operatorType ,$formula1,$formula2, $folder);
         $this->assertEquals(200, $result['code']);
@@ -221,7 +221,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1';
         $index = 0;       
         $cellArea = "A1:C10";       
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetFormatConditionArea($name, $sheet_name, $index, $cellArea , $folder);
         $this->assertEquals(200, $result['code']);
@@ -242,7 +242,7 @@ class CellsConditionalFormattingsApiTest extends \PHPUnit_Framework_TestCase
         $operatorType = "Between";     
         $formula1 = "v1";     
         $formula2 = "v2";         
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsConditionalFormattingsPutWorksheetFormatConditionCondition($name, $sheet_name, $index , $type,  $operatorType ,$formula1,$formula2, $folder);
         $this->assertEquals(200, $result['code']);

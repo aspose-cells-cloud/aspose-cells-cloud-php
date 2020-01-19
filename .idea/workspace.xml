@@ -2,7 +2,271 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b6563b5-d18e-4b48-af9e-3499438944df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Api/CellsApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Api/CellsApi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ApiException.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ApiException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Configuration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/HeaderSelector.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HeaderSelector.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AboveAverage.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AboveAverage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AccessTokenResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AccessTokenResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Area.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Area.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoFilterResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoFilterResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoFitterOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoFitterOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoShape.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoShape.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoShapeResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoShapeResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoShapes.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoShapes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/AutoShapesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/AutoShapesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Border.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Border.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CalculationOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CalculationOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Cell.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Cell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellArea.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellArea.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellValue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Cells.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Cells.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsCloudResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsCloudResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsDocumentProperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsDocumentProperties.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsDocumentPropertiesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsDocumentPropertiesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsDocumentProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsDocumentProperty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsDocumentPropertyResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsDocumentPropertyResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsObjectOperateTaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsObjectOperateTaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CellsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CellsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Chart.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Chart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ChartArea.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ChartArea.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ChartAreaResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ChartAreaResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ChartFrame.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ChartFrame.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ChartOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ChartOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Charts.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Charts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ChartsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ChartsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ColorFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ColorFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ColorFilterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ColorFilterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ColorScale.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ColorScale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Column.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Column.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ColumnResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ColumnResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Columns.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Columns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ColumnsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ColumnsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CommentResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CommentResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CommentsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CommentsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConditionalFormatting.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConditionalFormatting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConditionalFormattingIcon.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConditionalFormattingIcon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConditionalFormattingResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConditionalFormattingResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConditionalFormattingValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConditionalFormattingValue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConditionalFormattings.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConditionalFormattings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConditionalFormattingsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConditionalFormattingsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ConvertTaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ConvertTaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CopyOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CopyOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CreatePivotTableRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CreatePivotTableRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CustomFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CustomFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/CustomParserConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/CustomParserConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/DataBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/DataBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/DataBarBorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/DataBarBorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/DataSorter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/DataSorter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/DifSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/DifSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/DiscUsage.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/DiscUsage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/DynamicFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/DynamicFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Error.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Error.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ErrorDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ErrorDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FileSource.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FileSource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FileVersion.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FileVersion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FileVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FileVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FilesList.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FilesList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FilesUploadResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FilesUploadResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FillFormat.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FillFormat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FillFormatResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FillFormatResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FilterColumn.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FilterColumn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Font.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Font.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FontSetting.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FontSetting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/FormatCondition.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/FormatCondition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/GradientFill.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/GradientFill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/GradientFillStop.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/GradientFillStop.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HorizontalPageBreak.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HorizontalPageBreak.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HorizontalPageBreakResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HorizontalPageBreakResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HorizontalPageBreaks.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HorizontalPageBreaks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HorizontalPageBreaksResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HorizontalPageBreaksResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HtmlSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HtmlSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Hyperlink.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Hyperlink.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HyperlinkResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HyperlinkResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Hyperlinks.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Hyperlinks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/HyperlinksResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/HyperlinksResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/IconFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/IconFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/IconSet.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/IconSet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImageSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImageSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportBatchDataOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportBatchDataOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportCSVDataOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportCSVDataOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportDataTaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportDataTaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportDoubleArrayOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportDoubleArrayOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportIntArrayOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportIntArrayOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ImportStringArrayOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ImportStringArrayOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Legend.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Legend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/LegendResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/LegendResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Line.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Line.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/LineFormat.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/LineFormat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/LineResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/LineResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Link.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Link.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/LinkElement.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/LinkElement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ListColumn.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ListColumn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ListObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ListObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ListObjectOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ListObjectOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ListObjectResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ListObjectResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ListObjects.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ListObjects.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ListObjectsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ListObjectsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MHtmlSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MHtmlSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MarkdownSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MarkdownSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MergedCell.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MergedCell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MergedCellResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MergedCellResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MergedCells.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MergedCells.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MergedCellsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MergedCellsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ModelInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ModelInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MultipleFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MultipleFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/MultipleFilters.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/MultipleFilters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Name.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Name.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/NameResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/NameResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Names.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Names.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/NamesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/NamesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/NegativeBarFormat.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/NegativeBarFormat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ObjectExist.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ObjectExist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OdsSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OdsSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OleObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OleObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OleObjectResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OleObjectResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OleObjects.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OleObjects.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OleObjectsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OleObjectsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OoxmlSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OoxmlSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OperateObject.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OperateObject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OperateObjectPosition.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OperateObjectPosition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/OperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/OperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PageBreakOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PageBreakOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PageSection.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PageSection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PageSectionsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PageSectionsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PageSetup.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PageSetup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PageSetupOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PageSetupOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PageSetupResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PageSetupResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PasswordRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PasswordRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PasteOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PasteOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PatternFill.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PatternFill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PdfSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PdfSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PdfSecurityOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PdfSecurityOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PicFormatOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PicFormatOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Picture.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Picture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PictureResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PictureResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Pictures.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Pictures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PicturesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PicturesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotField.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotField.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotFieldResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotFieldResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotFilterResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotFilterResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotFiltersResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotFiltersResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotTableFieldRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotTableFieldRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotTableOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotTableOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotTableResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotTableResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotTables.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotTables.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/PivotTablesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/PivotTablesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ProtectSheetParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ProtectSheetParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Range.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Range.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RangeCopyRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RangeCopyRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RangeSetOutlineBorderRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RangeSetOutlineBorderRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RangeSetStyleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RangeSetStyleRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RangeValueResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RangeValueResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Ranges.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Ranges.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RangesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RangesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ResultDestination.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ResultDestination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Row.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Row.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RowResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RowResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Rows.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Rows.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/RowsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/RowsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SaveResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SaveResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SaveResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SaveResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SaveResultTaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SaveResultTaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ShadowEffect.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ShadowEffect.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Shape.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Shape.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ShapeOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ShapeOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ShapeResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ShapeResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Shapes.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Shapes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ShapesResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ShapesResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SingleValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SingleValue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SingleValueResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SingleValueResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SmartMarkerTaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SmartMarkerTaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SolidFill.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SolidFill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SortKey.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SortKey.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SplitResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SplitResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SplitResultDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SplitResultDocument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SplitResultResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SplitResultResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SplitWorkbookTaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SplitWorkbookTaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SpreadsheetML2003SaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SpreadsheetML2003SaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/StorageExist.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/StorageExist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/StorageFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/StorageFile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Style.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Style.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/StyleResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/StyleResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/SvgSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/SvgSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TaskData.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TaskData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TaskDescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TaskDescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TaskParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TaskParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TextItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TextItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TextItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TextItems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TextItemsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TextItemsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TextOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TextOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TextureFill.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TextureFill.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ThemeColor.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ThemeColor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TilePicOption.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TilePicOption.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Title.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Title.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TitleResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TitleResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Top10.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Top10.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Top10Filter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Top10Filter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/TxtSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/TxtSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ValidationResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ValidationResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Validations.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Validations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ValidationsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ValidationsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/ValueType.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/ValueType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/VerticalPageBreak.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/VerticalPageBreak.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/VerticalPageBreakResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/VerticalPageBreakResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/VerticalPageBreaks.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/VerticalPageBreaks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/VerticalPageBreaksResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/VerticalPageBreaksResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Workbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Workbook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookEncryptionRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookEncryptionRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookProtectionRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookProtectionRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookReplaceResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookReplaceResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookSettingsOperateParameter.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookSettingsOperateParameter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorkbookSettingsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorkbookSettingsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Worksheet.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Worksheet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorksheetMovingRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorksheetMovingRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorksheetReplaceResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorksheetReplaceResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorksheetResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorksheetResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/Worksheets.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/Worksheets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/WorksheetsResponse.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/WorksheetsResponse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/XlsSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/XlsSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Model/XlsbSaveOptions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Model/XlsbSaveOptions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ObjectSerializer.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ObjectSerializer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsAutoFilterApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsAutoFilterApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsAutoshapesApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsAutoshapesApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsChartAreaApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsChartAreaApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsChartsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsChartsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsConditionalFormattingsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsConditionalFormattingsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsHypelinksApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsHypelinksApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsListObjectsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsListObjectsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsOleObjectsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsOleObjectsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsPageBreaksApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsPageBreaksApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsPageSetupApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsPageSetupApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsPicturesApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsPicturesApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsPivotTablesApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsPivotTablesApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsPropertiesApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsPropertiesApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsRangesApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsRangesApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsSaveAsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsSaveAsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsShapesApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsShapesApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsTaskApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsTaskApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsWorkbookApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsWorkbookApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsWorksheetValidationsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsWorksheetValidationsApiTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Api/CellsWorksheetsApiTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Api/CellsWorksheetsApiTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,43 +290,158 @@
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.47" value="1" />
+          <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="dist" value="1" />
           <entry key="md" value="2" />
-          <entry key="php" value="25" />
+          <entry key="php" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="25" />
+          <entry key="PHP" value="35" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="82" />
+          <entry key="php" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="82" />
+          <entry key="PHP" value="92" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Api/CellsApi.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/ApiException.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" selection-start-line="1" selection-end-line="22" selection-end-column="4" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Configuration.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/HeaderSelector.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/ObjectSerializer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Model/AboveAverage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Model/AccessTokenResponse.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+              <folding>
+                <element signature="e#6#1170#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Model/Area.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5073">
+              <folding>
+                <element signature="e#6#189#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/Api/CellsApiTestBase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="38" column="13" selection-start-line="35" selection-start-column="11" selection-end-line="38" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/Api/CellsApiTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="442" selection-start-line="442" selection-end-line="442" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -70,9 +449,14 @@
       <find>testCellsWorkbookGetMDFormat</find>
       <find>cellsListObjectsPutWorksheetListObject</find>
       <find>put</find>
+      <find>$folder = &quot;Temp&quot;;</find>
     </findStrings>
+    <replaceStrings>
+      <replace>$folder = &quot;PhpTest&quot;;</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>D:\Projects\GitHub\Aspose-Cells-Cloud\aspose-cells-cloud-php\test</dir>
+      <dir>D:\Projects\GitHub\Aspose-Cells-Cloud\aspose-cells-cloud-php\test\Api</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -83,7 +467,14 @@
       <list>
         <option value="$PROJECT_DIR$/test/Api/CellsSaveAsApiTest.php" />
         <option value="$PROJECT_DIR$/test/Api/CellsWorkbookApiTest.php" />
+        <option value="$PROJECT_DIR$/lib/ApiException.php" />
         <option value="$PROJECT_DIR$/lib/Api/CellsApi.php" />
+        <option value="$PROJECT_DIR$/lib/Configuration.php" />
+        <option value="$PROJECT_DIR$/lib/HeaderSelector.php" />
+        <option value="$PROJECT_DIR$/lib/ObjectSerializer.php" />
+        <option value="$PROJECT_DIR$/lib/Model/AboveAverage.php" />
+        <option value="$PROJECT_DIR$/lib/Model/AccessTokenResponse.php" />
+        <option value="$PROJECT_DIR$/test/Api/CellsApiTest.php" />
       </list>
     </option>
   </component>
@@ -155,7 +546,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,10 +553,27 @@
               <item name="aspose-cells-cloud-php" type="b2602c69:ProjectViewProjectNode" />
               <item name="aspose-cells-cloud-php" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="aspose-cells-cloud-php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aspose-cells-cloud-php" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aspose-cells-cloud-php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aspose-cells-cloud-php" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="aspose-cells-cloud-php" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aspose-cells-cloud-php" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,6 +607,10 @@
       <TestRunner directory="$PROJECT_DIR$/test/Api" />
       <method v="2" />
     </configuration>
+    <configuration name="CellsApiTest.testCellsPostGroupWorksheetColumns" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Aspose\Cells\Cloud\CellsApiTest" directory="$PROJECT_DIR$/test" file="$PROJECT_DIR$/test/Api/CellsApiTest.php" method="testCellsPostGroupWorksheetColumns" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="CellsWorkbookApiTest.testCellsWorkbookGetMDFormat" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Aspose\Cells\Cloud\CellsWorkbookApiTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/test/Api/CellsWorkbookApiTest.php" method="testCellsWorkbookGetMDFormat" scope="Method" use_alternative_configuration_file="true" />
       <method v="2" />
@@ -208,28 +619,24 @@
       <TestRunner class="Aspose\Cells\Cloud\CellsWorksheetsApiTest" directory="$PROJECT_DIR$/test" file="$PROJECT_DIR$/test/Api/CellsWorksheetsApiTest.php" method="testCellsWorksheetsGetWorkSheet" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$/test" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.phpunit.xml.dist" />
       <item itemvalue="PHPUnit.CellsWorkbookApiTest.testCellsWorkbookGetMDFormat" />
       <item itemvalue="PHPUnit.test" />
       <item itemvalue="PHPUnit.Api" />
       <item itemvalue="PHPUnit.CellsWorksheetsApiTest.testCellsWorksheetsGetWorkSheet" />
+      <item itemvalue="PHPUnit.CellsApiTest.testCellsPostGroupWorksheetColumns" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.test" />
+        <item itemvalue="PHPUnit.CellsApiTest.testCellsPostGroupWorksheetColumns" />
         <item itemvalue="PHPUnit.CellsWorksheetsApiTest.testCellsWorksheetsGetWorkSheet" />
         <item itemvalue="PHPUnit.CellsWorkbookApiTest.testCellsWorkbookGetMDFormat" />
         <item itemvalue="PHPUnit.Api" />
-        <item itemvalue="PHPUnit.phpunit.xml.dist" />
       </list>
     </recent_temporary>
   </component>
@@ -261,22 +668,11 @@
       <workItem from="1569311133007" duration="1072000" />
       <workItem from="1569738995528" duration="512000" />
       <workItem from="1569740178230" duration="618000" />
+      <workItem from="1579398535957" duration="3473000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CellsWorkbookApiTest_testCellsWorkbookGetMDFormat - 2019.06.19 at 09h 42m 05s.xml">
-      <configuration name="CellsWorkbookApiTest.testCellsWorkbookGetMDFormat" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="test - 2019.09.17 at 17h 34m 13s.xml">
-      <configuration name="test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Api - 2019.09.17 at 17h 34m 19s.xml">
-      <configuration name="Api" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="phpunit_xml_dist - 2019.09.17 at 17h 35m 37s.xml">
-      <configuration name="phpunit.xml.dist" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="Api - 2019.09.17 at 17h 36m 31s.xml">
       <configuration name="Api" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -295,9 +691,21 @@
     <history-entry file="test - 2019.09.29 at 14h 40m 14s.xml">
       <configuration name="test" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="test - 2020.01.19 at 10h 06m 33s.xml">
+      <configuration name="test" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test - 2020.01.19 at 10h 37m 15s.xml">
+      <configuration name="test" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CellsApiTest_testCellsPostGroupWorksheetColumns - 2020.01.19 at 10h 37m 31s.xml">
+      <configuration name="CellsApiTest.testCellsPostGroupWorksheetColumns" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="CellsApiTest_testCellsPostGroupWorksheetColumns - 2020.01.19 at 10h 37m 42s.xml">
+      <configuration name="CellsApiTest.testCellsPostGroupWorksheetColumns" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19526000" />
+    <option name="totallyTimeSpent" value="22999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,14 +717,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.2979744" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49809885" visible="true" weight="0.3011727" />
       <window_info id="Structure" order="1" sideWeight="0.50190115" side_tool="true" weight="0.2947761" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.43501613" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.43454936" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39957035" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -367,16 +775,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Api/OAuthApi.php" />
-    <entry file="file://$PROJECT_DIR$/test/Api/CellsApiTestBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="92" selection-start-line="35" selection-start-column="11" selection-end-line="38" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Api/CellsApi.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/Api/OAuthApiTest.php" />
     <entry file="file://$PROJECT_DIR$/test/Api/CellsWorksheetsApiTest.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -399,17 +797,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Configuration.php">
+    <entry file="file://$PROJECT_DIR$/lib/ApiException.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="90" column="7" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
+          <caret line="1" selection-start-line="1" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Api/CellsApi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Configuration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/HeaderSelector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ObjectSerializer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Model/AboveAverage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Model/AccessTokenResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="e#6#1170#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Model/Area.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5073">
+          <folding>
+            <element signature="e#6#189#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Api/CellsApiTestBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="38" column="13" selection-start-line="35" selection-start-column="11" selection-end-line="38" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Api/CellsApiTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
+        <state relative-caret-position="615">
+          <caret line="442" selection-start-line="442" selection-end-line="442" />
         </state>
       </provider>
     </entry>
