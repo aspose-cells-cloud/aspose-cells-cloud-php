@@ -65,7 +65,7 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsApi("66164C51-693E-4904-A121-545961673EC1","536e76768419db9585afdd37bb5f7533");
+        $this->instance = new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
     }
 
     /**

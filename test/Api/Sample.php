@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Web API Swagger specification
  *
@@ -11,9 +10,9 @@
  * Swagger Codegen version: 2.3.0-SNAPSHOT
  */
 
-
 namespace Aspose\Cells\Cloud;
 
+require_once('vendor\autoload.php');
 require_once('vendor\autoload.php');
 require_once('test\Api\CellsApiTestBase.php');
 use \Aspose\Cells\Cloud\Configuration;
@@ -23,23 +22,23 @@ use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\ColumnsResponse;
 use \Aspose\Cells\Cloud\Model\SaaSposeResponse;
-use \Aspose\Cells\Cloud\Model\TaskDescription;
-use \Aspose\Cells\Cloud\Model\SplitWorkbookTaskParameter;
-use \Aspose\Cells\Cloud\Model\FileSource;
-use \Aspose\Cells\Cloud\Model\TaskData;
+use \Aspose\Cells\Cloud\Model\CalculationOptions;
+use \Aspose\Cells\Cloud\Model\Style;
+use \Aspose\Cells\Cloud\Model\Font;
+use \Aspose\Cells\Cloud\Model\FontSetting;
 use PHPUnit\Framework\TestCase;
+
 /**
- * CellsTaskApiTest Class Doc Comment
+ * OAuthApiTest Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CellsTaskApiTest extends \PHPUnit_Framework_TestCase
+class Sample extends \PHPUnit_Framework_TestCase
 {
 
-    protected  $instance;
     /**
      * Setup before running any test cases
      */
@@ -70,35 +69,20 @@ class CellsTaskApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for cellsTaskPostRunTask
+     * Test case for cellsPostSetCellHtmlString
      *
-     * Run tasks.
+     * Set htmlstring value into cell.
      *
      */
-    public function testCellsTaskPostRunTask()
+    public function testCellsPostSetCellHtmlString()
     {
         $name ='Book1.xlsx';
         $sheet_name ='Sheet1';
+        $cellName = 'C1'; 
         $folder = "PhpTest";
+        $html_string = "https://api.aspose.cloud/v3.0/cells";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $task1 = new TaskDescription();
-        $task1->setTaskType('SplitWorkbook');
-        $param1 = new SplitWorkbookTaskParameter ();
-        $param1->setDestinationFileFormat('xlsx');
-        $fileSource =new FileSource();
-        $fileSource->setFilePath($folder);
-        $fileSource->setFileSourceType('CloudFileSystem');
-        $param1->setDestinationFilePosition($fileSource);
-        $param1->setSplitNameRule('sheetname');
-        $workbook =new FileSource();
-        $workbook->setFilePath( $folder. "\\". $name);
-        $workbook->setFileSourceType('CloudFileSystem');
-        $param1->setWorkbook($workbook);
-        $task1->setTaskParameter($param1);
-        $taskData = new TaskData();
-        $tasks =  array($task1);
-        $taskData->setTasks($tasks);
-        $result = $this->instance->cellsTaskPostRunTask($taskData);
-//        $this->assertEquals("Split workbook task succeed to run.\nSplit workbook task succeed to run.\n", $result['Description']);
+        $result =  $this->instance->cellsPostSetCellHtmlString($name, $sheet_name, $cellName,$html_string,$folder);
+        $this->assertEquals(200, $result['code']);
     }
 }

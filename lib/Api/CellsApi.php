@@ -1,5 +1,6 @@
 <?php
-/**
+
+/* 
  * <summary>
  *  Copyright (c) 2020 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -8,10 +9,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
+ * 
+ *  The above copyright notice and this permission notice shall be included in all 
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,7 +21,8 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- **/
+ */
+
 
 namespace Aspose\Cells\Cloud\Api;
 
@@ -55,6 +57,11 @@ class CellsApi
      */
     protected $config;
 
+    protected $_appSid;
+    protected $_appKey;
+    protected $_appVersion;
+    protected $_getAccessTokenTime;
+
     /**
      * @param ClientInterface $client
      * @param Configuration   $config
@@ -63,6 +70,10 @@ class CellsApi
     public function __construct(
         $appSid,$appKey,$version ="v3.0"
     ) {
+        $this->_appSid = $appSid;
+        $this->_appKey = $appKey;
+        $this->_appVersion = $version;
+
         $this->client =  new Client();
         $this->config =  new Configuration();
         $this->headerSelector =  new HeaderSelector();
@@ -72,12 +83,20 @@ class CellsApi
         }
         $defaultHost =  $this->config->getHost();
         $this->config->setHost('https://api.aspose.cloud');
-        // $AccessTokenResponse  =  $this->oAuthPost( $grantType, $appSid, $appKey);
-        // $this->config ->setAccessToken ( $AccessTokenResponse->getAccessToken());
         $this->config ->setAccessToken ( $this->getAccessToken($grantType, $appSid, $appKey,$version));
+        $this->_getAccessTokenTime = date('y-m-d h:i:s');
         $this->config->setHost( $defaultHost );
     }
 
+    public function checkAccessToken(){
+        if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86300){
+             $defaultHost =  $this->config->getHost();
+            $this->config->setHost('https://api.aspose.cloud');
+            $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
+            $this->_getAccessTokenTime = date('y-m-d h:i:s');
+            $this->config->setHost( $defaultHost );
+        }
+    }
 
 
     /**
@@ -112,6 +131,7 @@ class CellsApi
      */
     public function cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage);
         return $response;
     }
@@ -497,6 +517,7 @@ class CellsApi
      */
     public function cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterDeleteWorksheetFilterWithHttpInfo($name, $sheet_name, $field_index, $criteria, $folder, $storage);
         return $response;
     }
@@ -826,6 +847,7 @@ class CellsApi
      */
     public function cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -1131,6 +1153,7 @@ class CellsApi
      */
     public function cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -1437,6 +1460,7 @@ class CellsApi
      */
     public function cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage);
         return $response;
     }
@@ -1759,6 +1783,7 @@ class CellsApi
      */
     public function cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage);
         return $response;
     }
@@ -2083,6 +2108,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetColorFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -2448,6 +2474,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -2862,6 +2889,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetDateFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -3278,6 +3306,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -3646,6 +3675,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -4018,6 +4048,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -4417,6 +4448,7 @@ class CellsApi
      */
     public function cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoFilterPutWorksheetIconFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage);
         return $response;
     }
@@ -4798,6 +4830,7 @@ class CellsApi
      */
     public function cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $format = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo($name, $sheet_name, $autoshape_number, $format, $folder, $storage);
         return $response;
     }
@@ -5131,6 +5164,7 @@ class CellsApi
      */
     public function cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -5439,6 +5473,7 @@ class CellsApi
      */
     public function cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartAreaGetChartAreaWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -5765,6 +5800,7 @@ class CellsApi
      */
     public function cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartAreaGetChartAreaBorderWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -6091,6 +6127,7 @@ class CellsApi
      */
     public function cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartAreaGetChartAreaFillFormatWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -6417,6 +6454,7 @@ class CellsApi
      */
     public function cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsDeleteWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -6743,6 +6781,7 @@ class CellsApi
      */
     public function cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsDeleteWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -7068,6 +7107,7 @@ class CellsApi
      */
     public function cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsDeleteWorksheetClearChartsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -7376,6 +7416,7 @@ class CellsApi
      */
     public function cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -7703,6 +7744,7 @@ class CellsApi
      */
     public function cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsGetWorksheetChartWithHttpInfo($name, $sheet_name, $chart_number, $format, $folder, $storage);
         return $response;
     }
@@ -8037,6 +8079,7 @@ class CellsApi
      */
     public function cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsGetWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -8363,6 +8406,7 @@ class CellsApi
      */
     public function cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsGetWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -8688,6 +8732,7 @@ class CellsApi
      */
     public function cellsChartsGetWorksheetCharts($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsGetWorksheetChartsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -8997,6 +9042,7 @@ class CellsApi
      */
     public function cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsPostWorksheetChartWithHttpInfo($name, $sheet_name, $chart_index, $chart, $folder, $storage);
         return $response;
     }
@@ -9331,6 +9377,7 @@ class CellsApi
      */
     public function cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend, $folder, $storage);
         return $response;
     }
@@ -9665,6 +9712,7 @@ class CellsApi
      */
     public function cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage);
         return $response;
     }
@@ -10007,6 +10055,7 @@ class CellsApi
      */
     public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage);
         return $response;
     }
@@ -10401,6 +10450,7 @@ class CellsApi
      */
     public function cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsPutWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage);
         return $response;
     }
@@ -10728,6 +10778,7 @@ class CellsApi
      */
     public function cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage);
         return $response;
     }
@@ -11061,6 +11112,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
@@ -11390,6 +11442,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
         return $response;
     }
@@ -11753,6 +11806,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattings($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -12061,6 +12115,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
@@ -12386,6 +12441,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattings($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -12695,6 +12751,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $format_condition = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $cell_area, $format_condition, $folder, $storage);
         return $response;
     }
@@ -13029,6 +13086,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsPutWorksheetFormatCondition($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder, $storage);
         return $response;
     }
@@ -13426,6 +13484,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionArea($name, $sheet_name, $index, $cell_area, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder, $storage);
         return $response;
     }
@@ -13770,6 +13829,7 @@ class CellsApi
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionCondition($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder, $storage);
         return $response;
     }
@@ -14154,6 +14214,7 @@ class CellsApi
      */
     public function cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
         return $response;
     }
@@ -14508,6 +14569,7 @@ class CellsApi
      */
     public function cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsDeleteWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage);
         return $response;
     }
@@ -14836,6 +14898,7 @@ class CellsApi
      */
     public function cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsDeleteWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
         return $response;
     }
@@ -15174,6 +15237,7 @@ class CellsApi
      */
     public function cellsGetCellHtmlString($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage);
         return $response;
     }
@@ -15500,6 +15564,7 @@ class CellsApi
      */
     public function cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetCellWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder, $storage);
         return $response;
     }
@@ -15826,6 +15891,7 @@ class CellsApi
      */
     public function cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage);
         return $response;
     }
@@ -16153,6 +16219,7 @@ class CellsApi
      */
     public function cellsGetWorksheetCells($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetCellsWithHttpInfo($name, $sheet_name, $offest, $count, $folder, $storage);
         return $response;
     }
@@ -16477,6 +16544,7 @@ class CellsApi
      */
     public function cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetColumnWithHttpInfo($name, $sheet_name, $column_index, $folder, $storage);
         return $response;
     }
@@ -16802,6 +16870,7 @@ class CellsApi
      */
     public function cellsGetWorksheetColumns($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetColumnsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -17110,6 +17179,7 @@ class CellsApi
      */
     public function cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage);
         return $response;
     }
@@ -17435,6 +17505,7 @@ class CellsApi
      */
     public function cellsGetWorksheetRows($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsGetWorksheetRowsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -17743,6 +17814,7 @@ class CellsApi
      */
     public function cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage);
         return $response;
     }
@@ -18068,6 +18140,7 @@ class CellsApi
      */
     public function cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -18376,6 +18449,7 @@ class CellsApi
      */
     public function cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsHypelinksGetWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage);
         return $response;
     }
@@ -18701,6 +18775,7 @@ class CellsApi
      */
     public function cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsHypelinksGetWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -19010,6 +19085,7 @@ class CellsApi
      */
     public function cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage);
         return $response;
     }
@@ -19347,6 +19423,7 @@ class CellsApi
      */
     public function cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage);
         return $response;
     }
@@ -19725,6 +19802,7 @@ class CellsApi
      */
     public function cellsListObjectsDeleteWorksheetListObject($name, $sheet_name, $list_object_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsDeleteWorksheetListObjectWithHttpInfo($name, $sheet_name, $list_object_index, $folder, $storage);
         return $response;
     }
@@ -20050,6 +20128,7 @@ class CellsApi
      */
     public function cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsDeleteWorksheetListObjectsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -20358,6 +20437,7 @@ class CellsApi
      */
     public function cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsGetWorksheetListObjectWithHttpInfo($name, $sheet_name, $listobjectindex, $folder, $storage);
         return $response;
     }
@@ -20683,6 +20763,7 @@ class CellsApi
      */
     public function cellsListObjectsGetWorksheetListObjects($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsGetWorksheetListObjectsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -20992,6 +21073,7 @@ class CellsApi
      */
     public function cellsListObjectsPostWorksheetListObject($name, $sheet_name, $list_object_index, $list_object = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsPostWorksheetListObjectWithHttpInfo($name, $sheet_name, $list_object_index, $list_object, $folder, $storage);
         return $response;
     }
@@ -21323,6 +21405,7 @@ class CellsApi
      */
     public function cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name, $list_object_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsPostWorksheetListObjectConvertToRangeWithHttpInfo($name, $sheet_name, $list_object_index, $folder, $storage);
         return $response;
     }
@@ -21646,6 +21729,7 @@ class CellsApi
      */
     public function cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name, $list_object_index, $data_sorter = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsPostWorksheetListObjectSortTableWithHttpInfo($name, $sheet_name, $list_object_index, $data_sorter, $folder, $storage);
         return $response;
     }
@@ -21977,6 +22061,7 @@ class CellsApi
      */
     public function cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name, $list_object_index, $destsheet_name, $request = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableWithHttpInfo($name, $sheet_name, $list_object_index, $destsheet_name, $request, $folder, $storage);
         return $response;
     }
@@ -22327,6 +22412,7 @@ class CellsApi
      */
     public function cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $list_object = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsListObjectsPutWorksheetListObjectWithHttpInfo($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers, $list_object, $folder, $storage);
         return $response;
     }
@@ -22706,6 +22792,7 @@ class CellsApi
      */
     public function cellsOleObjectsDeleteWorksheetOleObject($name, $sheet_name, $ole_object_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsOleObjectsDeleteWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $folder, $storage);
         return $response;
     }
@@ -23031,6 +23118,7 @@ class CellsApi
      */
     public function cellsOleObjectsDeleteWorksheetOleObjects($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsOleObjectsDeleteWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -23340,6 +23428,7 @@ class CellsApi
      */
     public function cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $format = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $format, $folder, $storage);
         return $response;
     }
@@ -23673,6 +23762,7 @@ class CellsApi
      */
     public function cellsOleObjectsGetWorksheetOleObjects($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsOleObjectsGetWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -23982,6 +24072,7 @@ class CellsApi
      */
     public function cellsOleObjectsPostUpdateWorksheetOleObject($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsOleObjectsPostUpdateWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $ole, $folder, $storage);
         return $response;
     }
@@ -24321,6 +24412,7 @@ class CellsApi
      */
     public function cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage);
         return $response;
     }
@@ -24682,6 +24774,7 @@ class CellsApi
      */
     public function cellsPageBreaksDeleteHorizontalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
@@ -25004,6 +25097,7 @@ class CellsApi
      */
     public function cellsPageBreaksDeleteHorizontalPageBreaks($name, $sheet_name, $row = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $row, $folder, $storage);
         return $response;
     }
@@ -25316,6 +25410,7 @@ class CellsApi
      */
     public function cellsPageBreaksDeleteVerticalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
@@ -25638,6 +25733,7 @@ class CellsApi
      */
     public function cellsPageBreaksDeleteVerticalPageBreaks($name, $sheet_name, $column = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo($name, $sheet_name, $column, $folder, $storage);
         return $response;
     }
@@ -25950,6 +26046,7 @@ class CellsApi
      */
     public function cellsPageBreaksGetHorizontalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksGetHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
@@ -26271,6 +26368,7 @@ class CellsApi
      */
     public function cellsPageBreaksGetHorizontalPageBreaks($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -26575,6 +26673,7 @@ class CellsApi
      */
     public function cellsPageBreaksGetVerticalPageBreak($name, $sheet_name, $index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksGetVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder, $storage);
         return $response;
     }
@@ -26896,6 +26995,7 @@ class CellsApi
      */
     public function cellsPageBreaksGetVerticalPageBreaks($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksGetVerticalPageBreaksWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -27204,6 +27304,7 @@ class CellsApi
      */
     public function cellsPageBreaksPutHorizontalPageBreak($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksPutHorizontalPageBreakWithHttpInfo($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder, $storage);
         return $response;
     }
@@ -27552,6 +27653,7 @@ class CellsApi
      */
     public function cellsPageBreaksPutVerticalPageBreak($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageBreaksPutVerticalPageBreakWithHttpInfo($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder, $storage);
         return $response;
     }
@@ -27897,6 +27999,7 @@ class CellsApi
      */
     public function cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupDeleteHeaderFooterWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -28204,6 +28307,7 @@ class CellsApi
      */
     public function cellsPageSetupGetFooter($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupGetFooterWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -28511,6 +28615,7 @@ class CellsApi
      */
     public function cellsPageSetupGetHeader($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupGetHeaderWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -28818,6 +28923,7 @@ class CellsApi
      */
     public function cellsPageSetupGetPageSetup($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupGetPageSetupWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -29128,6 +29234,7 @@ class CellsApi
      */
     public function cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupPostFooterWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
         return $response;
     }
@@ -29480,6 +29587,7 @@ class CellsApi
      */
     public function cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupPostHeaderWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage);
         return $response;
     }
@@ -29830,6 +29938,7 @@ class CellsApi
      */
     public function cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPageSetupPostPageSetupWithHttpInfo($name, $sheet_name, $page_setup, $folder, $storage);
         return $response;
     }
@@ -30145,6 +30254,7 @@ class CellsApi
      */
     public function cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPicturesDeleteWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $folder, $storage);
         return $response;
     }
@@ -30470,6 +30580,7 @@ class CellsApi
      */
     public function cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPicturesDeleteWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -30779,6 +30890,7 @@ class CellsApi
      */
     public function cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $format, $folder, $storage);
         return $response;
     }
@@ -31112,6 +31224,7 @@ class CellsApi
      */
     public function cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPicturesGetWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -31421,6 +31534,7 @@ class CellsApi
      */
     public function cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture, $folder, $storage);
         return $response;
     }
@@ -31759,6 +31873,7 @@ class CellsApi
      */
     public function cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage);
         return $response;
     }
@@ -32116,6 +32231,7 @@ class CellsApi
      */
     public function cellsPivotTablesDeletePivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesDeletePivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder, $storage);
         return $response;
     }
@@ -32463,6 +32579,7 @@ class CellsApi
      */
     public function cellsPivotTablesDeleteWorksheetPivotTable($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage);
         return $response;
     }
@@ -32791,6 +32908,7 @@ class CellsApi
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -33144,6 +33262,7 @@ class CellsApi
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -33477,6 +33596,7 @@ class CellsApi
      */
     public function cellsPivotTablesDeleteWorksheetPivotTables($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -33787,6 +33907,7 @@ class CellsApi
      */
     public function cellsPivotTablesGetPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesGetPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder, $storage);
         return $response;
     }
@@ -34141,6 +34262,7 @@ class CellsApi
      */
     public function cellsPivotTablesGetWorksheetPivotTable($name, $sheet_name, $pivottable_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesGetWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivottable_index, $folder, $storage);
         return $response;
     }
@@ -34466,6 +34588,7 @@ class CellsApi
      */
     public function cellsPivotTablesGetWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder, $storage);
         return $response;
     }
@@ -34806,6 +34929,7 @@ class CellsApi
      */
     public function cellsPivotTablesGetWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage);
         return $response;
     }
@@ -35129,6 +35253,7 @@ class CellsApi
      */
     public function cellsPivotTablesGetWorksheetPivotTables($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -35441,6 +35566,7 @@ class CellsApi
      */
     public function cellsPivotTablesPostPivotTableCellStyle($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPostPivotTableCellStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -35813,6 +35939,7 @@ class CellsApi
      */
     public function cellsPivotTablesPostPivotTableFieldHideItem($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -36202,6 +36329,7 @@ class CellsApi
      */
     public function cellsPivotTablesPostPivotTableFieldMoveTo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder, $storage);
         return $response;
     }
@@ -36570,6 +36698,7 @@ class CellsApi
      */
     public function cellsPivotTablesPostPivotTableStyle($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPostPivotTableStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -36911,6 +37040,7 @@ class CellsApi
      */
     public function cellsPivotTablesPostWorksheetPivotTableCalculate($name, $sheet_name, $pivot_table_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage);
         return $response;
     }
@@ -37238,6 +37368,7 @@ class CellsApi
      */
     public function cellsPivotTablesPostWorksheetPivotTableMove($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder, $storage);
         return $response;
     }
@@ -37589,6 +37720,7 @@ class CellsApi
      */
     public function cellsPivotTablesPutPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPutPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -37948,6 +38080,7 @@ class CellsApi
      */
     public function cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, $request = null, $folder = null, $storage = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request, $folder, $storage, $source_data, $dest_cell_name, $table_name, $use_same_source);
         return $response;
     }
@@ -38297,6 +38430,7 @@ class CellsApi
      */
     public function cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder, $storage);
         return $response;
     }
@@ -38639,6 +38773,7 @@ class CellsApi
      */
     public function cellsPostCellCalculate($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostCellCalculateWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage);
         return $response;
     }
@@ -38973,6 +39108,7 @@ class CellsApi
      */
     public function cellsPostCellCharacters($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostCellCharactersWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage);
         return $response;
     }
@@ -39310,6 +39446,7 @@ class CellsApi
      */
     public function cellsPostClearContents($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostClearContentsWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
         return $response;
     }
@@ -39662,6 +39799,7 @@ class CellsApi
      */
     public function cellsPostClearFormats($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostClearFormatsWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage);
         return $response;
     }
@@ -40011,6 +40149,7 @@ class CellsApi
      */
     public function cellsPostColumnStyle($name, $sheet_name, $column_index, $style = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostColumnStyleWithHttpInfo($name, $sheet_name, $column_index, $style, $folder, $storage);
         return $response;
     }
@@ -40348,6 +40487,7 @@ class CellsApi
      */
     public function cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostCopyCellIntoCellWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage);
         return $response;
     }
@@ -40715,6 +40855,7 @@ class CellsApi
      */
     public function cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostCopyWorksheetColumnsWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage);
         return $response;
     }
@@ -41076,6 +41217,7 @@ class CellsApi
      */
     public function cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostCopyWorksheetRowsWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage);
         return $response;
     }
@@ -41436,6 +41578,7 @@ class CellsApi
      */
     public function cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostGroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
         return $response;
     }
@@ -41782,6 +41925,7 @@ class CellsApi
      */
     public function cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostGroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage);
         return $response;
     }
@@ -42127,6 +42271,7 @@ class CellsApi
      */
     public function cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostHideWorksheetColumnsWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder, $storage);
         return $response;
     }
@@ -42464,6 +42609,7 @@ class CellsApi
      */
     public function cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostHideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder, $storage);
         return $response;
     }
@@ -42801,6 +42947,7 @@ class CellsApi
      */
     public function cellsPostRowStyle($name, $sheet_name, $row_index, $style = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostRowStyleWithHttpInfo($name, $sheet_name, $row_index, $style, $folder, $storage);
         return $response;
     }
@@ -43135,6 +43282,7 @@ class CellsApi
      */
     public function cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $html_string, $folder, $storage);
         return $response;
     }
@@ -43476,6 +43624,7 @@ class CellsApi
      */
     public function cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostSetCellRangeValueWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder, $storage);
         return $response;
     }
@@ -43827,6 +43976,7 @@ class CellsApi
      */
     public function cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $folder, $storage);
         return $response;
     }
@@ -44168,6 +44318,7 @@ class CellsApi
      */
     public function cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUngroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder, $storage);
         return $response;
     }
@@ -44506,6 +44657,7 @@ class CellsApi
      */
     public function cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUngroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage);
         return $response;
     }
@@ -44852,6 +45004,7 @@ class CellsApi
      */
     public function cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUnhideWorksheetColumnsWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage);
         return $response;
     }
@@ -45198,6 +45351,7 @@ class CellsApi
      */
     public function cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUnhideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage);
         return $response;
     }
@@ -45543,6 +45697,7 @@ class CellsApi
      */
     public function cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUpdateWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $style, $folder, $storage);
         return $response;
     }
@@ -45877,6 +46032,7 @@ class CellsApi
      */
     public function cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUpdateWorksheetRangeStyleWithHttpInfo($name, $sheet_name, $range, $style, $folder, $storage);
         return $response;
     }
@@ -46207,6 +46363,7 @@ class CellsApi
      */
     public function cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height, $folder, $storage);
         return $response;
     }
@@ -46544,6 +46701,7 @@ class CellsApi
      */
     public function cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostWorksheetCellSetValueWithHttpInfo($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage);
         return $response;
     }
@@ -46897,6 +47055,7 @@ class CellsApi
      */
     public function cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostWorksheetMergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
         return $response;
     }
@@ -47264,6 +47423,7 @@ class CellsApi
      */
     public function cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPostWorksheetUnmergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage);
         return $response;
     }
@@ -47626,6 +47786,7 @@ class CellsApi
      */
     public function cellsPropertiesDeleteDocumentProperties($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -47915,6 +48076,7 @@ class CellsApi
      */
     public function cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder, $storage);
         return $response;
     }
@@ -48221,6 +48383,7 @@ class CellsApi
      */
     public function cellsPropertiesGetDocumentProperties($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPropertiesGetDocumentPropertiesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -48510,6 +48673,7 @@ class CellsApi
      */
     public function cellsPropertiesGetDocumentProperty($name, $property_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPropertiesGetDocumentPropertyWithHttpInfo($name, $property_name, $folder, $storage);
         return $response;
     }
@@ -48818,6 +48982,7 @@ class CellsApi
      */
     public function cellsPropertiesPutDocumentProperty($name, $property_name, $property = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property, $folder, $storage);
         return $response;
     }
@@ -49135,6 +49300,7 @@ class CellsApi
      */
     public function cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage);
         return $response;
     }
@@ -49483,6 +49649,7 @@ class CellsApi
      */
     public function cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage);
         return $response;
     }
@@ -49811,6 +49978,7 @@ class CellsApi
      */
     public function cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsPutInsertWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage);
         return $response;
     }
@@ -50153,6 +50321,7 @@ class CellsApi
      */
     public function cellsRangesGetWorksheetCellsRangeValue($name, $sheet_name, $namerange = null, $first_row = null, $first_column = null, $row_count = null, $column_count = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesGetWorksheetCellsRangeValueWithHttpInfo($name, $sheet_name, $namerange, $first_row, $first_column, $row_count, $column_count, $folder, $storage);
         return $response;
     }
@@ -50502,6 +50671,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value, $range = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeColumnWidthWithHttpInfo($name, $sheet_name, $value, $range, $folder, $storage);
         return $response;
     }
@@ -50831,6 +51001,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeMergeWithHttpInfo($name, $sheet_name, $range, $folder, $storage);
         return $response;
     }
@@ -51148,6 +51319,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name, $dest_row, $dest_column, $range = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeMoveToWithHttpInfo($name, $sheet_name, $dest_row, $dest_column, $range, $folder, $storage);
         return $response;
     }
@@ -51491,6 +51663,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name, $range_operate = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeOutlineBorderWithHttpInfo($name, $sheet_name, $range_operate, $folder, $storage);
         return $response;
     }
@@ -51807,6 +51980,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value, $range = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeRowHeightWithHttpInfo($name, $sheet_name, $value, $range, $folder, $storage);
         return $response;
     }
@@ -52136,6 +52310,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name, $range_operate = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeStyleWithHttpInfo($name, $sheet_name, $range_operate, $folder, $storage);
         return $response;
     }
@@ -52451,6 +52626,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeUnmerge($name, $sheet_name, $range = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeUnmergeWithHttpInfo($name, $sheet_name, $range, $folder, $storage);
         return $response;
     }
@@ -52769,6 +52945,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name, $value, $range = null, $is_converted = 'false', $set_style = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangeValueWithHttpInfo($name, $sheet_name, $value, $range, $is_converted, $set_style, $folder, $storage);
         return $response;
     }
@@ -53114,6 +53291,7 @@ class CellsApi
      */
     public function cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $range_operate = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsRangesPostWorksheetCellsRangesWithHttpInfo($name, $sheet_name, $range_operate, $folder, $storage);
         return $response;
     }
@@ -53431,6 +53609,7 @@ class CellsApi
      */
     public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage);
         return $response;
     }
@@ -53752,6 +53931,7 @@ class CellsApi
      */
     public function cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsShapesDeleteWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage);
         return $response;
     }
@@ -54077,6 +54257,7 @@ class CellsApi
      */
     public function cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsShapesDeleteWorksheetShapesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -54385,6 +54566,7 @@ class CellsApi
      */
     public function cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsShapesGetWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage);
         return $response;
     }
@@ -54710,6 +54892,7 @@ class CellsApi
      */
     public function cellsShapesGetWorksheetShapes($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsShapesGetWorksheetShapesWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -55019,6 +55202,7 @@ class CellsApi
      */
     public function cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsShapesPostWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $dto, $folder, $storage);
         return $response;
     }
@@ -55358,6 +55542,7 @@ class CellsApi
      */
     public function cellsShapesPutWorksheetShape($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage);
         return $response;
     }
@@ -55760,6 +55945,7 @@ class CellsApi
      */
     public function cellsTaskPostRunTask($task_data)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsTaskPostRunTaskWithHttpInfo($task_data);
         return $response;
     }
@@ -56028,6 +56214,7 @@ class CellsApi
      */
     public function cellsWorkbookDeleteDecryptDocument($name, $encryption = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookDeleteDecryptDocumentWithHttpInfo($name, $encryption, $folder, $storage);
         return $response;
     }
@@ -56323,6 +56510,7 @@ class CellsApi
      */
     public function cellsWorkbookDeleteDocumentUnprotectFromChanges($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookDeleteDocumentUnprotectFromChangesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -56612,6 +56800,7 @@ class CellsApi
      */
     public function cellsWorkbookDeleteUnprotectDocument($name, $protection = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookDeleteUnprotectDocumentWithHttpInfo($name, $protection, $folder, $storage);
         return $response;
     }
@@ -56908,6 +57097,7 @@ class CellsApi
      */
     public function cellsWorkbookDeleteWorkbookName($name, $name_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookDeleteWorkbookNameWithHttpInfo($name, $name_name, $folder, $storage);
         return $response;
     }
@@ -57214,6 +57404,7 @@ class CellsApi
      */
     public function cellsWorkbookDeleteWorkbookNames($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookDeleteWorkbookNamesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -57507,6 +57698,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbook($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage = null, $out_path = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage, $out_path);
         return $response;
     }
@@ -57835,6 +58027,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbookDefaultStyle($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookDefaultStyleWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -58124,6 +58317,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbookName($name, $name_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookNameWithHttpInfo($name, $name_name, $folder, $storage);
         return $response;
     }
@@ -58431,6 +58625,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbookNameValue($name, $name_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookNameValueWithHttpInfo($name, $name_name, $folder, $storage);
         return $response;
     }
@@ -58737,6 +58932,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbookNames($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookNamesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -59025,6 +59221,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbookSettings($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookSettingsWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -59313,6 +59510,7 @@ class CellsApi
      */
     public function cellsWorkbookGetWorkbookTextItems($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookGetWorkbookTextItemsWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -59605,6 +59803,7 @@ class CellsApi
      */
     public function cellsWorkbookPostAutofitWorkbookRows($name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostAutofitWorkbookRowsWithHttpInfo($name, $auto_fitter_options, $start_row, $end_row, $only_auto, $folder, $storage);
         return $response;
     }
@@ -59925,6 +60124,7 @@ class CellsApi
      */
     public function cellsWorkbookPostEncryptDocument($name, $encryption = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostEncryptDocumentWithHttpInfo($name, $encryption, $folder, $storage);
         return $response;
     }
@@ -60219,6 +60419,7 @@ class CellsApi
      */
     public function cellsWorkbookPostImportData($name, $import_data, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostImportDataWithHttpInfo($name, $import_data, $folder, $storage);
         return $response;
     }
@@ -60519,6 +60720,7 @@ class CellsApi
      */
     public function cellsWorkbookPostProtectDocument($name, $protection = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostProtectDocumentWithHttpInfo($name, $protection, $folder, $storage);
         return $response;
     }
@@ -60816,6 +61018,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbookCalculateFormula($name, $options = null, $ignore_error = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbookCalculateFormulaWithHttpInfo($name, $options, $ignore_error, $folder, $storage);
         return $response;
     }
@@ -61121,6 +61324,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbookGetSmartMarkerResult($name, $xml_file = null, $folder = null, $storage = null, $out_path = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbookGetSmartMarkerResultWithHttpInfo($name, $xml_file, $folder, $storage, $out_path);
         return $response;
     }
@@ -61426,6 +61630,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbookSettings($name, $settings = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbookSettingsWithHttpInfo($name, $settings, $folder, $storage);
         return $response;
     }
@@ -61726,6 +61931,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbookSplit($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbookSplitWithHttpInfo($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage);
         return $response;
     }
@@ -62055,6 +62261,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbooksMerge($name, $merge_with, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbooksMergeWithHttpInfo($name, $merge_with, $folder, $storage);
         return $response;
     }
@@ -62359,6 +62566,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbooksTextReplace($name, $old_value, $new_value, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbooksTextReplaceWithHttpInfo($name, $old_value, $new_value, $folder, $storage);
         return $response;
     }
@@ -62676,6 +62884,7 @@ class CellsApi
      */
     public function cellsWorkbookPostWorkbooksTextSearch($name, $text, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPostWorkbooksTextSearchWithHttpInfo($name, $text, $folder, $storage);
         return $response;
     }
@@ -62979,6 +63188,7 @@ class CellsApi
      */
     public function cellsWorkbookPutConvertWorkbook($workbook, $format = null, $password = null, $out_path = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($workbook, $format, $password, $out_path);
         return $response;
     }
@@ -63271,6 +63481,7 @@ class CellsApi
      */
     public function cellsWorkbookPutDocumentProtectFromChanges($name, $password = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPutDocumentProtectFromChangesWithHttpInfo($name, $password, $folder, $storage);
         return $response;
     }
@@ -63568,6 +63779,7 @@ class CellsApi
      */
     public function cellsWorkbookPutWorkbookCreate($name, $template_file = null, $data_file = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorkbookPutWorkbookCreateWithHttpInfo($name, $template_file, $data_file, $folder, $storage);
         return $response;
     }
@@ -63874,6 +64086,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage);
         return $response;
     }
@@ -64199,6 +64412,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidations($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetValidationsDeleteWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -64507,6 +64721,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage);
         return $response;
     }
@@ -64832,6 +65047,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -65141,6 +65357,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $validation, $folder, $storage);
         return $response;
     }
@@ -65475,6 +65692,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range = null, $validation = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo($name, $sheet_name, $range, $validation, $folder, $storage);
         return $response;
     }
@@ -65798,6 +66016,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteUnprotectWorksheet($name, $sheet_name, $protect_parameter = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo($name, $sheet_name, $protect_parameter, $folder, $storage);
         return $response;
     }
@@ -66112,6 +66331,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteWorksheet($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsDeleteWorksheetWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -66419,6 +66639,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteWorksheetBackground($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsDeleteWorksheetBackgroundWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -66727,6 +66948,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteWorksheetComment($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsDeleteWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage);
         return $response;
     }
@@ -67052,6 +67274,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteWorksheetComments($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsDeleteWorksheetCommentsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -67363,6 +67586,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteWorksheetFreezePanes($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsDeleteWorksheetFreezePanesWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder, $storage);
         return $response;
     }
@@ -67725,6 +67949,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetNamedRanges($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetNamedRangesWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -68017,6 +68242,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheet($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage);
         return $response;
     }
@@ -68349,6 +68575,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheetCalculateFormula($name, $sheet_name, $formula, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetCalculateFormulaWithHttpInfo($name, $sheet_name, $formula, $folder, $storage);
         return $response;
     }
@@ -68671,6 +68898,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheetComment($name, $sheet_name, $cell_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage);
         return $response;
     }
@@ -68996,6 +69224,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheetComments($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetCommentsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -69304,6 +69533,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheetMergedCell($name, $sheet_name, $merged_cell_index, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetMergedCellWithHttpInfo($name, $sheet_name, $merged_cell_index, $folder, $storage);
         return $response;
     }
@@ -69629,6 +69859,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheetMergedCells($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetMergedCellsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -69936,6 +70167,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheetTextItems($name, $sheet_name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetTextItemsWithHttpInfo($name, $sheet_name, $folder, $storage);
         return $response;
     }
@@ -70242,6 +70474,7 @@ class CellsApi
      */
     public function cellsWorksheetsGetWorksheets($name, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsGetWorksheetsWithHttpInfo($name, $folder, $storage);
         return $response;
     }
@@ -70534,6 +70767,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostAutofitWorksheetColumns($name, $sheet_name, $first_column, $last_column, $auto_fitter_options = null, $first_row = null, $last_row = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostAutofitWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_column, $last_column, $auto_fitter_options, $first_row, $last_row, $folder, $storage);
         return $response;
     }
@@ -70892,6 +71126,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostAutofitWorksheetRow($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostAutofitWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options, $folder, $storage);
         return $response;
     }
@@ -71250,6 +71485,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostAutofitWorksheetRows($name, $sheet_name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostAutofitWorksheetRowsWithHttpInfo($name, $sheet_name, $auto_fitter_options, $start_row, $end_row, $only_auto, $folder, $storage);
         return $response;
     }
@@ -71590,6 +71826,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostCopyWorksheet($name, $sheet_name, $source_sheet, $options = null, $source_workbook = null, $source_folder = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostCopyWorksheetWithHttpInfo($name, $sheet_name, $source_sheet, $options, $source_workbook, $source_folder, $folder, $storage);
         return $response;
     }
@@ -71933,6 +72170,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostMoveWorksheet($name, $sheet_name, $moving = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostMoveWorksheetWithHttpInfo($name, $sheet_name, $moving, $folder, $storage);
         return $response;
     }
@@ -72248,6 +72486,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostRenameWorksheet($name, $sheet_name, $newname, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostRenameWorksheetWithHttpInfo($name, $sheet_name, $newname, $folder, $storage);
         return $response;
     }
@@ -72570,6 +72809,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostUpdateWorksheetProperty($name, $sheet_name, $sheet = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo($name, $sheet_name, $sheet, $folder, $storage);
         return $response;
     }
@@ -72883,6 +73123,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostUpdateWorksheetZoom($name, $sheet_name, $value, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostUpdateWorksheetZoomWithHttpInfo($name, $sheet_name, $value, $folder, $storage);
         return $response;
     }
@@ -73204,6 +73445,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostWorksheetComment($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $comment, $folder, $storage);
         return $response;
     }
@@ -73538,6 +73780,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostWorksheetRangeSort($name, $sheet_name, $cell_area, $data_sorter = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostWorksheetRangeSortWithHttpInfo($name, $sheet_name, $cell_area, $data_sorter, $folder, $storage);
         return $response;
     }
@@ -73867,6 +74110,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostWorksheetTextSearch($name, $sheet_name, $text, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostWorksheetTextSearchWithHttpInfo($name, $sheet_name, $text, $folder, $storage);
         return $response;
     }
@@ -74190,6 +74434,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostWorsheetTextReplace($name, $sheet_name, $old_value, $new_value, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPostWorsheetTextReplaceWithHttpInfo($name, $sheet_name, $old_value, $new_value, $folder, $storage);
         return $response;
     }
@@ -74527,6 +74772,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutAddNewWorksheet($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPutAddNewWorksheetWithHttpInfo($name, $sheet_name, $position, $sheettype, $folder, $storage);
         return $response;
     }
@@ -74851,6 +75097,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutChangeVisibilityWorksheet($name, $sheet_name, $is_visible, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPutChangeVisibilityWorksheetWithHttpInfo($name, $sheet_name, $is_visible, $folder, $storage);
         return $response;
     }
@@ -75173,6 +75420,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutProtectWorksheet($name, $sheet_name, $protect_parameter = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPutProtectWorksheetWithHttpInfo($name, $sheet_name, $protect_parameter, $folder, $storage);
         return $response;
     }
@@ -75488,6 +75736,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutWorksheetBackground($name, $sheet_name, $png, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPutWorksheetBackgroundWithHttpInfo($name, $sheet_name, $png, $folder, $storage);
         return $response;
     }
@@ -75810,6 +76059,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutWorksheetComment($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPutWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $comment, $folder, $storage);
         return $response;
     }
@@ -76146,6 +76396,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutWorksheetFreezePanes($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->cellsWorksheetsPutWorksheetFreezePanesWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder, $storage);
         return $response;
     }
@@ -76510,6 +76761,7 @@ class CellsApi
      */
     public function copyFile($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
+        $this->checkAccessToken();
         $this->copyFileWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name, $version_id);
     }
 
@@ -76784,6 +77036,7 @@ class CellsApi
      */
     public function copyFolder($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
+        $this->checkAccessToken();
         $this->copyFolderWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name);
     }
 
@@ -77048,6 +77301,7 @@ class CellsApi
      */
     public function createFolder($path, $storage_name = null)
     {
+        $this->checkAccessToken();
         $this->createFolderWithHttpInfo($path, $storage_name);
     }
 
@@ -77291,6 +77545,7 @@ class CellsApi
      */
     public function deleteFile($path, $storage_name = null, $version_id = null)
     {
+        $this->checkAccessToken();
         $this->deleteFileWithHttpInfo($path, $storage_name, $version_id);
     }
 
@@ -77542,6 +77797,7 @@ class CellsApi
      */
     public function deleteFolder($path, $storage_name = null, $recursive = 'false')
     {
+        $this->checkAccessToken();
         $this->deleteFolderWithHttpInfo($path, $storage_name, $recursive);
     }
 
@@ -77793,6 +78049,7 @@ class CellsApi
      */
     public function downloadFile($path, $storage_name = null, $version_id = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->downloadFileWithHttpInfo($path, $storage_name, $version_id);
         return $response;
     }
@@ -78079,6 +78336,7 @@ class CellsApi
      */
     public function getDiscUsage($storage_name = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->getDiscUsageWithHttpInfo($storage_name);
         return $response;
     }
@@ -78340,6 +78598,7 @@ class CellsApi
      */
     public function getFileVersions($path, $storage_name = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->getFileVersionsWithHttpInfo($path, $storage_name);
         return $response;
     }
@@ -78619,6 +78878,7 @@ class CellsApi
      */
     public function getFilesList($path, $storage_name = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->getFilesListWithHttpInfo($path, $storage_name);
         return $response;
     }
@@ -78901,6 +79161,7 @@ class CellsApi
      */
     public function moveFile($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
+        $this->checkAccessToken();
         $this->moveFileWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name, $version_id);
     }
 
@@ -79175,6 +79436,7 @@ class CellsApi
      */
     public function moveFolder($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
+        $this->checkAccessToken();
         $this->moveFolderWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name);
     }
 
@@ -79440,6 +79702,7 @@ class CellsApi
      */
     public function oAuthPost($grant_type, $client_id, $client_secret)
     {
+        $this->checkAccessToken();
         list($response) = $this->oAuthPostWithHttpInfo($grant_type, $client_id, $client_secret);
         return $response;
     }
@@ -79736,6 +79999,7 @@ class CellsApi
      */
     public function objectExists($path, $storage_name = null, $version_id = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->objectExistsWithHttpInfo($path, $storage_name, $version_id);
         return $response;
     }
@@ -80022,6 +80286,7 @@ class CellsApi
      */
     public function storageExists($storage_name)
     {
+        $this->checkAccessToken();
         list($response) = $this->storageExistsWithHttpInfo($storage_name);
         return $response;
     }
@@ -80294,6 +80559,7 @@ class CellsApi
      */
     public function uploadFile($path, $file, $storage_name = null)
     {
+        $this->checkAccessToken();
         list($response) = $this->uploadFileWithHttpInfo($path, $file, $storage_name);
         return $response;
     }
