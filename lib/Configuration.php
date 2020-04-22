@@ -1,5 +1,6 @@
 <?php
-/**
+
+/* 
  * <summary>
  *  Copyright (c) 2020 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -8,10 +9,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
+ * 
+ *  The above copyright notice and this permission notice shall be included in all 
  *  copies or substantial portions of the Software.
- *
+ * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,7 +21,9 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- **/
+ */
+
+
 
 namespace Aspose\Cells\Cloud;
 
@@ -84,7 +87,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/20.2/php';
+    protected $userAgent = 'Swagger-Codegen/20.4/php';
 
     /**
      * Debug switch (default set to false)
@@ -393,7 +396,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 20.2' . PHP_EOL;
+        $report .= '    SDK Package Version: 20.4' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

@@ -49,5 +49,13 @@ class CellsApiTestBase
         return $result;
     }
 
-
+    public static function getSID()
+    {        
+        return "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+    }
+    
+    public static function getKey()
+    {        
+        return "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    }
 }

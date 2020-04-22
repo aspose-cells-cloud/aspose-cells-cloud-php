@@ -1,5 +1,4 @@
 <?php
-
 /* 
  * <summary>
  *  Copyright (c) 2020 Aspose.Cells Cloud
@@ -89,8 +88,8 @@ class CellsApi
     }
 
     public function checkAccessToken(){
-        if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86300){
-             $defaultHost =  $this->config->getHost();
+        if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
+            $defaultHost =  $this->config->getHost();
             $this->config->setHost('https://api.aspose.cloud');
             $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
             $this->_getAccessTokenTime = date('y-m-d h:i:s');
@@ -57082,6 +57081,295 @@ class CellsApi
     }
 
     /**
+     * Operation cellsWorkbookDeleteWorkbookBackground
+     *
+     * Set worksheet background image.
+     *
+     * @param  string $name name (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsWorkbookDeleteWorkbookBackground($name, $folder = null, $storage = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsWorkbookDeleteWorkbookBackgroundWithHttpInfo($name, $folder, $storage);
+        return $response;
+    }
+
+    /**
+     * Operation cellsWorkbookDeleteWorkbookBackgroundWithHttpInfo
+     *
+     * Set worksheet background image.
+     *
+     * @param  string $name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsWorkbookDeleteWorkbookBackgroundWithHttpInfo($name, $folder = null, $storage = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookDeleteWorkbookBackgroundRequest($name, $folder, $storage);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsWorkbookDeleteWorkbookBackgroundAsync
+     *
+     * Set worksheet background image.
+     *
+     * @param  string $name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookDeleteWorkbookBackgroundAsync($name, $folder = null, $storage = null)
+    {
+        return $this->cellsWorkbookDeleteWorkbookBackgroundAsyncWithHttpInfo($name, $folder, $storage)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsWorkbookDeleteWorkbookBackgroundAsyncWithHttpInfo
+     *
+     * Set worksheet background image.
+     *
+     * @param  string $name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookDeleteWorkbookBackgroundAsyncWithHttpInfo($name, $folder = null, $storage = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookDeleteWorkbookBackgroundRequest($name, $folder, $storage);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsWorkbookDeleteWorkbookBackground'
+     *
+     * @param  string $name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsWorkbookDeleteWorkbookBackgroundRequest($name, $folder = null, $storage = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsWorkbookDeleteWorkbookBackground'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/background';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsWorkbookDeleteWorkbookBackground'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation cellsWorkbookDeleteWorkbookName
      *
      * Clean workbook's names.
@@ -61923,16 +62211,17 @@ class CellsApi
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $out_folder out Folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SplitResultResponse
      */
-    public function cellsWorkbookPostWorkbookSplit($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorkbookPostWorkbookSplit($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsWorkbookPostWorkbookSplitWithHttpInfo($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage);
+        list($response) = $this->cellsWorkbookPostWorkbookSplitWithHttpInfo($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage);
         return $response;
     }
 
@@ -61948,16 +62237,17 @@ class CellsApi
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $out_folder out Folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SplitResultResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookPostWorkbookSplitWithHttpInfo($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorkbookPostWorkbookSplitWithHttpInfo($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SplitResultResponse';
-        $request = $this->cellsWorkbookPostWorkbookSplitRequest($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage);
+        $request = $this->cellsWorkbookPostWorkbookSplitRequest($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -62030,14 +62320,15 @@ class CellsApi
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $out_folder out Folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPostWorkbookSplitAsync($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorkbookPostWorkbookSplitAsync($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage = null)
     {
-        return $this->cellsWorkbookPostWorkbookSplitAsyncWithHttpInfo($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage)
+        return $this->cellsWorkbookPostWorkbookSplitAsyncWithHttpInfo($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -62057,15 +62348,16 @@ class CellsApi
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $out_folder out Folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPostWorkbookSplitAsyncWithHttpInfo($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorkbookPostWorkbookSplitAsyncWithHttpInfo($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SplitResultResponse';
-        $request = $this->cellsWorkbookPostWorkbookSplitRequest($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage);
+        $request = $this->cellsWorkbookPostWorkbookSplitRequest($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -62114,12 +62406,13 @@ class CellsApi
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  string $folder The workbook folder. (optional)
+     * @param  string $out_folder out Folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookPostWorkbookSplitRequest($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $storage = null)
+    protected function cellsWorkbookPostWorkbookSplitRequest($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -62158,6 +62451,10 @@ class CellsApi
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($out_folder !== null) {
+            $queryParams['outFolder'] = ObjectSerializer::toQueryValue($out_folder);
         }
         // query params
         if ($storage !== null) {
@@ -63177,7 +63474,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  string $workbook workbook (required)
+     * @param  \SplFileObject $workbook workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -63198,7 +63495,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  string $workbook (required)
+     * @param  \SplFileObject $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -63276,7 +63573,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  string $workbook (required)
+     * @param  \SplFileObject $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -63299,7 +63596,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  string $workbook (required)
+     * @param  \SplFileObject $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -63352,7 +63649,7 @@ class CellsApi
     /**
      * Create request for operation 'cellsWorkbookPutConvertWorkbook'
      *
-     * @param  string $workbook (required)
+     * @param  \SplFileObject $workbook (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -63390,11 +63687,13 @@ class CellsApi
         }
 
 
+        // form params
+        if ($workbook !== null) {
+            $multipart = true;
+            $formParams['workbook'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($workbook), 'rb');
+        }
         // body params
         $_tempBody = null;
-        if (isset($workbook)) {
-            $_tempBody = $workbook;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -63763,6 +64062,309 @@ class CellsApi
     }
 
     /**
+     * Operation cellsWorkbookPutWorkbookBackground
+     *
+     * Set workbook background image.
+     *
+     * @param  string $name name (required)
+     * @param  string $png png (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsWorkbookPutWorkbookBackground($name, $png, $folder = null, $storage = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsWorkbookPutWorkbookBackgroundWithHttpInfo($name, $png, $folder, $storage);
+        return $response;
+    }
+
+    /**
+     * Operation cellsWorkbookPutWorkbookBackgroundWithHttpInfo
+     *
+     * Set workbook background image.
+     *
+     * @param  string $name (required)
+     * @param  string $png (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsWorkbookPutWorkbookBackgroundWithHttpInfo($name, $png, $folder = null, $storage = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookPutWorkbookBackgroundRequest($name, $png, $folder, $storage);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsWorkbookPutWorkbookBackgroundAsync
+     *
+     * Set workbook background image.
+     *
+     * @param  string $name (required)
+     * @param  string $png (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookPutWorkbookBackgroundAsync($name, $png, $folder = null, $storage = null)
+    {
+        return $this->cellsWorkbookPutWorkbookBackgroundAsyncWithHttpInfo($name, $png, $folder, $storage)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsWorkbookPutWorkbookBackgroundAsyncWithHttpInfo
+     *
+     * Set workbook background image.
+     *
+     * @param  string $name (required)
+     * @param  string $png (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookPutWorkbookBackgroundAsyncWithHttpInfo($name, $png, $folder = null, $storage = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookPutWorkbookBackgroundRequest($name, $png, $folder, $storage);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsWorkbookPutWorkbookBackground'
+     *
+     * @param  string $name (required)
+     * @param  string $png (required)
+     * @param  string $folder (optional)
+     * @param  string $storage storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsWorkbookPutWorkbookBackgroundRequest($name, $png, $folder = null, $storage = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsWorkbookPutWorkbookBackground'
+            );
+        }
+        // verify the required parameter 'png' is set
+        if ($png === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $png when calling cellsWorkbookPutWorkbookBackground'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/background';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage !== null) {
+            $queryParams['storage'] = ObjectSerializer::toQueryValue($storage);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($png)) {
+            $_tempBody = $png;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsWorkbookPutWorkbookBackground'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation cellsWorkbookPutWorkbookCreate
      *
      * Create new workbook using deferent methods.
@@ -63770,6 +64372,7 @@ class CellsApi
      * @param  string $name The new document name. (required)
      * @param  string $template_file The template file, if the data not provided default workbook is created. (optional)
      * @param  string $data_file Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     * @param  bool $is_write_over write over file. (optional)
      * @param  string $folder The new document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -63777,10 +64380,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorkbookResponse
      */
-    public function cellsWorkbookPutWorkbookCreate($name, $template_file = null, $data_file = null, $folder = null, $storage = null)
+    public function cellsWorkbookPutWorkbookCreate($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsWorkbookPutWorkbookCreateWithHttpInfo($name, $template_file, $data_file, $folder, $storage);
+        list($response) = $this->cellsWorkbookPutWorkbookCreateWithHttpInfo($name, $template_file, $data_file, $is_write_over, $folder, $storage);
         return $response;
     }
 
@@ -63792,6 +64395,7 @@ class CellsApi
      * @param  string $name The new document name. (required)
      * @param  string $template_file The template file, if the data not provided default workbook is created. (optional)
      * @param  string $data_file Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     * @param  bool $is_write_over write over file. (optional)
      * @param  string $folder The new document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -63799,10 +64403,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorkbookResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookPutWorkbookCreateWithHttpInfo($name, $template_file = null, $data_file = null, $folder = null, $storage = null)
+    public function cellsWorkbookPutWorkbookCreateWithHttpInfo($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\WorkbookResponse';
-        $request = $this->cellsWorkbookPutWorkbookCreateRequest($name, $template_file, $data_file, $folder, $storage);
+        $request = $this->cellsWorkbookPutWorkbookCreateRequest($name, $template_file, $data_file, $is_write_over, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -63871,15 +64475,16 @@ class CellsApi
      * @param  string $name The new document name. (required)
      * @param  string $template_file The template file, if the data not provided default workbook is created. (optional)
      * @param  string $data_file Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     * @param  bool $is_write_over write over file. (optional)
      * @param  string $folder The new document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutWorkbookCreateAsync($name, $template_file = null, $data_file = null, $folder = null, $storage = null)
+    public function cellsWorkbookPutWorkbookCreateAsync($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage = null)
     {
-        return $this->cellsWorkbookPutWorkbookCreateAsyncWithHttpInfo($name, $template_file, $data_file, $folder, $storage)
+        return $this->cellsWorkbookPutWorkbookCreateAsyncWithHttpInfo($name, $template_file, $data_file, $is_write_over, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -63895,16 +64500,17 @@ class CellsApi
      * @param  string $name The new document name. (required)
      * @param  string $template_file The template file, if the data not provided default workbook is created. (optional)
      * @param  string $data_file Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     * @param  bool $is_write_over write over file. (optional)
      * @param  string $folder The new document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutWorkbookCreateAsyncWithHttpInfo($name, $template_file = null, $data_file = null, $folder = null, $storage = null)
+    public function cellsWorkbookPutWorkbookCreateAsyncWithHttpInfo($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\WorkbookResponse';
-        $request = $this->cellsWorkbookPutWorkbookCreateRequest($name, $template_file, $data_file, $folder, $storage);
+        $request = $this->cellsWorkbookPutWorkbookCreateRequest($name, $template_file, $data_file, $is_write_over, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -63949,13 +64555,14 @@ class CellsApi
      * @param  string $name The new document name. (required)
      * @param  string $template_file The template file, if the data not provided default workbook is created. (optional)
      * @param  string $data_file Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     * @param  bool $is_write_over write over file. (optional)
      * @param  string $folder The new document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookPutWorkbookCreateRequest($name, $template_file = null, $data_file = null, $folder = null, $storage = null)
+    protected function cellsWorkbookPutWorkbookCreateRequest($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -63978,6 +64585,10 @@ class CellsApi
         // query params
         if ($data_file !== null) {
             $queryParams['dataFile'] = ObjectSerializer::toQueryValue($data_file);
+        }
+        // query params
+        if ($is_write_over !== null) {
+            $queryParams['isWriteOver'] = ObjectSerializer::toQueryValue($is_write_over);
         }
         // query params
         if ($folder !== null) {
@@ -68233,6 +68844,8 @@ class CellsApi
      * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
+     * @param  string $area Exported area. (optional)
+     * @param  int $page_index Exported page index. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -68240,10 +68853,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorksheetsGetWorksheet($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorksheetsGetWorksheet($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage);
+        list($response) = $this->cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage);
         return $response;
     }
 
@@ -68257,6 +68870,8 @@ class CellsApi
      * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
+     * @param  string $area Exported area. (optional)
+     * @param  int $page_index Exported page index. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
@@ -68264,10 +68879,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage);
+        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage);
 
         try {
             $options = $this->createHttpClientOption();
@@ -68338,15 +68953,17 @@ class CellsApi
      * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
+     * @param  string $area Exported area. (optional)
+     * @param  int $page_index Exported page index. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetsGetWorksheetAsync($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorksheetsGetWorksheetAsync($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage = null)
     {
-        return $this->cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage)
+        return $this->cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -68364,16 +68981,18 @@ class CellsApi
      * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
+     * @param  string $area Exported area. (optional)
+     * @param  int $page_index Exported page index. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null, $storage = null)
+    public function cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage);
+        $request = $this->cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -68420,13 +69039,15 @@ class CellsApi
      * @param  string $format The exported file format. (optional)
      * @param  int $vertical_resolution Image vertical resolution. (optional, default to 0)
      * @param  int $horizontal_resolution Image horizontal resolution. (optional, default to 0)
+     * @param  string $area Exported area. (optional)
+     * @param  int $page_index Exported page index. (optional)
      * @param  string $folder The document folder. (optional)
      * @param  string $storage storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $folder = null, $storage = null)
+    protected function cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -68459,6 +69080,14 @@ class CellsApi
         // query params
         if ($horizontal_resolution !== null) {
             $queryParams['horizontalResolution'] = ObjectSerializer::toQueryValue($horizontal_resolution);
+        }
+        // query params
+        if ($area !== null) {
+            $queryParams['area'] = ObjectSerializer::toQueryValue($area);
+        }
+        // query params
+        if ($page_index !== null) {
+            $queryParams['pageIndex'] = ObjectSerializer::toQueryValue($page_index);
         }
         // query params
         if ($folder !== null) {

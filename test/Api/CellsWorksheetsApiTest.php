@@ -52,7 +52,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        $this->instance = new CellsApi(CellsApiTestBase::getSID(),CellsApiTestBase::getKey());
     }
 
     /**
@@ -202,10 +202,12 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet1'; 
         $verticalResolution =100;  
         $horizontalResolution =90;
+        $area =null;
+        $pageIndex = null;
         $format = "png";
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $format, $verticalResolution, $horizontalResolution, $folder);
+        $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $format, $verticalResolution, $horizontalResolution, $area,$pageIndex ,$folder);
         $contents = $result->fread($result->getSize());
         $this->assertGreaterThan(6000, $result->getSize(), "png file size error");
     }
@@ -678,5 +680,49 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutWorksheetFreezePanes($name, $sheet_name,  $row, $column,$freezedRows,$freezedColumns, $folder);
         $this->assertEquals(200, $result['code']);
+    }
+
+    /**
+     * Test case for testCellsWorksheetsGetWorkSheetForArea
+     *
+     * Read worksheet info or export..
+     *
+     */
+    public function testCellsWorksheetsGetWorkSheetForArea()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet1'; 
+        $verticalResolution =100;  
+        $horizontalResolution =90;
+        $area ="B3:K8s";
+        $pageIndex = null;
+        $format = "png";
+        $folder = "PhpTest";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $format, $verticalResolution, $horizontalResolution, $area,$pageIndex ,$folder);
+        $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(6000, $result->getSize(), "png file size error");
+    }
+
+     /**
+     * Test case for testCellsWorksheetsGetWorkSheetForArea
+     *
+     * Read worksheet info or export..
+     *
+     */
+    public function testCellsWorksheetsGetWorkSheetForPageIndex()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet1'; 
+        $verticalResolution =100;  
+        $horizontalResolution =90;
+        $area =null;
+        $pageIndex = 1;
+        $format = "png";
+        $folder = "PhpTest";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorksheetsGetWorkSheet($name, $sheet_name, $format, $verticalResolution, $horizontalResolution, $area,$pageIndex ,$folder);
+        $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(6000, $result->getSize(), "png file size error");
     }
 }

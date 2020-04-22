@@ -52,7 +52,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        $this->instance = new CellsApi(CellsApiTestBase::getSID(),CellsApiTestBase::getKey());
     }
 
     /**
@@ -531,7 +531,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
             }
             $parents = $parents . "../";
         }
-        $result = $this->instance->cellsWorkbookPutConvertWorkBook( $file ,$format, $password,  $outPath);
+        $result = $this->instance->cellsWorkbookPutConvertWorkBook($path ,$format, $password,  $outPath);
 //        $this->assertEquals(119592, $result->getSize());
     }
 
@@ -567,7 +567,49 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $dataFile = "ReportData.xml";  
         CellsApiTestBase::ready(  $this->instance,$templateFile ,$folder);
         CellsApiTestBase::ready(  $this->instance,$dataFile ,$folder);
-        $result = $this->instance->cellsWorkbookPutWorkbookCreate($name, $folder."/".$templateFile,$folder."/".$dataFile,  $folder);
+        $result = $this->instance->cellsWorkbookPutWorkbookCreate($name, $folder."/".$templateFile,$folder."/".$dataFile, true, $folder);
+        $this->assertEquals(200, $result['code']);
+    }
+
+    /**
+     * Test case for CellsWorkbookDeleteWorkbookBackground
+     *
+     * 
+     *
+     */
+    public function testCellsWorkbookDeleteWorkbookBackground()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $result = $this->instance->cellsWorkbookDeleteWorkbookBackground($name,  $folder);
+        $this->assertEquals(200, $result['code']);
+    }
+
+     /**
+     * Test case for CellsWorkbookDeleteWorkbookBackground
+     *
+     * 
+     *
+     */
+    public function testCellsWorkbookPutWorkbookBackground()
+    {
+        $name = "Book1.xlsx";
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);      
+
+        $cwd = getcwd();
+        $parents = "/";
+        $png = "TestData/WaterMark.png";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $png;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->cellsWorkbookPutWorkbookBackground($name,$file, $folder);
         $this->assertEquals(200, $result['code']);
     }
 }

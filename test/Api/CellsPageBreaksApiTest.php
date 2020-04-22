@@ -45,7 +45,7 @@ class CellsPageBreaksApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        $this->instance = new CellsApi(CellsApiTestBase::getSID(),CellsApiTestBase::getKey());
     }
 
     /**

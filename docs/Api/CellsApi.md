@@ -174,6 +174,7 @@ Method | HTTP request | Description
 [**cellsWorkbookDeleteDecryptDocument**](CellsApi.md#cellsWorkbookDeleteDecryptDocument) | **DELETE** /cells/{name}/encryption | Decrypt document.
 [**cellsWorkbookDeleteDocumentUnprotectFromChanges**](CellsApi.md#cellsWorkbookDeleteDocumentUnprotectFromChanges) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
 [**cellsWorkbookDeleteUnprotectDocument**](CellsApi.md#cellsWorkbookDeleteUnprotectDocument) | **DELETE** /cells/{name}/protection | Unprotect document.
+[**cellsWorkbookDeleteWorkbookBackground**](CellsApi.md#cellsWorkbookDeleteWorkbookBackground) | **DELETE** /cells/{name}/background | Set worksheet background image.
 [**cellsWorkbookDeleteWorkbookName**](CellsApi.md#cellsWorkbookDeleteWorkbookName) | **DELETE** /cells/{name}/names/{nameName} | Clean workbook&#39;s names.
 [**cellsWorkbookDeleteWorkbookNames**](CellsApi.md#cellsWorkbookDeleteWorkbookNames) | **DELETE** /cells/{name}/names | Clean workbook&#39;s names.
 [**cellsWorkbookGetWorkbook**](CellsApi.md#cellsWorkbookGetWorkbook) | **GET** /cells/{name} | Read workbook info or export.
@@ -196,6 +197,7 @@ Method | HTTP request | Description
 [**cellsWorkbookPostWorkbooksTextSearch**](CellsApi.md#cellsWorkbookPostWorkbooksTextSearch) | **POST** /cells/{name}/findText | Search text.
 [**cellsWorkbookPutConvertWorkbook**](CellsApi.md#cellsWorkbookPutConvertWorkbook) | **PUT** /cells/convert | Convert workbook from request content to some format.
 [**cellsWorkbookPutDocumentProtectFromChanges**](CellsApi.md#cellsWorkbookPutDocumentProtectFromChanges) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
+[**cellsWorkbookPutWorkbookBackground**](CellsApi.md#cellsWorkbookPutWorkbookBackground) | **PUT** /cells/{name}/background | Set workbook background image.
 [**cellsWorkbookPutWorkbookCreate**](CellsApi.md#cellsWorkbookPutWorkbookCreate) | **PUT** /cells/{name} | Create new workbook using deferent methods.
 [**cellsWorksheetValidationsDeleteWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
 [**cellsWorksheetValidationsDeleteWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
@@ -9987,6 +9989,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **cellsWorkbookDeleteWorkbookBackground**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookDeleteWorkbookBackground($name, $folder, $storage)
+
+Set worksheet background image.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsWorkbookDeleteWorkbookBackground($name, $folder, $storage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsWorkbookDeleteWorkbookBackground: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **cellsWorkbookDeleteWorkbookName**
 > \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookDeleteWorkbookName($name, $name_name, $folder, $storage)
 
@@ -10844,7 +10897,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorkbookPostWorkbookSplit**
-> \Aspose\Cells\Cloud\Model\SplitResultResponse cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage)
+> \Aspose\Cells\Cloud\Model\SplitResultResponse cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage)
 
 Split workbook.
 
@@ -10865,10 +10918,11 @@ $to = 0; // int | End worksheet index.
 $horizontal_resolution = 0; // int | Image horizontal resolution.
 $vertical_resolution = 0; // int | Image vertical resolution.
 $folder = "folder_example"; // string | The workbook folder.
+$out_folder = "out_folder_example"; // string | out Folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $storage);
+    $result = $apiInstance->cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsWorkbookPostWorkbookSplit: ', $e->getMessage(), PHP_EOL;
@@ -10887,6 +10941,7 @@ Name | Type | Description  | Notes
  **horizontal_resolution** | **int**| Image horizontal resolution. | [optional] [default to 0]
  **vertical_resolution** | **int**| Image vertical resolution. | [optional] [default to 0]
  **folder** | **string**| The workbook folder. | [optional]
+ **out_folder** | **string**| out Folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 
 ### Return type
@@ -11080,7 +11135,7 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$workbook = "B"; // string | 
+$workbook = "/path/to/file.txt"; // \SplFileObject | 
 $format = "format_example"; // string | The format to convert.
 $password = "password_example"; // string | The workbook password.
 $out_path = "out_path_example"; // string | Path to save result
@@ -11098,7 +11153,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workbook** | **string**|  |
+ **workbook** | **\SplFileObject**|  |
  **format** | **string**| The format to convert. | [optional]
  **password** | **string**| The workbook password. | [optional]
  **out_path** | **string**| Path to save result | [optional]
@@ -11171,8 +11226,61 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **cellsWorkbookPutWorkbookBackground**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookPutWorkbookBackground($name, $png, $folder, $storage)
+
+Set workbook background image.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$png = "B"; // string | 
+$folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsWorkbookPutWorkbookBackground($name, $png, $folder, $storage);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsWorkbookPutWorkbookBackground: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **png** | **string**|  |
+ **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **cellsWorkbookPutWorkbookCreate**
-> \Aspose\Cells\Cloud\Model\WorkbookResponse cellsWorkbookPutWorkbookCreate($name, $template_file, $data_file, $folder, $storage)
+> \Aspose\Cells\Cloud\Model\WorkbookResponse cellsWorkbookPutWorkbookCreate($name, $template_file, $data_file, $is_write_over, $folder, $storage)
 
 Create new workbook using deferent methods.
 
@@ -11189,11 +11297,12 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
 $name = "name_example"; // string | The new document name.
 $template_file = "template_file_example"; // string | The template file, if the data not provided default workbook is created.
 $data_file = "data_file_example"; // string | Smart marker data file, if the data not provided the request content is checked for the data.
+$is_write_over = true; // bool | write over file.
 $folder = "folder_example"; // string | The new document folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorkbookPutWorkbookCreate($name, $template_file, $data_file, $folder, $storage);
+    $result = $apiInstance->cellsWorkbookPutWorkbookCreate($name, $template_file, $data_file, $is_write_over, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsWorkbookPutWorkbookCreate: ', $e->getMessage(), PHP_EOL;
@@ -11208,6 +11317,7 @@ Name | Type | Description  | Notes
  **name** | **string**| The new document name. |
  **template_file** | **string**| The template file, if the data not provided default workbook is created. | [optional]
  **data_file** | **string**| Smart marker data file, if the data not provided the request content is checked for the data. | [optional]
+ **is_write_over** | **bool**| write over file. | [optional]
  **folder** | **string**| The new document folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 
@@ -11938,7 +12048,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorksheetsGetWorksheet**
-> \SplFileObject cellsWorksheetsGetWorksheet($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage)
+> \SplFileObject cellsWorksheetsGetWorksheet($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage)
 
 Read worksheet info or export.
 
@@ -11957,11 +12067,13 @@ $sheet_name = "sheet_name_example"; // string | The worksheet name.
 $format = "format_example"; // string | The exported file format.
 $vertical_resolution = 0; // int | Image vertical resolution.
 $horizontal_resolution = 0; // int | Image horizontal resolution.
+$area = "area_example"; // string | Exported area.
+$page_index = 56; // int | Exported page index.
 $folder = "folder_example"; // string | The document folder.
 $storage = "storage_example"; // string | storage name.
 
 try {
-    $result = $apiInstance->cellsWorksheetsGetWorksheet($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $folder, $storage);
+    $result = $apiInstance->cellsWorksheetsGetWorksheet($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsWorksheetsGetWorksheet: ', $e->getMessage(), PHP_EOL;
@@ -11978,6 +12090,8 @@ Name | Type | Description  | Notes
  **format** | **string**| The exported file format. | [optional]
  **vertical_resolution** | **int**| Image vertical resolution. | [optional] [default to 0]
  **horizontal_resolution** | **int**| Image horizontal resolution. | [optional] [default to 0]
+ **area** | **string**| Exported area. | [optional]
+ **page_index** | **int**| Exported page index. | [optional]
  **folder** | **string**| The document folder. | [optional]
  **storage** | **string**| storage name. | [optional]
 

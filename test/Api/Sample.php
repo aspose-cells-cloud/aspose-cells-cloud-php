@@ -51,7 +51,7 @@ class Sample extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        $this->instance = new CellsApi(CellsApiTestBase::getSID(),CellsApiTestBase::getKey());
     }
 
     /**
@@ -84,5 +84,27 @@ class Sample extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result =  $this->instance->cellsPostSetCellHtmlString($name, $sheet_name, $cellName,$html_string,$folder);
         $this->assertEquals(200, $result['code']);
+    }
+
+    public function testCellsWorkbookPutConvertWorkBook()
+    {
+        $format ='pdf';
+        $password = null;
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->cellsWorkbookPutConvertWorkBook( $path ,$format, $password,  $outPath);
+//        $this->assertEquals(119592, $result->getSize());
     }
 }
