@@ -199,6 +199,7 @@ Method | HTTP request | Description
 [**cellsWorkbookPutDocumentProtectFromChanges**](CellsApi.md#cellsWorkbookPutDocumentProtectFromChanges) | **PUT** /cells/{name}/writeProtection | Protect document from changes.
 [**cellsWorkbookPutWorkbookBackground**](CellsApi.md#cellsWorkbookPutWorkbookBackground) | **PUT** /cells/{name}/background | Set workbook background image.
 [**cellsWorkbookPutWorkbookCreate**](CellsApi.md#cellsWorkbookPutWorkbookCreate) | **PUT** /cells/{name} | Create new workbook using deferent methods.
+[**cellsWorkbookPutWorkbookWaterMarker**](CellsApi.md#cellsWorkbookPutWorkbookWaterMarker) | **PUT** /cells/{name}/watermarker | Set workbook background image.
 [**cellsWorksheetValidationsDeleteWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidation) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Delete worksheet validation by index.
 [**cellsWorksheetValidationsDeleteWorksheetValidations**](CellsApi.md#cellsWorksheetValidationsDeleteWorksheetValidations) | **DELETE** /cells/{name}/worksheets/{sheetName}/validations | Clear all validation in worksheet.
 [**cellsWorksheetValidationsGetWorksheetValidation**](CellsApi.md#cellsWorksheetValidationsGetWorksheetValidation) | **GET** /cells/{name}/worksheets/{sheetName}/validations/{validationIndex} | Get worksheet validation by index.
@@ -11324,6 +11325,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Aspose\Cells\Cloud\Model\WorkbookResponse**](../Model/WorkbookResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsWorkbookPutWorkbookWaterMarker**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookPutWorkbookWaterMarker($name, $folder, $storage, $text_water_marker_request)
+
+Set workbook background image.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$folder = "folder_example"; // string | 
+$storage = "storage_example"; // string | storage name.
+$text_water_marker_request = new \Aspose\Cells\Cloud\Model\TextWaterMarkerRequest(); // \Aspose\Cells\Cloud\Model\TextWaterMarkerRequest | The text water marker request.
+
+try {
+    $result = $apiInstance->cellsWorkbookPutWorkbookWaterMarker($name, $folder, $storage, $text_water_marker_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsWorkbookPutWorkbookWaterMarker: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **folder** | **string**|  | [optional]
+ **storage** | **string**| storage name. | [optional]
+ **text_water_marker_request** | [**\Aspose\Cells\Cloud\Model\TextWaterMarkerRequest**](../Model/TextWaterMarkerRequest.md)| The text water marker request. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 

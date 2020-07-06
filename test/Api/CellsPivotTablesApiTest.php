@@ -114,18 +114,18 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
      * delete  pivot filter for piovt table.
      *
      */
-    public function testCellsPivotTablesDeleteWorksheetPivotTableFilter()
-    {
-        $name ='TestCase.xlsx';
-        $sheet_name ='Sheet4';
-        $pivotTableIndex = 0;
-        $fieldIndex = 0;
-        $needReCalculate = 'true';
-        $folder = "PhpTest";
-        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivotTableIndex,  $fieldIndex,$needReCalculate,$folder);
-        $this->assertEquals(200, $result['code']);
-    }
+    // public function testCellsPivotTablesDeleteWorksheetPivotTableFilter()
+    // {
+    //     $name ='TestCase.xlsx';
+    //     $sheet_name ='Sheet4';
+    //     $pivotTableIndex = 0;
+    //     $fieldIndex = 0;
+    //     $needReCalculate = 'true';
+    //     $folder = "PhpTest";
+    //     CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+    //     $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivotTableIndex,  $fieldIndex,$needReCalculate,$folder);
+    //     $this->assertEquals(200, $result['code']);
+    // }
 
     /**
      * Test case for cellsPivotTablesDeleteWorksheetPivotTableFilters
@@ -482,5 +482,8 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name,$pivotTableIndex, $pivotFilter, $needReCalculate,$folder);
         $this->assertEquals(200, $result['code']);    
+        $fieldIndex = 0;
+        $result = $this->instance->cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivotTableIndex,  $fieldIndex,$needReCalculate,$folder);
+        $this->assertEquals(200, $result['code']);
     }
 }

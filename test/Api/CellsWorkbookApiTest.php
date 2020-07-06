@@ -28,7 +28,7 @@ use \Aspose\Cells\Cloud\Model\ImportIntArrayOption;
 use \Aspose\Cells\Cloud\Model\CalculationOptions;
 use \Aspose\Cells\Cloud\Model\WorkbookSettings;
 use \Aspose\Cells\Cloud\Model\PasswordRequest;
-
+use \Aspose\Cells\Cloud\Model\TextWaterMarkerRequest;
 /**
  * CellsWorkbookApiTest Class Doc Comment
  *
@@ -610,6 +610,22 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
             $parents = $parents . "../";
         }
         $result = $this->instance->cellsWorkbookPutWorkbookBackground($name,$file, $folder);
+        $this->assertEquals(200, $result['code']);
+    }
+     /**
+     * Test case for cellsWorkbookPutWorkbookWaterMarker
+     *
+     * 
+     *
+     */
+    public function testCellsWorkbookPutWorkbookWaterMarker()
+    {
+        $name = "Book1.xlsx";
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);      
+        $text_water_marker_request  = new TextWaterMarkerRequest();
+        $text_water_marker_request->setText("Aspose.Cells Cloud SDK");
+        $result = $this->instance->cellsWorkbookPutWorkbookWaterMarker($name, $folder, null,$text_water_marker_request  );
         $this->assertEquals(200, $result['code']);
     }
 }

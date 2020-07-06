@@ -86,7 +86,7 @@ class CellsTaskApiTest extends \PHPUnit_Framework_TestCase
         $param1 = new SplitWorkbookTaskParameter ();
         $param1->setDestinationFileFormat('xlsx');
         $fileSource =new FileSource();
-        $fileSource->setFilePath($folder);
+        // $fileSource->setFilePath($folder);
         $fileSource->setFileSourceType('CloudFileSystem');
         $param1->setDestinationFilePosition($fileSource);
         $param1->setSplitNameRule('sheetname');
