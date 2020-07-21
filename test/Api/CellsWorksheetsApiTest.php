@@ -404,7 +404,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $options = new CopyOptions();
         $options->setColumnCharacterWidth ('true') ;
         $sourceWorkbook = 'Book1.xlsx';
-        $sourceFolder = "Temp";
+        $sourceFolder = "PhpTest";
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPostCopyWorksheet($name, $sheet_name,  $sourceSheet, $options,$sourceWorkbook, $sourceFolder, $folder);

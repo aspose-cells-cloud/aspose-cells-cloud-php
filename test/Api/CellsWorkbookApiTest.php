@@ -417,7 +417,8 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $xmlFile = "ReportData.xml";
         $outPath = null;
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookPostWorkbookGetSmartMarkerResult($name, $xmlFile,  $folder,null,$outPath);
+        CellsApiTestBase::ready(  $this->instance,$xmlFile ,$folder);
+        $result = $this->instance->cellsWorkbookPostWorkbookGetSmartMarkerResult($name,  $folder."/".$xmlFile,  $folder,null,$outPath);
         $json = json_decode($result);
 //        $this->assertEquals(200, $json->StatusCode);
     }
@@ -454,8 +455,9 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $to = 3;
         $horizontalResolution = 100;
         $verticalResolution = 90;
+        $outPath =  $folder;
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontalResolution, $verticalResolution,  $folder);
+        $result = $this->instance->cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontalResolution, $verticalResolution,  $folder,$outPath);
         $this->assertEquals(200, $result['code']);
     }
 
@@ -471,7 +473,8 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $folder = "PhpTest";
         $formatmergeWith = "myDocument.xlsx";      
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookPostWorkbooksMerge($name, $formatmergeWith,  $folder);
+        CellsApiTestBase::ready(  $this->instance,$formatmergeWith ,$folder);
+        $result = $this->instance->cellsWorkbookPostWorkbooksMerge($name,  $folder."/".$formatmergeWith,  $folder);
         $this->assertEquals(200, $result['code']);
     }
 
@@ -580,7 +583,8 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookDeleteWorkbookBackground()
     {
         $name ='Book1.xlsx';       
-        $folder = "Temp";
+        $folder = "PhpTest";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookDeleteWorkbookBackground($name,  $folder);
         $this->assertEquals(200, $result['code']);
     }
@@ -594,7 +598,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPutWorkbookBackground()
     {
         $name = "Book1.xlsx";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);      
 
         $cwd = getcwd();
@@ -621,7 +625,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
     public function testCellsWorkbookPutWorkbookWaterMarker()
     {
         $name = "Book1.xlsx";
-        $folder = "Temp";
+        $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);      
         $text_water_marker_request  = new TextWaterMarkerRequest();
         $text_water_marker_request->setText("Aspose.Cells Cloud SDK");

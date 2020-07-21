@@ -78,7 +78,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $isAutoFitColumns= 'true';
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $folder."/".$newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
     }
     /**
@@ -96,7 +96,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $isAutoFitColumns= 'true';
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $folder."/".$newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
     }
     /**
@@ -135,7 +135,7 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $isAutoFitColumns= 'true';
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $folder."/".$newfilename,$isAutoFitRows, $isAutoFitColumns, $folder);
         $this->assertEquals(200, $result['code']);
     }
     /**

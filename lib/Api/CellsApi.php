@@ -67,21 +67,20 @@ class CellsApi
      * @param HeaderSelector  $selector
      */
     public function __construct(
-        $appSid,$appKey,$version ="v3.0"
+        $appSid,$appKey,$version ="v3.0",$baseUrl="https://api.aspose.cloud"
     ) {
         $this->_appSid = $appSid;
         $this->_appKey = $appKey;
         $this->_appVersion = $version;
-
+        $this->_baseUrl = substr($baseUrl,-1)=="/"?substr($baseUrl,0,strlen($baseUrl)-1):$baseUrl;
+        
         $this->client =  new Client();
         $this->config =  new Configuration();
         $this->headerSelector =  new HeaderSelector();
         $grantType = "client_credentials";
-        if($version === 'v1.1'){
-            $this->config->setHost("https://api.aspose.cloud/v1.1");
-        }
+        $this->config->setHost($this->_baseUrl."/".$this->_appVersion);
         $defaultHost =  $this->config->getHost();
-        $this->config->setHost('https://api.aspose.cloud');
+        $this->config->setHost($this->_baseUrl);
         $this->config ->setAccessToken ( $this->getAccessToken($grantType, $appSid, $appKey,$version));
         $this->_getAccessTokenTime = date('y-m-d h:i:s');
         $this->config->setHost( $defaultHost );
@@ -90,7 +89,7 @@ class CellsApi
     public function checkAccessToken(){
         if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
             $defaultHost =  $this->config->getHost();
-            $this->config->setHost('https://api.aspose.cloud');
+            $this->config->setHost( $this->_baseUrl);
             $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
             $this->_getAccessTokenTime = date('y-m-d h:i:s');
             $this->config->setHost( $defaultHost );
@@ -63721,7 +63720,6 @@ class CellsApi
                 $httpBody = \GuzzleHttp\json_encode($httpBody);
             }
         } elseif (count($formParams) > 0) {
-             
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -63731,8 +63729,8 @@ class CellsApi
                     ];
                 }
                 // for HTTP post (form)
-                // $httpBody = new MultipartStream($multipartContents);
-                $httpBody = $formParams['workbook'];
+                $httpBody = new MultipartStream($multipartContents);
+
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 

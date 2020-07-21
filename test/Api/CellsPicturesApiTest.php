@@ -186,7 +186,8 @@ class CellsPicturesApiTest extends \PHPUnit_Framework_TestCase
         $picturePath = 'WaterMark.png';        
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture,   $upperLeftRow,$upperLeftColumn ,$lowerRightRow,$lowerRightColumn,$picturePath, $folder);
+        CellsApiTestBase::ready(  $this->instance,$picturePath ,$folder);
+        $result = $this->instance->cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture,   $upperLeftRow,$upperLeftColumn ,$lowerRightRow,$lowerRightColumn,$folder."/".$picturePath, $folder);
         $this->assertEquals(200, $result['code']);
     }
 }

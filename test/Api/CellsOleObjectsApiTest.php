@@ -192,7 +192,9 @@ class CellsOleObjectsApiTest extends \PHPUnit_Framework_TestCase
         $imageFile = 'word.jpg';  
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole,$upperLeftRow,$upperLeftColumn ,$height,$width,$oleFile, $imageFile ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$oleFile ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$imageFile ,$folder);
+        $result = $this->instance->cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole,$upperLeftRow,$upperLeftColumn ,$height,$width, $folder."/".$oleFile, $folder."/".$imageFile ,$folder);
         $this->assertEquals(200, $result['code']);
     }
 }
