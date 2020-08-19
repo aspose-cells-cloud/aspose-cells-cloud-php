@@ -169,7 +169,7 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $height= 90; 
         $folder = "PhpTest";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsShapesPutWorksheetShape($name, $sheet_name, $drawingType,$upperLeftRow,$upperLeftColumn, $top, $left, $width, $height,$folder);
+        $result = $this->instance->cellsShapesPutWorksheetShape($name, $sheet_name, null,$drawingType,$upperLeftRow,$upperLeftColumn, $top, $left, $width, $height,$folder);
         $this->assertEquals(200, $result['code']);
     }
 }

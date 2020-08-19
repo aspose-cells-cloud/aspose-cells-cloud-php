@@ -80,8 +80,8 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'used_size' => 'int64',
-        'total_size' => 'int64'
+        'used_size' => 'int32',
+        'total_size' => 'int32'
     ];
 
     /**

@@ -69,7 +69,7 @@ class SplitResult implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'documents' => '\Aspose\Cells\Cloud\Model\SplitResultDocument[]'
+        'documents' => '\Aspose\Cells\Cloud\Model\CellsCloudFileInfo[]'
     ];
 
     /**
@@ -220,7 +220,7 @@ class SplitResult implements  ArrayAccess
     /**
      * Gets documents
      *
-     * @return \Aspose\Cells\Cloud\Model\SplitResultDocument[]
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudFileInfo[]
      */
     public function getDocuments()
     {
@@ -230,7 +230,7 @@ class SplitResult implements  ArrayAccess
     /**
      * Sets documents
      *
-     * @param \Aspose\Cells\Cloud\Model\SplitResultDocument[] $documents documents
+     * @param \Aspose\Cells\Cloud\Model\CellsCloudFileInfo[] $documents documents
      *
      * @return $this
      */

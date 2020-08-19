@@ -45,7 +45,7 @@ class CellsApiTestBase
         }else{
             $fullName=$folder . "/" .  $filename;
         }
-        $result = $api->uploadFile($fullName,$file);
+        $result = $api->uploadFile($fullName,$file, $storageName);
         return $result;
     }
 

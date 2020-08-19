@@ -69,9 +69,7 @@ class SaveResult implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'source_document' => '\Aspose\Cells\Cloud\Model\Link',
-        'dest_document' => '\Aspose\Cells\Cloud\Model\Link',
-        'additional_items' => '\Aspose\Cells\Cloud\Model\Link[]'
+        'documents' => '\Aspose\Cells\Cloud\Model\CellsCloudFileInfo[]'
     ];
 
     /**
@@ -80,9 +78,7 @@ class SaveResult implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'source_document' => null,
-        'dest_document' => null,
-        'additional_items' => null
+        'documents' => null
     ];
 
     /**
@@ -112,9 +108,7 @@ class SaveResult implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source_document' => 'SourceDocument',
-        'dest_document' => 'DestDocument',
-        'additional_items' => 'AdditionalItems'
+        'documents' => 'Documents'
     ];
 
     /**
@@ -123,9 +117,7 @@ class SaveResult implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'source_document' => 'setSourceDocument',
-        'dest_document' => 'setDestDocument',
-        'additional_items' => 'setAdditionalItems'
+        'documents' => 'setDocuments'
     ];
 
     /**
@@ -134,9 +126,7 @@ class SaveResult implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'source_document' => 'getSourceDocument',
-        'dest_document' => 'getDestDocument',
-        'additional_items' => 'getAdditionalItems'
+        'documents' => 'getDocuments'
     ];
 
     /**
@@ -199,9 +189,7 @@ class SaveResult implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['source_document'] = isset($data['source_document']) ? $data['source_document'] : null;
-        $this->container['dest_document'] = isset($data['dest_document']) ? $data['dest_document'] : null;
-        $this->container['additional_items'] = isset($data['additional_items']) ? $data['additional_items'] : null;
+        $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
     }
 
     /**
@@ -230,73 +218,25 @@ class SaveResult implements  ArrayAccess
 
 
     /**
-     * Gets source_document
+     * Gets documents
      *
-     * @return \Aspose\Cells\Cloud\Model\Link
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudFileInfo[]
      */
-    public function getSourceDocument()
+    public function getDocuments()
     {
-        return $this->container['source_document'];
+        return $this->container['documents'];
     }
 
     /**
-     * Sets source_document
+     * Sets documents
      *
-     * @param \Aspose\Cells\Cloud\Model\Link $source_document source_document
+     * @param \Aspose\Cells\Cloud\Model\CellsCloudFileInfo[] $documents documents
      *
      * @return $this
      */
-    public function setSourceDocument($source_document)
+    public function setDocuments($documents)
     {
-        $this->container['source_document'] = $source_document;
-
-        return $this;
-    }
-
-    /**
-     * Gets dest_document
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link
-     */
-    public function getDestDocument()
-    {
-        return $this->container['dest_document'];
-    }
-
-    /**
-     * Sets dest_document
-     *
-     * @param \Aspose\Cells\Cloud\Model\Link $dest_document dest_document
-     *
-     * @return $this
-     */
-    public function setDestDocument($dest_document)
-    {
-        $this->container['dest_document'] = $dest_document;
-
-        return $this;
-    }
-
-    /**
-     * Gets additional_items
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link[]
-     */
-    public function getAdditionalItems()
-    {
-        return $this->container['additional_items'];
-    }
-
-    /**
-     * Sets additional_items
-     *
-     * @param \Aspose\Cells\Cloud\Model\Link[] $additional_items additional_items
-     *
-     * @return $this
-     */
-    public function setAdditionalItems($additional_items)
-    {
-        $this->container['additional_items'] = $additional_items;
+        $this->container['documents'] = $documents;
 
         return $this;
     }
