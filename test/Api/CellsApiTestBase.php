@@ -24,7 +24,11 @@ class CellsApiTestBase
      *
      * @return string Access token for OAuth
      */
-
+    public static function getInstance()
+    {
+       return new CellsApi("91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD","0fbf678c5ecabdb5caca48452a736dd0","v3.0","https://api-qa.aspose.cloud");
+    }
+    
     public static function ready($api , $filename , $folder, $storageName = null)
     {
         $cwd = getcwd();
@@ -45,17 +49,9 @@ class CellsApiTestBase
         }else{
             $fullName=$folder . "/" .  $filename;
         }
-        $result = $api->uploadFile($fullName,$file, $storageName);
+        $result = $api->uploadFile($fullName,$file,$storageName );
         return $result;
     }
 
-    public static function getSID()
-    {        
-        return "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
-    }
-    
-    public static function getKey()
-    {        
-        return "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-    }
+
 }

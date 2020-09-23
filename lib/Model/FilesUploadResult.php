@@ -71,7 +71,7 @@ class FilesUploadResult implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'uploaded' => 'string[]',
-        'errors' => '\Aspose\Cells\Cloud\Model\Error[]'
+        'errors' => '\Aspose\Cells\Cloud\Model\CellsError[]'
     ];
 
     /**
@@ -251,7 +251,7 @@ class FilesUploadResult implements  ArrayAccess
     /**
      * Gets errors
      *
-     * @return \Aspose\Cells\Cloud\Model\Error[]
+     * @return \Aspose\Cells\Cloud\Model\CellsError[]
      */
     public function getErrors()
     {
@@ -261,7 +261,7 @@ class FilesUploadResult implements  ArrayAccess
     /**
      * Sets errors
      *
-     * @param \Aspose\Cells\Cloud\Model\Error[] $errors List of errors.
+     * @param \Aspose\Cells\Cloud\Model\CellsError[] $errors List of errors.
      *
      * @return $this
      */

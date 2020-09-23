@@ -82,7 +82,7 @@ class CellsCloudFileInfo implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'size' => 'int32',
+        'size' => 'int64',
         'folder' => null,
         'storage' => null
     ];

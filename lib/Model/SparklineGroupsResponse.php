@@ -1,6 +1,6 @@
 <?php
 /**
- * DiscUsage
+ * SparklineGroupsResponse
  *
  * PHP version 5
  *
@@ -40,20 +40,17 @@
  */
 
 namespace Aspose\Cells\Cloud\Model;
-
-use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * DiscUsage Class Doc Comment
+ * SparklineGroupsResponse Class Doc Comment
  *
  * @category Class
- * @description Class for disc space information.
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DiscUsage implements  ArrayAccess
+class SparklineGroupsResponse extends CellsCloudResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -62,7 +59,7 @@ class DiscUsage implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DiscUsage';
+    protected static $swaggerModelName = 'SparklineGroupsResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -70,8 +67,7 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'used_size' => 'int',
-        'total_size' => 'int'
+        'sparkline_groups' => '\Aspose\Cells\Cloud\Model\SparklineGroups'
     ];
 
     /**
@@ -80,8 +76,7 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'used_size' => 'int64',
-        'total_size' => 'int64'
+        'sparkline_groups' => null
     ];
 
     /**
@@ -91,7 +86,7 @@ class DiscUsage implements  ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -101,7 +96,7 @@ class DiscUsage implements  ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -111,8 +106,7 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'used_size' => 'UsedSize',
-        'total_size' => 'TotalSize'
+        'sparkline_groups' => 'SparklineGroups'
     ];
 
     /**
@@ -121,8 +115,7 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'used_size' => 'setUsedSize',
-        'total_size' => 'setTotalSize'
+        'sparkline_groups' => 'setSparklineGroups'
     ];
 
     /**
@@ -131,8 +124,7 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'used_size' => 'getUsedSize',
-        'total_size' => 'getTotalSize'
+        'sparkline_groups' => 'getSparklineGroups'
     ];
 
     /**
@@ -143,7 +135,7 @@ class DiscUsage implements  ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -153,7 +145,7 @@ class DiscUsage implements  ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -163,7 +155,7 @@ class DiscUsage implements  ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -180,12 +172,6 @@ class DiscUsage implements  ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -195,8 +181,9 @@ class DiscUsage implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['used_size'] = isset($data['used_size']) ? $data['used_size'] : null;
-        $this->container['total_size'] = isset($data['total_size']) ? $data['total_size'] : null;
+        parent::__construct($data);
+
+        $this->container['sparkline_groups'] = isset($data['sparkline_groups']) ? $data['sparkline_groups'] : null;
     }
 
     /**
@@ -206,14 +193,8 @@ class DiscUsage implements  ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['used_size'] === null) {
-            $invalidProperties[] = "'used_size' can't be null";
-        }
-        if ($this->container['total_size'] === null) {
-            $invalidProperties[] = "'total_size' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -225,61 +206,34 @@ class DiscUsage implements  ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
-        if ($this->container['used_size'] === null) {
-            return false;
-        }
-        if ($this->container['total_size'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets used_size
+     * Gets sparkline_groups
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\SparklineGroups
      */
-    public function getUsedSize()
+    public function getSparklineGroups()
     {
-        return $this->container['used_size'];
+        return $this->container['sparkline_groups'];
     }
 
     /**
-     * Sets used_size
+     * Sets sparkline_groups
      *
-     * @param int $used_size Application used disc space.
+     * @param \Aspose\Cells\Cloud\Model\SparklineGroups $sparkline_groups sparkline_groups
      *
      * @return $this
      */
-    public function setUsedSize($used_size)
+    public function setSparklineGroups($sparkline_groups)
     {
-        $this->container['used_size'] = $used_size;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_size
-     *
-     * @return int
-     */
-    public function getTotalSize()
-    {
-        return $this->container['total_size'];
-    }
-
-    /**
-     * Sets total_size
-     *
-     * @param int $total_size Total disc space.
-     *
-     * @return $this
-     */
-    public function setTotalSize($total_size)
-    {
-        $this->container['total_size'] = $total_size;
+        $this->container['sparkline_groups'] = $sparkline_groups;
 
         return $this;
     }

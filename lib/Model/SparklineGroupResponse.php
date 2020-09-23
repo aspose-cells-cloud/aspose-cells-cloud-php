@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * SparklineGroupResponse
  *
  * PHP version 5
  *
@@ -40,20 +40,17 @@
  */
 
 namespace Aspose\Cells\Cloud\Model;
-
-use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * Error Class Doc Comment
+ * SparklineGroupResponse Class Doc Comment
  *
  * @category Class
- * @description Error
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Error implements  ArrayAccess
+class SparklineGroupResponse extends CellsCloudResponse 
 {
     const DISCRIMINATOR = null;
 
@@ -62,7 +59,7 @@ class Error implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Error';
+    protected static $swaggerModelName = 'SparklineGroupResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -70,10 +67,7 @@ class Error implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'description' => 'string',
-        'inner_error' => '\Aspose\Cells\Cloud\Model\ErrorDetails'
+        'sparkline_group' => '\Aspose\Cells\Cloud\Model\SparklineGroup'
     ];
 
     /**
@@ -82,10 +76,7 @@ class Error implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'code' => null,
-        'message' => null,
-        'description' => null,
-        'inner_error' => null
+        'sparkline_group' => null
     ];
 
     /**
@@ -95,7 +86,7 @@ class Error implements  ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -105,7 +96,7 @@ class Error implements  ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -115,10 +106,7 @@ class Error implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'Code',
-        'message' => 'Message',
-        'description' => 'Description',
-        'inner_error' => 'InnerError'
+        'sparkline_group' => 'SparklineGroup'
     ];
 
     /**
@@ -127,10 +115,7 @@ class Error implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'description' => 'setDescription',
-        'inner_error' => 'setInnerError'
+        'sparkline_group' => 'setSparklineGroup'
     ];
 
     /**
@@ -139,10 +124,7 @@ class Error implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'description' => 'getDescription',
-        'inner_error' => 'getInnerError'
+        'sparkline_group' => 'getSparklineGroup'
     ];
 
     /**
@@ -153,7 +135,7 @@ class Error implements  ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -163,7 +145,7 @@ class Error implements  ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -173,7 +155,7 @@ class Error implements  ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -190,12 +172,6 @@ class Error implements  ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -205,10 +181,9 @@ class Error implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
+        parent::__construct($data);
+
+        $this->container['sparkline_group'] = isset($data['sparkline_group']) ? $data['sparkline_group'] : null;
     }
 
     /**
@@ -218,7 +193,7 @@ class Error implements  ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -231,103 +206,34 @@ class Error implements  ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
 
     /**
-     * Gets code
+     * Gets sparkline_group
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\SparklineGroup
      */
-    public function getCode()
+    public function getSparklineGroup()
     {
-        return $this->container['code'];
+        return $this->container['sparkline_group'];
     }
 
     /**
-     * Sets code
+     * Sets sparkline_group
      *
-     * @param string $code Code
+     * @param \Aspose\Cells\Cloud\Model\SparklineGroup $sparkline_group sparkline_group
      *
      * @return $this
      */
-    public function setCode($code)
+    public function setSparklineGroup($sparkline_group)
     {
-        $this->container['code'] = $code;
-
-        return $this;
-    }
-
-    /**
-     * Gets message
-     *
-     * @return string
-     */
-    public function getMessage()
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message
-     *
-     * @param string $message Message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->container['message'] = $message;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string $description Description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets inner_error
-     *
-     * @return \Aspose\Cells\Cloud\Model\ErrorDetails
-     */
-    public function getInnerError()
-    {
-        return $this->container['inner_error'];
-    }
-
-    /**
-     * Sets inner_error
-     *
-     * @param \Aspose\Cells\Cloud\Model\ErrorDetails $inner_error Inner Error
-     *
-     * @return $this
-     */
-    public function setInnerError($inner_error)
-    {
-        $this->container['inner_error'] = $inner_error;
+        $this->container['sparkline_group'] = $sparkline_group;
 
         return $this;
     }

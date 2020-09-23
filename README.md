@@ -18,9 +18,11 @@ This Cloud SDK enhances your PHP cloud-based apps to [process & manipulate Micro
 - Cloud SDK to Read & Process Excel Worksheets.
 - Leverage the Power of Pivot Tables & Ranges.
 
-## Feature & Enhancements in Version 20.7
+## Feature & Enhancements in Version 20.9
 
-- Enhancement for CellsApi constructor.
+- Enhancement for add chart API.
+- Add API about updating pivot field.
+- Support sparkline groups.
 
 ## Read & Write Spreadsheet Formats
 

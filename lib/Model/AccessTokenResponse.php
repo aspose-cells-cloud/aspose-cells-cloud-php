@@ -89,7 +89,7 @@ class AccessTokenResponse implements  ArrayAccess
         'access_token' => null,
         '_issued' => null,
         'client_refresh_token_life_time_in_minutes' => null,
-        'expires_in' => 'int32',
+        'expires_in' => 'int64',
         'token_type' => null,
         'client_id' => null,
         'refresh_token' => null

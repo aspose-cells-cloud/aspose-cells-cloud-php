@@ -114,6 +114,8 @@ Method | HTTP request | Description
 [**cellsPivotTablesPostPivotTableFieldHideItem**](CellsApi.md#cellsPivotTablesPostPivotTableFieldHideItem) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide | 
 [**cellsPivotTablesPostPivotTableFieldMoveTo**](CellsApi.md#cellsPivotTablesPostPivotTableFieldMoveTo) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move | 
 [**cellsPivotTablesPostPivotTableStyle**](CellsApi.md#cellsPivotTablesPostPivotTableStyle) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll | Update style for pivot table
+[**cellsPivotTablesPostPivotTableUpdatePivotField**](CellsApi.md#cellsPivotTablesPostPivotTableUpdatePivotField) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex} | 
+[**cellsPivotTablesPostPivotTableUpdatePivotFields**](CellsApi.md#cellsPivotTablesPostPivotTableUpdatePivotFields) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields | 
 [**cellsPivotTablesPostWorksheetPivotTableCalculate**](CellsApi.md#cellsPivotTablesPostWorksheetPivotTableCalculate) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate | Calculates pivottable&#39;s data to cells.
 [**cellsPivotTablesPostWorksheetPivotTableMove**](CellsApi.md#cellsPivotTablesPostWorksheetPivotTableMove) | **POST** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move | 
 [**cellsPivotTablesPutPivotTableField**](CellsApi.md#cellsPivotTablesPutPivotTableField) | **PUT** /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField | Add pivot field into into pivot table
@@ -170,6 +172,12 @@ Method | HTTP request | Description
 [**cellsShapesGetWorksheetShapes**](CellsApi.md#cellsShapesGetWorksheetShapes) | **GET** /cells/{name}/worksheets/{sheetName}/shapes | Get worksheet shapes
 [**cellsShapesPostWorksheetShape**](CellsApi.md#cellsShapesPostWorksheetShape) | **POST** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Update a shape in worksheet
 [**cellsShapesPutWorksheetShape**](CellsApi.md#cellsShapesPutWorksheetShape) | **PUT** /cells/{name}/worksheets/{sheetName}/shapes | Add shape in worksheet
+[**cellsSparklineGroupsDeleteWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsDeleteWorksheetSparklineGroup) | **DELETE** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**cellsSparklineGroupsDeleteWorksheetSparklineGroups**](CellsApi.md#cellsSparklineGroupsDeleteWorksheetSparklineGroups) | **DELETE** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
+[**cellsSparklineGroupsGetWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsGetWorksheetSparklineGroup) | **GET** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**cellsSparklineGroupsGetWorksheetSparklineGroups**](CellsApi.md#cellsSparklineGroupsGetWorksheetSparklineGroups) | **GET** /cells/{name}/worksheets/{sheetName}/sparklinegroups | Get worksheet charts description.
+[**cellsSparklineGroupsPostWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsPostWorksheetSparklineGroup) | **POST** /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex} | 
+[**cellsSparklineGroupsPutWorksheetSparklineGroup**](CellsApi.md#cellsSparklineGroupsPutWorksheetSparklineGroup) | **PUT** /cells/{name}/worksheets/{sheetName}/sparklinegroups | 
 [**cellsTaskPostRunTask**](CellsApi.md#cellsTaskPostRunTask) | **POST** /cells/task/runtask | Run tasks
 [**cellsWorkbookDeleteDecryptDocument**](CellsApi.md#cellsWorkbookDeleteDecryptDocument) | **DELETE** /cells/{name}/encryption | Decrypt document.
 [**cellsWorkbookDeleteDocumentUnprotectFromChanges**](CellsApi.md#cellsWorkbookDeleteDocumentUnprotectFromChanges) | **DELETE** /cells/{name}/writeProtection | Unprotect document from changes.
@@ -1950,7 +1958,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsChartsPutWorksheetAddChart**
-> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name)
+> \Aspose\Cells\Cloud\Model\ChartsResponse cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name)
 
 Add new chart to worksheet.
 
@@ -1978,9 +1986,13 @@ $is_auto_get_serial_name = true; // bool | Specifies whether auto update serial 
 $title = "title_example"; // string | Specifies chart title name.
 $folder = "folder_example"; // string | The workbook folder.
 $storage_name = "storage_name_example"; // string | storage name.
+$data_labels = true; // bool | 
+$data_labels_position = "Above"; // string | 
+$pivot_table_sheet = "pivot_table_sheet_example"; // string | 
+$pivot_table_name = "pivot_table_name_example"; // string | 
 
 try {
-    $result = $apiInstance->cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name);
+    $result = $apiInstance->cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsChartsPutWorksheetAddChart: ', $e->getMessage(), PHP_EOL;
@@ -2006,6 +2018,10 @@ Name | Type | Description  | Notes
  **title** | **string**| Specifies chart title name. | [optional]
  **folder** | **string**| The workbook folder. | [optional]
  **storage_name** | **string**| storage name. | [optional]
+ **data_labels** | **bool**|  | [optional] [default to true]
+ **data_labels_position** | **string**|  | [optional] [default to Above]
+ **pivot_table_sheet** | **string**|  | [optional]
+ **pivot_table_name** | **string**|  | [optional]
 
 ### Return type
 
@@ -6548,6 +6564,126 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **cellsPivotTablesPostPivotTableUpdatePivotField**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPivotTablesPostPivotTableUpdatePivotField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$pivot_table_index = 56; // int | 
+$pivot_field_index = 56; // int | 
+$pivot_field_type = "pivot_field_type_example"; // string | 
+$pivot_field = new \Aspose\Cells\Cloud\Model\PivotField(); // \Aspose\Cells\Cloud\Model\PivotField | 
+$need_re_calculate = false; // bool | 
+$folder = "folder_example"; // string | 
+
+try {
+    $result = $apiInstance->cellsPivotTablesPostPivotTableUpdatePivotField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsPivotTablesPostPivotTableUpdatePivotField: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **pivot_table_index** | **int**|  |
+ **pivot_field_index** | **int**|  |
+ **pivot_field_type** | **string**|  |
+ **pivot_field** | [**\Aspose\Cells\Cloud\Model\PivotField**](../Model/PivotField.md)|  |
+ **need_re_calculate** | **bool**|  | [optional] [default to false]
+ **folder** | **string**|  | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsPivotTablesPostPivotTableUpdatePivotFields**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPivotTablesPostPivotTableUpdatePivotFields($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$pivot_table_index = 56; // int | 
+$pivot_field_type = "pivot_field_type_example"; // string | 
+$pivot_field = new \Aspose\Cells\Cloud\Model\PivotField(); // \Aspose\Cells\Cloud\Model\PivotField | 
+$need_re_calculate = false; // bool | 
+$folder = "folder_example"; // string | 
+
+try {
+    $result = $apiInstance->cellsPivotTablesPostPivotTableUpdatePivotFields($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsPivotTablesPostPivotTableUpdatePivotFields: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **pivot_table_index** | **int**|  |
+ **pivot_field_type** | **string**|  |
+ **pivot_field** | [**\Aspose\Cells\Cloud\Model\PivotField**](../Model/PivotField.md)|  |
+ **need_re_calculate** | **bool**|  | [optional] [default to false]
+ **folder** | **string**|  | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **cellsPivotTablesPostWorksheetPivotTableCalculate**
 > \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPivotTablesPostWorksheetPivotTableCalculate($name, $sheet_name, $pivot_table_index, $folder, $storage_name)
 
@@ -9776,6 +9912,340 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Aspose\Cells\Cloud\Model\ShapeResponse**](../Model/ShapeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsSparklineGroupsDeleteWorksheetSparklineGroup**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsSparklineGroupsDeleteWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder, $storage_name)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$sparkline_group_index = 56; // int | 
+$folder = "folder_example"; // string | 
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsSparklineGroupsDeleteWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsSparklineGroupsDeleteWorksheetSparklineGroup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **sparkline_group_index** | **int**|  |
+ **folder** | **string**|  | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsSparklineGroupsDeleteWorksheetSparklineGroups**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsSparklineGroupsDeleteWorksheetSparklineGroups($name, $sheet_name, $folder, $storage_name)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$folder = "folder_example"; // string | 
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsSparklineGroupsDeleteWorksheetSparklineGroups($name, $sheet_name, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsSparklineGroupsDeleteWorksheetSparklineGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **folder** | **string**|  | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsSparklineGroupsGetWorksheetSparklineGroup**
+> \Aspose\Cells\Cloud\Model\SparklineGroupResponse cellsSparklineGroupsGetWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder, $storage_name)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$sparkline_group_index = 56; // int | 
+$folder = "folder_example"; // string | 
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsSparklineGroupsGetWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsSparklineGroupsGetWorksheetSparklineGroup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **sparkline_group_index** | **int**|  |
+ **folder** | **string**|  | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\SparklineGroupResponse**](../Model/SparklineGroupResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsSparklineGroupsGetWorksheetSparklineGroups**
+> \Aspose\Cells\Cloud\Model\SparklineGroupsResponse cellsSparklineGroupsGetWorksheetSparklineGroups($name, $sheet_name, $folder, $storage_name)
+
+Get worksheet charts description.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | Document name.
+$sheet_name = "sheet_name_example"; // string | The worksheet name.
+$folder = "folder_example"; // string | Document's folder.
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsSparklineGroupsGetWorksheetSparklineGroups($name, $sheet_name, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsSparklineGroupsGetWorksheetSparklineGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Document name. |
+ **sheet_name** | **string**| The worksheet name. |
+ **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\SparklineGroupsResponse**](../Model/SparklineGroupsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsSparklineGroupsPostWorksheetSparklineGroup**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsSparklineGroupsPostWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$sparkline_group_index = 56; // int | 
+$sparkline_group = new \Aspose\Cells\Cloud\Model\SparklineGroup(); // \Aspose\Cells\Cloud\Model\SparklineGroup | 
+$folder = "folder_example"; // string | 
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsSparklineGroupsPostWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsSparklineGroupsPostWorksheetSparklineGroup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **sparkline_group_index** | **int**|  |
+ **sparkline_group** | [**\Aspose\Cells\Cloud\Model\SparklineGroup**](../Model/SparklineGroup.md)|  |
+ **folder** | **string**|  | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsSparklineGroupsPutWorksheetSparklineGroup**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsSparklineGroupsPutWorksheetSparklineGroup($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | 
+$sheet_name = "sheet_name_example"; // string | 
+$type = "type_example"; // string | 
+$data_range = "data_range_example"; // string | 
+$is_vertical = true; // bool | 
+$location_range = "location_range_example"; // string | 
+$folder = "folder_example"; // string | 
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsSparklineGroupsPutWorksheetSparklineGroup($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsSparklineGroupsPutWorksheetSparklineGroup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
+ **sheet_name** | **string**|  |
+ **type** | **string**|  |
+ **data_range** | **string**|  |
+ **is_vertical** | **bool**|  |
+ **location_range** | **string**|  |
+ **folder** | **string**|  | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 

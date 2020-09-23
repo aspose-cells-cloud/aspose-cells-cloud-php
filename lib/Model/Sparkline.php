@@ -1,6 +1,6 @@
 <?php
 /**
- * DiscUsage
+ * Sparkline
  *
  * PHP version 5
  *
@@ -45,15 +45,14 @@ use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * DiscUsage Class Doc Comment
+ * Sparkline Class Doc Comment
  *
  * @category Class
- * @description Class for disc space information.
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DiscUsage implements  ArrayAccess
+class Sparkline implements  ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -62,7 +61,7 @@ class DiscUsage implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DiscUsage';
+    protected static $swaggerModelName = 'Sparkline';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -70,8 +69,9 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'used_size' => 'int',
-        'total_size' => 'int'
+        'column' => 'int',
+        'data_range' => 'string',
+        'row' => 'int'
     ];
 
     /**
@@ -80,8 +80,9 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'used_size' => 'int64',
-        'total_size' => 'int64'
+        'column' => 'int32',
+        'data_range' => null,
+        'row' => 'int32'
     ];
 
     /**
@@ -111,8 +112,9 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'used_size' => 'UsedSize',
-        'total_size' => 'TotalSize'
+        'column' => 'Column',
+        'data_range' => 'DataRange',
+        'row' => 'Row'
     ];
 
     /**
@@ -121,8 +123,9 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'used_size' => 'setUsedSize',
-        'total_size' => 'setTotalSize'
+        'column' => 'setColumn',
+        'data_range' => 'setDataRange',
+        'row' => 'setRow'
     ];
 
     /**
@@ -131,8 +134,9 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'used_size' => 'getUsedSize',
-        'total_size' => 'getTotalSize'
+        'column' => 'getColumn',
+        'data_range' => 'getDataRange',
+        'row' => 'getRow'
     ];
 
     /**
@@ -195,8 +199,9 @@ class DiscUsage implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['used_size'] = isset($data['used_size']) ? $data['used_size'] : null;
-        $this->container['total_size'] = isset($data['total_size']) ? $data['total_size'] : null;
+        $this->container['column'] = isset($data['column']) ? $data['column'] : null;
+        $this->container['data_range'] = isset($data['data_range']) ? $data['data_range'] : null;
+        $this->container['row'] = isset($data['row']) ? $data['row'] : null;
     }
 
     /**
@@ -208,11 +213,11 @@ class DiscUsage implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['used_size'] === null) {
-            $invalidProperties[] = "'used_size' can't be null";
+        if ($this->container['column'] === null) {
+            $invalidProperties[] = "'column' can't be null";
         }
-        if ($this->container['total_size'] === null) {
-            $invalidProperties[] = "'total_size' can't be null";
+        if ($this->container['row'] === null) {
+            $invalidProperties[] = "'row' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,10 +231,10 @@ class DiscUsage implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['used_size'] === null) {
+        if ($this->container['column'] === null) {
             return false;
         }
-        if ($this->container['total_size'] === null) {
+        if ($this->container['row'] === null) {
             return false;
         }
         return true;
@@ -237,49 +242,73 @@ class DiscUsage implements  ArrayAccess
 
 
     /**
-     * Gets used_size
+     * Gets column
      *
      * @return int
      */
-    public function getUsedSize()
+    public function getColumn()
     {
-        return $this->container['used_size'];
+        return $this->container['column'];
     }
 
     /**
-     * Sets used_size
+     * Sets column
      *
-     * @param int $used_size Application used disc space.
+     * @param int $column column
      *
      * @return $this
      */
-    public function setUsedSize($used_size)
+    public function setColumn($column)
     {
-        $this->container['used_size'] = $used_size;
+        $this->container['column'] = $column;
 
         return $this;
     }
 
     /**
-     * Gets total_size
+     * Gets data_range
      *
-     * @return int
+     * @return string
      */
-    public function getTotalSize()
+    public function getDataRange()
     {
-        return $this->container['total_size'];
+        return $this->container['data_range'];
     }
 
     /**
-     * Sets total_size
+     * Sets data_range
      *
-     * @param int $total_size Total disc space.
+     * @param string $data_range data_range
      *
      * @return $this
      */
-    public function setTotalSize($total_size)
+    public function setDataRange($data_range)
     {
-        $this->container['total_size'] = $total_size;
+        $this->container['data_range'] = $data_range;
+
+        return $this;
+    }
+
+    /**
+     * Gets row
+     *
+     * @return int
+     */
+    public function getRow()
+    {
+        return $this->container['row'];
+    }
+
+    /**
+     * Sets row
+     *
+     * @param int $row row
+     *
+     * @return $this
+     */
+    public function setRow($row)
+    {
+        $this->container['row'] = $row;
 
         return $this;
     }

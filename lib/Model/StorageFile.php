@@ -86,7 +86,7 @@ class StorageFile implements  ArrayAccess
         'name' => null,
         'is_folder' => null,
         'modified_date' => 'date-time',
-        'size' => 'int32',
+        'size' => 'int64',
         'path' => null
     ];
 

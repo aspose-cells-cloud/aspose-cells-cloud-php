@@ -1,6 +1,6 @@
 <?php
 /**
- * DiscUsage
+ * CellsError
  *
  * PHP version 5
  *
@@ -45,15 +45,15 @@ use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * DiscUsage Class Doc Comment
+ * CellsError Class Doc Comment
  *
  * @category Class
- * @description Class for disc space information.
+ * @description Error
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DiscUsage implements  ArrayAccess
+class CellsError implements  ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -62,7 +62,7 @@ class DiscUsage implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'DiscUsage';
+    protected static $swaggerModelName = 'CellsError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -70,8 +70,10 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'used_size' => 'int',
-        'total_size' => 'int'
+        'code' => 'string',
+        'message' => 'string',
+        'description' => 'string',
+        'inner_error' => '\Aspose\Cells\Cloud\Model\ErrorDetails'
     ];
 
     /**
@@ -80,8 +82,10 @@ class DiscUsage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'used_size' => 'int64',
-        'total_size' => 'int64'
+        'code' => null,
+        'message' => null,
+        'description' => null,
+        'inner_error' => null
     ];
 
     /**
@@ -111,8 +115,10 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'used_size' => 'UsedSize',
-        'total_size' => 'TotalSize'
+        'code' => 'Code',
+        'message' => 'Message',
+        'description' => 'Description',
+        'inner_error' => 'InnerError'
     ];
 
     /**
@@ -121,8 +127,10 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'used_size' => 'setUsedSize',
-        'total_size' => 'setTotalSize'
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'description' => 'setDescription',
+        'inner_error' => 'setInnerError'
     ];
 
     /**
@@ -131,8 +139,10 @@ class DiscUsage implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'used_size' => 'getUsedSize',
-        'total_size' => 'getTotalSize'
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'description' => 'getDescription',
+        'inner_error' => 'getInnerError'
     ];
 
     /**
@@ -195,8 +205,10 @@ class DiscUsage implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['used_size'] = isset($data['used_size']) ? $data['used_size'] : null;
-        $this->container['total_size'] = isset($data['total_size']) ? $data['total_size'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
     }
 
     /**
@@ -208,12 +220,6 @@ class DiscUsage implements  ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['used_size'] === null) {
-            $invalidProperties[] = "'used_size' can't be null";
-        }
-        if ($this->container['total_size'] === null) {
-            $invalidProperties[] = "'total_size' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -226,60 +232,102 @@ class DiscUsage implements  ArrayAccess
     public function valid()
     {
 
-        if ($this->container['used_size'] === null) {
-            return false;
-        }
-        if ($this->container['total_size'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets used_size
+     * Gets code
      *
-     * @return int
+     * @return string
      */
-    public function getUsedSize()
+    public function getCode()
     {
-        return $this->container['used_size'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets used_size
+     * Sets code
      *
-     * @param int $used_size Application used disc space.
+     * @param string $code Code
      *
      * @return $this
      */
-    public function setUsedSize($used_size)
+    public function setCode($code)
     {
-        $this->container['used_size'] = $used_size;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets total_size
+     * Gets message
      *
-     * @return int
+     * @return string
      */
-    public function getTotalSize()
+    public function getMessage()
     {
-        return $this->container['total_size'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets total_size
+     * Sets message
      *
-     * @param int $total_size Total disc space.
+     * @param string $message Message
      *
      * @return $this
      */
-    public function setTotalSize($total_size)
+    public function setMessage($message)
     {
-        $this->container['total_size'] = $total_size;
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description Description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets inner_error
+     *
+     * @return \Aspose\Cells\Cloud\Model\ErrorDetails
+     */
+    public function getInnerError()
+    {
+        return $this->container['inner_error'];
+    }
+
+    /**
+     * Sets inner_error
+     *
+     * @param \Aspose\Cells\Cloud\Model\ErrorDetails $inner_error Inner Error
+     *
+     * @return $this
+     */
+    public function setInnerError($inner_error)
+    {
+        $this->container['inner_error'] = $inner_error;
 
         return $this;
     }

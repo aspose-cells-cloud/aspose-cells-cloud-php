@@ -1,12 +1,9 @@
-# Error
+# SparklineGroupsResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **string** | Code | [optional] 
-**message** | **string** | Message | [optional] 
-**description** | **string** | Description | [optional] 
-**inner_error** | [**\Aspose\Cells\Cloud\Model\ErrorDetails**](ErrorDetails.md) | Inner Error | [optional] 
+**sparkline_groups** | [**\Aspose\Cells\Cloud\Model\SparklineGroups**](SparklineGroups.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

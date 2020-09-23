@@ -89,7 +89,7 @@ class CellsApi
     public function checkAccessToken(){
         if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
             $defaultHost =  $this->config->getHost();
-            $this->config->setHost($this->_baseUrl);
+            $this->config->setHost('https://api.aspose.cloud');
             $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
             $this->_getAccessTokenTime = date('y-m-d h:i:s');
             $this->config->setHost( $defaultHost );
@@ -10046,15 +10046,19 @@ class CellsApi
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
      * @param  string $storage_name storage name. (optional)
+     * @param  bool $data_labels data_labels (optional, default to true)
+     * @param  string $data_labels_position data_labels_position (optional, default to Above)
+     * @param  string $pivot_table_sheet pivot_table_sheet (optional)
+     * @param  string $pivot_table_name pivot_table_name (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartsResponse
      */
-    public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null)
+    public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name);
+        list($response) = $this->cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name);
         return $response;
     }
 
@@ -10077,15 +10081,19 @@ class CellsApi
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
      * @param  string $storage_name storage name. (optional)
+     * @param  bool $data_labels (optional, default to true)
+     * @param  string $data_labels_position (optional, default to Above)
+     * @param  string $pivot_table_sheet (optional)
+     * @param  string $pivot_table_name (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null)
+    public function cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name);
+        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -10165,13 +10173,17 @@ class CellsApi
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
      * @param  string $storage_name storage name. (optional)
+     * @param  bool $data_labels (optional, default to true)
+     * @param  string $data_labels_position (optional, default to Above)
+     * @param  string $pivot_table_sheet (optional)
+     * @param  string $pivot_table_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetAddChartAsync($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null)
+    public function cellsChartsPutWorksheetAddChartAsync($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
-        return $this->cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name)
+        return $this->cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -10198,14 +10210,18 @@ class CellsApi
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
      * @param  string $storage_name storage name. (optional)
+     * @param  bool $data_labels (optional, default to true)
+     * @param  string $data_labels_position (optional, default to Above)
+     * @param  string $pivot_table_sheet (optional)
+     * @param  string $pivot_table_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null)
+    public function cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
-        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name);
+        $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -10261,11 +10277,15 @@ class CellsApi
      * @param  string $title Specifies chart title name. (optional)
      * @param  string $folder The workbook folder. (optional)
      * @param  string $storage_name storage name. (optional)
+     * @param  bool $data_labels (optional, default to true)
+     * @param  string $data_labels_position (optional, default to Above)
+     * @param  string $pivot_table_sheet (optional)
+     * @param  string $pivot_table_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null)
+    protected function cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -10340,6 +10360,22 @@ class CellsApi
         // query params
         if ($storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+        // query params
+        if ($data_labels !== null) {
+            $queryParams['dataLabels'] = ObjectSerializer::toQueryValue($data_labels);
+        }
+        // query params
+        if ($data_labels_position !== null) {
+            $queryParams['dataLabelsPosition'] = ObjectSerializer::toQueryValue($data_labels_position);
+        }
+        // query params
+        if ($pivot_table_sheet !== null) {
+            $queryParams['pivotTableSheet'] = ObjectSerializer::toQueryValue($pivot_table_sheet);
+        }
+        // query params
+        if ($pivot_table_name !== null) {
+            $queryParams['pivotTableName'] = ObjectSerializer::toQueryValue($pivot_table_name);
         }
 
         // path params
@@ -37022,6 +37058,729 @@ class CellsApi
     }
 
     /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotField
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $pivot_table_index pivot_table_index (required)
+     * @param  int $pivot_field_index pivot_field_index (required)
+     * @param  string $pivot_field_type pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field pivot_field (required)
+     * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
+     * @param  string $folder folder (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsPivotTablesPostPivotTableUpdatePivotFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+        return $response;
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFieldWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  int $pivot_field_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsPivotTablesPostPivotTableUpdatePivotFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFieldAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  int $pivot_field_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        return $this->cellsPivotTablesPostPivotTableUpdatePivotFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFieldAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  int $pivot_field_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsPivotTablesPostPivotTableUpdatePivotFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsPivotTablesPostPivotTableUpdatePivotField'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  int $pivot_field_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsPivotTablesPostPivotTableUpdatePivotFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsPivotTablesPostPivotTableUpdatePivotField'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsPivotTablesPostPivotTableUpdatePivotField'
+            );
+        }
+        // verify the required parameter 'pivot_table_index' is set
+        if ($pivot_table_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_table_index when calling cellsPivotTablesPostPivotTableUpdatePivotField'
+            );
+        }
+        // verify the required parameter 'pivot_field_index' is set
+        if ($pivot_field_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_field_index when calling cellsPivotTablesPostPivotTableUpdatePivotField'
+            );
+        }
+        // verify the required parameter 'pivot_field_type' is set
+        if ($pivot_field_type === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_field_type when calling cellsPivotTablesPostPivotTableUpdatePivotField'
+            );
+        }
+        // verify the required parameter 'pivot_field' is set
+        if ($pivot_field === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_field when calling cellsPivotTablesPostPivotTableUpdatePivotField'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($pivot_field_type !== null) {
+            $queryParams['pivotFieldType'] = ObjectSerializer::toQueryValue($pivot_field_type);
+        }
+        // query params
+        if ($need_re_calculate !== null) {
+            $queryParams['needReCalculate'] = ObjectSerializer::toQueryValue($need_re_calculate);
+        }
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($pivot_table_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pivotTableIndex' . '}',
+                ObjectSerializer::toPathValue($pivot_table_index),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($pivot_field_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pivotFieldIndex' . '}',
+                ObjectSerializer::toPathValue($pivot_field_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($pivot_field)) {
+            $_tempBody = $pivot_field;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsPivotTablesPostPivotTableUpdatePivotField'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFields
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $pivot_table_index pivot_table_index (required)
+     * @param  string $pivot_field_type pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field pivot_field (required)
+     * @param  bool $need_re_calculate need_re_calculate (optional, default to false)
+     * @param  string $folder folder (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFields($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsPivotTablesPostPivotTableUpdatePivotFieldsWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+        return $response;
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFieldsWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFieldsWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsPivotTablesPostPivotTableUpdatePivotFieldsRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFieldsAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFieldsAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        return $this->cellsPivotTablesPostPivotTableUpdatePivotFieldsAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsPivotTablesPostPivotTableUpdatePivotFieldsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsPivotTablesPostPivotTableUpdatePivotFieldsAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsPivotTablesPostPivotTableUpdatePivotFieldsRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsPivotTablesPostPivotTableUpdatePivotFields'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $pivot_table_index (required)
+     * @param  string $pivot_field_type (required)
+     * @param  \Aspose\Cells\Cloud\Model\PivotField $pivot_field (required)
+     * @param  bool $need_re_calculate (optional, default to false)
+     * @param  string $folder (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsPivotTablesPostPivotTableUpdatePivotFieldsRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsPivotTablesPostPivotTableUpdatePivotFields'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsPivotTablesPostPivotTableUpdatePivotFields'
+            );
+        }
+        // verify the required parameter 'pivot_table_index' is set
+        if ($pivot_table_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_table_index when calling cellsPivotTablesPostPivotTableUpdatePivotFields'
+            );
+        }
+        // verify the required parameter 'pivot_field_type' is set
+        if ($pivot_field_type === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_field_type when calling cellsPivotTablesPostPivotTableUpdatePivotFields'
+            );
+        }
+        // verify the required parameter 'pivot_field' is set
+        if ($pivot_field === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $pivot_field when calling cellsPivotTablesPostPivotTableUpdatePivotFields'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($pivot_field_type !== null) {
+            $queryParams['pivotFieldType'] = ObjectSerializer::toQueryValue($pivot_field_type);
+        }
+        // query params
+        if ($need_re_calculate !== null) {
+            $queryParams['needReCalculate'] = ObjectSerializer::toQueryValue($need_re_calculate);
+        }
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($pivot_table_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'pivotTableIndex' . '}',
+                ObjectSerializer::toPathValue($pivot_table_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($pivot_field)) {
+            $_tempBody = $pivot_field;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsPivotTablesPostPivotTableUpdatePivotFields'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation cellsPivotTablesPostWorksheetPivotTableCalculate
      *
      * Calculates pivottable's data to cells.
@@ -55850,6 +56609,1961 @@ class CellsApi
                 $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
             else if('cellsShapesPutWorksheetShape'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroup
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $sparkline_group_index sparkline_group_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroupWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroupAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroupAsync($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroupAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsSparklineGroupsDeleteWorksheetSparklineGroup'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsSparklineGroupsDeleteWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsSparklineGroupsDeleteWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsSparklineGroupsDeleteWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sparkline_group_index' is set
+        if ($sparkline_group_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sparkline_group_index when calling cellsSparklineGroupsDeleteWorksheetSparklineGroup'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sparkline_group_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sparklineGroupIndex' . '}',
+                ObjectSerializer::toPathValue($sparkline_group_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsSparklineGroupsDeleteWorksheetSparklineGroup'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroups
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroups($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithHttpInfo($name, $sheet_name, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupsRequest($name, $sheet_name, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsync($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        return $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupsRequest($name, $sheet_name, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsSparklineGroupsDeleteWorksheetSparklineGroups'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsSparklineGroupsDeleteWorksheetSparklineGroupsRequest($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsSparklineGroupsDeleteWorksheetSparklineGroups'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsSparklineGroupsDeleteWorksheetSparklineGroups'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklinegroups';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsSparklineGroupsDeleteWorksheetSparklineGroups'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroup
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $sparkline_group_index sparkline_group_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\SparklineGroupResponse
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsSparklineGroupsGetWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroupWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\SparklineGroupResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupResponse';
+        $request = $this->cellsSparklineGroupsGetWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\SparklineGroupResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroupAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroupAsync($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsSparklineGroupsGetWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroupAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupResponse';
+        $request = $this->cellsSparklineGroupsGetWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsSparklineGroupsGetWorksheetSparklineGroup'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsSparklineGroupsGetWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsSparklineGroupsGetWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsSparklineGroupsGetWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sparkline_group_index' is set
+        if ($sparkline_group_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sparkline_group_index when calling cellsSparklineGroupsGetWorksheetSparklineGroup'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sparkline_group_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sparklineGroupIndex' . '}',
+                ObjectSerializer::toPathValue($sparkline_group_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsSparklineGroupsGetWorksheetSparklineGroup'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroups
+     *
+     * Get worksheet charts description.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\SparklineGroupsResponse
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroups($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsSparklineGroupsGetWorksheetSparklineGroupsWithHttpInfo($name, $sheet_name, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroupsWithHttpInfo
+     *
+     * Get worksheet charts description.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\SparklineGroupsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroupsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupsResponse';
+        $request = $this->cellsSparklineGroupsGetWorksheetSparklineGroupsRequest($name, $sheet_name, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\SparklineGroupsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroupsAsync
+     *
+     * Get worksheet charts description.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroupsAsync($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        return $this->cellsSparklineGroupsGetWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsGetWorksheetSparklineGroupsAsyncWithHttpInfo
+     *
+     * Get worksheet charts description.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsGetWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupsResponse';
+        $request = $this->cellsSparklineGroupsGetWorksheetSparklineGroupsRequest($name, $sheet_name, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsSparklineGroupsGetWorksheetSparklineGroups'
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsSparklineGroupsGetWorksheetSparklineGroupsRequest($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsSparklineGroupsGetWorksheetSparklineGroups'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsSparklineGroupsGetWorksheetSparklineGroups'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklinegroups';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsSparklineGroupsGetWorksheetSparklineGroups'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPostWorksheetSparklineGroup
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $sparkline_group_index sparkline_group_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\SparklineGroup $sparkline_group sparkline_group (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsSparklineGroupsPostWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsSparklineGroupsPostWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPostWorksheetSparklineGroupWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\SparklineGroup $sparkline_group (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsSparklineGroupsPostWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsPostWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPostWorksheetSparklineGroupAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\SparklineGroup $sparkline_group (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsPostWorksheetSparklineGroupAsync($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
+    {
+        return $this->cellsSparklineGroupsPostWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPostWorksheetSparklineGroupAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\SparklineGroup $sparkline_group (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsPostWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsPostWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsSparklineGroupsPostWorksheetSparklineGroup'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $sparkline_group_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\SparklineGroup $sparkline_group (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsSparklineGroupsPostWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsSparklineGroupsPostWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsSparklineGroupsPostWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sparkline_group_index' is set
+        if ($sparkline_group_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sparkline_group_index when calling cellsSparklineGroupsPostWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sparkline_group' is set
+        if ($sparkline_group === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sparkline_group when calling cellsSparklineGroupsPostWorksheetSparklineGroup'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($sparkline_group_index !== null) {
+            $queryParams['sparklineGroupIndex'] = ObjectSerializer::toQueryValue($sparkline_group_index);
+        }
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($sparkline_group)) {
+            $_tempBody = $sparkline_group;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsSparklineGroupsPostWorksheetSparklineGroup'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPutWorksheetSparklineGroup
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  string $type type (required)
+     * @param  string $data_range data_range (required)
+     * @param  bool $is_vertical is_vertical (required)
+     * @param  string $location_range location_range (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsSparklineGroupsPutWorksheetSparklineGroup($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsSparklineGroupsPutWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPutWorksheetSparklineGroupWithHttpInfo
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $type (required)
+     * @param  string $data_range (required)
+     * @param  bool $is_vertical (required)
+     * @param  string $location_range (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsSparklineGroupsPutWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsPutWorksheetSparklineGroupRequest($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPutWorksheetSparklineGroupAsync
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $type (required)
+     * @param  string $data_range (required)
+     * @param  bool $is_vertical (required)
+     * @param  string $location_range (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsPutWorksheetSparklineGroupAsync($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
+    {
+        return $this->cellsSparklineGroupsPutWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsSparklineGroupsPutWorksheetSparklineGroupAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $type (required)
+     * @param  string $data_range (required)
+     * @param  bool $is_vertical (required)
+     * @param  string $location_range (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsSparklineGroupsPutWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsSparklineGroupsPutWorksheetSparklineGroupRequest($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsSparklineGroupsPutWorksheetSparklineGroup'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  string $type (required)
+     * @param  string $data_range (required)
+     * @param  bool $is_vertical (required)
+     * @param  string $location_range (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsSparklineGroupsPutWorksheetSparklineGroupRequest($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsSparklineGroupsPutWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsSparklineGroupsPutWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'type' is set
+        if ($type === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $type when calling cellsSparklineGroupsPutWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'data_range' is set
+        if ($data_range === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $data_range when calling cellsSparklineGroupsPutWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'is_vertical' is set
+        if ($is_vertical === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $is_vertical when calling cellsSparklineGroupsPutWorksheetSparklineGroup'
+            );
+        }
+        // verify the required parameter 'location_range' is set
+        if ($location_range === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $location_range when calling cellsSparklineGroupsPutWorksheetSparklineGroup'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklinegroups';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($data_range !== null) {
+            $queryParams['dataRange'] = ObjectSerializer::toQueryValue($data_range);
+        }
+        // query params
+        if ($is_vertical !== null) {
+            $queryParams['isVertical'] = ObjectSerializer::toQueryValue($is_vertical);
+        }
+        // query params
+        if ($location_range !== null) {
+            $queryParams['locationRange'] = ObjectSerializer::toQueryValue($location_range);
+        }
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsSparklineGroupsPutWorksheetSparklineGroup'==='cellsSaveAsPostDocumentSaveAs'){
                 $httpBody = \GuzzleHttp\json_encode($httpBody);
             }
         } elseif (count($formParams) > 0) {
