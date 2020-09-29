@@ -19,14 +19,11 @@
 		"ext-curl" : "*",
 		"ext-json" : "*",
 		"ext-mbstring" : "*",
-		"guzzlehttp/guzzle" : "^6.2",
-		"aspose/storage-sdk-php" : "18.4",
-		"friendsofphp/php-cs-fixer" : "~1.12"
+		"guzzlehttp/guzzle" : "^6.2"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "^4.8",
-		"squizlabs/php_codesniffer" : "~2.6",
-		"friendsofphp/php-cs-fixer" : "~1.12"
+		"squizlabs/php_codesniffer" : "~2.6"
 	},
 	"autoload": {
         "psr-4": { "Aspose\\Cells\\Cloud\\" : "lib/" }
