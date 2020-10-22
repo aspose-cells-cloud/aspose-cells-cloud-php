@@ -1,28 +1,34 @@
-# PHP REST API for Spreadsheet Processing in Cloud
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/20.9)
 
-This Cloud SDK enhances your PHP cloud-based apps to [process & manipulate Microsoft Excel spreadsheets](https://products.aspose.cloud/cells/php) in the cloud, without MS Office.
+# PHP SDK for Spreadsheet Processing in Cloud
 
-## Spreadsheet Processing Features
+This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Microsoft Excel spreadsheets](https://products.aspose.cloud/cells/php) without requiring Microsoft Office.
 
-- Add, update or delete charts, worksheet pictures, shapes, hyperlinks & validations.
-- Add or remove cells area for conditional formatting, or OleObjects from Excel worksheets.
-- Insert or delete, horizontal or vertical page breaks
-- Add ListObject at a specific place within an Excel file & convert them to a range of cells.
-- Delete specific or all ListObjects in a worksheet or summarize its data with pivot table.
+## Cloud Spreadsheet Processor in a Nutshell
+
+- Create new spreadsheets using Excel files as templates or Smart Marker.
+- Load & process Excel spreadsheets & worksheets via Cloud SDK.
+- Merge or split workbooks.
+- Protect or unprotect worksheets.
+- [Import data to worksheets](https://docs.aspose.cloud/cells/import-data-into-worksheet/).
+- Calculate formulas or add/update formulas to worksheet cells.
+- Add, update or delete charts, worksheets, images, shapes, hyperlinks & validations.
+- Add or remove cells area, conditional formatting or OleObjects from Excel worksheets.
+- Insert or delete horizontal or vertical page breaks
+- [Add ListObject](https://docs.aspose.cloud/cells/working-with-list-object-or-table/) at a specific place within an Excel file & convert to a range of cells.
+- Delete specific or all ListObjects in a worksheet or summarize data with Pivot Table.
 - Apply custom criteria to list filters of various types.
 - Get, update, show or hide chart legend & titles.
 - Manipulate page setup, header & footer.
 - Create, update, fetch or delete document properties.
 - Fetch the required shape from worksheet.
-- Load & Process Excel Spreadsheets via Cloud SDK.
-- Cloud SDK to Read & Process Excel Worksheets.
-- Leverage the Power of Pivot Tables & Ranges.
+- Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 20.9
+## Enhancements in Version 20.9
 
-- Enhancement for add chart API.
-- Add API about updating pivot field.
-- Support sparkline groups.
+- Enhanced chart API.
+- Added API to update Pivot Fields.
+- Supported sparkline groups.
 
 ## Read & Write Spreadsheet Formats
 
@@ -31,50 +37,56 @@ This Cloud SDK enhances your PHP cloud-based apps to [process & manipulate Micro
 **SpreadsheetML:** XML
 **Text:** CSV, TSV, TXT (TabDelimited)
 **Web:** HTML, MHTML
-**PDF**
 
-## Save Spreadsheet As
+## Save Spreadsheets As
 
-DIF, HTML, MHTML,PNG,JPG, TIFF, XPS, SVG, MD (Markdown), ODS ,xlsx,xls,xlsb, PDF,XML,TXT,CSV
+**Microsoft Excel:** XLS, XLSX, XLSB
+**OpenOffice:** ODS
+**SpreadsheetML:** XML
+**Text:** CSV, TSV, TXT (TabDelimited)
+**Web:** HTML, MHTML
+**Fixed Layout:** PDF, XPS
+**Images:** PNG, JPG, TIFF, SVG
+**Markdown:** MD
+**Other:** DIF
 
-## Read Spreadsheet Formats
+## Read Other Formats
 
 SXC, FODS
 
-## Storage API Support
+## Integrated Storage API
 
-Since version 19.9, SDK includes support of storage operations for better user experience and unification, so now there's no need to use 2 different SDKs!
-
-It gives you an ability to:
+Since version 19.9, SDK includes support of storage operations for better user experience and unification. It gives you an ability to;
 
 - Upload, download, copy, move and delete files, including versions handling (if you are using Cloud storage that supports this feature - true by default).
 - Create, copy, move and delete folders.
 - Copy and move files and folders across separate storages in scope of a single operation.
 - Check if certain file, folder or storage exists.
 
-## How to use the SDK
 
-The complete source code is available at the [GitHub Repository](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php). You can either directly use it in your project via source code or get [Packagist distribution](https://packagist.org/packages/aspose/cells-sdk-php) (recommended). For more details, please visit our [documentation website](https://docs.aspose.cloud/cells/available-sdks/).
+## Get Started with Aspose.Cells Cloud SDK for PHP
 
-## Prerequisites
+First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and get your application information.
 
-To use Aspose Cells Cloud SDK you need to register an account with [Aspose Cloud](https://www.aspose.cloud/) and lookup/create App Key and SID at [Cloud Dashboard](https://dashboard.aspose.cloud/#/apps). There is free quota available. For more details, see [Aspose Cloud Pricing](https://purchase.aspose.cloud/pricing).
+### Get the SDK
 
-## Installation via Composer
+The complete source code is available at the [GitHub Repository](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php). You can either directly use it in your project via source code or get it from [Packagist distribution](https://packagist.org/packages/aspose/cells-sdk-php) (recommended). 
 
-*cells-sdk-php* is available on [Packagist](https://packagist.org/packages/aspose/cells-sdk-php) as the `cells-sdk-php` package. Run the following command:
+### Install via Composer
+
+Aspose.Cells Cloud SDK for PHP is available on [Packagist](https://packagist.org/packages/aspose/cells-sdk-php) as the `cells-sdk-php` package. Run the following command to get the package.
 
 ```console
 composer require aspose/cells-sdk-php
 ```
 
-To use the SDK, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
+Use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading) command to start using the SDK.
 
 ```php
 require_once('vendor/autoload.php');
 ```
 
-## Using PHP Code to Import Data in Excel Worksheet
+## Import Data to Excel Worksheet via PHP
 
 ```php
 require_once realpath(__DIR__ . '/..') . '/vendor/autoload.php';
@@ -113,12 +125,12 @@ $workbook = new Workbook();
 $workbook->postImportDataCloudFile();
 ```
 
-## Tests
+## Aspose.Cells Cloud SDKs in Popular Languages
 
-[Tests](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/test/Api) contain various examples of using the SDK.
+| .NET | Java | Python | Ruby | Node.js | Android | Swift | Perl | GO |
+|---|---|---|---|---|---|---|---|---|
+| [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-dotnet) | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java) | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-python) | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-ruby)  | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-node) | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-android)  | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-swift) | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-perl) | [GitHub](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go) |
+| [NuGet](https://www.nuget.org/packages/Aspose.Cells-Cloud/) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-cells-cloud) | [PIP](https://pypi.org/project/asposecellscloud/) | [GEM](https://rubygems.org/gems/aspose_cells_cloud)  | [NPM](https://www.npmjs.com/package/asposecellscloud) | [Maven](https://repository.aspose.cloud/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-cells-cloud-android) | [POD](https://cocoapods.org/pods/AsposeCellsCloud) |  [CPAN](https://metacpan.org/release/AsposeCellsCloud-CellsApi) | [GO](https://pkg.go.dev/github.com/aspose-cells-cloud/aspose-cells-cloud-go/v20?tab=overview) |
 
-## Licensing
 
-All Aspose.Cells Cloud SDKs are licensed under [MIT License](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE).
-
-[Product Page](https://products.aspose.cloud/cells/php) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
+[Product Page](https://products.aspose.cloud/cells/php) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/test/Api) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
