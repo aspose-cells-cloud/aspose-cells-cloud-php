@@ -58142,10 +58142,6 @@ class CellsApi
         $multipart = false;
 
         // query params
-        if ($sparkline_group_index !== null) {
-            $queryParams['sparklineGroupIndex'] = ObjectSerializer::toQueryValue($sparkline_group_index);
-        }
-        // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
         }
@@ -58167,6 +58163,14 @@ class CellsApi
             $resourcePath = str_replace(
                 '{' . 'sheetName' . '}',
                 ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sparkline_group_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sparklineGroupIndex' . '}',
+                ObjectSerializer::toPathValue($sparkline_group_index),
                 $resourcePath
             );
         }
