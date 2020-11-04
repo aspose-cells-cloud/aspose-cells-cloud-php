@@ -26,7 +26,7 @@ class CellsApiTestBase
      */
     public static function getInstance()
     {
-       return new CellsApi("91A2FD07-BBA1-4B32-9112-ABFB1FE8AEBD","0fbf678c5ecabdb5caca48452a736dd0","v3.0","https://api-qa.aspose.cloud");
+       return new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","v3.0","https://api-qa.aspose.cloud");
     }
     
     public static function ready($api , $filename , $folder, $storageName = null)
