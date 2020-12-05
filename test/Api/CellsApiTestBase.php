@@ -26,7 +26,12 @@ class CellsApiTestBase
      */
     public static function getInstance()
     {
-       return new CellsApi("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","v3.0","https://api-qa.aspose.cloud");
+       return new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+    }
+
+    public static function isDockerSDK()
+    {  
+        return !(strtolower(getenv("CellsCloudTestIsDockerTest")) =='false') ;#settype(getenv("CellsCloudTestIsDockerTest"), 'boolean');
     }
     
     public static function ready($api , $filename , $folder, $storageName = null)

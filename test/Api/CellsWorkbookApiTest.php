@@ -510,6 +510,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
             }
             $parents = $parents . "../";
         }
+        
         $result = $this->instance->cellsWorkbookPutConvertWorkBook($path ,$format, $password,  $outPath);
         // $this->assertEquals(119592, $result->getSize());
     }

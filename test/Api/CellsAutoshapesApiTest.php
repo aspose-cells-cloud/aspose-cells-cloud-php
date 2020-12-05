@@ -51,6 +51,10 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCellsAutoshapesGetWorksheetAutoshape()
     {
+        if(CellsApiTestBase::isDockerSDK())
+        {
+            return;
+        }
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
         $autoshapeNumber = 4;  
@@ -69,6 +73,10 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCellsAutoshapesGetWorksheetAutoshapeFormat()
     {
+        if(CellsApiTestBase::isDockerSDK())
+        {
+            return;
+        }
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
         $autoshapeNumber = 4;
@@ -86,6 +94,10 @@ class CellsAutoshapesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCellsAutoshapesGetWorksheetAutoshapes()
     {
+        if(CellsApiTestBase::isDockerSDK())
+        {
+            return;
+        }
         $name ='myDocument.xlsx';
         $sheet_name ='Sheet2';
         $folder = "Temp";

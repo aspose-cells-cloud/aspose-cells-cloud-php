@@ -61,6 +61,8 @@ class CellsApi
     protected $_appVersion;
     protected $_getAccessTokenTime;
 
+    protected $_needAuth;
+
     /**
      * @param ClientInterface $client
      * @param Configuration   $config
@@ -81,18 +83,26 @@ class CellsApi
         $this->config->setHost($this->_baseUrl."/".$this->_appVersion);
         $defaultHost =  $this->config->getHost();
         $this->config->setHost($this->_baseUrl);
-        $this->config ->setAccessToken ( $this->getAccessToken($grantType, $appSid, $appKey,$version));
+        $this->_needAuth = true;
+        if(  empty( $appSid)  || empty( $appSid) ) {
+            $this->_needAuth = false;
+        }else{
+            $this->config ->setAccessToken ( $this->getAccessToken($grantType, $appSid, $appKey,$version));
+        }
+       
         $this->_getAccessTokenTime = date('y-m-d h:i:s');
         $this->config->setHost( $defaultHost );
     }
 
     public function checkAccessToken(){
-        if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
-            $defaultHost =  $this->config->getHost();
-            $this->config->setHost('https://api.aspose.cloud');
-            $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
-            $this->_getAccessTokenTime = date('y-m-d h:i:s');
-            $this->config->setHost( $defaultHost );
+        if( $this->_needAuth ){
+            if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
+                $defaultHost =  $this->config->getHost();
+                $this->config->setHost('https://api.aspose.cloud');
+                $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
+                $this->_getAccessTokenTime = date('y-m-d h:i:s');
+                $this->config->setHost( $defaultHost );
+            }
         }
     }
 
@@ -66368,12 +66378,11 @@ class CellsApi
         if ($out_path !== null) {
             $queryParams['outPath'] = ObjectSerializer::toQueryValue($out_path);
         }
-
-
+        
         // form params
         if ($workbook !== null) {
             $multipart = true;
-            $formParams['workbook'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($workbook), 'rb');
+            $formParams['workbook'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($workbook), 'rb');            
         }
         // body params
         $_tempBody = null;

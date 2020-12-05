@@ -160,6 +160,10 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCellsSaveAsPostDocumentSaveAsPDFDropBoxTest()
     {
+        if(CellsApiTestBase::isDockerSDK())
+        {
+            return;
+        }
         $name ='Book1.xlsx';
         $saveOptions = new PdfSaveOptions();
         $saveOptions->OnePagePerSheet = 'true';
