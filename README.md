@@ -28,6 +28,10 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 
 - Support Aspose.Cells Cloud for Docker.
 
+### Enhancements in Version 20.11.1
+
+- Replace app sid to client id.
+
 
 ## Read & Write Spreadsheet Formats
 
@@ -99,13 +103,13 @@ class Workbook {
     public $cells;
 
     public function __construct() {
-        AsposeApp::$appSID = Utils::appSID;
-        AsposeApp::$apiKey = Utils::apiKey;
-        $this->cells = new CellsApi( AsposeApp::$appSID,AsposeApp::$apiKey );
+        AsposeApp::$clientId = Utils::clientId;
+        AsposeApp::$clientSecret = Utils::clientSecret;
+        $this->cells = new CellsApi( AsposeApp::$clientId,AsposeApp::$clientSecret );
     }
 
     public function postImportDataCloudFile() {
-        $name ='Book1.xlsx';       
+        $name ='Book1.xlsx';
         $folder = "PhpTest";
         $data = new ImportIntArrayOption();
         $data->setDestinationWorksheet('Sheet1');

@@ -56,8 +56,8 @@ class CellsApi
      */
     protected $config;
 
-    protected $_appSid;
-    protected $_appKey;
+    protected $_clientId;
+    protected $_clientSecret;
     protected $_appVersion;
     protected $_getAccessTokenTime;
 
@@ -69,10 +69,10 @@ class CellsApi
      * @param HeaderSelector  $selector
      */
     public function __construct(
-        $appSid,$appKey,$version ="v3.0",$baseUrl="https://api.aspose.cloud"
+        $clientId,$clientSecret,$version ="v3.0",$baseUrl="https://api.aspose.cloud"
     ) {
-        $this->_appSid = $appSid;
-        $this->_appKey = $appKey;
+        $this->_clientId = $clientId;
+        $this->_clientSecret = $clientSecret;
         $this->_appVersion = $version;
         $this->_baseUrl = substr($baseUrl,-1)=="/"?substr($baseUrl,0,strlen($baseUrl)-1):$baseUrl;
         
@@ -84,10 +84,10 @@ class CellsApi
         $defaultHost =  $this->config->getHost();
         $this->config->setHost($this->_baseUrl);
         $this->_needAuth = true;
-        if(  empty( $appSid)  || empty( $appSid) ) {
+        if(  empty( $clientId)  || empty( $clientId) ) {
             $this->_needAuth = false;
         }else{
-            $this->config ->setAccessToken ( $this->getAccessToken($grantType, $appSid, $appKey,$version));
+            $this->config ->setAccessToken ( $this->getAccessToken($grantType, $clientId, $clientSecret,$version));
         }
        
         $this->_getAccessTokenTime = date('y-m-d h:i:s');
@@ -99,7 +99,7 @@ class CellsApi
             if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
                 $defaultHost =  $this->config->getHost();
                 $this->config->setHost('https://api.aspose.cloud');
-                $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
+                $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_clientId, $this->_clientSecret, $this->_appVersion));
                 $this->_getAccessTokenTime = date('y-m-d h:i:s');
                 $this->config->setHost( $defaultHost );
             }
@@ -83311,8 +83311,8 @@ class CellsApi
      * Get Access token
      *
      * @param  string $grant_type Grant Type (required)
-     * @param  string $client_id App SID (required)
-     * @param  string $client_secret App Key (required)
+     * @param  string $client_id client id (required)
+     * @param  string $client_secret client secret (required)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -83331,8 +83331,8 @@ class CellsApi
      * Get Access token
      *
      * @param  string $grant_type Grant Type (required)
-     * @param  string $client_id App SID (required)
-     * @param  string $client_secret App Key (required)
+     * @param  string $client_id client id (required)
+     * @param  string $client_secret client secret (required)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -83408,8 +83408,8 @@ class CellsApi
      * Get Access token
      *
      * @param  string $grant_type Grant Type (required)
-     * @param  string $client_id App SID (required)
-     * @param  string $client_secret App Key (required)
+     * @param  string $client_id client id (required)
+     * @param  string $client_secret client secret (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -83430,8 +83430,8 @@ class CellsApi
      * Get Access token
      *
      * @param  string $grant_type Grant Type (required)
-     * @param  string $client_id App SID (required)
-     * @param  string $client_secret App Key (required)
+     * @param  string $client_id client id (required)
+     * @param  string $client_secret client secret (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -83482,8 +83482,8 @@ class CellsApi
      * Create request for operation 'oAuthPost'
      *
      * @param  string $grant_type Grant Type (required)
-     * @param  string $client_id App SID (required)
-     * @param  string $client_secret App Key (required)
+     * @param  string $client_id client id (required)
+     * @param  string $client_secret client _secret (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

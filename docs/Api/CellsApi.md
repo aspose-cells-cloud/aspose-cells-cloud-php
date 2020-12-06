@@ -14615,8 +14615,8 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
     new GuzzleHttp\Client()
 );
 $grant_type = "grant_type_example"; // string | Grant Type
-$client_id = "client_id_example"; // string | App SID
-$client_secret = "client_secret_example"; // string | App Key
+$client_id = "client_id_example"; // string | client id
+$client_secret = "client_secret_example"; // string | client Secret
 
 try {
     $result = $apiInstance->oAuthPost($grant_type, $client_id, $client_secret);
@@ -14632,8 +14632,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **grant_type** | **string**| Grant Type |
- **client_id** | **string**| App SID |
- **client_secret** | **string**| App Key |
+ **client_id** | **string**| client id |
+ **client_secret** | **string**| client secret |
 
 ### Return type
 
