@@ -24,14 +24,10 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Enhancements in Version 20.11
+## Feature & Enhancements in Version 21.1
 
-- Support Aspose.Cells Cloud for Docker.
-
-### Enhancements in Version 20.11.1
-
-- Replace app sid to client id.
-
+- Support to convert worksheet on task API.
+- Support to add and delete cell or range in worksheet.
 
 ## Read & Write Spreadsheet Formats
 
