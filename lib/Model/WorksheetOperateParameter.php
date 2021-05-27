@@ -1,6 +1,6 @@
 <?php
 /**
- * ChartOperateParameter
+ * WorksheetOperateParameter
  *
  * PHP version 5
  *
@@ -43,14 +43,14 @@ namespace Aspose\Cells\Cloud\Model;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * ChartOperateParameter Class Doc Comment
+ * WorksheetOperateParameter Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ChartOperateParameter extends OperateParameter 
+class WorksheetOperateParameter extends OperateParameter 
 {
     const DISCRIMINATOR = null;
 
@@ -59,7 +59,7 @@ class ChartOperateParameter extends OperateParameter
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ChartOperateParameter';
+    protected static $swaggerModelName = 'WorksheetOperateParameter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -67,15 +67,10 @@ class ChartOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'title' => 'string',
-        'area' => 'string',
-        'category_data' => 'string',
-        'upper_left_row' => 'int',
-        'lower_right_column' => 'int',
-        'lower_right_row' => 'int',
-        'is_auto_get_serial_name' => 'bool',
-        'chart_type' => 'string',
-        'is_vertical' => 'bool'
+        'name' => 'string',
+        'sheet_type' => 'string',
+        'new_name' => 'string',
+        'moving_request' => '\Aspose\Cells\Cloud\Model\WorksheetMovingRequest'
     ];
 
     /**
@@ -84,15 +79,10 @@ class ChartOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'title' => null,
-        'area' => null,
-        'category_data' => null,
-        'upper_left_row' => 'int32',
-        'lower_right_column' => 'int32',
-        'lower_right_row' => 'int32',
-        'is_auto_get_serial_name' => null,
-        'chart_type' => null,
-        'is_vertical' => null
+        'name' => null,
+        'sheet_type' => null,
+        'new_name' => null,
+        'moving_request' => null
     ];
 
     /**
@@ -122,15 +112,10 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'title' => 'Title',
-        'area' => 'Area',
-        'category_data' => 'CategoryData',
-        'upper_left_row' => 'UpperLeftRow',
-        'lower_right_column' => 'LowerRightColumn',
-        'lower_right_row' => 'LowerRightRow',
-        'is_auto_get_serial_name' => 'IsAutoGetSerialName',
-        'chart_type' => 'ChartType',
-        'is_vertical' => 'IsVertical'
+        'name' => 'Name',
+        'sheet_type' => 'SheetType',
+        'new_name' => 'NewName',
+        'moving_request' => 'MovingRequest'
     ];
 
     /**
@@ -139,15 +124,10 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $setters = [
-        'title' => 'setTitle',
-        'area' => 'setArea',
-        'category_data' => 'setCategoryData',
-        'upper_left_row' => 'setUpperLeftRow',
-        'lower_right_column' => 'setLowerRightColumn',
-        'lower_right_row' => 'setLowerRightRow',
-        'is_auto_get_serial_name' => 'setIsAutoGetSerialName',
-        'chart_type' => 'setChartType',
-        'is_vertical' => 'setIsVertical'
+        'name' => 'setName',
+        'sheet_type' => 'setSheetType',
+        'new_name' => 'setNewName',
+        'moving_request' => 'setMovingRequest'
     ];
 
     /**
@@ -156,15 +136,10 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $getters = [
-        'title' => 'getTitle',
-        'area' => 'getArea',
-        'category_data' => 'getCategoryData',
-        'upper_left_row' => 'getUpperLeftRow',
-        'lower_right_column' => 'getLowerRightColumn',
-        'lower_right_row' => 'getLowerRightRow',
-        'is_auto_get_serial_name' => 'getIsAutoGetSerialName',
-        'chart_type' => 'getChartType',
-        'is_vertical' => 'getIsVertical'
+        'name' => 'getName',
+        'sheet_type' => 'getSheetType',
+        'new_name' => 'getNewName',
+        'moving_request' => 'getMovingRequest'
     ];
 
     /**
@@ -223,15 +198,10 @@ class ChartOperateParameter extends OperateParameter
     {
         parent::__construct($data);
 
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['category_data'] = isset($data['category_data']) ? $data['category_data'] : null;
-        $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
-        $this->container['lower_right_column'] = isset($data['lower_right_column']) ? $data['lower_right_column'] : null;
-        $this->container['lower_right_row'] = isset($data['lower_right_row']) ? $data['lower_right_row'] : null;
-        $this->container['is_auto_get_serial_name'] = isset($data['is_auto_get_serial_name']) ? $data['is_auto_get_serial_name'] : null;
-        $this->container['chart_type'] = isset($data['chart_type']) ? $data['chart_type'] : null;
-        $this->container['is_vertical'] = isset($data['is_vertical']) ? $data['is_vertical'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['sheet_type'] = isset($data['sheet_type']) ? $data['sheet_type'] : null;
+        $this->container['new_name'] = isset($data['new_name']) ? $data['new_name'] : null;
+        $this->container['moving_request'] = isset($data['moving_request']) ? $data['moving_request'] : null;
     }
 
     /**
@@ -263,217 +233,97 @@ class ChartOperateParameter extends OperateParameter
 
 
     /**
-     * Gets title
+     * Gets name
      *
      * @return string
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->container['title'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets title
+     * Sets name
      *
-     * @param string $title title
+     * @param string $name name
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->container['title'] = $title;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets area
+     * Gets sheet_type
      *
      * @return string
      */
-    public function getArea()
+    public function getSheetType()
     {
-        return $this->container['area'];
+        return $this->container['sheet_type'];
     }
 
     /**
-     * Sets area
+     * Sets sheet_type
      *
-     * @param string $area area
+     * @param string $sheet_type sheet_type
      *
      * @return $this
      */
-    public function setArea($area)
+    public function setSheetType($sheet_type)
     {
-        $this->container['area'] = $area;
+        $this->container['sheet_type'] = $sheet_type;
 
         return $this;
     }
 
     /**
-     * Gets category_data
+     * Gets new_name
      *
      * @return string
      */
-    public function getCategoryData()
+    public function getNewName()
     {
-        return $this->container['category_data'];
+        return $this->container['new_name'];
     }
 
     /**
-     * Sets category_data
+     * Sets new_name
      *
-     * @param string $category_data category_data
+     * @param string $new_name new_name
      *
      * @return $this
      */
-    public function setCategoryData($category_data)
+    public function setNewName($new_name)
     {
-        $this->container['category_data'] = $category_data;
+        $this->container['new_name'] = $new_name;
 
         return $this;
     }
 
     /**
-     * Gets upper_left_row
+     * Gets moving_request
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\WorksheetMovingRequest
      */
-    public function getUpperLeftRow()
+    public function getMovingRequest()
     {
-        return $this->container['upper_left_row'];
+        return $this->container['moving_request'];
     }
 
     /**
-     * Sets upper_left_row
+     * Sets moving_request
      *
-     * @param int $upper_left_row upper_left_row
+     * @param \Aspose\Cells\Cloud\Model\WorksheetMovingRequest $moving_request moving_request
      *
      * @return $this
      */
-    public function setUpperLeftRow($upper_left_row)
+    public function setMovingRequest($moving_request)
     {
-        $this->container['upper_left_row'] = $upper_left_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets lower_right_column
-     *
-     * @return int
-     */
-    public function getLowerRightColumn()
-    {
-        return $this->container['lower_right_column'];
-    }
-
-    /**
-     * Sets lower_right_column
-     *
-     * @param int $lower_right_column lower_right_column
-     *
-     * @return $this
-     */
-    public function setLowerRightColumn($lower_right_column)
-    {
-        $this->container['lower_right_column'] = $lower_right_column;
-
-        return $this;
-    }
-
-    /**
-     * Gets lower_right_row
-     *
-     * @return int
-     */
-    public function getLowerRightRow()
-    {
-        return $this->container['lower_right_row'];
-    }
-
-    /**
-     * Sets lower_right_row
-     *
-     * @param int $lower_right_row lower_right_row
-     *
-     * @return $this
-     */
-    public function setLowerRightRow($lower_right_row)
-    {
-        $this->container['lower_right_row'] = $lower_right_row;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_auto_get_serial_name
-     *
-     * @return bool
-     */
-    public function getIsAutoGetSerialName()
-    {
-        return $this->container['is_auto_get_serial_name'];
-    }
-
-    /**
-     * Sets is_auto_get_serial_name
-     *
-     * @param bool $is_auto_get_serial_name is_auto_get_serial_name
-     *
-     * @return $this
-     */
-    public function setIsAutoGetSerialName($is_auto_get_serial_name)
-    {
-        $this->container['is_auto_get_serial_name'] = $is_auto_get_serial_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets chart_type
-     *
-     * @return string
-     */
-    public function getChartType()
-    {
-        return $this->container['chart_type'];
-    }
-
-    /**
-     * Sets chart_type
-     *
-     * @param string $chart_type chart_type
-     *
-     * @return $this
-     */
-    public function setChartType($chart_type)
-    {
-        $this->container['chart_type'] = $chart_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_vertical
-     *
-     * @return bool
-     */
-    public function getIsVertical()
-    {
-        return $this->container['is_vertical'];
-    }
-
-    /**
-     * Sets is_vertical
-     *
-     * @param bool $is_vertical is_vertical
-     *
-     * @return $this
-     */
-    public function setIsVertical($is_vertical)
-    {
-        $this->container['is_vertical'] = $is_vertical;
+        $this->container['moving_request'] = $moving_request;
 
         return $this;
     }

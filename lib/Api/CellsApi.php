@@ -14248,7 +14248,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ColumnsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
@@ -14272,11 +14272,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ColumnsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name);
 
         try {
@@ -14328,7 +14328,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ColumnsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14382,7 +14382,7 @@ class CellsApi
      */
     public function cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name);
 
         return $this->client
@@ -44733,7 +44733,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ColumnResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder = null, $storage_name = null)
     {
@@ -44756,11 +44756,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ColumnResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder, $storage_name);
 
         try {
@@ -44812,7 +44812,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ColumnResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -44864,7 +44864,7 @@ class CellsApi
      */
     public function cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $folder, $storage_name);
 
         return $this->client
@@ -47120,7 +47120,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\RowResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage_name = null)
     {
@@ -47143,11 +47143,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\RowResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height, $folder, $storage_name);
 
         try {
@@ -47199,7 +47199,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\RowResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -47251,7 +47251,7 @@ class CellsApi
      */
     public function cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height, $folder, $storage_name);
 
         return $this->client
@@ -50057,7 +50057,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ColumnsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -50081,11 +50081,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ColumnsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name);
 
         try {
@@ -50137,7 +50137,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ColumnsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -50191,7 +50191,7 @@ class CellsApi
      */
     public function cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name);
 
         return $this->client
@@ -50406,7 +50406,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\RowResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -50428,11 +50428,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\RowResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage_name);
 
         try {
@@ -50484,7 +50484,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\RowResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -50534,7 +50534,7 @@ class CellsApi
      */
     public function cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder, $storage_name);
 
         return $this->client
@@ -63436,6 +63436,321 @@ class CellsApi
     }
 
     /**
+     * Operation cellsWorkbookPostAutofitWorkbookColumns
+     *
+     * Autofit workbook columns.
+     *
+     * @param  string $name Document name. (required)
+     * @param  \Aspose\Cells\Cloud\Model\AutoFitterOptions $auto_fitter_options Auto Fitter Options. (optional)
+     * @param  int $start_column Start column. (optional)
+     * @param  int $end_column End column. (optional)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsWorkbookPostAutofitWorkbookColumns($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsWorkbookPostAutofitWorkbookColumnsWithHttpInfo($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsWorkbookPostAutofitWorkbookColumnsWithHttpInfo
+     *
+     * Autofit workbook columns.
+     *
+     * @param  string $name Document name. (required)
+     * @param  \Aspose\Cells\Cloud\Model\AutoFitterOptions $auto_fitter_options Auto Fitter Options. (optional)
+     * @param  int $start_column Start column. (optional)
+     * @param  int $end_column End column. (optional)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsWorkbookPostAutofitWorkbookColumnsWithHttpInfo($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookPostAutofitWorkbookColumnsRequest($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsWorkbookPostAutofitWorkbookColumnsAsync
+     *
+     * Autofit workbook columns.
+     *
+     * @param  string $name Document name. (required)
+     * @param  \Aspose\Cells\Cloud\Model\AutoFitterOptions $auto_fitter_options Auto Fitter Options. (optional)
+     * @param  int $start_column Start column. (optional)
+     * @param  int $end_column End column. (optional)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookPostAutofitWorkbookColumnsAsync($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
+    {
+        return $this->cellsWorkbookPostAutofitWorkbookColumnsAsyncWithHttpInfo($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsWorkbookPostAutofitWorkbookColumnsAsyncWithHttpInfo
+     *
+     * Autofit workbook columns.
+     *
+     * @param  string $name Document name. (required)
+     * @param  \Aspose\Cells\Cloud\Model\AutoFitterOptions $auto_fitter_options Auto Fitter Options. (optional)
+     * @param  int $start_column Start column. (optional)
+     * @param  int $end_column End column. (optional)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookPostAutofitWorkbookColumnsAsyncWithHttpInfo($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookPostAutofitWorkbookColumnsRequest($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsWorkbookPostAutofitWorkbookColumns'
+     *
+     * @param  string $name Document name. (required)
+     * @param  \Aspose\Cells\Cloud\Model\AutoFitterOptions $auto_fitter_options Auto Fitter Options. (optional)
+     * @param  int $start_column Start column. (optional)
+     * @param  int $end_column End column. (optional)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsWorkbookPostAutofitWorkbookColumnsRequest($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsWorkbookPostAutofitWorkbookColumns'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/autofitcolumns';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($start_column !== null) {
+            $queryParams['startColumn'] = ObjectSerializer::toQueryValue($start_column);
+        }
+        // query params
+        if ($end_column !== null) {
+            $queryParams['endColumn'] = ObjectSerializer::toQueryValue($end_column);
+        }
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($auto_fitter_options)) {
+            $_tempBody = $auto_fitter_options;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsWorkbookPostAutofitWorkbookColumns'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation cellsWorkbookPostAutofitWorkbookRows
      *
      * Autofit workbook rows.
@@ -66837,7 +67152,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  \SplFileObject $workbook workbook (required)
+     * @param  \SplFileObject $file file (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -66846,10 +67161,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorkbookPutConvertWorkbook($workbook, $format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbook($file, $format = null, $password = null, $out_path = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($workbook, $format, $password, $out_path);
+        list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format, $password, $out_path);
         return $response;
     }
 
@@ -66858,7 +67173,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  \SplFileObject $workbook (required)
+     * @param  \SplFileObject $file (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -66867,10 +67182,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookPutConvertWorkbookWithHttpInfo($workbook, $format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format = null, $password = null, $out_path = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookPutConvertWorkbookRequest($workbook, $format, $password, $out_path);
+        $request = $this->cellsWorkbookPutConvertWorkbookRequest($file, $format, $password, $out_path);
 
         try {
             $options = $this->createHttpClientOption();
@@ -66936,7 +67251,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  \SplFileObject $workbook (required)
+     * @param  \SplFileObject $file (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -66944,9 +67259,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutConvertWorkbookAsync($workbook, $format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbookAsync($file, $format = null, $password = null, $out_path = null)
     {
-        return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($workbook, $format, $password, $out_path)
+        return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format, $password, $out_path)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -66959,7 +67274,7 @@ class CellsApi
      *
      * Convert workbook from request content to some format.
      *
-     * @param  \SplFileObject $workbook (required)
+     * @param  \SplFileObject $file (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -66967,10 +67282,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($workbook, $format = null, $password = null, $out_path = null)
+    public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format = null, $password = null, $out_path = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookPutConvertWorkbookRequest($workbook, $format, $password, $out_path);
+        $request = $this->cellsWorkbookPutConvertWorkbookRequest($file, $format, $password, $out_path);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -67012,7 +67327,7 @@ class CellsApi
     /**
      * Create request for operation 'cellsWorkbookPutConvertWorkbook'
      *
-     * @param  \SplFileObject $workbook (required)
+     * @param  \SplFileObject $file (required)
      * @param  string $format The format to convert. (optional)
      * @param  string $password The workbook password. (optional)
      * @param  string $out_path Path to save result (optional)
@@ -67020,12 +67335,12 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookPutConvertWorkbookRequest($workbook, $format = null, $password = null, $out_path = null)
+    protected function cellsWorkbookPutConvertWorkbookRequest($file, $format = null, $password = null, $out_path = null)
     {
-        // verify the required parameter 'workbook' is set
-        if ($workbook === null) {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $workbook when calling cellsWorkbookPutConvertWorkbook'
+                'Missing the required parameter $file when calling cellsWorkbookPutConvertWorkbook'
             );
         }
 
@@ -67051,9 +67366,9 @@ class CellsApi
 
 
         // form params
-        if ($workbook !== null) {
+        if ($file !== null) {
             $multipart = true;
-            $formParams['workbook'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($workbook), 'rb');
+            $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
         }
         // body params
         $_tempBody = null;
@@ -67065,7 +67380,7 @@ class CellsApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
