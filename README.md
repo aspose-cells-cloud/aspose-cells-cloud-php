@@ -93,7 +93,6 @@ require_once('vendor/autoload.php');
 
 ```php
 require_once realpath(__DIR__ . '/..') . '/vendor/autoload.php';
-require_once realpath(__DIR__ . '/..') . '/Utils.php';
 
 use Aspose\Cells\CellsApi;
 use Aspose\Cells\AsposeApp;
