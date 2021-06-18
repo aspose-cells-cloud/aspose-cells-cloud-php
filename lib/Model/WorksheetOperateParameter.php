@@ -1,6 +1,6 @@
 <?php
 /**
- * CommentResponse
+ * WorksheetOperateParameter
  *
  * PHP version 5
  *
@@ -43,14 +43,14 @@ namespace Aspose\Cells\Cloud\Model;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * CommentResponse Class Doc Comment
+ * WorksheetOperateParameter Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CommentResponse extends CellsCloudResponse 
+class WorksheetOperateParameter extends OperateParameter 
 {
     const DISCRIMINATOR = null;
 
@@ -59,7 +59,7 @@ class CommentResponse extends CellsCloudResponse
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CommentResponse';
+    protected static $swaggerModelName = 'WorksheetOperateParameter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -67,7 +67,10 @@ class CommentResponse extends CellsCloudResponse
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'comment' => '\Aspose\Cells\Cloud\Model\Comment'
+        'name' => 'string',
+        'sheet_type' => 'string',
+        'new_name' => 'string',
+        'moving_request' => '\Aspose\Cells\Cloud\Model\WorksheetMovingRequest'
     ];
 
     /**
@@ -76,7 +79,10 @@ class CommentResponse extends CellsCloudResponse
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'comment' => null
+        'name' => null,
+        'sheet_type' => null,
+        'new_name' => null,
+        'moving_request' => null
     ];
 
     /**
@@ -106,7 +112,10 @@ class CommentResponse extends CellsCloudResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment' => 'Comment'
+        'name' => 'Name',
+        'sheet_type' => 'SheetType',
+        'new_name' => 'NewName',
+        'moving_request' => 'MovingRequest'
     ];
 
     /**
@@ -115,7 +124,10 @@ class CommentResponse extends CellsCloudResponse
      * @var string[]
      */
     protected static $setters = [
-        'comment' => 'setComment'
+        'name' => 'setName',
+        'sheet_type' => 'setSheetType',
+        'new_name' => 'setNewName',
+        'moving_request' => 'setMovingRequest'
     ];
 
     /**
@@ -124,7 +136,10 @@ class CommentResponse extends CellsCloudResponse
      * @var string[]
      */
     protected static $getters = [
-        'comment' => 'getComment'
+        'name' => 'getName',
+        'sheet_type' => 'getSheetType',
+        'new_name' => 'getNewName',
+        'moving_request' => 'getMovingRequest'
     ];
 
     /**
@@ -183,7 +198,10 @@ class CommentResponse extends CellsCloudResponse
     {
         parent::__construct($data);
 
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['sheet_type'] = isset($data['sheet_type']) ? $data['sheet_type'] : null;
+        $this->container['new_name'] = isset($data['new_name']) ? $data['new_name'] : null;
+        $this->container['moving_request'] = isset($data['moving_request']) ? $data['moving_request'] : null;
     }
 
     /**
@@ -215,25 +233,97 @@ class CommentResponse extends CellsCloudResponse
 
 
     /**
-     * Gets comment
+     * Gets name
      *
-     * @return \Aspose\Cells\Cloud\Model\Comment
+     * @return string
      */
-    public function getComment()
+    public function getName()
     {
-        return $this->container['comment'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets comment
+     * Sets name
      *
-     * @param \Aspose\Cells\Cloud\Model\Comment $comment comment
+     * @param string $name name
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setName($name)
     {
-        $this->container['comment'] = $comment;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets sheet_type
+     *
+     * @return string
+     */
+    public function getSheetType()
+    {
+        return $this->container['sheet_type'];
+    }
+
+    /**
+     * Sets sheet_type
+     *
+     * @param string $sheet_type sheet_type
+     *
+     * @return $this
+     */
+    public function setSheetType($sheet_type)
+    {
+        $this->container['sheet_type'] = $sheet_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets new_name
+     *
+     * @return string
+     */
+    public function getNewName()
+    {
+        return $this->container['new_name'];
+    }
+
+    /**
+     * Sets new_name
+     *
+     * @param string $new_name new_name
+     *
+     * @return $this
+     */
+    public function setNewName($new_name)
+    {
+        $this->container['new_name'] = $new_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets moving_request
+     *
+     * @return \Aspose\Cells\Cloud\Model\WorksheetMovingRequest
+     */
+    public function getMovingRequest()
+    {
+        return $this->container['moving_request'];
+    }
+
+    /**
+     * Sets moving_request
+     *
+     * @param \Aspose\Cells\Cloud\Model\WorksheetMovingRequest $moving_request moving_request
+     *
+     * @return $this
+     */
+    public function setMovingRequest($moving_request)
+    {
+        $this->container['moving_request'] = $moving_request;
 
         return $this;
     }

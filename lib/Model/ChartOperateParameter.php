@@ -12,7 +12,7 @@
 
 /* 
  * <summary>
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -67,7 +67,7 @@ class ChartOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'string' => 'string',
+        'title' => 'string',
         'area' => 'string',
         'category_data' => 'string',
         'upper_left_row' => 'int',
@@ -84,7 +84,7 @@ class ChartOperateParameter extends OperateParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'string' => null,
+        'title' => null,
         'area' => null,
         'category_data' => null,
         'upper_left_row' => 'int32',
@@ -122,7 +122,7 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $attributeMap = [
-        'string' => 'string',
+        'title' => 'Title',
         'area' => 'Area',
         'category_data' => 'CategoryData',
         'upper_left_row' => 'UpperLeftRow',
@@ -139,7 +139,7 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $setters = [
-        'string' => 'setString',
+        'title' => 'setTitle',
         'area' => 'setArea',
         'category_data' => 'setCategoryData',
         'upper_left_row' => 'setUpperLeftRow',
@@ -156,7 +156,7 @@ class ChartOperateParameter extends OperateParameter
      * @var string[]
      */
     protected static $getters = [
-        'string' => 'getString',
+        'title' => 'getTitle',
         'area' => 'getArea',
         'category_data' => 'getCategoryData',
         'upper_left_row' => 'getUpperLeftRow',
@@ -223,7 +223,7 @@ class ChartOperateParameter extends OperateParameter
     {
         parent::__construct($data);
 
-        $this->container['string'] = isset($data['string']) ? $data['string'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
         $this->container['area'] = isset($data['area']) ? $data['area'] : null;
         $this->container['category_data'] = isset($data['category_data']) ? $data['category_data'] : null;
         $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
@@ -263,25 +263,25 @@ class ChartOperateParameter extends OperateParameter
 
 
     /**
-     * Gets string
+     * Gets title
      *
      * @return string
      */
-    public function getString()
+    public function getTitle()
     {
-        return $this->container['string'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets string
+     * Sets title
      *
-     * @param string $string string
+     * @param string $title title
      *
      * @return $this
      */
-    public function setString($string)
+    public function setTitle($title)
     {
-        $this->container['string'] = $string;
+        $this->container['title'] = $title;
 
         return $this;
     }

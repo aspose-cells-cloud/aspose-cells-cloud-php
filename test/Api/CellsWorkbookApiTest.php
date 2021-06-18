@@ -301,7 +301,24 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookPostAutofitWorkbookRows($name, $autoFitterOptions,  $startRow, $endRow, $onlyAuto , $folder);
         $this->assertEquals(200, $result['code']);
     }
-
+    /**
+     * Test case for cellsWorkbookPostAutofitWorkbookColumns
+     *
+     * Autofit workbook columns.
+     *
+     */
+    public function testCellsWorkbookPostAutofitWorkbookColumns()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $autoFitterOptions = null;
+        $startColumn = 1;
+        $endColumn = 100;
+        $onlyAuto = 'true';
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookPostAutofitWorkbookColumns($name, $autoFitterOptions,  $startColumn, $endColumn,  $folder);
+        $this->assertEquals(200, $result['code']);
+    }
     /**
      * Test case for cellsWorkbookPostEncryptDocument
      *

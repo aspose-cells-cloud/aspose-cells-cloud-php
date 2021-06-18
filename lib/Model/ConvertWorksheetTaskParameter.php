@@ -1,6 +1,6 @@
 <?php
 /**
- * CommentResponse
+ * ConvertWorksheetTaskParameter
  *
  * PHP version 5
  *
@@ -43,14 +43,14 @@ namespace Aspose\Cells\Cloud\Model;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * CommentResponse Class Doc Comment
+ * ConvertWorksheetTaskParameter Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CommentResponse extends CellsCloudResponse 
+class ConvertWorksheetTaskParameter extends TaskParameter 
 {
     const DISCRIMINATOR = null;
 
@@ -59,7 +59,7 @@ class CommentResponse extends CellsCloudResponse
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CommentResponse';
+    protected static $swaggerModelName = 'ConvertWorksheetTaskParameter';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -67,7 +67,14 @@ class CommentResponse extends CellsCloudResponse
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'comment' => '\Aspose\Cells\Cloud\Model\Comment'
+        'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'sheet' => 'string',
+        'target' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'format' => 'string',
+        'area' => 'string',
+        'page_index' => 'int',
+        'vertical_resolution' => 'int',
+        'horizontal_resolution' => 'int'
     ];
 
     /**
@@ -76,7 +83,14 @@ class CommentResponse extends CellsCloudResponse
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'comment' => null
+        'workbook' => null,
+        'sheet' => null,
+        'target' => null,
+        'format' => null,
+        'area' => null,
+        'page_index' => 'int32',
+        'vertical_resolution' => 'int32',
+        'horizontal_resolution' => 'int32'
     ];
 
     /**
@@ -106,7 +120,14 @@ class CommentResponse extends CellsCloudResponse
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment' => 'Comment'
+        'workbook' => 'Workbook',
+        'sheet' => 'Sheet',
+        'target' => 'Target',
+        'format' => 'Format',
+        'area' => 'Area',
+        'page_index' => 'PageIndex',
+        'vertical_resolution' => 'VerticalResolution',
+        'horizontal_resolution' => 'HorizontalResolution'
     ];
 
     /**
@@ -115,7 +136,14 @@ class CommentResponse extends CellsCloudResponse
      * @var string[]
      */
     protected static $setters = [
-        'comment' => 'setComment'
+        'workbook' => 'setWorkbook',
+        'sheet' => 'setSheet',
+        'target' => 'setTarget',
+        'format' => 'setFormat',
+        'area' => 'setArea',
+        'page_index' => 'setPageIndex',
+        'vertical_resolution' => 'setVerticalResolution',
+        'horizontal_resolution' => 'setHorizontalResolution'
     ];
 
     /**
@@ -124,7 +152,14 @@ class CommentResponse extends CellsCloudResponse
      * @var string[]
      */
     protected static $getters = [
-        'comment' => 'getComment'
+        'workbook' => 'getWorkbook',
+        'sheet' => 'getSheet',
+        'target' => 'getTarget',
+        'format' => 'getFormat',
+        'area' => 'getArea',
+        'page_index' => 'getPageIndex',
+        'vertical_resolution' => 'getVerticalResolution',
+        'horizontal_resolution' => 'getHorizontalResolution'
     ];
 
     /**
@@ -183,7 +218,14 @@ class CommentResponse extends CellsCloudResponse
     {
         parent::__construct($data);
 
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
+        $this->container['sheet'] = isset($data['sheet']) ? $data['sheet'] : null;
+        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
+        $this->container['format'] = isset($data['format']) ? $data['format'] : null;
+        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
+        $this->container['page_index'] = isset($data['page_index']) ? $data['page_index'] : null;
+        $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
+        $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
     }
 
     /**
@@ -215,25 +257,193 @@ class CommentResponse extends CellsCloudResponse
 
 
     /**
-     * Gets comment
+     * Gets workbook
      *
-     * @return \Aspose\Cells\Cloud\Model\Comment
+     * @return \Aspose\Cells\Cloud\Model\FileSource
      */
-    public function getComment()
+    public function getWorkbook()
     {
-        return $this->container['comment'];
+        return $this->container['workbook'];
     }
 
     /**
-     * Sets comment
+     * Sets workbook
      *
-     * @param \Aspose\Cells\Cloud\Model\Comment $comment comment
+     * @param \Aspose\Cells\Cloud\Model\FileSource $workbook workbook
      *
      * @return $this
      */
-    public function setComment($comment)
+    public function setWorkbook($workbook)
     {
-        $this->container['comment'] = $comment;
+        $this->container['workbook'] = $workbook;
+
+        return $this;
+    }
+
+    /**
+     * Gets sheet
+     *
+     * @return string
+     */
+    public function getSheet()
+    {
+        return $this->container['sheet'];
+    }
+
+    /**
+     * Sets sheet
+     *
+     * @param string $sheet sheet
+     *
+     * @return $this
+     */
+    public function setSheet($sheet)
+    {
+        $this->container['sheet'] = $sheet;
+
+        return $this;
+    }
+
+    /**
+     * Gets target
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileSource
+     */
+    public function getTarget()
+    {
+        return $this->container['target'];
+    }
+
+    /**
+     * Sets target
+     *
+     * @param \Aspose\Cells\Cloud\Model\FileSource $target target
+     *
+     * @return $this
+     */
+    public function setTarget($target)
+    {
+        $this->container['target'] = $target;
+
+        return $this;
+    }
+
+    /**
+     * Gets format
+     *
+     * @return string
+     */
+    public function getFormat()
+    {
+        return $this->container['format'];
+    }
+
+    /**
+     * Sets format
+     *
+     * @param string $format format
+     *
+     * @return $this
+     */
+    public function setFormat($format)
+    {
+        $this->container['format'] = $format;
+
+        return $this;
+    }
+
+    /**
+     * Gets area
+     *
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->container['area'];
+    }
+
+    /**
+     * Sets area
+     *
+     * @param string $area area
+     *
+     * @return $this
+     */
+    public function setArea($area)
+    {
+        $this->container['area'] = $area;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_index
+     *
+     * @return int
+     */
+    public function getPageIndex()
+    {
+        return $this->container['page_index'];
+    }
+
+    /**
+     * Sets page_index
+     *
+     * @param int $page_index page_index
+     *
+     * @return $this
+     */
+    public function setPageIndex($page_index)
+    {
+        $this->container['page_index'] = $page_index;
+
+        return $this;
+    }
+
+    /**
+     * Gets vertical_resolution
+     *
+     * @return int
+     */
+    public function getVerticalResolution()
+    {
+        return $this->container['vertical_resolution'];
+    }
+
+    /**
+     * Sets vertical_resolution
+     *
+     * @param int $vertical_resolution vertical_resolution
+     *
+     * @return $this
+     */
+    public function setVerticalResolution($vertical_resolution)
+    {
+        $this->container['vertical_resolution'] = $vertical_resolution;
+
+        return $this;
+    }
+
+    /**
+     * Gets horizontal_resolution
+     *
+     * @return int
+     */
+    public function getHorizontalResolution()
+    {
+        return $this->container['horizontal_resolution'];
+    }
+
+    /**
+     * Sets horizontal_resolution
+     *
+     * @param int $horizontal_resolution horizontal_resolution
+     *
+     * @return $this
+     */
+    public function setHorizontalResolution($horizontal_resolution)
+    {
+        $this->container['horizontal_resolution'] = $horizontal_resolution;
 
         return $this;
     }

@@ -2,7 +2,7 @@
 
 /* 
  * <summary>
- *  Copyright (c) 2020 Aspose.Cells Cloud
+ *  Copyright (c) 2021 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -87,7 +87,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/20.10/php';
+    protected $userAgent = 'Swagger-Codegen/21.5/php';
 
     /**
      * Debug switch (default set to false)
@@ -395,8 +395,8 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Cells\Cloud) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 20.10' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 21.5' . PHP_EOL;
+        $report .= '    SDK Package Version: 21.5' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

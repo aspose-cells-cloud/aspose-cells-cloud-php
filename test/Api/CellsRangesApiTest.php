@@ -310,5 +310,40 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $rangeOperate,$folder);
         $this->assertEquals(200, $result['code']);
     }
+    /**
+     * Test case for testCellsRangesPutWorksheetCellsRange
+     *
+     * copy range in the worksheet.
+     *
+     */
+    public function testCellsRangesPutWorksheetCellsRange()
+    {
+        $name ='Book1.xlsx';  
+        $sheet_name ='Sheet1'; 
+        $range = "A1:B5";
+        $shift = "Down";
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsRangesPutWorksheetCellsRange($name, $sheet_name, $range,$shift,$folder);
+        $this->assertEquals(200, $result['code']);
+    }
+
+    /**
+     * Test case for testCellsRangesDeleteWorksheetCellsRange
+     *
+     * copy range in the worksheet.
+     *
+     */
+    public function testCellsRangesDeleteWorksheetCellsRange()
+    {
+        $name ='Book1.xlsx';  
+        $sheet_name ='Sheet1'; 
+        $range = "A1:B5";
+        $shift = "Up";
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsRangesDeleteWorksheetCellsRange($name, $sheet_name, $range,$shift,$folder);
+        $this->assertEquals(200, $result['code']);
+    }
 
 }
