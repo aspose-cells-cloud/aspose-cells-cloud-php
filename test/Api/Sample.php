@@ -38,7 +38,7 @@ use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\ColumnsResponse;
 use \Aspose\Cells\Cloud\Model\SaaSposeResponse;
-use \Aspose\Cells\Cloud\Model\CalculationOptions;
+use \Aspose\Cells\Cloud\Model\ImportCSVDataOption;
 use \Aspose\Cells\Cloud\Model\Style;
 use \Aspose\Cells\Cloud\Model\Font;
 use \Aspose\Cells\Cloud\Model\FontSetting;
@@ -84,21 +84,21 @@ class Sample extends \PHPUnit_Framework_TestCase
     {
     }
 
-    /**
-     * Test case for cellsPostSetCellHtmlString
-     *
-     * Set htmlstring value into cell.
-     *
-     */
-    public function testCellsPostSetCellHtmlString()
+    public function testCellsWorkbookPostImportCSVData()
     {
-        $name ='Book1.xlsx';
-        $sheet_name ='Sheet1';
-        $cellName = 'C1'; 
+        $name ='Book1.xlsx';       
         $folder = "Temp";
-        $html_string = "https://api.aspose.cloud/v3.0/cells";
+        $data = new ImportCSVDataOption();
+        $data->setConvertNumericData(false);
+        $data->setFirstColumn(1);
+        $data->setFirstRow(1) ;
+        $data->setSeparatorString(';') ;
+        $data->setImportDataType('CSVData');
+        $data->setSourceFile('TestImportDataCSV.csv');
+        $data->setDestinationWorksheet('Sheet2');
+        CellsApiTestBase::ready(  $this->instance,'TestImportDataCSV.csv','');
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result =  $this->instance->cellsPostSetCellHtmlString($name, $sheet_name, $cellName,$html_string,$folder);
+        $result = $this->instance->cellsWorkbookPostImportData($name, $data,  $folder);
         $this->assertEquals(200, $result['code']);
     }
 }

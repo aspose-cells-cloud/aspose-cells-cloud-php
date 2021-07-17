@@ -72,7 +72,7 @@ class PivotItem implements  ArrayAccess
         'index' => 'int',
         'is_hidden' => 'bool',
         'name' => 'string',
-        'value' => 'object'
+        'value' => 'string'
     ];
 
     /**
@@ -310,7 +310,7 @@ class PivotItem implements  ArrayAccess
     /**
      * Gets value
      *
-     * @return object
+     * @return string
      */
     public function getValue()
     {
@@ -320,7 +320,7 @@ class PivotItem implements  ArrayAccess
     /**
      * Sets value
      *
-     * @param object $value Gets the value of the specified item.
+     * @param string $value Gets the value of the specified item.
      *
      * @return $this
      */

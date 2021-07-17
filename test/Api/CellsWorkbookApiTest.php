@@ -14,6 +14,7 @@ use \Aspose\Cells\Cloud\Model\ImportIntArrayOption;
 use \Aspose\Cells\Cloud\Model\CalculationOptions;
 use \Aspose\Cells\Cloud\Model\WorkbookSettings;
 use \Aspose\Cells\Cloud\Model\PasswordRequest;
+use \Aspose\Cells\Cloud\Model\ImportCSVDataOption;
 
 class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
 {
@@ -358,6 +359,24 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $data->setImportDataType('IntArray');
         $data->setIsVertical('true');
         $data->setData(array(1, 2, 3, 4)) ;
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookPostImportData($name, $data,  $folder);
+        $this->assertEquals(200, $result['code']);
+    }
+   
+    public function testCellsWorkbookPostImportCSVData()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $data = new ImportCSVDataOption();
+        $data->setConvertNumericData(false);
+        $data->setFirstColumn(1);
+        $data->setFirstRow(1) ;
+        $data->setSeparatorString(';') ;
+        $data->setImportDataType('CSVData');
+        $data->setDestinationWorksheet('Sheet2');
+        $data->setSourceFile('TestImportDataCSV.csv');
+        CellsApiTestBase::ready(  $this->instance,'TestImportDataCSV.csv','');
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookPostImportData($name, $data,  $folder);
         $this->assertEquals(200, $result['code']);

@@ -70,9 +70,12 @@ class CellsDocumentProperty implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
-        'built_in' => 'string',
         'name' => 'string',
-        'value' => 'string'
+        'value' => 'string',
+        'is_linked_to_content' => 'string',
+        'source' => 'string',
+        'type' => 'string',
+        'is_generated_name' => 'string'
     ];
 
     /**
@@ -82,9 +85,12 @@ class CellsDocumentProperty implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'link' => null,
-        'built_in' => null,
         'name' => null,
-        'value' => null
+        'value' => null,
+        'is_linked_to_content' => null,
+        'source' => null,
+        'type' => null,
+        'is_generated_name' => null
     ];
 
     /**
@@ -115,9 +121,12 @@ class CellsDocumentProperty implements  ArrayAccess
      */
     protected static $attributeMap = [
         'link' => 'link',
-        'built_in' => 'BuiltIn',
         'name' => 'Name',
-        'value' => 'Value'
+        'value' => 'Value',
+        'is_linked_to_content' => 'IsLinkedToContent',
+        'source' => 'Source',
+        'type' => 'Type',
+        'is_generated_name' => 'IsGeneratedName'
     ];
 
     /**
@@ -127,9 +136,12 @@ class CellsDocumentProperty implements  ArrayAccess
      */
     protected static $setters = [
         'link' => 'setLink',
-        'built_in' => 'setBuiltIn',
         'name' => 'setName',
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'is_linked_to_content' => 'setIsLinkedToContent',
+        'source' => 'setSource',
+        'type' => 'setType',
+        'is_generated_name' => 'setIsGeneratedName'
     ];
 
     /**
@@ -139,9 +151,12 @@ class CellsDocumentProperty implements  ArrayAccess
      */
     protected static $getters = [
         'link' => 'getLink',
-        'built_in' => 'getBuiltIn',
         'name' => 'getName',
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'is_linked_to_content' => 'getIsLinkedToContent',
+        'source' => 'getSource',
+        'type' => 'getType',
+        'is_generated_name' => 'getIsGeneratedName'
     ];
 
     /**
@@ -205,9 +220,12 @@ class CellsDocumentProperty implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
-        $this->container['built_in'] = isset($data['built_in']) ? $data['built_in'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['is_linked_to_content'] = isset($data['is_linked_to_content']) ? $data['is_linked_to_content'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['is_generated_name'] = isset($data['is_generated_name']) ? $data['is_generated_name'] : null;
     }
 
     /**
@@ -260,30 +278,6 @@ class CellsDocumentProperty implements  ArrayAccess
     }
 
     /**
-     * Gets built_in
-     *
-     * @return string
-     */
-    public function getBuiltIn()
-    {
-        return $this->container['built_in'];
-    }
-
-    /**
-     * Sets built_in
-     *
-     * @param string $built_in built_in
-     *
-     * @return $this
-     */
-    public function setBuiltIn($built_in)
-    {
-        $this->container['built_in'] = $built_in;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -296,7 +290,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Returns the name of the property.
      *
      * @return $this
      */
@@ -320,13 +314,109 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param string $value Gets or sets the value of the property.
      *
      * @return $this
      */
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_linked_to_content
+     *
+     * @return string
+     */
+    public function getIsLinkedToContent()
+    {
+        return $this->container['is_linked_to_content'];
+    }
+
+    /**
+     * Sets is_linked_to_content
+     *
+     * @param string $is_linked_to_content Indicates whether this property is linked to content
+     *
+     * @return $this
+     */
+    public function setIsLinkedToContent($is_linked_to_content)
+    {
+        $this->container['is_linked_to_content'] = $is_linked_to_content;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string $source The linked content source.
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Gets the data type of the property.
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_generated_name
+     *
+     * @return string
+     */
+    public function getIsGeneratedName()
+    {
+        return $this->container['is_generated_name'];
+    }
+
+    /**
+     * Sets is_generated_name
+     *
+     * @param string $is_generated_name Returns true if this property does not have a name in the OLE2 storage and a   unique name was generated only for the public API.
+     *
+     * @return $this
+     */
+    public function setIsGeneratedName($is_generated_name)
+    {
+        $this->container['is_generated_name'] = $is_generated_name;
 
         return $this;
     }

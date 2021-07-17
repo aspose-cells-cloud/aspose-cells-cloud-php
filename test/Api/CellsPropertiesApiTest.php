@@ -157,6 +157,6 @@ class CellsPropertiesApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsPropertiesPutDocumentProperty($name,$propertyName ,$property,$folder);
-        $this->assertEquals(201, $result['code']);
+        $this->assertEquals(200, $result['code']);
     }
 }
