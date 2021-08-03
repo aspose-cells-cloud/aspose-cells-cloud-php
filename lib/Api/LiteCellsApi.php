@@ -2491,17 +2491,14 @@ class LiteCellsApi
      * @param  string $text text (required)
      * @param  string $password password (optional)
      * @param  string $sheetname sheetname (optional)
-     * @param  string $path path (optional)
-     * @param  string $storage_name storage_name (optional)
-     *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function postSearch($file, $text, $password = null, $sheetname = null, $path = null, $storage_name = null)
+    public function postSearch($file, $text, $password = null, $sheetname = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->postSearchWithHttpInfo($file, $text, $password, $sheetname, $path, $storage_name);
+        list($response) = $this->postSearchWithHttpInfo($file, $text, $password, $sheetname);
         return $response;
     }
 
@@ -2512,17 +2509,15 @@ class LiteCellsApi
      * @param  string $text (required)
      * @param  string $password (optional)
      * @param  string $sheetname (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\TextItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSearchWithHttpInfo($file, $text, $password = null, $sheetname = null, $path = null, $storage_name = null)
+    public function postSearchWithHttpInfo($file, $text, $password = null, $sheetname = null)
     {
-        $returnType = '\SplFileObject';
-        $request = $this->postSearchRequest($file, $text, $password, $sheetname, $path, $storage_name);
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItem[]';
+        $request = $this->postSearchRequest($file, $text, $password, $sheetname);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2573,7 +2568,7 @@ class LiteCellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        '\Aspose\Cells\Cloud\Model\TextItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2592,15 +2587,13 @@ class LiteCellsApi
      * @param  string $text (required)
      * @param  string $password (optional)
      * @param  string $sheetname (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSearchAsync($file, $text, $password = null, $sheetname = null, $path = null, $storage_name = null)
+    public function postSearchAsync($file, $text, $password = null, $sheetname = null)
     {
-        return $this->postSearchAsyncWithHttpInfo($file, $text, $password, $sheetname, $path, $storage_name)
+        return $this->postSearchAsyncWithHttpInfo($file, $text, $password, $sheetname)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2617,16 +2610,14 @@ class LiteCellsApi
      * @param  string $text (required)
      * @param  string $password (optional)
      * @param  string $sheetname (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSearchAsyncWithHttpInfo($file, $text, $password = null, $sheetname = null, $path = null, $storage_name = null)
+    public function postSearchAsyncWithHttpInfo($file, $text, $password = null, $sheetname = null)
     {
-        $returnType = '\SplFileObject';
-        $request = $this->postSearchRequest($file, $text, $password, $sheetname, $path, $storage_name);
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItem[]';
+        $request = $this->postSearchRequest($file, $text, $password, $sheetname);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2672,13 +2663,11 @@ class LiteCellsApi
      * @param  string $text (required)
      * @param  string $password (optional)
      * @param  string $sheetname (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postSearchRequest($file, $text, $password = null, $sheetname = null, $path = null, $storage_name = null)
+    protected function postSearchRequest($file, $text, $password = null, $sheetname = null)
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -2711,14 +2700,6 @@ class LiteCellsApi
         // query params
         if ($sheetname !== null) {
             $queryParams['sheetname'] = ObjectSerializer::toQueryValue($sheetname);
-        }
-        // query params
-        if ($path !== null) {
-            $queryParams['path'] = ObjectSerializer::toQueryValue($path);
-        }
-        // query params
-        if ($storage_name !== null) {
-            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
         }
 
 
@@ -2823,17 +2804,15 @@ class LiteCellsApi
      * @param  string $password password (optional)
      * @param  int $from from (optional)
      * @param  int $to to (optional)
-     * @param  string $path path (optional)
-     * @param  string $storage_name storage_name (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postSplit($file, $format, $password = null, $from = null, $to = null, $path = null, $storage_name = null)
+    public function postSplit($file, $format, $password = null, $from = null, $to = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->postSplitWithHttpInfo($file, $format, $password, $from, $to, $path, $storage_name);
+        list($response) = $this->postSplitWithHttpInfo($file, $format, $password, $from, $to);
         return $response;
     }
 
@@ -2845,17 +2824,15 @@ class LiteCellsApi
      * @param  string $password (optional)
      * @param  int $from (optional)
      * @param  int $to (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSplitWithHttpInfo($file, $format, $password = null, $from = null, $to = null, $path = null, $storage_name = null)
+    public function postSplitWithHttpInfo($file, $format, $password = null, $from = null, $to = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postSplitRequest($file, $format, $password, $from, $to, $path, $storage_name);
+        $request = $this->postSplitRequest($file, $format, $password, $from, $to);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2926,15 +2903,13 @@ class LiteCellsApi
      * @param  string $password (optional)
      * @param  int $from (optional)
      * @param  int $to (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSplitAsync($file, $format, $password = null, $from = null, $to = null, $path = null, $storage_name = null)
+    public function postSplitAsync($file, $format, $password = null, $from = null, $to = null)
     {
-        return $this->postSplitAsyncWithHttpInfo($file, $format, $password, $from, $to, $path, $storage_name)
+        return $this->postSplitAsyncWithHttpInfo($file, $format, $password, $from, $to)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2952,16 +2927,14 @@ class LiteCellsApi
      * @param  string $password (optional)
      * @param  int $from (optional)
      * @param  int $to (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSplitAsyncWithHttpInfo($file, $format, $password = null, $from = null, $to = null, $path = null, $storage_name = null)
+    public function postSplitAsyncWithHttpInfo($file, $format, $password = null, $from = null, $to = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postSplitRequest($file, $format, $password, $from, $to, $path, $storage_name);
+        $request = $this->postSplitRequest($file, $format, $password, $from, $to);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3008,13 +2981,11 @@ class LiteCellsApi
      * @param  string $password (optional)
      * @param  int $from (optional)
      * @param  int $to (optional)
-     * @param  string $path (optional)
-     * @param  string $storage_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postSplitRequest($file, $format, $password = null, $from = null, $to = null, $path = null, $storage_name = null)
+    protected function postSplitRequest($file, $format, $password = null, $from = null, $to = null)
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -3052,14 +3023,7 @@ class LiteCellsApi
         if ($to !== null) {
             $queryParams['to'] = ObjectSerializer::toQueryValue($to);
         }
-        // query params
-        if ($path !== null) {
-            $queryParams['path'] = ObjectSerializer::toQueryValue($path);
-        }
-        // query params
-        if ($storage_name !== null) {
-            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
-        }
+        
 
 
         // form params

@@ -66,7 +66,20 @@ class CellsSearchApiTest extends \PHPUnit_Framework_TestCase
             $AssemblyTest =>  CellsApiTestBase::getfullfilename($AssemblyTest)
         );
         $result = $this->instance->postSearch(  $files,'1' );
-        print( $result);
+      
+        $this->assertNotNull($result);
+    }
+    public function testCellsSearchForSheetPostRun()
+    {
+        $DataSource ='datasource.xlsx';
+        $AssemblyTest ='assemblytest.xlsx';
+
+        $files = array (
+            $DataSource =>  CellsApiTestBase::getfullfilename($DataSource),
+            $AssemblyTest =>  CellsApiTestBase::getfullfilename($AssemblyTest)
+        );
+        $result = $this->instance->postSearch(  $files,'1',null,'Sheet1' );
+      
         $this->assertNotNull($result);
     }
 }
