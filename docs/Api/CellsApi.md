@@ -155,6 +155,7 @@ Method | HTTP request | Description
 [**cellsPutInsertWorksheetColumns**](CellsApi.md#cellsPutInsertWorksheetColumns) | **PUT** /cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex} | Insert worksheet columns.
 [**cellsPutInsertWorksheetRow**](CellsApi.md#cellsPutInsertWorksheetRow) | **PUT** /cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex} | Insert new worksheet row.
 [**cellsPutInsertWorksheetRows**](CellsApi.md#cellsPutInsertWorksheetRows) | **PUT** /cells/{name}/worksheets/{sheetName}/cells/rows | Insert several new worksheet rows.
+[**cellsRangesDeleteWorksheetCellsRange**](CellsApi.md#cellsRangesDeleteWorksheetCellsRange) | **DELETE** /cells/{name}/worksheets/{sheetName}/ranges | Delete range in the worksheet
 [**cellsRangesGetWorksheetCellsRangeValue**](CellsApi.md#cellsRangesGetWorksheetCellsRangeValue) | **GET** /cells/{name}/worksheets/{sheetName}/ranges/value | Get cells list in a range by range name or row column indexes
 [**cellsRangesPostWorksheetCellsRangeColumnWidth**](CellsApi.md#cellsRangesPostWorksheetCellsRangeColumnWidth) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/columnWidth | Set column width of range
 [**cellsRangesPostWorksheetCellsRangeMerge**](CellsApi.md#cellsRangesPostWorksheetCellsRangeMerge) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/merge | Combines a range of cells into a single cell.
@@ -165,6 +166,7 @@ Method | HTTP request | Description
 [**cellsRangesPostWorksheetCellsRangeUnmerge**](CellsApi.md#cellsRangesPostWorksheetCellsRangeUnmerge) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/unmerge | Unmerges merged cells of this range.
 [**cellsRangesPostWorksheetCellsRangeValue**](CellsApi.md#cellsRangesPostWorksheetCellsRangeValue) | **POST** /cells/{name}/worksheets/{sheetName}/ranges/value | Puts a value into the range, if appropriate the value will be converted to other data type and cell&#39;s number format will be reset.
 [**cellsRangesPostWorksheetCellsRanges**](CellsApi.md#cellsRangesPostWorksheetCellsRanges) | **POST** /cells/{name}/worksheets/{sheetName}/ranges | copy range in the worksheet
+[**cellsRangesPutWorksheetCellsRange**](CellsApi.md#cellsRangesPutWorksheetCellsRange) | **PUT** /cells/{name}/worksheets/{sheetName}/ranges | Insert range in the worksheet
 [**cellsSaveAsPostDocumentSaveAs**](CellsApi.md#cellsSaveAsPostDocumentSaveAs) | **POST** /cells/{name}/SaveAs | Convert document and save result to storage.
 [**cellsShapesDeleteWorksheetShape**](CellsApi.md#cellsShapesDeleteWorksheetShape) | **DELETE** /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex} | Delete a shape in worksheet
 [**cellsShapesDeleteWorksheetShapes**](CellsApi.md#cellsShapesDeleteWorksheetShapes) | **DELETE** /cells/{name}/worksheets/{sheetName}/shapes | delete all shapes in worksheet
@@ -192,6 +194,7 @@ Method | HTTP request | Description
 [**cellsWorkbookGetWorkbookNames**](CellsApi.md#cellsWorkbookGetWorkbookNames) | **GET** /cells/{name}/names | Read workbook&#39;s names.
 [**cellsWorkbookGetWorkbookSettings**](CellsApi.md#cellsWorkbookGetWorkbookSettings) | **GET** /cells/{name}/settings | Get Workbook Settings DTO
 [**cellsWorkbookGetWorkbookTextItems**](CellsApi.md#cellsWorkbookGetWorkbookTextItems) | **GET** /cells/{name}/textItems | Read workbook&#39;s text items.
+[**cellsWorkbookPostAutofitWorkbookColumns**](CellsApi.md#cellsWorkbookPostAutofitWorkbookColumns) | **POST** /cells/{name}/autofitcolumns | Autofit workbook columns.
 [**cellsWorkbookPostAutofitWorkbookRows**](CellsApi.md#cellsWorkbookPostAutofitWorkbookRows) | **POST** /cells/{name}/autofitrows | Autofit workbook rows.
 [**cellsWorkbookPostEncryptDocument**](CellsApi.md#cellsWorkbookPostEncryptDocument) | **POST** /cells/{name}/encryption | Encript document.
 [**cellsWorkbookPostImportData**](CellsApi.md#cellsWorkbookPostImportData) | **POST** /cells/{name}/importdata | 
@@ -2670,7 +2673,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsDeleteWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name)
 
 Delete worksheet columns.
 
@@ -2715,7 +2718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Aspose\Cells\Cloud\Model\ColumnsResponse**](../Model/ColumnsResponse.md)
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 
@@ -7871,7 +7874,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostSetWorksheetColumnWidth**
-> \Aspose\Cells\Cloud\Model\ColumnResponse cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder, $storage_name)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $folder, $storage_name)
 
 Set worksheet column width.
 
@@ -7914,7 +7917,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Aspose\Cells\Cloud\Model\ColumnResponse**](../Model/ColumnResponse.md)
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8276,7 +8279,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPostUpdateWorksheetRow**
-> \Aspose\Cells\Cloud\Model\RowResponse cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height, $folder, $storage_name)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height, $folder, $storage_name)
 
 Update worksheet row.
 
@@ -8319,7 +8322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Aspose\Cells\Cloud\Model\RowResponse**](../Model/RowResponse.md)
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8779,7 +8782,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPutInsertWorksheetColumns**
-> \Aspose\Cells\Cloud\Model\ColumnsResponse cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name)
 
 Insert worksheet columns.
 
@@ -8824,7 +8827,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Aspose\Cells\Cloud\Model\ColumnsResponse**](../Model/ColumnsResponse.md)
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8838,7 +8841,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsPutInsertWorksheetRow**
-> \Aspose\Cells\Cloud\Model\RowResponse cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder, $storage_name)
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder, $storage_name)
 
 Insert new worksheet row.
 
@@ -8879,7 +8882,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Aspose\Cells\Cloud\Model\RowResponse**](../Model/RowResponse.md)
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
 
 ### Authorization
 
@@ -8934,6 +8937,63 @@ Name | Type | Description  | Notes
  **total_rows** | **int**| Number of rows to be operated. | [optional] [default to 1]
  **update_reference** | **bool**| Indicates if update references in other worksheets. | [optional] [default to true]
  **folder** | **string**| The document folder. | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsRangesDeleteWorksheetCellsRange**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsRangesDeleteWorksheetCellsRange($name, $sheet_name, $range, $shift, $folder, $storage_name)
+
+Delete range in the worksheet
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | workbook name
+$sheet_name = "sheet_name_example"; // string | worksheet name
+$range = "range_example"; // string | range
+$shift = "shift_example"; // string | Represent the shift options when deleting a range of cells. (Left,Up)
+$folder = "folder_example"; // string | Workbook folder.
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsRangesDeleteWorksheetCellsRange($name, $sheet_name, $range, $shift, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsRangesDeleteWorksheetCellsRange: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| workbook name |
+ **sheet_name** | **string**| worksheet name |
+ **range** | **string**| range |
+ **shift** | **string**| Represent the shift options when deleting a range of cells. (Left,Up) |
+ **folder** | **string**| Workbook folder. | [optional]
  **storage_name** | **string**| storage name. | [optional]
 
 ### Return type
@@ -9505,6 +9565,63 @@ Name | Type | Description  | Notes
  **name** | **string**| workbook name |
  **sheet_name** | **string**| worksheet name |
  **range_operate** | [**\Aspose\Cells\Cloud\Model\RangeCopyRequest**](../Model/RangeCopyRequest.md)| copydata,copystyle,copyto,copyvalue | [optional]
+ **folder** | **string**| Workbook folder. | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **cellsRangesPutWorksheetCellsRange**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsRangesPutWorksheetCellsRange($name, $sheet_name, $range, $shift, $folder, $storage_name)
+
+Insert range in the worksheet
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | workbook name
+$sheet_name = "sheet_name_example"; // string | worksheet name
+$range = "range_example"; // string | range
+$shift = "shift_example"; // string | Represent the shift options when deleting a range of cells. (Right,Down)
+$folder = "folder_example"; // string | Workbook folder.
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsRangesPutWorksheetCellsRange($name, $sheet_name, $range, $shift, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsRangesPutWorksheetCellsRange: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| workbook name |
+ **sheet_name** | **string**| worksheet name |
+ **range** | **string**| range |
+ **shift** | **string**| Represent the shift options when deleting a range of cells. (Right,Down) |
  **folder** | **string**| Workbook folder. | [optional]
  **storage_name** | **string**| storage name. | [optional]
 
@@ -10988,6 +11105,63 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **cellsWorkbookPostAutofitWorkbookColumns**
+> \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookPostAutofitWorkbookColumns($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name)
+
+Autofit workbook columns.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$name = "name_example"; // string | Document name.
+$auto_fitter_options = new \Aspose\Cells\Cloud\Model\AutoFitterOptions(); // \Aspose\Cells\Cloud\Model\AutoFitterOptions | Auto Fitter Options.
+$start_column = 56; // int | Start column.
+$end_column = 56; // int | End column.
+$folder = "folder_example"; // string | Document's folder.
+$storage_name = "storage_name_example"; // string | storage name.
+
+try {
+    $result = $apiInstance->cellsWorkbookPostAutofitWorkbookColumns($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CellsApi->cellsWorkbookPostAutofitWorkbookColumns: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Document name. |
+ **auto_fitter_options** | [**\Aspose\Cells\Cloud\Model\AutoFitterOptions**](../Model/AutoFitterOptions.md)| Auto Fitter Options. | [optional]
+ **start_column** | **int**| Start column. | [optional]
+ **end_column** | **int**| End column. | [optional]
+ **folder** | **string**| Document&#39;s folder. | [optional]
+ **storage_name** | **string**| storage name. | [optional]
+
+### Return type
+
+[**\Aspose\Cells\Cloud\Model\CellsCloudResponse**](../Model/CellsCloudResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **cellsWorkbookPostAutofitWorkbookRows**
 > \Aspose\Cells\Cloud\Model\CellsCloudResponse cellsWorkbookPostAutofitWorkbookRows($name, $auto_fitter_options, $start_row, $end_row, $only_auto, $folder, $storage_name)
 
@@ -11594,7 +11768,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cellsWorkbookPutConvertWorkbook**
-> \SplFileObject cellsWorkbookPutConvertWorkbook($workbook, $format, $password, $out_path)
+> \SplFileObject cellsWorkbookPutConvertWorkbook($file, $format, $password, $out_path)
 
 Convert workbook from request content to some format.
 
@@ -11608,13 +11782,13 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$workbook = "/path/to/file.txt"; // \SplFileObject | 
+$file = "/path/to/file.txt"; // \SplFileObject | 
 $format = "format_example"; // string | The format to convert.
 $password = "password_example"; // string | The workbook password.
 $out_path = "out_path_example"; // string | Path to save result
 
 try {
-    $result = $apiInstance->cellsWorkbookPutConvertWorkbook($workbook, $format, $password, $out_path);
+    $result = $apiInstance->cellsWorkbookPutConvertWorkbook($file, $format, $password, $out_path);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CellsApi->cellsWorkbookPutConvertWorkbook: ', $e->getMessage(), PHP_EOL;
@@ -11626,7 +11800,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workbook** | **\SplFileObject**|  |
+ **file** | **\SplFileObject**|  |
  **format** | **string**| The format to convert. | [optional]
  **password** | **string**| The workbook password. | [optional]
  **out_path** | **string**| Path to save result | [optional]
@@ -11641,7 +11815,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -14615,8 +14789,8 @@ $apiInstance = new Aspose\Cells\Cloud\Api\CellsApi(
     new GuzzleHttp\Client()
 );
 $grant_type = "grant_type_example"; // string | Grant Type
-$client_id = "client_id_example"; // string | client id
-$client_secret = "client_secret_example"; // string | client Secret
+$client_id = "client_id_example"; // string | App SID
+$client_secret = "client_secret_example"; // string | App Key
 
 try {
     $result = $apiInstance->oAuthPost($grant_type, $client_id, $client_secret);
@@ -14632,8 +14806,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **grant_type** | **string**| Grant Type |
- **client_id** | **string**| client id |
- **client_secret** | **string**| client secret |
+ **client_id** | **string**| App SID |
+ **client_secret** | **string**| App Key |
 
 ### Return type
 
