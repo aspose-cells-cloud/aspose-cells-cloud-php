@@ -70,8 +70,8 @@ class DynamicFilter implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'dynamic_filter_type' => 'string',
-        'max_value' => 'object',
-        'value' => 'object'
+        'max_value' => 'int',
+        'value' => 'int'
     ];
 
     /**
@@ -256,7 +256,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Gets max_value
      *
-     * @return object
+     * @return int
      */
     public function getMaxValue()
     {
@@ -266,7 +266,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Sets max_value
      *
-     * @param object $max_value max_value
+     * @param int $max_value max_value
      *
      * @return $this
      */
@@ -280,7 +280,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Gets value
      *
-     * @return object
+     * @return int
      */
     public function getValue()
     {
@@ -290,7 +290,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Sets value
      *
-     * @param object $value value
+     * @param int $value value
      *
      * @return $this
      */

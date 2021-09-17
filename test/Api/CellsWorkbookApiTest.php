@@ -144,7 +144,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,null,$isAutoFit, false,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,null,$isAutoFit, 'false',$folder);
         $json = json_decode($result);
         $this->assertEquals(200, $json->Code);
     }
@@ -162,7 +162,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"xlsx",$isAutoFit, false,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"xlsx",$isAutoFit, 'false',$folder);
         $this->assertGreaterThan(120000, $result->getSize());
     }
 
@@ -179,7 +179,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $password = null;
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"md",$isAutoFit, false,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"md",$isAutoFit, 'false',$folder);
 
     }
     /**
@@ -583,7 +583,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $dataFile = "ReportData.xml";  
         CellsApiTestBase::ready(  $this->instance,$templateFile ,$folder);
         CellsApiTestBase::ready(  $this->instance,$dataFile ,$folder);
-        $result = $this->instance->cellsWorkbookPutWorkbookCreate($name, $folder."/".$templateFile,$folder."/".$dataFile, true, $folder);
+        $result = $this->instance->cellsWorkbookPutWorkbookCreate($name, $folder."/".$templateFile,$folder."/".$dataFile, 'true', $folder);
         $this->assertEquals(200, $result['code']);
     }
 

@@ -21013,17 +21013,18 @@ class CellsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $listobjectindex list object index. (required)
+     * @param  string $format export format. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
      * @param  string $storage_name storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ListObjectResponse
+     * @return \SplFileObject
      */
-    public function cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $folder = null, $storage_name = null)
+    public function cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsListObjectsGetWorksheetListObjectWithHttpInfo($name, $sheet_name, $listobjectindex, $folder, $storage_name);
+        list($response) = $this->cellsListObjectsGetWorksheetListObjectWithHttpInfo($name, $sheet_name, $listobjectindex, $format, $folder, $storage_name);
         return $response;
     }
 
@@ -21035,17 +21036,18 @@ class CellsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $listobjectindex list object index. (required)
+     * @param  string $format export format. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
      * @param  string $storage_name storage name. (optional)
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ListObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsListObjectsGetWorksheetListObjectWithHttpInfo($name, $sheet_name, $listobjectindex, $folder = null, $storage_name = null)
+    public function cellsListObjectsGetWorksheetListObjectWithHttpInfo($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ListObjectResponse';
-        $request = $this->cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $folder, $storage_name);
+        $returnType = '\SplFileObject';
+        $request = $this->cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $format, $folder, $storage_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -21096,7 +21098,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ListObjectResponse',
+                        '\SplFileObject',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -21114,15 +21116,16 @@ class CellsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $listobjectindex list object index. (required)
+     * @param  string $format export format. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
      * @param  string $storage_name storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsListObjectsGetWorksheetListObjectAsync($name, $sheet_name, $listobjectindex, $folder = null, $storage_name = null)
+    public function cellsListObjectsGetWorksheetListObjectAsync($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
-        return $this->cellsListObjectsGetWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $listobjectindex, $folder, $storage_name)
+        return $this->cellsListObjectsGetWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $listobjectindex, $format, $folder, $storage_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -21138,16 +21141,17 @@ class CellsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $listobjectindex list object index. (required)
+     * @param  string $format export format. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
      * @param  string $storage_name storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsListObjectsGetWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $listobjectindex, $folder = null, $storage_name = null)
+    public function cellsListObjectsGetWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ListObjectResponse';
-        $request = $this->cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $folder, $storage_name);
+        $returnType = '\SplFileObject';
+        $request = $this->cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $format, $folder, $storage_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -21192,13 +21196,14 @@ class CellsApi
      * @param  string $name Document name. (required)
      * @param  string $sheet_name The worksheet name. (required)
      * @param  int $listobjectindex list object index. (required)
+     * @param  string $format export format. (optional)
      * @param  string $folder Document&#39;s folder. (optional)
      * @param  string $storage_name storage name. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $folder = null, $storage_name = null)
+    protected function cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -21226,6 +21231,10 @@ class CellsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
         // query params
         if ($folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
@@ -69246,7 +69255,7 @@ class CellsApi
                     $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['file'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -87794,7 +87803,7 @@ class CellsApi
                     $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['file'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }

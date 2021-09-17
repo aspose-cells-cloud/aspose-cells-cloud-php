@@ -360,7 +360,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $pivotField = new PivotField();
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsPivotTablesPostPivotTableUpdatePivotFields($name, $sheet_name, $pivotTableIndex ,"Row" ,$pivotField,false ,$folder);
+        $result = $this->instance->cellsPivotTablesPostPivotTableUpdatePivotFields($name, $sheet_name, $pivotTableIndex ,"Row" ,$pivotField,'false' ,$folder);
         $this->assertEquals(200, $result['code']);
     }
 /**
@@ -378,7 +378,7 @@ class CellsPivotTablesApiTest extends \PHPUnit_Framework_TestCase
         $pivotField = new PivotField();
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsPivotTablesPostPivotTableUpdatePivotField($name, $sheet_name, $pivotTableIndex,0 ,"Row" ,$pivotField,false ,$folder);
+        $result = $this->instance->cellsPivotTablesPostPivotTableUpdatePivotField($name, $sheet_name, $pivotTableIndex,0 ,"Row" ,$pivotField,'false' ,$folder);
         $this->assertEquals(200, $result['code']);
     }
     /**

@@ -69,9 +69,9 @@ class AccessTokenResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        '_expires' => 'string',
+        'expires' => 'string',
         'access_token' => 'string',
-        '_issued' => 'string',
+        'issued' => 'string',
         'client_refresh_token_life_time_in_minutes' => 'string',
         'expires_in' => 'int',
         'token_type' => 'string',
@@ -85,9 +85,9 @@ class AccessTokenResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        '_expires' => null,
+        'expires' => null,
         'access_token' => null,
-        '_issued' => null,
+        'issued' => null,
         'client_refresh_token_life_time_in_minutes' => null,
         'expires_in' => 'int64',
         'token_type' => null,
@@ -122,9 +122,9 @@ class AccessTokenResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        '_expires' => '.expires',
+        'expires' => 'expires',
         'access_token' => 'access_token',
-        '_issued' => '.issued',
+        'issued' => 'issued',
         'client_refresh_token_life_time_in_minutes' => 'clientRefreshTokenLifeTimeInMinutes',
         'expires_in' => 'expires_in',
         'token_type' => 'token_type',
@@ -138,9 +138,9 @@ class AccessTokenResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        '_expires' => 'setExpires',
+        'expires' => 'setExpires',
         'access_token' => 'setAccessToken',
-        '_issued' => 'setIssued',
+        'issued' => 'setIssued',
         'client_refresh_token_life_time_in_minutes' => 'setClientRefreshTokenLifeTimeInMinutes',
         'expires_in' => 'setExpiresIn',
         'token_type' => 'setTokenType',
@@ -154,9 +154,9 @@ class AccessTokenResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        '_expires' => 'getExpires',
+        'expires' => 'getExpires',
         'access_token' => 'getAccessToken',
-        '_issued' => 'getIssued',
+        'issued' => 'getIssued',
         'client_refresh_token_life_time_in_minutes' => 'getClientRefreshTokenLifeTimeInMinutes',
         'expires_in' => 'getExpiresIn',
         'token_type' => 'getTokenType',
@@ -224,9 +224,9 @@ class AccessTokenResponse implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['_expires'] = isset($data['_expires']) ? $data['_expires'] : null;
+        $this->container['expires'] = isset($data['expires']) ? $data['expires'] : null;
         $this->container['access_token'] = isset($data['access_token']) ? $data['access_token'] : null;
-        $this->container['_issued'] = isset($data['_issued']) ? $data['_issued'] : null;
+        $this->container['issued'] = isset($data['issued']) ? $data['issued'] : null;
         $this->container['client_refresh_token_life_time_in_minutes'] = isset($data['client_refresh_token_life_time_in_minutes']) ? $data['client_refresh_token_life_time_in_minutes'] : null;
         $this->container['expires_in'] = isset($data['expires_in']) ? $data['expires_in'] : null;
         $this->container['token_type'] = isset($data['token_type']) ? $data['token_type'] : null;
@@ -260,25 +260,25 @@ class AccessTokenResponse implements  ArrayAccess
 
 
     /**
-     * Gets _expires
+     * Gets expires
      *
      * @return string
      */
     public function getExpires()
     {
-        return $this->container['_expires'];
+        return $this->container['expires'];
     }
 
     /**
-     * Sets _expires
+     * Sets expires
      *
-     * @param string $_expires _expires
+     * @param string $expires expires
      *
      * @return $this
      */
-    public function setExpires($_expires)
+    public function setExpires($expires)
     {
-        $this->container['_expires'] = $_expires;
+        $this->container['expires'] = $expires;
 
         return $this;
     }
@@ -308,25 +308,25 @@ class AccessTokenResponse implements  ArrayAccess
     }
 
     /**
-     * Gets _issued
+     * Gets issued
      *
      * @return string
      */
     public function getIssued()
     {
-        return $this->container['_issued'];
+        return $this->container['issued'];
     }
 
     /**
-     * Sets _issued
+     * Sets issued
      *
-     * @param string $_issued _issued
+     * @param string $issued issued
      *
      * @return $this
      */
-    public function setIssued($_issued)
+    public function setIssued($issued)
     {
-        $this->container['_issued'] = $_issued;
+        $this->container['issued'] = $issued;
 
         return $this;
     }

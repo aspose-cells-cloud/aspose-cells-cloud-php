@@ -91,9 +91,10 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $sheet_name ='Sheet7';
         $listObjectIndex = 0;         
         $folder = "Temp";
+        $format ='pdf';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsListObjectsGetWorksheetListObject($name, $sheet_name,$listObjectIndex,$folder);
-        $this->assertEquals(200, $result['code']);
+        $result = $this->instance->cellsListObjectsGetWorksheetListObject($name, $sheet_name,$listObjectIndex,$format,$folder);
+        // $this->assert($result);
     }
 
     /**

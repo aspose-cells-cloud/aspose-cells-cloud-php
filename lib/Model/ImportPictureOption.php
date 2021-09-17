@@ -1,6 +1,6 @@
 <?php
 /**
- * ConditionalFormattingValue
+ * ImportPictureOption
  *
  * PHP version 5
  *
@@ -40,19 +40,17 @@
  */
 
 namespace Aspose\Cells\Cloud\Model;
-
-use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * ConditionalFormattingValue Class Doc Comment
+ * ImportPictureOption Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ConditionalFormattingValue implements  ArrayAccess
+class ImportPictureOption extends ImportOption 
 {
     const DISCRIMINATOR = null;
 
@@ -61,7 +59,7 @@ class ConditionalFormattingValue implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ConditionalFormattingValue';
+    protected static $swaggerModelName = 'ImportPictureOption';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -69,9 +67,12 @@ class ConditionalFormattingValue implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_gte' => 'bool',
-        'type' => 'string',
-        'value' => 'string'
+        'upper_left_row' => 'int',
+        'upper_left_column' => 'int',
+        'lower_right_row' => 'int',
+        'lower_right_column' => 'int',
+        'filename' => 'string',
+        'data' => 'string'
     ];
 
     /**
@@ -80,9 +81,12 @@ class ConditionalFormattingValue implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_gte' => null,
-        'type' => null,
-        'value' => null
+        'upper_left_row' => 'int32',
+        'upper_left_column' => 'int32',
+        'lower_right_row' => 'int32',
+        'lower_right_column' => 'int32',
+        'filename' => null,
+        'data' => null
     ];
 
     /**
@@ -92,7 +96,7 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -102,7 +106,7 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -112,9 +116,12 @@ class ConditionalFormattingValue implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_gte' => 'IsGTE',
-        'type' => 'Type',
-        'value' => 'Value'
+        'upper_left_row' => 'UpperLeftRow',
+        'upper_left_column' => 'UpperLeftColumn',
+        'lower_right_row' => 'LowerRightRow',
+        'lower_right_column' => 'LowerRightColumn',
+        'filename' => 'Filename',
+        'data' => 'Data'
     ];
 
     /**
@@ -123,9 +130,12 @@ class ConditionalFormattingValue implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_gte' => 'setIsGte',
-        'type' => 'setType',
-        'value' => 'setValue'
+        'upper_left_row' => 'setUpperLeftRow',
+        'upper_left_column' => 'setUpperLeftColumn',
+        'lower_right_row' => 'setLowerRightRow',
+        'lower_right_column' => 'setLowerRightColumn',
+        'filename' => 'setFilename',
+        'data' => 'setData'
     ];
 
     /**
@@ -134,9 +144,12 @@ class ConditionalFormattingValue implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_gte' => 'getIsGte',
-        'type' => 'getType',
-        'value' => 'getValue'
+        'upper_left_row' => 'getUpperLeftRow',
+        'upper_left_column' => 'getUpperLeftColumn',
+        'lower_right_row' => 'getLowerRightRow',
+        'lower_right_column' => 'getLowerRightColumn',
+        'filename' => 'getFilename',
+        'data' => 'getData'
     ];
 
     /**
@@ -147,7 +160,7 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -157,7 +170,7 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -167,7 +180,7 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -184,12 +197,6 @@ class ConditionalFormattingValue implements  ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
      * Constructor
@@ -199,9 +206,14 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_gte'] = isset($data['is_gte']) ? $data['is_gte'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        parent::__construct($data);
+
+        $this->container['upper_left_row'] = isset($data['upper_left_row']) ? $data['upper_left_row'] : null;
+        $this->container['upper_left_column'] = isset($data['upper_left_column']) ? $data['upper_left_column'] : null;
+        $this->container['lower_right_row'] = isset($data['lower_right_row']) ? $data['lower_right_row'] : null;
+        $this->container['lower_right_column'] = isset($data['lower_right_column']) ? $data['lower_right_column'] : null;
+        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /**
@@ -211,7 +223,7 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -224,79 +236,154 @@ class ConditionalFormattingValue implements  ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
 
     /**
-     * Gets is_gte
+     * Gets upper_left_row
      *
-     * @return bool
+     * @return int
      */
-    public function getIsGte()
+    public function getUpperLeftRow()
     {
-        return $this->container['is_gte'];
+        return $this->container['upper_left_row'];
     }
 
     /**
-     * Sets is_gte
+     * Sets upper_left_row
      *
-     * @param bool $is_gte Get or set the Greater Than Or Equal flag. Use only for icon sets, determines    whether this threshold value uses the greater than or equal to operator.    'false' indicates 'greater than' is used instead of 'greater than or equal    to'.  Default value is true.
+     * @param int $upper_left_row Upper Left Row.
      *
      * @return $this
      */
-    public function setIsGte($is_gte)
+    public function setUpperLeftRow($upper_left_row)
     {
-        $this->container['is_gte'] = $is_gte;
+        $this->container['upper_left_row'] = $upper_left_row;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets upper_left_column
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getUpperLeftColumn()
     {
-        return $this->container['type'];
+        return $this->container['upper_left_column'];
     }
 
     /**
-     * Sets type
+     * Sets upper_left_column
      *
-     * @param string $type Get or set the type of this conditional formatting value object.  Setting      the type to FormatConditionValueType.Min or FormatConditionValueType.Max      will auto set \"Value\" to null.
+     * @param int $upper_left_column Upper Left Column.
      *
      * @return $this
      */
-    public function setType($type)
+    public function setUpperLeftColumn($upper_left_column)
     {
-        $this->container['type'] = $type;
+        $this->container['upper_left_column'] = $upper_left_column;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets lower_right_row
      *
-     * @return string
+     * @return int
      */
-    public function getValue()
+    public function getLowerRightRow()
     {
-        return $this->container['value'];
+        return $this->container['lower_right_row'];
     }
 
     /**
-     * Sets value
+     * Sets lower_right_row
      *
-     * @param string $value Get or set the value of this conditional formatting value object.  It should     be used in conjunction with Type.
+     * @param int $lower_right_row Lower Right Row.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setLowerRightRow($lower_right_row)
     {
-        $this->container['value'] = $value;
+        $this->container['lower_right_row'] = $lower_right_row;
+
+        return $this;
+    }
+
+    /**
+     * Gets lower_right_column
+     *
+     * @return int
+     */
+    public function getLowerRightColumn()
+    {
+        return $this->container['lower_right_column'];
+    }
+
+    /**
+     * Sets lower_right_column
+     *
+     * @param int $lower_right_column Lower Right Column.
+     *
+     * @return $this
+     */
+    public function setLowerRightColumn($lower_right_column)
+    {
+        $this->container['lower_right_column'] = $lower_right_column;
+
+        return $this;
+    }
+
+    /**
+     * Gets filename
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->container['filename'];
+    }
+
+    /**
+     * Sets filename
+     *
+     * @param string $filename Filename.
+     *
+     * @return $this
+     */
+    public function setFilename($filename)
+    {
+        $this->container['filename'] = $filename;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return string
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param string $data data : base64  string.
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
 
         return $this;
     }

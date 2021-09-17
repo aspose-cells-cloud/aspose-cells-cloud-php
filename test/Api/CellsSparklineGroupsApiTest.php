@@ -60,7 +60,7 @@ class CellsSparklineGroupsApiTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $getsResult = $this->instance->cellsSparklineGroupsGetWorksheetSparklineGroups($name, $sheet_name,$folder);
         $this->assertEquals(200, $getsResult['code']);
-        $putResult = $this->instance->cellsSparklineGroupsPutWorksheetSparklineGroup($name, $sheet_name,"Line","C6:E13",false,"G6:G13",$folder);
+        $putResult = $this->instance->cellsSparklineGroupsPutWorksheetSparklineGroup($name, $sheet_name,"Line","C6:E13",'false',"G6:G13",$folder);
         $this->assertEquals(200, $putResult['code']);
         $getResult = $this->instance->cellsSparklineGroupsGetWorksheetSparklineGroup($name, $sheet_name,$index ,$folder);
         $this->assertEquals(200, $getResult['code']);

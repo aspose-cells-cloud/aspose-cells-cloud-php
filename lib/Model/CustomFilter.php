@@ -70,7 +70,7 @@ class CustomFilter implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'filter_operator_type' => 'string',
-        'criteria' => 'object'
+        'criteria' => 'string'
     ];
 
     /**
@@ -250,7 +250,7 @@ class CustomFilter implements  ArrayAccess
     /**
      * Gets criteria
      *
-     * @return object
+     * @return string
      */
     public function getCriteria()
     {
@@ -260,7 +260,7 @@ class CustomFilter implements  ArrayAccess
     /**
      * Sets criteria
      *
-     * @param object $criteria criteria
+     * @param string $criteria criteria
      *
      * @return $this
      */

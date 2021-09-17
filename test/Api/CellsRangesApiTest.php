@@ -269,8 +269,8 @@ class CellsRangesApiTest extends \PHPUnit_Framework_TestCase
         $range->setFirstColumn(1);
         $range->setFirstRow(1);
         $range->setRowCount(10);
-        $isConverted =true;
-        $setStyle = true;
+        $isConverted = 'true';
+        $setStyle = 'true';
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name,$value,$range,$isConverted, $setStyle,$folder);
