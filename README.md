@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/21.7)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/21.9)
 
 # PHP SDK for Spreadsheet Processing in Cloud
 
@@ -24,10 +24,27 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 21.8
+## Feature & Enhancements in Version 21.9
 
-- Improvement for getting list object Api.
-- Add import Api.
+
+- Correct the return type of the following  REST APIs. 
+	Delete WorksheetDeleteChart
+	Post WorksheetChartLegend
+	Post WorksheetChartTitle
+	Put WorksheetAddChart
+	Put WorksheetChartTitle
+	Post WorksheetHyperlink
+	Put WorksheetHyperlink
+	Put WorksheetListObject
+	Put WorksheetOleObject
+	Post WorksheetPicture
+	Put WorksheetAddPicture
+	Put WorksheetPivotTable
+	Delete DocumentProperties
+	Delete DocumentProperty
+	Put DocumentProperty
+	Put WorksheetShape
+	Delete WorksheetValidation
 
 
 ## Read & Write Spreadsheet Formats

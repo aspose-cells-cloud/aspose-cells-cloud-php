@@ -7604,7 +7604,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ChartsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7626,11 +7626,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
 
         try {
@@ -7682,7 +7682,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ChartsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7732,7 +7732,7 @@ class CellsApi
      */
     public function cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
 
         return $this->client
@@ -9620,7 +9620,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\LegendResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
@@ -9643,11 +9643,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\LegendResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend, $folder, $storage_name);
 
         try {
@@ -9699,7 +9699,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\LegendResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9751,7 +9751,7 @@ class CellsApi
      */
     public function cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend, $folder, $storage_name);
 
         return $this->client
@@ -9965,7 +9965,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\TitleResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -9988,11 +9988,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\TitleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage_name);
 
         try {
@@ -10044,7 +10044,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\TitleResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10096,7 +10096,7 @@ class CellsApi
      */
     public function cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage_name);
 
         return $this->client
@@ -10322,7 +10322,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ChartsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
@@ -10357,11 +10357,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name);
 
         try {
@@ -10413,7 +10413,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ChartsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10489,7 +10489,7 @@ class CellsApi
      */
     public function cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name);
 
         return $this->client
@@ -11095,7 +11095,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\TitleResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -11118,11 +11118,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\TitleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage_name);
 
         try {
@@ -11174,7 +11174,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\TitleResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11226,7 +11226,7 @@ class CellsApi
      */
     public function cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title, $folder, $storage_name);
 
         return $this->client
@@ -19629,7 +19629,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\HyperlinkResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
@@ -19652,11 +19652,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage_name);
 
         try {
@@ -19708,7 +19708,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\HyperlinkResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -19760,7 +19760,7 @@ class CellsApi
      */
     public function cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage_name);
 
         return $this->client
@@ -19977,7 +19977,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\HyperlinkResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
@@ -20003,11 +20003,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage_name);
 
         try {
@@ -20059,7 +20059,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\HyperlinkResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -20117,7 +20117,7 @@ class CellsApi
      */
     public function cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage_name);
 
         return $this->client
@@ -23059,7 +23059,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ListObjectResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
@@ -23086,11 +23086,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ListObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsListObjectsPutWorksheetListObjectWithHttpInfo($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ListObjectResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsListObjectsPutWorksheetListObjectRequest($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers, $list_object, $folder, $storage_name);
 
         try {
@@ -23142,7 +23142,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ListObjectResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -23202,7 +23202,7 @@ class CellsApi
      */
     public function cellsListObjectsPutWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ListObjectResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsListObjectsPutWorksheetListObjectRequest($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers, $list_object, $folder, $storage_name);
 
         return $this->client
@@ -25115,7 +25115,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\OleObjectResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
@@ -25143,11 +25143,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\OleObjectResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\OleObjectResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage_name);
 
         try {
@@ -25199,7 +25199,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\OleObjectResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -25261,7 +25261,7 @@ class CellsApi
      */
     public function cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\OleObjectResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage_name);
 
         return $this->client
@@ -32437,7 +32437,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\PictureResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
@@ -32460,11 +32460,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\PictureResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\PictureResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture, $folder, $storage_name);
 
         try {
@@ -32516,7 +32516,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\PictureResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -32568,7 +32568,7 @@ class CellsApi
      */
     public function cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\PictureResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture, $folder, $storage_name);
 
         return $this->client
@@ -32786,7 +32786,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\PicturesResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
@@ -32813,11 +32813,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\PicturesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage_name);
 
         try {
@@ -32869,7 +32869,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\PicturesResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -32929,7 +32929,7 @@ class CellsApi
      */
     public function cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage_name);
 
         return $this->client
@@ -39903,7 +39903,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\PivotTableResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
@@ -39929,11 +39929,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\PivotTableResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request, $folder, $storage_name, $source_data, $dest_cell_name, $table_name, $use_same_source);
 
         try {
@@ -39985,7 +39985,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\PivotTableResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -40043,7 +40043,7 @@ class CellsApi
      */
     public function cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request, $folder, $storage_name, $source_data, $dest_cell_name, $table_name, $use_same_source);
 
         return $this->client
@@ -49870,7 +49870,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPropertiesDeleteDocumentProperties($name, $folder = null, $storage_name = null)
     {
@@ -49890,11 +49890,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder, $storage_name);
 
         try {
@@ -49946,7 +49946,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -49992,7 +49992,7 @@ class CellsApi
      */
     public function cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder, $storage_name);
 
         return $this->client
@@ -50169,7 +50169,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -50190,11 +50190,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder, $storage_name);
 
         try {
@@ -50246,7 +50246,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -50294,7 +50294,7 @@ class CellsApi
      */
     public function cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder, $storage_name);
 
         return $this->client
@@ -51102,7 +51102,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPropertiesPutDocumentProperty($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
@@ -51124,11 +51124,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property, $folder, $storage_name);
 
         try {
@@ -51180,7 +51180,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -51230,7 +51230,7 @@ class CellsApi
      */
     public function cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property, $folder, $storage_name);
 
         return $this->client
@@ -55750,7 +55750,7 @@ class CellsApi
 
         // query params
         if ($value !== null) {
-            $queryParams['Value'] = ObjectSerializer::toQueryValue($value);
+            $queryParams['value'] = ObjectSerializer::toQueryValue($value);
         }
         // query params
         if ($is_converted !== null) {
@@ -58549,7 +58549,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ShapeResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsShapesPutWorksheetShape($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
@@ -58578,11 +58578,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ShapeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $shape_dto, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage_name);
 
         try {
@@ -58634,7 +58634,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ShapeResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -58698,7 +58698,7 @@ class CellsApi
      */
     public function cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $shape_dto, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage_name);
 
         return $this->client
@@ -58781,7 +58781,7 @@ class CellsApi
 
         // query params
         if ($drawing_type !== null) {
-            $queryParams['DrawingType'] = ObjectSerializer::toQueryValue($drawing_type);
+            $queryParams['drawingType'] = ObjectSerializer::toQueryValue($drawing_type);
         }
         // query params
         if ($upper_left_row !== null) {
@@ -70605,7 +70605,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\ValidationResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -70627,11 +70627,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder, $storage_name);
 
         try {
@@ -70683,7 +70683,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\ValidationResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -70733,7 +70733,7 @@ class CellsApi
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder, $storage_name);
 
         return $this->client
