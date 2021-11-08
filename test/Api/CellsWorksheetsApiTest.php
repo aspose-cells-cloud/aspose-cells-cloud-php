@@ -14,6 +14,7 @@ use \Aspose\Cells\Cloud\Model\ProtectSheetParameter;
 use \Aspose\Cells\Cloud\Model\AutoFitterOptions;
 use \Aspose\Cells\Cloud\Model\CopyOptions;
 use \Aspose\Cells\Cloud\Model\WorksheetMovingRequest;
+use \Aspose\Cells\Cloud\Model\MatchConditionRequest;
 use \Aspose\Cells\Cloud\Model\Comment;
 use \Aspose\Cells\Cloud\Model\Worksheet;
 use \Aspose\Cells\Cloud\Model\WorkbookEncryptionRequest;
@@ -707,4 +708,26 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $contents = $result->fread($result->getSize());
         $this->assertGreaterThan(6000, $result->getSize(), "png file size error");
     }
+     /**
+     * Test case for testCellsWorksheetsDeleteWorksheets
+     *
+     * Read worksheet info or export..
+     *
+     */
+    public function testCellsWorksheetsDeleteWorksheets()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet1'; 
+        $verticalResolution =100;  
+        $horizontalResolution =90;
+        $area =null;
+        $pageIndex = 1;
+        $format = "png";
+        $folder = "Temp";
+        $match_condition = new  MatchConditionRequest();
+        $match_condition->setFullMatchConditions( ["Sheet1","Sheet2"]);
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorksheetsDeleteWorksheets($name,$match_condition,$folder);
+        $this->assertEquals(200, $result['code']);
+    }    
 }
