@@ -73,7 +73,7 @@ class CellsApi
         $this->_clientSecret = $clientSecret;
         $this->_appVersion = $version;
         $this->_baseUrl = substr($baseUrl,-1)=="/"?substr($baseUrl,0,strlen($baseUrl)-1):$baseUrl;
-        //[ 'proxy'=> '127.0.0.1:8888',"verify"=>false]
+        
         $this->client =  new Client();
         $this->config =  new Configuration();
         $this->headerSelector =  new HeaderSelector();
@@ -63034,6 +63034,304 @@ class CellsApi
     }
 
     /**
+     * Operation cellsWorkbookGetPageCount
+     *
+     * Get page count for workbook.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return object
+     */
+    public function cellsWorkbookGetPageCount($name, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsWorkbookGetPageCountWithHttpInfo($name, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsWorkbookGetPageCountWithHttpInfo
+     *
+     * Get page count for workbook.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsWorkbookGetPageCountWithHttpInfo($name, $folder = null, $storage_name = null)
+    {
+        $returnType = 'object';
+        $request = $this->cellsWorkbookGetPageCountRequest($name, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsWorkbookGetPageCountAsync
+     *
+     * Get page count for workbook.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookGetPageCountAsync($name, $folder = null, $storage_name = null)
+    {
+        return $this->cellsWorkbookGetPageCountAsyncWithHttpInfo($name, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsWorkbookGetPageCountAsyncWithHttpInfo
+     *
+     * Get page count for workbook.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookGetPageCountAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
+    {
+        $returnType = 'object';
+        $request = $this->cellsWorkbookGetPageCountRequest($name, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsWorkbookGetPageCount'
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsWorkbookGetPageCountRequest($name, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsWorkbookGetPageCount'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/pagecount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsWorkbookGetPageCount'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation cellsWorkbookGetWorkbook
      *
      * Read workbook info or export.
@@ -72916,7 +73214,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsDeleteWorksheet($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -72937,11 +73235,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsDeleteWorksheetWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsDeleteWorksheetRequest($name, $sheet_name, $folder, $storage_name);
 
         try {
@@ -72993,7 +73291,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -73041,7 +73339,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteWorksheetAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsDeleteWorksheetRequest($name, $sheet_name, $folder, $storage_name);
 
         return $this->client
@@ -75152,6 +75450,323 @@ class CellsApi
                 $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
             else if('cellsWorksheetsGetNamedRanges'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsWorksheetsGetPageCount
+     *
+     * Get page count for worksheet.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return object
+     */
+    public function cellsWorksheetsGetPageCount($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsWorksheetsGetPageCountWithHttpInfo($name, $sheet_name, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsWorksheetsGetPageCountWithHttpInfo
+     *
+     * Get page count for worksheet.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsWorksheetsGetPageCountWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $returnType = 'object';
+        $request = $this->cellsWorksheetsGetPageCountRequest($name, $sheet_name, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsWorksheetsGetPageCountAsync
+     *
+     * Get page count for worksheet.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorksheetsGetPageCountAsync($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        return $this->cellsWorksheetsGetPageCountAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsWorksheetsGetPageCountAsyncWithHttpInfo
+     *
+     * Get page count for worksheet.
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorksheetsGetPageCountAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        $returnType = 'object';
+        $request = $this->cellsWorksheetsGetPageCountRequest($name, $sheet_name, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsWorksheetsGetPageCount'
+     *
+     * @param  string $name Document name. (required)
+     * @param  string $sheet_name The worksheet name. (required)
+     * @param  string $folder Document&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsWorksheetsGetPageCountRequest($name, $sheet_name, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsWorksheetsGetPageCount'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsWorksheetsGetPageCount'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pagecount';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsWorksheetsGetPageCount'==='cellsSaveAsPostDocumentSaveAs'){
                 $httpBody = \GuzzleHttp\json_encode($httpBody);
             }
         }
@@ -79252,7 +79867,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsPostMoveWorksheet($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
@@ -79274,11 +79889,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsPostMoveWorksheetWithHttpInfo($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPostMoveWorksheetRequest($name, $sheet_name, $moving, $folder, $storage_name);
 
         try {
@@ -79330,7 +79945,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -79380,7 +79995,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostMoveWorksheetAsyncWithHttpInfo($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPostMoveWorksheetRequest($name, $sheet_name, $moving, $folder, $storage_name);
 
         return $this->client
@@ -81930,7 +82545,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetsResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsPutAddNewWorksheet($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
@@ -81953,11 +82568,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsPutAddNewWorksheetWithHttpInfo($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPutAddNewWorksheetRequest($name, $sheet_name, $position, $sheettype, $folder, $storage_name);
 
         try {
@@ -82009,7 +82624,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetsResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -82061,7 +82676,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutAddNewWorksheetAsyncWithHttpInfo($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPutAddNewWorksheetRequest($name, $sheet_name, $position, $sheettype, $folder, $storage_name);
 
         return $this->client
@@ -82264,7 +82879,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsPutChangeVisibilityWorksheet($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
@@ -82286,11 +82901,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsPutChangeVisibilityWorksheetWithHttpInfo($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPutChangeVisibilityWorksheetRequest($name, $sheet_name, $is_visible, $folder, $storage_name);
 
         try {
@@ -82342,7 +82957,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -82392,7 +83007,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutChangeVisibilityWorksheetAsyncWithHttpInfo($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPutChangeVisibilityWorksheetRequest($name, $sheet_name, $is_visible, $folder, $storage_name);
 
         return $this->client

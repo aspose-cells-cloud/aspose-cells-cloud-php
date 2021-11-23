@@ -17,7 +17,7 @@ use \Aspose\Cells\Cloud\Model\FileSource;
 use \Aspose\Cells\Cloud\Model\TaskData;
 use PHPUnit\Framework\TestCase;
 
-class CellsCompressApiTest extends \PHPUnit_Framework_TestCase
+class CellsImportApiTest extends \PHPUnit_Framework_TestCase
 {
 
     protected  $instance;
@@ -56,24 +56,15 @@ class CellsCompressApiTest extends \PHPUnit_Framework_TestCase
      * Run tasks.
      *
      */
-    public function testCellsImportDataIntArray()
+    public function testCellsCompress()
     {
         $book1 = "Book1.xlsx";
         $mydoc = "myDocument.xlsx";
-        $ImportOption = "ImportOption";
-
-        $data = new ImportIntArrayOption();
-        $data->setDestinationWorksheet('Sheet1');
-        $data->setFirstColumn(1);
-        $data->setFirstRow(3);
-        $data->setImportDataType('IntArray');
-        $data->setIsVertical('true');
-        $data->setData(array(1, 2, 3, 4)) ;
         $files = array (
             $mydoc =>  CellsApiTestBase::getfullfilename($mydoc),
             $book1 =>  CellsApiTestBase::getfullfilename($book1)
         );
-        $result = $this->instance->postImport( $files, $data );
+        $result = $this->instance->postCompress( $files, 80 );
         // print( $result);
         $this->assertNotNull($result);
     }

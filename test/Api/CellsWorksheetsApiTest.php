@@ -729,5 +729,24 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsDeleteWorksheets($name,$match_condition,$folder);
         $this->assertEquals(200, $result['code']);
-    }    
+    } 
+    
+     /**
+     * Test case for testCellsWorksheetsDeleteWorksheets
+     *
+     * Read worksheet info or export..
+     *
+     */
+    public function testCellsWorksheetsPageCount()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet1'; 
+  
+        $format = "png";
+        $folder = "Temp";
+        
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorksheetsGetPageCount($name,$sheet_name,$folder);
+        $this->assertGreaterThan(0, $result);
+    } 
 }

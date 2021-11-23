@@ -628,4 +628,23 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookPutWorkbookBackground($name,$file, $folder);
         $this->assertEquals(200, $result['code']);
     }
+     /**
+     * Test case for testCellsWorkbookPageCount
+     *
+     * Read worksheet info or export..
+     *
+     */
+    public function testCellsWorkbookPageCount()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet1'; 
+  
+        $format = "png";
+        $folder = "Temp";
+        
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookGetPageCount($name,$folder);
+        $this->assertGreaterThan(0, $result);
+    } 
+
 }

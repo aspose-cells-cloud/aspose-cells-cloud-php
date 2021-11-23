@@ -4017,6 +4017,628 @@ class LiteCellsApi
         );
     }
 
+    
+    /**
+     * Operation postCompress
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $compress_level compresslevel (required)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\FilesResult
+     */
+    public function postCompress($file, $compress_level)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->postCompressWithHttpInfo($file, $compress_level);
+        return $response;
+    }
+
+    /**
+     * Operation postCompressWithHttpInfo
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $$compress_level (required)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postCompressWithHttpInfo($file, $compress_level)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $request = $this->postCompressRequest($file, $compress_level);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\FilesResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postCompressAsync
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $compress_level (required)
+     * @param  string $color (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postCompressAsync($file, $compress_level)
+    {
+        return $this->postCompressAsyncWithHttpInfo($file, $compress_level)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postCompressAsyncAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $compress_level (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postCompressAsyncAsyncWithHttpInfo($file, $compress_level)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $request = $this->postWatermarkRequest($file, $compress_level);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postCompress'
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $compress_level (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postCompressRequest($file, $compress_level)
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling postCompress'
+            );
+        }
+        // verify the required parameter 'text' is set
+        if ($compress_level === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $compress_level when calling postCompress'
+            );
+        }
+        
+
+        $resourcePath = '/cells/compress';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($compress_level !== null) {
+            $queryParams['CompressLevel'] = ObjectSerializer::toQueryValue($compress_level);
+        }
+       
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            if( is_array($file)){
+                foreach($file as $key => $value) {
+                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+            }
+            
+        }
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+           
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postReplace
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $text text (required)
+     * @param  string $newtext newtext (required)
+     * @param  string $password password
+     * @param  string $sheet_name sheetname
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\FilesResult
+     */
+    public function postReplace($file, $text, $newtext,$password = null,$sheet_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->postReplaceWithHttpInfo($file, $text, $newtext,$password,$sheet_name);
+        return $response;
+    }
+
+    /**
+     * Operation postReplaceWithHttpInfo
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $text (required)
+     * @param  string $newtext newtext (required)
+     * @param  string $password password
+     * @param  string $sheet_name sheetname
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postReplaceWithHttpInfo($file, $text,$newtext,$password,$sheet_name)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $request = $this->postReplaceRequest($file, $text, $newtext,$password,$sheet_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\FilesResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postReplaceAsync
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $text (required)
+     * @param  string $newtext newtext (required)
+     * @param  string $password password
+     * @param  string $sheet_name sheetname
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postReplaceAsync($file, $text, $newtext,$password = null,$sheet_name = null)
+    {
+        return $this->postReplaceAsyncWithHttpInfo($file, $text, $newtext,$password,$sheet_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postWatermarkAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $text (required)
+     * @param  string $newtext newtext (required)
+     * @param  string $password password
+     * @param  string $sheet_name sheetname
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postReplaceAsyncWithHttpInfo($file, $text,$newtext,$password,$sheet_name)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $request = $this->postWatermarkRequest($file, $text,$newtext,$password,$sheet_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postWatermark'
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $text (required)
+     * @param  string $newtext newtext (required)
+     * @param  string $password password
+     * @param  string $sheet_name sheetname
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postReplaceRequest($file, $text, $newtext,$password,$sheet_name)
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling postReplace'
+            );
+        }
+        // verify the required parameter 'text' is set
+        if ($text === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $text when calling postReplace'
+            );
+        }
+        // verify the required parameter 'color' is set
+        if ($newtext === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $newtext when calling postReplace'
+            );
+        }
+
+        $resourcePath = '/cells/replace';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($text !== null) {
+            $queryParams['text'] = ObjectSerializer::toQueryValue($text);
+        }
+        // query params
+        if ($newtext !== null) {
+            $queryParams['newtext'] = ObjectSerializer::toQueryValue($newtext);
+        }
+        // query params
+        if ($password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($password);
+        }
+        // query params
+        if ($sheet_name !== null) {
+            $queryParams['sheetname'] = ObjectSerializer::toQueryValue($sheet_name);
+        }
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            if( is_array($file)){
+                foreach($file as $key => $value) {
+                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+            }
+            
+        }
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('postWatermark'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+
     /**
      * Create http client option
      *
