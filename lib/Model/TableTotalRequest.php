@@ -1,6 +1,6 @@
 <?php
 /**
- * CellValue
+ * TableTotalRequest
  *
  * PHP version 5
  *
@@ -45,14 +45,14 @@ use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * CellValue Class Doc Comment
+ * TableTotalRequest Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CellValue implements  ArrayAccess
+class TableTotalRequest implements  ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -61,7 +61,7 @@ class CellValue implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CellValue';
+    protected static $swaggerModelName = 'TableTotalRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -69,12 +69,9 @@ class CellValue implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'row_index' => 'int',
-        'column_index' => 'int',
-        'style' => '\Aspose\Cells\Cloud\Model\Style',
-        'type' => 'string',
-        'value' => 'string',
-        'formula' => 'string'
+        'list_column_index' => 'int',
+        'totals_calculation' => 'string',
+        'custom_formula' => 'string'
     ];
 
     /**
@@ -83,12 +80,9 @@ class CellValue implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'row_index' => 'int32',
-        'column_index' => 'int32',
-        'style' => null,
-        'type' => null,
-        'value' => null,
-        'formula' => null
+        'list_column_index' => null,
+        'totals_calculation' => null,
+        'custom_formula' => null
     ];
 
     /**
@@ -118,12 +112,9 @@ class CellValue implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'row_index' => 'rowIndex',
-        'column_index' => 'columnIndex',
-        'style' => 'style',
-        'type' => 'type',
-        'value' => 'value',
-        'formula' => 'formula'
+        'list_column_index' => 'ListColumnIndex',
+        'totals_calculation' => 'TotalsCalculation',
+        'custom_formula' => 'CustomFormula'
     ];
 
     /**
@@ -132,12 +123,9 @@ class CellValue implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'row_index' => 'setRowIndex',
-        'column_index' => 'setColumnIndex',
-        'style' => 'setStyle',
-        'type' => 'setType',
-        'value' => 'setValue',
-        'formula' => 'setFormula'
+        'list_column_index' => 'setListColumnIndex',
+        'totals_calculation' => 'setTotalsCalculation',
+        'custom_formula' => 'setCustomFormula'
     ];
 
     /**
@@ -146,12 +134,9 @@ class CellValue implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'row_index' => 'getRowIndex',
-        'column_index' => 'getColumnIndex',
-        'style' => 'getStyle',
-        'type' => 'getType',
-        'value' => 'getValue',
-        'formula' => 'getFormula'
+        'list_column_index' => 'getListColumnIndex',
+        'totals_calculation' => 'getTotalsCalculation',
+        'custom_formula' => 'getCustomFormula'
     ];
 
     /**
@@ -214,12 +199,9 @@ class CellValue implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['row_index'] = isset($data['row_index']) ? $data['row_index'] : null;
-        $this->container['column_index'] = isset($data['column_index']) ? $data['column_index'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
+        $this->container['list_column_index'] = isset($data['list_column_index']) ? $data['list_column_index'] : null;
+        $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
+        $this->container['custom_formula'] = isset($data['custom_formula']) ? $data['custom_formula'] : null;
     }
 
     /**
@@ -248,145 +230,73 @@ class CellValue implements  ArrayAccess
 
 
     /**
-     * Gets row_index
+     * Gets list_column_index
      *
      * @return int
      */
-    public function getRowIndex()
+    public function getListColumnIndex()
     {
-        return $this->container['row_index'];
+        return $this->container['list_column_index'];
     }
 
     /**
-     * Sets row_index
+     * Sets list_column_index
      *
-     * @param int $row_index row_index
+     * @param int $list_column_index list_column_index
      *
      * @return $this
      */
-    public function setRowIndex($row_index)
+    public function setListColumnIndex($list_column_index)
     {
-        $this->container['row_index'] = $row_index;
+        $this->container['list_column_index'] = $list_column_index;
 
         return $this;
     }
 
     /**
-     * Gets column_index
-     *
-     * @return int
-     */
-    public function getColumnIndex()
-    {
-        return $this->container['column_index'];
-    }
-
-    /**
-     * Sets column_index
-     *
-     * @param int $column_index column_index
-     *
-     * @return $this
-     */
-    public function setColumnIndex($column_index)
-    {
-        $this->container['column_index'] = $column_index;
-
-        return $this;
-    }
-
-    /**
-     * Gets style
-     *
-     * @return \Aspose\Cells\Cloud\Model\Style
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /**
-     * Sets style
-     *
-     * @param \Aspose\Cells\Cloud\Model\Style $style style
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets totals_calculation
      *
      * @return string
      */
-    public function getType()
+    public function getTotalsCalculation()
     {
-        return $this->container['type'];
+        return $this->container['totals_calculation'];
     }
 
     /**
-     * Sets type
+     * Sets totals_calculation
      *
-     * @param string $type type
+     * @param string $totals_calculation totals_calculation
      *
      * @return $this
      */
-    public function setType($type)
+    public function setTotalsCalculation($totals_calculation)
     {
-        $this->container['type'] = $type;
+        $this->container['totals_calculation'] = $totals_calculation;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets custom_formula
      *
      * @return string
      */
-    public function getValue()
+    public function getCustomFormula()
     {
-        return $this->container['value'];
+        return $this->container['custom_formula'];
     }
 
     /**
-     * Sets value
+     * Sets custom_formula
      *
-     * @param string $value value
+     * @param string $custom_formula custom_formula
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setCustomFormula($custom_formula)
     {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets formula
-     *
-     * @return string
-     */
-    public function getFormula()
-    {
-        return $this->container['formula'];
-    }
-
-    /**
-     * Sets formula
-     *
-     * @param string $formula formula
-     *
-     * @return $this
-     */
-    public function setFormula($formula)
-    {
-        $this->container['formula'] = $formula;
+        $this->container['custom_formula'] = $custom_formula;
 
         return $this;
     }

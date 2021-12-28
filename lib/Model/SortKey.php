@@ -69,9 +69,12 @@ class SortKey implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'custom_list' => 'string',
+        'custom_list' => 'string[]',
         'sort_order' => 'string',
-        'key' => 'int'
+        'key' => 'int',
+        'order' => 'string',
+        'type' => 'string',
+        'index' => 'int'
     ];
 
     /**
@@ -82,7 +85,10 @@ class SortKey implements  ArrayAccess
     protected static $swaggerFormats = [
         'custom_list' => null,
         'sort_order' => null,
-        'key' => 'int32'
+        'key' => 'int32',
+        'order' => null,
+        'type' => null,
+        'index' => 'int32'
     ];
 
     /**
@@ -114,7 +120,10 @@ class SortKey implements  ArrayAccess
     protected static $attributeMap = [
         'custom_list' => 'CustomList',
         'sort_order' => 'SortOrder',
-        'key' => 'Key'
+        'key' => 'Key',
+        'order' => 'Order',
+        'type' => 'Type',
+        'index' => 'Index'
     ];
 
     /**
@@ -125,7 +134,10 @@ class SortKey implements  ArrayAccess
     protected static $setters = [
         'custom_list' => 'setCustomList',
         'sort_order' => 'setSortOrder',
-        'key' => 'setKey'
+        'key' => 'setKey',
+        'order' => 'setOrder',
+        'type' => 'setType',
+        'index' => 'setIndex'
     ];
 
     /**
@@ -136,7 +148,10 @@ class SortKey implements  ArrayAccess
     protected static $getters = [
         'custom_list' => 'getCustomList',
         'sort_order' => 'getSortOrder',
-        'key' => 'getKey'
+        'key' => 'getKey',
+        'order' => 'getOrder',
+        'type' => 'getType',
+        'index' => 'getIndex'
     ];
 
     /**
@@ -202,6 +217,9 @@ class SortKey implements  ArrayAccess
         $this->container['custom_list'] = isset($data['custom_list']) ? $data['custom_list'] : null;
         $this->container['sort_order'] = isset($data['sort_order']) ? $data['sort_order'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['index'] = isset($data['index']) ? $data['index'] : null;
     }
 
     /**
@@ -238,7 +256,7 @@ class SortKey implements  ArrayAccess
     /**
      * Gets custom_list
      *
-     * @return string
+     * @return string[]
      */
     public function getCustomList()
     {
@@ -248,7 +266,7 @@ class SortKey implements  ArrayAccess
     /**
      * Sets custom_list
      *
-     * @param string $custom_list custom_list
+     * @param string[] $custom_list custom_list
      *
      * @return $this
      */
@@ -303,6 +321,78 @@ class SortKey implements  ArrayAccess
     public function setKey($key)
     {
         $this->container['key'] = $key;
+
+        return $this;
+    }
+
+    /**
+     * Gets order
+     *
+     * @return string
+     */
+    public function getOrder()
+    {
+        return $this->container['order'];
+    }
+
+    /**
+     * Sets order
+     *
+     * @param string $order order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets index
+     *
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->container['index'];
+    }
+
+    /**
+     * Sets index
+     *
+     * @param int $index index
+     *
+     * @return $this
+     */
+    public function setIndex($index)
+    {
+        $this->container['index'] = $index;
 
         return $this;
     }

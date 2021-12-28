@@ -554,7 +554,7 @@ class CellsWorksheetsApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorksheetsPutAddNewWorksheet($name, $sheet_name,  $position, $sheettype, $folder);
-        $this->assertEquals(201, $result['code']);
+        $this->assertEquals(200, $result['code']);
     }
 
     /**

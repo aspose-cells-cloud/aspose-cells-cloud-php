@@ -70,7 +70,9 @@ class ListColumn implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'totals_calculation' => 'string',
-        'name' => 'string'
+        'name' => 'string',
+        'formula' => 'string',
+        'range' => '\Aspose\Cells\Cloud\Model\Range'
     ];
 
     /**
@@ -80,7 +82,9 @@ class ListColumn implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'totals_calculation' => null,
-        'name' => null
+        'name' => null,
+        'formula' => null,
+        'range' => null
     ];
 
     /**
@@ -111,7 +115,9 @@ class ListColumn implements  ArrayAccess
      */
     protected static $attributeMap = [
         'totals_calculation' => 'TotalsCalculation',
-        'name' => 'Name'
+        'name' => 'Name',
+        'formula' => 'Formula',
+        'range' => 'Range'
     ];
 
     /**
@@ -121,7 +127,9 @@ class ListColumn implements  ArrayAccess
      */
     protected static $setters = [
         'totals_calculation' => 'setTotalsCalculation',
-        'name' => 'setName'
+        'name' => 'setName',
+        'formula' => 'setFormula',
+        'range' => 'setRange'
     ];
 
     /**
@@ -131,7 +139,9 @@ class ListColumn implements  ArrayAccess
      */
     protected static $getters = [
         'totals_calculation' => 'getTotalsCalculation',
-        'name' => 'getName'
+        'name' => 'getName',
+        'formula' => 'getFormula',
+        'range' => 'getRange'
     ];
 
     /**
@@ -196,6 +206,8 @@ class ListColumn implements  ArrayAccess
     {
         $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
+        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
     }
 
     /**
@@ -267,6 +279,54 @@ class ListColumn implements  ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets formula
+     *
+     * @return string
+     */
+    public function getFormula()
+    {
+        return $this->container['formula'];
+    }
+
+    /**
+     * Sets formula
+     *
+     * @param string $formula Gets and sets the formula of the list column.
+     *
+     * @return $this
+     */
+    public function setFormula($formula)
+    {
+        $this->container['formula'] = $formula;
+
+        return $this;
+    }
+
+    /**
+     * Gets range
+     *
+     * @return \Aspose\Cells\Cloud\Model\Range
+     */
+    public function getRange()
+    {
+        return $this->container['range'];
+    }
+
+    /**
+     * Sets range
+     *
+     * @param \Aspose\Cells\Cloud\Model\Range $range Gets and sets the formula of the list column.
+     *
+     * @return $this
+     */
+    public function setRange($range)
+    {
+        $this->container['range'] = $range;
 
         return $this;
     }

@@ -10,6 +10,8 @@ use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\ListObject;
 use \Aspose\Cells\Cloud\Model\DataSorter;
+use \Aspose\Cells\Cloud\Model\ListColumn;
+use \Aspose\Cells\Cloud\Model\TableTotalRequest;
 use \Aspose\Cells\Cloud\Model\CreatePivotTableRequest;
 
 
@@ -212,8 +214,47 @@ class CellsListObjectsApiTest extends \PHPUnit_Framework_TestCase
         $folder = "Temp";
         $hasHeaders = 'true';  
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsListObjectsPutWorksheetListObject($name, $sheet_name,$startRow,$startColumn, $endRow, $endColumn,$hasHeaders,null,$folder,null);
+        $result = $this->instance->cellsListObjectsPutWorksheetListObject($name, $sheet_name,$startRow,$startColumn, $endRow, $endColumn,$hasHeaders,'true','true',null,$folder,null);
         $this->assertEquals(200, $result['code']);
     }
-
+    /**
+     * Test case for cellsListObjectsPostWorksheetListColumn
+     *
+     * .
+     *
+     */
+    public function testCellsListObjectsPostWorksheetListColumn()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet7';
+        $listObjectIndex = 0; 
+        $listColumnIndex = 0; 
+        $request = new ListColumn();
+        $request->setName('Test Column');
+        $request->setTotalsCalculation('Average');
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsListObjectsPostWorksheetListColumn($name, $sheet_name,$listObjectIndex,$listColumnIndex, $request,$folder);
+        $this->assertEquals(200, $result['code']);
+    }
+    /**
+     * Test case for cellsListObjectsPostWorksheetListColumnsTotal
+     *
+     * .
+     *
+     */
+    public function testCellsListObjectsPostWorksheetListColumnsTotal()
+    {
+        $name ='Book1.xlsx';
+        $sheet_name ='Sheet7';
+        $listObjectIndex = 0; 
+        $destsheetName = "Sheet2";  
+        $request = new TableTotalRequest();
+        $request->setListColumnIndex(1);
+        $request->setTotalsCalculation('Average');
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsListObjectsPostWorksheetListColumnsTotal($name, $sheet_name,$listObjectIndex, array($request),$folder);
+        $this->assertEquals(200, $result['code']);
+    }
 }

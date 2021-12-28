@@ -153,4 +153,33 @@ class CellsShapesApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsShapesPutWorksheetShape($name, $sheet_name, null,$drawingType,$upperLeftRow,$upperLeftColumn, $top, $left, $width, $height,$folder);
         $this->assertEquals(200, $result['code']);
     }
+
+    /**
+     * Test case for cellsShapesPostWorksheetGroupShape
+     *
+     */
+    public function testcellsShapesPostWorksheetGroupShape()
+    {
+        $name ='Book1.xlsx';  
+        $sheet_name ='Sheet6';    
+        $list_shape= array(0,1);  
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsShapesPostWorksheetGroupShape($name, $sheet_name,$list_shape,$folder);
+        $this->assertEquals(200, $result['code']);
+    }
+    /**
+     * Test case for cellsShapesPostWorksheetUngroupShape
+     *
+     */
+    public function testcellsShapesPostWorksheetUngroupShape()
+    {
+        $name ='Book1.xlsx';  
+        $sheet_name ='Sheet6';    
+        $shapeindex =0 ;  
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsShapesPostWorksheetUngroupShape($name, $sheet_name,$shapeindex,$folder);
+        $this->assertEquals(200, $result['code']);
+    }
 }

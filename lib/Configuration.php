@@ -87,7 +87,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/21.11/php';
+    protected $userAgent = 'Swagger-Codegen/21.12/php';
 
     /**
      * Debug switch (default set to false)
@@ -395,8 +395,8 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Cells\Cloud) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: 21.9' . PHP_EOL;
-        $report .= '    SDK Package Version: 21.11' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 21.12' . PHP_EOL;
+        $report .= '    SDK Package Version: 21.12' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

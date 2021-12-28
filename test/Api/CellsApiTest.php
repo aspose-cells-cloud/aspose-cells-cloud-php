@@ -556,7 +556,7 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
         $width = '10';
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result =  $this->instance->cellsPostSetWorksheetColumnWidth($name, $sheet_name, $columnIndex, $width, $folder);
+        $result =  $this->instance->cellsPostSetWorksheetColumnWidth($name, $sheet_name, $columnIndex, $width,10, $folder);
         $this->assertEquals(200, $result['code']);
     }
 
@@ -693,7 +693,7 @@ class CellsApiTest extends \PHPUnit_Framework_TestCase
         $height = 10.0;
         $folder = "Temp";
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result =$this->instance->cellsPostUpdateWorksheetRow($name, $sheet_name, $rowIndex, $height,  $folder);
+        $result =$this->instance->cellsPostUpdateWorksheetRow($name, $sheet_name, $rowIndex, $height, 10, $folder);
         $this->assertEquals(200, $result['code']);
     }
 
