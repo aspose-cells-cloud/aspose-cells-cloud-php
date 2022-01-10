@@ -146,6 +146,7 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,null,$isAutoFit, 'false',$folder);
         $json = json_decode($result);
+        // echo($json );
         $this->assertEquals(200, $json->Code);
     }
     
@@ -165,7 +166,17 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"xlsx",$isAutoFit, 'false',$folder);
         $this->assertGreaterThan(120000, $result->getSize());
     }
-
+    public function testCellsWorkbookGetWorkbookToOtherStorage()
+    {
+        $name ='Book1.xlsx';
+        $folder = "Temp";
+        $password = null;
+        $isAutoFit = 'true';
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"xlsx",$isAutoFit, 'false',$folder,null,"Freeing/freeing1.pdf","DropBox");
+        $json = json_decode($result);
+        $this->assertEquals(200, $json->Code);
+    }
     /**
      * Test case for cellsWorkbookGetWorkBook format  MD
      *
@@ -180,6 +191,16 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
         $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"md",$isAutoFit, 'false',$folder);
+
+    }
+    public function testCellsWorkbookGetSQLFormat()
+    {
+        $name ='Book1.xlsx';
+        $folder = "Temp";
+        $password = null;
+        $isAutoFit = 'true';
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"sql",$isAutoFit, 'false',$folder);
 
     }
     /**
@@ -435,7 +456,17 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $json = json_decode($result);
 //        $this->assertEquals(200, $json->StatusCode);
     }
-
+    public function testCellsWorkbookPostWorkbookGetSmartMarkerResultOtherStorage()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $xmlFile = "ReportData.xml";
+        $outPath = null;
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookPostWorkbookGetSmartMarkerResult($name, $xmlFile,  $folder,null,$outPath,"DropBox");
+        $json = json_decode($result);
+//        $this->assertEquals(200, $json->StatusCode);
+    }
     /**
      * Test case for cellsWorkbookPostWorkbookSettings
      *
@@ -472,7 +503,19 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontalResolution, $verticalResolution,  $folder);
         $this->assertEquals(200, $result['code']);
     }
-
+    public function testCellsWorkbookPostWorkbookSplitToOtherStorage()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $format = "png";
+        $from = 1;
+        $to = 3;
+        $horizontalResolution = 100;
+        $verticalResolution = 90;
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $result = $this->instance->cellsWorkbookPostWorkbookSplit($name, $format, $from, $to, $horizontalResolution, $verticalResolution,  $folder,"Freeing",null,"DropBox");
+        $this->assertEquals(200, $result['code']);
+    }
     /**
      * Test case for cellsWorkbookPostWorkbooksMerge
      *
@@ -489,7 +532,16 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookPostWorkbooksMerge($name, $formatmergeWith,  $folder);
         $this->assertEquals(200, $result['code']);
     }
-
+    public function testCellsWorkbookPostWorkbooksMergeWithOtherStorage()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $formatmergeWith = "myDocument.xlsx";      
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$formatmergeWith ,null,"DropBox");
+        $result = $this->instance->cellsWorkbookPostWorkbooksMerge($name, $formatmergeWith,  $folder,null,"DropBox");
+        $this->assertEquals(200, $result['code']);
+    }
     /**
      * Test case for cellsWorkbookPostWorkbooksTextReplace
      *
@@ -550,7 +602,27 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookPutConvertWorkBook($path ,$format, $password,  $outPath);
         // $this->assertEquals(119592, $result->getSize());
     }
-
+    public function testCellsWorkbookPutConvertWorkBookToOtherStorage()
+    {
+        $format ='pdf';
+        $password = null;
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        
+        $result = $this->instance->cellsWorkbookPutConvertWorkBook($path ,$format, $password,  $outPath,"DropBox");
+        // $this->assertEquals(119592, $result->getSize());
+    }
     /**
      * Test case for cellsWorkbookPutDocumentProtectFromChanges
      *

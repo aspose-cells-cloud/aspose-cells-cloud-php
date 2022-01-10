@@ -12,7 +12,7 @@
 
 /* 
  * <summary>
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -70,9 +70,11 @@ class BatchConvertRequest implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'source_folder' => 'string',
+        'source_storage' => 'string',
         'match_condition' => '\Aspose\Cells\Cloud\Model\MatchConditionRequest',
         'format' => 'string',
         'out_folder' => 'string',
+        'out_storage' => 'string',
         'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions'
     ];
 
@@ -83,9 +85,11 @@ class BatchConvertRequest implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'source_folder' => null,
+        'source_storage' => null,
         'match_condition' => null,
         'format' => null,
         'out_folder' => null,
+        'out_storage' => null,
         'save_options' => null
     ];
 
@@ -117,9 +121,11 @@ class BatchConvertRequest implements  ArrayAccess
      */
     protected static $attributeMap = [
         'source_folder' => 'SourceFolder',
+        'source_storage' => 'SourceStorage',
         'match_condition' => 'MatchCondition',
         'format' => 'Format',
         'out_folder' => 'OutFolder',
+        'out_storage' => 'OutStorage',
         'save_options' => 'SaveOptions'
     ];
 
@@ -130,9 +136,11 @@ class BatchConvertRequest implements  ArrayAccess
      */
     protected static $setters = [
         'source_folder' => 'setSourceFolder',
+        'source_storage' => 'setSourceStorage',
         'match_condition' => 'setMatchCondition',
         'format' => 'setFormat',
         'out_folder' => 'setOutFolder',
+        'out_storage' => 'setOutStorage',
         'save_options' => 'setSaveOptions'
     ];
 
@@ -143,9 +151,11 @@ class BatchConvertRequest implements  ArrayAccess
      */
     protected static $getters = [
         'source_folder' => 'getSourceFolder',
+        'source_storage' => 'getSourceStorage',
         'match_condition' => 'getMatchCondition',
         'format' => 'getFormat',
         'out_folder' => 'getOutFolder',
+        'out_storage' => 'getOutStorage',
         'save_options' => 'getSaveOptions'
     ];
 
@@ -210,9 +220,11 @@ class BatchConvertRequest implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['source_folder'] = isset($data['source_folder']) ? $data['source_folder'] : null;
+        $this->container['source_storage'] = isset($data['source_storage']) ? $data['source_storage'] : null;
         $this->container['match_condition'] = isset($data['match_condition']) ? $data['match_condition'] : null;
         $this->container['format'] = isset($data['format']) ? $data['format'] : null;
         $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
+        $this->container['out_storage'] = isset($data['out_storage']) ? $data['out_storage'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
     }
 
@@ -261,6 +273,30 @@ class BatchConvertRequest implements  ArrayAccess
     public function setSourceFolder($source_folder)
     {
         $this->container['source_folder'] = $source_folder;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_storage
+     *
+     * @return string
+     */
+    public function getSourceStorage()
+    {
+        return $this->container['source_storage'];
+    }
+
+    /**
+     * Sets source_storage
+     *
+     * @param string $source_storage source_storage
+     *
+     * @return $this
+     */
+    public function setSourceStorage($source_storage)
+    {
+        $this->container['source_storage'] = $source_storage;
 
         return $this;
     }
@@ -333,6 +369,30 @@ class BatchConvertRequest implements  ArrayAccess
     public function setOutFolder($out_folder)
     {
         $this->container['out_folder'] = $out_folder;
+
+        return $this;
+    }
+
+    /**
+     * Gets out_storage
+     *
+     * @return string
+     */
+    public function getOutStorage()
+    {
+        return $this->container['out_storage'];
+    }
+
+    /**
+     * Sets out_storage
+     *
+     * @param string $out_storage out_storage
+     *
+     * @return $this
+     */
+    public function setOutStorage($out_storage)
+    {
+        $this->container['out_storage'] = $out_storage;
 
         return $this;
     }

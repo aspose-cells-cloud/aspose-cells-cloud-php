@@ -12,7 +12,7 @@
 
 /* 
  * <summary>
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -114,10 +114,10 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'border_color' => 'borderColor',
+        'border_color' => 'BorderColor',
         'range' => 'Range',
-        'border_style' => 'borderStyle',
-        'border_edge' => 'borderEdge'
+        'border_style' => 'BorderStyle',
+        'border_edge' => 'BorderEdge'
     ];
 
     /**

@@ -12,7 +12,7 @@
 
 /* 
  * <summary>
- *  Copyright (c) 2021 Aspose.Cells Cloud
+ *  Copyright (c) 2022 Aspose.Cells Cloud
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
@@ -67,6 +67,27 @@ class HtmlSaveOptions extends SaveOptions
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'save_as_single_file' => 'string',
+        'export_hidden_worksheet' => 'string',
+        'export_grid_lines' => 'string',
+        'presentation_preference' => 'string',
+        'cell_css_prefix' => 'string',
+        'table_css_id' => 'string',
+        'is_full_path_link' => 'string',
+        'export_worksheet_css_separately' => 'string',
+        'export_similar_border_style' => 'string',
+        'merge_empty_td_forcely' => 'string',
+        'export_cell_coordinate' => 'string',
+        'export_extra_headings' => 'string',
+        'export_headings' => 'string',
+        'export_formula' => 'string',
+        'add_tooltip_text' => 'string',
+        'export_bogus_row_data' => 'string',
+        'exclude_unused_styles' => 'string',
+        'export_document_properties' => 'string',
+        'export_worksheet_properties' => 'string',
+        'export_workbook_properties' => 'string',
+        'export_frame_scripts_and_properties' => 'string',
         'attached_files_directory' => 'string',
         'attached_files_url_prefix' => 'string',
         'encoding' => 'string',
@@ -87,6 +108,27 @@ class HtmlSaveOptions extends SaveOptions
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'save_as_single_file' => null,
+        'export_hidden_worksheet' => null,
+        'export_grid_lines' => null,
+        'presentation_preference' => null,
+        'cell_css_prefix' => null,
+        'table_css_id' => null,
+        'is_full_path_link' => null,
+        'export_worksheet_css_separately' => null,
+        'export_similar_border_style' => null,
+        'merge_empty_td_forcely' => null,
+        'export_cell_coordinate' => null,
+        'export_extra_headings' => null,
+        'export_headings' => null,
+        'export_formula' => null,
+        'add_tooltip_text' => null,
+        'export_bogus_row_data' => null,
+        'exclude_unused_styles' => null,
+        'export_document_properties' => null,
+        'export_worksheet_properties' => null,
+        'export_workbook_properties' => null,
+        'export_frame_scripts_and_properties' => null,
         'attached_files_directory' => null,
         'attached_files_url_prefix' => null,
         'encoding' => null,
@@ -128,6 +170,27 @@ class HtmlSaveOptions extends SaveOptions
      * @var string[]
      */
     protected static $attributeMap = [
+        'save_as_single_file' => 'SaveAsSingleFile',
+        'export_hidden_worksheet' => 'ExportHiddenWorksheet',
+        'export_grid_lines' => 'ExportGridLines',
+        'presentation_preference' => 'PresentationPreference',
+        'cell_css_prefix' => 'CellCssPrefix',
+        'table_css_id' => 'TableCssId',
+        'is_full_path_link' => 'IsFullPathLink',
+        'export_worksheet_css_separately' => 'ExportWorksheetCSSSeparately',
+        'export_similar_border_style' => 'ExportSimilarBorderStyle',
+        'merge_empty_td_forcely' => 'MergeEmptyTdForcely',
+        'export_cell_coordinate' => 'ExportCellCoordinate',
+        'export_extra_headings' => 'ExportExtraHeadings',
+        'export_headings' => 'ExportHeadings',
+        'export_formula' => 'ExportFormula',
+        'add_tooltip_text' => 'AddTooltipText',
+        'export_bogus_row_data' => 'ExportBogusRowData',
+        'exclude_unused_styles' => 'ExcludeUnusedStyles',
+        'export_document_properties' => 'ExportDocumentProperties',
+        'export_worksheet_properties' => 'ExportWorksheetProperties',
+        'export_workbook_properties' => 'ExportWorkbookProperties',
+        'export_frame_scripts_and_properties' => 'ExportFrameScriptsAndProperties',
         'attached_files_directory' => 'AttachedFilesDirectory',
         'attached_files_url_prefix' => 'AttachedFilesUrlPrefix',
         'encoding' => 'Encoding',
@@ -148,6 +211,27 @@ class HtmlSaveOptions extends SaveOptions
      * @var string[]
      */
     protected static $setters = [
+        'save_as_single_file' => 'setSaveAsSingleFile',
+        'export_hidden_worksheet' => 'setExportHiddenWorksheet',
+        'export_grid_lines' => 'setExportGridLines',
+        'presentation_preference' => 'setPresentationPreference',
+        'cell_css_prefix' => 'setCellCssPrefix',
+        'table_css_id' => 'setTableCssId',
+        'is_full_path_link' => 'setIsFullPathLink',
+        'export_worksheet_css_separately' => 'setExportWorksheetCssSeparately',
+        'export_similar_border_style' => 'setExportSimilarBorderStyle',
+        'merge_empty_td_forcely' => 'setMergeEmptyTdForcely',
+        'export_cell_coordinate' => 'setExportCellCoordinate',
+        'export_extra_headings' => 'setExportExtraHeadings',
+        'export_headings' => 'setExportHeadings',
+        'export_formula' => 'setExportFormula',
+        'add_tooltip_text' => 'setAddTooltipText',
+        'export_bogus_row_data' => 'setExportBogusRowData',
+        'exclude_unused_styles' => 'setExcludeUnusedStyles',
+        'export_document_properties' => 'setExportDocumentProperties',
+        'export_worksheet_properties' => 'setExportWorksheetProperties',
+        'export_workbook_properties' => 'setExportWorkbookProperties',
+        'export_frame_scripts_and_properties' => 'setExportFrameScriptsAndProperties',
         'attached_files_directory' => 'setAttachedFilesDirectory',
         'attached_files_url_prefix' => 'setAttachedFilesUrlPrefix',
         'encoding' => 'setEncoding',
@@ -168,6 +252,27 @@ class HtmlSaveOptions extends SaveOptions
      * @var string[]
      */
     protected static $getters = [
+        'save_as_single_file' => 'getSaveAsSingleFile',
+        'export_hidden_worksheet' => 'getExportHiddenWorksheet',
+        'export_grid_lines' => 'getExportGridLines',
+        'presentation_preference' => 'getPresentationPreference',
+        'cell_css_prefix' => 'getCellCssPrefix',
+        'table_css_id' => 'getTableCssId',
+        'is_full_path_link' => 'getIsFullPathLink',
+        'export_worksheet_css_separately' => 'getExportWorksheetCssSeparately',
+        'export_similar_border_style' => 'getExportSimilarBorderStyle',
+        'merge_empty_td_forcely' => 'getMergeEmptyTdForcely',
+        'export_cell_coordinate' => 'getExportCellCoordinate',
+        'export_extra_headings' => 'getExportExtraHeadings',
+        'export_headings' => 'getExportHeadings',
+        'export_formula' => 'getExportFormula',
+        'add_tooltip_text' => 'getAddTooltipText',
+        'export_bogus_row_data' => 'getExportBogusRowData',
+        'exclude_unused_styles' => 'getExcludeUnusedStyles',
+        'export_document_properties' => 'getExportDocumentProperties',
+        'export_worksheet_properties' => 'getExportWorksheetProperties',
+        'export_workbook_properties' => 'getExportWorkbookProperties',
+        'export_frame_scripts_and_properties' => 'getExportFrameScriptsAndProperties',
         'attached_files_directory' => 'getAttachedFilesDirectory',
         'attached_files_url_prefix' => 'getAttachedFilesUrlPrefix',
         'encoding' => 'getEncoding',
@@ -238,6 +343,27 @@ class HtmlSaveOptions extends SaveOptions
     {
         parent::__construct($data);
 
+        $this->container['save_as_single_file'] = isset($data['save_as_single_file']) ? $data['save_as_single_file'] : null;
+        $this->container['export_hidden_worksheet'] = isset($data['export_hidden_worksheet']) ? $data['export_hidden_worksheet'] : null;
+        $this->container['export_grid_lines'] = isset($data['export_grid_lines']) ? $data['export_grid_lines'] : null;
+        $this->container['presentation_preference'] = isset($data['presentation_preference']) ? $data['presentation_preference'] : null;
+        $this->container['cell_css_prefix'] = isset($data['cell_css_prefix']) ? $data['cell_css_prefix'] : null;
+        $this->container['table_css_id'] = isset($data['table_css_id']) ? $data['table_css_id'] : null;
+        $this->container['is_full_path_link'] = isset($data['is_full_path_link']) ? $data['is_full_path_link'] : null;
+        $this->container['export_worksheet_css_separately'] = isset($data['export_worksheet_css_separately']) ? $data['export_worksheet_css_separately'] : null;
+        $this->container['export_similar_border_style'] = isset($data['export_similar_border_style']) ? $data['export_similar_border_style'] : null;
+        $this->container['merge_empty_td_forcely'] = isset($data['merge_empty_td_forcely']) ? $data['merge_empty_td_forcely'] : null;
+        $this->container['export_cell_coordinate'] = isset($data['export_cell_coordinate']) ? $data['export_cell_coordinate'] : null;
+        $this->container['export_extra_headings'] = isset($data['export_extra_headings']) ? $data['export_extra_headings'] : null;
+        $this->container['export_headings'] = isset($data['export_headings']) ? $data['export_headings'] : null;
+        $this->container['export_formula'] = isset($data['export_formula']) ? $data['export_formula'] : null;
+        $this->container['add_tooltip_text'] = isset($data['add_tooltip_text']) ? $data['add_tooltip_text'] : null;
+        $this->container['export_bogus_row_data'] = isset($data['export_bogus_row_data']) ? $data['export_bogus_row_data'] : null;
+        $this->container['exclude_unused_styles'] = isset($data['exclude_unused_styles']) ? $data['exclude_unused_styles'] : null;
+        $this->container['export_document_properties'] = isset($data['export_document_properties']) ? $data['export_document_properties'] : null;
+        $this->container['export_worksheet_properties'] = isset($data['export_worksheet_properties']) ? $data['export_worksheet_properties'] : null;
+        $this->container['export_workbook_properties'] = isset($data['export_workbook_properties']) ? $data['export_workbook_properties'] : null;
+        $this->container['export_frame_scripts_and_properties'] = isset($data['export_frame_scripts_and_properties']) ? $data['export_frame_scripts_and_properties'] : null;
         $this->container['attached_files_directory'] = isset($data['attached_files_directory']) ? $data['attached_files_directory'] : null;
         $this->container['attached_files_url_prefix'] = isset($data['attached_files_url_prefix']) ? $data['attached_files_url_prefix'] : null;
         $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
@@ -279,6 +405,510 @@ class HtmlSaveOptions extends SaveOptions
         return true;
     }
 
+
+    /**
+     * Gets save_as_single_file
+     *
+     * @return string
+     */
+    public function getSaveAsSingleFile()
+    {
+        return $this->container['save_as_single_file'];
+    }
+
+    /**
+     * Sets save_as_single_file
+     *
+     * @param string $save_as_single_file save_as_single_file
+     *
+     * @return $this
+     */
+    public function setSaveAsSingleFile($save_as_single_file)
+    {
+        $this->container['save_as_single_file'] = $save_as_single_file;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_hidden_worksheet
+     *
+     * @return string
+     */
+    public function getExportHiddenWorksheet()
+    {
+        return $this->container['export_hidden_worksheet'];
+    }
+
+    /**
+     * Sets export_hidden_worksheet
+     *
+     * @param string $export_hidden_worksheet export_hidden_worksheet
+     *
+     * @return $this
+     */
+    public function setExportHiddenWorksheet($export_hidden_worksheet)
+    {
+        $this->container['export_hidden_worksheet'] = $export_hidden_worksheet;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_grid_lines
+     *
+     * @return string
+     */
+    public function getExportGridLines()
+    {
+        return $this->container['export_grid_lines'];
+    }
+
+    /**
+     * Sets export_grid_lines
+     *
+     * @param string $export_grid_lines export_grid_lines
+     *
+     * @return $this
+     */
+    public function setExportGridLines($export_grid_lines)
+    {
+        $this->container['export_grid_lines'] = $export_grid_lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets presentation_preference
+     *
+     * @return string
+     */
+    public function getPresentationPreference()
+    {
+        return $this->container['presentation_preference'];
+    }
+
+    /**
+     * Sets presentation_preference
+     *
+     * @param string $presentation_preference presentation_preference
+     *
+     * @return $this
+     */
+    public function setPresentationPreference($presentation_preference)
+    {
+        $this->container['presentation_preference'] = $presentation_preference;
+
+        return $this;
+    }
+
+    /**
+     * Gets cell_css_prefix
+     *
+     * @return string
+     */
+    public function getCellCssPrefix()
+    {
+        return $this->container['cell_css_prefix'];
+    }
+
+    /**
+     * Sets cell_css_prefix
+     *
+     * @param string $cell_css_prefix cell_css_prefix
+     *
+     * @return $this
+     */
+    public function setCellCssPrefix($cell_css_prefix)
+    {
+        $this->container['cell_css_prefix'] = $cell_css_prefix;
+
+        return $this;
+    }
+
+    /**
+     * Gets table_css_id
+     *
+     * @return string
+     */
+    public function getTableCssId()
+    {
+        return $this->container['table_css_id'];
+    }
+
+    /**
+     * Sets table_css_id
+     *
+     * @param string $table_css_id table_css_id
+     *
+     * @return $this
+     */
+    public function setTableCssId($table_css_id)
+    {
+        $this->container['table_css_id'] = $table_css_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_full_path_link
+     *
+     * @return string
+     */
+    public function getIsFullPathLink()
+    {
+        return $this->container['is_full_path_link'];
+    }
+
+    /**
+     * Sets is_full_path_link
+     *
+     * @param string $is_full_path_link is_full_path_link
+     *
+     * @return $this
+     */
+    public function setIsFullPathLink($is_full_path_link)
+    {
+        $this->container['is_full_path_link'] = $is_full_path_link;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_worksheet_css_separately
+     *
+     * @return string
+     */
+    public function getExportWorksheetCssSeparately()
+    {
+        return $this->container['export_worksheet_css_separately'];
+    }
+
+    /**
+     * Sets export_worksheet_css_separately
+     *
+     * @param string $export_worksheet_css_separately export_worksheet_css_separately
+     *
+     * @return $this
+     */
+    public function setExportWorksheetCssSeparately($export_worksheet_css_separately)
+    {
+        $this->container['export_worksheet_css_separately'] = $export_worksheet_css_separately;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_similar_border_style
+     *
+     * @return string
+     */
+    public function getExportSimilarBorderStyle()
+    {
+        return $this->container['export_similar_border_style'];
+    }
+
+    /**
+     * Sets export_similar_border_style
+     *
+     * @param string $export_similar_border_style export_similar_border_style
+     *
+     * @return $this
+     */
+    public function setExportSimilarBorderStyle($export_similar_border_style)
+    {
+        $this->container['export_similar_border_style'] = $export_similar_border_style;
+
+        return $this;
+    }
+
+    /**
+     * Gets merge_empty_td_forcely
+     *
+     * @return string
+     */
+    public function getMergeEmptyTdForcely()
+    {
+        return $this->container['merge_empty_td_forcely'];
+    }
+
+    /**
+     * Sets merge_empty_td_forcely
+     *
+     * @param string $merge_empty_td_forcely merge_empty_td_forcely
+     *
+     * @return $this
+     */
+    public function setMergeEmptyTdForcely($merge_empty_td_forcely)
+    {
+        $this->container['merge_empty_td_forcely'] = $merge_empty_td_forcely;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_cell_coordinate
+     *
+     * @return string
+     */
+    public function getExportCellCoordinate()
+    {
+        return $this->container['export_cell_coordinate'];
+    }
+
+    /**
+     * Sets export_cell_coordinate
+     *
+     * @param string $export_cell_coordinate export_cell_coordinate
+     *
+     * @return $this
+     */
+    public function setExportCellCoordinate($export_cell_coordinate)
+    {
+        $this->container['export_cell_coordinate'] = $export_cell_coordinate;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_extra_headings
+     *
+     * @return string
+     */
+    public function getExportExtraHeadings()
+    {
+        return $this->container['export_extra_headings'];
+    }
+
+    /**
+     * Sets export_extra_headings
+     *
+     * @param string $export_extra_headings export_extra_headings
+     *
+     * @return $this
+     */
+    public function setExportExtraHeadings($export_extra_headings)
+    {
+        $this->container['export_extra_headings'] = $export_extra_headings;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_headings
+     *
+     * @return string
+     */
+    public function getExportHeadings()
+    {
+        return $this->container['export_headings'];
+    }
+
+    /**
+     * Sets export_headings
+     *
+     * @param string $export_headings export_headings
+     *
+     * @return $this
+     */
+    public function setExportHeadings($export_headings)
+    {
+        $this->container['export_headings'] = $export_headings;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_formula
+     *
+     * @return string
+     */
+    public function getExportFormula()
+    {
+        return $this->container['export_formula'];
+    }
+
+    /**
+     * Sets export_formula
+     *
+     * @param string $export_formula export_formula
+     *
+     * @return $this
+     */
+    public function setExportFormula($export_formula)
+    {
+        $this->container['export_formula'] = $export_formula;
+
+        return $this;
+    }
+
+    /**
+     * Gets add_tooltip_text
+     *
+     * @return string
+     */
+    public function getAddTooltipText()
+    {
+        return $this->container['add_tooltip_text'];
+    }
+
+    /**
+     * Sets add_tooltip_text
+     *
+     * @param string $add_tooltip_text add_tooltip_text
+     *
+     * @return $this
+     */
+    public function setAddTooltipText($add_tooltip_text)
+    {
+        $this->container['add_tooltip_text'] = $add_tooltip_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_bogus_row_data
+     *
+     * @return string
+     */
+    public function getExportBogusRowData()
+    {
+        return $this->container['export_bogus_row_data'];
+    }
+
+    /**
+     * Sets export_bogus_row_data
+     *
+     * @param string $export_bogus_row_data export_bogus_row_data
+     *
+     * @return $this
+     */
+    public function setExportBogusRowData($export_bogus_row_data)
+    {
+        $this->container['export_bogus_row_data'] = $export_bogus_row_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets exclude_unused_styles
+     *
+     * @return string
+     */
+    public function getExcludeUnusedStyles()
+    {
+        return $this->container['exclude_unused_styles'];
+    }
+
+    /**
+     * Sets exclude_unused_styles
+     *
+     * @param string $exclude_unused_styles exclude_unused_styles
+     *
+     * @return $this
+     */
+    public function setExcludeUnusedStyles($exclude_unused_styles)
+    {
+        $this->container['exclude_unused_styles'] = $exclude_unused_styles;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_document_properties
+     *
+     * @return string
+     */
+    public function getExportDocumentProperties()
+    {
+        return $this->container['export_document_properties'];
+    }
+
+    /**
+     * Sets export_document_properties
+     *
+     * @param string $export_document_properties export_document_properties
+     *
+     * @return $this
+     */
+    public function setExportDocumentProperties($export_document_properties)
+    {
+        $this->container['export_document_properties'] = $export_document_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_worksheet_properties
+     *
+     * @return string
+     */
+    public function getExportWorksheetProperties()
+    {
+        return $this->container['export_worksheet_properties'];
+    }
+
+    /**
+     * Sets export_worksheet_properties
+     *
+     * @param string $export_worksheet_properties export_worksheet_properties
+     *
+     * @return $this
+     */
+    public function setExportWorksheetProperties($export_worksheet_properties)
+    {
+        $this->container['export_worksheet_properties'] = $export_worksheet_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_workbook_properties
+     *
+     * @return string
+     */
+    public function getExportWorkbookProperties()
+    {
+        return $this->container['export_workbook_properties'];
+    }
+
+    /**
+     * Sets export_workbook_properties
+     *
+     * @param string $export_workbook_properties export_workbook_properties
+     *
+     * @return $this
+     */
+    public function setExportWorkbookProperties($export_workbook_properties)
+    {
+        $this->container['export_workbook_properties'] = $export_workbook_properties;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_frame_scripts_and_properties
+     *
+     * @return string
+     */
+    public function getExportFrameScriptsAndProperties()
+    {
+        return $this->container['export_frame_scripts_and_properties'];
+    }
+
+    /**
+     * Sets export_frame_scripts_and_properties
+     *
+     * @param string $export_frame_scripts_and_properties export_frame_scripts_and_properties
+     *
+     * @return $this
+     */
+    public function setExportFrameScriptsAndProperties($export_frame_scripts_and_properties)
+    {
+        $this->container['export_frame_scripts_and_properties'] = $export_frame_scripts_and_properties;
+
+        return $this;
+    }
 
     /**
      * Gets attached_files_directory

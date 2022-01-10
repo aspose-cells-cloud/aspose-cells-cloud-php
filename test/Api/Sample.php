@@ -84,21 +84,15 @@ class Sample extends \PHPUnit_Framework_TestCase
     {
     }
 
-    public function testCellsWorkbookPostImportCSVData()
+    public function testCellsSimple()
     {
-        $name ='Book1.xlsx';       
+        $name ='Book1.xlsx';
         $folder = "Temp";
-        $data = new ImportCSVDataOption();
-        $data->setConvertNumericData(false);
-        $data->setFirstColumn(1);
-        $data->setFirstRow(1) ;
-        $data->setSeparatorString(';') ;
-        $data->setImportDataType('CSVData');
-        $data->setSourceFile('TestImportDataCSV.csv');
-        $data->setDestinationWorksheet('Sheet2');
-        CellsApiTestBase::ready(  $this->instance,'TestImportDataCSV.csv','');
+        $password = null;
+        $isAutoFit = 'true';
         CellsApiTestBase::ready(  $this->instance,$name ,$folder);
-        $result = $this->instance->cellsWorkbookPostImportData($name, $data,  $folder);
-        $this->assertEquals(200, $result['code']);
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,"sql",$isAutoFit, 'false',$folder,null,"Freeing/freeing1.pdf","DropBox");
+        $json = json_decode($result);
+        $this->assertEquals(200, $json->Code);
     }
 }
