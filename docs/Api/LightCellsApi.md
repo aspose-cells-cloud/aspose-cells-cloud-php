@@ -1,21 +1,21 @@
-# Aspose\Cells\Cloud\LiteCellsApi
+# Aspose\Cells\Cloud\LightCellsApi
 
 All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteMetadata**](LiteCellsApi.md#deleteMetadata) | **POST** /cells/metadata/delete | 
-[**getMetadata**](LiteCellsApi.md#getMetadata) | **POST** /cells/metadata/get | 
-[**postAssemble**](LiteCellsApi.md#postAssemble) | **POST** /cells/assemble | 
-[**postClearObjects**](LiteCellsApi.md#postClearObjects) | **POST** /cells/clearobjects | 
-[**postExport**](LiteCellsApi.md#postExport) | **POST** /cells/export | 
-[**postMerge**](LiteCellsApi.md#postMerge) | **POST** /cells/merge | 
-[**postMetadata**](LiteCellsApi.md#postMetadata) | **POST** /cells/metadata/update | 
-[**postProtect**](LiteCellsApi.md#postProtect) | **POST** /cells/protect | 
-[**postSearch**](LiteCellsApi.md#postSearch) | **POST** /cells/search | 
-[**postSplit**](LiteCellsApi.md#postSplit) | **POST** /cells/split | 
-[**postUnlock**](LiteCellsApi.md#postUnlock) | **POST** /cells/unlock | 
-[**postWatermark**](LiteCellsApi.md#postWatermark) | **POST** /cells/watermark | 
+[**deleteMetadata**](LightCellsApi.md#deleteMetadata) | **POST** /cells/metadata/delete | 
+[**getMetadata**](LightCellsApi.md#getMetadata) | **POST** /cells/metadata/get | 
+[**postAssemble**](LightCellsApi.md#postAssemble) | **POST** /cells/assemble | 
+[**postClearObjects**](LightCellsApi.md#postClearObjects) | **POST** /cells/clearobjects | 
+[**postExport**](LightCellsApi.md#postExport) | **POST** /cells/export | 
+[**postMerge**](LightCellsApi.md#postMerge) | **POST** /cells/merge | 
+[**postMetadata**](LightCellsApi.md#postMetadata) | **POST** /cells/metadata/update | 
+[**postProtect**](LightCellsApi.md#postProtect) | **POST** /cells/protect | 
+[**postSearch**](LightCellsApi.md#postSearch) | **POST** /cells/search | 
+[**postSplit**](LightCellsApi.md#postSplit) | **POST** /cells/split | 
+[**postUnlock**](LightCellsApi.md#postUnlock) | **POST** /cells/unlock | 
+[**postWatermark**](LightCellsApi.md#postWatermark) | **POST** /cells/watermark | 
 
 
 # **deleteMetadata**
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -40,7 +40,7 @@ try {
     $result = $apiInstance->deleteMetadata($file, $type);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->deleteMetadata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->deleteMetadata: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -77,7 +77,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -89,7 +89,7 @@ try {
     $result = $apiInstance->getMetadata($file, $type);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->getMetadata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->getMetadata: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -126,7 +126,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -139,7 +139,7 @@ try {
     $result = $apiInstance->postAssemble($file, $datasource, $format);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postAssemble: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postAssemble: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -177,7 +177,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -189,7 +189,7 @@ try {
     $result = $apiInstance->postClearObjects($file, $objecttype);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postClearObjects: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postClearObjects: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -226,7 +226,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -239,7 +239,7 @@ try {
     $result = $apiInstance->postExport($file, $object_type, $format);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postExport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postExport: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -277,7 +277,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -290,7 +290,7 @@ try {
     $result = $apiInstance->postMerge($file, $format, $merge_to_one_sheet);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postMerge: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postMerge: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -328,7 +328,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -340,7 +340,7 @@ try {
     $result = $apiInstance->postMetadata($file, $document_properties);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postMetadata: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postMetadata: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -377,7 +377,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -389,7 +389,7 @@ try {
     $result = $apiInstance->postProtect($file, $password);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postProtect: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postProtect: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -426,7 +426,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -440,7 +440,7 @@ try {
     $result = $apiInstance->postSearch($file, $text, $password, $sheetname);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postSearch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postSearch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -479,7 +479,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -494,7 +494,7 @@ try {
     $result = $apiInstance->postSplit($file, $format, $password, $from, $to);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postSplit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postSplit: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -534,7 +534,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -546,7 +546,7 @@ try {
     $result = $apiInstance->postUnlock($file, $password);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postUnlock: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postUnlock: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -583,7 +583,7 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Aspose\Cells\Cloud\Api\LiteCellsApi(
+$apiInstance = new Aspose\Cells\Cloud\Api\LightCellsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -596,7 +596,7 @@ try {
     $result = $apiInstance->postWatermark($file, $text, $color);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LiteCellsApi->postWatermark: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LightCellsApi->postWatermark: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

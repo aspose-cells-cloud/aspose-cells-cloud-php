@@ -4,7 +4,7 @@ namespace Aspose\Cells\Cloud;
 require_once('vendor\autoload.php');
 
 use \Aspose\Cells\Cloud\Api\CellsApi;
-use \Aspose\Cells\Cloud\Api\LiteCellsApi;
+use \Aspose\Cells\Cloud\Api\LightCellsApi;
 
 /**
  * Configuration Class Doc Comment
@@ -30,7 +30,7 @@ class CellsApiTestBase
     }
     public static function getLiteInstance()
     {
-       return new LiteCellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+       return new LightCellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
     }
     public static function isDockerSDK()
     {  

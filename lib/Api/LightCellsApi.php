@@ -37,14 +37,14 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
 
 /**
- * LiteCellsApi Class Doc Comment
+ * LightCellsApi Class Doc Comment
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LiteCellsApi
+class LightCellsApi
 {
     /**
      * @var ClientInterface
