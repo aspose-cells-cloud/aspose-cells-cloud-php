@@ -32,6 +32,7 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 - Workbok smart marker API add the parameter of output storage name.
 - Batch convert API add the parameters of intput and output storage name.
 - Remove AutoshapesController from Aspose.Cells Cloud.
+- Rename LiteCellsApi to LightCellsApi.
 
 ## Read Other Formats
 
