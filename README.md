@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/22.1)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/22.2)
 
 # PHP SDK for Spreadsheet Processing in Cloud
 
@@ -24,15 +24,13 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 22.1
+## Feature & Enhancements in Version 22.2
 
-- SaveAs API add the parameter of target storage name.
-- Workbok merged API add the parameter of merged file storage name.
-- Workbok split API add the parameter of target storage name
-- Workbok smart marker API add the parameter of output storage name.
-- Batch convert API add the parameters of intput and output storage name.
-- Remove AutoshapesController from Aspose.Cells Cloud.
-- Rename LiteCellsApi to LightCellsApi.
+- Update return value for the DeleteUnprotectWorksheet API on Aspose.Cells Cloud.
+- Update return value for the PutProtectWorksheet API on Aspose.Cells Cloud.
+- Update return value for the PostSetCellHtmlString API on Aspose.Cells Cloud.
+- Update return value for the PostUpdateWorksheetProperty API on Aspose.Cells Cloud.
+
 
 ## Read Other Formats
 

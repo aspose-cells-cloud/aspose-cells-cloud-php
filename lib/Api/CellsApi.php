@@ -75,7 +75,6 @@ class CellsApi
         $this->_baseUrl = substr($baseUrl,-1)=="/"?substr($baseUrl,0,strlen($baseUrl)-1):$baseUrl;
         
         $this->client =  new Client();
-        // $this->client = new Client([ 'proxy'=> '127.0.0.1:8888',"verify"=>false]);
         $this->config =  new Configuration();
         $this->headerSelector =  new HeaderSelector();
         $grantType = "client_credentials";
@@ -45966,7 +45965,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\CellResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
@@ -45989,11 +45988,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\CellResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $html_string, $folder, $storage_name);
 
         try {
@@ -46045,7 +46044,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\CellResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -46097,7 +46096,7 @@ class CellsApi
      */
     public function cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $html_string, $folder, $storage_name);
 
         return $this->client
@@ -74355,7 +74354,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsDeleteUnprotectWorksheet($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -74377,11 +74376,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsDeleteUnprotectWorksheetRequest($name, $sheet_name, $protect_parameter, $folder, $storage_name);
 
         try {
@@ -74433,7 +74432,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -74483,7 +74482,7 @@ class CellsApi
      */
     public function cellsWorksheetsDeleteUnprotectWorksheetAsyncWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsDeleteUnprotectWorksheetRequest($name, $sheet_name, $protect_parameter, $folder, $storage_name);
 
         return $this->client
@@ -81991,7 +81990,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsPostUpdateWorksheetProperty($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
@@ -82013,11 +82012,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPostUpdateWorksheetPropertyRequest($name, $sheet_name, $sheet, $folder, $storage_name);
 
         try {
@@ -82069,7 +82068,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -82119,7 +82118,7 @@ class CellsApi
      */
     public function cellsWorksheetsPostUpdateWorksheetPropertyAsyncWithHttpInfo($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPostUpdateWorksheetPropertyRequest($name, $sheet_name, $sheet, $folder, $storage_name);
 
         return $this->client
@@ -84677,7 +84676,7 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Cells\Cloud\Model\WorksheetResponse
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
     public function cellsWorksheetsPutProtectWorksheet($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -84699,11 +84698,11 @@ class CellsApi
      *
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Cells\Cloud\Model\WorksheetResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cellsWorksheetsPutProtectWorksheetWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPutProtectWorksheetRequest($name, $sheet_name, $protect_parameter, $folder, $storage_name);
 
         try {
@@ -84755,7 +84754,7 @@ class CellsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Aspose\Cells\Cloud\Model\WorksheetResponse',
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -84805,7 +84804,7 @@ class CellsApi
      */
     public function cellsWorksheetsPutProtectWorksheetAsyncWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
-        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetResponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $request = $this->cellsWorksheetsPutProtectWorksheetRequest($name, $sheet_name, $protect_parameter, $folder, $storage_name);
 
         return $this->client
