@@ -67589,6 +67589,334 @@ class CellsApi
     }
 
     /**
+     * Operation cellsWorkbookPostDigitalSignature
+     *
+     * Add digital signature.
+     *
+     * @param  string $name Workbook name. (required)
+     * @param  string $digitalsignaturefile Digital signature file parameters. (required)
+     * @param  string $password password (required)
+     * @param  string $folder Workbook&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsWorkbookPostDigitalSignature($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsWorkbookPostDigitalSignatureWithHttpInfo($name, $digitalsignaturefile, $password, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsWorkbookPostDigitalSignatureWithHttpInfo
+     *
+     * Add digital signature.
+     *
+     * @param  string $name Workbook name. (required)
+     * @param  string $digitalsignaturefile Digital signature file parameters. (required)
+     * @param  string $password (required)
+     * @param  string $folder Workbook&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsWorkbookPostDigitalSignatureWithHttpInfo($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookPostDigitalSignatureRequest($name, $digitalsignaturefile, $password, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsWorkbookPostDigitalSignatureAsync
+     *
+     * Add digital signature.
+     *
+     * @param  string $name Workbook name. (required)
+     * @param  string $digitalsignaturefile Digital signature file parameters. (required)
+     * @param  string $password (required)
+     * @param  string $folder Workbook&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookPostDigitalSignatureAsync($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
+    {
+        return $this->cellsWorkbookPostDigitalSignatureAsyncWithHttpInfo($name, $digitalsignaturefile, $password, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsWorkbookPostDigitalSignatureAsyncWithHttpInfo
+     *
+     * Add digital signature.
+     *
+     * @param  string $name Workbook name. (required)
+     * @param  string $digitalsignaturefile Digital signature file parameters. (required)
+     * @param  string $password (required)
+     * @param  string $folder Workbook&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsWorkbookPostDigitalSignatureAsyncWithHttpInfo($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsWorkbookPostDigitalSignatureRequest($name, $digitalsignaturefile, $password, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsWorkbookPostDigitalSignature'
+     *
+     * @param  string $name Workbook name. (required)
+     * @param  string $digitalsignaturefile Digital signature file parameters. (required)
+     * @param  string $password (required)
+     * @param  string $folder Workbook&#39;s folder. (optional)
+     * @param  string $storage_name storage name. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsWorkbookPostDigitalSignatureRequest($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsWorkbookPostDigitalSignature'
+            );
+        }
+        // verify the required parameter 'digitalsignaturefile' is set
+        if ($digitalsignaturefile === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $digitalsignaturefile when calling cellsWorkbookPostDigitalSignature'
+            );
+        }
+        // verify the required parameter 'password' is set
+        if ($password === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling cellsWorkbookPostDigitalSignature'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/digitalsignature';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($digitalsignaturefile !== null) {
+            $queryParams['digitalsignaturefile'] = ObjectSerializer::toQueryValue($digitalsignaturefile);
+        }
+        // query params
+        if ($password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($password);
+        }
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsWorkbookPostDigitalSignature'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation cellsWorkbookPostEncryptDocument
      *
      * Encript document.

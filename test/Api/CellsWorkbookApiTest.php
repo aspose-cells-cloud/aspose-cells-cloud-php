@@ -718,5 +718,23 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsWorkbookGetPageCount($name,$folder);
         $this->assertGreaterThan(0, $result);
     } 
-
+     /**
+     * Test case for testCellsWorkbookPageCount
+     *
+     * Read worksheet info or export..
+     *
+     */
+    public function testCellsWorkbookPostDigitalSignature()
+    {
+        $name ='Book1.xlsx';
+        $pfx_name ='roywang.pfx'; 
+        
+        $password = "123456";
+        $folder = "Temp";
+        
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        CellsApiTestBase::ready(  $this->instance,$pfx_name ,"");
+        $result = $this->instance->cellsWorkbookPostDigitalSignature($name,$pfx_name ,$password,$folder);
+        $this->assertEquals(200, $result['code']);
+    } 
 }
