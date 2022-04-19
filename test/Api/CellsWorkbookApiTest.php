@@ -149,7 +149,19 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         // echo($json );
         $this->assertEquals(200, $json->Code);
     }
-    
+    public function testCellsWorkbookGetWorkbookExtend()
+    {
+        $name ='Book1.xlsx';       
+        $folder = "Temp";
+        $password = null;
+        $isAutoFit = 'true';
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $extended_parameters = array (
+            "OnePagePerSheet" => "false"
+        );
+        $result = $this->instance->cellsWorkbookGetWorkBook($name,$password,'pdf',$isAutoFit, 'false',$folder,null,null,null,$extended_parameters);
+        $this->assertGreaterThan(120000, $result->getSize());
+    }
     /**
      * Test case for cellsWorkbookGetWorkBook format
      *
@@ -600,6 +612,29 @@ class CellsWorkbookApiTest extends \PHPUnit_Framework_TestCase
         }
         
         $result = $this->instance->cellsWorkbookPutConvertWorkBook($path ,$format, $password,  $outPath);
+        // $this->assertEquals(119592, $result->getSize());
+    }
+    public function testCellsWorkbookPutConvertExtendWorkBook()
+    {
+        $format ='pdf';
+        $password = null;
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $extended_parameters = array (
+            "OnePagePerSheet" => "false"
+        );
+        $result = $this->instance->cellsWorkbookPutConvertWorkBook($path ,$format, $password,  $outPath,null,$extended_parameters);
         // $this->assertEquals(119592, $result->getSize());
     }
     public function testCellsWorkbookPutConvertWorkBookToOtherStorage()

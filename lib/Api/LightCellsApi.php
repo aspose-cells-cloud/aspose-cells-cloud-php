@@ -1297,10 +1297,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postExport($file, $object_type, $format)
+    public function postExport($file, $object_type, $format, $extended_query_parameters = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->postExportWithHttpInfo($file, $object_type, $format);
+        list($response) = $this->postExportWithHttpInfo($file, $object_type, $format, $extended_query_parameters);
         return $response;
     }
 
@@ -1315,10 +1315,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postExportWithHttpInfo($file, $object_type, $format)
+    public function postExportWithHttpInfo($file, $object_type, $format, $extended_query_parameters = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postExportRequest($file, $object_type, $format);
+        $request = $this->postExportRequest($file, $object_type, $format, $extended_query_parameters);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1391,9 +1391,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postExportAsync($file, $object_type, $format)
+    public function postExportAsync($file, $object_type, $format, $extended_query_parameters = null)
     {
-        return $this->postExportAsyncWithHttpInfo($file, $object_type, $format)
+        return $this->postExportAsyncWithHttpInfo($file, $object_type, $format, $extended_query_parameters)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1413,10 +1413,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postExportAsyncWithHttpInfo($file, $object_type, $format)
+    public function postExportAsyncWithHttpInfo($file, $object_type, $format, $extended_query_parameters = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postExportRequest($file, $object_type, $format);
+        $request = $this->postExportRequest($file, $object_type, $format, $extended_query_parameters);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1465,7 +1465,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postExportRequest($file, $object_type, $format)
+    protected function postExportRequest($file, $object_type, $format, $extended_query_parameters = null)
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -1501,7 +1501,11 @@ class LightCellsApi
         if ($format !== null) {
             $queryParams['format'] = ObjectSerializer::toQueryValue($format);
         }
-
+        if($extended_query_parameters !== null){
+            foreach($extended_query_parameters as $key => $value) {
+                $queryParams[$key] = ObjectSerializer::toQueryValue($value);
+            }
+        }
 
         // form params
         if ($file !== null) {

@@ -57305,10 +57305,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaveResponse
      */
-    public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null)
+    public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name);
+        list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters );
         return $response;
     }
 
@@ -57330,10 +57330,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null)
+    public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
-        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name);
+        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters );
 
         try {
             $options = $this->createHttpClientOption();
@@ -57411,9 +57411,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null)
+    public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
     {
-        return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name)
+        return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -57438,10 +57438,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null)
+    public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
-        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name);
+        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -57495,7 +57495,7 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null)
+    protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -57535,7 +57535,11 @@ class CellsApi
         if ($out_storage_name !== null) {
             $queryParams['outStorageName'] = ObjectSerializer::toQueryValue($out_storage_name);
         }
-
+        if($extended_query_parameters !== null){
+            foreach($extended_query_parameters as $key => $value) {
+                $queryParams[$key] = ObjectSerializer::toQueryValue($value);
+            }
+        }
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
@@ -64770,10 +64774,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorkbookGetWorkbook($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
+    public function cellsWorkbookGetWorkbook($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsWorkbookGetWorkbookWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name);
+        list($response) = $this->cellsWorkbookGetWorkbookWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name, $extended_query_parameters );
         return $response;
     }
 
@@ -64796,10 +64800,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookGetWorkbookWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
+    public function cellsWorkbookGetWorkbookWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name);
+        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name, $extended_query_parameters );
 
         try {
             $options = $this->createHttpClientOption();
@@ -64878,9 +64882,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookGetWorkbookAsync($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
+    public function cellsWorkbookGetWorkbookAsync($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
-        return $this->cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name)
+        return $this->cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name, $extended_query_parameters )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -64906,10 +64910,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
+    public function cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name);
+        $request = $this->cellsWorkbookGetWorkbookRequest($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name, $extended_query_parameters );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -64964,7 +64968,7 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookGetWorkbookRequest($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
+    protected function cellsWorkbookGetWorkbookRequest($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -65012,7 +65016,11 @@ class CellsApi
         if ($out_storage_name !== null) {
             $queryParams['outStorageName'] = ObjectSerializer::toQueryValue($out_storage_name);
         }
-
+        if($extended_query_parameters !== null){
+            foreach($extended_query_parameters as $key => $value) {
+                $queryParams[$key] = ObjectSerializer::toQueryValue($value);
+            }
+        }
         // path params
         if ($name !== null) {
             $resourcePath = str_replace(
@@ -71126,10 +71134,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function cellsWorkbookPutConvertWorkbook($file, $format = null, $password = null, $out_path = null, $storage_name = null)
+    public function cellsWorkbookPutConvertWorkbook($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format, $password, $out_path, $storage_name);
+        list($response) = $this->cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format, $password, $out_path, $storage_name,$extended_query_parameters);
         return $response;
     }
 
@@ -71148,10 +71156,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format = null, $password = null, $out_path = null, $storage_name = null)
+    public function cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookPutConvertWorkbookRequest($file, $format, $password, $out_path, $storage_name);
+        $request = $this->cellsWorkbookPutConvertWorkbookRequest($file, $format, $password, $out_path, $storage_name,$extended_query_parameters);
 
         try {
             $options = $this->createHttpClientOption();
@@ -71226,9 +71234,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutConvertWorkbookAsync($file, $format = null, $password = null, $out_path = null, $storage_name = null)
+    public function cellsWorkbookPutConvertWorkbookAsync($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
-        return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format, $password, $out_path, $storage_name)
+        return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format, $password, $out_path, $storage_name,$extended_query_parameters )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -71250,10 +71258,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format = null, $password = null, $out_path = null, $storage_name = null)
+    public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
         $returnType = '\SplFileObject';
-        $request = $this->cellsWorkbookPutConvertWorkbookRequest($file, $format, $password, $out_path, $storage_name);
+        $request = $this->cellsWorkbookPutConvertWorkbookRequest($file, $format, $password, $out_path, $storage_name,$extended_query_parameters );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -71304,7 +71312,7 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsWorkbookPutConvertWorkbookRequest($file, $format = null, $password = null, $out_path = null, $storage_name = null)
+    protected function cellsWorkbookPutConvertWorkbookRequest($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -71337,7 +71345,11 @@ class CellsApi
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
         }
 
-
+        if($extended_query_parameters !== null){
+            foreach($extended_query_parameters as $key => $value) {
+                $queryParams[$key] = ObjectSerializer::toQueryValue($value);
+            }
+        }
         // form params
         if ($file !== null) {
             $multipart = true;

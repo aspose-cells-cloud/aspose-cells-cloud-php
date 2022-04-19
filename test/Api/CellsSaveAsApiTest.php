@@ -177,4 +177,20 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder, $storage);
         $this->assertEquals(200, $result['code']);
     }
+    public function testCellsSaveAsPostDocumentSaveAsPDFExtendTest()
+    {
+        $name ='Book1.xlsx';
+        $saveOptions = new MarkdownSaveOptions();
+        $saveOptions->SaveFormat = "markdown";
+        $newfilename = "newbook.pdf.md";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $extended_parameters = array (
+            "OnePagePerSheet" => "false"
+        );
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder,null,null,$extended_parameters);
+        $this->assertEquals(200, $result['code']);
+    }
 }

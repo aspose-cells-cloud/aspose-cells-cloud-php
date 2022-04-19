@@ -142,4 +142,20 @@ class CellsExportApiTest extends \PHPUnit_Framework_TestCase
         // print( $result);
         $this->assertNotNull($result);
     }
+
+    public function testCellsExportWorkbookToPdfExtandPostRun()
+    {
+        $book1 = "Book1.xlsx";
+        $mydoc = "myDocument.xlsx";
+        $files = array (
+            $mydoc =>  CellsApiTestBase::getfullfilename($mydoc),
+            $book1 =>  CellsApiTestBase::getfullfilename($book1)
+        );
+        $extended_parameters = array (
+            "OnePagePerSheet" => "false"
+        );
+        $result = $this->instance->postExport($files , 'workbook','pdf',$extended_parameters );
+        // print( $result);
+        $this->assertNotNull($result);
+    }
 }
