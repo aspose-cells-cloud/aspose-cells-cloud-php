@@ -72,39 +72,40 @@ require_once('vendor/autoload.php');
 ## Import Data to Excel Worksheet via PHP
 
 ```php
-require_once realpath(__DIR__ . '/..') . '/vendor/autoload.php';
+<?php
 
-use Aspose\Cells\CellsApi;
-use Aspose\Cells\AsposeApp;
+require_once('vendor\autoload.php');
+use \Aspose\Cells\Cloud\Api\CellsApi;
+use \Aspose\Cells\Cloud\Model\ImportIntArrayOption;
 
 class Workbook {
 
-    public $cells;
+public $cells;
 
-    public function __construct() {
-        AsposeApp::$clientId = Utils::clientId;
-        AsposeApp::$clientSecret = Utils::clientSecret;
-        $this->cells = new CellsApi( AsposeApp::$clientId,AsposeApp::$clientSecret );
-    }
+public function __construct() {
+    $this->cells = new CellsApi( getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+}
 
-    public function postImportDataCloudFile() {
-        $name ='Book1.xlsx';
-        $folder = "PhpTest";
-        $data = new ImportIntArrayOption();
-        $data->setDestinationWorksheet('Sheet1');
-        $data->setFirstColumn(1);
-        $data->setFirstRow(3);
-        $data->setImportDataType('IntArray');
-        $data->setIsVertical('true');
-        $data->setData(array(1, 2, 3, 4)) ;
-
-        $this->instance->uploadFile($folder + "/" +  $name , $sourceFolder + $name);
-        $result = $this->instance->cellsWorkbookPostImportData($name, $data,  $folder);
-    }
+public function postImportDataCloudFile() {
+    $name ='Book1.xlsx';
+    $folder = "Temp";
+    $data = new ImportIntArrayOption();
+    $data->setDestinationWorksheet('Sheet1');
+    $data->setFirstColumn(1);
+    $data->setFirstRow(3);
+    $data->setImportDataType('IntArray');
+    $data->setIsVertical('true');
+    $data->setData(array(1, 2, 3, 4)) ;
+    $sourceFolder = ".\\data\\";
+     $this->cells->uploadFile($folder . "/" .  $name , $sourceFolder. $name);
+    $result = $this->cells->cellsWorkbookPostImportData($name, $data,  $folder);
+}
 }
 
 $workbook = new Workbook();
 $workbook->postImportDataCloudFile();
+
+?>
 ```
 
 ## Aspose.Cells Cloud SDKs in Popular Languages
