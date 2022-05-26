@@ -8,7 +8,7 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Model\ColumnsResponse;
-use \Aspose\Cells\Cloud\Model\SaaSposeResponse;
+
 use \Aspose\Cells\Cloud\Model\CalculationOptions;
 use \Aspose\Cells\Cloud\Model\Style;
 use \Aspose\Cells\Cloud\Model\Font;

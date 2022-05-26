@@ -51,7 +51,7 @@ use PHPUnit\Framework\TestCase;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CellsBatchApiTest extends \PHPUnit_Framework_TestCase
+class CellsBarcodeApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -85,19 +85,10 @@ class CellsBatchApiTest extends \PHPUnit_Framework_TestCase
 
     public function testCellsBatchConvertApiTest()
     {
-
-        $batchfilesfolder = 'BatchFiles';
-        CellsApiTestBase::ready(  $this->instance,'Book1.xlsx' ,$batchfilesfolder);
-        CellsApiTestBase::ready(  $this->instance,'myDocument.xlsx' ,$batchfilesfolder);
-        CellsApiTestBase::ready(  $this->instance,'datasource.xlsx' ,$batchfilesfolder);
-        $batchConvertRequest = new BatchConvertRequest();
-        $batchConvertRequest->setSourceFolder($batchfilesfolder);
-        $batchConvertRequest->setFormat('PDF');
-        $match_condition = new MatchConditionRequest();
-        $match_condition->setFullMatchConditions( ["Book1.xlsx","myDocument.xlsx"]);
-        $batchConvertRequest->setMatchCondition($match_condition);
-        $result = $this->instance->postBatchConvert( $batchConvertRequest);
-        // $contents = $result->fread($result->getSize());
-        $this->assertGreaterThan(6000, $result->getSize(), "convert files error.");
+        $name ='Book1.xlsx';
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance, $name  ,$folder);
+        $result = $this->instance->cellsPictureGetExtractBarcodes(  $name ,'Sheet8',0,$folder);
+        $this->assertNotNull($result);
     }
 }
