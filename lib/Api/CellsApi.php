@@ -57640,10 +57640,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaveResponse
      */
-    public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
+    public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
         $this->checkAccessToken();
-        list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters );
+        list($response) = $this->cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters ,$check_excel_restriction);
         return $response;
     }
 
@@ -57665,10 +57665,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
+    public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
-        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters );
+        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters,$check_excel_restriction );
 
         try {
             $options = $this->createHttpClientOption();
@@ -57746,9 +57746,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
+    public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
-        return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters)
+        return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters,$check_excel_restriction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -57773,10 +57773,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
+    public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction ='true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
-        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters );
+        $request = $this->cellsSaveAsPostDocumentSaveAsRequest($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters,$check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -57830,7 +57830,7 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null)
+    protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
         // verify the required parameter 'name' is set
         if ($name === null) {
@@ -57874,6 +57874,10 @@ class CellsApi
             foreach($extended_query_parameters as $key => $value) {
                 $queryParams[$key] = ObjectSerializer::toQueryValue($value);
             }
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
         // path params
         if ($name !== null) {

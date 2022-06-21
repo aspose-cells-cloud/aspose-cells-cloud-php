@@ -1001,10 +1001,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postClearObjects($file, $objecttype)
+    public function postClearObjects($file, $objecttype, $sheetname = null,  $out_format = null )
     {
         $this->checkAccessToken();
-        list($response) = $this->postClearObjectsWithHttpInfo($file, $objecttype);
+        list($response) = $this->postClearObjectsWithHttpInfo($file, $objecttype, $sheetname,  $out_format);
         return $response;
     }
 
@@ -1018,10 +1018,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postClearObjectsWithHttpInfo($file, $objecttype)
+    public function postClearObjectsWithHttpInfo($file, $objecttype, $sheetname = null,  $out_format = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postClearObjectsRequest($file, $objecttype);
+        $request = $this->postClearObjectsRequest($file, $objecttype, $sheetname,  $out_format);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1093,9 +1093,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postClearObjectsAsync($file, $objecttype)
+    public function postClearObjectsAsync($file, $objecttype, $sheetname = null,  $out_format = null)
     {
-        return $this->postClearObjectsAsyncWithHttpInfo($file, $objecttype)
+        return $this->postClearObjectsAsyncWithHttpInfo($file, $objecttype, $sheetname,  $out_format)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1114,7 +1114,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postClearObjectsAsyncWithHttpInfo($file, $objecttype)
+    public function postClearObjectsAsyncWithHttpInfo($file, $objecttype, $sheetname = null,  $out_format = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $request = $this->postClearObjectsRequest($file, $objecttype);
@@ -1165,7 +1165,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postClearObjectsRequest($file, $objecttype)
+    protected function postClearObjectsRequest($file, $objecttype, $sheetname = null,  $out_format = null)
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -1190,6 +1190,12 @@ class LightCellsApi
         // query params
         if ($objecttype !== null) {
             $queryParams['objecttype'] = ObjectSerializer::toQueryValue($objecttype);
+        }
+        if ($sheetname !== null) {
+            $queryParams['sheetname'] = ObjectSerializer::toQueryValue($sheetname);
+        }
+        if ($out_format !== null) {
+            $queryParams['outFormat'] = ObjectSerializer::toQueryValue($out_format);
         }
 
 
