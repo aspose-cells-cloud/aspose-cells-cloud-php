@@ -35,6 +35,7 @@ use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
+use \Aspose\Cells\Cloud\Model\SaveOptions;
 use \Aspose\Cells\Cloud\Model\PdfSaveOptions;
 use \Aspose\Cells\Cloud\Model\MarkdownSaveOptions;
 /**
@@ -183,6 +184,22 @@ class CellsSaveAsApiTest extends \PHPUnit_Framework_TestCase
         $saveOptions = new MarkdownSaveOptions();
         $saveOptions->SaveFormat = "markdown";
         $newfilename = "newbook.pdf.md";
+        $isAutoFitRows= 'true';
+        $isAutoFitColumns= 'true';
+        $folder = "Temp";
+        CellsApiTestBase::ready(  $this->instance,$name ,$folder);
+        $extended_parameters = array (
+            "OnePagePerSheet" => "false"
+        );
+        $result = $this->instance->cellsSaveAsPostDocumentSaveAs($name, $saveOptions, $newfilename,$isAutoFitRows, $isAutoFitColumns, $folder,null,null,$extended_parameters);
+        $this->assertEquals(200, $result['code']);
+    }
+    public function testCellsSaveAsWithSaveOptionsTest()
+    {
+        $name ='Book1.xlsx';
+        $saveOptions = new SaveOptions();      
+        $saveOptions->SaveFormat = "pdf"; 
+        $newfilename = "newbook.pdf";
         $isAutoFitRows= 'true';
         $isAutoFitColumns= 'true';
         $folder = "Temp";

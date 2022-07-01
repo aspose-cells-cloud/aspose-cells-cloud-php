@@ -268,10 +268,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -316,7 +316,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -347,7 +347,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -526,10 +526,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -574,7 +574,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -605,7 +605,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -830,10 +830,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -878,7 +878,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -909,7 +909,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1125,10 +1125,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -1173,7 +1173,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -1204,7 +1204,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1435,10 +1435,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -1483,7 +1483,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -1514,7 +1514,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1733,10 +1733,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -1781,7 +1781,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -1812,7 +1812,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2021,10 +2021,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['file'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['file'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -2074,7 +2074,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -2105,7 +2105,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2317,10 +2317,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -2369,7 +2369,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -2400,7 +2400,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2616,10 +2616,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -2664,7 +2664,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -2695,7 +2695,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2928,10 +2928,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -2976,7 +2976,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -3007,7 +3007,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3251,10 +3251,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -3299,7 +3299,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -3330,7 +3330,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3546,10 +3546,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -3594,7 +3594,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -3625,7 +3625,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3856,10 +3856,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -3904,7 +3904,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -3935,7 +3935,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4153,10 +4153,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -4201,7 +4201,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -4230,7 +4230,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4477,10 +4477,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -4525,7 +4525,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -4556,7 +4556,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4787,10 +4787,10 @@ class LiteCellsApi
             $multipart = true;
             if( is_array($file)){
                 foreach($file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
             }
             
         }
@@ -4835,7 +4835,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -4866,7 +4866,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4983,7 +4983,7 @@ class LiteCellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
@@ -5001,7 +5001,7 @@ class LiteCellsApi
             $headers
         );
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         $request =  new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
