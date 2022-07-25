@@ -119,7 +119,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function deleteMetadata($file, $type = 'all')
+    public function deleteMetadata($file, $type = 'all' ,$c)
     {
         $this->checkAccessToken();
         list($response) = $this->deleteMetadataWithHttpInfo($file, $type);
@@ -136,10 +136,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteMetadataWithHttpInfo($file, $type = 'all')
+    public function deleteMetadataWithHttpInfo($file, $type = 'all', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->deleteMetadataRequest($file, $type);
+        $request = $this->deleteMetadataRequest($file, $type, $check_excel_restriction );
 
         try {
             $options = $this->createHttpClientOption();
@@ -211,9 +211,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMetadataAsync($file, $type = 'all')
+    public function deleteMetadataAsync($file, $type = 'all', $check_excel_restriction = 'true')
     {
-        return $this->deleteMetadataAsyncWithHttpInfo($file, $type)
+        return $this->deleteMetadataAsyncWithHttpInfo($file, $type,$check_excel_restriction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -232,10 +232,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMetadataAsyncWithHttpInfo($file, $type = 'all')
+    public function deleteMetadataAsyncWithHttpInfo($file, $type = 'all', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->deleteMetadataRequest($file, $type);
+        $request = $this->deleteMetadataRequest($file, $type,$check_excel_restriction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -283,7 +283,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteMetadataRequest($file, $type = 'all')
+    protected function deleteMetadataRequest($file, $type = 'all', $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -302,6 +302,10 @@ class LightCellsApi
         // query params
         if ($type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
 
 
@@ -408,10 +412,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentProperty[]
      */
-    public function getMetadata($file, $type = 'all')
+    public function getMetadata($file, $type = 'all', $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->getMetadataWithHttpInfo($file, $type);
+        list($response) = $this->getMetadataWithHttpInfo($file, $type, $check_excel_restriction);
         return $response;
     }
 
@@ -425,10 +429,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentProperty[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMetadataWithHttpInfo($file, $type = 'all')
+    public function getMetadataWithHttpInfo($file, $type = 'all', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentProperty[]';
-        $request = $this->getMetadataRequest($file, $type);
+        $request = $this->getMetadataRequest($file, $type,$check_excel_restriction );
 
         try {
             $options = $this->createHttpClientOption();
@@ -500,9 +504,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMetadataAsync($file, $type = 'all')
+    public function getMetadataAsync($file, $type = 'all', $check_excel_restriction = 'true')
     {
-        return $this->getMetadataAsyncWithHttpInfo($file, $type)
+        return $this->getMetadataAsyncWithHttpInfo($file, $type,$check_excel_restriction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -521,10 +525,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMetadataAsyncWithHttpInfo($file, $type = 'all')
+    public function getMetadataAsyncWithHttpInfo($file, $type = 'all', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentProperty[]';
-        $request = $this->getMetadataRequest($file, $type);
+        $request = $this->getMetadataRequest($file, $type, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -572,7 +576,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMetadataRequest($file, $type = 'all')
+    protected function getMetadataRequest($file, $type = 'all', $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -592,7 +596,10 @@ class LightCellsApi
         if ($type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($type);
         }
-
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
 
         // form params
         if ($file !== null) {
@@ -698,10 +705,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postAssemble($file, $datasource, $format = 'Xlsx')
+    public function postAssemble($file, $datasource, $format = 'Xlsx', $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postAssembleWithHttpInfo($file, $datasource, $format);
+        list($response) = $this->postAssembleWithHttpInfo($file, $datasource, $format,$check_excel_restriction);
         return $response;
     }
 
@@ -716,10 +723,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postAssembleWithHttpInfo($file, $datasource, $format = 'Xlsx')
+    public function postAssembleWithHttpInfo($file, $datasource, $format = 'Xlsx', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postAssembleRequest($file, $datasource, $format);
+        $request = $this->postAssembleRequest($file, $datasource, $format, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -792,9 +799,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postAssembleAsync($file, $datasource, $format = 'Xlsx')
+    public function postAssembleAsync($file, $datasource, $format = 'Xlsx', $check_excel_restriction = 'true')
     {
-        return $this->postAssembleAsyncWithHttpInfo($file, $datasource, $format)
+        return $this->postAssembleAsyncWithHttpInfo($file, $datasource, $format, $check_excel_restriction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -814,10 +821,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postAssembleAsyncWithHttpInfo($file, $datasource, $format = 'Xlsx')
+    public function postAssembleAsyncWithHttpInfo($file, $datasource, $format = 'Xlsx', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postAssembleRequest($file, $datasource, $format);
+        $request = $this->postAssembleRequest($file, $datasource, $format, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -866,7 +873,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postAssembleRequest($file, $datasource, $format = 'Xlsx')
+    protected function postAssembleRequest($file, $datasource, $format = 'Xlsx', $check_excel_restriction ='true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -897,6 +904,10 @@ class LightCellsApi
             $queryParams['format'] = ObjectSerializer::toQueryValue($format);
         }
 
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
 
         // form params
         if ($file !== null) {
@@ -1001,10 +1012,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postClearObjects($file, $objecttype, $sheetname = null,  $out_format = null )
+    public function postClearObjects($file, $objecttype, $sheetname = null,  $out_format = null , $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postClearObjectsWithHttpInfo($file, $objecttype, $sheetname,  $out_format);
+        list($response) = $this->postClearObjectsWithHttpInfo($file, $objecttype, $sheetname,  $out_format, $check_excel_restriction);
         return $response;
     }
 
@@ -1018,10 +1029,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postClearObjectsWithHttpInfo($file, $objecttype, $sheetname = null,  $out_format = null)
+    public function postClearObjectsWithHttpInfo($file, $objecttype, $sheetname = null,  $out_format = null, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postClearObjectsRequest($file, $objecttype, $sheetname,  $out_format);
+        $request = $this->postClearObjectsRequest($file, $objecttype, $sheetname,  $out_format, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1093,9 +1104,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postClearObjectsAsync($file, $objecttype, $sheetname = null,  $out_format = null)
+    public function postClearObjectsAsync($file, $objecttype, $sheetname = null,  $out_format = null, $check_excel_restriction = 'true')
     {
-        return $this->postClearObjectsAsyncWithHttpInfo($file, $objecttype, $sheetname,  $out_format)
+        return $this->postClearObjectsAsyncWithHttpInfo($file, $objecttype, $sheetname,  $out_format, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1114,10 +1125,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postClearObjectsAsyncWithHttpInfo($file, $objecttype, $sheetname = null,  $out_format = null)
+    public function postClearObjectsAsyncWithHttpInfo($file, $objecttype, $sheetname = null,  $out_format = null, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postClearObjectsRequest($file, $objecttype);
+        $request = $this->postClearObjectsRequest($file, $objecttype, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1165,7 +1176,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postClearObjectsRequest($file, $objecttype, $sheetname = null,  $out_format = null)
+    protected function postClearObjectsRequest($file, $objecttype, $sheetname = null,  $out_format = null, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -1196,6 +1207,10 @@ class LightCellsApi
         }
         if ($out_format !== null) {
             $queryParams['outFormat'] = ObjectSerializer::toQueryValue($out_format);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
 
 
@@ -1303,10 +1318,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postExport($file, $object_type, $format, $extended_query_parameters = null)
+    public function postExport($file, $object_type, $format, $check_excel_restriction = 'true', $extended_query_parameters = null)
     {
         $this->checkAccessToken();
-        list($response) = $this->postExportWithHttpInfo($file, $object_type, $format, $extended_query_parameters);
+        list($response) = $this->postExportWithHttpInfo($file, $object_type, $format, $check_excel_restriction, $extended_query_parameters);
         return $response;
     }
 
@@ -1321,10 +1336,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postExportWithHttpInfo($file, $object_type, $format, $extended_query_parameters = null)
+    public function postExportWithHttpInfo($file, $object_type, $format, $check_excel_restriction = 'true', $extended_query_parameters = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postExportRequest($file, $object_type, $format, $extended_query_parameters);
+        $request = $this->postExportRequest($file, $object_type, $format, $check_excel_restriction , $extended_query_parameters);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1397,9 +1412,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postExportAsync($file, $object_type, $format, $extended_query_parameters = null)
+    public function postExportAsync($file, $object_type, $format, $check_excel_restriction = 'true', $extended_query_parameters = null)
     {
-        return $this->postExportAsyncWithHttpInfo($file, $object_type, $format, $extended_query_parameters)
+        return $this->postExportAsyncWithHttpInfo($file, $object_type, $format, $check_excel_restriction , $extended_query_parameters)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1419,10 +1434,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postExportAsyncWithHttpInfo($file, $object_type, $format, $extended_query_parameters = null)
+    public function postExportAsyncWithHttpInfo($file, $object_type, $format, $check_excel_restriction = 'true', $extended_query_parameters = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postExportRequest($file, $object_type, $format, $extended_query_parameters);
+        $request = $this->postExportRequest($file, $object_type, $format, $check_excel_restriction , $extended_query_parameters);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1471,7 +1486,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postExportRequest($file, $object_type, $format, $extended_query_parameters = null)
+    protected function postExportRequest($file, $object_type, $format, $check_excel_restriction = 'true', $extended_query_parameters = null)
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -1492,6 +1507,8 @@ class LightCellsApi
             );
         }
 
+
+
         $resourcePath = '/cells/export';
         $formParams = [];
         $queryParams = [];
@@ -1507,6 +1524,10 @@ class LightCellsApi
         if ($format !== null) {
             $queryParams['format'] = ObjectSerializer::toQueryValue($format);
         }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }        
         if($extended_query_parameters !== null){
             foreach($extended_query_parameters as $key => $value) {
                 $queryParams[$key] = ObjectSerializer::toQueryValue($value);
@@ -1617,10 +1638,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postMerge($file, $format = 'xlsx', $merge_to_one_sheet = 'false')
+    public function postMerge($file, $format = 'xlsx', $merge_to_one_sheet = 'false', $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postMergeWithHttpInfo($file, $format, $merge_to_one_sheet);
+        list($response) = $this->postMergeWithHttpInfo($file, $format, $merge_to_one_sheet, $check_excel_restriction );
         return $response;
     }
 
@@ -1635,10 +1656,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postMergeWithHttpInfo($file, $format = 'xlsx', $merge_to_one_sheet = 'false')
+    public function postMergeWithHttpInfo($file, $format = 'xlsx', $merge_to_one_sheet = 'false', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
-        $request = $this->postMergeRequest($file, $format, $merge_to_one_sheet);
+        $request = $this->postMergeRequest($file, $format, $merge_to_one_sheet, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1711,9 +1732,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postMergeAsync($file, $format = 'xlsx', $merge_to_one_sheet = 'false')
+    public function postMergeAsync($file, $format = 'xlsx', $merge_to_one_sheet = 'false', $check_excel_restriction = 'true')
     {
-        return $this->postMergeAsyncWithHttpInfo($file, $format, $merge_to_one_sheet)
+        return $this->postMergeAsyncWithHttpInfo($file, $format, $merge_to_one_sheet, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1733,10 +1754,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postMergeAsyncWithHttpInfo($file, $format = 'xlsx', $merge_to_one_sheet = 'false')
+    public function postMergeAsyncWithHttpInfo($file, $format = 'xlsx', $merge_to_one_sheet = 'false', $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
-        $request = $this->postMergeRequest($file, $format, $merge_to_one_sheet);
+        $request = $this->postMergeRequest($file, $format, $merge_to_one_sheet, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1785,7 +1806,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postMergeRequest($file, $format = 'xlsx', $merge_to_one_sheet = 'false')
+    protected function postMergeRequest($file, $format = 'xlsx', $merge_to_one_sheet = 'false', $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -1808,6 +1829,10 @@ class LightCellsApi
         // query params
         if ($merge_to_one_sheet !== null) {
             $queryParams['mergeToOneSheet'] = ObjectSerializer::toQueryValue($merge_to_one_sheet);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
 
 
@@ -2207,10 +2232,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postMetadata($file, $document_properties)
+    public function postMetadata($file, $document_properties, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postMetadataWithHttpInfo($file, $document_properties);
+        list($response) = $this->postMetadataWithHttpInfo($file, $document_propertie, $check_excel_restriction );
         return $response;
     }
 
@@ -2224,10 +2249,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postMetadataWithHttpInfo($file, $document_properties)
+    public function postMetadataWithHttpInfo($file, $document_properties, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postMetadataRequest($file, $document_properties);
+        $request = $this->postMetadataRequest($file, $document_properties, $check_excel_restriction );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2299,9 +2324,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postMetadataAsync($file, $document_properties)
+    public function postMetadataAsync($file, $document_properties, $check_excel_restriction = 'true')
     {
-        return $this->postMetadataAsyncWithHttpInfo($file, $document_properties)
+        return $this->postMetadataAsyncWithHttpInfo($file, $document_properties, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2320,10 +2345,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postMetadataAsyncWithHttpInfo($file, $document_properties)
+    public function postMetadataAsyncWithHttpInfo($file, $document_properties, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postMetadataRequest($file, $document_properties);
+        $request = $this->postMetadataRequest($file, $document_properties, $check_excel_restriction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2371,7 +2396,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postMetadataRequest($file, $document_properties)
+    protected function postMetadataRequest($file, $document_properties, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -2393,6 +2418,10 @@ class LightCellsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
 
 
         // form params
@@ -2798,10 +2827,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function postSearch($file, $text, $password = null, $sheetname = null)
+    public function postSearch($file, $text, $password = null, $sheetname = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postSearchWithHttpInfo($file, $text, $password, $sheetname);
+        list($response) = $this->postSearchWithHttpInfo($file, $text, $password, $sheetname, $check_excel_restriction );
         return $response;
     }
 
@@ -2817,10 +2846,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TextItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSearchWithHttpInfo($file, $text, $password = null, $sheetname = null)
+    public function postSearchWithHttpInfo($file, $text, $password = null, $sheetname = null, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TextItem[]';
-        $request = $this->postSearchRequest($file, $text, $password, $sheetname);
+        $request = $this->postSearchRequest($file, $text, $password, $sheetname, $check_excel_restriction );
 
         try {
             $options = $this->createHttpClientOption();
@@ -2894,9 +2923,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSearchAsync($file, $text, $password = null, $sheetname = null)
+    public function postSearchAsync($file, $text, $password = null, $sheetname = null, $check_excel_restriction = 'true')
     {
-        return $this->postSearchAsyncWithHttpInfo($file, $text, $password, $sheetname)
+        return $this->postSearchAsyncWithHttpInfo($file, $text, $password, $sheetname, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2917,10 +2946,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSearchAsyncWithHttpInfo($file, $text, $password = null, $sheetname = null)
+    public function postSearchAsyncWithHttpInfo($file, $text, $password = null, $sheetname = null, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\TextItem[]';
-        $request = $this->postSearchRequest($file, $text, $password, $sheetname);
+        $request = $this->postSearchRequest($file, $text, $password, $sheetname, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2970,7 +2999,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postSearchRequest($file, $text, $password = null, $sheetname = null)
+    protected function postSearchRequest($file, $text, $password = null, $sheetname = null, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -3003,6 +3032,10 @@ class LightCellsApi
         // query params
         if ($sheetname !== null) {
             $queryParams['sheetname'] = ObjectSerializer::toQueryValue($sheetname);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
 
 
@@ -3112,10 +3145,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postSplit($file, $format, $password = null, $from = null, $to = null)
+    public function postSplit($file, $format, $password = null, $from = null, $to = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postSplitWithHttpInfo($file, $format, $password, $from, $to);
+        list($response) = $this->postSplitWithHttpInfo($file, $format, $password, $from, $to, $check_excel_restriction );
         return $response;
     }
 
@@ -3132,10 +3165,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postSplitWithHttpInfo($file, $format, $password = null, $from = null, $to = null)
+    public function postSplitWithHttpInfo($file, $format, $password = null, $from = null, $to = null, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postSplitRequest($file, $format, $password, $from, $to);
+        $request = $this->postSplitRequest($file, $format, $password, $from, $to, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3210,9 +3243,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSplitAsync($file, $format, $password = null, $from = null, $to = null)
+    public function postSplitAsync($file, $format, $password = null, $from = null, $to = null, $check_excel_restriction = 'true')
     {
-        return $this->postSplitAsyncWithHttpInfo($file, $format, $password, $from, $to)
+        return $this->postSplitAsyncWithHttpInfo($file, $format, $password, $from, $to, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3234,10 +3267,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postSplitAsyncWithHttpInfo($file, $format, $password = null, $from = null, $to = null)
+    public function postSplitAsyncWithHttpInfo($file, $format, $password = null, $from = null, $to = null, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postSplitRequest($file, $format, $password, $from, $to);
+        $request = $this->postSplitRequest($file, $format, $password, $from, $to, $check_excel_restriction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3288,7 +3321,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postSplitRequest($file, $format, $password = null, $from = null, $to = null)
+    protected function postSplitRequest($file, $format, $password = null, $from = null, $to = null, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -3325,8 +3358,11 @@ class LightCellsApi
         // query params
         if ($to !== null) {
             $queryParams['to'] = ObjectSerializer::toQueryValue($to);
+        }        
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
-        
 
 
         // form params
@@ -3728,10 +3764,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postWatermark($file, $text, $color)
+    public function postWatermark($file, $text, $color, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postWatermarkWithHttpInfo($file, $text, $color);
+        list($response) = $this->postWatermarkWithHttpInfo($file, $text, $color, $check_excel_restriction );
         return $response;
     }
 
@@ -3746,10 +3782,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postWatermarkWithHttpInfo($file, $text, $color)
+    public function postWatermarkWithHttpInfo($file, $text, $color, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postWatermarkRequest($file, $text, $color);
+        $request = $this->postWatermarkRequest($file, $text, $color, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3822,9 +3858,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postWatermarkAsync($file, $text, $color)
+    public function postWatermarkAsync($file, $text, $color, $check_excel_restriction = 'true')
     {
-        return $this->postWatermarkAsyncWithHttpInfo($file, $text, $color)
+        return $this->postWatermarkAsyncWithHttpInfo($file, $text, $color, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3844,10 +3880,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postWatermarkAsyncWithHttpInfo($file, $text, $color)
+    public function postWatermarkAsyncWithHttpInfo($file, $text, $color, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postWatermarkRequest($file, $text, $color);
+        $request = $this->postWatermarkRequest($file, $text, $color, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3896,7 +3932,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postWatermarkRequest($file, $text, $color)
+    protected function postWatermarkRequest($file, $text, $color, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -3931,6 +3967,10 @@ class LightCellsApi
         // query params
         if ($color !== null) {
             $queryParams['color'] = ObjectSerializer::toQueryValue($color);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
 
 
@@ -4038,10 +4078,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postCompress($file, $compress_level)
+    public function postCompress($file, $compress_level, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postCompressWithHttpInfo($file, $compress_level);
+        list($response) = $this->postCompressWithHttpInfo($file, $compress_level, $check_excel_restriction );
         return $response;
     }
 
@@ -4055,10 +4095,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postCompressWithHttpInfo($file, $compress_level)
+    public function postCompressWithHttpInfo($file, $compress_level, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postCompressRequest($file, $compress_level);
+        $request = $this->postCompressRequest($file, $compress_level, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4131,9 +4171,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCompressAsync($file, $compress_level)
+    public function postCompressAsync($file, $compress_level, $check_excel_restriction = 'true')
     {
-        return $this->postCompressAsyncWithHttpInfo($file, $compress_level)
+        return $this->postCompressAsyncWithHttpInfo($file, $compress_level, $check_excel_restriction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4152,10 +4192,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postCompressAsyncAsyncWithHttpInfo($file, $compress_level)
+    public function postCompressAsyncAsyncWithHttpInfo($file, $compress_level, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->posttCompressRequest($file, $compress_level);
+        $request = $this->posttCompressRequest($file, $compress_level, $check_excel_restriction );
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4203,7 +4243,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postCompressRequest($file, $compress_level)
+    protected function postCompressRequest($file, $compress_level, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -4229,6 +4269,10 @@ class LightCellsApi
         // query params
         if ($compress_level !== null) {
             $queryParams['CompressLevel'] = ObjectSerializer::toQueryValue($compress_level);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
        
         // form params
@@ -4335,10 +4379,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postReplace($file, $text, $newtext,$password = null,$sheet_name = null)
+    public function postReplace($file, $text, $newtext,$password = null,$sheet_name = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postReplaceWithHttpInfo($file, $text, $newtext,$password,$sheet_name);
+        list($response) = $this->postReplaceWithHttpInfo($file, $text, $newtext,$password,$sheet_name, $check_excel_restriction );
         return $response;
     }
 
@@ -4355,10 +4399,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postReplaceWithHttpInfo($file, $text,$newtext,$password,$sheet_name)
+    public function postReplaceWithHttpInfo($file, $text,$newtext,$password,$sheet_name, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postReplaceRequest($file, $text, $newtext,$password,$sheet_name);
+        $request = $this->postReplaceRequest($file, $text, $newtext,$password,$sheet_name, $check_excel_restriction );
 
         try {
             $options = $this->createHttpClientOption();
@@ -4433,9 +4477,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postReplaceAsync($file, $text, $newtext,$password = null,$sheet_name = null)
+    public function postReplaceAsync($file, $text, $newtext,$password = null,$sheet_name = null, $check_excel_restriction = 'true')
     {
-        return $this->postReplaceAsyncWithHttpInfo($file, $text, $newtext,$password,$sheet_name)
+        return $this->postReplaceAsyncWithHttpInfo($file, $text, $newtext,$password,$sheet_name, $check_excel_restriction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4457,10 +4501,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postReplaceAsyncWithHttpInfo($file, $text,$newtext,$password,$sheet_name)
+    public function postReplaceAsyncWithHttpInfo($file, $text,$newtext,$password,$sheet_name, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postReplaceRequest($file, $text,$newtext,$password,$sheet_name);
+        $request = $this->postReplaceRequest($file, $text,$newtext,$password,$sheet_name, $check_excel_restriction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4511,7 +4555,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postReplaceRequest($file, $text, $newtext,$password,$sheet_name)
+    protected function postReplaceRequest($file, $text, $newtext,$password,$sheet_name, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -4555,6 +4599,11 @@ class LightCellsApi
         if ($sheet_name !== null) {
             $queryParams['sheetname'] = ObjectSerializer::toQueryValue($sheet_name);
         }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
+
         // form params
         if ($file !== null) {
             $multipart = true;
@@ -4660,10 +4709,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function postReverse($file, $rotateType, $format)
+    public function postReverse($file, $rotateType, $format, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postReverseWithHttpInfo($file, $rotateType, $format);
+        list($response) = $this->postReverseWithHttpInfo($file, $rotateType, $format, $check_excel_restriction );
         return $response;
     }
 
@@ -4678,10 +4727,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postReverseWithHttpInfo($file, $rotateType,$format)
+    public function postReverseWithHttpInfo($file, $rotateType,$format, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postReverseRequest($file, $rotateType, $format);
+        $request = $this->postReverseRequest($file, $rotateType, $format, $check_excel_restriction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4754,9 +4803,9 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postReverseAsync($file, $rotateType, $format)
+    public function postReverseAsync($file, $rotateType, $format, $check_excel_restriction = 'true')
     {
-        return $this->postReverseAsyncWithHttpInfo($file, $rotateType, $format)
+        return $this->postReverseAsyncWithHttpInfo($file, $rotateType, $format, $check_excel_restriction )
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4776,10 +4825,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postReverseAsyncWithHttpInfo($file, $rotateType,$newtext)
+    public function postReverseAsyncWithHttpInfo($file, $rotateType,$newtext, $check_excel_restriction = 'true')
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
-        $request = $this->postReverseRequest($file, $rotateType,$format);
+        $request = $this->postReverseRequest($file, $rotateType,$format, $check_excel_restriction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4828,7 +4877,7 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postReverseRequest($file, $rotateType, $format)
+    protected function postReverseRequest($file, $rotateType, $format, $check_excel_restriction = 'true')
     {
         // verify the required parameter 'file' is set
         if ($file === null) {
@@ -4863,6 +4912,10 @@ class LightCellsApi
         // query params
         if ($format !== null) {
             $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
         }
        
         // form params
