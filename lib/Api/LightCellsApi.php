@@ -119,10 +119,10 @@ class LightCellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesResult
      */
-    public function deleteMetadata($file, $type = 'all' ,$c)
+    public function deleteMetadata($file, $type = 'all' ,$check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->deleteMetadataWithHttpInfo($file, $type);
+        list($response) = $this->deleteMetadataWithHttpInfo($file, $type,$check_excel_restriction );
         return $response;
     }
 
@@ -2235,7 +2235,7 @@ class LightCellsApi
     public function postMetadata($file, $document_properties, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
-        list($response) = $this->postMetadataWithHttpInfo($file, $document_propertie, $check_excel_restriction );
+        list($response) = $this->postMetadataWithHttpInfo($file, $document_properties, $check_excel_restriction );
         return $response;
     }
 
