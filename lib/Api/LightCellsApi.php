@@ -5011,6 +5011,320 @@ class LightCellsApi
         );
     }
 
+    /**
+     * Operation postRotate
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $rotateType rotateType (required)
+     * @param  string $format format (required)
+
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\FilesResult
+     */
+    public function postRotate($file, $rotateType, $format, $check_excel_restriction = 'true')
+    {
+        $this->checkAccessToken();
+        list($response) = $this->postRotateWithHttpInfo($file, $rotateType, $format, $check_excel_restriction );
+        return $response;
+    }
+
+    /**
+     * Operation postRotateWithHttpInfo
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $rotateType (required)
+     * @param  string $format  (required)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\FilesResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postRotateWithHttpInfo($file, $rotateType,$format, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $request = $this->postRotateRequest($file, $rotateType, $format, $check_excel_restriction);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\FilesResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postRotateAsync
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $rotateType (required)
+     * @param  string $format  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postRotateAsync($file, $rotateType, $format, $check_excel_restriction = 'true')
+    {
+        return $this->postRotateAsyncWithHttpInfo($file, $rotateType, $format, $check_excel_restriction )
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postReversAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $rotateType (required)
+     * @param  string $format  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postRotateAsyncWithHttpInfo($file, $rotateType,$newtext, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $request = $this->postRotateRequest($file, $rotateType,$format, $check_excel_restriction);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postRotate'
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $rotateType (required)
+     * @param  string $format  (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postRotateRequest($file, $rotateType, $format, $check_excel_restriction = 'true')
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling postReplace'
+            );
+        }
+        // verify the required parameter 'text' is set
+        if ($rotateType === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $text when calling postReplace'
+            );
+        }
+        // verify the required parameter 'color' is set
+        if ($format === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $newtext when calling postReplace'
+            );
+        }
+
+        $resourcePath = '/cells/rotate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($rotateType !== null) {
+            $queryParams['rotateType'] = ObjectSerializer::toQueryValue($rotateType);
+        }
+        // query params
+        if ($format !== null) {
+            $queryParams['format'] = ObjectSerializer::toQueryValue($format);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
+       
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            if( is_array($file)){
+                foreach($file as $key => $value) {
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
+            }
+            
+        }
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('postWatermark'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
 
     /**
      * Create http client option
