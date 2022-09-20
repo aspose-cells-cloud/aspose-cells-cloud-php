@@ -90639,6 +90639,899 @@ class CellsApi
             $httpBody
         );
     }
+    /**
+     * Operation postConvertWorkbookToDocx
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password password (optional)
+     * @param  bool $check_excel_restriction check_excel_restriction (optional, default to true)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function postConvertWorkbookToDocx($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $this->checkAccessToken();
+        list($response) = $this->postConvertWorkbookToDocxWithHttpInfo($file, $password, $check_excel_restriction);
+        return $response;
+    }
+
+    /**
+     * Operation postConvertWorkbookToDocxWithHttpInfo
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postConvertWorkbookToDocxWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $request = $this->postConvertWorkbookToDocxRequest($file, $password, $check_excel_restriction);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\FileInfo',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postConvertWorkbookToDocxAsync
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postConvertWorkbookToDocxAsync($file, $password = null, $check_excel_restriction = 'true')
+    {
+        return $this->postConvertWorkbookToDocxAsyncWithHttpInfo($file, $password, $check_excel_restriction)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postConvertWorkbookToDocxAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postConvertWorkbookToDocxAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $request = $this->postConvertWorkbookToDocxRequest($file, $password, $check_excel_restriction);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postConvertWorkbookToDocx'
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postConvertWorkbookToDocxRequest($file, $password = null, $check_excel_restriction = 'true')
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling postConvertWorkbookToDocx'
+            );
+        }
+
+        $resourcePath = '/cells/convert/docx';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($password);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
+
+
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            if( is_array($file)){
+                foreach($file as $key => $value) {
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams['file'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
+            }
+            
+        }
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('postConvertWorkbookToDocx'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postConvertWorkbookToPDF
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password password (optional)
+     * @param  bool $check_excel_restriction check_excel_restriction (optional, default to true)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function postConvertWorkbookToPDF($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $this->checkAccessToken();
+        list($response) = $this->postConvertWorkbookToPDFWithHttpInfo($file, $password, $check_excel_restriction);
+        return $response;
+    }
+
+    /**
+     * Operation postConvertWorkbookToPDFWithHttpInfo
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postConvertWorkbookToPDFWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $request = $this->postConvertWorkbookToPDFRequest($file, $password, $check_excel_restriction);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\FileInfo',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postConvertWorkbookToPDFAsync
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postConvertWorkbookToPDFAsync($file, $password = null, $check_excel_restriction = 'true')
+    {
+        return $this->postConvertWorkbookToPDFAsyncWithHttpInfo($file, $password, $check_excel_restriction)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postConvertWorkbookToPDFAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postConvertWorkbookToPDFAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $request = $this->postConvertWorkbookToPDFRequest($file, $password, $check_excel_restriction);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postConvertWorkbookToPDF'
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postConvertWorkbookToPDFRequest($file, $password = null, $check_excel_restriction = 'true')
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling postConvertWorkbookToPDF'
+            );
+        }
+
+        $resourcePath = '/cells/convert/pdf';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($password);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
+
+
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            if( is_array($file)){
+                foreach($file as $key => $value) {
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams['file'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
+            }
+            
+        }
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('postConvertWorkbookToPDF'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation postConvertWorkbookToPNG
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password password (optional)
+     * @param  bool $check_excel_restriction check_excel_restriction (optional, default to true)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function postConvertWorkbookToPNG($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $this->checkAccessToken();
+        list($response) = $this->postConvertWorkbookToPNGWithHttpInfo($file, $password, $check_excel_restriction);
+        return $response;
+    }
+
+    /**
+     * Operation postConvertWorkbookToPNGWithHttpInfo
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postConvertWorkbookToPNGWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $request = $this->postConvertWorkbookToPNGRequest($file, $password, $check_excel_restriction);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\FileInfo',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postConvertWorkbookToPNGAsync
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postConvertWorkbookToPNGAsync($file, $password = null, $check_excel_restriction = 'true')
+    {
+        return $this->postConvertWorkbookToPNGAsyncWithHttpInfo($file, $password, $check_excel_restriction)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postConvertWorkbookToPNGAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postConvertWorkbookToPNGAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $request = $this->postConvertWorkbookToPNGRequest($file, $password, $check_excel_restriction);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postConvertWorkbookToPNG'
+     *
+     * @param  \SplFileObject $file File to upload (required)
+     * @param  string $password (optional)
+     * @param  bool $check_excel_restriction (optional, default to true)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function postConvertWorkbookToPNGRequest($file, $password = null, $check_excel_restriction = 'true')
+    {
+        // verify the required parameter 'file' is set
+        if ($file === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $file when calling postConvertWorkbookToPNG'
+            );
+        }
+
+        $resourcePath = '/cells/convert/png';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($password);
+        }
+        // query params
+        if ($check_excel_restriction !== null) {
+            $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($check_excel_restriction);
+        }
+
+
+        // form params
+        if ($file !== null) {
+            $multipart = true;
+            if( is_array($file)){
+                foreach($file as $key => $value) {
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams['file'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($file), 'rb');
+            }
+            
+        }
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('postConvertWorkbookToPNG'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
 
     /**
      * Operation storageExists

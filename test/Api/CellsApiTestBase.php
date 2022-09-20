@@ -30,7 +30,7 @@ class CellsApiTestBase
     }
     public static function getLiteInstance()
     {
-       return new LightCellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+       return new LightCellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
     }
     public static function isDockerSDK()
     {  
