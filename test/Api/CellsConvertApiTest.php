@@ -139,4 +139,64 @@ class CellsConvertApiTest extends \PHPUnit_Framework_TestCase
         // $contents = $result->fread($result->getSize());
         $this->assertGreaterThan(6000, $result->getFileSize(), "convert files error.");
     }
+
+    public function testCellsConvertPptxApiTest()
+    {
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->postConvertWorkbookToPptx( $path);
+        // $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(6000, $result->getFileSize(), "convert files error.");
+    }
+
+    public function testCellsConvertHtmlApiTest()
+    {
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->postConvertWorkbookToHtml( $path);
+        // $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(6000, $result->getFileSize(), "convert files error.");
+    }
+
+    public function testCellsConvertMarkdownApiTest()
+    {
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->postConvertWorkbookToMarkdown( $path);
+        // $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(1000, $result->getFileSize(), "convert files error.");
+    }
 }
