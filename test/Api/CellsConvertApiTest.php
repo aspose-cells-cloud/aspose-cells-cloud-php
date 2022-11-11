@@ -197,6 +197,65 @@ class CellsConvertApiTest extends \PHPUnit_Framework_TestCase
         }
         $result = $this->instance->postConvertWorkbookToMarkdown( $path);
         // $contents = $result->fread($result->getSize());
+        $this->
+        assertGreaterThan(1000, $result->getFileSize(), "convert files error.");
+    }
+
+    public function testCellsConvertJsonApiTest()
+    {
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->postConvertWorkbookToJson( $path);
+        // $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(1000, $result->getFileSize(), "convert files error.");
+    }
+    public function testCellsConvertSQLApiTest()
+    {
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->postConvertWorkbookToSQL( $path);
+        // $contents = $result->fread($result->getSize());
+        $this->assertGreaterThan(1000, $result->getFileSize(), "convert files error.");
+    }
+    public function testCellsConvertCSVApiTest()
+    {
+        $outPath = null;      
+        $cwd = getcwd();
+        $parents = "/";
+        $name = "TestData/Book1.xlsx";
+        $file = null;
+        for ($x=0; $x <= 10; $x++) {
+            $path = $cwd . $parents . $name;
+            if (file_exists($path)) {
+                $file = file_get_contents($path);
+                break;
+            }
+            $parents = $parents . "../";
+        }
+        $result = $this->instance->postConvertWorkbookToCSV( $path);
+        // $contents = $result->fread($result->getSize());
         $this->assertGreaterThan(1000, $result->getFileSize(), "convert files error.");
     }
 }
