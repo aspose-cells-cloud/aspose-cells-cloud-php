@@ -7926,6 +7926,1685 @@ class CellsApi
             $httpBody
         );
     }
+    /**
+     * Operation cellsChartsGetChartCategoryAxis
+     *
+     * Get chart Category Axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\AxisResponse
+     */
+    public function cellsChartsGetChartCategoryAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsGetChartCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsGetChartCategoryAxisWithHttpInfo
+     *
+     * Get chart Category Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsGetChartCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartCategoryAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\AxisResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsGetChartCategoryAxisAsync
+     *
+     * Get chart Category Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartCategoryAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsGetChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsGetChartCategoryAxisAsyncWithHttpInfo
+     *
+     * Get chart Category Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartCategoryAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsGetChartCategoryAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsGetChartCategoryAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsGetChartCategoryAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsGetChartCategoryAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsGetChartCategoryAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/categoryaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsGetChartCategoryAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondCategoryAxis
+     *
+     * Get chart second category axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\AxisResponse
+     */
+    public function cellsChartsGetChartSecondCategoryAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsGetChartSecondCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondCategoryAxisWithHttpInfo
+     *
+     * Get chart second category axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsGetChartSecondCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\AxisResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondCategoryAxisAsync
+     *
+     * Get chart second category axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartSecondCategoryAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsGetChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondCategoryAxisAsyncWithHttpInfo
+     *
+     * Get chart second category axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsGetChartSecondCategoryAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsGetChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsGetChartSecondCategoryAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsGetChartSecondCategoryAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsGetChartSecondCategoryAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondcategoryaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsGetChartSecondCategoryAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondValueAxis
+     *
+     * Get chart second value axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\AxisResponse
+     */
+    public function cellsChartsGetChartSecondValueAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsGetChartSecondValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondValueAxisWithHttpInfo
+     *
+     * Get chart second value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsGetChartSecondValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\AxisResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondValueAxisAsync
+     *
+     * Get chart second value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartSecondValueAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsGetChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsGetChartSecondValueAxisAsyncWithHttpInfo
+     *
+     * Get chart second value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsGetChartSecondValueAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsGetChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsGetChartSecondValueAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsGetChartSecondValueAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsGetChartSecondValueAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsGetChartSecondValueAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsGetChartSeriesAxis
+     *
+     * Get chart Series Axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\AxisResponse
+     */
+    public function cellsChartsGetChartSeriesAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsGetChartSeriesAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsGetChartSeriesAxisWithHttpInfo
+     *
+     * Get chart Series Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsGetChartSeriesAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartSeriesAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\AxisResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsGetChartSeriesAxisAsync
+     *
+     * Get chart Series Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartSeriesAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsGetChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsGetChartSeriesAxisAsyncWithHttpInfo
+     *
+     * Get chart Series Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartSeriesAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsGetChartSeriesAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsGetChartSeriesAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsGetChartSeriesAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsGetChartSeriesAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsGetChartSeriesAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/seriesaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsGetChartSeriesAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsGetChartValueAxis
+     *
+     * Get chart Value Axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\AxisResponse
+     */
+    public function cellsChartsGetChartValueAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsGetChartValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsGetChartValueAxisWithHttpInfo
+     *
+     * Get chart Value Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsGetChartValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartValueAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\AxisResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsGetChartValueAxisAsync
+     *
+     * Get chart Value Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartValueAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsGetChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsGetChartValueAxisAsyncWithHttpInfo
+     *
+     * Get chart Value Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsGetChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $request = $this->cellsChartsGetChartValueAxisRequest($name, $sheet_name, $chart_index, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsGetChartValueAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsGetChartValueAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsGetChartValueAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsGetChartValueAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsGetChartValueAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsGetChartValueAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
 
     /**
      * Operation cellsChartsGetWorksheetChart
@@ -9255,6 +10934,1761 @@ class CellsApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+       /**
+     * Operation cellsChartsPostChartCategoryAxis
+     *
+     * Update chart Category Axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis axis (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsChartsPostChartCategoryAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsPostChartCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsPostChartCategoryAxisWithHttpInfo
+     *
+     * Update chart Category Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsPostChartCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsPostChartCategoryAxisAsync
+     *
+     * Update chart Category Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartCategoryAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsPostChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsPostChartCategoryAxisAsyncWithHttpInfo
+     *
+     * Update chart Category Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsPostChartCategoryAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsPostChartCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsPostChartCategoryAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsPostChartCategoryAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsPostChartCategoryAxis'
+            );
+        }
+        // verify the required parameter 'axis' is set
+        if ($axis === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $axis when calling cellsChartsPostChartCategoryAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/categoryaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+        if (isset($axis)) {
+            $_tempBody = $axis;
+            $_tempBodyName =str_replace('_','', 'axis');
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsPostChartCategoryAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondCategoryAxis
+     *
+     * Update chart second category axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis axis (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsChartsPostChartSecondCategoryAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsPostChartSecondCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondCategoryAxisWithHttpInfo
+     *
+     * Update chart second category axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsPostChartSecondCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondCategoryAxisAsync
+     *
+     * Update chart second category axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartSecondCategoryAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsPostChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondCategoryAxisAsyncWithHttpInfo
+     *
+     * Update chart second category axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsPostChartSecondCategoryAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsPostChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsPostChartSecondCategoryAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsPostChartSecondCategoryAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsPostChartSecondCategoryAxis'
+            );
+        }
+        // verify the required parameter 'axis' is set
+        if ($axis === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $axis when calling cellsChartsPostChartSecondCategoryAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondcategoryaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+        if (isset($axis)) {
+            $_tempBody = $axis;
+            $_tempBodyName =str_replace('_','', 'axis');
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsPostChartSecondCategoryAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondValueAxis
+     *
+     * Update chart second value axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis axis (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsChartsPostChartSecondValueAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsPostChartSecondValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondValueAxisWithHttpInfo
+     *
+     * Update chart second value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsPostChartSecondValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondValueAxisAsync
+     *
+     * Update chart second value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartSecondValueAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsPostChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsPostChartSecondValueAxisAsyncWithHttpInfo
+     *
+     * Update chart second value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsPostChartSecondValueAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsPostChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsPostChartSecondValueAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsPostChartSecondValueAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsPostChartSecondValueAxis'
+            );
+        }
+        // verify the required parameter 'axis' is set
+        if ($axis === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $axis when calling cellsChartsPostChartSecondValueAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+        if (isset($axis)) {
+            $_tempBody = $axis;
+            $_tempBodyName =str_replace('_','', 'axis');
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsPostChartSecondValueAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsPostChartSeriesAxis
+     *
+     * Update chart Series Axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis axis (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsChartsPostChartSeriesAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsPostChartSeriesAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsPostChartSeriesAxisWithHttpInfo
+     *
+     * Update chart Series Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsPostChartSeriesAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartSeriesAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsPostChartSeriesAxisAsync
+     *
+     * Update chart Series Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartSeriesAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsPostChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsPostChartSeriesAxisAsyncWithHttpInfo
+     *
+     * Update chart Series Axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartSeriesAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsPostChartSeriesAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsPostChartSeriesAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsPostChartSeriesAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsPostChartSeriesAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsPostChartSeriesAxis'
+            );
+        }
+        // verify the required parameter 'axis' is set
+        if ($axis === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $axis when calling cellsChartsPostChartSeriesAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/seriesaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+        if (isset($axis)) {
+            $_tempBody = $axis;
+            $_tempBodyName =str_replace('_','', 'axis');
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsPostChartSeriesAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cellsChartsPostChartValueAxis
+     *
+     * Update chart value axis
+     *
+     * @param  string $name name (required)
+     * @param  string $sheet_name sheet_name (required)
+     * @param  int $chart_index chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis axis (required)
+     * @param  string $folder folder (optional)
+     * @param  string $storage_name storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
+     */
+    public function cellsChartsPostChartValueAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $this->checkAccessToken();
+        list($response) = $this->cellsChartsPostChartValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+        return $response;
+    }
+
+    /**
+     * Operation cellsChartsPostChartValueAxisWithHttpInfo
+     *
+     * Update chart value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cellsChartsPostChartValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Aspose\Cells\Cloud\Model\CellsCloudResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cellsChartsPostChartValueAxisAsync
+     *
+     * Update chart value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartValueAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        return $this->cellsChartsPostChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cellsChartsPostChartValueAxisAsyncWithHttpInfo
+     *
+     * Update chart value axis
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cellsChartsPostChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $request = $this->cellsChartsPostChartValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder, $storage_name);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cellsChartsPostChartValueAxis'
+     *
+     * @param  string $name (required)
+     * @param  string $sheet_name (required)
+     * @param  int $chart_index (required)
+     * @param  \Aspose\Cells\Cloud\Model\Axis $axis (required)
+     * @param  string $folder (optional)
+     * @param  string $storage_name (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function cellsChartsPostChartValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
+    {
+        // verify the required parameter 'name' is set
+        if ($name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling cellsChartsPostChartValueAxis'
+            );
+        }
+        // verify the required parameter 'sheet_name' is set
+        if ($sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling cellsChartsPostChartValueAxis'
+            );
+        }
+        // verify the required parameter 'chart_index' is set
+        if ($chart_index === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $chart_index when calling cellsChartsPostChartValueAxis'
+            );
+        }
+        // verify the required parameter 'axis' is set
+        if ($axis === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $axis when calling cellsChartsPostChartValueAxis'
+            );
+        }
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($folder);
+        }
+        // query params
+        if ($storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($storage_name);
+        }
+
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($sheet_name),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($chart_index !== null) {
+            $resourcePath = str_replace(
+                '{' . 'chartIndex' . '}',
+                ObjectSerializer::toPathValue($chart_index),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        $_tempBodyName ;
+        if (isset($axis)) {
+            $_tempBody = $axis;
+            $_tempBodyName =str_replace('_','', 'axis');
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                if (isset($_tempBody)) {
+                    $httpBody = $_tempBody;
+                    $multipartContents[] = [
+                        'name' =>$_tempBodyName ,
+                        'filename' =>$_tempBodyName ,
+                        'contents' => json_encode( ObjectSerializer::sanitizeForSerialization($httpBody)) 
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }elseif (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+            else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
+                $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+            }
+            else if('cellsChartsPostChartValueAxis'==='cellsSaveAsPostDocumentSaveAs'){
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if($this->config->getAccessToken()!==''){
+            $defaultHeaders['Authorization']= 'Bearer ' . $this->config->getAccessToken();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query =  \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -90897,7 +94331,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -91195,7 +94629,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -91493,7 +94927,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -91791,7 +95225,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -92088,7 +95522,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -92385,7 +95819,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -92683,7 +96117,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -92981,7 +96415,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
@@ -93281,7 +96715,7 @@ class CellsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody =  \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }elseif (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
