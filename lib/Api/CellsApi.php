@@ -35,7 +35,681 @@ use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
-
+use Aspose\Cells\Cloud\Request\GetWorksheetAutoFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetDateFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetIconFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetCustomFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetDynamicFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetFilterTop10Request;
+use Aspose\Cells\Cloud\Request\PutWorksheetColorFilterRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetMatchBlanksRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetMatchNonBlanksRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetAutoFilterRefreshRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetDateFilterRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetFilterRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetAutoshapesRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetAutoshapeWithFormatRequest;
+use Aspose\Cells\Cloud\Request\PostBatchConvertRequest;
+use Aspose\Cells\Cloud\Request\GetExtractBarcodesRequest;
+use Aspose\Cells\Cloud\Request\PostClearContentsRequest;
+use Aspose\Cells\Cloud\Request\PostClearFormatsRequest;
+use Aspose\Cells\Cloud\Request\PostUpdateWorksheetRangeStyleRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetMergeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetUnmergeRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCellsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCellRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCellStyleRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellSetValueRequest;
+use Aspose\Cells\Cloud\Request\PostUpdateWorksheetCellStyleRequest;
+use Aspose\Cells\Cloud\Request\PostSetCellRangeValueRequest;
+use Aspose\Cells\Cloud\Request\PostCopyCellIntoCellRequest;
+use Aspose\Cells\Cloud\Request\GetCellHtmlStringRequest;
+use Aspose\Cells\Cloud\Request\PostSetCellHtmlStringRequest;
+use Aspose\Cells\Cloud\Request\PostCellCalculateRequest;
+use Aspose\Cells\Cloud\Request\PostCellCharactersRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostSetWorksheetColumnWidthRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetColumnRequest;
+use Aspose\Cells\Cloud\Request\PutInsertWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostHideWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostUnhideWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostGroupWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostUngroupWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostCopyWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PostColumnStyleRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetRowRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetRowRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PutInsertWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PutInsertWorksheetRowRequest;
+use Aspose\Cells\Cloud\Request\PostUpdateWorksheetRowRequest;
+use Aspose\Cells\Cloud\Request\PostHideWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PostUnhideWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PostGroupWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PostUngroupWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PostCopyWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PostRowStyleRequest;
+use Aspose\Cells\Cloud\Request\GetCellsCloudServicesHealthCheckRequest;
+use Aspose\Cells\Cloud\Request\GetCellsCloudServiceStatusRequest;
+use Aspose\Cells\Cloud\Request\GetChartAreaRequest;
+use Aspose\Cells\Cloud\Request\GetChartAreaFillFormatRequest;
+use Aspose\Cells\Cloud\Request\GetChartAreaBorderRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetChartsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetChartRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetAddChartRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetDeleteChartRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetChartRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetChartLegendRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetChartLegendRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetChartLegendRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetChartLegendRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetClearChartsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetChartTitleRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetChartTitleRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetChartTitleRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetChartTitleRequest;
+use Aspose\Cells\Cloud\Request\GetChartSeriesAxisRequest;
+use Aspose\Cells\Cloud\Request\GetChartCategoryAxisRequest;
+use Aspose\Cells\Cloud\Request\GetChartValueAxisRequest;
+use Aspose\Cells\Cloud\Request\GetChartSecondCategoryAxisRequest;
+use Aspose\Cells\Cloud\Request\GetChartSecondValueAxisRequest;
+use Aspose\Cells\Cloud\Request\PostChartSeriesAxisRequest;
+use Aspose\Cells\Cloud\Request\PostChartCategoryAxisRequest;
+use Aspose\Cells\Cloud\Request\PostChartValueAxisRequest;
+use Aspose\Cells\Cloud\Request\PostChartSecondCategoryAxisRequest;
+use Aspose\Cells\Cloud\Request\PostChartSecondValueAxisRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetConditionalFormattingsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetConditionalFormattingRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetConditionalFormattingRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetFormatConditionRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetFormatConditionAreaRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetFormatConditionConditionRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetConditionalFormattingsRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetConditionalFormattingRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetConditionalFormattingAreaRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookRequest;
+use Aspose\Cells\Cloud\Request\PutConvertWorkbookRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookSaveAsRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToPDFRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToPNGRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToDocxRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToPptxRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToHtmlRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToMarkdownRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToJsonRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToSQLRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookToCSVRequest;
+use Aspose\Cells\Cloud\Request\GetWorkSheetHyperlinksRequest;
+use Aspose\Cells\Cloud\Request\GetWorkSheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorkSheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\PostWorkSheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\PutWorkSheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorkSheetHyperlinksRequest;
+use Aspose\Cells\Cloud\Request\PostAssembleRequest;
+use Aspose\Cells\Cloud\Request\PostCompressRequest;
+use Aspose\Cells\Cloud\Request\PostExportRequest;
+use Aspose\Cells\Cloud\Request\PostMergeRequest;
+use Aspose\Cells\Cloud\Request\PostUnlockRequest;
+use Aspose\Cells\Cloud\Request\PostProtectRequest;
+use Aspose\Cells\Cloud\Request\PostSplitRequest;
+use Aspose\Cells\Cloud\Request\PostSearchRequest;
+use Aspose\Cells\Cloud\Request\PostReplaceRequest;
+use Aspose\Cells\Cloud\Request\PostImportRequest;
+use Aspose\Cells\Cloud\Request\PostWatermarkRequest;
+use Aspose\Cells\Cloud\Request\PostClearObjectsRequest;
+use Aspose\Cells\Cloud\Request\PostReverseRequest;
+use Aspose\Cells\Cloud\Request\PostRotateRequest;
+use Aspose\Cells\Cloud\Request\PostMetadataRequest;
+use Aspose\Cells\Cloud\Request\GetMetadataRequest;
+use Aspose\Cells\Cloud\Request\DeleteMetadataRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetListObjectsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetListObjectRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetListObjectRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetListObjectsRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetListObjectRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListObjectRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListObjectConvertToRangeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListObjectSummarizeWithPivotTableRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListObjectSortTableRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListColumnRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListColumnsTotalRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetOleObjectsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetOleObjectRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetOleObjectsRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetOleObjectRequest;
+use Aspose\Cells\Cloud\Request\PostUpdateWorksheetOleObjectRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetOleObjectRequest;
+use Aspose\Cells\Cloud\Request\GetVerticalPageBreaksRequest;
+use Aspose\Cells\Cloud\Request\GetHorizontalPageBreaksRequest;
+use Aspose\Cells\Cloud\Request\GetVerticalPageBreakRequest;
+use Aspose\Cells\Cloud\Request\GetHorizontalPageBreakRequest;
+use Aspose\Cells\Cloud\Request\PutVerticalPageBreakRequest;
+use Aspose\Cells\Cloud\Request\PutHorizontalPageBreakRequest;
+use Aspose\Cells\Cloud\Request\DeleteVerticalPageBreaksRequest;
+use Aspose\Cells\Cloud\Request\DeleteHorizontalPageBreaksRequest;
+use Aspose\Cells\Cloud\Request\DeleteVerticalPageBreakRequest;
+use Aspose\Cells\Cloud\Request\DeleteHorizontalPageBreakRequest;
+use Aspose\Cells\Cloud\Request\GetPageSetupRequest;
+use Aspose\Cells\Cloud\Request\PostPageSetupRequest;
+use Aspose\Cells\Cloud\Request\DeleteHeaderFooterRequest;
+use Aspose\Cells\Cloud\Request\GetHeaderRequest;
+use Aspose\Cells\Cloud\Request\PostHeaderRequest;
+use Aspose\Cells\Cloud\Request\GetFooterRequest;
+use Aspose\Cells\Cloud\Request\PostFooterRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPicturesRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPictureWithFormatRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetAddPictureRequest;
+use Aspose\Cells\Cloud\Request\PostWorkSheetPictureRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetPictureRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorkSheetPicturesRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPivotTablesRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPivotTableRequest;
+use Aspose\Cells\Cloud\Request\GetPivotTableFieldRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPivotTableFiltersRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPivotTableFilterRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetPivotTableRequest;
+use Aspose\Cells\Cloud\Request\PutPivotTableFieldRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetPivotTableFilterRequest;
+use Aspose\Cells\Cloud\Request\PostPivotTableFieldHideItemRequest;
+use Aspose\Cells\Cloud\Request\PostPivotTableFieldMoveToRequest;
+use Aspose\Cells\Cloud\Request\PostPivotTableCellStyleRequest;
+use Aspose\Cells\Cloud\Request\PostPivotTableStyleRequest;
+use Aspose\Cells\Cloud\Request\PostPivotTableUpdatePivotFieldsRequest;
+use Aspose\Cells\Cloud\Request\PostPivotTableUpdatePivotFieldRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetPivotTableCalculateRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetPivotTableMoveRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetPivotTablesRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetPivotTableRequest;
+use Aspose\Cells\Cloud\Request\DeletePivotTableFieldRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetPivotTableFiltersRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetPivotTableFilterRequest;
+use Aspose\Cells\Cloud\Request\GetDocumentPropertiesRequest;
+use Aspose\Cells\Cloud\Request\GetDocumentPropertyRequest;
+use Aspose\Cells\Cloud\Request\PutDocumentPropertyRequest;
+use Aspose\Cells\Cloud\Request\DeleteDocumentPropertyRequest;
+use Aspose\Cells\Cloud\Request\DeleteDocumentPropertiesRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMergeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeUnMergeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeStyleRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCellsRangeValueRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeValueRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMoveToRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeOutlineBorderRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeColumnWidthRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeRowHeightRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetCellsRangeRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetCellsRangeRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetShapesRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetShapeRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetShapeRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetShapesRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetShapeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetShapeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetGroupShapeRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetUngroupShapeRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetSparklineGroupsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetSparklineGroupRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetSparklineGroupsRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetSparklineGroupRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetSparklineGroupRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetSparklineGroupRequest;
+use Aspose\Cells\Cloud\Request\PostRunTaskRequest;
+use Aspose\Cells\Cloud\Request\PostDigitalSignatureRequest;
+use Aspose\Cells\Cloud\Request\PostEncryptWorkbookRequest;
+use Aspose\Cells\Cloud\Request\DeleteDecryptWorkbookRequest;
+use Aspose\Cells\Cloud\Request\PostProtectWorkbookRequest;
+use Aspose\Cells\Cloud\Request\DeleteUnProtectWorkbookRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookDefaultStyleRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookTextItemsRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookNamesRequest;
+use Aspose\Cells\Cloud\Request\PutWorkbookNameRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookNameRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookNameRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookNameValueRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorkbookNamesRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorkbookNameRequest;
+use Aspose\Cells\Cloud\Request\PutDocumentProtectFromChangesRequest;
+use Aspose\Cells\Cloud\Request\DeleteDocumentUnProtectFromChangesRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbooksMergeRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbooksTextSearchRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookTextReplaceRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookGetSmartMarkerResultRequest;
+use Aspose\Cells\Cloud\Request\PutWorkbookCreateRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookSplitRequest;
+use Aspose\Cells\Cloud\Request\PostImportDataRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookCalculateFormulaRequest;
+use Aspose\Cells\Cloud\Request\PostAutofitWorkbookRowsRequest;
+use Aspose\Cells\Cloud\Request\PostAutofitWorkbookColumnsRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookSettingsRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookSettingsRequest;
+use Aspose\Cells\Cloud\Request\PutWorkbookBackgroundRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorkbookBackgroundRequest;
+use Aspose\Cells\Cloud\Request\PutWorkbookWaterMarkerRequest;
+use Aspose\Cells\Cloud\Request\GetPageCountRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetWithFormatRequest;
+use Aspose\Cells\Cloud\Request\PutChangeVisibilityWorksheetRequest;
+use Aspose\Cells\Cloud\Request\PutActiveWorksheetRequest;
+use Aspose\Cells\Cloud\Request\PutInsertNewWorksheetRequest;
+use Aspose\Cells\Cloud\Request\PutAddNewWorksheetRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetsRequest;
+use Aspose\Cells\Cloud\Request\PostMoveWorksheetRequest;
+use Aspose\Cells\Cloud\Request\PutProtectWorksheetRequest;
+use Aspose\Cells\Cloud\Request\DeleteUnprotectWorksheetRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetTextItemsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCommentsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCommentRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetCommentRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCommentRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetCommentRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetCommentsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetMergedCellsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetMergedCellRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetCalculateFormulaRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCalculateFormulaRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetTextSearchRequest;
+use Aspose\Cells\Cloud\Request\PostWorsheetTextReplaceRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetRangeSortRequest;
+use Aspose\Cells\Cloud\Request\PostAutofitWorksheetRowRequest;
+use Aspose\Cells\Cloud\Request\PostAutofitWorksheetRowsRequest;
+use Aspose\Cells\Cloud\Request\PostAutofitWorksheetColumnsRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetBackgroundRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetBackgroundRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetFreezePanesRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetFreezePanesRequest;
+use Aspose\Cells\Cloud\Request\PostCopyWorksheetRequest;
+use Aspose\Cells\Cloud\Request\PostRenameWorksheetRequest;
+use Aspose\Cells\Cloud\Request\PostUpdateWorksheetPropertyRequest;
+use Aspose\Cells\Cloud\Request\GetNamedRangesRequest;
+use Aspose\Cells\Cloud\Request\GetNamedRangeValueRequest;
+use Aspose\Cells\Cloud\Request\PostUpdateWorksheetZoomRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetPageCountRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetValidationsRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetValidationRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetValidationRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetValidationRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetValidationRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetValidationsRequest;
+use Aspose\Cells\Cloud\Request\DownloadFileRequest;
+use Aspose\Cells\Cloud\Request\UploadFileRequest;
+use Aspose\Cells\Cloud\Request\CopyFileRequest;
+use Aspose\Cells\Cloud\Request\MoveFileRequest;
+use Aspose\Cells\Cloud\Request\DeleteFileRequest;
+use Aspose\Cells\Cloud\Request\GetFilesListRequest;
+use Aspose\Cells\Cloud\Request\CreateFolderRequest;
+use Aspose\Cells\Cloud\Request\CopyFolderRequest;
+use Aspose\Cells\Cloud\Request\MoveFolderRequest;
+use Aspose\Cells\Cloud\Request\DeleteFolderRequest;
+use Aspose\Cells\Cloud\Request\StorageExistsRequest;
+use Aspose\Cells\Cloud\Request\ObjectExistsRequest;
+use Aspose\Cells\Cloud\Request\GetDiscUsageRequest;
+use Aspose\Cells\Cloud\Request\GetFileVersionsRequest;
+use Aspose\Cells\Cloud\Model\DiscUsage;
+use Aspose\Cells\Cloud\Model\ObjectExist;
+use Aspose\Cells\Cloud\Model\ObjectExistsExtensions;
+use Aspose\Cells\Cloud\Model\FileVersion;
+use Aspose\Cells\Cloud\Model\StorageExist;
+use Aspose\Cells\Cloud\Model\FileVersions;
+use Aspose\Cells\Cloud\Model\FilesList;
+use Aspose\Cells\Cloud\Model\FilesUploadResult;
+use Aspose\Cells\Cloud\Model\StorageFile;
+use Aspose\Cells\Cloud\Model\GoogleDriveStorageFile;
+use Aspose\Cells\Cloud\Model\AboveAverage;
+use Aspose\Cells\Cloud\Model\AutoFilter;
+use Aspose\Cells\Cloud\Model\AutoFitterOptions;
+use Aspose\Cells\Cloud\Model\Border;
+use Aspose\Cells\Cloud\Model\CalculationOptions;
+use Aspose\Cells\Cloud\Model\Cell;
+use Aspose\Cells\Cloud\Model\CellArea;
+use Aspose\Cells\Cloud\Model\Cells;
+use Aspose\Cells\Cloud\Model\CellsCloudFileInfo;
+use Aspose\Cells\Cloud\Model\CellsColor;
+use Aspose\Cells\Cloud\Model\CellsDocumentProperties;
+use Aspose\Cells\Cloud\Model\CellsDocumentProperty;
+use Aspose\Cells\Cloud\Model\Color;
+use Aspose\Cells\Cloud\Model\ColorFilter;
+use Aspose\Cells\Cloud\Model\ColorScale;
+use Aspose\Cells\Cloud\Model\Column;
+use Aspose\Cells\Cloud\Model\Columns;
+use Aspose\Cells\Cloud\Model\Comment;
+use Aspose\Cells\Cloud\Model\Comments;
+use Aspose\Cells\Cloud\Model\ConditionalFormatting;
+use Aspose\Cells\Cloud\Model\ConditionalFormattingIcon;
+use Aspose\Cells\Cloud\Model\ConditionalFormattings;
+use Aspose\Cells\Cloud\Model\ConditionalFormattingValue;
+use Aspose\Cells\Cloud\Model\CopyOptions;
+use Aspose\Cells\Cloud\Model\CriteriaMultipleFilter;
+use Aspose\Cells\Cloud\Model\CustomFilter;
+use Aspose\Cells\Cloud\Model\DataBar;
+use Aspose\Cells\Cloud\Model\DataBarBorder;
+use Aspose\Cells\Cloud\Model\DataSorter;
+use Aspose\Cells\Cloud\Model\DateTimeGroupItem;
+use Aspose\Cells\Cloud\Model\DynamicFilter;
+use Aspose\Cells\Cloud\Model\FileInfo;
+use Aspose\Cells\Cloud\Model\FilesResult;
+use Aspose\Cells\Cloud\Model\FilterColumn;
+use Aspose\Cells\Cloud\Model\Font;
+use Aspose\Cells\Cloud\Model\FontSetting;
+use Aspose\Cells\Cloud\Model\FormatCondition;
+use Aspose\Cells\Cloud\Model\FormulaFormatCondition;
+use Aspose\Cells\Cloud\Model\HorizontalPageBreak;
+use Aspose\Cells\Cloud\Model\HorizontalPageBreaks;
+use Aspose\Cells\Cloud\Model\Hyperlink;
+use Aspose\Cells\Cloud\Model\Hyperlinks;
+use Aspose\Cells\Cloud\Model\IconFilter;
+use Aspose\Cells\Cloud\Model\IconSet;
+use Aspose\Cells\Cloud\Model\Link;
+use Aspose\Cells\Cloud\Model\LinkElement;
+use Aspose\Cells\Cloud\Model\LoadOptions;
+use Aspose\Cells\Cloud\Model\MergedCell;
+use Aspose\Cells\Cloud\Model\MergedCells;
+use Aspose\Cells\Cloud\Model\MultipleFilter;
+use Aspose\Cells\Cloud\Model\MultipleFilters;
+use Aspose\Cells\Cloud\Model\Name;
+use Aspose\Cells\Cloud\Model\Names;
+use Aspose\Cells\Cloud\Model\NegativeBarFormat;
+use Aspose\Cells\Cloud\Model\PageSection;
+use Aspose\Cells\Cloud\Model\PageSetup;
+use Aspose\Cells\Cloud\Model\PasteOptions;
+use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
+use Aspose\Cells\Cloud\Model\ProtectSheetParameter;
+use Aspose\Cells\Cloud\Model\Range;
+use Aspose\Cells\Cloud\Model\Ranges;
+use Aspose\Cells\Cloud\Model\Row;
+use Aspose\Cells\Cloud\Model\Rows;
+use Aspose\Cells\Cloud\Model\SaveResult;
+use Aspose\Cells\Cloud\Model\SingleValue;
+use Aspose\Cells\Cloud\Model\SortKey;
+use Aspose\Cells\Cloud\Model\SplitResult;
+use Aspose\Cells\Cloud\Model\SplitResultDocument;
+use Aspose\Cells\Cloud\Model\Style;
+use Aspose\Cells\Cloud\Model\StyleFormatCondition;
+use Aspose\Cells\Cloud\Model\Styles;
+use Aspose\Cells\Cloud\Model\TextFormatCondition;
+use Aspose\Cells\Cloud\Model\TextItem;
+use Aspose\Cells\Cloud\Model\TextItems;
+use Aspose\Cells\Cloud\Model\TextOptions;
+use Aspose\Cells\Cloud\Model\ThemeColor;
+use Aspose\Cells\Cloud\Model\TimePeriodFormatCondition;
+use Aspose\Cells\Cloud\Model\Top10;
+use Aspose\Cells\Cloud\Model\Top10Filter;
+use Aspose\Cells\Cloud\Model\Validation;
+use Aspose\Cells\Cloud\Model\Validations;
+use Aspose\Cells\Cloud\Model\VerticalPageBreak;
+use Aspose\Cells\Cloud\Model\VerticalPageBreaks;
+use Aspose\Cells\Cloud\Model\Workbook;
+use Aspose\Cells\Cloud\Model\WorkbookSettings;
+use Aspose\Cells\Cloud\Model\Worksheet;
+use Aspose\Cells\Cloud\Model\Worksheets;
+use Aspose\Cells\Cloud\Model\CellsObjectOperateTaskParameter;
+use Aspose\Cells\Cloud\Model\ConvertTaskParameter;
+use Aspose\Cells\Cloud\Model\ConvertWorksheetTaskParameter;
+use Aspose\Cells\Cloud\Model\FileSource;
+use Aspose\Cells\Cloud\Model\ImportDataTaskParameter;
+use Aspose\Cells\Cloud\Model\ResultDestination;
+use Aspose\Cells\Cloud\Model\SaveFilesToCloudResult;
+use Aspose\Cells\Cloud\Model\SaveResultTaskParameter;
+use Aspose\Cells\Cloud\Model\SmartMarkerTaskParameter;
+use Aspose\Cells\Cloud\Model\SplitWorkbookTaskParameter;
+use Aspose\Cells\Cloud\Model\TaskData;
+use Aspose\Cells\Cloud\Model\TaskDescription;
+use Aspose\Cells\Cloud\Model\TaskParameter;
+use Aspose\Cells\Cloud\Model\TaskResultParameter;
+use Aspose\Cells\Cloud\Model\TaskRunResult;
+use Aspose\Cells\Cloud\Model\ChartOperateParameter;
+use Aspose\Cells\Cloud\Model\ListObjectOperateParameter;
+use Aspose\Cells\Cloud\Model\OperateObject;
+use Aspose\Cells\Cloud\Model\OperateObjectPosition;
+use Aspose\Cells\Cloud\Model\OperateParameter;
+use Aspose\Cells\Cloud\Model\PageBreakOperateParameter;
+use Aspose\Cells\Cloud\Model\PageSetupOperateParameter;
+use Aspose\Cells\Cloud\Model\PivotTableOperateParameter;
+use Aspose\Cells\Cloud\Model\ShapeOperateParameter;
+use Aspose\Cells\Cloud\Model\WorkbookOperateParameter;
+use Aspose\Cells\Cloud\Model\WorkbookSettingsOperateParameter;
+use Aspose\Cells\Cloud\Model\WorksheetOperateParameter;
+use Aspose\Cells\Cloud\Model\ListColumn;
+use Aspose\Cells\Cloud\Model\ListObject;
+use Aspose\Cells\Cloud\Model\ListObjects;
+use Aspose\Cells\Cloud\Model\DifSaveOptions;
+use Aspose\Cells\Cloud\Model\DocxSaveOptions;
+use Aspose\Cells\Cloud\Model\HtmlSaveOptions;
+use Aspose\Cells\Cloud\Model\ImageSaveOptions;
+use Aspose\Cells\Cloud\Model\JsonSaveOptions;
+use Aspose\Cells\Cloud\Model\MarkdownSaveOptions;
+use Aspose\Cells\Cloud\Model\MHtmlSaveOptions;
+use Aspose\Cells\Cloud\Model\OdsSaveOptions;
+use Aspose\Cells\Cloud\Model\OoxmlSaveOptions;
+use Aspose\Cells\Cloud\Model\PdfSaveOptions;
+use Aspose\Cells\Cloud\Model\PptxSaveOptions;
+use Aspose\Cells\Cloud\Model\SaveOptions;
+use Aspose\Cells\Cloud\Model\SpreadsheetML2003SaveOptions;
+use Aspose\Cells\Cloud\Model\SqlScriptSaveOptions;
+use Aspose\Cells\Cloud\Model\SvgSaveOptions;
+use Aspose\Cells\Cloud\Model\TxtSaveOptions;
+use Aspose\Cells\Cloud\Model\XlsbSaveOptions;
+use Aspose\Cells\Cloud\Model\XlsSaveOptions;
+use Aspose\Cells\Cloud\Model\XpsSaveOptions;
+use Aspose\Cells\Cloud\Model\ArcShapeResponse;
+use Aspose\Cells\Cloud\Model\AutoFilterResponse;
+use Aspose\Cells\Cloud\Model\AutoShapeResponse;
+use Aspose\Cells\Cloud\Model\AutoShapesResponse;
+use Aspose\Cells\Cloud\Model\AxisResponse;
+use Aspose\Cells\Cloud\Model\BarcodeResponse;
+use Aspose\Cells\Cloud\Model\BarcodeResponseList;
+use Aspose\Cells\Cloud\Model\BorderResponse;
+use Aspose\Cells\Cloud\Model\ButtonResponse;
+use Aspose\Cells\Cloud\Model\CalculateFormulaResponse;
+use Aspose\Cells\Cloud\Model\CellResponse;
+use Aspose\Cells\Cloud\Model\CellsCloudFileInfoResponse;
+use Aspose\Cells\Cloud\Model\CellsCloudResponse;
+use Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse;
+use Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse;
+use Aspose\Cells\Cloud\Model\CellsDrawingResponse;
+use Aspose\Cells\Cloud\Model\CellsResponse;
+use Aspose\Cells\Cloud\Model\ChartAreaResponse;
+use Aspose\Cells\Cloud\Model\ChartDataTableResponse;
+use Aspose\Cells\Cloud\Model\ChartPointResponse;
+use Aspose\Cells\Cloud\Model\ChartPointsResponse;
+use Aspose\Cells\Cloud\Model\ChartResponse;
+use Aspose\Cells\Cloud\Model\ChartsResponse;
+use Aspose\Cells\Cloud\Model\CheckBoxResponse;
+use Aspose\Cells\Cloud\Model\ColumnResponse;
+use Aspose\Cells\Cloud\Model\ColumnsResponse;
+use Aspose\Cells\Cloud\Model\ComboBoxResponse;
+use Aspose\Cells\Cloud\Model\CommentResponse;
+use Aspose\Cells\Cloud\Model\CommentShapeResponse;
+use Aspose\Cells\Cloud\Model\CommentsResponse;
+use Aspose\Cells\Cloud\Model\ConditionalFormattingResponse;
+use Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse;
+use Aspose\Cells\Cloud\Model\DataLabelsResponse;
+use Aspose\Cells\Cloud\Model\DisplayUnitLabelResponse;
+use Aspose\Cells\Cloud\Model\DropBarsResponse;
+use Aspose\Cells\Cloud\Model\ErrorBarResponse;
+use Aspose\Cells\Cloud\Model\FillFormatResponse;
+use Aspose\Cells\Cloud\Model\FindResponse;
+use Aspose\Cells\Cloud\Model\FloorResponse;
+use Aspose\Cells\Cloud\Model\FormResponse;
+use Aspose\Cells\Cloud\Model\FormsResponse;
+use Aspose\Cells\Cloud\Model\GroupBoxResponse;
+use Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse;
+use Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse;
+use Aspose\Cells\Cloud\Model\HyperlinkResponse;
+use Aspose\Cells\Cloud\Model\HyperlinksResponse;
+use Aspose\Cells\Cloud\Model\LabelResponse;
+use Aspose\Cells\Cloud\Model\LegendEntriesResponse;
+use Aspose\Cells\Cloud\Model\LegendEntryResponse;
+use Aspose\Cells\Cloud\Model\LegendResponse;
+use Aspose\Cells\Cloud\Model\LineResponse;
+use Aspose\Cells\Cloud\Model\LineShapeResponse;
+use Aspose\Cells\Cloud\Model\ListBoxResponse;
+use Aspose\Cells\Cloud\Model\ListObjectResponse;
+use Aspose\Cells\Cloud\Model\ListObjectsResponse;
+use Aspose\Cells\Cloud\Model\MergedCellResponse;
+use Aspose\Cells\Cloud\Model\MergedCellsResponse;
+use Aspose\Cells\Cloud\Model\NameResponse;
+use Aspose\Cells\Cloud\Model\NamesResponse;
+use Aspose\Cells\Cloud\Model\OleObjectResponse;
+use Aspose\Cells\Cloud\Model\OleObjectsResponse;
+use Aspose\Cells\Cloud\Model\OvalResponse;
+use Aspose\Cells\Cloud\Model\PageSectionsResponse;
+use Aspose\Cells\Cloud\Model\PageSetupResponse;
+use Aspose\Cells\Cloud\Model\PictureResponse;
+use Aspose\Cells\Cloud\Model\PicturesResponse;
+use Aspose\Cells\Cloud\Model\PivotFieldResponse;
+use Aspose\Cells\Cloud\Model\PivotFilterResponse;
+use Aspose\Cells\Cloud\Model\PivotFiltersResponse;
+use Aspose\Cells\Cloud\Model\PivotTableResponse;
+use Aspose\Cells\Cloud\Model\PivotTablesResponse;
+use Aspose\Cells\Cloud\Model\PlotAreaResponse;
+use Aspose\Cells\Cloud\Model\RadioButtonResponse;
+use Aspose\Cells\Cloud\Model\RangeResponse;
+use Aspose\Cells\Cloud\Model\RangesResponse;
+use Aspose\Cells\Cloud\Model\RangeValueResponse;
+use Aspose\Cells\Cloud\Model\RectangleShapeResponse;
+use Aspose\Cells\Cloud\Model\RowResponse;
+use Aspose\Cells\Cloud\Model\RowsResponse;
+use Aspose\Cells\Cloud\Model\SaveFilesToCloudResultResponse;
+use Aspose\Cells\Cloud\Model\SaveResponse;
+use Aspose\Cells\Cloud\Model\ScrollBarResponse;
+use Aspose\Cells\Cloud\Model\SeriesesResponse;
+use Aspose\Cells\Cloud\Model\SeriesResponse;
+use Aspose\Cells\Cloud\Model\ShapeResponse;
+use Aspose\Cells\Cloud\Model\ShapesResponse;
+use Aspose\Cells\Cloud\Model\SingleValueResponse;
+use Aspose\Cells\Cloud\Model\SparklineGroupResponse;
+use Aspose\Cells\Cloud\Model\SparklineGroupsResponse;
+use Aspose\Cells\Cloud\Model\SpinnerResponse;
+use Aspose\Cells\Cloud\Model\SplitResultResponse;
+use Aspose\Cells\Cloud\Model\StyleResponse;
+use Aspose\Cells\Cloud\Model\TaskRunResultResponse;
+use Aspose\Cells\Cloud\Model\TextBoxResponse;
+use Aspose\Cells\Cloud\Model\TextItemResponse;
+use Aspose\Cells\Cloud\Model\TextItemsResponse;
+use Aspose\Cells\Cloud\Model\TickLabelsResponse;
+use Aspose\Cells\Cloud\Model\TitleResponse;
+use Aspose\Cells\Cloud\Model\TrendlineResponse;
+use Aspose\Cells\Cloud\Model\TrendlinesResponse;
+use Aspose\Cells\Cloud\Model\ValidationResponse;
+use Aspose\Cells\Cloud\Model\ValidationsResponse;
+use Aspose\Cells\Cloud\Model\VerticalPageBreakResponse;
+use Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse;
+use Aspose\Cells\Cloud\Model\WallsResponse;
+use Aspose\Cells\Cloud\Model\WorkbookReplaceResponse;
+use Aspose\Cells\Cloud\Model\WorkbookResponse;
+use Aspose\Cells\Cloud\Model\WorkbookSettingsResponse;
+use Aspose\Cells\Cloud\Model\WorkbooksResponse;
+use Aspose\Cells\Cloud\Model\WorksheetReplaceResponse;
+use Aspose\Cells\Cloud\Model\WorksheetResponse;
+use Aspose\Cells\Cloud\Model\WorksheetsResponse;
+use Aspose\Cells\Cloud\Model\BatchConvertRequest;
+use Aspose\Cells\Cloud\Model\ColorFilterRequest;
+use Aspose\Cells\Cloud\Model\ConvertParameter;
+use Aspose\Cells\Cloud\Model\CreatePivotTableRequest;
+use Aspose\Cells\Cloud\Model\MatchConditionRequest;
+use Aspose\Cells\Cloud\Model\PasswordRequest;
+use Aspose\Cells\Cloud\Model\PivotTableFieldRequest;
+use Aspose\Cells\Cloud\Model\RangeCopyRequest;
+use Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest;
+use Aspose\Cells\Cloud\Model\RangeSetStyleRequest;
+use Aspose\Cells\Cloud\Model\TableTotalRequest;
+use Aspose\Cells\Cloud\Model\TextWaterMarkerRequest;
+use Aspose\Cells\Cloud\Model\TotalRequest;
+use Aspose\Cells\Cloud\Model\WorkbookEncryptionRequest;
+use Aspose\Cells\Cloud\Model\WorkbookProtectionRequest;
+use Aspose\Cells\Cloud\Model\WorksheetMovingRequest;
+use Aspose\Cells\Cloud\Model\PivotField;
+use Aspose\Cells\Cloud\Model\PivotFilter;
+use Aspose\Cells\Cloud\Model\PivotItem;
+use Aspose\Cells\Cloud\Model\PivotTable;
+use Aspose\Cells\Cloud\Model\PivotTables;
+use Aspose\Cells\Cloud\Model\CustomParserConfig;
+use Aspose\Cells\Cloud\Model\Import2DimensionDoubleArrayOption;
+use Aspose\Cells\Cloud\Model\Import2DimensionIntArrayOption;
+use Aspose\Cells\Cloud\Model\Import2DimensionStringArrayOption;
+use Aspose\Cells\Cloud\Model\CellValue;
+use Aspose\Cells\Cloud\Model\ImportBatchDataOption;
+use Aspose\Cells\Cloud\Model\ImportCSVDataOption;
+use Aspose\Cells\Cloud\Model\ImportDoubleArrayOption;
+use Aspose\Cells\Cloud\Model\ImportIntArrayOption;
+use Aspose\Cells\Cloud\Model\ImportOption;
+use Aspose\Cells\Cloud\Model\ImportPictureOption;
+use Aspose\Cells\Cloud\Model\ImportStringArrayOption;
+use Aspose\Cells\Cloud\Model\ArcShape;
+use Aspose\Cells\Cloud\Model\Area;
+use Aspose\Cells\Cloud\Model\AutoShape;
+use Aspose\Cells\Cloud\Model\AutoShapes;
+use Aspose\Cells\Cloud\Model\Button;
+use Aspose\Cells\Cloud\Model\CellsDrawing;
+use Aspose\Cells\Cloud\Model\CheckBox;
+use Aspose\Cells\Cloud\Model\ComboBox;
+use Aspose\Cells\Cloud\Model\CommentShape;
+use Aspose\Cells\Cloud\Model\FillFormat;
+use Aspose\Cells\Cloud\Model\Form;
+use Aspose\Cells\Cloud\Model\Forms;
+use Aspose\Cells\Cloud\Model\GradientFill;
+use Aspose\Cells\Cloud\Model\GradientFillStop;
+use Aspose\Cells\Cloud\Model\GroupBox;
+use Aspose\Cells\Cloud\Model\GroupShape;
+use Aspose\Cells\Cloud\Model\Label;
+use Aspose\Cells\Cloud\Model\Line;
+use Aspose\Cells\Cloud\Model\LineFormat;
+use Aspose\Cells\Cloud\Model\LineShape;
+use Aspose\Cells\Cloud\Model\ListBox;
+use Aspose\Cells\Cloud\Model\OleObject;
+use Aspose\Cells\Cloud\Model\OleObjects;
+use Aspose\Cells\Cloud\Model\Oval;
+use Aspose\Cells\Cloud\Model\PatternFill;
+use Aspose\Cells\Cloud\Model\PicFormatOption;
+use Aspose\Cells\Cloud\Model\Picture;
+use Aspose\Cells\Cloud\Model\Pictures;
+use Aspose\Cells\Cloud\Model\RadioButton;
+use Aspose\Cells\Cloud\Model\RectangleShape;
+use Aspose\Cells\Cloud\Model\ScrollBar;
+use Aspose\Cells\Cloud\Model\ShadowEffect;
+use Aspose\Cells\Cloud\Model\Shape;
+use Aspose\Cells\Cloud\Model\Shapes;
+use Aspose\Cells\Cloud\Model\SolidFill;
+use Aspose\Cells\Cloud\Model\Spinner;
+use Aspose\Cells\Cloud\Model\TextBox;
+use Aspose\Cells\Cloud\Model\TextureFill;
+use Aspose\Cells\Cloud\Model\TilePicOption;
+use Aspose\Cells\Cloud\Model\Axis;
+use Aspose\Cells\Cloud\Model\Chart;
+use Aspose\Cells\Cloud\Model\ChartArea;
+use Aspose\Cells\Cloud\Model\ChartDataTable;
+use Aspose\Cells\Cloud\Model\ChartFrame;
+use Aspose\Cells\Cloud\Model\ChartPoint;
+use Aspose\Cells\Cloud\Model\ChartPoints;
+use Aspose\Cells\Cloud\Model\Charts;
+use Aspose\Cells\Cloud\Model\ChartShape;
+use Aspose\Cells\Cloud\Model\DataLabels;
+use Aspose\Cells\Cloud\Model\DisplayUnitLabel;
+use Aspose\Cells\Cloud\Model\DropBars;
+use Aspose\Cells\Cloud\Model\ErrorBar;
+use Aspose\Cells\Cloud\Model\Floor;
+use Aspose\Cells\Cloud\Model\Legend;
+use Aspose\Cells\Cloud\Model\LegendEntries;
+use Aspose\Cells\Cloud\Model\LegendEntry;
+use Aspose\Cells\Cloud\Model\Marker;
+use Aspose\Cells\Cloud\Model\PlotArea;
+use Aspose\Cells\Cloud\Model\Series;
+use Aspose\Cells\Cloud\Model\SeriesItems;
+use Aspose\Cells\Cloud\Model\Sparkline;
+use Aspose\Cells\Cloud\Model\SparklineGroup;
+use Aspose\Cells\Cloud\Model\SparklineGroups;
+use Aspose\Cells\Cloud\Model\TickLabels;
+use Aspose\Cells\Cloud\Model\Title;
+use Aspose\Cells\Cloud\Model\Trendline;
+use Aspose\Cells\Cloud\Model\Trendlines;
+use Aspose\Cells\Cloud\Model\Walls;
+use Aspose\Cells\Cloud\Model\Error;
+use Aspose\Cells\Cloud\Model\ErrorDetails;
 /**
  * CellsApi Class Doc Comment
  *
@@ -55,6 +729,7 @@ class CellsApi
      * @var Configuration
      */
     protected $config;
+    protected $headerSelector;
 
     protected $_clientId;
     protected $_clientSecret;
@@ -65,6 +740,9 @@ class CellsApi
      * @param ClientInterface $client
      * @param Configuration   $config
      * @param HeaderSelector  $selector
+     */
+     /**
+     * @deprecated 
      */
     public function __construct(
         $clientId,$clientSecret,$version ="v3.0",$baseUrl="https://api.aspose.cloud"
@@ -131,6 +809,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterDeleteWorksheetDateFilter($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -159,6 +840,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterDeleteWorksheetDateFilterWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage_name = null)
     {
@@ -245,6 +929,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterDeleteWorksheetDateFilterAsync($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterDeleteWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $folder, $storage_name)
@@ -275,6 +962,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterDeleteWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage_name = null)
     {
@@ -336,6 +1026,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterDeleteWorksheetDateFilterRequest($name, $sheet_name, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $folder = null, $storage_name = null)
     {
@@ -526,6 +1219,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterDeleteWorksheetFilter($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -548,6 +1244,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterDeleteWorksheetFilterWithHttpInfo($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage_name = null)
     {
@@ -628,6 +1327,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterDeleteWorksheetFilterAsync($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterDeleteWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $criteria, $folder, $storage_name)
@@ -652,6 +1354,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterDeleteWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage_name = null)
     {
@@ -707,6 +1412,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterDeleteWorksheetFilterRequest($name, $sheet_name, $field_index, $criteria = null, $folder = null, $storage_name = null)
     {
@@ -865,6 +1573,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AutoFilterResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterGetWorksheetAutoFilter($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -885,6 +1596,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AutoFilterResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterGetWorksheetAutoFilterWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -963,6 +1677,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterGetWorksheetAutoFilterAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterGetWorksheetAutoFilterAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -985,6 +1702,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterGetWorksheetAutoFilterAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -1038,6 +1758,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterGetWorksheetAutoFilterRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -1180,6 +1903,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPostWorksheetAutoFilterRefresh($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -1198,6 +1924,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPostWorksheetAutoFilterRefreshWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -1276,6 +2005,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPostWorksheetAutoFilterRefreshAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPostWorksheetAutoFilterRefreshAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -1298,6 +2030,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPostWorksheetAutoFilterRefreshAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -1351,6 +2086,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPostWorksheetAutoFilterRefreshRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -1496,6 +2234,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPostWorksheetMatchBlanks($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -1517,6 +2258,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPostWorksheetMatchBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
@@ -1596,6 +2340,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPostWorksheetMatchBlanksAsync($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPostWorksheetMatchBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage_name)
@@ -1619,6 +2366,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPostWorksheetMatchBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
@@ -1673,6 +2423,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPostWorksheetMatchBlanksRequest($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
@@ -1828,6 +2581,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPostWorksheetMatchNonBlanks($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -1849,6 +2605,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPostWorksheetMatchNonBlanksWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
@@ -1928,6 +2687,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPostWorksheetMatchNonBlanksAsync($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPostWorksheetMatchNonBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder, $storage_name)
@@ -1951,6 +2713,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPostWorksheetMatchNonBlanksAsyncWithHttpInfo($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
@@ -2005,6 +2770,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPostWorksheetMatchNonBlanksRequest($name, $sheet_name, $field_index, $folder = null, $storage_name = null)
     {
@@ -2162,6 +2930,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetColorFilter($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -2185,6 +2956,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetColorFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -2268,6 +3042,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetColorFilterAsync($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetColorFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter, $match_blanks, $refresh, $folder, $storage_name)
@@ -2295,6 +3072,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetColorFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -2353,6 +3133,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetColorFilterRequest($name, $sheet_name, $range, $field_index, $color_filter = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -2538,6 +3321,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetCustomFilter($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -2567,6 +3353,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetCustomFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -2654,6 +3443,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetCustomFilterAsync($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetCustomFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and, $operator_type2, $criteria2, $match_blanks, $refresh, $folder, $storage_name)
@@ -2685,6 +3477,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetCustomFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -2747,6 +3542,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetCustomFilterRequest($name, $sheet_name, $range, $field_index, $operator_type1, $criteria1, $is_and = null, $operator_type2 = null, $criteria2 = null, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -2962,6 +3760,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetDateFilter($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -2993,6 +3794,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetDateFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3082,6 +3886,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetDateFilterAsync($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year, $month, $day, $hour, $minute, $second, $match_blanks, $refresh, $folder, $storage_name)
@@ -3115,6 +3922,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetDateFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3179,6 +3989,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetDateFilterRequest($name, $sheet_name, $range, $field_index, $date_time_grouping_type, $year = '0', $month = '0', $day = '0', $hour = '0', $minute = '0', $second = '0', $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3388,6 +4201,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetDynamicFilter($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -3411,6 +4227,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetDynamicFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3494,6 +4313,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetDynamicFilterAsync($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetDynamicFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks, $refresh, $folder, $storage_name)
@@ -3521,6 +4343,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetDynamicFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3579,6 +4404,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetDynamicFilterRequest($name, $sheet_name, $range, $field_index, $dynamic_filter_type, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3766,6 +4594,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetFilter($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -3791,6 +4622,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3874,6 +4708,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetFilterAsync($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks, $refresh, $folder, $storage_name)
@@ -3901,6 +4738,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -3959,6 +4799,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetFilterRequest($name, $sheet_name, $range, $field_index, $criteria, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4148,6 +4991,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetFilterTop10($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -4175,6 +5021,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetFilterTop10WithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4260,6 +5109,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetFilterTop10Async($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetFilterTop10AsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks, $refresh, $folder, $storage_name)
@@ -4289,6 +5141,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetFilterTop10AsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4349,6 +5204,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetFilterTop10Request($name, $sheet_name, $range, $field_index, $is_top, $is_percent, $item_count, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4557,6 +5415,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetIconFilter($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -4583,6 +5444,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetIconFilterWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4667,6 +5531,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoFilterPutWorksheetIconFilterAsync($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoFilterPutWorksheetIconFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks, $refresh, $folder, $storage_name)
@@ -4695,6 +5562,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoFilterPutWorksheetIconFilterAsyncWithHttpInfo($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4754,6 +5624,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoFilterPutWorksheetIconFilterRequest($name, $sheet_name, $range, $field_index, $icon_set_type, $icon_id, $match_blanks = null, $refresh = null, $folder = null, $storage_name = null)
     {
@@ -4948,6 +5821,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoshapesGetWorksheetAutoshape($name, $sheet_name, $autoshape_number, $format = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -4970,6 +5846,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoshapesGetWorksheetAutoshapeWithHttpInfo($name, $sheet_name, $autoshape_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -5050,6 +5929,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoshapesGetWorksheetAutoshapeAsync($name, $sheet_name, $autoshape_number, $format = null, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoshapesGetWorksheetAutoshapeAsyncWithHttpInfo($name, $sheet_name, $autoshape_number, $format, $folder, $storage_name)
@@ -5074,6 +5956,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoshapesGetWorksheetAutoshapeAsyncWithHttpInfo($name, $sheet_name, $autoshape_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -5129,6 +6014,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoshapesGetWorksheetAutoshapeRequest($name, $sheet_name, $autoshape_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -5291,6 +6179,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AutoShapesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoshapesGetWorksheetAutoshapes($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -5311,6 +6202,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AutoShapesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoshapesGetWorksheetAutoshapesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -5389,6 +6283,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsAutoshapesGetWorksheetAutoshapesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsAutoshapesGetWorksheetAutoshapesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -5411,6 +6308,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsAutoshapesGetWorksheetAutoshapesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -5464,6 +6364,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsAutoshapesGetWorksheetAutoshapesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -5609,6 +6512,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartAreaResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartAreaGetChartArea($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -5630,6 +6536,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartAreaResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartAreaGetChartAreaWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -5709,6 +6618,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartAreaGetChartAreaAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartAreaGetChartAreaAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -5732,6 +6644,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartAreaGetChartAreaAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -5786,6 +6701,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartAreaGetChartAreaRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -5945,6 +6863,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\LineResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartAreaGetChartAreaBorder($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -5966,6 +6887,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\LineResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartAreaGetChartAreaBorderWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6045,6 +6969,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartAreaGetChartAreaBorderAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartAreaGetChartAreaBorderAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -6068,6 +6995,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartAreaGetChartAreaBorderAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6122,6 +7052,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartAreaGetChartAreaBorderRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6281,6 +7214,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FillFormatResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartAreaGetChartAreaFillFormat($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -6302,6 +7238,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FillFormatResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartAreaGetChartAreaFillFormatWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6381,6 +7320,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartAreaGetChartAreaFillFormatAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartAreaGetChartAreaFillFormatAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -6404,6 +7346,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartAreaGetChartAreaFillFormatAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6458,6 +7403,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartAreaGetChartAreaFillFormatRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6617,6 +7565,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -6638,6 +7589,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6717,6 +7671,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsDeleteWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -6740,6 +7697,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6794,6 +7754,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsDeleteWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -6953,6 +7916,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -6974,6 +7940,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7053,6 +8022,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsDeleteWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -7076,6 +8048,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7130,6 +8105,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsDeleteWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7288,6 +8266,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetClearCharts($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -7308,6 +8289,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetClearChartsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -7386,6 +8370,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetClearChartsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsDeleteWorksheetClearChartsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -7408,6 +8395,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetClearChartsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -7461,6 +8451,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsDeleteWorksheetClearChartsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -7606,6 +8599,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetDeleteChart($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -7627,6 +8623,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetDeleteChartWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7706,6 +8705,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsDeleteWorksheetDeleteChartAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -7729,6 +8731,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsDeleteWorksheetDeleteChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7783,6 +8788,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsDeleteWorksheetDeleteChartRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -7941,6 +8949,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AxisResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartCategoryAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -7962,6 +8973,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8041,6 +9055,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartCategoryAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -8064,6 +9081,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8118,6 +9138,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetChartCategoryAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8277,6 +9300,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AxisResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartSecondCategoryAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -8298,6 +9324,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartSecondCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8377,6 +9406,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartSecondCategoryAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -8400,6 +9432,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8454,6 +9489,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8613,6 +9651,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AxisResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartSecondValueAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -8634,6 +9675,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartSecondValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8713,6 +9757,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartSecondValueAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -8736,6 +9783,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8790,6 +9840,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -8949,6 +10002,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AxisResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartSeriesAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -8970,6 +10026,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartSeriesAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -9049,6 +10108,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartSeriesAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -9072,6 +10134,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -9126,6 +10191,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetChartSeriesAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -9285,6 +10353,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AxisResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartValueAxis($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -9306,6 +10377,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AxisResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -9385,6 +10459,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetChartValueAxisAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -9408,6 +10485,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -9462,6 +10542,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetChartValueAxisRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -9622,6 +10705,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChart($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -9644,6 +10730,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartWithHttpInfo($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -9724,6 +10813,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChartAsync($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_number, $format, $folder, $storage_name)
@@ -9748,6 +10840,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -9803,6 +10898,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetWorksheetChartRequest($name, $sheet_name, $chart_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -9966,6 +11064,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\LegendResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -9987,6 +11088,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\LegendResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -10066,6 +11170,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -10089,6 +11196,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -10143,6 +11253,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -10302,6 +11415,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TitleResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChartTitle($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -10323,6 +11439,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TitleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -10402,6 +11521,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -10425,6 +11547,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -10479,6 +11604,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -10637,6 +11765,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ChartsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetCharts($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -10657,6 +11788,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ChartsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -10735,6 +11869,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsGetWorksheetChartsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsGetWorksheetChartsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -10757,6 +11894,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsGetWorksheetChartsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -10810,6 +11950,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsGetWorksheetChartsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -10956,6 +12099,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartCategoryAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -10978,6 +12124,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11058,6 +12207,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartCategoryAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
@@ -11082,6 +12234,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11137,6 +12292,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostChartCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11307,6 +12465,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartSecondCategoryAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -11329,6 +12490,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartSecondCategoryAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11409,6 +12573,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartSecondCategoryAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
@@ -11433,6 +12600,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartSecondCategoryAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11488,6 +12658,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostChartSecondCategoryAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11658,6 +12831,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartSecondValueAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -11680,6 +12856,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartSecondValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11760,6 +12939,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartSecondValueAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
@@ -11784,6 +12966,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartSecondValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -11839,6 +13024,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostChartSecondValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12009,6 +13197,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartSeriesAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -12031,6 +13222,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartSeriesAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12111,6 +13305,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartSeriesAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
@@ -12135,6 +13332,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartSeriesAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12190,6 +13390,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostChartSeriesAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12360,6 +13563,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartValueAxis($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -12382,6 +13588,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartValueAxisWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12462,6 +13671,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostChartValueAxisAsync($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder, $storage_name)
@@ -12486,6 +13698,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostChartValueAxisAsyncWithHttpInfo($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12541,6 +13756,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostChartValueAxisRequest($name, $sheet_name, $chart_index, $axis, $folder = null, $storage_name = null)
     {
@@ -12711,6 +13929,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostWorksheetChart($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -12733,6 +13954,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostWorksheetChartWithHttpInfo($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage_name = null)
     {
@@ -12813,6 +14037,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostWorksheetChartAsync($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $chart, $folder, $storage_name)
@@ -12837,6 +14064,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostWorksheetChartAsyncWithHttpInfo($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage_name = null)
     {
@@ -12892,6 +14122,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostWorksheetChartRequest($name, $sheet_name, $chart_index, $chart = null, $folder = null, $storage_name = null)
     {
@@ -13056,6 +14289,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostWorksheetChartLegend($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -13078,6 +14314,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
@@ -13158,6 +14397,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend, $folder, $storage_name)
@@ -13182,6 +14424,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
@@ -13237,6 +14482,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $legend = null, $folder = null, $storage_name = null)
     {
@@ -13401,6 +14649,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -13423,6 +14674,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -13503,6 +14757,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPostWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage_name)
@@ -13527,6 +14784,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPostWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -13582,6 +14842,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPostWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -13758,6 +15021,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPutWorksheetAddChart($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
         $this->checkAccessToken();
@@ -13792,6 +15058,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPutWorksheetAddChartWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
@@ -13884,6 +15153,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPutWorksheetAddChartAsync($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
         return $this->cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $area, $is_vertical, $category_data, $is_auto_get_serial_name, $title, $folder, $storage_name, $data_labels, $data_labels_position, $pivot_table_sheet, $pivot_table_name)
@@ -13920,6 +15192,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPutWorksheetAddChartAsyncWithHttpInfo($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
@@ -13987,6 +15262,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPutWorksheetAddChartRequest($name, $sheet_name, $chart_type, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $area = null, $is_vertical = 'true', $category_data = null, $is_auto_get_serial_name = 'true', $title = null, $folder = null, $storage_name = null, $data_labels = 'true', $data_labels_position = 'Above', $pivot_table_sheet = null, $pivot_table_name = null)
     {
@@ -14194,6 +15472,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPutWorksheetChartLegend($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -14215,6 +15496,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPutWorksheetChartLegendWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -14294,6 +15578,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPutWorksheetChartLegendAsync($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPutWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder, $storage_name)
@@ -14317,6 +15604,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPutWorksheetChartLegendAsyncWithHttpInfo($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -14371,6 +15661,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPutWorksheetChartLegendRequest($name, $sheet_name, $chart_index, $folder = null, $storage_name = null)
     {
@@ -14531,6 +15824,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPutWorksheetChartTitle($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -14553,6 +15849,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPutWorksheetChartTitleWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -14633,6 +15932,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsChartsPutWorksheetChartTitleAsync($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
         return $this->cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title, $folder, $storage_name)
@@ -14657,6 +15959,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsChartsPutWorksheetChartTitleAsyncWithHttpInfo($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -14712,6 +16017,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsChartsPutWorksheetChartTitleRequest($name, $sheet_name, $chart_index, $title = null, $folder = null, $storage_name = null)
     {
@@ -14875,6 +16183,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -14896,6 +16207,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -14975,6 +16289,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsync($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage_name)
@@ -14998,6 +16315,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -15052,6 +16372,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -15214,6 +16537,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -15238,6 +16564,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -15320,6 +16649,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage_name)
@@ -15346,6 +16678,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -15403,6 +16738,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -15587,6 +16925,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattings($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -15607,6 +16948,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -15685,6 +17029,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -15707,6 +17054,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -15760,6 +17110,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -15905,6 +17258,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormatting($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -15926,6 +17282,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ConditionalFormattingResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -16005,6 +17364,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattingAsync($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage_name)
@@ -16028,6 +17390,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -16082,6 +17447,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsGetWorksheetConditionalFormattingRequest($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -16240,6 +17608,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattings($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -16260,6 +17631,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -16338,6 +17712,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -16360,6 +17737,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsGetWorksheetConditionalFormattingsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -16413,6 +17793,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsGetWorksheetConditionalFormattingsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -16559,6 +17942,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetConditionalFormatting($name, $sheet_name, $cell_area, $format_condition = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -16581,6 +17967,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetConditionalFormattingWithHttpInfo($name, $sheet_name, $cell_area, $format_condition = null, $folder = null, $storage_name = null)
     {
@@ -16661,6 +18050,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetConditionalFormattingAsync($name, $sheet_name, $cell_area, $format_condition = null, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsPutWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $cell_area, $format_condition, $folder, $storage_name)
@@ -16685,6 +18077,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetConditionalFormattingAsyncWithHttpInfo($name, $sheet_name, $cell_area, $format_condition = null, $folder = null, $storage_name = null)
     {
@@ -16740,6 +18135,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsPutWorksheetConditionalFormattingRequest($name, $sheet_name, $cell_area, $format_condition = null, $folder = null, $storage_name = null)
     {
@@ -16904,6 +18302,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetFormatCondition($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -16930,6 +18331,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
@@ -17014,6 +18418,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionAsync($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsPutWorksheetFormatConditionAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder, $storage_name)
@@ -17042,6 +18449,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
@@ -17101,6 +18511,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsPutWorksheetFormatConditionRequest($name, $sheet_name, $index, $cell_area, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
@@ -17311,6 +18724,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionArea($name, $sheet_name, $index, $cell_area, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -17333,6 +18749,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder = null, $storage_name = null)
     {
@@ -17413,6 +18832,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsync($name, $sheet_name, $index, $cell_area, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder, $storage_name)
@@ -17437,6 +18859,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionAreaAsyncWithHttpInfo($name, $sheet_name, $index, $cell_area, $folder = null, $storage_name = null)
     {
@@ -17492,6 +18917,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsPutWorksheetFormatConditionAreaRequest($name, $sheet_name, $index, $cell_area, $folder = null, $storage_name = null)
     {
@@ -17665,6 +19093,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionCondition($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -17690,6 +19121,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
@@ -17773,6 +19207,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsync($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
         return $this->cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsyncWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder, $storage_name)
@@ -17800,6 +19237,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsConditionalFormattingsPutWorksheetFormatConditionConditionAsyncWithHttpInfo($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
@@ -17858,6 +19298,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsConditionalFormattingsPutWorksheetFormatConditionConditionRequest($name, $sheet_name, $index, $type, $operator_type, $formula1, $formula2, $folder = null, $storage_name = null)
     {
@@ -18059,6 +19502,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsDeleteWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -18082,6 +19528,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsDeleteWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
@@ -18163,6 +19612,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsDeleteWorksheetColumnsAsync($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
         return $this->cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name)
@@ -18188,6 +19640,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsDeleteWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
@@ -18244,6 +19699,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsDeleteWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference, $folder = null, $storage_name = null)
     {
@@ -18423,6 +19881,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsDeleteWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -18444,6 +19905,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsDeleteWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -18523,6 +19987,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsDeleteWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
         return $this->cellsDeleteWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage_name)
@@ -18546,6 +20013,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsDeleteWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -18600,6 +20070,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsDeleteWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -18761,6 +20234,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsDeleteWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -18784,6 +20260,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsDeleteWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -18865,6 +20344,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsDeleteWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
         return $this->cellsDeleteWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage_name)
@@ -18890,6 +20372,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsDeleteWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -18946,6 +20431,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsDeleteWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -19109,6 +20597,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return object
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetCellHtmlString($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -19130,6 +20621,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -19209,6 +20703,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetCellHtmlStringAsync($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         return $this->cellsGetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage_name)
@@ -19232,6 +20729,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -19286,6 +20786,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetCellHtmlStringRequest($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -19445,6 +20948,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return object
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetCell($name, $sheet_name, $cell_or_method_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -19466,6 +20972,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetCellWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder = null, $storage_name = null)
     {
@@ -19545,6 +21054,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetCellAsync($name, $sheet_name, $cell_or_method_name, $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetCellAsyncWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder, $storage_name)
@@ -19568,6 +21080,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetCellAsyncWithHttpInfo($name, $sheet_name, $cell_or_method_name, $folder = null, $storage_name = null)
     {
@@ -19622,6 +21137,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetCellRequest($name, $sheet_name, $cell_or_method_name, $folder = null, $storage_name = null)
     {
@@ -19781,6 +21299,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\StyleResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetCellStyle($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -19802,6 +21323,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -19881,6 +21405,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetCellStyleAsync($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage_name)
@@ -19904,6 +21431,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -19958,6 +21488,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -20118,6 +21651,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetCells($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -20140,6 +21676,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetCellsWithHttpInfo($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage_name = null)
     {
@@ -20220,6 +21759,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetCellsAsync($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetCellsAsyncWithHttpInfo($name, $sheet_name, $offest, $count, $folder, $storage_name)
@@ -20244,6 +21786,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetCellsAsyncWithHttpInfo($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage_name = null)
     {
@@ -20299,6 +21844,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetCellsRequest($name, $sheet_name, $offest = '0', $count = '0', $folder = null, $storage_name = null)
     {
@@ -20452,6 +22000,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetColumn($name, $sheet_name, $column_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -20473,6 +22024,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetColumnWithHttpInfo($name, $sheet_name, $column_index, $folder = null, $storage_name = null)
     {
@@ -20552,6 +22106,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetColumnAsync($name, $sheet_name, $column_index, $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetColumnAsyncWithHttpInfo($name, $sheet_name, $column_index, $folder, $storage_name)
@@ -20575,6 +22132,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetColumnAsyncWithHttpInfo($name, $sheet_name, $column_index, $folder = null, $storage_name = null)
     {
@@ -20629,6 +22189,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetColumnRequest($name, $sheet_name, $column_index, $folder = null, $storage_name = null)
     {
@@ -20787,6 +22350,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ColumnsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetColumns($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -20807,6 +22373,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ColumnsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetColumnsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -20885,6 +22454,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetColumnsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -20907,6 +22479,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -20960,6 +22535,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetColumnsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -21105,6 +22683,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RowResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -21126,6 +22707,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RowResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -21205,6 +22789,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage_name)
@@ -21228,6 +22815,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -21282,6 +22872,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -21440,6 +23033,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RowsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetRows($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -21460,6 +23056,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RowsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetRowsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -21538,6 +23137,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsGetWorksheetRowsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsGetWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -21560,6 +23162,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsGetWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -21613,6 +23218,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsGetWorksheetRowsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -21758,6 +23366,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksDeleteWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -21779,6 +23390,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksDeleteWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
@@ -21858,6 +23472,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksDeleteWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
         return $this->cellsHypelinksDeleteWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage_name)
@@ -21881,6 +23498,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksDeleteWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
@@ -21935,6 +23555,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsHypelinksDeleteWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
@@ -22093,6 +23716,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksDeleteWorksheetHyperlinks($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -22113,6 +23739,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksDeleteWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -22191,6 +23820,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksDeleteWorksheetHyperlinksAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsHypelinksDeleteWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -22213,6 +23845,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksDeleteWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -22266,6 +23901,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsHypelinksDeleteWorksheetHyperlinksRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -22411,6 +24049,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HyperlinkResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksGetWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -22432,6 +24073,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HyperlinkResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksGetWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
@@ -22511,6 +24155,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksGetWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
         return $this->cellsHypelinksGetWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder, $storage_name)
@@ -22534,6 +24181,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksGetWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
@@ -22588,6 +24238,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsHypelinksGetWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $folder = null, $storage_name = null)
     {
@@ -22746,6 +24399,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HyperlinksResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksGetWorksheetHyperlinks($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -22766,6 +24422,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HyperlinksResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksGetWorksheetHyperlinksWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -22844,6 +24503,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksGetWorksheetHyperlinksAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsHypelinksGetWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -22866,6 +24528,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksGetWorksheetHyperlinksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -22919,6 +24584,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsHypelinksGetWorksheetHyperlinksRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -23065,6 +24733,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksPostWorksheetHyperlink($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -23087,6 +24758,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksPostWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
@@ -23167,6 +24841,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksPostWorksheetHyperlinkAsync($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
         return $this->cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink, $folder, $storage_name)
@@ -23191,6 +24868,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksPostWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
@@ -23246,6 +24926,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsHypelinksPostWorksheetHyperlinkRequest($name, $sheet_name, $hyperlink_index, $hyperlink = null, $folder = null, $storage_name = null)
     {
@@ -23413,6 +25096,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksPutWorksheetHyperlink($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -23438,6 +25124,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksPutWorksheetHyperlinkWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
@@ -23521,6 +25210,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsHypelinksPutWorksheetHyperlinkAsync($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
         return $this->cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder, $storage_name)
@@ -23548,6 +25240,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsHypelinksPutWorksheetHyperlinkAsyncWithHttpInfo($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
@@ -23606,6 +25301,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsHypelinksPutWorksheetHyperlinkRequest($name, $sheet_name, $first_row, $first_column, $total_rows, $total_columns, $address, $folder = null, $storage_name = null)
     {
@@ -23801,6 +25499,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsDeleteWorksheetListObject($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -23822,6 +25523,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsDeleteWorksheetListObjectWithHttpInfo($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
@@ -23901,6 +25605,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsDeleteWorksheetListObjectAsync($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsDeleteWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $folder, $storage_name)
@@ -23924,6 +25631,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsDeleteWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
@@ -23978,6 +25688,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsDeleteWorksheetListObjectRequest($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
@@ -24136,6 +25849,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsDeleteWorksheetListObjects($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -24156,6 +25872,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsDeleteWorksheetListObjectsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -24234,6 +25953,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsDeleteWorksheetListObjectsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsDeleteWorksheetListObjectsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -24256,6 +25978,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsDeleteWorksheetListObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -24309,6 +26034,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsDeleteWorksheetListObjectsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -24455,6 +26183,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsGetWorksheetListObject($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -24477,6 +26208,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsGetWorksheetListObjectWithHttpInfo($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
@@ -24557,6 +26291,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsGetWorksheetListObjectAsync($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsGetWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $listobjectindex, $format, $folder, $storage_name)
@@ -24581,6 +26318,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsGetWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
@@ -24636,6 +26376,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsGetWorksheetListObjectRequest($name, $sheet_name, $listobjectindex, $format = null, $folder = null, $storage_name = null)
     {
@@ -24798,6 +26541,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ListObjectsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsGetWorksheetListObjects($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -24818,6 +26564,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ListObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsGetWorksheetListObjectsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -24896,6 +26645,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsGetWorksheetListObjectsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsGetWorksheetListObjectsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -24918,6 +26670,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsGetWorksheetListObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -24971,6 +26726,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsGetWorksheetListObjectsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -25116,6 +26874,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListColumn($name, $sheet_name, $list_object_index, $column_index, $list_column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -25137,6 +26898,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListColumnWithHttpInfo($name, $sheet_name, $list_object_index, $column_index, $list_column = null, $folder = null, $storage_name = null)
     {
@@ -25218,6 +26982,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListColumnAsync($name, $sheet_name, $list_object_index, $column_index, $list_column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPostWorksheetListColumnAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $column_index, $list_column, $folder, $storage_name)
@@ -25243,6 +27010,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListColumnAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $column_index, $list_column = null, $folder = null, $storage_name = null)
     {
@@ -25299,6 +27069,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPostWorksheetListColumnRequest($name, $sheet_name, $list_object_index, $column_index, $list_column = null, $folder = null, $storage_name = null)
     {
@@ -25475,6 +27248,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListColumnsTotal($name, $sheet_name, $list_object_index, $table_total_requests = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -25495,6 +27271,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListColumnsTotalWithHttpInfo($name, $sheet_name, $list_object_index, $table_total_requests = null, $folder = null, $storage_name = null)
     {
@@ -25575,6 +27354,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListColumnsTotalAsync($name, $sheet_name, $list_object_index, $table_total_requests = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPostWorksheetListColumnsTotalAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $table_total_requests, $folder, $storage_name)
@@ -25599,6 +27381,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListColumnsTotalAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $table_total_requests = null, $folder = null, $storage_name = null)
     {
@@ -25654,6 +27439,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPostWorksheetListColumnsTotalRequest($name, $sheet_name, $list_object_index, $table_total_requests = null, $folder = null, $storage_name = null)
     {
@@ -25818,6 +27606,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObject($name, $sheet_name, $list_object_index, $list_object = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -25840,6 +27631,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectWithHttpInfo($name, $sheet_name, $list_object_index, $list_object = null, $folder = null, $storage_name = null)
     {
@@ -25920,6 +27714,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectAsync($name, $sheet_name, $list_object_index, $list_object = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPostWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $list_object, $folder, $storage_name)
@@ -25944,6 +27741,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $list_object = null, $folder = null, $storage_name = null)
     {
@@ -25999,6 +27799,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPostWorksheetListObjectRequest($name, $sheet_name, $list_object_index, $list_object = null, $folder = null, $storage_name = null)
     {
@@ -26160,6 +27963,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectConvertToRange($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -26179,6 +27985,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectConvertToRangeWithHttpInfo($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
@@ -26258,6 +28067,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectConvertToRangeAsync($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPostWorksheetListObjectConvertToRangeAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $folder, $storage_name)
@@ -26281,6 +28093,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectConvertToRangeAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
@@ -26335,6 +28150,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPostWorksheetListObjectConvertToRangeRequest($name, $sheet_name, $list_object_index, $folder = null, $storage_name = null)
     {
@@ -26493,6 +28311,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectSortTable($name, $sheet_name, $list_object_index, $data_sorter = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -26513,6 +28334,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectSortTableWithHttpInfo($name, $sheet_name, $list_object_index, $data_sorter = null, $folder = null, $storage_name = null)
     {
@@ -26593,6 +28417,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectSortTableAsync($name, $sheet_name, $list_object_index, $data_sorter = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPostWorksheetListObjectSortTableAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $data_sorter, $folder, $storage_name)
@@ -26617,6 +28444,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectSortTableAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $data_sorter = null, $folder = null, $storage_name = null)
     {
@@ -26672,6 +28502,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPostWorksheetListObjectSortTableRequest($name, $sheet_name, $list_object_index, $data_sorter = null, $folder = null, $storage_name = null)
     {
@@ -26835,6 +28668,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable($name, $sheet_name, $list_object_index, $destsheet_name, $request = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -26856,6 +28692,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableWithHttpInfo($name, $sheet_name, $list_object_index, $destsheet_name, $request = null, $folder = null, $storage_name = null)
     {
@@ -26937,6 +28776,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableAsync($name, $sheet_name, $list_object_index, $destsheet_name, $request = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $destsheet_name, $request, $folder, $storage_name)
@@ -26962,6 +28804,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableAsyncWithHttpInfo($name, $sheet_name, $list_object_index, $destsheet_name, $request = null, $folder = null, $storage_name = null)
     {
@@ -27018,6 +28863,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableRequest($name, $sheet_name, $list_object_index, $destsheet_name, $request = null, $folder = null, $storage_name = null)
     {
@@ -27198,6 +29046,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPutWorksheetListObject($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $display_name = 'true', $show_totals = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -27226,6 +29077,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPutWorksheetListObjectWithHttpInfo($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $display_name = 'true', $show_totals = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
@@ -27312,6 +29166,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsListObjectsPutWorksheetListObjectAsync($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $display_name = 'true', $show_totals = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
         return $this->cellsListObjectsPutWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers, $display_name, $show_totals, $list_object, $folder, $storage_name)
@@ -27342,6 +29199,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsListObjectsPutWorksheetListObjectAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $display_name = 'true', $show_totals = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
@@ -27403,6 +29263,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsListObjectsPutWorksheetListObjectRequest($name, $sheet_name, $start_row, $start_column, $end_row, $end_column, $has_headers = 'true', $display_name = 'true', $show_totals = 'true', $list_object = null, $folder = null, $storage_name = null)
     {
@@ -27604,6 +29467,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsDeleteWorksheetOleObject($name, $sheet_name, $ole_object_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -27625,6 +29491,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsDeleteWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $folder = null, $storage_name = null)
     {
@@ -27704,6 +29573,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsDeleteWorksheetOleObjectAsync($name, $sheet_name, $ole_object_index, $folder = null, $storage_name = null)
     {
         return $this->cellsOleObjectsDeleteWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $folder, $storage_name)
@@ -27727,6 +29599,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsDeleteWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $folder = null, $storage_name = null)
     {
@@ -27781,6 +29656,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsOleObjectsDeleteWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $folder = null, $storage_name = null)
     {
@@ -27939,6 +29817,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsDeleteWorksheetOleObjects($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -27959,6 +29840,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsDeleteWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -28037,6 +29921,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsDeleteWorksheetOleObjectsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsOleObjectsDeleteWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -28059,6 +29946,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsDeleteWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -28112,6 +30002,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsOleObjectsDeleteWorksheetOleObjectsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -28258,6 +30151,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsGetWorksheetOleObject($name, $sheet_name, $object_number, $format = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -28280,6 +30176,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsGetWorksheetOleObjectWithHttpInfo($name, $sheet_name, $object_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -28360,6 +30259,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsGetWorksheetOleObjectAsync($name, $sheet_name, $object_number, $format = null, $folder = null, $storage_name = null)
     {
         return $this->cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $format, $folder, $storage_name)
@@ -28384,6 +30286,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsGetWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $object_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -28439,6 +30344,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsOleObjectsGetWorksheetOleObjectRequest($name, $sheet_name, $object_number, $format = null, $folder = null, $storage_name = null)
     {
@@ -28601,6 +30509,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\OleObjectsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsGetWorksheetOleObjects($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -28621,6 +30532,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\OleObjectsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsGetWorksheetOleObjectsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -28699,6 +30613,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsGetWorksheetOleObjectsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsOleObjectsGetWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -28721,6 +30638,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsGetWorksheetOleObjectsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -28774,6 +30694,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsOleObjectsGetWorksheetOleObjectsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -28920,6 +30843,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsPostUpdateWorksheetOleObject($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -28942,6 +30868,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsPostUpdateWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage_name = null)
     {
@@ -29022,6 +30951,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsPostUpdateWorksheetOleObjectAsync($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage_name = null)
     {
         return $this->cellsOleObjectsPostUpdateWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $ole, $folder, $storage_name)
@@ -29046,6 +30978,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsPostUpdateWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage_name = null)
     {
@@ -29101,6 +31036,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsOleObjectsPostUpdateWorksheetOleObjectRequest($name, $sheet_name, $ole_object_index, $ole = null, $folder = null, $storage_name = null)
     {
@@ -29270,6 +31208,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsPutWorksheetOleObject($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -29297,6 +31238,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsPutWorksheetOleObjectWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
@@ -29382,6 +31326,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsOleObjectsPutWorksheetOleObjectAsync($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
         return $this->cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object, $upper_left_row, $upper_left_column, $height, $width, $ole_file, $image_file, $folder, $storage_name)
@@ -29411,6 +31358,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsOleObjectsPutWorksheetOleObjectAsyncWithHttpInfo($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
@@ -29471,6 +31421,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsOleObjectsPutWorksheetOleObjectRequest($name, $sheet_name, $ole_object = null, $upper_left_row = '0', $upper_left_column = '0', $height = '0', $width = '0', $ole_file = null, $image_file = null, $folder = null, $storage_name = null)
     {
@@ -29642,6 +31595,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteHorizontalPageBreak($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -29661,6 +31617,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -29740,6 +31699,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteHorizontalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksDeleteHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage_name)
@@ -29763,6 +31725,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -29817,6 +31782,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksDeleteHorizontalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -29974,6 +31942,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteHorizontalPageBreaks($name, $sheet_name, $row = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -29993,6 +31964,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $row = null, $folder = null, $storage_name = null)
     {
@@ -30072,6 +32046,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteHorizontalPageBreaksAsync($name, $sheet_name, $row = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksDeleteHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $row, $folder, $storage_name)
@@ -30095,6 +32072,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $row = null, $folder = null, $storage_name = null)
     {
@@ -30149,6 +32129,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksDeleteHorizontalPageBreaksRequest($name, $sheet_name, $row = null, $folder = null, $storage_name = null)
     {
@@ -30296,6 +32279,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteVerticalPageBreak($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -30315,6 +32301,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -30394,6 +32383,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteVerticalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksDeleteVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage_name)
@@ -30417,6 +32409,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -30471,6 +32466,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksDeleteVerticalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -30628,6 +32626,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteVerticalPageBreaks($name, $sheet_name, $column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -30647,6 +32648,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteVerticalPageBreaksWithHttpInfo($name, $sheet_name, $column = null, $folder = null, $storage_name = null)
     {
@@ -30726,6 +32730,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksDeleteVerticalPageBreaksAsync($name, $sheet_name, $column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksDeleteVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $column, $folder, $storage_name)
@@ -30749,6 +32756,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksDeleteVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $column = null, $folder = null, $storage_name = null)
     {
@@ -30803,6 +32813,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksDeleteVerticalPageBreaksRequest($name, $sheet_name, $column = null, $folder = null, $storage_name = null)
     {
@@ -30950,6 +32963,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetHorizontalPageBreak($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -30969,6 +32985,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetHorizontalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -31048,6 +33067,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetHorizontalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksGetHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage_name)
@@ -31071,6 +33093,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -31125,6 +33150,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksGetHorizontalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -31281,6 +33309,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetHorizontalPageBreaks($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -31299,6 +33330,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetHorizontalPageBreaksWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -31377,6 +33411,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetHorizontalPageBreaksAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksGetHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -31399,6 +33436,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetHorizontalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -31452,6 +33492,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksGetHorizontalPageBreaksRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -31595,6 +33638,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\VerticalPageBreakResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetVerticalPageBreak($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -31614,6 +33660,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\VerticalPageBreakResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetVerticalPageBreakWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -31693,6 +33742,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetVerticalPageBreakAsync($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksGetVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder, $storage_name)
@@ -31716,6 +33768,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -31770,6 +33825,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksGetVerticalPageBreakRequest($name, $sheet_name, $index, $folder = null, $storage_name = null)
     {
@@ -31926,6 +33984,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetVerticalPageBreaks($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -31944,6 +34005,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetVerticalPageBreaksWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -32022,6 +34086,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksGetVerticalPageBreaksAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksGetVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -32044,6 +34111,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksGetVerticalPageBreaksAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -32097,6 +34167,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksGetVerticalPageBreaksRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -32244,6 +34317,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksPutHorizontalPageBreak($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -32267,6 +34343,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksPutHorizontalPageBreakWithHttpInfo($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -32350,6 +34429,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksPutHorizontalPageBreakAsync($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksPutHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname, $row, $column, $start_column, $end_column, $folder, $storage_name)
@@ -32377,6 +34459,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksPutHorizontalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -32435,6 +34520,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksPutHorizontalPageBreakRequest($name, $sheet_name, $cellname = null, $row = null, $column = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -32602,6 +34690,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksPutVerticalPageBreak($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -32625,6 +34716,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksPutVerticalPageBreakWithHttpInfo($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage_name = null)
     {
@@ -32708,6 +34802,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageBreaksPutVerticalPageBreakAsync($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPageBreaksPutVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname, $column, $row, $start_row, $end_row, $folder, $storage_name)
@@ -32735,6 +34832,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageBreaksPutVerticalPageBreakAsyncWithHttpInfo($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage_name = null)
     {
@@ -32793,6 +34893,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageBreaksPutVerticalPageBreakRequest($name, $sheet_name, $cellname = null, $column = null, $row = null, $start_row = null, $end_row = null, $folder = null, $storage_name = null)
     {
@@ -32957,6 +35060,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupDeleteHeaderFooter($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -32977,6 +35083,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupDeleteHeaderFooterWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33055,6 +35164,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupDeleteHeaderFooterAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupDeleteHeaderFooterAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -33077,6 +35189,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupDeleteHeaderFooterAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33130,6 +35245,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupDeleteHeaderFooterRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33274,6 +35392,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PageSectionsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupGetFooter($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -33294,6 +35415,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PageSectionsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupGetFooterWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33372,6 +35496,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupGetFooterAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupGetFooterAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -33394,6 +35521,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupGetFooterAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33447,6 +35577,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupGetFooterRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33591,6 +35724,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PageSectionsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupGetHeader($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -33611,6 +35747,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PageSectionsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupGetHeaderWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33689,6 +35828,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupGetHeaderAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupGetHeaderAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -33711,6 +35853,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupGetHeaderAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33764,6 +35909,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupGetHeaderRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -33908,6 +36056,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PageSetupResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupGetPageSetup($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -33928,6 +36079,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PageSetupResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupGetPageSetupWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -34006,6 +36160,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupGetPageSetupAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupGetPageSetupAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -34028,6 +36185,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupGetPageSetupAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -34081,6 +36241,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupGetPageSetupRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -34228,6 +36391,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupPostFooter($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -34251,6 +36417,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupPostFooterWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
@@ -34332,6 +36501,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupPostFooterAsync($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupPostFooterAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage_name)
@@ -34357,6 +36529,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupPostFooterAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
@@ -34413,6 +36588,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupPostFooterRequest($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
@@ -34590,6 +36768,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupPostHeader($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -34613,6 +36794,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupPostHeaderWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
@@ -34694,6 +36878,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupPostHeaderAsync($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupPostHeaderAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder, $storage_name)
@@ -34719,6 +36906,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupPostHeaderAsyncWithHttpInfo($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
@@ -34775,6 +36965,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupPostHeaderRequest($name, $sheet_name, $section, $script, $is_first_page, $folder = null, $storage_name = null)
     {
@@ -34950,6 +37143,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupPostPageSetup($name, $sheet_name, $page_setup = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -34971,6 +37167,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupPostPageSetupWithHttpInfo($name, $sheet_name, $page_setup = null, $folder = null, $storage_name = null)
     {
@@ -35050,6 +37249,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPageSetupPostPageSetupAsync($name, $sheet_name, $page_setup = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPageSetupPostPageSetupAsyncWithHttpInfo($name, $sheet_name, $page_setup, $folder, $storage_name)
@@ -35073,6 +37275,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPageSetupPostPageSetupAsyncWithHttpInfo($name, $sheet_name, $page_setup = null, $folder = null, $storage_name = null)
     {
@@ -35127,6 +37332,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPageSetupPostPageSetupRequest($name, $sheet_name, $page_setup = null, $folder = null, $storage_name = null)
     {
@@ -35275,6 +37483,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\BarcodeResponseList
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPictureGetExtractBarcodes($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -35296,6 +37507,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\BarcodeResponseList, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPictureGetExtractBarcodesWithHttpInfo($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
@@ -35375,6 +37589,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPictureGetExtractBarcodesAsync($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPictureGetExtractBarcodesAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder, $storage_name)
@@ -35398,6 +37615,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPictureGetExtractBarcodesAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
@@ -35452,6 +37672,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPictureGetExtractBarcodesRequest($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
@@ -35611,6 +37834,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesDeleteWorksheetPicture($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -35632,6 +37858,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesDeleteWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
@@ -35711,6 +37940,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesDeleteWorksheetPictureAsync($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPicturesDeleteWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder, $storage_name)
@@ -35734,6 +37966,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesDeleteWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
@@ -35788,6 +38023,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPicturesDeleteWorksheetPictureRequest($name, $sheet_name, $picture_index, $folder = null, $storage_name = null)
     {
@@ -35946,6 +38184,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesDeleteWorksheetPictures($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -35966,6 +38207,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesDeleteWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -36044,6 +38288,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesDeleteWorksheetPicturesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPicturesDeleteWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -36066,6 +38313,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesDeleteWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -36119,6 +38369,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPicturesDeleteWorksheetPicturesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -36265,6 +38518,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesGetWorksheetPicture($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -36287,6 +38543,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesGetWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage_name = null)
     {
@@ -36367,6 +38626,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesGetWorksheetPictureAsync($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $format, $folder, $storage_name)
@@ -36391,6 +38653,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesGetWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage_name = null)
     {
@@ -36446,6 +38711,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPicturesGetWorksheetPictureRequest($name, $sheet_name, $picture_index, $format = null, $folder = null, $storage_name = null)
     {
@@ -36608,6 +38876,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PicturesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesGetWorksheetPictures($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -36628,6 +38899,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PicturesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesGetWorksheetPicturesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -36706,6 +38980,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesGetWorksheetPicturesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPicturesGetWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -36728,6 +39005,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesGetWorksheetPicturesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -36781,6 +39061,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPicturesGetWorksheetPicturesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -36927,6 +39210,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesPostWorksheetPicture($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -36949,6 +39235,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesPostWorksheetPictureWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
@@ -37029,6 +39318,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesPostWorksheetPictureAsync($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture, $folder, $storage_name)
@@ -37053,6 +39345,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesPostWorksheetPictureAsyncWithHttpInfo($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
@@ -37108,6 +39403,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPicturesPostWorksheetPictureRequest($name, $sheet_name, $picture_index, $picture = null, $folder = null, $storage_name = null)
     {
@@ -37276,6 +39574,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesPutWorksheetAddPicture($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -37302,6 +39603,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesPutWorksheetAddPictureWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
@@ -37386,6 +39690,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPicturesPutWorksheetAddPictureAsync($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture, $upper_left_row, $upper_left_column, $lower_right_row, $lower_right_column, $picture_path, $folder, $storage_name)
@@ -37414,6 +39721,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPicturesPutWorksheetAddPictureAsyncWithHttpInfo($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
@@ -37473,6 +39783,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPicturesPutWorksheetAddPictureRequest($name, $sheet_name, $picture = null, $upper_left_row = '0', $upper_left_column = '0', $lower_right_row = '0', $lower_right_column = '0', $picture_path = null, $folder = null, $storage_name = null)
     {
@@ -37644,6 +39957,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeletePivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -37667,6 +39983,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeletePivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage_name = null)
     {
@@ -37748,6 +40067,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeletePivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesDeletePivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $folder, $storage_name)
@@ -37773,6 +40095,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeletePivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage_name = null)
     {
@@ -37829,6 +40154,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesDeletePivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $folder = null, $storage_name = null)
     {
@@ -38002,6 +40330,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTable($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -38023,6 +40354,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -38102,6 +40436,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTableAsync($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesDeleteWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage_name)
@@ -38125,6 +40462,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -38179,6 +40519,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesDeleteWorksheetPivotTableRequest($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -38340,6 +40683,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -38363,6 +40709,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -38444,6 +40793,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesDeleteWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate, $folder, $storage_name)
@@ -38469,6 +40821,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -38525,6 +40880,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesDeleteWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $field_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -38703,6 +41061,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -38725,6 +41086,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -38805,6 +41169,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTableFiltersAsync($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesDeleteWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate, $folder, $storage_name)
@@ -38829,6 +41196,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -38884,6 +41254,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesDeleteWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -39046,6 +41419,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTables($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -39066,6 +41442,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -39144,6 +41523,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesDeleteWorksheetPivotTablesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesDeleteWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -39166,6 +41548,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesDeleteWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -39219,6 +41604,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesDeleteWorksheetPivotTablesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -39366,6 +41754,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotFieldResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -39389,6 +41780,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotFieldResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage_name = null)
     {
@@ -39470,6 +41864,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetPivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesGetPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder, $storage_name)
@@ -39495,6 +41892,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage_name = null)
     {
@@ -39551,6 +41951,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesGetPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $folder = null, $storage_name = null)
     {
@@ -39730,6 +42133,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotTableResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTable($name, $sheet_name, $pivottable_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -39751,6 +42157,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotTableResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTableWithHttpInfo($name, $sheet_name, $pivottable_index, $folder = null, $storage_name = null)
     {
@@ -39830,6 +42239,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTableAsync($name, $sheet_name, $pivottable_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesGetWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivottable_index, $folder, $storage_name)
@@ -39853,6 +42265,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $pivottable_index, $folder = null, $storage_name = null)
     {
@@ -39907,6 +42322,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesGetWorksheetPivotTableRequest($name, $sheet_name, $pivottable_index, $folder = null, $storage_name = null)
     {
@@ -40065,6 +42483,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotFilterResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -40085,6 +42506,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotFilterResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage_name = null)
     {
@@ -40165,6 +42589,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesGetWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder, $storage_name)
@@ -40189,6 +42616,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage_name = null)
     {
@@ -40244,6 +42674,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesGetWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter_index, $folder = null, $storage_name = null)
     {
@@ -40415,6 +42848,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotFiltersResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTableFilters($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -40434,6 +42870,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotFiltersResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTableFiltersWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -40513,6 +42952,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTableFiltersAsync($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesGetWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage_name)
@@ -40536,6 +42978,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTableFiltersAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -40590,6 +43035,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesGetWorksheetPivotTableFiltersRequest($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -40748,6 +43196,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\PivotTablesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTables($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -40768,6 +43219,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\PivotTablesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTablesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -40846,6 +43300,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesGetWorksheetPivotTablesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesGetWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -40868,6 +43325,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesGetWorksheetPivotTablesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -40921,6 +43381,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesGetWorksheetPivotTablesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -41070,6 +43533,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableCellStyle($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -41095,6 +43561,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableCellStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -41178,6 +43647,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableCellStyleAsync($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPostPivotTableCellStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style, $need_re_calculate, $folder, $storage_name)
@@ -41205,6 +43677,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableCellStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -41263,6 +43738,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostPivotTableCellStyleRequest($name, $sheet_name, $pivot_table_index, $column, $row, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -41453,6 +43931,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableFieldHideItem($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -41477,6 +43958,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableFieldHideItemWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -41561,6 +44045,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableFieldHideItemAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPostPivotTableFieldHideItemAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate, $folder, $storage_name)
@@ -41589,6 +44076,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableFieldHideItemAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -41648,6 +44138,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostPivotTableFieldHideItemRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $field_index, $item_index, $is_hide, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -41852,6 +44345,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableFieldMoveTo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -41874,6 +44370,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableFieldMoveToWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage_name = null)
     {
@@ -41956,6 +44455,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableFieldMoveToAsync($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPostPivotTableFieldMoveToAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder, $storage_name)
@@ -41982,6 +44484,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableFieldMoveToAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage_name = null)
     {
@@ -42039,6 +44544,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostPivotTableFieldMoveToRequest($name, $sheet_name, $pivot_table_index, $field_index, $from, $to, $folder = null, $storage_name = null)
     {
@@ -42230,6 +44738,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableStyle($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -42253,6 +44764,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableStyleWithHttpInfo($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -42334,6 +44848,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableStyleAsync($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPostPivotTableStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $style, $need_re_calculate, $folder, $storage_name)
@@ -42359,6 +44876,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableStyleAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -42415,6 +44935,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostPivotTableStyleRequest($name, $sheet_name, $pivot_table_index, $style = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -42583,6 +45106,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableUpdatePivotField($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
         $this->checkAccessToken();
@@ -42605,6 +45131,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableUpdatePivotFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
@@ -42687,6 +45216,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableUpdatePivotFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
         return $this->cellsPivotTablesPostPivotTableUpdatePivotFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder)
@@ -42713,6 +45245,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableUpdatePivotFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
@@ -42770,6 +45305,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostPivotTableUpdatePivotFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
@@ -42963,6 +45501,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableUpdatePivotFields($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
         $this->checkAccessToken();
@@ -42984,6 +45525,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableUpdatePivotFieldsWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
@@ -43065,6 +45609,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostPivotTableUpdatePivotFieldsAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
         return $this->cellsPivotTablesPostPivotTableUpdatePivotFieldsAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate, $folder)
@@ -43090,6 +45637,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostPivotTableUpdatePivotFieldsAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
@@ -43146,6 +45696,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostPivotTableUpdatePivotFieldsRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $pivot_field, $need_re_calculate = 'false', $folder = null)
     {
@@ -43325,6 +45878,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostWorksheetPivotTableCalculate($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -43346,6 +45902,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostWorksheetPivotTableCalculateWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -43425,6 +45984,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostWorksheetPivotTableCalculateAsync($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPostWorksheetPivotTableCalculateAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder, $storage_name)
@@ -43448,6 +46010,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostWorksheetPivotTableCalculateAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -43502,6 +46067,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostWorksheetPivotTableCalculateRequest($name, $sheet_name, $pivot_table_index, $folder = null, $storage_name = null)
     {
@@ -43662,6 +46230,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostWorksheetPivotTableMove($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -43684,6 +46255,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostWorksheetPivotTableMoveWithHttpInfo($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage_name = null)
     {
@@ -43766,6 +46340,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPostWorksheetPivotTableMoveAsync($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPostWorksheetPivotTableMoveAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $row, $column, $dest_cell_name, $folder, $storage_name)
@@ -43792,6 +46369,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPostWorksheetPivotTableMoveAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage_name = null)
     {
@@ -43849,6 +46429,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPostWorksheetPivotTableMoveRequest($name, $sheet_name, $pivot_table_index, $row = null, $column = null, $dest_cell_name = null, $folder = null, $storage_name = null)
     {
@@ -44023,6 +46606,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPutPivotTableField($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -44047,6 +46633,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPutPivotTableFieldWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -44129,6 +46718,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPutPivotTableFieldAsync($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPutPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request, $need_re_calculate, $folder, $storage_name)
@@ -44155,6 +46747,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPutPivotTableFieldAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -44212,6 +46807,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPutPivotTableFieldRequest($name, $sheet_name, $pivot_table_index, $pivot_field_type, $request = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -44393,6 +46991,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPutWorksheetPivotTable($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
         $this->checkAccessToken();
@@ -44418,6 +47019,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPutWorksheetPivotTableWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
@@ -44501,6 +47105,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPutWorksheetPivotTableAsync($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
         return $this->cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request, $folder, $storage_name, $source_data, $dest_cell_name, $table_name, $use_same_source)
@@ -44528,6 +47135,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPutWorksheetPivotTableAsyncWithHttpInfo($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
@@ -44586,6 +47196,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPutWorksheetPivotTableRequest($name, $sheet_name, $request = null, $folder = null, $storage_name = null, $source_data = null, $dest_cell_name = null, $table_name = null, $use_same_source = null)
     {
@@ -44753,6 +47366,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPutWorksheetPivotTableFilter($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -44776,6 +47392,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPutWorksheetPivotTableFilterWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -44857,6 +47476,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPivotTablesPutWorksheetPivotTableFilterAsync($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsPivotTablesPutWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter, $need_re_calculate, $folder, $storage_name)
@@ -44882,6 +47504,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPivotTablesPutWorksheetPivotTableFilterAsyncWithHttpInfo($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -44938,6 +47563,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPivotTablesPutWorksheetPivotTableFilterRequest($name, $sheet_name, $pivot_table_index, $filter = null, $need_re_calculate = 'false', $folder = null, $storage_name = null)
     {
@@ -45106,6 +47734,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCellCalculate($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -45128,6 +47759,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCellCalculateWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
@@ -45208,6 +47842,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCellCalculateAsync($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostCellCalculateAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage_name)
@@ -45232,6 +47869,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCellCalculateAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
@@ -45287,6 +47927,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostCellCalculateRequest($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
@@ -45451,6 +48094,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCellCharacters($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -45473,6 +48119,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCellCharactersWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
@@ -45553,6 +48202,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCellCharactersAsync($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostCellCharactersAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options, $folder, $storage_name)
@@ -45577,6 +48229,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCellCharactersAsyncWithHttpInfo($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
@@ -45632,6 +48287,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostCellCharactersRequest($name, $sheet_name, $cell_name, $options = null, $folder = null, $storage_name = null)
     {
@@ -45799,6 +48457,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostClearContents($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -45824,6 +48485,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostClearContentsWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -45907,6 +48571,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostClearContentsAsync($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostClearContentsAsyncWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage_name)
@@ -45934,6 +48601,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostClearContentsAsyncWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -45992,6 +48662,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostClearContentsRequest($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -46161,6 +48834,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostClearFormats($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -46186,6 +48862,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostClearFormatsWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -46269,6 +48948,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostClearFormatsAsync($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostClearFormatsAsyncWithHttpInfo($name, $sheet_name, $range, $start_row, $start_column, $end_row, $end_column, $folder, $storage_name)
@@ -46296,6 +48978,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostClearFormatsAsyncWithHttpInfo($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -46354,6 +49039,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostClearFormatsRequest($name, $sheet_name, $range = null, $start_row = null, $start_column = null, $end_row = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -46520,6 +49208,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostColumnStyle($name, $sheet_name, $column_index, $style = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -46542,6 +49233,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostColumnStyleWithHttpInfo($name, $sheet_name, $column_index, $style = null, $folder = null, $storage_name = null)
     {
@@ -46622,6 +49316,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostColumnStyleAsync($name, $sheet_name, $column_index, $style = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostColumnStyleAsyncWithHttpInfo($name, $sheet_name, $column_index, $style, $folder, $storage_name)
@@ -46646,6 +49343,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostColumnStyleAsyncWithHttpInfo($name, $sheet_name, $column_index, $style = null, $folder = null, $storage_name = null)
     {
@@ -46701,6 +49401,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostColumnStyleRequest($name, $sheet_name, $column_index, $style = null, $folder = null, $storage_name = null)
     {
@@ -46868,6 +49571,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCopyCellIntoCell($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -46893,6 +49599,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCopyCellIntoCellWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage_name = null)
     {
@@ -46976,6 +49685,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCopyCellIntoCellAsync($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostCopyCellIntoCellAsyncWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname, $row, $column, $folder, $storage_name)
@@ -47003,6 +49715,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCopyCellIntoCellAsyncWithHttpInfo($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage_name = null)
     {
@@ -47061,6 +49776,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostCopyCellIntoCellRequest($name, $dest_cell_name, $sheet_name, $worksheet, $cellname = null, $row = null, $column = null, $folder = null, $storage_name = null)
     {
@@ -47245,6 +49963,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCopyWorksheetColumns($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -47269,6 +49990,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCopyWorksheetColumnsWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage_name = null)
     {
@@ -47351,6 +50075,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCopyWorksheetColumnsAsync($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage_name = null)
     {
         return $this->cellsPostCopyWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet, $folder, $storage_name)
@@ -47377,6 +50104,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCopyWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage_name = null)
     {
@@ -47434,6 +50164,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostCopyWorksheetColumnsRequest($name, $sheet_name, $source_column_index, $destination_column_index, $column_number, $worksheet = '', $folder = null, $storage_name = null)
     {
@@ -47616,6 +50349,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCopyWorksheetRows($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -47640,6 +50376,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCopyWorksheetRowsWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage_name = null)
     {
@@ -47722,6 +50461,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostCopyWorksheetRowsAsync($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostCopyWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet, $folder, $storage_name)
@@ -47748,6 +50490,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostCopyWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage_name = null)
     {
@@ -47805,6 +50550,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostCopyWorksheetRowsRequest($name, $sheet_name, $source_row_index, $destination_row_index, $row_number, $worksheet = null, $folder = null, $storage_name = null)
     {
@@ -47986,6 +50734,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostGroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -48009,6 +50760,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostGroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
@@ -48090,6 +50844,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostGroupWorksheetColumnsAsync($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostGroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage_name)
@@ -48115,6 +50872,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostGroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
@@ -48171,6 +50931,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostGroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
@@ -48342,6 +51105,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostGroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -48365,6 +51131,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostGroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
@@ -48446,6 +51215,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostGroupWorksheetRowsAsync($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostGroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide, $folder, $storage_name)
@@ -48471,6 +51243,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostGroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
@@ -48527,6 +51302,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostGroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $hide = null, $folder = null, $storage_name = null)
     {
@@ -48697,6 +51475,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostHideWorksheetColumns($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -48719,6 +51500,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostHideWorksheetColumnsWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage_name = null)
     {
@@ -48799,6 +51583,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostHideWorksheetColumnsAsync($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage_name = null)
     {
         return $this->cellsPostHideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder, $storage_name)
@@ -48823,6 +51610,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostHideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage_name = null)
     {
@@ -48878,6 +51668,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostHideWorksheetColumnsRequest($name, $sheet_name, $start_column, $total_columns, $folder = null, $storage_name = null)
     {
@@ -49044,6 +51837,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostHideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -49066,6 +51862,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostHideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage_name = null)
     {
@@ -49146,6 +51945,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostHideWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage_name = null)
     {
         return $this->cellsPostHideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder, $storage_name)
@@ -49170,6 +51972,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostHideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage_name = null)
     {
@@ -49225,6 +52030,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostHideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $folder = null, $storage_name = null)
     {
@@ -49391,6 +52199,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostRowStyle($name, $sheet_name, $row_index, $style = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -49413,6 +52224,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostRowStyleWithHttpInfo($name, $sheet_name, $row_index, $style = null, $folder = null, $storage_name = null)
     {
@@ -49493,6 +52307,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostRowStyleAsync($name, $sheet_name, $row_index, $style = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostRowStyleAsyncWithHttpInfo($name, $sheet_name, $row_index, $style, $folder, $storage_name)
@@ -49517,6 +52334,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostRowStyleAsyncWithHttpInfo($name, $sheet_name, $row_index, $style = null, $folder = null, $storage_name = null)
     {
@@ -49572,6 +52392,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostRowStyleRequest($name, $sheet_name, $row_index, $style = null, $folder = null, $storage_name = null)
     {
@@ -49736,6 +52559,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostSetCellHtmlString($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -49758,6 +52584,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostSetCellHtmlStringWithHttpInfo($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
@@ -49838,6 +52667,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostSetCellHtmlStringAsync($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
         return $this->cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $html_string, $folder, $storage_name)
@@ -49862,6 +52694,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostSetCellHtmlStringAsyncWithHttpInfo($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
@@ -49917,6 +52752,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostSetCellHtmlStringRequest($name, $sheet_name, $cell_name, $html_string, $folder = null, $storage_name = null)
     {
@@ -50088,6 +52926,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostSetCellRangeValue($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -50111,6 +52952,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostSetCellRangeValueWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage_name = null)
     {
@@ -50192,6 +53036,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostSetCellRangeValueAsync($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage_name = null)
     {
         return $this->cellsPostSetCellRangeValueAsyncWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder, $storage_name)
@@ -50217,6 +53064,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostSetCellRangeValueAsyncWithHttpInfo($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage_name = null)
     {
@@ -50273,6 +53123,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostSetCellRangeValueRequest($name, $sheet_name, $cellarea, $value, $type, $folder = null, $storage_name = null)
     {
@@ -50450,6 +53303,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostSetWorksheetColumnWidth($name, $sheet_name, $column_index, $width, $count, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -50473,6 +53329,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostSetWorksheetColumnWidthWithHttpInfo($name, $sheet_name, $column_index, $width, $count, $folder = null, $storage_name = null)
     {
@@ -50554,6 +53413,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostSetWorksheetColumnWidthAsync($name, $sheet_name, $column_index, $width, $count, $folder = null, $storage_name = null)
     {
         return $this->cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $count, $folder, $storage_name)
@@ -50579,6 +53441,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostSetWorksheetColumnWidthAsyncWithHttpInfo($name, $sheet_name, $column_index, $width, $count, $folder = null, $storage_name = null)
     {
@@ -50635,6 +53500,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostSetWorksheetColumnWidthRequest($name, $sheet_name, $column_index, $width, $count, $folder = null, $storage_name = null)
     {
@@ -50815,6 +53683,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUngroupWorksheetColumns($name, $sheet_name, $first_index, $last_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -50837,6 +53708,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUngroupWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder = null, $storage_name = null)
     {
@@ -50917,6 +53791,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUngroupWorksheetColumnsAsync($name, $sheet_name, $first_index, $last_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPostUngroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder, $storage_name)
@@ -50941,6 +53818,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUngroupWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $folder = null, $storage_name = null)
     {
@@ -50996,6 +53876,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUngroupWorksheetColumnsRequest($name, $sheet_name, $first_index, $last_index, $folder = null, $storage_name = null)
     {
@@ -51163,6 +54046,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUngroupWorksheetRows($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -51186,6 +54072,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUngroupWorksheetRowsWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage_name = null)
     {
@@ -51267,6 +54156,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUngroupWorksheetRowsAsync($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostUngroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all, $folder, $storage_name)
@@ -51292,6 +54184,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUngroupWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage_name = null)
     {
@@ -51348,6 +54243,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUngroupWorksheetRowsRequest($name, $sheet_name, $first_index, $last_index, $is_all = null, $folder = null, $storage_name = null)
     {
@@ -51519,6 +54417,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUnhideWorksheetColumns($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -51542,6 +54443,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUnhideWorksheetColumnsWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage_name = null)
     {
@@ -51623,6 +54527,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUnhideWorksheetColumnsAsync($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage_name = null)
     {
         return $this->cellsPostUnhideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width, $folder, $storage_name)
@@ -51648,6 +54555,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUnhideWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage_name = null)
     {
@@ -51704,6 +54614,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUnhideWorksheetColumnsRequest($name, $sheet_name, $startcolumn, $total_columns, $width = '50.0', $folder = null, $storage_name = null)
     {
@@ -51875,6 +54788,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUnhideWorksheetRows($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -51898,6 +54814,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUnhideWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage_name = null)
     {
@@ -51979,6 +54898,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUnhideWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage_name = null)
     {
         return $this->cellsPostUnhideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height, $folder, $storage_name)
@@ -52004,6 +54926,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUnhideWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage_name = null)
     {
@@ -52060,6 +54985,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUnhideWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows, $height = '15.0', $folder = null, $storage_name = null)
     {
@@ -52230,6 +55158,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\StyleResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUpdateWorksheetCellStyle($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -52252,6 +55183,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUpdateWorksheetCellStyleWithHttpInfo($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage_name = null)
     {
@@ -52332,6 +55266,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUpdateWorksheetCellStyleAsync($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostUpdateWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $style, $folder, $storage_name)
@@ -52356,6 +55293,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUpdateWorksheetCellStyleAsyncWithHttpInfo($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage_name = null)
     {
@@ -52411,6 +55351,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUpdateWorksheetCellStyleRequest($name, $sheet_name, $cell_name, $style = null, $folder = null, $storage_name = null)
     {
@@ -52575,6 +55518,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUpdateWorksheetRangeStyle($name, $sheet_name, $range, $style = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -52597,6 +55543,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUpdateWorksheetRangeStyleWithHttpInfo($name, $sheet_name, $range, $style = null, $folder = null, $storage_name = null)
     {
@@ -52677,6 +55626,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUpdateWorksheetRangeStyleAsync($name, $sheet_name, $range, $style = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostUpdateWorksheetRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range, $style, $folder, $storage_name)
@@ -52701,6 +55653,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUpdateWorksheetRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range, $style = null, $folder = null, $storage_name = null)
     {
@@ -52756,6 +55711,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUpdateWorksheetRangeStyleRequest($name, $sheet_name, $range, $style = null, $folder = null, $storage_name = null)
     {
@@ -52917,6 +55875,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUpdateWorksheetRow($name, $sheet_name, $row_index, $height = '0.0', $count = '0', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -52940,6 +55901,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUpdateWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $count = '0', $folder = null, $storage_name = null)
     {
@@ -53021,6 +55985,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostUpdateWorksheetRowAsync($name, $sheet_name, $row_index, $height = '0.0', $count = '0', $folder = null, $storage_name = null)
     {
         return $this->cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height, $count, $folder, $storage_name)
@@ -53046,6 +56013,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostUpdateWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $height = '0.0', $count = '0', $folder = null, $storage_name = null)
     {
@@ -53102,6 +56072,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostUpdateWorksheetRowRequest($name, $sheet_name, $row_index, $height = '0.0', $count = '0', $folder = null, $storage_name = null)
     {
@@ -53272,6 +56245,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostWorksheetCellSetValue($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -53296,6 +56272,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostWorksheetCellSetValueWithHttpInfo($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage_name = null)
     {
@@ -53378,6 +56357,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostWorksheetCellSetValueAsync($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPostWorksheetCellSetValueAsyncWithHttpInfo($name, $sheet_name, $cell_name, $value, $type, $formula, $folder, $storage_name)
@@ -53404,6 +56386,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostWorksheetCellSetValueAsyncWithHttpInfo($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage_name = null)
     {
@@ -53461,6 +56446,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostWorksheetCellSetValueRequest($name, $sheet_name, $cell_name, $value = null, $type = null, $formula = null, $folder = null, $storage_name = null)
     {
@@ -53635,6 +56623,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostWorksheetMerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -53659,6 +56650,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostWorksheetMergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -53741,6 +56735,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostWorksheetMergeAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
         return $this->cellsPostWorksheetMergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage_name)
@@ -53767,6 +56764,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostWorksheetMergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -53824,6 +56824,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostWorksheetMergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -54012,6 +57015,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostWorksheetUnmerge($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -54036,6 +57042,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostWorksheetUnmergeWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -54118,6 +57127,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPostWorksheetUnmergeAsync($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
         return $this->cellsPostWorksheetUnmergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder, $storage_name)
@@ -54144,6 +57156,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPostWorksheetUnmergeAsyncWithHttpInfo($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -54201,6 +57216,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPostWorksheetUnmergeRequest($name, $sheet_name, $start_row, $start_column, $total_rows, $total_columns, $folder = null, $storage_name = null)
     {
@@ -54384,6 +57402,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesDeleteDocumentProperties($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -54403,6 +57424,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesDeleteDocumentPropertiesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -54480,6 +57504,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesDeleteDocumentPropertiesAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -54501,6 +57528,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesDeleteDocumentPropertiesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -54553,6 +57583,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPropertiesDeleteDocumentPropertiesRequest($name, $folder = null, $storage_name = null)
     {
@@ -54683,6 +57716,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesDeleteDocumentProperty($name, $property_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -54703,6 +57739,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesDeleteDocumentPropertyWithHttpInfo($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -54781,6 +57820,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesDeleteDocumentPropertyAsync($name, $property_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder, $storage_name)
@@ -54803,6 +57845,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesDeleteDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -54856,6 +57901,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPropertiesDeleteDocumentPropertyRequest($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -54999,6 +58047,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesGetDocumentProperties($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -55018,6 +58069,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesGetDocumentPropertiesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -55095,6 +58149,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesGetDocumentPropertiesAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsPropertiesGetDocumentPropertiesAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -55116,6 +58173,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesGetDocumentPropertiesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -55168,6 +58228,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPropertiesGetDocumentPropertiesRequest($name, $folder = null, $storage_name = null)
     {
@@ -55298,6 +58361,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesGetDocumentProperty($name, $property_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -55318,6 +58384,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesGetDocumentPropertyWithHttpInfo($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -55396,6 +58465,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesGetDocumentPropertyAsync($name, $property_name, $folder = null, $storage_name = null)
     {
         return $this->cellsPropertiesGetDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder, $storage_name)
@@ -55418,6 +58490,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesGetDocumentPropertyAsyncWithHttpInfo($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -55471,6 +58546,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPropertiesGetDocumentPropertyRequest($name, $property_name, $folder = null, $storage_name = null)
     {
@@ -55616,6 +58694,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesPutDocumentProperty($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -55637,6 +58718,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesPutDocumentPropertyWithHttpInfo($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
@@ -55716,6 +58800,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPropertiesPutDocumentPropertyAsync($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
         return $this->cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property, $folder, $storage_name)
@@ -55739,6 +58826,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPropertiesPutDocumentPropertyAsyncWithHttpInfo($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
@@ -55793,6 +58883,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPropertiesPutDocumentPropertyRequest($name, $property_name, $property = null, $folder = null, $storage_name = null)
     {
@@ -55944,6 +59037,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPutInsertWorksheetColumns($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -55967,6 +59063,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPutInsertWorksheetColumnsWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -56048,6 +59147,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPutInsertWorksheetColumnsAsync($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
         return $this->cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference, $folder, $storage_name)
@@ -56073,6 +59175,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPutInsertWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -56129,6 +59234,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPutInsertWorksheetColumnsRequest($name, $sheet_name, $column_index, $columns, $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -56302,6 +59410,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPutInsertWorksheetRow($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -56323,6 +59434,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPutInsertWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -56402,6 +59516,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPutInsertWorksheetRowAsync($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
         return $this->cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder, $storage_name)
@@ -56425,6 +59542,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPutInsertWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -56479,6 +59599,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPutInsertWorksheetRowRequest($name, $sheet_name, $row_index, $folder = null, $storage_name = null)
     {
@@ -56640,6 +59763,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPutInsertWorksheetRows($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -56663,6 +59789,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPutInsertWorksheetRowsWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -56744,6 +59873,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsPutInsertWorksheetRowsAsync($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
         return $this->cellsPutInsertWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows, $update_reference, $folder, $storage_name)
@@ -56769,6 +59901,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsPutInsertWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -56825,6 +59960,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsPutInsertWorksheetRowsRequest($name, $sheet_name, $startrow, $total_rows = '1', $update_reference = 'true', $folder = null, $storage_name = null)
     {
@@ -56989,6 +60127,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesDeleteWorksheetCellsRange($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -57011,6 +60152,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesDeleteWorksheetCellsRangeWithHttpInfo($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
@@ -57091,6 +60235,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesDeleteWorksheetCellsRangeAsync($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesDeleteWorksheetCellsRangeAsyncWithHttpInfo($name, $sheet_name, $range, $shift, $folder, $storage_name)
@@ -57115,6 +60262,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesDeleteWorksheetCellsRangeAsyncWithHttpInfo($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
@@ -57170,6 +60320,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesDeleteWorksheetCellsRangeRequest($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
@@ -57339,6 +60492,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RangeValueResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesGetWorksheetCellsRangeValue($name, $sheet_name, $namerange = null, $first_row = null, $first_column = null, $row_count = null, $column_count = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -57364,6 +60520,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RangeValueResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesGetWorksheetCellsRangeValueWithHttpInfo($name, $sheet_name, $namerange = null, $first_row = null, $first_column = null, $row_count = null, $column_count = null, $folder = null, $storage_name = null)
     {
@@ -57447,6 +60606,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesGetWorksheetCellsRangeValueAsync($name, $sheet_name, $namerange = null, $first_row = null, $first_column = null, $row_count = null, $column_count = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesGetWorksheetCellsRangeValueAsyncWithHttpInfo($name, $sheet_name, $namerange, $first_row, $first_column, $row_count, $column_count, $folder, $storage_name)
@@ -57474,6 +60636,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesGetWorksheetCellsRangeValueAsyncWithHttpInfo($name, $sheet_name, $namerange = null, $first_row = null, $first_column = null, $row_count = null, $column_count = null, $folder = null, $storage_name = null)
     {
@@ -57532,6 +60697,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesGetWorksheetCellsRangeValueRequest($name, $sheet_name, $namerange = null, $first_row = null, $first_column = null, $row_count = null, $column_count = null, $folder = null, $storage_name = null)
     {
@@ -57698,6 +60866,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeColumnWidth($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -57720,6 +60891,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeColumnWidthWithHttpInfo($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
@@ -57800,6 +60974,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeColumnWidthAsync($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeColumnWidthAsyncWithHttpInfo($name, $sheet_name, $value, $range, $folder, $storage_name)
@@ -57824,6 +61001,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeColumnWidthAsyncWithHttpInfo($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
@@ -57879,6 +61059,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeColumnWidthRequest($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
@@ -58038,6 +61221,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeMerge($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -58059,6 +61245,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeMergeWithHttpInfo($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
@@ -58138,6 +61327,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeMergeAsync($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeMergeAsyncWithHttpInfo($name, $sheet_name, $range, $folder, $storage_name)
@@ -58161,6 +61353,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeMergeAsyncWithHttpInfo($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
@@ -58215,6 +61410,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeMergeRequest($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
@@ -58366,6 +61564,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeMoveTo($name, $sheet_name, $dest_row, $dest_column, $range = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -58389,6 +61590,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeMoveToWithHttpInfo($name, $sheet_name, $dest_row, $dest_column, $range = null, $folder = null, $storage_name = null)
     {
@@ -58470,6 +61674,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeMoveToAsync($name, $sheet_name, $dest_row, $dest_column, $range = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeMoveToAsyncWithHttpInfo($name, $sheet_name, $dest_row, $dest_column, $range, $folder, $storage_name)
@@ -58495,6 +61702,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeMoveToAsyncWithHttpInfo($name, $sheet_name, $dest_row, $dest_column, $range = null, $folder = null, $storage_name = null)
     {
@@ -58551,6 +61761,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeMoveToRequest($name, $sheet_name, $dest_row, $dest_column, $range = null, $folder = null, $storage_name = null)
     {
@@ -58720,6 +61933,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeOutlineBorder($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -58741,6 +61957,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeOutlineBorderWithHttpInfo($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -58820,6 +62039,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeOutlineBorderAsync($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeOutlineBorderAsyncWithHttpInfo($name, $sheet_name, $range_operate, $folder, $storage_name)
@@ -58843,6 +62065,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeOutlineBorderAsyncWithHttpInfo($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -58897,6 +62122,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeOutlineBorderRequest($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -59047,6 +62275,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeRowHeight($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -59069,6 +62300,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeRowHeightWithHttpInfo($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
@@ -59149,6 +62383,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeRowHeightAsync($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeRowHeightAsyncWithHttpInfo($name, $sheet_name, $value, $range, $folder, $storage_name)
@@ -59173,6 +62410,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeRowHeightAsyncWithHttpInfo($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
@@ -59228,6 +62468,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeRowHeightRequest($name, $sheet_name, $value, $range = null, $folder = null, $storage_name = null)
     {
@@ -59387,6 +62630,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeStyle($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -59408,6 +62654,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeStyleWithHttpInfo($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -59487,6 +62736,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeStyleAsync($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range_operate, $folder, $storage_name)
@@ -59510,6 +62762,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeStyleAsyncWithHttpInfo($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -59564,6 +62819,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeStyleRequest($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -59713,6 +62971,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeUnmerge($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -59734,6 +62995,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeUnmergeWithHttpInfo($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
@@ -59813,6 +63077,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeUnmergeAsync($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeUnmergeAsyncWithHttpInfo($name, $sheet_name, $range, $folder, $storage_name)
@@ -59836,6 +63103,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeUnmergeAsyncWithHttpInfo($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
@@ -59890,6 +63160,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeUnmergeRequest($name, $sheet_name, $range = null, $folder = null, $storage_name = null)
     {
@@ -60042,6 +63315,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeValue($name, $sheet_name, $value, $range = null, $is_converted = 'false', $set_style = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -60066,6 +63342,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeValueWithHttpInfo($name, $sheet_name, $value, $range = null, $is_converted = 'false', $set_style = 'false', $folder = null, $storage_name = null)
     {
@@ -60148,6 +63427,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangeValueAsync($name, $sheet_name, $value, $range = null, $is_converted = 'false', $set_style = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangeValueAsyncWithHttpInfo($name, $sheet_name, $value, $range, $is_converted, $set_style, $folder, $storage_name)
@@ -60174,6 +63456,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangeValueAsyncWithHttpInfo($name, $sheet_name, $value, $range = null, $is_converted = 'false', $set_style = 'false', $folder = null, $storage_name = null)
     {
@@ -60231,6 +63516,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangeValueRequest($name, $sheet_name, $value, $range = null, $is_converted = 'false', $set_style = 'false', $folder = null, $storage_name = null)
     {
@@ -60398,6 +63686,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRanges($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -60419,6 +63710,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangesWithHttpInfo($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -60498,6 +63792,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPostWorksheetCellsRangesAsync($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPostWorksheetCellsRangesAsyncWithHttpInfo($name, $sheet_name, $range_operate, $folder, $storage_name)
@@ -60521,6 +63818,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPostWorksheetCellsRangesAsyncWithHttpInfo($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -60575,6 +63875,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPostWorksheetCellsRangesRequest($name, $sheet_name, $range_operate = null, $folder = null, $storage_name = null)
     {
@@ -60725,6 +64028,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPutWorksheetCellsRange($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -60747,6 +64053,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPutWorksheetCellsRangeWithHttpInfo($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
@@ -60827,6 +64136,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsRangesPutWorksheetCellsRangeAsync($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
         return $this->cellsRangesPutWorksheetCellsRangeAsyncWithHttpInfo($name, $sheet_name, $range, $shift, $folder, $storage_name)
@@ -60851,6 +64163,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsRangesPutWorksheetCellsRangeAsyncWithHttpInfo($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
@@ -60906,6 +64221,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsRangesPutWorksheetCellsRangeRequest($name, $sheet_name, $range, $shift, $folder = null, $storage_name = null)
     {
@@ -61074,6 +64392,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SaveResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSaveAsPostDocumentSaveAs($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
         $this->checkAccessToken();
@@ -61098,6 +64419,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SaveResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSaveAsPostDocumentSaveAsWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
@@ -61180,6 +64504,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSaveAsPostDocumentSaveAsAsync($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
         return $this->cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options, $newfilename, $is_auto_fit_rows, $is_auto_fit_columns, $folder, $storage_name, $out_storage_name, $extended_query_parameters,$check_excel_restriction)
@@ -61206,6 +64533,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSaveAsPostDocumentSaveAsAsyncWithHttpInfo($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction ='true')
     {
@@ -61263,6 +64593,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSaveAsPostDocumentSaveAsRequest($name, $save_options = null, $newfilename = null, $is_auto_fit_rows = 'false', $is_auto_fit_columns = 'false', $folder = null, $storage_name = null, $out_storage_name = null, $extended_query_parameters = null,$check_excel_restriction='true')
     {
@@ -61422,6 +64755,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesDeleteWorksheetShape($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -61443,6 +64779,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesDeleteWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -61522,6 +64861,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesDeleteWorksheetShapeAsync($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesDeleteWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage_name)
@@ -61545,6 +64887,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesDeleteWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -61599,6 +64944,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesDeleteWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -61757,6 +65105,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesDeleteWorksheetShapes($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -61777,6 +65128,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesDeleteWorksheetShapesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -61855,6 +65209,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesDeleteWorksheetShapesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesDeleteWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -61877,6 +65234,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesDeleteWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -61930,6 +65290,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesDeleteWorksheetShapesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -62075,6 +65438,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ShapeResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesGetWorksheetShape($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -62096,6 +65462,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ShapeResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesGetWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -62175,6 +65544,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesGetWorksheetShapeAsync($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesGetWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage_name)
@@ -62198,6 +65570,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesGetWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -62252,6 +65627,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesGetWorksheetShapeRequest($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -62410,6 +65788,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ShapesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesGetWorksheetShapes($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -62430,6 +65811,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ShapesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesGetWorksheetShapesWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -62508,6 +65892,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesGetWorksheetShapesAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesGetWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -62530,6 +65917,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesGetWorksheetShapesAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -62583,6 +65973,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesGetWorksheetShapesRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -62728,6 +66121,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPostWorksheetGroupShape($name, $sheet_name, $list_shape, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -62749,6 +66145,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPostWorksheetGroupShapeWithHttpInfo($name, $sheet_name, $list_shape, $folder = null, $storage_name = null)
     {
@@ -62828,6 +66227,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPostWorksheetGroupShapeAsync($name, $sheet_name, $list_shape, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesPostWorksheetGroupShapeAsyncWithHttpInfo($name, $sheet_name, $list_shape, $folder, $storage_name)
@@ -62851,6 +66253,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPostWorksheetGroupShapeAsyncWithHttpInfo($name, $sheet_name, $list_shape, $folder = null, $storage_name = null)
     {
@@ -62905,6 +66310,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesPostWorksheetGroupShapeRequest($name, $sheet_name, $list_shape, $folder = null, $storage_name = null)
     {
@@ -63061,6 +66469,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPostWorksheetShape($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -63083,6 +66494,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPostWorksheetShapeWithHttpInfo($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage_name = null)
     {
@@ -63163,6 +66577,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPostWorksheetShapeAsync($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesPostWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $dto, $folder, $storage_name)
@@ -63187,6 +66604,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPostWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage_name = null)
     {
@@ -63242,6 +66662,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesPostWorksheetShapeRequest($name, $sheet_name, $shapeindex, $dto = null, $folder = null, $storage_name = null)
     {
@@ -63405,6 +66828,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPostWorksheetUngroupShape($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -63426,6 +66852,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPostWorksheetUngroupShapeWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -63505,6 +66934,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPostWorksheetUngroupShapeAsync($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesPostWorksheetUngroupShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder, $storage_name)
@@ -63528,6 +66960,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPostWorksheetUngroupShapeAsyncWithHttpInfo($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -63582,6 +67017,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesPostWorksheetUngroupShapeRequest($name, $sheet_name, $shapeindex, $folder = null, $storage_name = null)
     {
@@ -63748,6 +67186,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPutWorksheetShape($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -63776,6 +67217,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPutWorksheetShapeWithHttpInfo($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
@@ -63862,6 +67306,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsShapesPutWorksheetShapeAsync($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
         return $this->cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shape_dto, $drawing_type, $upper_left_row, $upper_left_column, $top, $left, $width, $height, $folder, $storage_name)
@@ -63892,6 +67339,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsShapesPutWorksheetShapeAsyncWithHttpInfo($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
@@ -63953,6 +67403,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsShapesPutWorksheetShapeRequest($name, $sheet_name, $shape_dto = null, $drawing_type = null, $upper_left_row = null, $upper_left_column = null, $top = null, $left = null, $width = null, $height = null, $folder = null, $storage_name = null)
     {
@@ -64128,6 +67581,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -64147,6 +67603,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
@@ -64226,6 +67685,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroupAsync($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
         return $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder, $storage_name)
@@ -64249,6 +67711,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
@@ -64303,6 +67768,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSparklineGroupsDeleteWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
@@ -64459,6 +67927,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroups($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -64477,6 +67948,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -64555,6 +68029,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -64577,6 +68054,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsDeleteWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -64630,6 +68110,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSparklineGroupsDeleteWorksheetSparklineGroupsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -64773,6 +68256,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SparklineGroupResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsGetWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -64792,6 +68278,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SparklineGroupResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsGetWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
@@ -64871,6 +68360,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsGetWorksheetSparklineGroupAsync($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
         return $this->cellsSparklineGroupsGetWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder, $storage_name)
@@ -64894,6 +68386,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsGetWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
@@ -64948,6 +68443,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSparklineGroupsGetWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $folder = null, $storage_name = null)
     {
@@ -65106,6 +68604,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SparklineGroupsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsGetWorksheetSparklineGroups($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -65126,6 +68627,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SparklineGroupsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsGetWorksheetSparklineGroupsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -65204,6 +68708,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsGetWorksheetSparklineGroupsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsSparklineGroupsGetWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -65226,6 +68733,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsGetWorksheetSparklineGroupsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -65279,6 +68789,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSparklineGroupsGetWorksheetSparklineGroupsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -65423,6 +68936,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsPostWorksheetSparklineGroup($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -65443,6 +68959,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsPostWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
     {
@@ -65523,6 +69042,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsPostWorksheetSparklineGroupAsync($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
     {
         return $this->cellsSparklineGroupsPostWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder, $storage_name)
@@ -65547,6 +69069,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsPostWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
     {
@@ -65602,6 +69127,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSparklineGroupsPostWorksheetSparklineGroupRequest($name, $sheet_name, $sparkline_group_index, $sparkline_group, $folder = null, $storage_name = null)
     {
@@ -65772,6 +69300,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsPutWorksheetSparklineGroup($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -65794,6 +69325,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsPutWorksheetSparklineGroupWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
     {
@@ -65876,6 +69410,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsSparklineGroupsPutWorksheetSparklineGroupAsync($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
     {
         return $this->cellsSparklineGroupsPutWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder, $storage_name)
@@ -65902,6 +69439,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsSparklineGroupsPutWorksheetSparklineGroupAsyncWithHttpInfo($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
     {
@@ -65959,6 +69499,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsSparklineGroupsPutWorksheetSparklineGroupRequest($name, $sheet_name, $type, $data_range, $is_vertical, $location_range, $folder = null, $storage_name = null)
     {
@@ -66140,6 +69683,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return object
      */
+     /**
+     * @deprecated 
+     */
     public function cellsTaskPostRunTask($task_data)
     {
         $this->checkAccessToken();
@@ -66157,6 +69703,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsTaskPostRunTaskWithHttpInfo($task_data)
     {
@@ -66232,6 +69781,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsTaskPostRunTaskAsync($task_data)
     {
         return $this->cellsTaskPostRunTaskAsyncWithHttpInfo($task_data)
@@ -66251,6 +69803,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsTaskPostRunTaskAsyncWithHttpInfo($task_data)
     {
@@ -66301,6 +69856,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsTaskPostRunTaskRequest($task_data)
     {
@@ -66419,6 +69977,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteDecryptDocument($name, $encryption = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -66439,6 +70000,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteDecryptDocumentWithHttpInfo($name, $encryption = null, $folder = null, $storage_name = null)
     {
@@ -66517,6 +70081,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteDecryptDocumentAsync($name, $encryption = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookDeleteDecryptDocumentAsyncWithHttpInfo($name, $encryption, $folder, $storage_name)
@@ -66539,6 +70106,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteDecryptDocumentAsyncWithHttpInfo($name, $encryption = null, $folder = null, $storage_name = null)
     {
@@ -66592,6 +70162,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookDeleteDecryptDocumentRequest($name, $encryption = null, $folder = null, $storage_name = null)
     {
@@ -66725,6 +70298,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteDocumentUnprotectFromChanges($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -66744,6 +70320,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteDocumentUnprotectFromChangesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -66821,6 +70400,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteDocumentUnprotectFromChangesAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookDeleteDocumentUnprotectFromChangesAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -66842,6 +70424,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteDocumentUnprotectFromChangesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -66894,6 +70479,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookDeleteDocumentUnprotectFromChangesRequest($name, $folder = null, $storage_name = null)
     {
@@ -67024,6 +70612,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteUnprotectDocument($name, $protection = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -67044,6 +70635,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteUnprotectDocumentWithHttpInfo($name, $protection = null, $folder = null, $storage_name = null)
     {
@@ -67122,6 +70716,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteUnprotectDocumentAsync($name, $protection = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookDeleteUnprotectDocumentAsyncWithHttpInfo($name, $protection, $folder, $storage_name)
@@ -67144,6 +70741,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteUnprotectDocumentAsyncWithHttpInfo($name, $protection = null, $folder = null, $storage_name = null)
     {
@@ -67197,6 +70797,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookDeleteUnprotectDocumentRequest($name, $protection = null, $folder = null, $storage_name = null)
     {
@@ -67330,6 +70933,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteWorkbookBackground($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -67349,6 +70955,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteWorkbookBackgroundWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -67426,6 +71035,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteWorkbookBackgroundAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookDeleteWorkbookBackgroundAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -67447,6 +71059,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteWorkbookBackgroundAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -67499,6 +71114,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookDeleteWorkbookBackgroundRequest($name, $folder = null, $storage_name = null)
     {
@@ -67629,6 +71247,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteWorkbookName($name, $name_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -67649,6 +71270,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteWorkbookNameWithHttpInfo($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -67727,6 +71351,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteWorkbookNameAsync($name, $name_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookDeleteWorkbookNameAsyncWithHttpInfo($name, $name_name, $folder, $storage_name)
@@ -67749,6 +71376,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteWorkbookNameAsyncWithHttpInfo($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -67802,6 +71432,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookDeleteWorkbookNameRequest($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -67945,6 +71578,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteWorkbookNames($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -67964,6 +71600,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteWorkbookNamesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -68041,6 +71680,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookDeleteWorkbookNamesAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookDeleteWorkbookNamesAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -68062,6 +71704,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookDeleteWorkbookNamesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -68114,6 +71759,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookDeleteWorkbookNamesRequest($name, $folder = null, $storage_name = null)
     {
@@ -68243,6 +71891,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return object
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetPageCount($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -68262,6 +71913,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetPageCountWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -68339,6 +71993,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetPageCountAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetPageCountAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -68360,6 +72017,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetPageCountAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -68412,6 +72072,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetPageCountRequest($name, $folder = null, $storage_name = null)
     {
@@ -68547,6 +72210,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbook($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         $this->checkAccessToken();
@@ -68572,6 +72238,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
@@ -68655,6 +72324,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookAsync($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
         return $this->cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password, $format, $is_auto_fit, $only_save_table, $folder, $storage_name, $out_path, $out_storage_name, $extended_query_parameters )
@@ -68682,6 +72354,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookAsyncWithHttpInfo($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
@@ -68740,6 +72415,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookRequest($name, $password = null, $format = null, $is_auto_fit = 'false', $only_save_table = 'false', $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null, $extended_query_parameters = null)
     {
@@ -68897,6 +72575,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\StyleResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookDefaultStyle($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -68916,6 +72597,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\StyleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookDefaultStyleWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -68993,6 +72677,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookDefaultStyleAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetWorkbookDefaultStyleAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -69014,6 +72701,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookDefaultStyleAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -69066,6 +72756,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookDefaultStyleRequest($name, $folder = null, $storage_name = null)
     {
@@ -69196,6 +72889,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\NameResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookName($name, $name_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -69216,6 +72912,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\NameResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookNameWithHttpInfo($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -69294,6 +72993,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookNameAsync($name, $name_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetWorkbookNameAsyncWithHttpInfo($name, $name_name, $folder, $storage_name)
@@ -69316,6 +73018,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookNameAsyncWithHttpInfo($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -69369,6 +73074,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookNameRequest($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -69513,6 +73221,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RangeValueResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookNameValue($name, $name_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -69533,6 +73244,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RangeValueResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookNameValueWithHttpInfo($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -69611,6 +73325,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookNameValueAsync($name, $name_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetWorkbookNameValueAsyncWithHttpInfo($name, $name_name, $folder, $storage_name)
@@ -69633,6 +73350,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookNameValueAsyncWithHttpInfo($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -69686,6 +73406,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookNameValueRequest($name, $name_name, $folder = null, $storage_name = null)
     {
@@ -69829,6 +73552,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\NamesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookNames($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -69848,6 +73574,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\NamesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookNamesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -69925,6 +73654,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookNamesAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetWorkbookNamesAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -69946,6 +73678,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookNamesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -69998,6 +73733,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookNamesRequest($name, $folder = null, $storage_name = null)
     {
@@ -70127,6 +73865,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorkbookSettingsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookSettings($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -70146,6 +73887,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorkbookSettingsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookSettingsWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -70223,6 +73967,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookSettingsAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetWorkbookSettingsAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -70244,6 +73991,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookSettingsAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -70296,6 +74046,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookSettingsRequest($name, $folder = null, $storage_name = null)
     {
@@ -70425,6 +74178,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TextItemsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookTextItems($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -70444,6 +74200,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TextItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookTextItemsWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -70521,6 +74280,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookGetWorkbookTextItemsAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookGetWorkbookTextItemsAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -70542,6 +74304,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookGetWorkbookTextItemsAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -70594,6 +74359,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookGetWorkbookTextItemsRequest($name, $folder = null, $storage_name = null)
     {
@@ -70726,6 +74494,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostAutofitWorkbookColumns($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -70748,6 +74519,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostAutofitWorkbookColumnsWithHttpInfo($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -70828,6 +74602,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostAutofitWorkbookColumnsAsync($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostAutofitWorkbookColumnsAsyncWithHttpInfo($name, $auto_fitter_options, $start_column, $end_column, $folder, $storage_name)
@@ -70852,6 +74629,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostAutofitWorkbookColumnsAsyncWithHttpInfo($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -70907,6 +74687,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostAutofitWorkbookColumnsRequest($name, $auto_fitter_options = null, $start_column = null, $end_column = null, $folder = null, $storage_name = null)
     {
@@ -71052,6 +74835,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostAutofitWorkbookRows($name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -71075,6 +74861,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostAutofitWorkbookRowsWithHttpInfo($name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
@@ -71156,6 +74945,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostAutofitWorkbookRowsAsync($name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostAutofitWorkbookRowsAsyncWithHttpInfo($name, $auto_fitter_options, $start_row, $end_row, $only_auto, $folder, $storage_name)
@@ -71181,6 +74973,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostAutofitWorkbookRowsAsyncWithHttpInfo($name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
@@ -71237,6 +75032,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostAutofitWorkbookRowsRequest($name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
@@ -71384,6 +75182,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostDigitalSignature($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -71405,6 +75206,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostDigitalSignatureWithHttpInfo($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
     {
@@ -71484,6 +75288,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostDigitalSignatureAsync($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostDigitalSignatureAsyncWithHttpInfo($name, $digitalsignaturefile, $password, $folder, $storage_name)
@@ -71507,6 +75314,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostDigitalSignatureAsyncWithHttpInfo($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
     {
@@ -71561,6 +75371,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostDigitalSignatureRequest($name, $digitalsignaturefile, $password, $folder = null, $storage_name = null)
     {
@@ -71711,6 +75524,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostEncryptDocument($name, $encryption = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -71731,6 +75547,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostEncryptDocumentWithHttpInfo($name, $encryption = null, $folder = null, $storage_name = null)
     {
@@ -71809,6 +75628,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostEncryptDocumentAsync($name, $encryption = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostEncryptDocumentAsyncWithHttpInfo($name, $encryption, $folder, $storage_name)
@@ -71831,6 +75653,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostEncryptDocumentAsyncWithHttpInfo($name, $encryption = null, $folder = null, $storage_name = null)
     {
@@ -71884,6 +75709,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostEncryptDocumentRequest($name, $encryption = null, $folder = null, $storage_name = null)
     {
@@ -72016,6 +75844,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostImportData($name, $import_data, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -72034,6 +75865,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostImportDataWithHttpInfo($name, $import_data, $folder = null, $storage_name = null)
     {
@@ -72112,6 +75946,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostImportDataAsync($name, $import_data, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostImportDataAsyncWithHttpInfo($name, $import_data, $folder, $storage_name)
@@ -72134,6 +75971,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostImportDataAsyncWithHttpInfo($name, $import_data, $folder = null, $storage_name = null)
     {
@@ -72187,6 +76027,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostImportDataRequest($name, $import_data, $folder = null, $storage_name = null)
     {
@@ -72327,6 +76170,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostProtectDocument($name, $protection = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -72347,6 +76193,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostProtectDocumentWithHttpInfo($name, $protection = null, $folder = null, $storage_name = null)
     {
@@ -72425,6 +76274,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostProtectDocumentAsync($name, $protection = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostProtectDocumentAsyncWithHttpInfo($name, $protection, $folder, $storage_name)
@@ -72447,6 +76299,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostProtectDocumentAsyncWithHttpInfo($name, $protection = null, $folder = null, $storage_name = null)
     {
@@ -72500,6 +76355,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostProtectDocumentRequest($name, $protection = null, $folder = null, $storage_name = null)
     {
@@ -72635,6 +76493,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookCalculateFormula($name, $options = null, $ignore_error = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -72656,6 +76517,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookCalculateFormulaWithHttpInfo($name, $options = null, $ignore_error = null, $folder = null, $storage_name = null)
     {
@@ -72735,6 +76599,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookCalculateFormulaAsync($name, $options = null, $ignore_error = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbookCalculateFormulaAsyncWithHttpInfo($name, $options, $ignore_error, $folder, $storage_name)
@@ -72758,6 +76625,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookCalculateFormulaAsyncWithHttpInfo($name, $options = null, $ignore_error = null, $folder = null, $storage_name = null)
     {
@@ -72812,6 +76682,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbookCalculateFormulaRequest($name, $options = null, $ignore_error = null, $folder = null, $storage_name = null)
     {
@@ -72952,6 +76825,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookGetSmartMarkerResult($name, $xml_file = null, $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
     {
         $this->checkAccessToken();
@@ -72974,6 +76850,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookGetSmartMarkerResultWithHttpInfo($name, $xml_file = null, $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
     {
@@ -73054,6 +76933,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookGetSmartMarkerResultAsync($name, $xml_file = null, $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbookGetSmartMarkerResultAsyncWithHttpInfo($name, $xml_file, $folder, $storage_name, $out_path, $out_storage_name)
@@ -73078,6 +76960,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookGetSmartMarkerResultAsyncWithHttpInfo($name, $xml_file = null, $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
     {
@@ -73133,6 +77018,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbookGetSmartMarkerResultRequest($name, $xml_file = null, $folder = null, $storage_name = null, $out_path = null, $out_storage_name = null)
     {
@@ -73275,6 +77163,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookSettings($name, $settings = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -73295,6 +77186,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookSettingsWithHttpInfo($name, $settings = null, $folder = null, $storage_name = null)
     {
@@ -73373,6 +77267,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookSettingsAsync($name, $settings = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbookSettingsAsyncWithHttpInfo($name, $settings, $folder, $storage_name)
@@ -73395,6 +77292,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookSettingsAsyncWithHttpInfo($name, $settings = null, $folder = null, $storage_name = null)
     {
@@ -73448,6 +77348,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbookSettingsRequest($name, $settings = null, $folder = null, $storage_name = null)
     {
@@ -73588,6 +77491,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SplitResultResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookSplit($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage_name = null, $out_storage_name = null)
     {
         $this->checkAccessToken();
@@ -73614,6 +77520,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SplitResultResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookSplitWithHttpInfo($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage_name = null, $out_storage_name = null)
     {
@@ -73698,6 +77607,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbookSplitAsync($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage_name = null, $out_storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbookSplitAsyncWithHttpInfo($name, $format, $from, $to, $horizontal_resolution, $vertical_resolution, $folder, $out_folder, $storage_name, $out_storage_name)
@@ -73726,6 +77638,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbookSplitAsyncWithHttpInfo($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage_name = null, $out_storage_name = null)
     {
@@ -73785,6 +77700,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbookSplitRequest($name, $format = null, $from = '0', $to = '0', $horizontal_resolution = '0', $vertical_resolution = '0', $folder = null, $out_folder = null, $storage_name = null, $out_storage_name = null)
     {
@@ -73944,6 +77862,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorkbookResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbooksMerge($name, $merge_with, $folder = null, $storage_name = null, $merged_storage_name = null)
     {
         $this->checkAccessToken();
@@ -73965,6 +77886,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorkbookResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbooksMergeWithHttpInfo($name, $merge_with, $folder = null, $storage_name = null, $merged_storage_name = null)
     {
@@ -74044,6 +77968,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbooksMergeAsync($name, $merge_with, $folder = null, $storage_name = null, $merged_storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbooksMergeAsyncWithHttpInfo($name, $merge_with, $folder, $storage_name, $merged_storage_name)
@@ -74067,6 +77994,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbooksMergeAsyncWithHttpInfo($name, $merge_with, $folder = null, $storage_name = null, $merged_storage_name = null)
     {
@@ -74121,6 +78051,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbooksMergeRequest($name, $merge_with, $folder = null, $storage_name = null, $merged_storage_name = null)
     {
@@ -74266,6 +78199,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorkbookReplaceResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbooksTextReplace($name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -74287,6 +78223,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorkbookReplaceResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbooksTextReplaceWithHttpInfo($name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
@@ -74366,6 +78305,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbooksTextReplaceAsync($name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbooksTextReplaceAsyncWithHttpInfo($name, $old_value, $new_value, $folder, $storage_name)
@@ -74389,6 +78331,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbooksTextReplaceAsyncWithHttpInfo($name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
@@ -74443,6 +78388,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbooksTextReplaceRequest($name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
@@ -74593,6 +78541,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TextItemsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbooksTextSearch($name, $text, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -74613,6 +78564,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TextItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbooksTextSearchWithHttpInfo($name, $text, $folder = null, $storage_name = null)
     {
@@ -74691,6 +78645,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPostWorkbooksTextSearchAsync($name, $text, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPostWorkbooksTextSearchAsyncWithHttpInfo($name, $text, $folder, $storage_name)
@@ -74713,6 +78670,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPostWorkbooksTextSearchAsyncWithHttpInfo($name, $text, $folder = null, $storage_name = null)
     {
@@ -74766,6 +78726,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPostWorkbooksTextSearchRequest($name, $text, $folder = null, $storage_name = null)
     {
@@ -74907,6 +78870,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutConvertWorkbook($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
         $this->checkAccessToken();
@@ -74928,6 +78894,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutConvertWorkbookWithHttpInfo($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
@@ -75007,6 +78976,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutConvertWorkbookAsync($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
         return $this->cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format, $password, $out_path, $storage_name,$extended_query_parameters )
@@ -75030,6 +79002,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutConvertWorkbookAsyncWithHttpInfo($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
@@ -75084,6 +79059,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPutConvertWorkbookRequest($file, $format = null, $password = null, $out_path = null, $storage_name = null,$extended_query_parameters =null)
     {
@@ -75230,6 +79208,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutDocumentProtectFromChanges($name, $password = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -75250,6 +79231,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutDocumentProtectFromChangesWithHttpInfo($name, $password = null, $folder = null, $storage_name = null)
     {
@@ -75328,6 +79312,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutDocumentProtectFromChangesAsync($name, $password = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPutDocumentProtectFromChangesAsyncWithHttpInfo($name, $password, $folder, $storage_name)
@@ -75350,6 +79337,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutDocumentProtectFromChangesAsyncWithHttpInfo($name, $password = null, $folder = null, $storage_name = null)
     {
@@ -75403,6 +79393,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPutDocumentProtectFromChangesRequest($name, $password = null, $folder = null, $storage_name = null)
     {
@@ -75537,6 +79530,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutWorkbookBackground($name, $png, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -75557,6 +79553,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutWorkbookBackgroundWithHttpInfo($name, $png, $folder = null, $storage_name = null)
     {
@@ -75635,6 +79634,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutWorkbookBackgroundAsync($name, $png, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPutWorkbookBackgroundAsyncWithHttpInfo($name, $png, $folder, $storage_name)
@@ -75657,6 +79659,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutWorkbookBackgroundAsyncWithHttpInfo($name, $png, $folder = null, $storage_name = null)
     {
@@ -75710,6 +79715,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPutWorkbookBackgroundRequest($name, $png, $folder = null, $storage_name = null)
     {
@@ -75852,6 +79860,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorkbookResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutWorkbookCreate($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -75874,6 +79885,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorkbookResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutWorkbookCreateWithHttpInfo($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage_name = null)
     {
@@ -75954,6 +79968,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutWorkbookCreateAsync($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorkbookPutWorkbookCreateAsyncWithHttpInfo($name, $template_file, $data_file, $is_write_over, $folder, $storage_name)
@@ -75978,6 +79995,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutWorkbookCreateAsyncWithHttpInfo($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage_name = null)
     {
@@ -76033,6 +80053,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPutWorkbookCreateRequest($name, $template_file = null, $data_file = null, $is_write_over = null, $folder = null, $storage_name = null)
     {
@@ -76175,6 +80198,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutWorkbookWaterMarker($name, $folder = null, $storage_name = null, $text_water_marker_request = null)
     {
         $this->checkAccessToken();
@@ -76195,6 +80221,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutWorkbookWaterMarkerWithHttpInfo($name, $folder = null, $storage_name = null, $text_water_marker_request = null)
     {
@@ -76273,6 +80302,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorkbookPutWorkbookWaterMarkerAsync($name, $folder = null, $storage_name = null, $text_water_marker_request = null)
     {
         return $this->cellsWorkbookPutWorkbookWaterMarkerAsyncWithHttpInfo($name, $folder, $storage_name, $text_water_marker_request)
@@ -76295,6 +80327,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorkbookPutWorkbookWaterMarkerAsyncWithHttpInfo($name, $folder = null, $storage_name = null, $text_water_marker_request = null)
     {
@@ -76348,6 +80383,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorkbookPutWorkbookWaterMarkerRequest($name, $folder = null, $storage_name = null, $text_water_marker_request = null)
     {
@@ -76483,6 +80521,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsDeleteWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -76504,6 +80545,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -76583,6 +80627,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsDeleteWorksheetValidationAsync($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage_name)
@@ -76606,6 +80653,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -76660,6 +80710,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetValidationsDeleteWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -76818,6 +80871,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsDeleteWorksheetValidations($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -76838,6 +80894,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -76916,6 +80975,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsDeleteWorksheetValidationsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetValidationsDeleteWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -76938,6 +81000,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsDeleteWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -76991,6 +81056,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetValidationsDeleteWorksheetValidationsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -77136,6 +81204,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsGetWorksheetValidation($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -77157,6 +81228,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsGetWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -77236,6 +81310,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsGetWorksheetValidationAsync($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetValidationsGetWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder, $storage_name)
@@ -77259,6 +81336,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsGetWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -77313,6 +81393,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetValidationsGetWorksheetValidationRequest($name, $sheet_name, $validation_index, $folder = null, $storage_name = null)
     {
@@ -77471,6 +81554,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsGetWorksheetValidations($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -77491,6 +81577,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsGetWorksheetValidationsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -77569,6 +81658,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsGetWorksheetValidationsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetValidationsGetWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -77591,6 +81683,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsGetWorksheetValidationsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -77644,6 +81739,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetValidationsGetWorksheetValidationsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -77790,6 +81888,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsPostWorksheetValidation($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -77812,6 +81913,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsPostWorksheetValidationWithHttpInfo($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage_name = null)
     {
@@ -77892,6 +81996,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsPostWorksheetValidationAsync($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetValidationsPostWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $validation, $folder, $storage_name)
@@ -77916,6 +82023,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsPostWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage_name = null)
     {
@@ -77971,6 +82081,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetValidationsPostWorksheetValidationRequest($name, $sheet_name, $validation_index, $validation = null, $folder = null, $storage_name = null)
     {
@@ -78135,6 +82248,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ValidationResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsPutWorksheetValidation($name, $sheet_name, $range = null, $validation = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -78157,6 +82273,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ValidationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsPutWorksheetValidationWithHttpInfo($name, $sheet_name, $range = null, $validation = null, $folder = null, $storage_name = null)
     {
@@ -78237,6 +82356,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetValidationsPutWorksheetValidationAsync($name, $sheet_name, $range = null, $validation = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetValidationsPutWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $range, $validation, $folder, $storage_name)
@@ -78261,6 +82383,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetValidationsPutWorksheetValidationAsyncWithHttpInfo($name, $sheet_name, $range = null, $validation = null, $folder = null, $storage_name = null)
     {
@@ -78316,6 +82441,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetValidationsPutWorksheetValidationRequest($name, $sheet_name, $range = null, $validation = null, $folder = null, $storage_name = null)
     {
@@ -78469,6 +82597,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteUnprotectWorksheet($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -78490,6 +82621,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteUnprotectWorksheetWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -78569,6 +82703,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteUnprotectWorksheetAsync($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteUnprotectWorksheetAsyncWithHttpInfo($name, $sheet_name, $protect_parameter, $folder, $storage_name)
@@ -78592,6 +82729,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteUnprotectWorksheetAsyncWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -78646,6 +82786,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteUnprotectWorksheetRequest($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -78794,6 +82937,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheet($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -78814,6 +82960,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -78892,6 +83041,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteWorksheetAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -78914,6 +83066,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -78967,6 +83122,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteWorksheetRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -79111,6 +83269,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetBackground($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -79131,6 +83292,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetBackgroundWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -79209,6 +83373,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetBackgroundAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteWorksheetBackgroundAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -79231,6 +83398,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetBackgroundAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -79284,6 +83454,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteWorksheetBackgroundRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -79429,6 +83602,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetComment($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -79450,6 +83626,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -79529,6 +83708,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetCommentAsync($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage_name)
@@ -79552,6 +83734,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -79606,6 +83791,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteWorksheetCommentRequest($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -79764,6 +83952,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetComments($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -79784,6 +83975,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetCommentsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -79862,6 +84056,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetCommentsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteWorksheetCommentsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -79884,6 +84081,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetCommentsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -79937,6 +84137,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteWorksheetCommentsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -80085,6 +84288,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetFreezePanes($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -80109,6 +84315,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetFreezePanesWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
@@ -80191,6 +84400,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetFreezePanesAsync($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteWorksheetFreezePanesAsyncWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder, $storage_name)
@@ -80217,6 +84429,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetFreezePanesAsyncWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
@@ -80274,6 +84489,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteWorksheetFreezePanesRequest($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
@@ -80458,6 +84676,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheets($name, $match_condition, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -80478,6 +84699,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetsWithHttpInfo($name, $match_condition, $folder = null, $storage_name = null)
     {
@@ -80556,6 +84780,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsDeleteWorksheetsAsync($name, $match_condition, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsDeleteWorksheetsAsyncWithHttpInfo($name, $match_condition, $folder, $storage_name)
@@ -80578,6 +84805,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsDeleteWorksheetsAsyncWithHttpInfo($name, $match_condition, $folder = null, $storage_name = null)
     {
@@ -80631,6 +84861,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsDeleteWorksheetsRequest($name, $match_condition, $folder = null, $storage_name = null)
     {
@@ -80770,6 +85003,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\RangesResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetNamedRanges($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -80789,6 +85025,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\RangesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetNamedRangesWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -80866,6 +85105,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetNamedRangesAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetNamedRangesAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -80887,6 +85129,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetNamedRangesAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -80939,6 +85184,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetNamedRangesRequest($name, $folder = null, $storage_name = null)
     {
@@ -81069,6 +85317,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return object
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetPageCount($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -81089,6 +85340,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetPageCountWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -81167,6 +85421,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetPageCountAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetPageCountAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -81189,6 +85446,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetPageCountAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -81242,6 +85502,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetPageCountRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -81391,6 +85654,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheet($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -81416,6 +85682,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage_name = null)
     {
@@ -81499,6 +85768,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetAsync($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format, $vertical_resolution, $horizontal_resolution, $area, $page_index, $folder, $storage_name)
@@ -81526,6 +85798,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetAsyncWithHttpInfo($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage_name = null)
     {
@@ -81584,6 +85859,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetRequest($name, $sheet_name, $format = null, $vertical_resolution = '0', $horizontal_resolution = '0', $area = null, $page_index = null, $folder = null, $storage_name = null)
     {
@@ -81749,6 +86027,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\SingleValueResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetCalculateFormula($name, $sheet_name, $formula, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -81770,6 +86051,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\SingleValueResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetCalculateFormulaWithHttpInfo($name, $sheet_name, $formula, $folder = null, $storage_name = null)
     {
@@ -81849,6 +86133,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetCalculateFormulaAsync($name, $sheet_name, $formula, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetCalculateFormulaAsyncWithHttpInfo($name, $sheet_name, $formula, $folder, $storage_name)
@@ -81872,6 +86159,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetCalculateFormulaAsyncWithHttpInfo($name, $sheet_name, $formula, $folder = null, $storage_name = null)
     {
@@ -81926,6 +86216,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetCalculateFormulaRequest($name, $sheet_name, $formula, $folder = null, $storage_name = null)
     {
@@ -82081,6 +86374,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CommentResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetComment($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -82102,6 +86398,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -82181,6 +86480,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetCommentAsync($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder, $storage_name)
@@ -82204,6 +86506,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -82258,6 +86563,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetCommentRequest($name, $sheet_name, $cell_name, $folder = null, $storage_name = null)
     {
@@ -82416,6 +86724,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CommentsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetComments($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -82436,6 +86747,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CommentsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetCommentsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -82514,6 +86828,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetCommentsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetCommentsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -82536,6 +86853,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetCommentsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -82589,6 +86909,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetCommentsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -82734,6 +87057,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\MergedCellResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetMergedCell($name, $sheet_name, $merged_cell_index, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -82755,6 +87081,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\MergedCellResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetMergedCellWithHttpInfo($name, $sheet_name, $merged_cell_index, $folder = null, $storage_name = null)
     {
@@ -82834,6 +87163,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetMergedCellAsync($name, $sheet_name, $merged_cell_index, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetMergedCellAsyncWithHttpInfo($name, $sheet_name, $merged_cell_index, $folder, $storage_name)
@@ -82857,6 +87189,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetMergedCellAsyncWithHttpInfo($name, $sheet_name, $merged_cell_index, $folder = null, $storage_name = null)
     {
@@ -82911,6 +87246,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetMergedCellRequest($name, $sheet_name, $merged_cell_index, $folder = null, $storage_name = null)
     {
@@ -83069,6 +87407,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\MergedCellsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetMergedCells($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -83089,6 +87430,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\MergedCellsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetMergedCellsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -83167,6 +87511,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetMergedCellsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetMergedCellsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -83189,6 +87536,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetMergedCellsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -83242,6 +87592,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetMergedCellsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -83386,6 +87739,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TextItemsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetTextItems($name, $sheet_name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -83406,6 +87762,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TextItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetTextItemsWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -83484,6 +87843,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetTextItemsAsync($name, $sheet_name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetTextItemsAsyncWithHttpInfo($name, $sheet_name, $folder, $storage_name)
@@ -83506,6 +87868,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetTextItemsAsyncWithHttpInfo($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -83559,6 +87924,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetTextItemsRequest($name, $sheet_name, $folder = null, $storage_name = null)
     {
@@ -83702,6 +88070,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorksheetsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheets($name, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -83721,6 +88092,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorksheetsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetsWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -83798,6 +88172,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsGetWorksheetsAsync($name, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsGetWorksheetsAsyncWithHttpInfo($name, $folder, $storage_name)
@@ -83819,6 +88196,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsGetWorksheetsAsyncWithHttpInfo($name, $folder = null, $storage_name = null)
     {
@@ -83871,6 +88251,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsGetWorksheetsRequest($name, $folder = null, $storage_name = null)
     {
@@ -84004,6 +88387,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostAutofitWorksheetColumns($name, $sheet_name, $first_column, $last_column, $auto_fitter_options = null, $first_row = null, $last_row = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -84027,6 +88413,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostAutofitWorksheetColumnsWithHttpInfo($name, $sheet_name, $first_column, $last_column, $auto_fitter_options = null, $first_row = null, $last_row = null, $folder = null, $storage_name = null)
     {
@@ -84110,6 +88499,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostAutofitWorksheetColumnsAsync($name, $sheet_name, $first_column, $last_column, $auto_fitter_options = null, $first_row = null, $last_row = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostAutofitWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_column, $last_column, $auto_fitter_options, $first_row, $last_row, $folder, $storage_name)
@@ -84137,6 +88529,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostAutofitWorksheetColumnsAsyncWithHttpInfo($name, $sheet_name, $first_column, $last_column, $auto_fitter_options = null, $first_row = null, $last_row = null, $folder = null, $storage_name = null)
     {
@@ -84195,6 +88590,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostAutofitWorksheetColumnsRequest($name, $sheet_name, $first_column, $last_column, $auto_fitter_options = null, $first_row = null, $last_row = null, $folder = null, $storage_name = null)
     {
@@ -84373,6 +88771,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostAutofitWorksheetRow($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -84395,6 +88796,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostAutofitWorksheetRowWithHttpInfo($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options = null, $folder = null, $storage_name = null)
     {
@@ -84477,6 +88881,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostAutofitWorksheetRowAsync($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostAutofitWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options, $folder, $storage_name)
@@ -84503,6 +88910,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostAutofitWorksheetRowAsyncWithHttpInfo($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options = null, $folder = null, $storage_name = null)
     {
@@ -84560,6 +88970,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostAutofitWorksheetRowRequest($name, $sheet_name, $row_index, $first_column, $last_column, $auto_fitter_options = null, $folder = null, $storage_name = null)
     {
@@ -84742,6 +89155,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostAutofitWorksheetRows($name, $sheet_name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -84766,6 +89182,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostAutofitWorksheetRowsWithHttpInfo($name, $sheet_name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
@@ -84848,6 +89267,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostAutofitWorksheetRowsAsync($name, $sheet_name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostAutofitWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $auto_fitter_options, $start_row, $end_row, $only_auto, $folder, $storage_name)
@@ -84874,6 +89296,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostAutofitWorksheetRowsAsyncWithHttpInfo($name, $sheet_name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
@@ -84931,6 +89356,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostAutofitWorksheetRowsRequest($name, $sheet_name, $auto_fitter_options = null, $start_row = null, $end_row = null, $only_auto = 'false', $folder = null, $storage_name = null)
     {
@@ -85093,6 +89521,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostCopyWorksheet($name, $sheet_name, $source_sheet, $options = null, $source_workbook = null, $source_folder = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -85115,6 +89546,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostCopyWorksheetWithHttpInfo($name, $sheet_name, $source_sheet, $options = null, $source_workbook = null, $source_folder = null, $folder = null, $storage_name = null)
     {
@@ -85197,6 +89631,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostCopyWorksheetAsync($name, $sheet_name, $source_sheet, $options = null, $source_workbook = null, $source_folder = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostCopyWorksheetAsyncWithHttpInfo($name, $sheet_name, $source_sheet, $options, $source_workbook, $source_folder, $folder, $storage_name)
@@ -85223,6 +89660,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostCopyWorksheetAsyncWithHttpInfo($name, $sheet_name, $source_sheet, $options = null, $source_workbook = null, $source_folder = null, $folder = null, $storage_name = null)
     {
@@ -85280,6 +89720,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostCopyWorksheetRequest($name, $sheet_name, $source_sheet, $options = null, $source_workbook = null, $source_folder = null, $folder = null, $storage_name = null)
     {
@@ -85447,6 +89890,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostMoveWorksheet($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -85468,6 +89914,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostMoveWorksheetWithHttpInfo($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
@@ -85547,6 +89996,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostMoveWorksheetAsync($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostMoveWorksheetAsyncWithHttpInfo($name, $sheet_name, $moving, $folder, $storage_name)
@@ -85570,6 +90022,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostMoveWorksheetAsyncWithHttpInfo($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
@@ -85624,6 +90079,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostMoveWorksheetRequest($name, $sheet_name, $moving = null, $folder = null, $storage_name = null)
     {
@@ -85773,6 +90231,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostRenameWorksheet($name, $sheet_name, $newname, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -85794,6 +90255,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostRenameWorksheetWithHttpInfo($name, $sheet_name, $newname, $folder = null, $storage_name = null)
     {
@@ -85873,6 +90337,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostRenameWorksheetAsync($name, $sheet_name, $newname, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostRenameWorksheetAsyncWithHttpInfo($name, $sheet_name, $newname, $folder, $storage_name)
@@ -85896,6 +90363,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostRenameWorksheetAsyncWithHttpInfo($name, $sheet_name, $newname, $folder = null, $storage_name = null)
     {
@@ -85950,6 +90420,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostRenameWorksheetRequest($name, $sheet_name, $newname, $folder = null, $storage_name = null)
     {
@@ -86105,6 +90578,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostUpdateWorksheetProperty($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -86126,6 +90602,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostUpdateWorksheetPropertyWithHttpInfo($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
@@ -86205,6 +90684,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostUpdateWorksheetPropertyAsync($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostUpdateWorksheetPropertyAsyncWithHttpInfo($name, $sheet_name, $sheet, $folder, $storage_name)
@@ -86228,6 +90710,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostUpdateWorksheetPropertyAsyncWithHttpInfo($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
@@ -86282,6 +90767,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostUpdateWorksheetPropertyRequest($name, $sheet_name, $sheet = null, $folder = null, $storage_name = null)
     {
@@ -86429,6 +90917,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostUpdateWorksheetZoom($name, $sheet_name, $value, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -86448,6 +90939,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostUpdateWorksheetZoomWithHttpInfo($name, $sheet_name, $value, $folder = null, $storage_name = null)
     {
@@ -86527,6 +91021,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostUpdateWorksheetZoomAsync($name, $sheet_name, $value, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostUpdateWorksheetZoomAsyncWithHttpInfo($name, $sheet_name, $value, $folder, $storage_name)
@@ -86550,6 +91047,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostUpdateWorksheetZoomAsyncWithHttpInfo($name, $sheet_name, $value, $folder = null, $storage_name = null)
     {
@@ -86604,6 +91104,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostUpdateWorksheetZoomRequest($name, $sheet_name, $value, $folder = null, $storage_name = null)
     {
@@ -86760,6 +91263,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorksheetComment($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -86782,6 +91288,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
@@ -86862,6 +91371,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorksheetCommentAsync($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $comment, $folder, $storage_name)
@@ -86886,6 +91398,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
@@ -86941,6 +91456,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostWorksheetCommentRequest($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
@@ -87105,6 +91623,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorksheetRangeSort($name, $sheet_name, $cell_area, $data_sorter = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -87127,6 +91648,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorksheetRangeSortWithHttpInfo($name, $sheet_name, $cell_area, $data_sorter = null, $folder = null, $storage_name = null)
     {
@@ -87207,6 +91731,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorksheetRangeSortAsync($name, $sheet_name, $cell_area, $data_sorter = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostWorksheetRangeSortAsyncWithHttpInfo($name, $sheet_name, $cell_area, $data_sorter, $folder, $storage_name)
@@ -87231,6 +91758,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorksheetRangeSortAsyncWithHttpInfo($name, $sheet_name, $cell_area, $data_sorter = null, $folder = null, $storage_name = null)
     {
@@ -87286,6 +91816,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostWorksheetRangeSortRequest($name, $sheet_name, $cell_area, $data_sorter = null, $folder = null, $storage_name = null)
     {
@@ -87445,6 +91978,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\TextItemsResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorksheetTextSearch($name, $sheet_name, $text, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -87466,6 +92002,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\TextItemsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorksheetTextSearchWithHttpInfo($name, $sheet_name, $text, $folder = null, $storage_name = null)
     {
@@ -87545,6 +92084,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorksheetTextSearchAsync($name, $sheet_name, $text, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostWorksheetTextSearchAsyncWithHttpInfo($name, $sheet_name, $text, $folder, $storage_name)
@@ -87568,6 +92110,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorksheetTextSearchAsyncWithHttpInfo($name, $sheet_name, $text, $folder = null, $storage_name = null)
     {
@@ -87622,6 +92167,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostWorksheetTextSearchRequest($name, $sheet_name, $text, $folder = null, $storage_name = null)
     {
@@ -87778,6 +92326,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\WorksheetReplaceResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorsheetTextReplace($name, $sheet_name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -87800,6 +92351,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\WorksheetReplaceResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorsheetTextReplaceWithHttpInfo($name, $sheet_name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
@@ -87880,6 +92434,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPostWorsheetTextReplaceAsync($name, $sheet_name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPostWorsheetTextReplaceAsyncWithHttpInfo($name, $sheet_name, $old_value, $new_value, $folder, $storage_name)
@@ -87904,6 +92461,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPostWorsheetTextReplaceAsyncWithHttpInfo($name, $sheet_name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
@@ -87959,6 +92519,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPostWorsheetTextReplaceRequest($name, $sheet_name, $old_value, $new_value, $folder = null, $storage_name = null)
     {
@@ -88125,6 +92688,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutAddNewWorksheet($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -88147,6 +92713,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutAddNewWorksheetWithHttpInfo($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
@@ -88227,6 +92796,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutAddNewWorksheetAsync($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPutAddNewWorksheetAsyncWithHttpInfo($name, $sheet_name, $position, $sheettype, $folder, $storage_name)
@@ -88251,6 +92823,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutAddNewWorksheetAsyncWithHttpInfo($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
@@ -88306,6 +92881,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPutAddNewWorksheetRequest($name, $sheet_name, $position = null, $sheettype = null, $folder = null, $storage_name = null)
     {
@@ -88459,6 +93037,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutChangeVisibilityWorksheet($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -88480,6 +93061,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutChangeVisibilityWorksheetWithHttpInfo($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
@@ -88559,6 +93143,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutChangeVisibilityWorksheetAsync($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPutChangeVisibilityWorksheetAsyncWithHttpInfo($name, $sheet_name, $is_visible, $folder, $storage_name)
@@ -88582,6 +93169,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutChangeVisibilityWorksheetAsyncWithHttpInfo($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
@@ -88636,6 +93226,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPutChangeVisibilityWorksheetRequest($name, $sheet_name, $is_visible, $folder = null, $storage_name = null)
     {
@@ -88791,6 +93384,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutProtectWorksheet($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -88812,6 +93408,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutProtectWorksheetWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -88891,6 +93490,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutProtectWorksheetAsync($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPutProtectWorksheetAsyncWithHttpInfo($name, $sheet_name, $protect_parameter, $folder, $storage_name)
@@ -88914,6 +93516,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutProtectWorksheetAsyncWithHttpInfo($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -88968,6 +93573,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPutProtectWorksheetRequest($name, $sheet_name, $protect_parameter = null, $folder = null, $storage_name = null)
     {
@@ -89117,6 +93725,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutWorksheetBackground($name, $sheet_name, $png, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -89138,6 +93749,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutWorksheetBackgroundWithHttpInfo($name, $sheet_name, $png, $folder = null, $storage_name = null)
     {
@@ -89217,6 +93831,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutWorksheetBackgroundAsync($name, $sheet_name, $png, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPutWorksheetBackgroundAsyncWithHttpInfo($name, $sheet_name, $png, $folder, $storage_name)
@@ -89240,6 +93857,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutWorksheetBackgroundAsyncWithHttpInfo($name, $sheet_name, $png, $folder = null, $storage_name = null)
     {
@@ -89294,6 +93914,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPutWorksheetBackgroundRequest($name, $sheet_name, $png, $folder = null, $storage_name = null)
     {
@@ -89450,6 +94073,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CommentResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutWorksheetComment($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -89472,6 +94098,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CommentResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutWorksheetCommentWithHttpInfo($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
@@ -89552,6 +94181,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutWorksheetCommentAsync($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPutWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $comment, $folder, $storage_name)
@@ -89576,6 +94208,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutWorksheetCommentAsyncWithHttpInfo($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
@@ -89631,6 +94266,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPutWorksheetCommentRequest($name, $sheet_name, $cell_name, $comment = null, $folder = null, $storage_name = null)
     {
@@ -89797,6 +94435,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\CellsCloudResponse
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutWorksheetFreezePanes($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
         $this->checkAccessToken();
@@ -89821,6 +94462,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\CellsCloudResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutWorksheetFreezePanesWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
@@ -89903,6 +94547,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function cellsWorksheetsPutWorksheetFreezePanesAsync($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
         return $this->cellsWorksheetsPutWorksheetFreezePanesAsyncWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder, $storage_name)
@@ -89929,6 +94576,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function cellsWorksheetsPutWorksheetFreezePanesAsyncWithHttpInfo($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
@@ -89986,6 +94636,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function cellsWorksheetsPutWorksheetFreezePanesRequest($name, $sheet_name, $row, $column, $freezed_rows, $freezed_columns, $folder = null, $storage_name = null)
     {
@@ -90171,7 +94824,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function copyFile($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
+     /**
+     * @deprecated 
+     */
+    public function copyFile_($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
         $this->checkAccessToken();
         $this->copyFileWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name, $version_id);
@@ -90191,6 +94847,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function copyFileWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
@@ -90248,6 +94907,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function copyFileAsync($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
         return $this->copyFileAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name, $version_id)
@@ -90271,6 +94933,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function copyFileAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
@@ -90311,6 +94976,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function copyFileRequest($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
@@ -90455,7 +95123,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function copyFolder($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function copyFolder_($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
         $this->checkAccessToken();
         $this->copyFolderWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name);
@@ -90474,6 +95145,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function copyFolderWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
@@ -90530,6 +95204,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function copyFolderAsync($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
         return $this->copyFolderAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name)
@@ -90552,6 +95229,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function copyFolderAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
@@ -90591,6 +95271,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function copyFolderRequest($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
@@ -90729,7 +95412,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createFolder($path, $storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function createFolder_($path, $storage_name = null)
     {
         $this->checkAccessToken();
         $this->createFolderWithHttpInfo($path, $storage_name);
@@ -90746,6 +95432,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function createFolderWithHttpInfo($path, $storage_name = null)
     {
@@ -90800,6 +95489,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function createFolderAsync($path, $storage_name = null)
     {
         return $this->createFolderAsyncWithHttpInfo($path, $storage_name)
@@ -90820,6 +95512,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function createFolderAsyncWithHttpInfo($path, $storage_name = null)
     {
@@ -90857,6 +95552,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function createFolderRequest($path, $storage_name = null)
     {
@@ -90982,7 +95680,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFile($path, $storage_name = null, $version_id = null)
+     /**
+     * @deprecated 
+     */
+    public function deleteFile_($path, $storage_name = null, $version_id = null)
     {
         $this->checkAccessToken();
         $this->deleteFileWithHttpInfo($path, $storage_name, $version_id);
@@ -91000,6 +95701,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function deleteFileWithHttpInfo($path, $storage_name = null, $version_id = null)
     {
@@ -91055,6 +95759,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function deleteFileAsync($path, $storage_name = null, $version_id = null)
     {
         return $this->deleteFileAsyncWithHttpInfo($path, $storage_name, $version_id)
@@ -91076,6 +95783,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function deleteFileAsyncWithHttpInfo($path, $storage_name = null, $version_id = null)
     {
@@ -91114,6 +95824,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function deleteFileRequest($path, $storage_name = null, $version_id = null)
     {
@@ -91243,7 +95956,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFolder($path, $storage_name = null, $recursive = 'false')
+     /**
+     * @deprecated 
+     */
+    public function deleteFolder_($path, $storage_name = null, $recursive = 'false')
     {
         $this->checkAccessToken();
         $this->deleteFolderWithHttpInfo($path, $storage_name, $recursive);
@@ -91261,6 +95977,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function deleteFolderWithHttpInfo($path, $storage_name = null, $recursive = 'false')
     {
@@ -91316,6 +96035,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function deleteFolderAsync($path, $storage_name = null, $recursive = 'false')
     {
         return $this->deleteFolderAsyncWithHttpInfo($path, $storage_name, $recursive)
@@ -91337,6 +96059,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function deleteFolderAsyncWithHttpInfo($path, $storage_name = null, $recursive = 'false')
     {
@@ -91375,6 +96100,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function deleteFolderRequest($path, $storage_name = null, $recursive = 'false')
     {
@@ -91504,7 +96232,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function downloadFile($path, $storage_name = null, $version_id = null)
+     /**
+     * @deprecated 
+     */
+    public function downloadFile_($path, $storage_name = null, $version_id = null)
     {
         $this->checkAccessToken();
         list($response) = $this->downloadFileWithHttpInfo($path, $storage_name, $version_id);
@@ -91523,6 +96254,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function downloadFileWithHttpInfo($path, $storage_name = null, $version_id = null)
     {
@@ -91600,6 +96334,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function downloadFileAsync($path, $storage_name = null, $version_id = null)
     {
         return $this->downloadFileAsyncWithHttpInfo($path, $storage_name, $version_id)
@@ -91621,6 +96358,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function downloadFileAsyncWithHttpInfo($path, $storage_name = null, $version_id = null)
     {
@@ -91673,6 +96413,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function downloadFileRequest($path, $storage_name = null, $version_id = null)
     {
@@ -91800,7 +96543,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\DiscUsage
      */
-    public function getDiscUsage($storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function getDiscUsage_($storage_name = null)
     {
         $this->checkAccessToken();
         list($response) = $this->getDiscUsageWithHttpInfo($storage_name);
@@ -91817,6 +96563,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\DiscUsage, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function getDiscUsageWithHttpInfo($storage_name = null)
     {
@@ -91892,6 +96641,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function getDiscUsageAsync($storage_name = null)
     {
         return $this->getDiscUsageAsyncWithHttpInfo($storage_name)
@@ -91911,6 +96663,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function getDiscUsageAsyncWithHttpInfo($storage_name = null)
     {
@@ -91961,6 +96716,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function getDiscUsageRequest($storage_name = null)
     {
@@ -92071,7 +96829,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileVersions
      */
-    public function getFileVersions($path, $storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function getFileVersions_($path, $storage_name = null)
     {
         $this->checkAccessToken();
         list($response) = $this->getFileVersionsWithHttpInfo($path, $storage_name);
@@ -92089,6 +96850,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileVersions, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function getFileVersionsWithHttpInfo($path, $storage_name = null)
     {
@@ -92165,6 +96929,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function getFileVersionsAsync($path, $storage_name = null)
     {
         return $this->getFileVersionsAsyncWithHttpInfo($path, $storage_name)
@@ -92185,6 +96952,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function getFileVersionsAsyncWithHttpInfo($path, $storage_name = null)
     {
@@ -92236,6 +97006,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function getFileVersionsRequest($path, $storage_name = null)
     {
@@ -92360,7 +97133,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesList
      */
-    public function getFilesList($path, $storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function _getFilesList($path, $storage_name = null)
     {
         $this->checkAccessToken();
         list($response) = $this->getFilesListWithHttpInfo($path, $storage_name);
@@ -92378,6 +97154,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesList, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function getFilesListWithHttpInfo($path, $storage_name = null)
     {
@@ -92454,6 +97233,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function getFilesListAsync($path, $storage_name = null)
     {
         return $this->getFilesListAsyncWithHttpInfo($path, $storage_name)
@@ -92474,6 +97256,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function getFilesListAsyncWithHttpInfo($path, $storage_name = null)
     {
@@ -92525,6 +97310,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function getFilesListRequest($path, $storage_name = null)
     {
@@ -92652,7 +97440,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function moveFile($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
+     /**
+     * @deprecated 
+     */
+    public function moveFile_($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
         $this->checkAccessToken();
         $this->moveFileWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name, $version_id);
@@ -92672,6 +97463,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function moveFileWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
@@ -92729,6 +97523,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function moveFileAsync($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
         return $this->moveFileAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name, $version_id)
@@ -92752,6 +97549,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function moveFileAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
@@ -92792,6 +97592,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function moveFileRequest($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)
     {
@@ -92936,7 +97739,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function moveFolder($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function moveFolder_($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
         $this->checkAccessToken();
         $this->moveFolderWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name);
@@ -92955,6 +97761,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function moveFolderWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
@@ -93011,6 +97820,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function moveFolderAsync($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
         return $this->moveFolderAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name, $dest_storage_name)
@@ -93033,6 +97845,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function moveFolderAsyncWithHttpInfo($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
@@ -93072,6 +97887,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function moveFolderRequest($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)
     {
@@ -93211,6 +98029,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\AccessTokenResponse
      */
+     /**
+     * @deprecated 
+     */
     public function oAuthPost($grant_type, $client_id, $client_secret)
     {
         $this->checkAccessToken();
@@ -93230,6 +98051,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\AccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function oAuthPostWithHttpInfo($grant_type, $client_id, $client_secret)
     {
@@ -93307,6 +98131,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function oAuthPostAsync($grant_type, $client_id, $client_secret)
     {
         return $this->oAuthPostAsyncWithHttpInfo($grant_type, $client_id, $client_secret)
@@ -93328,6 +98155,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function oAuthPostAsyncWithHttpInfo($grant_type, $client_id, $client_secret)
     {
@@ -93380,6 +98210,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function oAuthPostRequest($grant_type, $client_id, $client_secret)
     {
@@ -93517,7 +98350,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\ObjectExist
      */
-    public function objectExists($path, $storage_name = null, $version_id = null)
+     /**
+     * @deprecated 
+     */
+    public function objectExists_($path, $storage_name = null, $version_id = null)
     {
         $this->checkAccessToken();
         list($response) = $this->objectExistsWithHttpInfo($path, $storage_name, $version_id);
@@ -93536,6 +98372,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\ObjectExist, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function objectExistsWithHttpInfo($path, $storage_name = null, $version_id = null)
     {
@@ -93613,6 +98452,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function objectExistsAsync($path, $storage_name = null, $version_id = null)
     {
         return $this->objectExistsAsyncWithHttpInfo($path, $storage_name, $version_id)
@@ -93634,6 +98476,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function objectExistsAsyncWithHttpInfo($path, $storage_name = null, $version_id = null)
     {
@@ -93686,6 +98531,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function objectExistsRequest($path, $storage_name = null, $version_id = null)
     {
@@ -93811,7 +98659,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function postBatchConvert($batch_convert_request)
+     /**
+     * @deprecated 
+     */
+    public function postBatchConvert_($batch_convert_request)
     {
         $this->checkAccessToken();
         list($response) = $this->postBatchConvertWithHttpInfo($batch_convert_request);
@@ -93826,6 +98677,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postBatchConvertWithHttpInfo($batch_convert_request)
     {
@@ -93901,6 +98755,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postBatchConvertAsync($batch_convert_request)
     {
         return $this->postBatchConvertAsyncWithHttpInfo($batch_convert_request)
@@ -93920,6 +98777,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postBatchConvertAsyncWithHttpInfo($batch_convert_request)
     {
@@ -93970,6 +98830,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postBatchConvertRequest($batch_convert_request)
     {
@@ -94084,7 +98947,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToDocx($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToDocx_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToDocxWithHttpInfo($file, $password, $check_excel_restriction);
@@ -94101,6 +98967,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToDocxWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94178,6 +99047,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToDocxAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToDocxAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -94199,6 +99071,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToDocxAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94251,6 +99126,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToDocxRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94382,7 +99260,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToPDF($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToPDF_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToPDFWithHttpInfo($file, $password, $check_excel_restriction);
@@ -94399,6 +99280,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToPDFWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94476,6 +99360,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToPDFAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToPDFAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -94497,6 +99384,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToPDFAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94549,6 +99439,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToPDFRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94680,7 +99573,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToPNG($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToPNG_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToPNGWithHttpInfo($file, $password, $check_excel_restriction);
@@ -94697,6 +99593,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToPNGWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94774,6 +99673,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToPNGAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToPNGAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -94795,6 +99697,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToPNGAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94847,6 +99752,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToPNGRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -94978,7 +99886,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToPptx($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToPptx_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToPptxWithHttpInfo($file, $password, $check_excel_restriction);
@@ -94995,6 +99906,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToPptxWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95072,6 +99986,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToPptxAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToPptxAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -95093,6 +100010,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToPptxAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95145,6 +100065,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToPptxRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95275,7 +100198,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToHtml($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToHtml_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToHtmlWithHttpInfo($file, $password, $check_excel_restriction);
@@ -95292,6 +100218,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToHtmlWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95369,6 +100298,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToHtmlAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToHtmlAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -95390,6 +100322,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToHtmlAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95442,6 +100377,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToHtmlRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95572,7 +100510,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToMarkdown($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToMarkdown_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToMarkdownWithHttpInfo($file, $password, $check_excel_restriction);
@@ -95589,6 +100530,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToMarkdownWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95666,6 +100610,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToMarkdownAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToMarkdownAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -95687,6 +100634,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToMarkdownAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95739,6 +100689,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToMarkdownRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95870,7 +100823,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToJson($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToJson_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToJsonWithHttpInfo($file, $password, $check_excel_restriction);
@@ -95887,6 +100843,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToJsonWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -95964,6 +100923,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToJsonAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToJsonAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -95985,6 +100947,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToJsonAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96037,6 +101002,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToJsonRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96168,7 +101136,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToSQL($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToSQL_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToSQLWithHttpInfo($file, $password, $check_excel_restriction);
@@ -96185,6 +101156,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToSQLWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96262,6 +101236,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToSQLAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToSQLAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -96283,6 +101260,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToSQLAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96335,6 +101315,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToSQLRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96468,7 +101451,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function postConvertWorkbookToCSV($file, $password = null, $check_excel_restriction = 'true')
+     /**
+     * @deprecated 
+     */
+    public function postConvertWorkbookToCSV_($file, $password = null, $check_excel_restriction = 'true')
     {
         $this->checkAccessToken();
         list($response) = $this->postConvertWorkbookToCSVWithHttpInfo($file, $password, $check_excel_restriction);
@@ -96485,6 +101471,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FileInfo, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToCSVWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96562,6 +101551,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function postConvertWorkbookToCSVAsync($file, $password = null, $check_excel_restriction = 'true')
     {
         return $this->postConvertWorkbookToCSVAsyncWithHttpInfo($file, $password, $check_excel_restriction)
@@ -96583,6 +101575,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function postConvertWorkbookToCSVAsyncWithHttpInfo($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96635,6 +101630,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function postConvertWorkbookToCSVRequest($file, $password = null, $check_excel_restriction = 'true')
     {
@@ -96767,7 +101765,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\StorageExist
      */
-    public function storageExists($storage_name)
+     /**
+     * @deprecated 
+     */
+    public function storageExists_($storage_name)
     {
         $this->checkAccessToken();
         list($response) = $this->storageExistsWithHttpInfo($storage_name);
@@ -96784,6 +101785,9 @@ class CellsApi
      * @throws \Aspose\Cells\Cloud\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\StorageExist, HTTP status code, HTTP response headers (array of strings)
+     */
+     /**
+     * @deprecated 
      */
     public function storageExistsWithHttpInfo($storage_name)
     {
@@ -96859,6 +101863,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function storageExistsAsync($storage_name)
     {
         return $this->storageExistsAsyncWithHttpInfo($storage_name)
@@ -96878,6 +101885,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function storageExistsAsyncWithHttpInfo($storage_name)
     {
@@ -96928,6 +101938,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function storageExistsRequest($storage_name)
     {
@@ -97049,7 +102062,10 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \Aspose\Cells\Cloud\Model\FilesUploadResult
      */
-    public function uploadFile($path, $file, $storage_name = null)
+     /**
+     * @deprecated 
+     */
+    public function uploadFile_($path, $file, $storage_name = null)
     {
         $this->checkAccessToken();
         list($response) = $this->uploadFileWithHttpInfo($path, $file, $storage_name);
@@ -97069,11 +102085,14 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Cells\Cloud\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
      */
+     /**
+     * @deprecated 
+     */
     public function uploadFileWithHttpInfo($path, $file, $storage_name = null)
     {
         $returnType = '\Aspose\Cells\Cloud\Model\FilesUploadResult';
         $request = $this->uploadFileRequest($path, $file, $storage_name);
-
+        
         try {
             $options = $this->createHttpClientOption();
             try {
@@ -97145,6 +102164,9 @@ class CellsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+     /**
+     * @deprecated 
+     */
     public function uploadFileAsync($path, $file, $storage_name = null)
     {
         return $this->uploadFileAsyncWithHttpInfo($path, $file, $storage_name)
@@ -97166,6 +102188,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+     /**
+     * @deprecated 
      */
     public function uploadFileAsyncWithHttpInfo($path, $file, $storage_name = null)
     {
@@ -97218,6 +102243,9 @@ class CellsApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     */
+     /**
+     * @deprecated 
      */
     protected function uploadFileRequest($path, $file, $storage_name = null)
     {
@@ -97348,6 +102376,3842 @@ class CellsApi
         );
     }
 
+    
+
+    
+    /*  new model */
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetAutoFilterRequest" /></param>
+    public function getWorksheetAutoFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AutoFilterResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetDateFilterRequest" /></param>
+    public function putWorksheetDateFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetFilterRequest" /></param>
+    public function putWorksheetFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetIconFilterRequest" /></param>
+    public function putWorksheetIconFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetCustomFilterRequest" /></param>
+    public function putWorksheetCustomFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetDynamicFilterRequest" /></param>
+    public function putWorksheetDynamicFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetFilterTop10Request" /></param>
+    public function putWorksheetFilterTop10( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetColorFilterRequest" /></param>
+    public function putWorksheetColorFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetMatchBlanksRequest" /></param>
+    public function postWorksheetMatchBlanks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetMatchNonBlanksRequest" /></param>
+    public function postWorksheetMatchNonBlanks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetAutoFilterRefreshRequest" /></param>
+    public function postWorksheetAutoFilterRefresh( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetDateFilterRequest" /></param>
+    public function deleteWorksheetDateFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetFilterRequest" /></param>
+    public function deleteWorksheetFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetAutoshapesRequest" /></param>
+    public function getWorksheetAutoshapes( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AutoShapesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetAutoshapeWithFormatRequest" /></param>
+    public function getWorksheetAutoshapeWithFormat( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostBatchConvertRequest" /></param>
+    public function postBatchConvert( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetExtractBarcodesRequest" /></param>
+    public function getExtractBarcodes( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\BarcodeResponseList';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostClearContentsRequest" /></param>
+    public function postClearContents( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostClearFormatsRequest" /></param>
+    public function postClearFormats( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUpdateWorksheetRangeStyleRequest" /></param>
+    public function postUpdateWorksheetRangeStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetMergeRequest" /></param>
+    public function postWorksheetMerge( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetUnmergeRequest" /></param>
+    public function postWorksheetUnmerge( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCellsRequest" /></param>
+    public function getWorksheetCells( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCellRequest" /></param>
+    public function getWorksheetCell( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCellStyleRequest" /></param>
+    public function getWorksheetCellStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellSetValueRequest" /></param>
+    public function postWorksheetCellSetValue( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUpdateWorksheetCellStyleRequest" /></param>
+    public function postUpdateWorksheetCellStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostSetCellRangeValueRequest" /></param>
+    public function postSetCellRangeValue( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCopyCellIntoCellRequest" /></param>
+    public function postCopyCellIntoCell( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetCellHtmlStringRequest" /></param>
+    public function getCellHtmlString( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostSetCellHtmlStringRequest" /></param>
+    public function postSetCellHtmlString( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCellCalculateRequest" /></param>
+    public function postCellCalculate( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCellCharactersRequest" /></param>
+    public function postCellCharacters( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetColumnsRequest" /></param>
+    public function getWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostSetWorksheetColumnWidthRequest" /></param>
+    public function postSetWorksheetColumnWidth( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetColumnRequest" /></param>
+    public function getWorksheetColumn( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutInsertWorksheetColumnsRequest" /></param>
+    public function putInsertWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetColumnsRequest" /></param>
+    public function deleteWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostHideWorksheetColumnsRequest" /></param>
+    public function postHideWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUnhideWorksheetColumnsRequest" /></param>
+    public function postUnhideWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostGroupWorksheetColumnsRequest" /></param>
+    public function postGroupWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUngroupWorksheetColumnsRequest" /></param>
+    public function postUngroupWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCopyWorksheetColumnsRequest" /></param>
+    public function postCopyWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostColumnStyleRequest" /></param>
+    public function postColumnStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetRowsRequest" /></param>
+    public function getWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\RowsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetRowRequest" /></param>
+    public function getWorksheetRow( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetRowRequest" /></param>
+    public function deleteWorksheetRow( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetRowsRequest" /></param>
+    public function deleteWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutInsertWorksheetRowsRequest" /></param>
+    public function putInsertWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutInsertWorksheetRowRequest" /></param>
+    public function putInsertWorksheetRow( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUpdateWorksheetRowRequest" /></param>
+    public function postUpdateWorksheetRow( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostHideWorksheetRowsRequest" /></param>
+    public function postHideWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUnhideWorksheetRowsRequest" /></param>
+    public function postUnhideWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostGroupWorksheetRowsRequest" /></param>
+    public function postGroupWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUngroupWorksheetRowsRequest" /></param>
+    public function postUngroupWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCopyWorksheetRowsRequest" /></param>
+    public function postCopyWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostRowStyleRequest" /></param>
+    public function postRowStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetCellsCloudServicesHealthCheckRequest" /></param>
+    public function getCellsCloudServicesHealthCheck( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetCellsCloudServiceStatusRequest" /></param>
+    public function getCellsCloudServiceStatus( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartAreaRequest" /></param>
+    public function getChartArea( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ChartAreaResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartAreaFillFormatRequest" /></param>
+    public function getChartAreaFillFormat( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FillFormatResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartAreaBorderRequest" /></param>
+    public function getChartAreaBorder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\LineResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetChartsRequest" /></param>
+    public function getWorksheetCharts( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetChartRequest" /></param>
+    public function getWorksheetChart( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetAddChartRequest" /></param>
+    public function putWorksheetAddChart( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetDeleteChartRequest" /></param>
+    public function deleteWorksheetDeleteChart( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetChartRequest" /></param>
+    public function postWorksheetChart( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetChartLegendRequest" /></param>
+    public function getWorksheetChartLegend( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetChartLegendRequest" /></param>
+    public function postWorksheetChartLegend( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetChartLegendRequest" /></param>
+    public function putWorksheetChartLegend( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetChartLegendRequest" /></param>
+    public function deleteWorksheetChartLegend( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetClearChartsRequest" /></param>
+    public function deleteWorksheetClearCharts( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetChartTitleRequest" /></param>
+    public function getWorksheetChartTitle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetChartTitleRequest" /></param>
+    public function postWorksheetChartTitle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetChartTitleRequest" /></param>
+    public function putWorksheetChartTitle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetChartTitleRequest" /></param>
+    public function deleteWorksheetChartTitle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartSeriesAxisRequest" /></param>
+    public function getChartSeriesAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartCategoryAxisRequest" /></param>
+    public function getChartCategoryAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartValueAxisRequest" /></param>
+    public function getChartValueAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartSecondCategoryAxisRequest" /></param>
+    public function getChartSecondCategoryAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetChartSecondValueAxisRequest" /></param>
+    public function getChartSecondValueAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostChartSeriesAxisRequest" /></param>
+    public function postChartSeriesAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostChartCategoryAxisRequest" /></param>
+    public function postChartCategoryAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostChartValueAxisRequest" /></param>
+    public function postChartValueAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostChartSecondCategoryAxisRequest" /></param>
+    public function postChartSecondCategoryAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostChartSecondValueAxisRequest" /></param>
+    public function postChartSecondValueAxis( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetConditionalFormattingsRequest" /></param>
+    public function getWorksheetConditionalFormattings( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetConditionalFormattingRequest" /></param>
+    public function getWorksheetConditionalFormatting( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetConditionalFormattingRequest" /></param>
+    public function putWorksheetConditionalFormatting( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetFormatConditionRequest" /></param>
+    public function putWorksheetFormatCondition( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetFormatConditionAreaRequest" /></param>
+    public function putWorksheetFormatConditionArea( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetFormatConditionConditionRequest" /></param>
+    public function putWorksheetFormatConditionCondition( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetConditionalFormattingsRequest" /></param>
+    public function deleteWorksheetConditionalFormattings( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetConditionalFormattingRequest" /></param>
+    public function deleteWorksheetConditionalFormatting( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetConditionalFormattingAreaRequest" /></param>
+    public function deleteWorksheetConditionalFormattingArea( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookRequest" /></param>
+    public function getWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutConvertWorkbookRequest" /></param>
+    public function putConvertWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookSaveAsRequest" /></param>
+    public function postWorkbookSaveAs( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToPDFRequest" /></param>
+    public function postConvertWorkbookToPDF( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToPNGRequest" /></param>
+    public function postConvertWorkbookToPNG( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToDocxRequest" /></param>
+    public function postConvertWorkbookToDocx( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToPptxRequest" /></param>
+    public function postConvertWorkbookToPptx( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToHtmlRequest" /></param>
+    public function postConvertWorkbookToHtml( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToMarkdownRequest" /></param>
+    public function postConvertWorkbookToMarkdown( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToJsonRequest" /></param>
+    public function postConvertWorkbookToJson( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToSQLRequest" /></param>
+    public function postConvertWorkbookToSQL( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookToCSVRequest" /></param>
+    public function postConvertWorkbookToCSV( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkSheetHyperlinksRequest" /></param>
+    public function getWorkSheetHyperlinks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\HyperlinksResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkSheetHyperlinkRequest" /></param>
+    public function getWorkSheetHyperlink( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorkSheetHyperlinkRequest" /></param>
+    public function deleteWorkSheetHyperlink( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkSheetHyperlinkRequest" /></param>
+    public function postWorkSheetHyperlink( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorkSheetHyperlinkRequest" /></param>
+    public function putWorkSheetHyperlink( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorkSheetHyperlinksRequest" /></param>
+    public function deleteWorkSheetHyperlinks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAssembleRequest" /></param>
+    public function postAssemble( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCompressRequest" /></param>
+    public function postCompress( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostExportRequest" /></param>
+    public function postExport( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostMergeRequest" /></param>
+    public function postMerge( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUnlockRequest" /></param>
+    public function postUnlock( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostProtectRequest" /></param>
+    public function postProtect( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostSplitRequest" /></param>
+    public function postSplit( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostSearchRequest" /></param>
+    public function postSearch( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItem[]';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostReplaceRequest" /></param>
+    public function postReplace( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostImportRequest" /></param>
+    public function postImport( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWatermarkRequest" /></param>
+    public function postWatermark( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostClearObjectsRequest" /></param>
+    public function postClearObjects( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostReverseRequest" /></param>
+    public function postReverse( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostRotateRequest" /></param>
+    public function postRotate( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostMetadataRequest" /></param>
+    public function postMetadata( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetMetadataRequest" /></param>
+    public function getMetadata( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentProperty[]';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteMetadataRequest" /></param>
+    public function deleteMetadata( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetListObjectsRequest" /></param>
+    public function getWorksheetListObjects( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ListObjectsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetListObjectRequest" /></param>
+    public function getWorksheetListObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetListObjectRequest" /></param>
+    public function putWorksheetListObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetListObjectsRequest" /></param>
+    public function deleteWorksheetListObjects( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetListObjectRequest" /></param>
+    public function deleteWorksheetListObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListObjectRequest" /></param>
+    public function postWorksheetListObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListObjectConvertToRangeRequest" /></param>
+    public function postWorksheetListObjectConvertToRange( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListObjectSummarizeWithPivotTableRequest" /></param>
+    public function postWorksheetListObjectSummarizeWithPivotTable( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListObjectSortTableRequest" /></param>
+    public function postWorksheetListObjectSortTable( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListColumnRequest" /></param>
+    public function postWorksheetListColumn( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListColumnsTotalRequest" /></param>
+    public function postWorksheetListColumnsTotal( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetOleObjectsRequest" /></param>
+    public function getWorksheetOleObjects( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\OleObjectsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetOleObjectRequest" /></param>
+    public function getWorksheetOleObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetOleObjectsRequest" /></param>
+    public function deleteWorksheetOleObjects( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetOleObjectRequest" /></param>
+    public function deleteWorksheetOleObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUpdateWorksheetOleObjectRequest" /></param>
+    public function postUpdateWorksheetOleObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetOleObjectRequest" /></param>
+    public function putWorksheetOleObject( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetVerticalPageBreaksRequest" /></param>
+    public function getVerticalPageBreaks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetHorizontalPageBreaksRequest" /></param>
+    public function getHorizontalPageBreaks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetVerticalPageBreakRequest" /></param>
+    public function getVerticalPageBreak( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreakResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetHorizontalPageBreakRequest" /></param>
+    public function getHorizontalPageBreak( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutVerticalPageBreakRequest" /></param>
+    public function putVerticalPageBreak( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutHorizontalPageBreakRequest" /></param>
+    public function putHorizontalPageBreak( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteVerticalPageBreaksRequest" /></param>
+    public function deleteVerticalPageBreaks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteHorizontalPageBreaksRequest" /></param>
+    public function deleteHorizontalPageBreaks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteVerticalPageBreakRequest" /></param>
+    public function deleteVerticalPageBreak( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteHorizontalPageBreakRequest" /></param>
+    public function deleteHorizontalPageBreak( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetPageSetupRequest" /></param>
+    public function getPageSetup( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PageSetupResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPageSetupRequest" /></param>
+    public function postPageSetup( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteHeaderFooterRequest" /></param>
+    public function deleteHeaderFooter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetHeaderRequest" /></param>
+    public function getHeader( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostHeaderRequest" /></param>
+    public function postHeader( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetFooterRequest" /></param>
+    public function getFooter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostFooterRequest" /></param>
+    public function postFooter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPicturesRequest" /></param>
+    public function getWorksheetPictures( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPictureWithFormatRequest" /></param>
+    public function getWorksheetPictureWithFormat( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetAddPictureRequest" /></param>
+    public function putWorksheetAddPicture( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkSheetPictureRequest" /></param>
+    public function postWorkSheetPicture( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetPictureRequest" /></param>
+    public function deleteWorksheetPicture( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorkSheetPicturesRequest" /></param>
+    public function deleteWorkSheetPictures( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPivotTablesRequest" /></param>
+    public function getWorksheetPivotTables( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PivotTablesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPivotTableRequest" /></param>
+    public function getWorksheetPivotTable( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetPivotTableFieldRequest" /></param>
+    public function getPivotTableField( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PivotFieldResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPivotTableFiltersRequest" /></param>
+    public function getWorksheetPivotTableFilters( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PivotFiltersResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPivotTableFilterRequest" /></param>
+    public function getWorksheetPivotTableFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\PivotFilterResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetPivotTableRequest" /></param>
+    public function putWorksheetPivotTable( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutPivotTableFieldRequest" /></param>
+    public function putPivotTableField( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetPivotTableFilterRequest" /></param>
+    public function putWorksheetPivotTableFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPivotTableFieldHideItemRequest" /></param>
+    public function postPivotTableFieldHideItem( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPivotTableFieldMoveToRequest" /></param>
+    public function postPivotTableFieldMoveTo( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPivotTableCellStyleRequest" /></param>
+    public function postPivotTableCellStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPivotTableStyleRequest" /></param>
+    public function postPivotTableStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPivotTableUpdatePivotFieldsRequest" /></param>
+    public function postPivotTableUpdatePivotFields( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostPivotTableUpdatePivotFieldRequest" /></param>
+    public function postPivotTableUpdatePivotField( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetPivotTableCalculateRequest" /></param>
+    public function postWorksheetPivotTableCalculate( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetPivotTableMoveRequest" /></param>
+    public function postWorksheetPivotTableMove( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetPivotTablesRequest" /></param>
+    public function deleteWorksheetPivotTables( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetPivotTableRequest" /></param>
+    public function deleteWorksheetPivotTable( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeletePivotTableFieldRequest" /></param>
+    public function deletePivotTableField( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetPivotTableFiltersRequest" /></param>
+    public function deleteWorksheetPivotTableFilters( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetPivotTableFilterRequest" /></param>
+    public function deleteWorksheetPivotTableFilter( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param>
+    public function getDocumentProperties( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetDocumentPropertyRequest" /></param>
+    public function getDocumentProperty( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutDocumentPropertyRequest" /></param>
+    public function putDocumentProperty( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteDocumentPropertyRequest" /></param>
+    public function deleteDocumentProperty( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteDocumentPropertiesRequest" /></param>
+    public function deleteDocumentProperties( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangesRequest" /></param>
+    public function postWorksheetCellsRanges( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeMergeRequest" /></param>
+    public function postWorksheetCellsRangeMerge( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeUnMergeRequest" /></param>
+    public function postWorksheetCellsRangeUnMerge( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeStyleRequest" /></param>
+    public function postWorksheetCellsRangeStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCellsRangeValueRequest" /></param>
+    public function getWorksheetCellsRangeValue( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\RangeValueResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeValueRequest" /></param>
+    public function postWorksheetCellsRangeValue( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeMoveToRequest" /></param>
+    public function postWorksheetCellsRangeMoveTo( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeOutlineBorderRequest" /></param>
+    public function postWorksheetCellsRangeOutlineBorder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeColumnWidthRequest" /></param>
+    public function postWorksheetCellsRangeColumnWidth( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeRowHeightRequest" /></param>
+    public function postWorksheetCellsRangeRowHeight( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetCellsRangeRequest" /></param>
+    public function putWorksheetCellsRange( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetCellsRangeRequest" /></param>
+    public function deleteWorksheetCellsRange( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetShapesRequest" /></param>
+    public function getWorksheetShapes( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ShapesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetShapeRequest" /></param>
+    public function getWorksheetShape( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetShapeRequest" /></param>
+    public function putWorksheetShape( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetShapesRequest" /></param>
+    public function deleteWorksheetShapes( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetShapeRequest" /></param>
+    public function deleteWorksheetShape( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetShapeRequest" /></param>
+    public function postWorksheetShape( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetGroupShapeRequest" /></param>
+    public function postWorksheetGroupShape( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetUngroupShapeRequest" /></param>
+    public function postWorksheetUngroupShape( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetSparklineGroupsRequest" /></param>
+    public function getWorksheetSparklineGroups( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetSparklineGroupRequest" /></param>
+    public function getWorksheetSparklineGroup( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetSparklineGroupsRequest" /></param>
+    public function deleteWorksheetSparklineGroups( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetSparklineGroupRequest" /></param>
+    public function deleteWorksheetSparklineGroup( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetSparklineGroupRequest" /></param>
+    public function putWorksheetSparklineGroup( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetSparklineGroupRequest" /></param>
+    public function postWorksheetSparklineGroup( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostRunTaskRequest" /></param>
+    public function postRunTask( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostDigitalSignatureRequest" /></param>
+    public function postDigitalSignature( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostEncryptWorkbookRequest" /></param>
+    public function postEncryptWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteDecryptWorkbookRequest" /></param>
+    public function deleteDecryptWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostProtectWorkbookRequest" /></param>
+    public function postProtectWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteUnProtectWorkbookRequest" /></param>
+    public function deleteUnProtectWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookDefaultStyleRequest" /></param>
+    public function getWorkbookDefaultStyle( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookTextItemsRequest" /></param>
+    public function getWorkbookTextItems( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookNamesRequest" /></param>
+    public function getWorkbookNames( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\NamesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorkbookNameRequest" /></param>
+    public function putWorkbookName( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookNameRequest" /></param>
+    public function getWorkbookName( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\NameResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookNameRequest" /></param>
+    public function postWorkbookName( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookNameValueRequest" /></param>
+    public function getWorkbookNameValue( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\RangeValueResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorkbookNamesRequest" /></param>
+    public function deleteWorkbookNames( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorkbookNameRequest" /></param>
+    public function deleteWorkbookName( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutDocumentProtectFromChangesRequest" /></param>
+    public function putDocumentProtectFromChanges( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteDocumentUnProtectFromChangesRequest" /></param>
+    public function deleteDocumentUnProtectFromChanges( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbooksMergeRequest" /></param>
+    public function postWorkbooksMerge( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\WorkbookResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbooksTextSearchRequest" /></param>
+    public function postWorkbooksTextSearch( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookTextReplaceRequest" /></param>
+    public function postWorkbookTextReplace( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\WorkbookReplaceResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookGetSmartMarkerResultRequest" /></param>
+    public function postWorkbookGetSmartMarkerResult( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorkbookCreateRequest" /></param>
+    public function putWorkbookCreate( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookSplitRequest" /></param>
+    public function postWorkbookSplit( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SplitResultResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostImportDataRequest" /></param>
+    public function postImportData( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookCalculateFormulaRequest" /></param>
+    public function postWorkbookCalculateFormula( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAutofitWorkbookRowsRequest" /></param>
+    public function postAutofitWorkbookRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAutofitWorkbookColumnsRequest" /></param>
+    public function postAutofitWorkbookColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookSettingsRequest" /></param>
+    public function getWorkbookSettings( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\WorkbookSettingsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookSettingsRequest" /></param>
+    public function postWorkbookSettings( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorkbookBackgroundRequest" /></param>
+    public function putWorkbookBackground( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorkbookBackgroundRequest" /></param>
+    public function deleteWorkbookBackground( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorkbookWaterMarkerRequest" /></param>
+    public function putWorkbookWaterMarker( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetPageCountRequest" /></param>
+    public function getPageCount( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'int';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetsRequest" /></param>
+    public function getWorksheets( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetWithFormatRequest" /></param>
+    public function getWorksheetWithFormat( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutChangeVisibilityWorksheetRequest" /></param>
+    public function putChangeVisibilityWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutActiveWorksheetRequest" /></param>
+    public function putActiveWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutInsertNewWorksheetRequest" /></param>
+    public function putInsertNewWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutAddNewWorksheetRequest" /></param>
+    public function putAddNewWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetRequest" /></param>
+    public function deleteWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetsRequest" /></param>
+    public function deleteWorksheets( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostMoveWorksheetRequest" /></param>
+    public function postMoveWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutProtectWorksheetRequest" /></param>
+    public function putProtectWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteUnprotectWorksheetRequest" /></param>
+    public function deleteUnprotectWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetTextItemsRequest" /></param>
+    public function getWorksheetTextItems( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCommentsRequest" /></param>
+    public function getWorksheetComments( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CommentsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCommentRequest" /></param>
+    public function getWorksheetComment( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CommentResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetCommentRequest" /></param>
+    public function putWorksheetComment( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CommentResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCommentRequest" /></param>
+    public function postWorksheetComment( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetCommentRequest" /></param>
+    public function deleteWorksheetComment( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetCommentsRequest" /></param>
+    public function deleteWorksheetComments( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetMergedCellsRequest" /></param>
+    public function getWorksheetMergedCells( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\MergedCellsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetMergedCellRequest" /></param>
+    public function getWorksheetMergedCell( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\MergedCellResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetCalculateFormulaRequest" /></param>
+    public function getWorksheetCalculateFormula( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SingleValueResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCalculateFormulaRequest" /></param>
+    public function postWorksheetCalculateFormula( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SingleValueResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetTextSearchRequest" /></param>
+    public function postWorksheetTextSearch( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorsheetTextReplaceRequest" /></param>
+    public function postWorsheetTextReplace( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\WorksheetReplaceResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetRangeSortRequest" /></param>
+    public function postWorksheetRangeSort( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAutofitWorksheetRowRequest" /></param>
+    public function postAutofitWorksheetRow( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAutofitWorksheetRowsRequest" /></param>
+    public function postAutofitWorksheetRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAutofitWorksheetColumnsRequest" /></param>
+    public function postAutofitWorksheetColumns( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetBackgroundRequest" /></param>
+    public function putWorksheetBackground( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetBackgroundRequest" /></param>
+    public function deleteWorksheetBackground( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetFreezePanesRequest" /></param>
+    public function putWorksheetFreezePanes( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetFreezePanesRequest" /></param>
+    public function deleteWorksheetFreezePanes( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCopyWorksheetRequest" /></param>
+    public function postCopyWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostRenameWorksheetRequest" /></param>
+    public function postRenameWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUpdateWorksheetPropertyRequest" /></param>
+    public function postUpdateWorksheetProperty( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetNamedRangesRequest" /></param>
+    public function getNamedRanges( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\RangesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetNamedRangeValueRequest" /></param>
+    public function getNamedRangeValue( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\RangeValueResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostUpdateWorksheetZoomRequest" /></param>
+    public function postUpdateWorksheetZoom( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetPageCountRequest" /></param>
+    public function getWorksheetPageCount( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'int';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetValidationsRequest" /></param>
+    public function getWorksheetValidations( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ValidationsResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorksheetValidationRequest" /></param>
+    public function getWorksheetValidation( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PutWorksheetValidationRequest" /></param>
+    public function putWorksheetValidation( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetValidationRequest" /></param>
+    public function postWorksheetValidation( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetValidationRequest" /></param>
+    public function deleteWorksheetValidation( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetValidationsRequest" /></param>
+    public function deleteWorksheetValidations( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
+    public function downloadFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="UploadFileRequest" /></param>
+    public function uploadFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesUploadResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CopyFileRequest" /></param>
+    public function copyFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="MoveFileRequest" /></param>
+    public function moveFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>
+    public function deleteFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetFilesListRequest" /></param>
+    public function getFilesList( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesList';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>
+    public function createFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>
+    public function copyFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>
+    public function moveFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>
+    public function deleteFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="StorageExistsRequest" /></param>
+    public function storageExists( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\StorageExist';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ObjectExistsRequest" /></param>
+    public function objectExists( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ObjectExist';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetDiscUsageRequest" /></param>
+    public function getDiscUsage( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\DiscUsage';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetFileVersionsRequest" /></param>
+    public function getFileVersions( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileVersions';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    private function execute( $request , $returnType)
+    {
+     try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else if ($returnType === '') { 
+                return [
+                   null,
+                    $response->getStatusCode(),
+                    $response->getHeaders()
+                ];
+            } else {
+                $content = $responseBody->getContents();
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        $returnType,
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
     /**
      * Create http client option
      *
@@ -97366,7 +106230,6 @@ class CellsApi
 
         return $options;
     }
-
     public function getAccessToken($grant_type, $client_id, $client_secret ,$version = "v3.0")
     {
         $returnType = '\Aspose\Cells\Cloud\Model\AccessTokenResponse';
@@ -97512,7 +106375,7 @@ class CellsApi
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
             } else {
-                $content = $responseBody->getContents();
+                $content = $responseBody->getContents();                
                 if ($returnType !== 'string') {
                     $content = json_decode($content);
                 }
@@ -97532,5 +106395,6 @@ class CellsApi
             }
             throw $e;
         }            
-    }    
+    }      
+
 }

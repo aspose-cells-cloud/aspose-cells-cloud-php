@@ -44,6 +44,9 @@ use Aspose\Cells\Cloud\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
+/**
+ * @deprecated
+ */
 class LightCellsApi
 {
     /**
