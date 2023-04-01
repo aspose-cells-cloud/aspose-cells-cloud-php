@@ -106190,6 +106190,11 @@ class CellsApi
                 ];
             } else {
                 $content = $responseBody->getContents();
+                if ( $request->getMethod() !== 'GET' ){
+                    if ($returnType !== 'string') {
+                        $content = json_decode($content);
+                    }
+                }
             }
 
             return [

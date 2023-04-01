@@ -297,7 +297,7 @@ class WorkbookControllerTest extends \PHPUnit_Framework_TestCase
         $newName = new \Aspose\Cells\Cloud\Model\Name();
         $newName->setText("name_1804" ); 
         $newName->setComment("KeepSourceFormatting" ); 
-        $newName->setRefersTo("=Sheet1!$I$4" ); 
+        $newName->setRefersTo('=Sheet1!$I$4' ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorkbookNameRequest();
@@ -343,7 +343,7 @@ class WorkbookControllerTest extends \PHPUnit_Framework_TestCase
         $newName = new \Aspose\Cells\Cloud\Model\Name();
         $newName->setText("name_1804" ); 
         $newName->setComment("KeepSourceFormatting" ); 
-        $newName->setRefersTo("=Sheet1!$I$4" ); 
+        $newName->setRefersTo('=Sheet1!$I$4' ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorkbookNameRequest();
