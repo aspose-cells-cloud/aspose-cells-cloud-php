@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="Hyperlink.cs">
+ * <copyright company="Aspose" file="ImportPosition.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Hyperlink implements  ArrayAccess
+class ImportPosition implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class Hyperlink implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Hyperlink';     
+    protected static $swaggerModelName = 'ImportPosition';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,12 +46,9 @@ class Hyperlink implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => 'string',
-        'area' => '\Aspose\Cells\Cloud\Model\CellArea',
-        'screen_tip' => 'string',
-        'text_to_display' => 'string',
-        'link_type' => 'string',
-        'link' => '\Aspose\Cells\Cloud\Model\Link'
+        'sheet_name' => 'string',
+        'row_index' => 'int',
+        'column_index' => 'int'
     ];
 
     /**
@@ -60,12 +57,9 @@ class Hyperlink implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'address' => null  ,
-        'area' => null  ,
-        'screen_tip' => null  ,
-        'text_to_display' => null  ,
-        'link_type' => null  ,
-        'link' => null  
+        'sheet_name' => null  ,
+        'row_index' => null  ,
+        'column_index' => null  
     ];
 
     /**
@@ -95,12 +89,9 @@ class Hyperlink implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'address' => 'Address' ,
-         'area' => 'Area' ,
-         'screen_tip' => 'ScreenTip' ,
-         'text_to_display' => 'TextToDisplay' ,
-         'link_type' => 'LinkType' ,
-         'link' => 'link' 
+         'sheet_name' => 'SheetName' ,
+         'row_index' => 'RowIndex' ,
+         'column_index' => 'ColumnIndex' 
     ];
 
     /**
@@ -109,12 +100,9 @@ class Hyperlink implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'address' => 'setAddress' ,
-        'area' => 'setArea' ,
-        'screen_tip' => 'setScreenTip' ,
-        'text_to_display' => 'setTextToDisplay' ,
-        'link_type' => 'setLinkType' ,
-        'link' => 'setlink' 
+        'sheet_name' => 'setSheetName' ,
+        'row_index' => 'setRowIndex' ,
+        'column_index' => 'setColumnIndex' 
     ];
 
     /**
@@ -123,12 +111,9 @@ class Hyperlink implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'address' => 'getAddress' ,
-        'area' => 'getArea' ,
-        'screen_tip' => 'getScreenTip' ,
-        'text_to_display' => 'getTextToDisplay' ,
-        'link_type' => 'getLinkType' ,
-        'link' => 'getlink' 
+        'sheet_name' => 'getSheetName' ,
+        'row_index' => 'getRowIndex' ,
+        'column_index' => 'getColumnIndex' 
     ];
 
     /**
@@ -187,12 +172,9 @@ class Hyperlink implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['screen_tip'] = isset($data['screen_tip']) ? $data['screen_tip'] : null;
-        $this->container['text_to_display'] = isset($data['text_to_display']) ? $data['text_to_display'] : null;
-        $this->container['link_type'] = isset($data['link_type']) ? $data['link_type'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['sheet_name'] = isset($data['sheet_name']) ? $data['sheet_name'] : null;
+        $this->container['row_index'] = isset($data['row_index']) ? $data['row_index'] : null;
+        $this->container['column_index'] = isset($data['column_index']) ? $data['column_index'] : null;
     }
 
     /**
@@ -203,23 +185,14 @@ class Hyperlink implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
+        if ($this->container['sheet_name'] === null) {
+            $invalidProperties[] = "'sheet_name' can't be null";
         }
-        if ($this->container['area'] === null) {
-            $invalidProperties[] = "'area' can't be null";
+        if ($this->container['row_index'] === null) {
+            $invalidProperties[] = "'row_index' can't be null";
         }
-        if ($this->container['screen_tip'] === null) {
-            $invalidProperties[] = "'screen_tip' can't be null";
-        }
-        if ($this->container['text_to_display'] === null) {
-            $invalidProperties[] = "'text_to_display' can't be null";
-        }
-        if ($this->container['link_type'] === null) {
-            $invalidProperties[] = "'link_type' can't be null";
-        }
-        if ($this->container['link'] === null) {
-            $invalidProperties[] = "'link' can't be null";
+        if ($this->container['column_index'] === null) {
+            $invalidProperties[] = "'column_index' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,161 +205,83 @@ class Hyperlink implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['address'] === null) {
+        if ($this->container['sheet_name'] === null) {
                     return false;
                 }
-        if ($this->container['area'] === null) {
+        if ($this->container['row_index'] === null) {
                     return false;
                 }
-        if ($this->container['screen_tip'] === null) {
-                    return false;
-                }
-        if ($this->container['text_to_display'] === null) {
-                    return false;
-                }
-        if ($this->container['link_type'] === null) {
-                    return false;
-                }
-        if ($this->container['link'] === null) {
+        if ($this->container['column_index'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets address
+     * Gets sheet_name
      *
      * @return string
      */
-    public function getAddress()
+    public function getSheetName()
     {
-        return $this->container['address'];
+        return $this->container['sheet_name'];
     }
 
     /**
-     * Sets address
+     * Sets sheet_name
      *
      *  
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setSheetName($sheet_name)
     {
-        $this->container['address'] = $address;
+        $this->container['sheet_name'] = $sheet_name;
 
         return $this;
     }
    /**
-     * Gets area
+     * Gets row_index
      *
-     * @return \Aspose\Cells\Cloud\Model\CellArea
+     * @return int
      */
-    public function getArea()
+    public function getRowIndex()
     {
-        return $this->container['area'];
+        return $this->container['row_index'];
     }
 
     /**
-     * Sets area
+     * Sets row_index
      *
      *  
      *
      * @return $this
      */
-    public function setArea($area)
+    public function setRowIndex($row_index)
     {
-        $this->container['area'] = $area;
+        $this->container['row_index'] = $row_index;
 
         return $this;
     }
    /**
-     * Gets screen_tip
+     * Gets column_index
      *
-     * @return string
+     * @return int
      */
-    public function getScreenTip()
+    public function getColumnIndex()
     {
-        return $this->container['screen_tip'];
+        return $this->container['column_index'];
     }
 
     /**
-     * Sets screen_tip
+     * Sets column_index
      *
      *  
      *
      * @return $this
      */
-    public function setScreenTip($screen_tip)
+    public function setColumnIndex($column_index)
     {
-        $this->container['screen_tip'] = $screen_tip;
-
-        return $this;
-    }
-   /**
-     * Gets text_to_display
-     *
-     * @return string
-     */
-    public function getTextToDisplay()
-    {
-        return $this->container['text_to_display'];
-    }
-
-    /**
-     * Sets text_to_display
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setTextToDisplay($text_to_display)
-    {
-        $this->container['text_to_display'] = $text_to_display;
-
-        return $this;
-    }
-   /**
-     * Gets link_type
-     *
-     * @return string
-     */
-    public function getLinkType()
-    {
-        return $this->container['link_type'];
-    }
-
-    /**
-     * Sets link_type
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setLinkType($link_type)
-    {
-        $this->container['link_type'] = $link_type;
-
-        return $this;
-    }
-   /**
-     * Gets link
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link
-     */
-    public function getlink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setlink($link)
-    {
-        $this->container['link'] = $link;
+        $this->container['column_index'] = $column_index;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="Hyperlink.cs">
+ * <copyright company="Aspose" file="ImportXMLRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Hyperlink implements  ArrayAccess
+class ImportXMLRequest implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class Hyperlink implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Hyperlink';     
+    protected static $swaggerModelName = 'ImportXMLRequest';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,12 +46,8 @@ class Hyperlink implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'address' => 'string',
-        'area' => '\Aspose\Cells\Cloud\Model\CellArea',
-        'screen_tip' => 'string',
-        'text_to_display' => 'string',
-        'link_type' => 'string',
-        'link' => '\Aspose\Cells\Cloud\Model\Link'
+        'xml_file_source' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'import_position' => '\Aspose\Cells\Cloud\Model\ImportPosition'
     ];
 
     /**
@@ -60,12 +56,8 @@ class Hyperlink implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'address' => null  ,
-        'area' => null  ,
-        'screen_tip' => null  ,
-        'text_to_display' => null  ,
-        'link_type' => null  ,
-        'link' => null  
+        'xml_file_source' => null  ,
+        'import_position' => null  
     ];
 
     /**
@@ -95,12 +87,8 @@ class Hyperlink implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'address' => 'Address' ,
-         'area' => 'Area' ,
-         'screen_tip' => 'ScreenTip' ,
-         'text_to_display' => 'TextToDisplay' ,
-         'link_type' => 'LinkType' ,
-         'link' => 'link' 
+         'xml_file_source' => 'XMLFileSource' ,
+         'import_position' => 'ImportPosition' 
     ];
 
     /**
@@ -109,12 +97,8 @@ class Hyperlink implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'address' => 'setAddress' ,
-        'area' => 'setArea' ,
-        'screen_tip' => 'setScreenTip' ,
-        'text_to_display' => 'setTextToDisplay' ,
-        'link_type' => 'setLinkType' ,
-        'link' => 'setlink' 
+        'xml_file_source' => 'setXMLFileSource' ,
+        'import_position' => 'setImportPosition' 
     ];
 
     /**
@@ -123,12 +107,8 @@ class Hyperlink implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'address' => 'getAddress' ,
-        'area' => 'getArea' ,
-        'screen_tip' => 'getScreenTip' ,
-        'text_to_display' => 'getTextToDisplay' ,
-        'link_type' => 'getLinkType' ,
-        'link' => 'getlink' 
+        'xml_file_source' => 'getXMLFileSource' ,
+        'import_position' => 'getImportPosition' 
     ];
 
     /**
@@ -187,12 +167,8 @@ class Hyperlink implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['area'] = isset($data['area']) ? $data['area'] : null;
-        $this->container['screen_tip'] = isset($data['screen_tip']) ? $data['screen_tip'] : null;
-        $this->container['text_to_display'] = isset($data['text_to_display']) ? $data['text_to_display'] : null;
-        $this->container['link_type'] = isset($data['link_type']) ? $data['link_type'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['xml_file_source'] = isset($data['xml_file_source']) ? $data['xml_file_source'] : null;
+        $this->container['import_position'] = isset($data['import_position']) ? $data['import_position'] : null;
     }
 
     /**
@@ -203,23 +179,11 @@ class Hyperlink implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
+        if ($this->container['xml_file_source'] === null) {
+            $invalidProperties[] = "'xml_file_source' can't be null";
         }
-        if ($this->container['area'] === null) {
-            $invalidProperties[] = "'area' can't be null";
-        }
-        if ($this->container['screen_tip'] === null) {
-            $invalidProperties[] = "'screen_tip' can't be null";
-        }
-        if ($this->container['text_to_display'] === null) {
-            $invalidProperties[] = "'text_to_display' can't be null";
-        }
-        if ($this->container['link_type'] === null) {
-            $invalidProperties[] = "'link_type' can't be null";
-        }
-        if ($this->container['link'] === null) {
-            $invalidProperties[] = "'link' can't be null";
+        if ($this->container['import_position'] === null) {
+            $invalidProperties[] = "'import_position' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,161 +196,57 @@ class Hyperlink implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['address'] === null) {
+        if ($this->container['xml_file_source'] === null) {
                     return false;
                 }
-        if ($this->container['area'] === null) {
-                    return false;
-                }
-        if ($this->container['screen_tip'] === null) {
-                    return false;
-                }
-        if ($this->container['text_to_display'] === null) {
-                    return false;
-                }
-        if ($this->container['link_type'] === null) {
-                    return false;
-                }
-        if ($this->container['link'] === null) {
+        if ($this->container['import_position'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets address
+     * Gets xml_file_source
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\FileSource
      */
-    public function getAddress()
+    public function getXMLFileSource()
     {
-        return $this->container['address'];
+        return $this->container['xml_file_source'];
     }
 
     /**
-     * Sets address
+     * Sets xml_file_source
      *
      *  
      *
      * @return $this
      */
-    public function setAddress($address)
+    public function setXMLFileSource($xml_file_source)
     {
-        $this->container['address'] = $address;
+        $this->container['xml_file_source'] = $xml_file_source;
 
         return $this;
     }
    /**
-     * Gets area
+     * Gets import_position
      *
-     * @return \Aspose\Cells\Cloud\Model\CellArea
+     * @return \Aspose\Cells\Cloud\Model\ImportPosition
      */
-    public function getArea()
+    public function getImportPosition()
     {
-        return $this->container['area'];
+        return $this->container['import_position'];
     }
 
     /**
-     * Sets area
+     * Sets import_position
      *
      *  
      *
      * @return $this
      */
-    public function setArea($area)
+    public function setImportPosition($import_position)
     {
-        $this->container['area'] = $area;
-
-        return $this;
-    }
-   /**
-     * Gets screen_tip
-     *
-     * @return string
-     */
-    public function getScreenTip()
-    {
-        return $this->container['screen_tip'];
-    }
-
-    /**
-     * Sets screen_tip
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setScreenTip($screen_tip)
-    {
-        $this->container['screen_tip'] = $screen_tip;
-
-        return $this;
-    }
-   /**
-     * Gets text_to_display
-     *
-     * @return string
-     */
-    public function getTextToDisplay()
-    {
-        return $this->container['text_to_display'];
-    }
-
-    /**
-     * Sets text_to_display
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setTextToDisplay($text_to_display)
-    {
-        $this->container['text_to_display'] = $text_to_display;
-
-        return $this;
-    }
-   /**
-     * Gets link_type
-     *
-     * @return string
-     */
-    public function getLinkType()
-    {
-        return $this->container['link_type'];
-    }
-
-    /**
-     * Sets link_type
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setLinkType($link_type)
-    {
-        $this->container['link_type'] = $link_type;
-
-        return $this;
-    }
-   /**
-     * Gets link
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link
-     */
-    public function getlink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setlink($link)
-    {
-        $this->container['link'] = $link;
+        $this->container['import_position'] = $import_position;
 
         return $this;
     }

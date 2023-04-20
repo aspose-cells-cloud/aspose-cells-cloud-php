@@ -105980,7 +105980,29 @@ class CellsApi
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
     }
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookExportXMLRequest" /></param>
+    public function postWorkbookExportXML( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
 
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookImportXMLRequest" /></param>
+    public function postWorkbookImportXML( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
     /// <summary>
     /// </summary>
     /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
