@@ -117,6 +117,7 @@ class XmlControllerTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$dataXML ,$remoteFolder . "/data.xml" ,  "");
      
         $request = new PostWorkbookImportXMLRequest();
+        $request->setImportXMLRequest($importXMLRequest);
         $request->setName( $remoteName);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
