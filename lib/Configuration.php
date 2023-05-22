@@ -1,16 +1,17 @@
 <?php
-
-/* 
+/*--------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="Configurationphp.cs">
+ *   Copyright (c) 2023 Aspose.Cells Cloud
+ * </copyright>
  * <summary>
- *  Copyright (c) 2022 Aspose.Cells Cloud
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
  * 
- *  The above copyright notice and this permission notice shall be included in all 
+ *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
  * 
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -21,9 +22,8 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  * </summary>
- */
-
-
+ *--------------------------------------------------------------------------------------------------------------------
+*/
 
 namespace Aspose\Cells\Cloud;
 
@@ -87,7 +87,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Aspose.Cells Cloud SDK/23.4/php';
+    protected $userAgent = 'Swagger-Codegen/23.5/php';
 
     /**
      * Debug switch (default set to false)
@@ -395,8 +395,8 @@ class Configuration
         $report  = 'PHP SDK (Aspose\Cells\Cloud) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    OpenAPI Spec Version: v3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 23.4' . PHP_EOL;
+        $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
+        $report .= '    SDK Package Version: 23.5' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

@@ -142,12 +142,12 @@ use Aspose\Cells\Cloud\Request\PostConvertWorkbookToMarkdownRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToJsonRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToSQLRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToCSVRequest;
-use Aspose\Cells\Cloud\Request\GetWorkSheetHyperlinksRequest;
-use Aspose\Cells\Cloud\Request\GetWorkSheetHyperlinkRequest;
-use Aspose\Cells\Cloud\Request\DeleteWorkSheetHyperlinkRequest;
-use Aspose\Cells\Cloud\Request\PostWorkSheetHyperlinkRequest;
-use Aspose\Cells\Cloud\Request\PutWorkSheetHyperlinkRequest;
-use Aspose\Cells\Cloud\Request\DeleteWorkSheetHyperlinksRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetHyperlinksRequest;
+use Aspose\Cells\Cloud\Request\GetWorksheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\PutWorksheetHyperlinkRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinksRequest;
 use Aspose\Cells\Cloud\Request\PostAssembleRequest;
 use Aspose\Cells\Cloud\Request\PostCompressRequest;
 use Aspose\Cells\Cloud\Request\PostExportRequest;
@@ -202,9 +202,9 @@ use Aspose\Cells\Cloud\Request\PostFooterRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetPicturesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetPictureWithFormatRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetAddPictureRequest;
-use Aspose\Cells\Cloud\Request\PostWorkSheetPictureRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetPictureRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetPictureRequest;
-use Aspose\Cells\Cloud\Request\DeleteWorkSheetPicturesRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetPicturesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetPivotTablesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetPivotTableRequest;
 use Aspose\Cells\Cloud\Request\GetPivotTableFieldRequest;
@@ -103664,11 +103664,10 @@ class CellsApi
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
     }
-
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="GetWorkSheetHyperlinksRequest" /></param>
-    public function getWorkSheetHyperlinks( $request)
+    /// <param name="request">Request. <see cref="GetWorksheetHyperlinksRequest" /></param>
+    public function getWorksheetHyperlinks( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinksResponse';
@@ -103679,8 +103678,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="GetWorkSheetHyperlinkRequest" /></param>
-    public function getWorkSheetHyperlink( $request)
+    /// <param name="request">Request. <see cref="GetWorksheetHyperlinkRequest" /></param>
+    public function getWorksheetHyperlink( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
@@ -103691,8 +103690,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="DeleteWorkSheetHyperlinkRequest" /></param>
-    public function deleteWorkSheetHyperlink( $request)
+    /// <param name="request">Request. <see cref="DeleteWorksheetHyperlinkRequest" /></param>
+    public function deleteWorksheetHyperlink( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -103703,8 +103702,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="PostWorkSheetHyperlinkRequest" /></param>
-    public function postWorkSheetHyperlink( $request)
+    /// <param name="request">Request. <see cref="PostWorksheetHyperlinkRequest" /></param>
+    public function postWorksheetHyperlink( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -103715,8 +103714,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="PutWorkSheetHyperlinkRequest" /></param>
-    public function putWorkSheetHyperlink( $request)
+    /// <param name="request">Request. <see cref="PutWorksheetHyperlinkRequest" /></param>
+    public function putWorksheetHyperlink( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -103727,8 +103726,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="DeleteWorkSheetHyperlinksRequest" /></param>
-    public function deleteWorkSheetHyperlinks( $request)
+    /// <param name="request">Request. <see cref="DeleteWorksheetHyperlinksRequest" /></param>
+    public function deleteWorksheetHyperlinks( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -104387,8 +104386,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="PostWorkSheetPictureRequest" /></param>
-    public function postWorkSheetPicture( $request)
+    /// <param name="request">Request. <see cref="PostWorksheetPictureRequest" /></param>
+    public function postWorksheetPicture( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -104411,8 +104410,8 @@ class CellsApi
 
     /// <summary>
     /// </summary>
-    /// <param name="request">Request. <see cref="DeleteWorkSheetPicturesRequest" /></param>
-    public function deleteWorkSheetPictures( $request)
+    /// <param name="request">Request. <see cref="DeleteWorksheetPicturesRequest" /></param>
+    public function deleteWorksheetPictures( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';

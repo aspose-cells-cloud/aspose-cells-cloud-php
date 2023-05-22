@@ -37,11 +37,18 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
+/**
+ * @deprecated 
+ */
+
+ class PostWorkSheetHyperlinkRequest extends PostWorksheetHyperlinkRequest
+ {
+ }
 /*
  * Request model for  PostWorkSheetHyperlink operation.
  */
 
-class PostWorkSheetHyperlinkRequest extends BaseApiRequest
+class PostWorksheetHyperlinkRequest extends BaseApiRequest
 {
 
     /*

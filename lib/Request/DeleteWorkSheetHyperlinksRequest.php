@@ -36,12 +36,18 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
+/**
+ * @deprecated 
+ */
+class DeleteWorkSheetHyperlinksRequest extends DeleteWorksheetHyperlinksRequest
+{
 
+}
 /*
  * Request model for  DeleteWorkSheetHyperlinks operation.
  */
 
-class DeleteWorkSheetHyperlinksRequest extends BaseApiRequest
+class DeleteWorksheetHyperlinksRequest extends BaseApiRequest
 {
 
     /*
