@@ -26,7 +26,7 @@ class CellsApiTestBase
      */
     public static function getInstance()
     {
-       return new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+       return new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
     }
     public static function getLiteInstance()
     {

@@ -36,12 +36,12 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
-/**
- * @deprecated 
- */
-class DeleteWorkSheetPicturesRequest extends DeleteWorksheetPicturesRequest
-{
-}
+// /**
+//  * @deprecated 
+//  */
+// class DeleteWorkSheetPicturesRequest extends DeleteWorksheetPicturesRequest
+// {
+// }
 /*
  * Request model for  DeleteWorkSheetPictures operation.
  */

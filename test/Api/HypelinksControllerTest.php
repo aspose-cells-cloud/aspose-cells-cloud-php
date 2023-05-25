@@ -34,12 +34,12 @@ use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
-use \Aspose\Cells\Cloud\Request\DeleteWorkSheetHyperlinkRequest; 
-use \Aspose\Cells\Cloud\Request\DeleteWorkSheetHyperlinksRequest; 
-use \Aspose\Cells\Cloud\Request\GetWorkSheetHyperlinkRequest; 
-use \Aspose\Cells\Cloud\Request\GetWorkSheetHyperlinksRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorkSheetHyperlinkRequest; 
-use \Aspose\Cells\Cloud\Request\PutWorkSheetHyperlinkRequest; 
+use \Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinkRequest; 
+use \Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinksRequest; 
+use \Aspose\Cells\Cloud\Request\GetWorksheetHyperlinkRequest; 
+use \Aspose\Cells\Cloud\Request\GetWorksheetHyperlinksRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetHyperlinkRequest; 
+use \Aspose\Cells\Cloud\Request\PutWorksheetHyperlinkRequest; 
 
 use PHPUnit\Framework\TestCase;
 class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
@@ -58,7 +58,7 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
     }
 
     /**
@@ -76,10 +76,10 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /// <summary>
-    /// Test for GetWorkSheetHyperlinks of HypelinksController.
+    /// Test for GetWorksheetHyperlinks of HypelinksController.
     /// </summary>
 
-    public function testGetWorkSheetHyperlinks()
+    public function testGetWorksheetHyperlinks()
     {
         $remoteFolder = "TestData/In";
 
@@ -88,19 +88,19 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new GetWorkSheetHyperlinksRequest();
+        $request = new GetWorksheetHyperlinksRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorkSheetHyperlinks($request);
+        $this->instance->getWorksheetHyperlinks($request);
     }
 
     /// <summary>
-    /// Test for GetWorkSheetHyperlink of HypelinksController.
+    /// Test for GetWorksheetHyperlink of HypelinksController.
     /// </summary>
 
-    public function testGetWorkSheetHyperlink()
+    public function testGetWorksheetHyperlink()
     {
         $remoteFolder = "TestData/In";
 
@@ -109,42 +109,42 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new GetWorkSheetHyperlinkRequest();
-        $request->setName( $remoteName);
-        $request->setSheetName( "Sheet1");
-        $request->setHyperlinkIndex( 0);
-        $request->setFolder( $remoteFolder);
-        $request->setStorageName( "");
-        $this->instance->getWorkSheetHyperlink($request);
-    }
-
-    /// <summary>
-    /// Test for DeleteWorkSheetHyperlink of HypelinksController.
-    /// </summary>
-
-    public function testDeleteWorkSheetHyperlink()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new DeleteWorkSheetHyperlinkRequest();
+        $request = new GetWorksheetHyperlinkRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setHyperlinkIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorkSheetHyperlink($request);
+        $this->instance->getWorksheetHyperlink($request);
     }
 
     /// <summary>
-    /// Test for PostWorkSheetHyperlink of HypelinksController.
+    /// Test for DeleteWorksheetHyperlink of HypelinksController.
     /// </summary>
 
-    public function testPostWorkSheetHyperlink()
+    public function testDeleteWorksheetHyperlink()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "Book1.xlsx";
+        $remoteName = "Book1.xlsx";
+
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
+        $request = new DeleteWorksheetHyperlinkRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "Sheet1");
+        $request->setHyperlinkIndex( 0);
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->deleteWorksheetHyperlink($request);
+    }
+
+    /// <summary>
+    /// Test for PostWorksheetHyperlink of HypelinksController.
+    /// </summary>
+
+    public function testPostWorksheetHyperlink()
     {
         $remoteFolder = "TestData/In";
 
@@ -155,21 +155,21 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
         $hyperlink->setAddress("https://products.aspose.cloud/cells/" ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PostWorkSheetHyperlinkRequest();
+        $request = new PostWorksheetHyperlinkRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setHyperlinkIndex( 0);
         $request->setHyperlink( $hyperlink);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorkSheetHyperlink($request);
+        $this->instance->postWorksheetHyperlink($request);
     }
 
     /// <summary>
-    /// Test for PutWorkSheetHyperlink of HypelinksController.
+    /// Test for PutWorksheetHyperlink of HypelinksController.
     /// </summary>
 
-    public function testPutWorkSheetHyperlink()
+    public function testPutWorksheetHyperlink()
     {
         $remoteFolder = "TestData/In";
 
@@ -178,7 +178,7 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PutWorkSheetHyperlinkRequest();
+        $request = new PutWorksheetHyperlinkRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFirstRow( 1);
@@ -188,14 +188,14 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setAddress( "https://products.aspose.cloud/cells/");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorkSheetHyperlink($request);
+        $this->instance->putWorksheetHyperlink($request);
     }
 
     /// <summary>
-    /// Test for DeleteWorkSheetHyperlinks of HypelinksController.
+    /// Test for DeleteWorksheetHyperlinks of HypelinksController.
     /// </summary>
 
-    public function testDeleteWorkSheetHyperlinks()
+    public function testDeleteWorksheetHyperlinks()
     {
         $remoteFolder = "TestData/In";
 
@@ -204,11 +204,11 @@ class HypelinksControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new DeleteWorkSheetHyperlinksRequest();
+        $request = new DeleteWorksheetHyperlinksRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorkSheetHyperlinks($request);
+        $this->instance->deleteWorksheetHyperlinks($request);
     }
 }

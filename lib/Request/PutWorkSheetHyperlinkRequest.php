@@ -41,7 +41,7 @@ use Asapose\Cells\Cloud\Configuration;
  * Request model for  PutWorkSheetHyperlink operation.
  */
 
-class PutWorkSheetHyperlinkRequest extends BaseApiRequest
+class PutWorksheetHyperlinkRequest extends BaseApiRequest
 {
 
     /*

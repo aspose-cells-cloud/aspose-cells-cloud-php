@@ -37,13 +37,13 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
-/**
- * @deprecated 
- */
+// /**
+//  * @deprecated 
+//  */
 
-class GetWorkSheetHyperlinkRequest extends GetWorksheetHyperlinkRequest
-{
-}
+// class GetWorkSheetHyperlinkRequest extends GetWorksheetHyperlinkRequest
+// {
+// }
 
 /*
  * Request model for  GetWorkSheetHyperlink operation.

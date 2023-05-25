@@ -37,12 +37,12 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
-/**
- * @deprecated 
- */
-class DeleteWorkSheetHyperlinkRequest extends DeleteWorksheetHyperlinkRequest
-{
-}
+// /**
+//  * @deprecated 
+//  */
+// class DeleteWorkSheetHyperlinkRequest extends DeleteWorksheetHyperlinkRequest
+// {
+// }
 /*
  * Request model for  DeleteWorkSheetHyperlink operation.
  */
