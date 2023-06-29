@@ -45,7 +45,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : Represents the sparkline types(Line/Column/Stacked).
     */ 
     public $type;
 
@@ -90,7 +90,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * dataRange : 
+    * dataRange : Specifies the data range of the sparkline group.
     */ 
     public $data_range;
 
@@ -105,7 +105,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * isVertical : 
+    * isVertical : Specifies whether to plot the sparklines from the data range by row or by column.
     */ 
     public $is_vertical;
 
@@ -120,7 +120,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * locationRange : 
+    * locationRange : Specifies where the sparklines to be placed.
     */ 
     public $location_range;
 
@@ -135,7 +135,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

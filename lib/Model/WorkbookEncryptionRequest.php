@@ -229,7 +229,7 @@ class WorkbookEncryptionRequest implements  ArrayAccess
     /**
      * Sets encryption_type
      *
-     *  
+     *  Workbook encription type.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class WorkbookEncryptionRequest implements  ArrayAccess
     /**
      * Sets key_length
      *
-     *  
+     *  Encription key length.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class WorkbookEncryptionRequest implements  ArrayAccess
     /**
      * Sets password
      *
-     *  
+     *  Encription password.
      *
      * @return $this
      */

@@ -45,7 +45,7 @@ class PostWorksheetCellsRangesRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCellsRangesRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangesRequest extends BaseApiRequest
     }
 
     /*
-    * rangeOperate : 
+    * rangeOperate : copydata,copystyle,copyto,copyvalue
     */ 
     public $range_operate;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellsRangesRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorksheetCellsRangesRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

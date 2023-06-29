@@ -45,7 +45,7 @@ class PostWorkbookCalculateFormulaRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookCalculateFormulaRequest extends BaseApiRequest
     }
 
     /*
-    * options : 
+    * options : Calculation Options.
     */ 
     public $options;
 
@@ -75,7 +75,7 @@ class PostWorkbookCalculateFormulaRequest extends BaseApiRequest
     }
 
     /*
-    * ignoreError : 
+    * ignoreError : ignore Error.
     */ 
     public $ignore_error;
 
@@ -90,7 +90,7 @@ class PostWorkbookCalculateFormulaRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorkbookCalculateFormulaRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

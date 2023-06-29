@@ -45,7 +45,7 @@ class GetVerticalPageBreakRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * index : 
+    * index : The zero based index of the element.
     */ 
     public $index;
 
@@ -90,7 +90,7 @@ class GetVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class GetVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

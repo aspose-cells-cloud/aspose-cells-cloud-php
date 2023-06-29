@@ -337,7 +337,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets axis_color
      *
-     *  
+     *  Gets the color of the axis for cells with conditional formatting as data bars.
      *
      * @return $this
      */
@@ -360,7 +360,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets axis_position
      *
-     *  
+     *  Gets or sets the position of the axis of the data bars specified by a conditional   formatting rule.
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets bar_border
      *
-     *  
+     *  Gets an object that specifies the border of a data bar.
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets bar_fill_type
      *
-     *  
+     *  Gets or sets how a data bar is filled with color.
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Get or set this DataBar's Color.            
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets direction
      *
-     *  
+     *  Gets or sets the direction the databar is displayed.
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets max_cfvo
      *
-     *  
+     *  Get or set this DataBar's max value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Min to it.            
      *
      * @return $this
      */
@@ -498,7 +498,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets max_length
      *
-     *  
+     *  Represents the max length of data bar .
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets min_cfvo
      *
-     *  
+     *  Get or set this DataBar's min value object.  Cannot set null or CFValueObject  with type FormatConditionValueType.Max to it.            
      *
      * @return $this
      */
@@ -544,7 +544,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets min_length
      *
-     *  
+     *  Represents the min length of data bar .            
      *
      * @return $this
      */
@@ -567,7 +567,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets negative_bar_format
      *
-     *  
+     *  Gets the NegativeBarFormat object associated with a data bar conditional    formatting rule.
      *
      * @return $this
      */
@@ -590,7 +590,7 @@ class DataBar implements  ArrayAccess
     /**
      * Sets show_value
      *
-     *  
+     *  Get or set the flag indicating whether to show the values of the cells on  which this data bar is applied.  Default value is true.            
      *
      * @return $this
      */

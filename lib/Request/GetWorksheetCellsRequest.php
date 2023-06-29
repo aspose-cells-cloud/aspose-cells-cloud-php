@@ -45,7 +45,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : Document name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * offest : 
+    * offest : Begginig offset.
     */ 
     public $offest;
 
@@ -90,7 +90,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * count : 
+    * count : Maximum amount of cells in the response.
     */ 
     public $count;
 
@@ -105,7 +105,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Document's folder name.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

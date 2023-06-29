@@ -45,7 +45,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified AutoFilter applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : The integer offset of the field on which you want to base the filter (from the left of the list; the leftmost field is field 0).
     */ 
     public $field_index;
 
@@ -105,7 +105,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * isTop : 
+    * isTop : Indicates whether filter from top or bottom
     */ 
     public $is_top;
 
@@ -120,7 +120,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * isPercent : 
+    * isPercent : Indicates whether the items is percent or count
     */ 
     public $is_percent;
 
@@ -135,7 +135,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * itemCount : 
+    * itemCount : The item count
     */ 
     public $item_count;
 
@@ -150,7 +150,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * matchBlanks : 
+    * matchBlanks : Match all blank or  not blank cell in the list.(true/false)
     */ 
     public $match_blanks;
 
@@ -165,7 +165,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * refresh : 
+    * refresh : If true, hide the filtered rows.
     */ 
     public $refresh;
 
@@ -180,7 +180,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -195,7 +195,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

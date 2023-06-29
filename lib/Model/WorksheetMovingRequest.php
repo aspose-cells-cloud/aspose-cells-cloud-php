@@ -217,7 +217,7 @@ class WorksheetMovingRequest implements  ArrayAccess
     /**
      * Sets destination_worksheet
      *
-     *  
+     *  Destination worksheet name.  
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class WorksheetMovingRequest implements  ArrayAccess
     /**
      * Sets position
      *
-     *  
+     *  Position to move. Can be BEFORE or AFTER.
      *
      * @return $this
      */

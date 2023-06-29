@@ -265,7 +265,7 @@ class CopyOptions implements  ArrayAccess
     /**
      * Sets column_character_width
      *
-     *  
+     *  Indicates whether copying column width in unit of characters.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class CopyOptions implements  ArrayAccess
     /**
      * Sets copy_invalid_formulas_as_values
      *
-     *  
+     *  If the formula is not valid for the dest destination, only copy values.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class CopyOptions implements  ArrayAccess
     /**
      * Sets copy_names
      *
-     *  
+     *  Indicates whether copying the names.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class CopyOptions implements  ArrayAccess
     /**
      * Sets extend_to_adjacent_range
      *
-     *  
+     *  Indicates whether extend ranges when copying the range to adjacent range.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class CopyOptions implements  ArrayAccess
     /**
      * Sets refer_to_destination_sheet
      *
-     *  
+     *  When copying the range in the same file and the chart refers to the source sheet,  False means the copied chart's data source will not be changed. True means the  copied chart's data source refers to the destination sheet.            
      *
      * @return $this
      */

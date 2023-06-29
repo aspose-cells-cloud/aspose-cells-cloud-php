@@ -45,7 +45,7 @@ class GetWorksheetTextItemsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : Workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetTextItemsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetTextItemsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The workbook's folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetWorksheetTextItemsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

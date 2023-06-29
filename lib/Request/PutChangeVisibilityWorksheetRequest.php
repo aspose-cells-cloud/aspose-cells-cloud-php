@@ -45,7 +45,7 @@ class PutChangeVisibilityWorksheetRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutChangeVisibilityWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : Worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutChangeVisibilityWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * isVisible : 
+    * isVisible : New worksheet visibility value.
     */ 
     public $is_visible;
 
@@ -90,7 +90,7 @@ class PutChangeVisibilityWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PutChangeVisibilityWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -45,7 +45,7 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : Workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
     }
 
     /*
-    * mergeWith : 
+    * mergeWith : The workbook to merge with.
     */ 
     public $merge_with;
 
@@ -75,7 +75,7 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -105,7 +105,7 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
     }
 
     /*
-    * mergedStorageName : 
+    * mergedStorageName : Storage name.
     */ 
     public $merged_storage_name;
 

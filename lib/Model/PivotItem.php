@@ -264,7 +264,7 @@ class PivotItem implements  ArrayAccess
     /**
      * Sets is_hidden
      *
-     *  
+     *  Represents whether the specified item visible.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class PivotItem implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets the name
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class PivotItem implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  Gets the value of the specified item.
      *
      * @return $this
      */

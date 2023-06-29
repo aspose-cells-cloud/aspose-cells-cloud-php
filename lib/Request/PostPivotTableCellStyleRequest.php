@@ -45,7 +45,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * column : 
+    * column : Column index of the cell.
     */ 
     public $column;
 
@@ -105,7 +105,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * row : 
+    * row : RowIndex of the cell.
     */ 
     public $row;
 
@@ -120,7 +120,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * style : 
+    * style : Style description in request body.
     */ 
     public $style;
 
@@ -135,7 +135,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : 
+    * needReCalculate : Whether the specific pivot table calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -150,7 +150,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

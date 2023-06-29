@@ -45,7 +45,7 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -90,7 +90,7 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
     }
 
     /*
-    * cellArea : 
+    * cellArea : Adds a conditional formatted cell range.
     */ 
     public $cell_area;
 
@@ -105,7 +105,7 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

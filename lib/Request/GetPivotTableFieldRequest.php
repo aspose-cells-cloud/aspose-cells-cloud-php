@@ -45,7 +45,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * pivotFieldIndex : 
+    * pivotFieldIndex : The field index in the base fields.
     */ 
     public $pivot_field_index;
 
@@ -105,7 +105,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * pivotFieldType : 
+    * pivotFieldType : The fields area type(column/row).
     */ 
     public $pivot_field_type;
 
@@ -120,7 +120,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class GetPivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

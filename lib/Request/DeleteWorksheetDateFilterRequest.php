@@ -45,7 +45,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : The integer offset of the field on which you want to base the filter (from the left of the list; the leftmost field is field 0).
     */ 
     public $field_index;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * dateTimeGroupingType : 
+    * dateTimeGroupingType : Specifies how to group dateTime values.
     */ 
     public $date_time_grouping_type;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * year : 
+    * year : The year.
     */ 
     public $year;
 
@@ -120,7 +120,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * month : 
+    * month : The month.
     */ 
     public $month;
 
@@ -135,7 +135,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * day : 
+    * day : The day.
     */ 
     public $day;
 
@@ -150,7 +150,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * hour : 
+    * hour : The hour.
     */ 
     public $hour;
 
@@ -165,7 +165,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * minute : 
+    * minute : The minute.
     */ 
     public $minute;
 
@@ -180,7 +180,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * second : 
+    * second : The second.
     */ 
     public $second;
 
@@ -195,7 +195,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -210,7 +210,7 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

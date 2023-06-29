@@ -45,7 +45,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worsheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * picture : 
+    * picture : Pictute object
     */ 
     public $picture;
 
@@ -90,7 +90,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftRow : 
+    * upperLeftRow : The image upper left row.
     */ 
     public $upper_left_row;
 
@@ -105,7 +105,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftColumn : 
+    * upperLeftColumn : The image upper left column.
     */ 
     public $upper_left_column;
 
@@ -120,7 +120,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * lowerRightRow : 
+    * lowerRightRow : The image low right row.
     */ 
     public $lower_right_row;
 
@@ -135,7 +135,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * lowerRightColumn : 
+    * lowerRightColumn : The image low right column.
     */ 
     public $lower_right_column;
 
@@ -150,7 +150,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * picturePath : 
+    * picturePath : The picture path, if not provided the picture data is inspected in the request body.
     */ 
     public $picture_path;
 
@@ -165,7 +165,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PutWorksheetAddPictureRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

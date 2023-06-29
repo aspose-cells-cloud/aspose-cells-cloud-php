@@ -45,7 +45,7 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : Modification password.
     */ 
     public $password;
 
@@ -75,7 +75,7 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

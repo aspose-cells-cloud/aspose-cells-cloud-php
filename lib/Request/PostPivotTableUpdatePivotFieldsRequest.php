@@ -45,7 +45,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * pivotFieldType : 
+    * pivotFieldType : Represents PivotTable field type(Undefined/Row/Column/Page/Data).
     */ 
     public $pivot_field_type;
 
@@ -105,7 +105,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * pivotField : 
+    * pivotField : Represents pivot field.
     */ 
     public $pivot_field;
 
@@ -120,7 +120,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : 
+    * needReCalculate : Whether the specific pivot table calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -135,7 +135,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -60,7 +60,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
     */ 
     public $format;
 
@@ -75,7 +75,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The workbook password.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : 
+    * outPath : Path to save result
     */ 
     public $out_path;
 
@@ -105,7 +105,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

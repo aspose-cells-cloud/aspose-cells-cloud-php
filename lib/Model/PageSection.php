@@ -253,7 +253,7 @@ class PageSection implements  ArrayAccess
     /**
      * Sets section
      *
-     *  
+     *  0,1,2  left , middle ,right
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class PageSection implements  ArrayAccess
     /**
      * Sets context
      *
-     *  
+     *  page context script            
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class PageSection implements  ArrayAccess
     /**
      * Sets fisrt_page_context
      *
-     *  
+     *  fisrt page context script
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class PageSection implements  ArrayAccess
     /**
      * Sets even_page_context
      *
-     *  
+     *  Even page context script
      *
      * @return $this
      */

@@ -45,7 +45,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * property : 
+    * property : Gets or sets the value of the property.
     */ 
     public $property;
 
@@ -75,7 +75,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -124,7 +124,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
             );
         } 
 
-        $resourcePath = '/cells/{name}/documentproperties/{propertyName}';
+        $resourcePath = '/cells/{name}/documentproperties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -45,7 +45,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : range in worksheet 
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * Value : 
+    * Value : Input value
     */ 
     public $value;
 
@@ -105,7 +105,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * isConverted : 
+    * isConverted : True: converted to other data type if appropriate.
     */ 
     public $is_converted;
 
@@ -120,7 +120,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * setStyle : 
+    * setStyle : True: set the number format to cell's style when converting to other data type
     */ 
     public $set_style;
 
@@ -135,7 +135,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -45,7 +45,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
     }
 
     /*
-    * listObjectIndex : 
+    * listObjectIndex : List object index.
     */ 
     public $list_object_index;
 
@@ -90,7 +90,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
     }
 
     /*
-    * columnIndex : 
+    * columnIndex : Represents table column index.
     */ 
     public $column_index;
 
@@ -105,7 +105,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
     }
 
     /*
-    * listColumn : 
+    * listColumn : Represents table column description.
     */ 
     public $list_column;
 
@@ -120,7 +120,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

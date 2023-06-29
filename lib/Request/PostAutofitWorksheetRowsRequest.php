@@ -45,7 +45,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : 
+    * startRow : Start row index.
     */ 
     public $start_row;
 
@@ -90,7 +90,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : 
+    * endRow : End row index.
     */ 
     public $end_row;
 
@@ -105,7 +105,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * onlyAuto : 
+    * onlyAuto : Autofits all rows in this worksheet.
     */ 
     public $only_auto;
 
@@ -120,7 +120,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

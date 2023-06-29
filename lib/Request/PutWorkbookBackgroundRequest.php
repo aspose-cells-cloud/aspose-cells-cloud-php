@@ -45,7 +45,7 @@ class PutWorkbookBackgroundRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorkbookBackgroundRequest extends BaseApiRequest
     }
 
     /*
-    * picPath : 
+    * picPath : picture full path.
     */ 
     public $pic_path;
 
@@ -75,7 +75,7 @@ class PutWorkbookBackgroundRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PutWorkbookBackgroundRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

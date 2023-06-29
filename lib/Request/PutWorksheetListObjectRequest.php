@@ -45,7 +45,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : 
+    * startRow : The start row of the list range.
     */ 
     public $start_row;
 
@@ -90,7 +90,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : 
+    * startColumn : The start row of the list range.
     */ 
     public $start_column;
 
@@ -105,7 +105,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : 
+    * endRow : The start row of the list range.
     */ 
     public $end_row;
 
@@ -120,7 +120,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * endColumn : 
+    * endColumn : The start row of the list range.
     */ 
     public $end_column;
 
@@ -135,7 +135,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * hasHeaders : 
+    * hasHeaders : Whether the range has headers.
     */ 
     public $has_headers;
 
@@ -195,7 +195,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

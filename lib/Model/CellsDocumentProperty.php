@@ -265,7 +265,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Returns the name of the property.            
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  Gets or sets the value of the property.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets is_linked_to_content
      *
-     *  
+     *  Indicates whether this property is linked to content
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets source
      *
-     *  
+     *  The linked content source.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets the data type of the property.            
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class CellsDocumentProperty implements  ArrayAccess
     /**
      * Sets is_generated_name
      *
-     *  
+     *  Returns true if this property does not have a name in the OLE2 storage and a  unique name was generated only for the public API.            
      *
      * @return $this
      */

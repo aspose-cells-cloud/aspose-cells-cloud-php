@@ -45,7 +45,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified AutoFilter applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : The integer offset of the field on which you want to base the filter (from the left of the list; the leftmost field is field 0).
     */ 
     public $field_index;
 
@@ -105,7 +105,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * operatorType1 : 
+    * operatorType1 : The filter operator type
     */ 
     public $operator_type1;
 
@@ -120,7 +120,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * criteria1 : 
+    * criteria1 : The custom criteria.
     */ 
     public $criteria1;
 
@@ -135,7 +135,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * isAnd : 
+    * isAnd : true/false
     */ 
     public $is_and;
 
@@ -165,7 +165,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * criteria2 : 
+    * criteria2 : The custom criteria.
     */ 
     public $criteria2;
 
@@ -180,7 +180,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * matchBlanks : 
+    * matchBlanks : Match all blank or  not blank cell in the list.(true/false)
     */ 
     public $match_blanks;
 
@@ -195,7 +195,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * refresh : 
+    * refresh : If true, hide the filtered rows.
     */ 
     public $refresh;
 
@@ -210,7 +210,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -225,7 +225,7 @@ class PutWorksheetCustomFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

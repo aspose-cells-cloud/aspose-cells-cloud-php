@@ -229,7 +229,7 @@ class Sparkline implements  ArrayAccess
     /**
      * Sets column
      *
-     *  
+     *  Gets the column index of the sparkline.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class Sparkline implements  ArrayAccess
     /**
      * Sets data_range
      *
-     *  
+     *  Represents the data range of the sparkline.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class Sparkline implements  ArrayAccess
     /**
      * Sets row
      *
-     *  
+     *  Gets the row index of the sparkline.
      *
      * @return $this
      */

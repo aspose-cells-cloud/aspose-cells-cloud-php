@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostWorkSheetHyperlinkRequest.cs">
+ * <copyright company="Aspose" file="PostWorksheetHyperlinkRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -37,22 +37,15 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
-// /**
-//  * @deprecated 
-//  */
-
-//  class PostWorkSheetHyperlinkRequest extends PostWorksheetHyperlinkRequest
-//  {
-//  }
 /*
- * Request model for  PostWorkSheetHyperlink operation.
+ * Request model for  PostWorksheetHyperlink operation.
  */
 
 class PostWorksheetHyperlinkRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -67,7 +60,7 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -82,7 +75,7 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * hyperlinkIndex : 
+    * hyperlinkIndex : The hyperlink's index.
     */ 
     public $hyperlink_index;
 
@@ -97,7 +90,7 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * hyperlink : 
+    * hyperlink : Hyperlink object
     */ 
     public $hyperlink;
 
@@ -112,7 +105,7 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -127,7 +120,7 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -150,28 +143,28 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling PostWorkSheetHyperlink'
+                'Missing the required parameter $name when calling PostWorksheetHyperlink'
             );
         } 
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sheet_name when calling PostWorkSheetHyperlink'
+                'Missing the required parameter $sheet_name when calling PostWorksheetHyperlink'
             );
         } 
 
         // verify the required parameter 'hyperlink_index' is set
         if ($this->hyperlink_index === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $hyperlink_index when calling PostWorkSheetHyperlink'
+                'Missing the required parameter $hyperlink_index when calling PostWorksheetHyperlink'
             );
         } 
 
         // verify the required parameter 'hyperlink' is set
         if ($this->hyperlink === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $hyperlink when calling PostWorkSheetHyperlink'
+                'Missing the required parameter $hyperlink when calling PostWorksheetHyperlink'
             );
         } 
 

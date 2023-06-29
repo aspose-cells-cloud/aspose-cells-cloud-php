@@ -45,7 +45,7 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
     }
 
     /*
-    * settings : 
+    * settings : Workbook Setting description.
     */ 
     public $settings;
 
@@ -75,7 +75,7 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

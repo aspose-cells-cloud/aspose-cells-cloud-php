@@ -45,7 +45,7 @@ class PostWorksheetCommentRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCommentRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCommentRequest extends BaseApiRequest
     }
 
     /*
-    * cellName : 
+    * cellName : The cell name.
     */ 
     public $cell_name;
 
@@ -90,7 +90,7 @@ class PostWorksheetCommentRequest extends BaseApiRequest
     }
 
     /*
-    * comment : 
+    * comment : Comment object.
     */ 
     public $comment;
 
@@ -105,7 +105,7 @@ class PostWorksheetCommentRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetCommentRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

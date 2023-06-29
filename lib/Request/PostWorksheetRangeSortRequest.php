@@ -45,7 +45,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * cellArea : 
+    * cellArea : The area needed to sort.
     */ 
     public $cell_area;
 
@@ -90,7 +90,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * dataSorter : 
+    * dataSorter : DataSorter with sorting settings.
     */ 
     public $data_sorter;
 
@@ -105,7 +105,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

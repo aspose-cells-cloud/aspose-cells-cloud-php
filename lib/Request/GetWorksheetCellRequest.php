@@ -45,7 +45,7 @@ class GetWorksheetCellRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : Document name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetCellRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetCellRequest extends BaseApiRequest
     }
 
     /*
-    * cellOrMethodName : 
+    * cellOrMethodName : The cell's or method name. (Method name like firstcell, endcell etc.)
     */ 
     public $cell_or_method_name;
 
@@ -90,7 +90,7 @@ class GetWorksheetCellRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Document's folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class GetWorksheetCellRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

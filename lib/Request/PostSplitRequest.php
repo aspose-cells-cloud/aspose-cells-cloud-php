@@ -60,7 +60,7 @@ class PostSplitRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $format;
 
@@ -90,7 +90,7 @@ class PostSplitRequest extends BaseApiRequest
     }
 
     /*
-    * from : 
+    * from : sheet index
     */ 
     public $from;
 
@@ -105,7 +105,7 @@ class PostSplitRequest extends BaseApiRequest
     }
 
     /*
-    * to : 
+    * to : sheet index
     */ 
     public $to;
 

@@ -45,7 +45,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * row : 
+    * row : Row index.
     */ 
     public $row;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * column : 
+    * column : Column index.
     */ 
     public $column;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * freezedRows : 
+    * freezedRows : Number of visible rows in top pane, no more than row index.
     */ 
     public $freezed_rows;
 
@@ -120,7 +120,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * freezedColumns : 
+    * freezedColumns : Number of visible columns in left pane, no more than column index.
     */ 
     public $freezed_columns;
 
@@ -135,7 +135,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -45,7 +45,7 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
     }
 
     /*
-    * textWaterMarkerRequest : 
+    * textWaterMarkerRequest : Text water marker request
     */ 
     public $text_water_marker_request;
 
@@ -75,7 +75,7 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

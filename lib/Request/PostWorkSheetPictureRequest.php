@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostWorkSheetPictureRequest.cs">
+ * <copyright company="Aspose" file="PostWorksheetPictureRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -37,23 +37,15 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
-// /**
-//  * @deprecated 
-//  */
-
-//  class PostWorkSheetPictureRequest extends PostWorksheetPictureRequest
-//  {
-//  }
-
 /*
- * Request model for  PostWorkSheetPicture operation.
+ * Request model for  PostWorksheetPicture operation.
  */
 
 class PostWorksheetPictureRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -68,7 +60,7 @@ class PostWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -83,7 +75,7 @@ class PostWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * pictureIndex : 
+    * pictureIndex : The picture's index.
     */ 
     public $picture_index;
 
@@ -98,7 +90,7 @@ class PostWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * picture : 
+    * picture : Picture object description.
     */ 
     public $picture;
 
@@ -113,7 +105,7 @@ class PostWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -128,7 +120,7 @@ class PostWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -151,28 +143,28 @@ class PostWorksheetPictureRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling PostWorkSheetPicture'
+                'Missing the required parameter $name when calling PostWorksheetPicture'
             );
         } 
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sheet_name when calling PostWorkSheetPicture'
+                'Missing the required parameter $sheet_name when calling PostWorksheetPicture'
             );
         } 
 
         // verify the required parameter 'picture_index' is set
         if ($this->picture_index === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $picture_index when calling PostWorkSheetPicture'
+                'Missing the required parameter $picture_index when calling PostWorksheetPicture'
             );
         } 
 
         // verify the required parameter 'picture' is set
         if ($this->picture === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $picture when calling PostWorkSheetPicture'
+                'Missing the required parameter $picture when calling PostWorksheetPicture'
             );
         } 
 

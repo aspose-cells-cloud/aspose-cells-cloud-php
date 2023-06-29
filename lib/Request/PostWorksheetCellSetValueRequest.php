@@ -45,7 +45,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * cellName : 
+    * cellName : The cell name.
     */ 
     public $cell_name;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * value : 
+    * value : The cell value.
     */ 
     public $value;
 
@@ -105,7 +105,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : The value type.
     */ 
     public $type;
 
@@ -120,7 +120,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * formula : 
+    * formula : Formula for cell
     */ 
     public $formula;
 
@@ -135,7 +135,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The document folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostWorksheetCellSetValueRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

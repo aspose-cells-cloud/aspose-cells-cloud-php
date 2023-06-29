@@ -45,7 +45,7 @@ class PostWorksheetShapeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * shapeindex : 
+    * shapeindex : shape index in worksheet shapes.
     */ 
     public $shapeindex;
 
@@ -90,7 +90,7 @@ class PostWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * dto : 
+    * dto : The shape description.
     */ 
     public $dto;
 
@@ -105,7 +105,7 @@ class PostWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

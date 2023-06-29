@@ -45,7 +45,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * pivotFieldType : 
+    * pivotFieldType : The fields area type.
     */ 
     public $pivot_field_type;
 
@@ -105,7 +105,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableFieldRequest : 
+    * pivotTableFieldRequest : Pivot table field request.
     */ 
     public $pivot_table_field_request;
 
@@ -120,7 +120,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class DeletePivotTableFieldRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -45,7 +45,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified AutoFilter applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : The integer offset of the field on which you want to base the filter (from the left of the list; the leftmost field is field 0).
     */ 
     public $field_index;
 
@@ -105,7 +105,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * criteria : 
+    * criteria : The custom criteria.
     */ 
     public $criteria;
 
@@ -120,7 +120,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * matchBlanks : 
+    * matchBlanks : Match all blank or  not blank cell in the list.(true/false)
     */ 
     public $match_blanks;
 
@@ -135,7 +135,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * refresh : 
+    * refresh : If true, hide the filtered rows.
     */ 
     public $refresh;
 
@@ -150,7 +150,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PutWorksheetFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

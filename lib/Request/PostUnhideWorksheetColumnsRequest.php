@@ -45,7 +45,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : 
+    * startColumn : The begin column index to be operated.
     */ 
     public $start_column;
 
@@ -90,7 +90,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * totalColumns : 
+    * totalColumns : Number of columns to be operated.
     */ 
     public $total_columns;
 
@@ -105,7 +105,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * width : 
+    * width : Gets and sets the column width in unit of characters.
     */ 
     public $width;
 
@@ -120,7 +120,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

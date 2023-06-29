@@ -45,7 +45,7 @@ class DeleteVerticalPageBreakRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * index : 
+    * index : Removes the VPageBreak element at a specified name. Element index, zero based.
     */ 
     public $index;
 
@@ -90,7 +90,7 @@ class DeleteVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

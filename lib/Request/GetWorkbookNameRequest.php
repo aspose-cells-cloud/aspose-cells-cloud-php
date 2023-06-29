@@ -45,7 +45,7 @@ class GetWorkbookNameRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * nameName : 
+    * nameName : The name.
     */ 
     public $name_name;
 
@@ -75,7 +75,7 @@ class GetWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

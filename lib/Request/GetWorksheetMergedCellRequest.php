@@ -45,7 +45,7 @@ class GetWorksheetMergedCellRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetMergedCellRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : Worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetMergedCellRequest extends BaseApiRequest
     }
 
     /*
-    * mergedCellIndex : 
+    * mergedCellIndex : Merged cell index.
     */ 
     public $merged_cell_index;
 
@@ -90,7 +90,7 @@ class GetWorksheetMergedCellRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class GetWorksheetMergedCellRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

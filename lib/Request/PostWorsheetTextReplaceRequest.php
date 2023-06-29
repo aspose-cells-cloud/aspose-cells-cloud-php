@@ -45,7 +45,7 @@ class PostWorsheetTextReplaceRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorsheetTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : Worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorsheetTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * oldValue : 
+    * oldValue : The old text to replace.
     */ 
     public $old_value;
 
@@ -90,7 +90,7 @@ class PostWorsheetTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * newValue : 
+    * newValue : The new text to replace by.
     */ 
     public $new_value;
 
@@ -105,7 +105,7 @@ class PostWorsheetTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorsheetTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

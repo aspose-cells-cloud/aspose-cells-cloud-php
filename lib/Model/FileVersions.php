@@ -205,7 +205,7 @@ class FileVersions implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  File versions FileVersion.
      *
      * @return $this
      */

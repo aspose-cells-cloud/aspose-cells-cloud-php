@@ -45,7 +45,7 @@ class PutWorkbookCreateRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The new document name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorkbookCreateRequest extends BaseApiRequest
     }
 
     /*
-    * templateFile : 
+    * templateFile : The template file, if the data not provided default workbook is created.
     */ 
     public $template_file;
 
@@ -75,7 +75,7 @@ class PutWorkbookCreateRequest extends BaseApiRequest
     }
 
     /*
-    * dataFile : 
+    * dataFile : Smart marker data file, if the data not provided the request content is checked for the data.
     */ 
     public $data_file;
 
@@ -90,7 +90,7 @@ class PutWorkbookCreateRequest extends BaseApiRequest
     }
 
     /*
-    * isWriteOver : 
+    * isWriteOver : Specifies whether to write over targer file.
     */ 
     public $is_write_over;
 
@@ -105,7 +105,7 @@ class PutWorkbookCreateRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PutWorkbookCreateRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

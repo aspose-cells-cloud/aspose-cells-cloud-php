@@ -45,7 +45,7 @@ class PutInsertWorksheetRowRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutInsertWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutInsertWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * rowIndex : 
+    * rowIndex : The new row index.
     */ 
     public $row_index;
 
@@ -90,7 +90,7 @@ class PutInsertWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PutInsertWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

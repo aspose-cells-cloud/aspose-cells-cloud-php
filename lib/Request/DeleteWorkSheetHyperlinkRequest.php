@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteWorkSheetHyperlinkRequest.cs">
+ * <copyright company="Aspose" file="DeleteWorksheetHyperlinkRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -37,21 +37,15 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
-// /**
-//  * @deprecated 
-//  */
-// class DeleteWorkSheetHyperlinkRequest extends DeleteWorksheetHyperlinkRequest
-// {
-// }
 /*
- * Request model for  DeleteWorkSheetHyperlink operation.
+ * Request model for  DeleteWorksheetHyperlink operation.
  */
 
 class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -66,7 +60,7 @@ class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -81,7 +75,7 @@ class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * hyperlinkIndex : 
+    * hyperlinkIndex : The hyperlink's index.
     */ 
     public $hyperlink_index;
 
@@ -96,7 +90,7 @@ class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -111,7 +105,7 @@ class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -134,21 +128,21 @@ class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling DeleteWorkSheetHyperlink'
+                'Missing the required parameter $name when calling DeleteWorksheetHyperlink'
             );
         } 
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sheet_name when calling DeleteWorkSheetHyperlink'
+                'Missing the required parameter $sheet_name when calling DeleteWorksheetHyperlink'
             );
         } 
 
         // verify the required parameter 'hyperlink_index' is set
         if ($this->hyperlink_index === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $hyperlink_index when calling DeleteWorkSheetHyperlink'
+                'Missing the required parameter $hyperlink_index when calling DeleteWorksheetHyperlink'
             );
         } 
 

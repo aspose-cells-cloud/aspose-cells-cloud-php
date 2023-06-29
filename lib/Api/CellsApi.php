@@ -51,6 +51,10 @@ use Aspose\Cells\Cloud\Request\DeleteWorksheetFilterRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetAutoshapesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetAutoshapeWithFormatRequest;
 use Aspose\Cells\Cloud\Request\PostBatchConvertRequest;
+use Aspose\Cells\Cloud\Request\PostBatchLockRequest;
+use Aspose\Cells\Cloud\Request\PostBatchProtectRequest;
+use Aspose\Cells\Cloud\Request\PostBatchSplitRequest;
+use Aspose\Cells\Cloud\Request\PostBatchUnlockRequest;
 use Aspose\Cells\Cloud\Request\GetExtractBarcodesRequest;
 use Aspose\Cells\Cloud\Request\PostClearContentsRequest;
 use Aspose\Cells\Cloud\Request\PostClearFormatsRequest;
@@ -37468,6 +37472,7 @@ class CellsApi
             $httpBody
         );
     }
+
     /**
      * Operation cellsPictureGetExtractBarcodes
      *
@@ -102565,6 +102570,54 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchConvertRequest" /></param>
     public function postBatchConvert( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostBatchProtectRequest" /></param>
+    public function postBatchProtect( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostBatchLockRequest" /></param>
+    public function postBatchLock( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostBatchUnlockRequest" /></param>
+    public function postBatchUnlock( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostBatchSplitRequest" /></param>
+    public function postBatchSplit( $request)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';

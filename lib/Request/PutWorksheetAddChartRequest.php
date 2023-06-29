@@ -45,7 +45,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * chartType : 
+    * chartType : Chart type, please refer property Type in chart resource.
     */ 
     public $chart_type;
 
@@ -90,7 +90,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftRow : 
+    * upperLeftRow : New chart upper left row.
     */ 
     public $upper_left_row;
 
@@ -105,7 +105,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftColumn : 
+    * upperLeftColumn : New chart upperleft column.
     */ 
     public $upper_left_column;
 
@@ -120,7 +120,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * lowerRightRow : 
+    * lowerRightRow : New chart lower right row.
     */ 
     public $lower_right_row;
 
@@ -135,7 +135,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * lowerRightColumn : 
+    * lowerRightColumn : New chart lower right column.
     */ 
     public $lower_right_column;
 
@@ -150,7 +150,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * area : 
+    * area : Specifies values from which to plot the data series. 
     */ 
     public $area;
 
@@ -165,7 +165,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * isVertical : 
+    * isVertical : Specifies whether to plot the series from a range of cell values by row or by column. 
     */ 
     public $is_vertical;
 
@@ -180,7 +180,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * categoryData : 
+    * categoryData : Gets or sets the range of category Axis values. It can be a range of cells (such as, "d1:e10"). 
     */ 
     public $category_data;
 
@@ -195,7 +195,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * isAutoGetSerialName : 
+    * isAutoGetSerialName : Specifies whether auto update serial name. 
     */ 
     public $is_auto_get_serial_name;
 
@@ -210,7 +210,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * title : 
+    * title : Specifies chart title name.
     */ 
     public $title;
 
@@ -225,7 +225,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -240,7 +240,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * dataLabels : 
+    * dataLabels : Represents a specified chart's data label values display behavior. True displays the values. False to hide.
     */ 
     public $data_labels;
 
@@ -255,7 +255,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * dataLabelsPosition : 
+    * dataLabelsPosition : Represents data label position(Center/InsideBase/InsideEnd/OutsideEnd/Above/Below/Left/Right/BestFit/Moved).
     */ 
     public $data_labels_position;
 
@@ -270,7 +270,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableSheet : 
+    * pivotTableSheet : The source is the data of the pivotTable. If PivotSource is not empty ,the chart is PivotChart.
     */ 
     public $pivot_table_sheet;
 
@@ -285,7 +285,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableName : 
+    * pivotTableName : The source is the data of the pivotTable.
     */ 
     public $pivot_table_name;
 
@@ -300,7 +300,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

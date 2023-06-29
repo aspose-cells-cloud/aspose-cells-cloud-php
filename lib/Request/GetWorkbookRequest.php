@@ -45,7 +45,7 @@ class GetWorkbookRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
     */ 
     public $format;
 
@@ -75,7 +75,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The excel password.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * isAutoFit : 
+    * isAutoFit : Specifies whether set workbook rows to be autofit.
     */ 
     public $is_auto_fit;
 
@@ -105,7 +105,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * onlySaveTable : 
+    * onlySaveTable : Specifies whether only save table data.Only use pdf to excel.
     */ 
     public $only_save_table;
 
@@ -120,7 +120,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : 
+    * outPath : Path to save result
     */ 
     public $out_path;
 
@@ -150,7 +150,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -165,7 +165,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * outStorageName : 
+    * outStorageName : Storage name.
     */ 
     public $out_storage_name;
 

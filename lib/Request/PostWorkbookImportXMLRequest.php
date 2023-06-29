@@ -45,7 +45,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook(Excel/ODS/...) name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * importXMLRequest : 
+    * importXMLRequest : password
     */ 
     public $import_xml_request;
 
@@ -90,7 +90,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -120,7 +120,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : 
+    * outPath : Output file path.
     */ 
     public $out_path;
 
@@ -135,7 +135,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * outStorageName : 
+    * outStorageName : Storage name for output file.
     */ 
     public $out_storage_name;
 
@@ -150,7 +150,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : check Excel restriction.
     */ 
     public $check_excel_restriction;
 

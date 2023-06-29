@@ -45,7 +45,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * listObjectIndex : 
+    * listObjectIndex : List object index.
     */ 
     public $list_object_index;
 
@@ -90,7 +90,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * destsheetName : 
+    * destsheetName : Target work sheet name.
     */ 
     public $destsheet_name;
 
@@ -105,7 +105,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * createPivotTableRequest : 
+    * createPivotTableRequest : Create pivot table request.
     */ 
     public $create_pivot_table_request;
 
@@ -120,7 +120,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

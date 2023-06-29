@@ -241,7 +241,7 @@ class BarcodeResponse implements  ArrayAccess
     /**
      * Sets barcode_value
      *
-     *  
+     *  Gets or sets barcode data.            
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class BarcodeResponse implements  ArrayAccess
     /**
      * Sets barcode_type
      *
-     *  
+     *  Gets or sets type of the barcode.            
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class BarcodeResponse implements  ArrayAccess
     /**
      * Sets region
      *
-     *  
+     *  Gets or sets region with barcode.            
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class BarcodeResponse implements  ArrayAccess
     /**
      * Sets checksum
      *
-     *  
+     *  Gets or sets checksum of barcode.            
      *
      * @return $this
      */

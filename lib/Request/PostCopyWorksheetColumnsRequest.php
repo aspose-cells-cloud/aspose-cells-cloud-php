@@ -45,7 +45,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * sourceColumnIndex : 
+    * sourceColumnIndex : Source column index
     */ 
     public $source_column_index;
 
@@ -90,7 +90,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * destinationColumnIndex : 
+    * destinationColumnIndex : Destination column index
     */ 
     public $destination_column_index;
 
@@ -105,7 +105,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * columnNumber : 
+    * columnNumber : The copied column number
     */ 
     public $column_number;
 
@@ -120,7 +120,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * worksheet : 
+    * worksheet : The destination worksheet name.
     */ 
     public $worksheet;
 
@@ -135,7 +135,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

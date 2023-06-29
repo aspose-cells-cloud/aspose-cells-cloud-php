@@ -45,7 +45,7 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * firstIndex : 
+    * firstIndex : The first column index to be operated.
     */ 
     public $first_index;
 
@@ -90,7 +90,7 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * lastIndex : 
+    * lastIndex : The last column index to be operated.
     */ 
     public $last_index;
 
@@ -105,7 +105,7 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

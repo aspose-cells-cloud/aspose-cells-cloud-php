@@ -205,7 +205,7 @@ class StorageExist implements  ArrayAccess
     /**
      * Sets exists
      *
-     *  
+     *  Shows that the storage exists.            
      *
      * @return $this
      */

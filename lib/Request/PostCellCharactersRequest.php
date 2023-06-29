@@ -45,7 +45,7 @@ class PostCellCharactersRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostCellCharactersRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostCellCharactersRequest extends BaseApiRequest
     }
 
     /*
-    * cellName : 
+    * cellName : The cell name.
     */ 
     public $cell_name;
 
@@ -105,7 +105,7 @@ class PostCellCharactersRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostCellCharactersRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

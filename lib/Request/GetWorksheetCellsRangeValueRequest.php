@@ -45,7 +45,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * namerange : 
+    * namerange : range name.
     */ 
     public $namerange;
 
@@ -90,7 +90,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * firstRow : 
+    * firstRow : Gets the index of the first row of the range.
     */ 
     public $first_row;
 
@@ -105,7 +105,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * firstColumn : 
+    * firstColumn : Gets the index of the first columnn of the range.
     */ 
     public $first_column;
 
@@ -120,7 +120,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * rowCount : 
+    * rowCount : Gets the count of rows in the range.
     */ 
     public $row_count;
 
@@ -135,7 +135,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * columnCount : 
+    * columnCount : Gets the count of columns in the range.
     */ 
     public $column_count;
 
@@ -150,7 +150,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

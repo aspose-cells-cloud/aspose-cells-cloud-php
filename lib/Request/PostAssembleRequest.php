@@ -75,7 +75,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $format;
 

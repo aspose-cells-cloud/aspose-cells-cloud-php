@@ -45,7 +45,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -90,7 +90,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * DrawingType : 
+    * DrawingType : shape object type
     */ 
     public $drawing_type;
 
@@ -105,7 +105,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftRow : 
+    * upperLeftRow : Upper left row index.
     */ 
     public $upper_left_row;
 
@@ -120,7 +120,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftColumn : 
+    * upperLeftColumn : Upper left column index.
     */ 
     public $upper_left_column;
 
@@ -135,7 +135,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * top : 
+    * top : Represents the vertical offset of Spinner from its left row, in unit of pixel.
     */ 
     public $top;
 
@@ -150,7 +150,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * left : 
+    * left : Represents the horizontal offset of Spinner from its left column, in unit of pixel.
     */ 
     public $left;
 
@@ -165,7 +165,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * width : 
+    * width : Represents the height of Spinner, in unit of pixel.
     */ 
     public $width;
 
@@ -180,7 +180,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * height : 
+    * height : Represents the width of Spinner, in unit of pixel.
     */ 
     public $height;
 
@@ -195,7 +195,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -210,7 +210,7 @@ class PutWorksheetShapeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

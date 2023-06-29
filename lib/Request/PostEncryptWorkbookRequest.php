@@ -45,7 +45,7 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * encryption : 
+    * encryption : Encryption parameters.
     */ 
     public $encryption;
 
@@ -75,7 +75,7 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -45,7 +45,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : 
+    * startRow : The start row.
     */ 
     public $start_row;
 
@@ -90,7 +90,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : 
+    * startColumn : The start column.
     */ 
     public $start_column;
 
@@ -105,7 +105,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * totalRows : 
+    * totalRows : The total rows
     */ 
     public $total_rows;
 
@@ -120,7 +120,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * totalColumns : 
+    * totalColumns : The total columns.
     */ 
     public $total_columns;
 
@@ -135,7 +135,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

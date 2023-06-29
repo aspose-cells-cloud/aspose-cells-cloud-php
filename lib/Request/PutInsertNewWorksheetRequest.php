@@ -45,7 +45,7 @@ class PutInsertNewWorksheetRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutInsertNewWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -90,7 +90,7 @@ class PutInsertNewWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * sheettype : 
+    * sheettype : Specifies the worksheet type(VB/Worksheet/Chart/BIFF4Macro/InternationalMacro/Other/Dialog).
     */ 
     public $sheettype;
 
@@ -120,7 +120,7 @@ class PutInsertNewWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PutInsertNewWorksheetRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

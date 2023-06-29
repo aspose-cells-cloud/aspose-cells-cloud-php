@@ -45,7 +45,7 @@ class PostWorkbookTextReplaceRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * oldValue : 
+    * oldValue : The old value.
     */ 
     public $old_value;
 
@@ -75,7 +75,7 @@ class PostWorkbookTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * newValue : 
+    * newValue : The new value.
     */ 
     public $new_value;
 
@@ -90,7 +90,7 @@ class PostWorkbookTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorkbookTextReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

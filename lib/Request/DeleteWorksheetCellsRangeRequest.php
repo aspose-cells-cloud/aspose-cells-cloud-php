@@ -45,7 +45,7 @@ class DeleteWorksheetCellsRangeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetCellsRangeRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetCellsRangeRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : The range object.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetCellsRangeRequest extends BaseApiRequest
     }
 
     /*
-    * shift : 
+    * shift : Represent the shift options when deleting a range of cells(Down/Left/None/Right/Up).
     */ 
     public $shift;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetCellsRangeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class DeleteWorksheetCellsRangeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

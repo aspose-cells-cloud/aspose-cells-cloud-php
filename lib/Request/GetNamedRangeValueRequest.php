@@ -45,7 +45,7 @@ class GetNamedRangeValueRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetNamedRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * namerange : 
+    * namerange : Range name.
     */ 
     public $namerange;
 
@@ -75,7 +75,7 @@ class GetNamedRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetNamedRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

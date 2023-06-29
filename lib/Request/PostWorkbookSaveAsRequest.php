@@ -45,7 +45,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * newfilename : 
+    * newfilename : The new file name.
     */ 
     public $newfilename;
 
@@ -90,7 +90,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * isAutoFitRows : 
+    * isAutoFitRows : Indicates if Autofit rows in workbook.
     */ 
     public $is_auto_fit_rows;
 
@@ -105,7 +105,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * isAutoFitColumns : 
+    * isAutoFitColumns : Indicates if Autofit columns in workbook.
     */ 
     public $is_auto_fit_columns;
 
@@ -120,7 +120,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

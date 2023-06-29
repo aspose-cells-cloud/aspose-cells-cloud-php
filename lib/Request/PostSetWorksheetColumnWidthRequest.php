@@ -45,7 +45,7 @@ class PostSetWorksheetColumnWidthRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostSetWorksheetColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostSetWorksheetColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * columnIndex : 
+    * columnIndex : The column index.
     */ 
     public $column_index;
 
@@ -90,7 +90,7 @@ class PostSetWorksheetColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * width : 
+    * width : Gets and sets the column width in unit of characters.
     */ 
     public $width;
 
@@ -120,7 +120,7 @@ class PostSetWorksheetColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostSetWorksheetColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

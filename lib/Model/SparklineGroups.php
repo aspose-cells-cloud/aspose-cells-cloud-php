@@ -205,7 +205,7 @@ class SparklineGroups implements  ArrayAccess
     /**
      * Sets sparkline_group_list
      *
-     *  
+     *  Encapsulates a collection of Aspose.Cells.Charts.SparklineGroup objects.            
      *
      * @return $this
      */

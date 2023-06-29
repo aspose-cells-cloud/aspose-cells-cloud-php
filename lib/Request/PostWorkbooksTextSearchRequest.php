@@ -45,7 +45,7 @@ class PostWorkbooksTextSearchRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbooksTextSearchRequest extends BaseApiRequest
     }
 
     /*
-    * text : 
+    * text : Text sample.
     */ 
     public $text;
 
@@ -75,7 +75,7 @@ class PostWorkbooksTextSearchRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PostWorkbooksTextSearchRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

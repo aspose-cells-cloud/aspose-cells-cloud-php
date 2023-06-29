@@ -45,7 +45,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * row : 
+    * row : Row index.
     */ 
     public $row;
 
@@ -105,7 +105,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * column : 
+    * column : Column index.
     */ 
     public $column;
 
@@ -120,7 +120,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * destCellName : 
+    * destCellName : The dest cell name.
     */ 
     public $dest_cell_name;
 
@@ -135,7 +135,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

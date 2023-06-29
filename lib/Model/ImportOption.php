@@ -241,7 +241,7 @@ class ImportOption implements  ArrayAccess
     /**
      * Sets destination_worksheet
      *
-     *  
+     *  Destination worksheet name.  
      *
      * @return $this
      */

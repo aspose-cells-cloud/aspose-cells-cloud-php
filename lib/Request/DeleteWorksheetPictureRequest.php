@@ -45,7 +45,7 @@ class DeleteWorksheetPictureRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worsheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * pictureIndex : 
+    * pictureIndex : Picture index.
     */ 
     public $picture_index;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetPictureRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

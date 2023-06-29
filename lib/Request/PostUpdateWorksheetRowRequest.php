@@ -45,7 +45,7 @@ class PostUpdateWorksheetRowRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostUpdateWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostUpdateWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * rowIndex : 
+    * rowIndex : The row index.
     */ 
     public $row_index;
 
@@ -90,7 +90,7 @@ class PostUpdateWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * height : 
+    * height : The new row height.
     */ 
     public $height;
 
@@ -120,7 +120,7 @@ class PostUpdateWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostUpdateWorksheetRowRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

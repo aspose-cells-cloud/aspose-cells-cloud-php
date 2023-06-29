@@ -312,7 +312,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets cached_file_folder
      *
-     *  
+     *  The cached file folder is used to store some large data.
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets clear_data
      *
-     *  
+     *  Make the workbook empty after saving the file.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets create_directory
      *
-     *  
+     *  If true and the directory does not exist, the directory will be automatically created before saving the file.            
      *
      * @return $this
      */
@@ -450,7 +450,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets validate_merged_areas
      *
-     *  
+     *  Indicates whether validate merged areas before saving the file.The default value is false.            
      *
      * @return $this
      */

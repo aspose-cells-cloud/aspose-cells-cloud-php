@@ -289,7 +289,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Gets and sets the RGB color.
      *
      * @return $this
      */
@@ -312,7 +312,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets color_index
      *
-     *  
+     *  Gets and sets the color index in the color palette. Only applies of indexed color.
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets is_shape_color
      *
-     *  
+     *  Gets and set the color which should apply to cell or shape.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets tint
      *
-     *  
+     *  Set the tint of the shape color
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets argb
      *
-     *  
+     *  Gets and sets the color from a 32-bit ARGB value.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets theme_color
      *
-     *  
+     *  Gets the theme color. Only applies for theme color type.            
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  The color type.
      *
      * @return $this
      */
@@ -450,7 +450,7 @@ class CellsColor implements  ArrayAccess
     /**
      * Sets transparency
      *
-     *  
+     *  Gets and sets transparency as a value from 0.0 (opaque) through 1.0 (clear).
      *
      * @return $this
      */

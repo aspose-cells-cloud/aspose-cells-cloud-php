@@ -45,7 +45,7 @@ class PostClearFormatsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified cells applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : 
+    * startRow : The start row.
     */ 
     public $start_row;
 
@@ -105,7 +105,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : 
+    * startColumn : The start column.
     */ 
     public $start_column;
 
@@ -120,7 +120,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : 
+    * endRow : The end row.
     */ 
     public $end_row;
 
@@ -135,7 +135,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * endColumn : 
+    * endColumn : The end column.
     */ 
     public $end_column;
 
@@ -150,7 +150,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PostClearFormatsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

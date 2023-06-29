@@ -75,7 +75,7 @@ class PostWatermarkRequest extends BaseApiRequest
     }
 
     /*
-    * color : 
+    * color : e.g. #1032ff
     */ 
     public $color;
 

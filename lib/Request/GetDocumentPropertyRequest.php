@@ -45,7 +45,7 @@ class GetDocumentPropertyRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * propertyName : 
+    * propertyName : The property name.
     */ 
     public $property_name;
 
@@ -75,7 +75,7 @@ class GetDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

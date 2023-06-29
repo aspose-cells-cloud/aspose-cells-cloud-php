@@ -45,7 +45,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worsheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftRow : 
+    * upperLeftRow : Upper left row index
     */ 
     public $upper_left_row;
 
@@ -90,7 +90,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftColumn : 
+    * upperLeftColumn : Upper left column index
     */ 
     public $upper_left_column;
 
@@ -105,7 +105,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * height : 
+    * height : Height of oleObject, in unit of pixel
     */ 
     public $height;
 
@@ -120,7 +120,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * width : 
+    * width : Width of oleObject, in unit of pixel
     */ 
     public $width;
 
@@ -135,7 +135,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * oleFile : 
+    * oleFile : OLE filename(full file name).
     */ 
     public $ole_file;
 
@@ -150,7 +150,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * imageFile : 
+    * imageFile : Image filename(full file name).
     */ 
     public $image_file;
 
@@ -165,7 +165,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

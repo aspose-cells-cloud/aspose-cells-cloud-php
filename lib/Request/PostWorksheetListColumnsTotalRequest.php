@@ -45,7 +45,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
     }
 
     /*
-    * listObjectIndex : 
+    * listObjectIndex : List object index.
     */ 
     public $list_object_index;
 
@@ -90,7 +90,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
     }
 
     /*
-    * tableTotalRequests : 
+    * tableTotalRequests : Represents table column description.
     */ 
     public $table_total_requests;
 
@@ -105,7 +105,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

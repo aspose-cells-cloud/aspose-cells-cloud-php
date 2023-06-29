@@ -60,7 +60,7 @@ class PostRotateRequest extends BaseApiRequest
     }
 
     /*
-    * rotateType : 
+    * rotateType : 270/90/row/col/row2col
     */ 
     public $rotate_type;
 
@@ -75,7 +75,7 @@ class PostRotateRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers
     */ 
     public $format;
 

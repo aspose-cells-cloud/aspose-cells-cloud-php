@@ -45,7 +45,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * columnIndex : 
+    * columnIndex : The column index.
     */ 
     public $column_index;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * columns : 
+    * columns : The number of columns.
     */ 
     public $columns;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * updateReference : 
+    * updateReference : Indicates if references in other worksheets will be updated.
     */ 
     public $update_reference;
 
@@ -120,7 +120,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

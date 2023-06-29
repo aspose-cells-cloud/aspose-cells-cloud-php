@@ -45,7 +45,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * sparklineGroupIndex : 
+    * sparklineGroupIndex : The zero based index of the element.
     */ 
     public $sparkline_group_index;
 
@@ -90,7 +90,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * sparklineGroup : 
+    * sparklineGroup : Spark line group description.
     */ 
     public $sparkline_group;
 
@@ -105,7 +105,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

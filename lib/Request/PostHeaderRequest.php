@@ -45,7 +45,7 @@ class PostHeaderRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostHeaderRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostHeaderRequest extends BaseApiRequest
     }
 
     /*
-    * section : 
+    * section : 0:Left Section. 1:Center Section 2:Right Section
     */ 
     public $section;
 
@@ -90,7 +90,7 @@ class PostHeaderRequest extends BaseApiRequest
     }
 
     /*
-    * script : 
+    * script : Header format script.
     */ 
     public $script;
 
@@ -105,7 +105,7 @@ class PostHeaderRequest extends BaseApiRequest
     }
 
     /*
-    * isFirstPage : 
+    * isFirstPage : Is first page(true/false).
     */ 
     public $is_first_page;
 
@@ -120,7 +120,7 @@ class PostHeaderRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostHeaderRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

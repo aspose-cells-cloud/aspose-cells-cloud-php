@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="GetWorkSheetHyperlinksRequest.cs">
+ * <copyright company="Aspose" file="GetWorksheetHyperlinksRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -37,23 +37,15 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
-// /**
-//  * @deprecated 
-//  */
-
-//  class GetWorkSheetHyperlinksRequest extends GetWorksheetHyperlinksRequest
-//  {
-//  }
- 
 /*
- * Request model for  GetWorkSheetHyperlinks operation.
+ * Request model for  GetWorksheetHyperlinks operation.
  */
 
 class GetWorksheetHyperlinksRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -68,7 +60,7 @@ class GetWorksheetHyperlinksRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -83,7 +75,7 @@ class GetWorksheetHyperlinksRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -98,7 +90,7 @@ class GetWorksheetHyperlinksRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -121,14 +113,14 @@ class GetWorksheetHyperlinksRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling GetWorkSheetHyperlinks'
+                'Missing the required parameter $name when calling GetWorksheetHyperlinks'
             );
         } 
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sheet_name when calling GetWorkSheetHyperlinks'
+                'Missing the required parameter $sheet_name when calling GetWorksheetHyperlinks'
             );
         } 
 

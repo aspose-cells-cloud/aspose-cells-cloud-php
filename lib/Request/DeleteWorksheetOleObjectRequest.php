@@ -45,7 +45,7 @@ class DeleteWorksheetOleObjectRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worsheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * oleObjectIndex : 
+    * oleObjectIndex : Ole object index.
     */ 
     public $ole_object_index;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

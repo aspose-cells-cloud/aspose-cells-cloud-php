@@ -45,7 +45,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * pictureNumber : 
+    * pictureNumber : The picture number.
     */ 
     public $picture_number;
 
@@ -90,7 +90,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : Picture conversion format(PNG/TIFF/JPEG/GIF/EMF/BMP).
     */ 
     public $format;
 
@@ -105,7 +105,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

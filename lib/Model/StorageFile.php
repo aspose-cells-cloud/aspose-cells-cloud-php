@@ -253,7 +253,7 @@ class StorageFile implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  File or folder name.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class StorageFile implements  ArrayAccess
     /**
      * Sets is_folder
      *
-     *  
+     *  True if it is a folder.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class StorageFile implements  ArrayAccess
     /**
      * Sets modified_date
      *
-     *  
+     *  File or folder last modified DateTime.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class StorageFile implements  ArrayAccess
     /**
      * Sets size
      *
-     *  
+     *  File or folder size.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class StorageFile implements  ArrayAccess
     /**
      * Sets path
      *
-     *  
+     *  File or folder path.
      *
      * @return $this
      */

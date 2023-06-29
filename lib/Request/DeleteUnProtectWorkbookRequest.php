@@ -45,7 +45,7 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * protection : 
+    * protection : Protection settings, only password can be specified.
     */ 
     public $protection;
 
@@ -75,7 +75,7 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

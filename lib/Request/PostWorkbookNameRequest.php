@@ -45,7 +45,7 @@ class PostWorkbookNameRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * nameName : 
+    * nameName : the Aspose.Cells.Name element name.
     */ 
     public $name_name;
 
@@ -75,7 +75,7 @@ class PostWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * newName : 
+    * newName : new name.
     */ 
     public $new_name;
 
@@ -90,7 +90,7 @@ class PostWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorkbookNameRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

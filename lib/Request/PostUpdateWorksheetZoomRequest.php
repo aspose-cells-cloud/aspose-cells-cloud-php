@@ -45,7 +45,7 @@ class PostUpdateWorksheetZoomRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostUpdateWorksheetZoomRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostUpdateWorksheetZoomRequest extends BaseApiRequest
     }
 
     /*
-    * value : 
+    * value : Represents the scaling factor in percentage. It should be between 10 and 400.
     */ 
     public $value;
 
@@ -90,7 +90,7 @@ class PostUpdateWorksheetZoomRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostUpdateWorksheetZoomRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

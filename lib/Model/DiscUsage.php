@@ -217,7 +217,7 @@ class DiscUsage implements  ArrayAccess
     /**
      * Sets used_size
      *
-     *  
+     *  Application used disc space.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class DiscUsage implements  ArrayAccess
     /**
      * Sets total_size
      *
-     *  
+     *  Total disc space.
      *
      * @return $this
      */

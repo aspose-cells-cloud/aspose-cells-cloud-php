@@ -60,7 +60,7 @@ class PostClearObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * objecttype : 
+    * objecttype : chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background
     */ 
     public $objecttype;
 

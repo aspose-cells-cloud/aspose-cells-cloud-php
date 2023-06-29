@@ -45,7 +45,7 @@ class GetWorksheetChartRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * chartNumber : 
+    * chartNumber : The chart number.
     */ 
     public $chart_number;
 
@@ -90,7 +90,7 @@ class GetWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : Chart conversion format.(PNG/TIFF/JPEG/GIF/EMF/BMP)
     */ 
     public $format;
 
@@ -105,7 +105,7 @@ class GetWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

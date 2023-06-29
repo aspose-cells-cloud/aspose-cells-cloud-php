@@ -45,7 +45,7 @@ class GetChartAreaBorderRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetChartAreaBorderRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetChartAreaBorderRequest extends BaseApiRequest
     }
 
     /*
-    * chartIndex : 
+    * chartIndex : The chart index.
     */ 
     public $chart_index;
 
@@ -90,7 +90,7 @@ class GetChartAreaBorderRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 

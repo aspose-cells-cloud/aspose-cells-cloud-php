@@ -45,7 +45,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * cellarea : 
+    * cellarea : Cell area (like "A1:C2")
     */ 
     public $cellarea;
 
@@ -90,7 +90,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * value : 
+    * value : Range value
     */ 
     public $value;
 
@@ -105,7 +105,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : Value data type (like "int")
     */ 
     public $type;
 
@@ -120,7 +120,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

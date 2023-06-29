@@ -45,7 +45,7 @@ class GetWorksheetColumnRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetColumnRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetColumnRequest extends BaseApiRequest
     }
 
     /*
-    * columnIndex : 
+    * columnIndex : The column index.
     */ 
     public $column_index;
 
@@ -90,7 +90,7 @@ class GetWorksheetColumnRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class GetWorksheetColumnRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

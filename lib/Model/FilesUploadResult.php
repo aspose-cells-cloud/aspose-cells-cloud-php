@@ -217,7 +217,7 @@ class FilesUploadResult implements  ArrayAccess
     /**
      * Sets uploaded
      *
-     *  
+     *  List of uploaded file names
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class FilesUploadResult implements  ArrayAccess
     /**
      * Sets errors
      *
-     *  
+     *  List of errors.
      *
      * @return $this
      */

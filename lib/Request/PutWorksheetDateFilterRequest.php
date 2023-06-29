@@ -45,7 +45,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified AutoFilter applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : The integer offset of the field on which you want to base the filter (from the left of the list; the leftmost field is field 0).
     */ 
     public $field_index;
 
@@ -105,7 +105,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * dateTimeGroupingType : 
+    * dateTimeGroupingType : Specifies how to group dateTime values(Day,Hour,Minute,Month,Second,Year).
     */ 
     public $date_time_grouping_type;
 
@@ -120,7 +120,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * year : 
+    * year : The year.
     */ 
     public $year;
 
@@ -135,7 +135,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * month : 
+    * month : The month.
     */ 
     public $month;
 
@@ -150,7 +150,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * day : 
+    * day : The day.
     */ 
     public $day;
 
@@ -165,7 +165,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * hour : 
+    * hour : The hour.
     */ 
     public $hour;
 
@@ -180,7 +180,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * minute : 
+    * minute : The minute.
     */ 
     public $minute;
 
@@ -195,7 +195,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * second : 
+    * second : The second.
     */ 
     public $second;
 
@@ -210,7 +210,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * matchBlanks : 
+    * matchBlanks : Match all blank or not blank cell in the list.(true/false)
     */ 
     public $match_blanks;
 
@@ -225,7 +225,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * refresh : 
+    * refresh : If true, hide the filtered rows.
     */ 
     public $refresh;
 
@@ -240,7 +240,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -255,7 +255,7 @@ class PutWorksheetDateFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

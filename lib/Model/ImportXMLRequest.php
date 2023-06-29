@@ -217,7 +217,7 @@ class ImportXMLRequest implements  ArrayAccess
     /**
      * Sets xml_file_source
      *
-     *  
+     *  XML file source
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class ImportXMLRequest implements  ArrayAccess
     /**
      * Sets import_position
      *
-     *  
+     *  Import position description.
      *
      * @return $this
      */

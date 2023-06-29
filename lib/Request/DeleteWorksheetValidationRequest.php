@@ -45,7 +45,7 @@ class DeleteWorksheetValidationRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetValidationRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetValidationRequest extends BaseApiRequest
     }
 
     /*
-    * validationIndex : 
+    * validationIndex : The validation index.
     */ 
     public $validation_index;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetValidationRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetValidationRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

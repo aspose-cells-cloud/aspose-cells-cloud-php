@@ -205,7 +205,7 @@ class FilesList implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  Files and folders contained by folder StorageFile.
      *
      * @return $this
      */

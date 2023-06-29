@@ -45,7 +45,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : Split format.
     */ 
     public $format;
 
@@ -90,7 +90,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * from : 
+    * from : Start worksheet index.
     */ 
     public $from;
 
@@ -105,7 +105,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * to : 
+    * to : End worksheet index.
     */ 
     public $to;
 
@@ -120,7 +120,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * horizontalResolution : 
+    * horizontalResolution : Image horizontal resolution.
     */ 
     public $horizontal_resolution;
 
@@ -135,7 +135,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * verticalResolution : 
+    * verticalResolution : Image vertical resolution.
     */ 
     public $vertical_resolution;
 
@@ -150,7 +150,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * splitNameRule : 
+    * splitNameRule : rule name : sheetname  newguid 
     */ 
     public $split_name_rule;
 
@@ -165,7 +165,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PostWorkbookSplitRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

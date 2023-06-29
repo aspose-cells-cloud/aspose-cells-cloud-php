@@ -301,7 +301,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets auto_filter
      *
-     *  
+     *  Gets the autofilter of the pivot filter.
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets evaluation_order
      *
-     *  
+     *  Gets the Evaluation Order of the pivot filter.
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets field_index
      *
-     *  
+     *  Gets the field index of the pivot filter.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets filter_type
      *
-     *  
+     *  Gets the autofilter type of the pivot filter.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets measure_fld_index
      *
-     *  
+     *  Gets the measure field index of the pivot filter.            
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets member_property_field_index
      *
-     *  
+     *  Gets the member property field index of the pivot filter.            
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets the name of the pivot filter.
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets value1
      *
-     *  
+     *  Gets the string value1 of the label pivot filter.            
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class PivotFilter implements  ArrayAccess
     /**
      * Sets value2
      *
-     *  
+     *  Gets the string value2 of the label pivot filter.            
      *
      * @return $this
      */

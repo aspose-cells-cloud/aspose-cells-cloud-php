@@ -45,7 +45,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : range in worksheet 
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * destRow : 
+    * destRow : The start row of the dest range.
     */ 
     public $dest_row;
 
@@ -105,7 +105,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * destColumn : 
+    * destColumn : The start column of the dest range.
     */ 
     public $dest_column;
 
@@ -120,7 +120,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

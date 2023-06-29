@@ -45,7 +45,7 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * propertyName : 
+    * propertyName : The property name.
     */ 
     public $property_name;
 
@@ -90,7 +90,7 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

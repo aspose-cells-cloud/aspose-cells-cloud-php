@@ -45,7 +45,7 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
     }
 
     /*
-    * xmlFile : 
+    * xmlFile : The xml file full path, if empty the data is read from request body.
     */ 
     public $xml_file;
 
@@ -75,7 +75,7 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : 
+    * outPath : Path to save result
     */ 
     public $out_path;
 
@@ -105,7 +105,7 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -120,7 +120,7 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
     }
 
     /*
-    * outStorageName : 
+    * outStorageName : Storage name.
     */ 
     public $out_storage_name;
 

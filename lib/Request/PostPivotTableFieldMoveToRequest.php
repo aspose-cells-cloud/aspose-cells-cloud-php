@@ -45,7 +45,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : Gets the PivotField Object at the specific index.
     */ 
     public $field_index;
 
@@ -105,7 +105,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * from : 
+    * from : The fields area type(Column/Row/Page/Data/Undefined).
     */ 
     public $from;
 
@@ -120,7 +120,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * to : 
+    * to : The fields area type(Column/Row/Page/Data/Undefined).
     */ 
     public $to;
 
@@ -135,7 +135,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

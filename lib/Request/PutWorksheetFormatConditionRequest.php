@@ -45,7 +45,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * index : 
+    * index : Gets the Conditional Formatting element at the specified index.
     */ 
     public $index;
 
@@ -90,7 +90,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * cellArea : 
+    * cellArea : Adds a conditional formatted cell range.
     */ 
     public $cell_area;
 
@@ -105,7 +105,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : Format condition type(CellValue/Expression/ColorScale/DataBar/IconSet/Top10/UniqueValues/DuplicateValues/ContainsText/NotContainsText/BeginsWith/EndsWith/ContainsBlanks/NotContainsBlanks/ContainsErrors/NotContainsErrors/TimePeriod/AboveAverage).
     */ 
     public $type;
 
@@ -120,7 +120,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * operatorType : 
+    * operatorType : Represents the operator type of conditional format and data validation(Between/Equal/GreaterThan/GreaterOrEqual/LessThan/None/NotBetween/NotEqual).
     */ 
     public $operator_type;
 
@@ -135,7 +135,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * formula1 : 
+    * formula1 : The value or expression associated with conditional formatting.
     */ 
     public $formula1;
 
@@ -150,7 +150,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * formula2 : 
+    * formula2 : The value or expression associated with conditional formatting.
     */ 
     public $formula2;
 
@@ -165,7 +165,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

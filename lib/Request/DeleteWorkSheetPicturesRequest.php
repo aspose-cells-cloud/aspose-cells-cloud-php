@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteWorkSheetPicturesRequest.cs">
+ * <copyright company="Aspose" file="DeleteWorksheetPicturesRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -36,21 +36,16 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
-// /**
-//  * @deprecated 
-//  */
-// class DeleteWorkSheetPicturesRequest extends DeleteWorksheetPicturesRequest
-// {
-// }
+
 /*
- * Request model for  DeleteWorkSheetPictures operation.
+ * Request model for  DeleteWorksheetPictures operation.
  */
 
 class DeleteWorksheetPicturesRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -65,7 +60,7 @@ class DeleteWorksheetPicturesRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -80,7 +75,7 @@ class DeleteWorksheetPicturesRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -95,7 +90,7 @@ class DeleteWorksheetPicturesRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 
@@ -118,14 +113,14 @@ class DeleteWorksheetPicturesRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling DeleteWorkSheetPictures'
+                'Missing the required parameter $name when calling DeleteWorksheetPictures'
             );
         } 
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sheet_name when calling DeleteWorkSheetPictures'
+                'Missing the required parameter $sheet_name when calling DeleteWorksheetPictures'
             );
         } 
 

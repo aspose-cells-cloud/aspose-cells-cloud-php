@@ -45,7 +45,7 @@ class PostWorksheetCellsRangeColumnWidthRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCellsRangeColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : The range object.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellsRangeColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * value : 
+    * value : Sets the column width of this range.
     */ 
     public $value;
 
@@ -105,7 +105,7 @@ class PostWorksheetCellsRangeColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetCellsRangeColumnWidthRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

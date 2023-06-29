@@ -45,7 +45,7 @@ class GetWorksheetOleObjectsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetOleObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetOleObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Document's folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetWorksheetOleObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

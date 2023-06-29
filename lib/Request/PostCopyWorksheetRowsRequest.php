@@ -45,7 +45,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * sourceRowIndex : 
+    * sourceRowIndex : Source row index
     */ 
     public $source_row_index;
 
@@ -90,7 +90,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * destinationRowIndex : 
+    * destinationRowIndex : Destination row index
     */ 
     public $destination_row_index;
 
@@ -105,7 +105,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * rowNumber : 
+    * rowNumber : The copied row number
     */ 
     public $row_number;
 
@@ -120,7 +120,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * worksheet : 
+    * worksheet : The worksheet name.
     */ 
     public $worksheet;
 
@@ -135,7 +135,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostCopyWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

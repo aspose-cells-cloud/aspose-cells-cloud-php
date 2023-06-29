@@ -35,6 +35,9 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\PostBatchConvertRequest; 
+use \Aspose\Cells\Cloud\Request\PostBatchLockRequest; 
+use \Aspose\Cells\Cloud\Request\PostBatchProtectRequest; 
+use \Aspose\Cells\Cloud\Request\PostBatchUnlockRequest; 
 
 use PHPUnit\Framework\TestCase;
 class BatchControllerTest extends \PHPUnit_Framework_TestCase
@@ -96,5 +99,90 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $request = new PostBatchConvertRequest();
         $request->setBatchConvertRequest( $batchConvertRequest);
         $this->instance->postBatchConvert($request);
+    }
+
+    /// <summary>
+    /// Test for PostBatchProtect of BatchController.
+    /// </summary>
+
+    public function testPostBatchProtect()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localBook1 = "Book1.xlsx";
+        $remoteBook1 = "Book1.xlsx";
+        $localMyDoc = "myDocument.xlsx";
+        $remoteMyDoc = "myDocument.xlsx";
+
+        $batchProtectRequestMatchCondition = new \Aspose\Cells\Cloud\Model\MatchConditionRequest();
+        $batchProtectRequestMatchCondition->setRegexPattern("(^Book)(.+)(xlsx$)" ); 
+        $batchProtectRequest = new \Aspose\Cells\Cloud\Model\BatchProtectRequest();
+        $batchProtectRequest->setSourceFolder($remoteFolder ); 
+        $batchProtectRequest->setProtectionType("All" ); 
+        $batchProtectRequest->setPassword("123456" ); 
+        $batchProtectRequest->setOutFolder("TestResult" ); 
+        $batchProtectRequest->setMatchCondition($batchProtectRequestMatchCondition ); 
+        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+     
+        $request = new PostBatchProtectRequest();
+        $request->setBatchProtectRequest( $batchProtectRequest);
+        $this->instance->postBatchProtect($request);
+    }
+
+    /// <summary>
+    /// Test for PostBatchLock of BatchController.
+    /// </summary>
+
+    public function testPostBatchLock()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localBook1 = "Book1.xlsx";
+        $remoteBook1 = "Book1.xlsx";
+        $localMyDoc = "myDocument.xlsx";
+        $remoteMyDoc = "myDocument.xlsx";
+
+        $batchLockRequestMatchCondition = new \Aspose\Cells\Cloud\Model\MatchConditionRequest();
+        $batchLockRequestMatchCondition->setRegexPattern("(^Book)(.+)(xlsx$)" ); 
+        $batchLockRequest = new \Aspose\Cells\Cloud\Model\BatchLockRequest();
+        $batchLockRequest->setSourceFolder($remoteFolder ); 
+        $batchLockRequest->setPassword("123456" ); 
+        $batchLockRequest->setOutFolder("TestResult" ); 
+        $batchLockRequest->setMatchCondition($batchLockRequestMatchCondition ); 
+        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+     
+        $request = new PostBatchLockRequest();
+        $request->setBatchLockRequest( $batchLockRequest);
+        $this->instance->postBatchLock($request);
+    }
+
+    /// <summary>
+    /// Test for PostBatchUnlock of BatchController.
+    /// </summary>
+
+    public function testPostBatchUnlock()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localBook1 = "Book1.xlsx";
+        $remoteBook1 = "Book1.xlsx";
+        $localMyDoc = "myDocument.xlsx";
+        $remoteMyDoc = "myDocument.xlsx";
+
+        $batchLockRequestMatchCondition = new \Aspose\Cells\Cloud\Model\MatchConditionRequest();
+        $batchLockRequestMatchCondition->setRegexPattern("(^Book)(.+)(xlsx$)" ); 
+        $batchLockRequest = new \Aspose\Cells\Cloud\Model\BatchLockRequest();
+        $batchLockRequest->setSourceFolder($remoteFolder ); 
+        $batchLockRequest->setPassword("123456" ); 
+        $batchLockRequest->setOutFolder("TestResult" ); 
+        $batchLockRequest->setMatchCondition($batchLockRequestMatchCondition ); 
+        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+     
+        $request = new PostBatchUnlockRequest();
+        $request->setBatchLockRequest( $batchLockRequest);
+        $this->instance->postBatchUnlock($request);
     }
 }

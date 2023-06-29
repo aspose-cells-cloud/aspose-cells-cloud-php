@@ -45,7 +45,7 @@ class DeleteHorizontalPageBreaksRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteHorizontalPageBreaksRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteHorizontalPageBreaksRequest extends BaseApiRequest
     }
 
     /*
-    * row : 
+    * row : Row index, zero based.
     */ 
     public $row;
 
@@ -90,7 +90,7 @@ class DeleteHorizontalPageBreaksRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteHorizontalPageBreaksRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

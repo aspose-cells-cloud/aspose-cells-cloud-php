@@ -45,7 +45,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * cellname : 
+    * cellname : Cell name
     */ 
     public $cellname;
 
@@ -90,7 +90,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * column : 
+    * column : Column index, zero based.
     */ 
     public $column;
 
@@ -105,7 +105,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * row : 
+    * row : Row index, zero based.
     */ 
     public $row;
 
@@ -120,7 +120,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : 
+    * startRow : Start row index, zero based.
     */ 
     public $start_row;
 
@@ -135,7 +135,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : 
+    * endRow : End row index, zero based.
     */ 
     public $end_row;
 
@@ -150,7 +150,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

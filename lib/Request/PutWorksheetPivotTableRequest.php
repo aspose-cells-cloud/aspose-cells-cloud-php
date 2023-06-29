@@ -45,7 +45,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * sourceData : 
+    * sourceData : The data for the new PivotTable cache.
     */ 
     public $source_data;
 
@@ -105,7 +105,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * destCellName : 
+    * destCellName : The cell in the upper-left corner of the PivotTable report's destination range.
     */ 
     public $dest_cell_name;
 
@@ -120,7 +120,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * tableName : 
+    * tableName : The name of the new PivotTable report.
     */ 
     public $table_name;
 
@@ -135,7 +135,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * useSameSource : 
+    * useSameSource : Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.
     */ 
     public $use_same_source;
 
@@ -150,7 +150,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

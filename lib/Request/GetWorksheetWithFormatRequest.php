@@ -45,7 +45,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : Export format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
     */ 
     public $format;
 
@@ -90,7 +90,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * verticalResolution : 
+    * verticalResolution : Image vertical resolution.
     */ 
     public $vertical_resolution;
 
@@ -105,7 +105,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * horizontalResolution : 
+    * horizontalResolution : Image horizontal resolution.
     */ 
     public $horizontal_resolution;
 
@@ -120,7 +120,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * area : 
+    * area : Represents the range to be printed.
     */ 
     public $area;
 
@@ -135,7 +135,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * pageIndex : 
+    * pageIndex : Represents the page to be printed
     */ 
     public $page_index;
 
@@ -150,7 +150,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

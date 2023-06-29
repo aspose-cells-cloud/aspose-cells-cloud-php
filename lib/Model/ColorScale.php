@@ -265,7 +265,7 @@ class ColorScale implements  ArrayAccess
     /**
      * Sets max_cfvo
      *
-     *  
+     *  Get or set this ColorScale's max value object.  Cannot set null or CFValueObject    with type FormatConditionValueType.Min to it.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class ColorScale implements  ArrayAccess
     /**
      * Sets max_color
      *
-     *  
+     *  Get or set the max value object's corresponding color.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class ColorScale implements  ArrayAccess
     /**
      * Sets mid_cfvo
      *
-     *  
+     *  Get or set this ColorScale's mid value object.  Cannot set CFValueObject   with type FormatConditionValueType.Max or FormatConditionValueType.Min to   it.            
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class ColorScale implements  ArrayAccess
     /**
      * Sets mid_color
      *
-     *  
+     *  Get or set the mid value object's corresponding color.            
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class ColorScale implements  ArrayAccess
     /**
      * Sets min_cfvo
      *
-     *  
+     *  Get or set this ColorScale's min value object.  Cannot set null or CFValueObject   with type FormatConditionValueType.Max to it.            
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class ColorScale implements  ArrayAccess
     /**
      * Sets min_color
      *
-     *  
+     *  Get or set the min value object's corresponding color.
      *
      * @return $this
      */

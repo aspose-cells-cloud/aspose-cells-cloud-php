@@ -45,7 +45,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : 
+    * pivotTableIndex : Gets the PivotTable report by index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * pivotFieldType : 
+    * pivotFieldType : Represents PivotTable field type(Undefined/Row/Column/Page/Data).
     */ 
     public $pivot_field_type;
 
@@ -105,7 +105,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * fieldIndex : 
+    * fieldIndex : Gets the PivotField Object at the specific index.
     */ 
     public $field_index;
 
@@ -120,7 +120,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * itemIndex : 
+    * itemIndex : The index of the pivotItem in the pivotField.
     */ 
     public $item_index;
 
@@ -135,7 +135,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * isHide : 
+    * isHide : Whether the specific PivotItem is hidden(true/false).
     */ 
     public $is_hide;
 
@@ -150,7 +150,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : 
+    * needReCalculate : Whether the specific pivot table calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -165,7 +165,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

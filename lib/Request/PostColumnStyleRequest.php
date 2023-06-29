@@ -45,7 +45,7 @@ class PostColumnStyleRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostColumnStyleRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostColumnStyleRequest extends BaseApiRequest
     }
 
     /*
-    * columnIndex : 
+    * columnIndex : The column index.
     */ 
     public $column_index;
 
@@ -90,7 +90,7 @@ class PostColumnStyleRequest extends BaseApiRequest
     }
 
     /*
-    * style : 
+    * style : Represents display style of excel document,such as font,color,alignment,border,etc.
     */ 
     public $style;
 
@@ -105,7 +105,7 @@ class PostColumnStyleRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostColumnStyleRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

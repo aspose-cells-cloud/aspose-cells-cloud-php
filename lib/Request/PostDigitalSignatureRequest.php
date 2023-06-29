@@ -45,7 +45,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * digitalsignaturefile : 
+    * digitalsignaturefile : Digital signature file parameters.
     */ 
     public $digitalsignaturefile;
 
@@ -90,7 +90,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

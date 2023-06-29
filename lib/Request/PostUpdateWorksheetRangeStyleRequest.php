@@ -45,7 +45,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified cells applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
     }
 
     /*
-    * style : 
+    * style : Style with update style settings.
     */ 
     public $style;
 
@@ -105,7 +105,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

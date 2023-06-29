@@ -600,7 +600,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets display_right_to_left
      *
-     *  
+     *  Indicates if the specified worksheet is displayed from right to left instead   of from left to right.  Default is false.            
      *
      * @return $this
      */
@@ -623,7 +623,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets display_zeros
      *
-     *  
+     *  True if zero values are displayed.
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets first_visible_column
      *
-     *  
+     *  Represents first visible column index.
      *
      * @return $this
      */
@@ -669,7 +669,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets first_visible_row
      *
-     *  
+     *  Represents first visible row index.            
      *
      * @return $this
      */
@@ -692,7 +692,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets or sets the name of the worksheet.            
      *
      * @return $this
      */
@@ -715,7 +715,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets index
      *
-     *  
+     *  Gets the index of sheet in the worksheets collection.            
      *
      * @return $this
      */
@@ -738,7 +738,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_gridlines_visible
      *
-     *  
+     *  Gets or sets a value indicating whether the gridelines are visible.Default    is true.
      *
      * @return $this
      */
@@ -761,7 +761,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_outline_shown
      *
-     *  
+     *  Indicates whether show outline.            
      *
      * @return $this
      */
@@ -784,7 +784,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_page_break_preview
      *
-     *  
+     *  Indications the specified worksheet is shown in normal view or page break preview.
      *
      * @return $this
      */
@@ -807,7 +807,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_visible
      *
-     *  
+     *  Represents if the worksheet is visible.            
      *
      * @return $this
      */
@@ -830,7 +830,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_protected
      *
-     *  
+     *  Indicates if the worksheet is protected.
      *
      * @return $this
      */
@@ -853,7 +853,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_row_column_headers_visible
      *
-     *  
+     *  Gets or sets a value indicating whether the worksheet will display row and column headers.Default is true.            
      *
      * @return $this
      */
@@ -876,7 +876,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_ruler_visible
      *
-     *  
+     *  Indicates whether the ruler is visible. Only apply for page break preview.
      *
      * @return $this
      */
@@ -899,7 +899,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets is_selected
      *
-     *  
+     *  Indicates whether this worksheet is selected when the workbook is opened.
      *
      * @return $this
      */
@@ -922,7 +922,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets tab_color
      *
-     *  
+     *  Represents worksheet tab color.
      *
      * @return $this
      */
@@ -945,7 +945,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets transition_entry
      *
-     *  
+     *  Flag indicating whether the Transition Formula Entry (Lotus compatibility) option is enabled.
      *
      * @return $this
      */
@@ -968,7 +968,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets transition_evaluation
      *
-     *  
+     *  Flag indicating whether the Transition Formula Evaluation (Lotus compatibility) option is enabled.            
      *
      * @return $this
      */
@@ -991,7 +991,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Represents worksheet type
      *
      * @return $this
      */
@@ -1014,7 +1014,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets view_type
      *
-     *  
+     *  Gets and sets the view type.
      *
      * @return $this
      */
@@ -1037,7 +1037,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets visibility_type
      *
-     *  
+     *  Indicates the state for this sheet visibility            
      *
      * @return $this
      */
@@ -1060,7 +1060,7 @@ class Worksheet implements  ArrayAccess
     /**
      * Sets zoom
      *
-     *  
+     *  Represents the scaling factor in percent. It should be btween 10 and 400.            
      *
      * @return $this
      */

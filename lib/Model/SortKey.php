@@ -334,7 +334,7 @@ class SortKey implements  ArrayAccess
     /**
      * Sets order
      *
-     *  
+     *  Indicates the order of sorting.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class SortKey implements  ArrayAccess
     /**
      * Sets index
      *
-     *  
+     *  Gets the sorted column index(absolute position, column A is 0, B is 1, ...).
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class SortKey implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Represents the type of sorting.
      *
      * @return $this
      */

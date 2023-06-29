@@ -45,7 +45,7 @@ class GetExtractBarcodesRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetExtractBarcodesRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetExtractBarcodesRequest extends BaseApiRequest
     }
 
     /*
-    * pictureIndex : 
+    * pictureIndex : Picture index.
     */ 
     public $picture_index;
 
@@ -90,7 +90,7 @@ class GetExtractBarcodesRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Workbook folder.
     */ 
     public $folder;
 
