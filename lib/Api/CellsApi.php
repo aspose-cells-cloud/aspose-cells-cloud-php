@@ -165,6 +165,7 @@ use Aspose\Cells\Cloud\Request\PostImportRequest;
 use Aspose\Cells\Cloud\Request\PostWatermarkRequest;
 use Aspose\Cells\Cloud\Request\PostClearObjectsRequest;
 use Aspose\Cells\Cloud\Request\PostReverseRequest;
+use Aspose\Cells\Cloud\Request\PostRepairRequest;
 use Aspose\Cells\Cloud\Request\PostRotateRequest;
 use Aspose\Cells\Cloud\Request\PostMetadataRequest;
 use Aspose\Cells\Cloud\Request\GetMetadataRequest;
@@ -103944,7 +103945,17 @@ class CellsApi
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
     }
-
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostRepairRequest" /></param>
+    public function postRepair( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
     /// <summary>
     /// </summary>
     /// <param name="request">Request. <see cref="PostRotateRequest" /></param>
