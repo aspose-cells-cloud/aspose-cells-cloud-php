@@ -27,7 +27,7 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 ## Feature & Enhancements in Version 23.7
 
 - Support to repair api.
-
+- Remove GetExtractBarcodes API.
 
 ## Read Other Formats
 

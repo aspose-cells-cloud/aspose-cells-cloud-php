@@ -45,6 +45,7 @@ use \Aspose\Cells\Cloud\Request\PostMetadataRequest;
 use \Aspose\Cells\Cloud\Request\PostProtectRequest; 
 use \Aspose\Cells\Cloud\Request\PostReplaceRequest; 
 use \Aspose\Cells\Cloud\Request\PostReverseRequest; 
+use \Aspose\Cells\Cloud\Request\PostRepairRequest; 
 use \Aspose\Cells\Cloud\Request\PostSearchRequest; 
 use \Aspose\Cells\Cloud\Request\PostSplitRequest; 
 use \Aspose\Cells\Cloud\Request\PostUnlockRequest; 
@@ -4621,6 +4622,81 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
         $this->instance->postClearObjects($request);
+    }
+    /// <summary>
+    /// Test for repair workbook as one of the available formats.
+    /// </summary>
+
+    public function testPostRepair_xlsx()
+    {
+        $book1Xlsx = "Book1.xlsx";
+
+        $format = "xlsx";
+
+        $mapFiles = array ();
+        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
+     
+        $request = new PostRepairRequest();
+        $request->setFile( $mapFiles);
+        $request->setFormat( $format);
+        $this->instance->postRepair($request);
+    }
+
+    /// <summary>
+    /// Test for repair workbook as one of the available formats.
+    /// </summary>
+
+    public function testPostRepair_pdf()
+    {
+        $book1Xlsx = "Book1.xlsx";
+
+        $format = "pdf";
+
+        $mapFiles = array ();
+        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
+     
+        $request = new PostRepairRequest();
+        $request->setFile( $mapFiles);
+        $request->setFormat( $format);
+        $this->instance->postRepair($request);
+    }
+
+    /// <summary>
+    /// Test for repair workbook as one of the available formats.
+    /// </summary>
+
+    public function testPostRepair_csv()
+    {
+        $book1Xlsx = "Book1.xlsx";
+
+        $format = "csv";
+
+        $mapFiles = array ();
+        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
+     
+        $request = new PostRepairRequest();
+        $request->setFile( $mapFiles);
+        $request->setFormat( $format);
+        $this->instance->postRepair($request);
+    }
+
+    /// <summary>
+    /// Test for repair workbook as one of the available formats.
+    /// </summary>
+
+    public function testPostRepair_png()
+    {
+        $book1Xlsx = "Book1.xlsx";
+
+        $format = "png";
+
+        $mapFiles = array ();
+        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
+     
+        $request = new PostRepairRequest();
+        $request->setFile( $mapFiles);
+        $request->setFormat( $format);
+        $this->instance->postRepair($request);
     }
 
     /// <summary>
