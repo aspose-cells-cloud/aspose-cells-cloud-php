@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AboveAverage.cs">
+ * <copyright company="Aspose" file="RenderingFont.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class AboveAverage implements  ArrayAccess
+class RenderingFont implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class AboveAverage implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AboveAverage';     
+    protected static $swaggerModelName = 'RenderingFont';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,11 @@ class AboveAverage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_above_average' => 'bool',
-        'is_equal_average' => 'bool',
-        'std_dev' => 'int'
+        'name' => 'string',
+        'size' => 'double',
+        'bold' => 'bool',
+        'italic' => 'bool',
+        'color' => '\Aspose\Cells\Cloud\Model\Color'
     ];
 
     /**
@@ -57,9 +59,11 @@ class AboveAverage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_above_average' => null  ,
-        'is_equal_average' => null  ,
-        'std_dev' => null  
+        'name' => null  ,
+        'size' => null  ,
+        'bold' => null  ,
+        'italic' => null  ,
+        'color' => null  
     ];
 
     /**
@@ -89,9 +93,11 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'is_above_average' => 'IsAboveAverage' ,
-         'is_equal_average' => 'IsEqualAverage' ,
-         'std_dev' => 'StdDev' 
+         'name' => 'Name' ,
+         'size' => 'Size' ,
+         'bold' => 'Bold' ,
+         'italic' => 'Italic' ,
+         'color' => 'Color' 
     ];
 
     /**
@@ -100,9 +106,11 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_above_average' => 'setIsAboveAverage' ,
-        'is_equal_average' => 'setIsEqualAverage' ,
-        'std_dev' => 'setStdDev' 
+        'name' => 'setName' ,
+        'size' => 'setSize' ,
+        'bold' => 'setBold' ,
+        'italic' => 'setItalic' ,
+        'color' => 'setColor' 
     ];
 
     /**
@@ -111,9 +119,11 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_above_average' => 'getIsAboveAverage' ,
-        'is_equal_average' => 'getIsEqualAverage' ,
-        'std_dev' => 'getStdDev' 
+        'name' => 'getName' ,
+        'size' => 'getSize' ,
+        'bold' => 'getBold' ,
+        'italic' => 'getItalic' ,
+        'color' => 'getColor' 
     ];
 
     /**
@@ -172,9 +182,11 @@ class AboveAverage implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_above_average'] = isset($data['is_above_average']) ? $data['is_above_average'] : null;
-        $this->container['is_equal_average'] = isset($data['is_equal_average']) ? $data['is_equal_average'] : null;
-        $this->container['std_dev'] = isset($data['std_dev']) ? $data['std_dev'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['bold'] = isset($data['bold']) ? $data['bold'] : null;
+        $this->container['italic'] = isset($data['italic']) ? $data['italic'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
     }
 
     /**
@@ -185,14 +197,20 @@ class AboveAverage implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['is_above_average'] === null) {
-            $invalidProperties[] = "'is_above_average' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['is_equal_average'] === null) {
-            $invalidProperties[] = "'is_equal_average' can't be null";
+        if ($this->container['size'] === null) {
+            $invalidProperties[] = "'size' can't be null";
         }
-        if ($this->container['std_dev'] === null) {
-            $invalidProperties[] = "'std_dev' can't be null";
+        if ($this->container['bold'] === null) {
+            $invalidProperties[] = "'bold' can't be null";
+        }
+        if ($this->container['italic'] === null) {
+            $invalidProperties[] = "'italic' can't be null";
+        }
+        if ($this->container['color'] === null) {
+            $invalidProperties[] = "'color' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +223,135 @@ class AboveAverage implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['is_above_average'] === null) {
+        if ($this->container['name'] === null) {
                     return false;
                 }
-        if ($this->container['is_equal_average'] === null) {
+        if ($this->container['size'] === null) {
                     return false;
                 }
-        if ($this->container['std_dev'] === null) {
+        if ($this->container['bold'] === null) {
+                    return false;
+                }
+        if ($this->container['italic'] === null) {
+                    return false;
+                }
+        if ($this->container['color'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets is_above_average
+     * Gets name
      *
-     * @return bool
+     * @return string
      */
-    public function getIsAboveAverage()
+    public function getName()
     {
-        return $this->container['is_above_average'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets is_above_average
+     * Sets name
      *
-     *  Get or set the flag indicating whether the rule is an "above average" rule.   'true' indicates 'above average'.  Default value is true.            
+     *  
      *
      * @return $this
      */
-    public function setIsAboveAverage($is_above_average)
+    public function setName($name)
     {
-        $this->container['is_above_average'] = $is_above_average;
+        $this->container['name'] = $name;
 
         return $this;
     }
    /**
-     * Gets is_equal_average
+     * Gets size
      *
-     * @return bool
+     * @return double
      */
-    public function getIsEqualAverage()
+    public function getSize()
     {
-        return $this->container['is_equal_average'];
+        return $this->container['size'];
     }
 
     /**
-     * Sets is_equal_average
+     * Sets size
      *
-     *  Get or set the flag indicating whether the 'aboveAverage' and 'belowAverage'   criteria is inclusive of the average itself, or exclusive of that value.   'true' indicates to include the average value in the criteria.  Default value   is false.            
+     *  
      *
      * @return $this
      */
-    public function setIsEqualAverage($is_equal_average)
+    public function setSize($size)
     {
-        $this->container['is_equal_average'] = $is_equal_average;
+        $this->container['size'] = $size;
 
         return $this;
     }
    /**
-     * Gets std_dev
+     * Gets bold
      *
-     * @return int
+     * @return bool
      */
-    public function getStdDev()
+    public function getBold()
     {
-        return $this->container['std_dev'];
+        return $this->container['bold'];
     }
 
     /**
-     * Sets std_dev
+     * Sets bold
      *
-     *  Get or set the number of standard deviations to include above or below the  average in the conditional formatting rule. The input value must between  0 and 3 (include 0 and 3). Setting this value to 0 means stdDev is not set.   The default value is 0.            
+     *  
      *
      * @return $this
      */
-    public function setStdDev($std_dev)
+    public function setBold($bold)
     {
-        $this->container['std_dev'] = $std_dev;
+        $this->container['bold'] = $bold;
+
+        return $this;
+    }
+   /**
+     * Gets italic
+     *
+     * @return bool
+     */
+    public function getItalic()
+    {
+        return $this->container['italic'];
+    }
+
+    /**
+     * Sets italic
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setItalic($italic)
+    {
+        $this->container['italic'] = $italic;
+
+        return $this;
+    }
+   /**
+     * Gets color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
 
         return $this;
     }

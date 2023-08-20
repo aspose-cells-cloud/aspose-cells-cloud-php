@@ -217,7 +217,7 @@ class ObjectExist implements  ArrayAccess
     /**
      * Sets exists
      *
-     *  
+     *  Indicates that the file or folder exists.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class ObjectExist implements  ArrayAccess
     /**
      * Sets is_folder
      *
-     *  
+     *  True if it is a folder, false if it is a file.
      *
      * @return $this
      */

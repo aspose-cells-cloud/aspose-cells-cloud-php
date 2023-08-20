@@ -46,6 +46,15 @@ class PdfSaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'display_doc_title' => 'bool',
+        'export_document_structure' => 'bool',
+        'emf_render_setting' => 'string',
+        'custom_properties_export' => 'string',
+        'optimization_type' => 'string',
+        'producer' => 'string',
+        'pdf_compression' => 'string',
+        'font_encoding' => 'string',
+        'watermark' => '\Aspose\Cells\Cloud\Model\RenderingWatermark',
         'calculate_formula' => 'bool',
         'check_font_compatibility' => 'bool',
         'compliance' => 'string',
@@ -72,6 +81,15 @@ class PdfSaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'display_doc_title' => null  ,
+        'export_document_structure' => null  ,
+        'emf_render_setting' => null  ,
+        'custom_properties_export' => null  ,
+        'optimization_type' => null  ,
+        'producer' => null  ,
+        'pdf_compression' => null  ,
+        'font_encoding' => null  ,
+        'watermark' => null  ,
         'calculate_formula' => null  ,
         'check_font_compatibility' => null  ,
         'compliance' => null  ,
@@ -119,6 +137,15 @@ class PdfSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+         'display_doc_title' => 'DisplayDocTitle' ,
+         'export_document_structure' => 'ExportDocumentStructure' ,
+         'emf_render_setting' => 'EmfRenderSetting' ,
+         'custom_properties_export' => 'CustomPropertiesExport' ,
+         'optimization_type' => 'OptimizationType' ,
+         'producer' => 'Producer' ,
+         'pdf_compression' => 'PdfCompression' ,
+         'font_encoding' => 'FontEncoding' ,
+         'watermark' => 'Watermark' ,
          'calculate_formula' => 'CalculateFormula' ,
          'check_font_compatibility' => 'CheckFontCompatibility' ,
          'compliance' => 'Compliance' ,
@@ -145,6 +172,15 @@ class PdfSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'display_doc_title' => 'setDisplayDocTitle' ,
+        'export_document_structure' => 'setExportDocumentStructure' ,
+        'emf_render_setting' => 'setEmfRenderSetting' ,
+        'custom_properties_export' => 'setCustomPropertiesExport' ,
+        'optimization_type' => 'setOptimizationType' ,
+        'producer' => 'setProducer' ,
+        'pdf_compression' => 'setPdfCompression' ,
+        'font_encoding' => 'setFontEncoding' ,
+        'watermark' => 'setWatermark' ,
         'calculate_formula' => 'setCalculateFormula' ,
         'check_font_compatibility' => 'setCheckFontCompatibility' ,
         'compliance' => 'setCompliance' ,
@@ -171,6 +207,15 @@ class PdfSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'display_doc_title' => 'getDisplayDocTitle' ,
+        'export_document_structure' => 'getExportDocumentStructure' ,
+        'emf_render_setting' => 'getEmfRenderSetting' ,
+        'custom_properties_export' => 'getCustomPropertiesExport' ,
+        'optimization_type' => 'getOptimizationType' ,
+        'producer' => 'getProducer' ,
+        'pdf_compression' => 'getPdfCompression' ,
+        'font_encoding' => 'getFontEncoding' ,
+        'watermark' => 'getWatermark' ,
         'calculate_formula' => 'getCalculateFormula' ,
         'check_font_compatibility' => 'getCheckFontCompatibility' ,
         'compliance' => 'getCompliance' ,
@@ -247,6 +292,15 @@ class PdfSaveOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['display_doc_title'] = isset($data['display_doc_title']) ? $data['display_doc_title'] : null;
+        $this->container['export_document_structure'] = isset($data['export_document_structure']) ? $data['export_document_structure'] : null;
+        $this->container['emf_render_setting'] = isset($data['emf_render_setting']) ? $data['emf_render_setting'] : null;
+        $this->container['custom_properties_export'] = isset($data['custom_properties_export']) ? $data['custom_properties_export'] : null;
+        $this->container['optimization_type'] = isset($data['optimization_type']) ? $data['optimization_type'] : null;
+        $this->container['producer'] = isset($data['producer']) ? $data['producer'] : null;
+        $this->container['pdf_compression'] = isset($data['pdf_compression']) ? $data['pdf_compression'] : null;
+        $this->container['font_encoding'] = isset($data['font_encoding']) ? $data['font_encoding'] : null;
+        $this->container['watermark'] = isset($data['watermark']) ? $data['watermark'] : null;
         $this->container['calculate_formula'] = isset($data['calculate_formula']) ? $data['calculate_formula'] : null;
         $this->container['check_font_compatibility'] = isset($data['check_font_compatibility']) ? $data['check_font_compatibility'] : null;
         $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
@@ -275,6 +329,33 @@ class PdfSaveOptions implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['display_doc_title'] === null) {
+            $invalidProperties[] = "'display_doc_title' can't be null";
+        }
+        if ($this->container['export_document_structure'] === null) {
+            $invalidProperties[] = "'export_document_structure' can't be null";
+        }
+        if ($this->container['emf_render_setting'] === null) {
+            $invalidProperties[] = "'emf_render_setting' can't be null";
+        }
+        if ($this->container['custom_properties_export'] === null) {
+            $invalidProperties[] = "'custom_properties_export' can't be null";
+        }
+        if ($this->container['optimization_type'] === null) {
+            $invalidProperties[] = "'optimization_type' can't be null";
+        }
+        if ($this->container['producer'] === null) {
+            $invalidProperties[] = "'producer' can't be null";
+        }
+        if ($this->container['pdf_compression'] === null) {
+            $invalidProperties[] = "'pdf_compression' can't be null";
+        }
+        if ($this->container['font_encoding'] === null) {
+            $invalidProperties[] = "'font_encoding' can't be null";
+        }
+        if ($this->container['watermark'] === null) {
+            $invalidProperties[] = "'watermark' can't be null";
+        }
         if ($this->container['calculate_formula'] === null) {
             $invalidProperties[] = "'calculate_formula' can't be null";
         }
@@ -340,6 +421,33 @@ class PdfSaveOptions implements  ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['display_doc_title'] === null) {
+                    return false;
+                }
+        if ($this->container['export_document_structure'] === null) {
+                    return false;
+                }
+        if ($this->container['emf_render_setting'] === null) {
+                    return false;
+                }
+        if ($this->container['custom_properties_export'] === null) {
+                    return false;
+                }
+        if ($this->container['optimization_type'] === null) {
+                    return false;
+                }
+        if ($this->container['producer'] === null) {
+                    return false;
+                }
+        if ($this->container['pdf_compression'] === null) {
+                    return false;
+                }
+        if ($this->container['font_encoding'] === null) {
+                    return false;
+                }
+        if ($this->container['watermark'] === null) {
+                    return false;
+                }
         if ($this->container['calculate_formula'] === null) {
                     return false;
                 }
@@ -395,6 +503,213 @@ class PdfSaveOptions implements  ArrayAccess
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets display_doc_title
+     *
+     * @return bool
+     */
+    public function getDisplayDocTitle()
+    {
+        return $this->container['display_doc_title'];
+    }
+
+    /**
+     * Sets display_doc_title
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDisplayDocTitle($display_doc_title)
+    {
+        $this->container['display_doc_title'] = $display_doc_title;
+
+        return $this;
+    }
+   /**
+     * Gets export_document_structure
+     *
+     * @return bool
+     */
+    public function getExportDocumentStructure()
+    {
+        return $this->container['export_document_structure'];
+    }
+
+    /**
+     * Sets export_document_structure
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setExportDocumentStructure($export_document_structure)
+    {
+        $this->container['export_document_structure'] = $export_document_structure;
+
+        return $this;
+    }
+   /**
+     * Gets emf_render_setting
+     *
+     * @return string
+     */
+    public function getEmfRenderSetting()
+    {
+        return $this->container['emf_render_setting'];
+    }
+
+    /**
+     * Sets emf_render_setting
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEmfRenderSetting($emf_render_setting)
+    {
+        $this->container['emf_render_setting'] = $emf_render_setting;
+
+        return $this;
+    }
+   /**
+     * Gets custom_properties_export
+     *
+     * @return string
+     */
+    public function getCustomPropertiesExport()
+    {
+        return $this->container['custom_properties_export'];
+    }
+
+    /**
+     * Sets custom_properties_export
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCustomPropertiesExport($custom_properties_export)
+    {
+        $this->container['custom_properties_export'] = $custom_properties_export;
+
+        return $this;
+    }
+   /**
+     * Gets optimization_type
+     *
+     * @return string
+     */
+    public function getOptimizationType()
+    {
+        return $this->container['optimization_type'];
+    }
+
+    /**
+     * Sets optimization_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setOptimizationType($optimization_type)
+    {
+        $this->container['optimization_type'] = $optimization_type;
+
+        return $this;
+    }
+   /**
+     * Gets producer
+     *
+     * @return string
+     */
+    public function getProducer()
+    {
+        return $this->container['producer'];
+    }
+
+    /**
+     * Sets producer
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setProducer($producer)
+    {
+        $this->container['producer'] = $producer;
+
+        return $this;
+    }
+   /**
+     * Gets pdf_compression
+     *
+     * @return string
+     */
+    public function getPdfCompression()
+    {
+        return $this->container['pdf_compression'];
+    }
+
+    /**
+     * Sets pdf_compression
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPdfCompression($pdf_compression)
+    {
+        $this->container['pdf_compression'] = $pdf_compression;
+
+        return $this;
+    }
+   /**
+     * Gets font_encoding
+     *
+     * @return string
+     */
+    public function getFontEncoding()
+    {
+        return $this->container['font_encoding'];
+    }
+
+    /**
+     * Sets font_encoding
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setFontEncoding($font_encoding)
+    {
+        $this->container['font_encoding'] = $font_encoding;
+
+        return $this;
+    }
+   /**
+     * Gets watermark
+     *
+     * @return \Aspose\Cells\Cloud\Model\RenderingWatermark
+     */
+    public function getWatermark()
+    {
+        return $this->container['watermark'];
+    }
+
+    /**
+     * Sets watermark
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setWatermark($watermark)
+    {
+        $this->container['watermark'] = $watermark;
+
+        return $this;
     }
    /**
      * Gets calculate_formula

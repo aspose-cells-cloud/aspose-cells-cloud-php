@@ -103485,8 +103485,20 @@ class CellsApi
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
     }
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostLockRequest" /></param>
+    public function postLock( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
 
     /// <summary>
+    /// Protect MS Excel and OpenDocument Spreadsheet by making them password protected.
     /// </summary>
     /// <param name="request">Request. <see cref="PostProtectRequest" /></param>
     public function postProtect( $request)

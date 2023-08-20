@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AboveAverage.cs">
+ * <copyright company="Aspose" file="ProtectWorkbookRequst.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class AboveAverage implements  ArrayAccess
+class ProtectWorkbookRequst implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class AboveAverage implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AboveAverage';     
+    protected static $swaggerModelName = 'ProtectWorkbookRequst';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,12 @@ class AboveAverage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_above_average' => 'bool',
-        'is_equal_average' => 'bool',
-        'std_dev' => 'int'
+        'aways_open_only_ready' => 'bool',
+        'encrypt_with_password' => 'string',
+        'protect_current_sheet' => '\Aspose\Cells\Cloud\Model\Protection',
+        'protect_workbook_structure' => 'string',
+        'digital_signature' => '\Aspose\Cells\Cloud\Model\DigitalSignature',
+        'mark_as_final' => 'bool'
     ];
 
     /**
@@ -57,9 +60,12 @@ class AboveAverage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_above_average' => null  ,
-        'is_equal_average' => null  ,
-        'std_dev' => null  
+        'aways_open_only_ready' => null  ,
+        'encrypt_with_password' => null  ,
+        'protect_current_sheet' => null  ,
+        'protect_workbook_structure' => null  ,
+        'digital_signature' => null  ,
+        'mark_as_final' => null  
     ];
 
     /**
@@ -89,9 +95,12 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'is_above_average' => 'IsAboveAverage' ,
-         'is_equal_average' => 'IsEqualAverage' ,
-         'std_dev' => 'StdDev' 
+         'aways_open_only_ready' => 'AwaysOpenOnlyReady' ,
+         'encrypt_with_password' => 'EncryptWithPassword' ,
+         'protect_current_sheet' => 'ProtectCurrentSheet' ,
+         'protect_workbook_structure' => 'ProtectWorkbookStructure' ,
+         'digital_signature' => 'DigitalSignature' ,
+         'mark_as_final' => 'MarkAsFinal' 
     ];
 
     /**
@@ -100,9 +109,12 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_above_average' => 'setIsAboveAverage' ,
-        'is_equal_average' => 'setIsEqualAverage' ,
-        'std_dev' => 'setStdDev' 
+        'aways_open_only_ready' => 'setAwaysOpenOnlyReady' ,
+        'encrypt_with_password' => 'setEncryptWithPassword' ,
+        'protect_current_sheet' => 'setProtectCurrentSheet' ,
+        'protect_workbook_structure' => 'setProtectWorkbookStructure' ,
+        'digital_signature' => 'setDigitalSignature' ,
+        'mark_as_final' => 'setMarkAsFinal' 
     ];
 
     /**
@@ -111,9 +123,12 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_above_average' => 'getIsAboveAverage' ,
-        'is_equal_average' => 'getIsEqualAverage' ,
-        'std_dev' => 'getStdDev' 
+        'aways_open_only_ready' => 'getAwaysOpenOnlyReady' ,
+        'encrypt_with_password' => 'getEncryptWithPassword' ,
+        'protect_current_sheet' => 'getProtectCurrentSheet' ,
+        'protect_workbook_structure' => 'getProtectWorkbookStructure' ,
+        'digital_signature' => 'getDigitalSignature' ,
+        'mark_as_final' => 'getMarkAsFinal' 
     ];
 
     /**
@@ -172,9 +187,12 @@ class AboveAverage implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_above_average'] = isset($data['is_above_average']) ? $data['is_above_average'] : null;
-        $this->container['is_equal_average'] = isset($data['is_equal_average']) ? $data['is_equal_average'] : null;
-        $this->container['std_dev'] = isset($data['std_dev']) ? $data['std_dev'] : null;
+        $this->container['aways_open_only_ready'] = isset($data['aways_open_only_ready']) ? $data['aways_open_only_ready'] : null;
+        $this->container['encrypt_with_password'] = isset($data['encrypt_with_password']) ? $data['encrypt_with_password'] : null;
+        $this->container['protect_current_sheet'] = isset($data['protect_current_sheet']) ? $data['protect_current_sheet'] : null;
+        $this->container['protect_workbook_structure'] = isset($data['protect_workbook_structure']) ? $data['protect_workbook_structure'] : null;
+        $this->container['digital_signature'] = isset($data['digital_signature']) ? $data['digital_signature'] : null;
+        $this->container['mark_as_final'] = isset($data['mark_as_final']) ? $data['mark_as_final'] : null;
     }
 
     /**
@@ -185,14 +203,23 @@ class AboveAverage implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['is_above_average'] === null) {
-            $invalidProperties[] = "'is_above_average' can't be null";
+        if ($this->container['aways_open_only_ready'] === null) {
+            $invalidProperties[] = "'aways_open_only_ready' can't be null";
         }
-        if ($this->container['is_equal_average'] === null) {
-            $invalidProperties[] = "'is_equal_average' can't be null";
+        if ($this->container['encrypt_with_password'] === null) {
+            $invalidProperties[] = "'encrypt_with_password' can't be null";
         }
-        if ($this->container['std_dev'] === null) {
-            $invalidProperties[] = "'std_dev' can't be null";
+        if ($this->container['protect_current_sheet'] === null) {
+            $invalidProperties[] = "'protect_current_sheet' can't be null";
+        }
+        if ($this->container['protect_workbook_structure'] === null) {
+            $invalidProperties[] = "'protect_workbook_structure' can't be null";
+        }
+        if ($this->container['digital_signature'] === null) {
+            $invalidProperties[] = "'digital_signature' can't be null";
+        }
+        if ($this->container['mark_as_final'] === null) {
+            $invalidProperties[] = "'mark_as_final' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +232,161 @@ class AboveAverage implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['is_above_average'] === null) {
+        if ($this->container['aways_open_only_ready'] === null) {
                     return false;
                 }
-        if ($this->container['is_equal_average'] === null) {
+        if ($this->container['encrypt_with_password'] === null) {
                     return false;
                 }
-        if ($this->container['std_dev'] === null) {
+        if ($this->container['protect_current_sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['protect_workbook_structure'] === null) {
+                    return false;
+                }
+        if ($this->container['digital_signature'] === null) {
+                    return false;
+                }
+        if ($this->container['mark_as_final'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets is_above_average
+     * Gets aways_open_only_ready
      *
      * @return bool
      */
-    public function getIsAboveAverage()
+    public function getAwaysOpenOnlyReady()
     {
-        return $this->container['is_above_average'];
+        return $this->container['aways_open_only_ready'];
     }
 
     /**
-     * Sets is_above_average
+     * Sets aways_open_only_ready
      *
-     *  Get or set the flag indicating whether the rule is an "above average" rule.   'true' indicates 'above average'.  Default value is true.            
+     *  
      *
      * @return $this
      */
-    public function setIsAboveAverage($is_above_average)
+    public function setAwaysOpenOnlyReady($aways_open_only_ready)
     {
-        $this->container['is_above_average'] = $is_above_average;
+        $this->container['aways_open_only_ready'] = $aways_open_only_ready;
 
         return $this;
     }
    /**
-     * Gets is_equal_average
+     * Gets encrypt_with_password
      *
-     * @return bool
+     * @return string
      */
-    public function getIsEqualAverage()
+    public function getEncryptWithPassword()
     {
-        return $this->container['is_equal_average'];
+        return $this->container['encrypt_with_password'];
     }
 
     /**
-     * Sets is_equal_average
+     * Sets encrypt_with_password
      *
-     *  Get or set the flag indicating whether the 'aboveAverage' and 'belowAverage'   criteria is inclusive of the average itself, or exclusive of that value.   'true' indicates to include the average value in the criteria.  Default value   is false.            
+     *  
      *
      * @return $this
      */
-    public function setIsEqualAverage($is_equal_average)
+    public function setEncryptWithPassword($encrypt_with_password)
     {
-        $this->container['is_equal_average'] = $is_equal_average;
+        $this->container['encrypt_with_password'] = $encrypt_with_password;
 
         return $this;
     }
    /**
-     * Gets std_dev
+     * Gets protect_current_sheet
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\Protection
      */
-    public function getStdDev()
+    public function getProtectCurrentSheet()
     {
-        return $this->container['std_dev'];
+        return $this->container['protect_current_sheet'];
     }
 
     /**
-     * Sets std_dev
+     * Sets protect_current_sheet
      *
-     *  Get or set the number of standard deviations to include above or below the  average in the conditional formatting rule. The input value must between  0 and 3 (include 0 and 3). Setting this value to 0 means stdDev is not set.   The default value is 0.            
+     *  
      *
      * @return $this
      */
-    public function setStdDev($std_dev)
+    public function setProtectCurrentSheet($protect_current_sheet)
     {
-        $this->container['std_dev'] = $std_dev;
+        $this->container['protect_current_sheet'] = $protect_current_sheet;
+
+        return $this;
+    }
+   /**
+     * Gets protect_workbook_structure
+     *
+     * @return string
+     */
+    public function getProtectWorkbookStructure()
+    {
+        return $this->container['protect_workbook_structure'];
+    }
+
+    /**
+     * Sets protect_workbook_structure
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setProtectWorkbookStructure($protect_workbook_structure)
+    {
+        $this->container['protect_workbook_structure'] = $protect_workbook_structure;
+
+        return $this;
+    }
+   /**
+     * Gets digital_signature
+     *
+     * @return \Aspose\Cells\Cloud\Model\DigitalSignature
+     */
+    public function getDigitalSignature()
+    {
+        return $this->container['digital_signature'];
+    }
+
+    /**
+     * Sets digital_signature
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDigitalSignature($digital_signature)
+    {
+        $this->container['digital_signature'] = $digital_signature;
+
+        return $this;
+    }
+   /**
+     * Gets mark_as_final
+     *
+     * @return bool
+     */
+    public function getMarkAsFinal()
+    {
+        return $this->container['mark_as_final'];
+    }
+
+    /**
+     * Sets mark_as_final
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMarkAsFinal($mark_as_final)
+    {
+        $this->container['mark_as_final'] = $mark_as_final;
 
         return $this;
     }

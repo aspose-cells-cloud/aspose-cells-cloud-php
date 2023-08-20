@@ -47,6 +47,10 @@ class OoxmlSaveOptions implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'export_cell_name' => 'bool',
+        'update_zoom' => 'bool',
+        'enable_zip64' => 'bool',
+        'embed_ooxml_as_ole_object' => 'bool',
+        'compression_type' => 'string',
         'save_format' => 'string',
         'cached_file_folder' => 'string',
         'clear_data' => 'bool',
@@ -64,6 +68,10 @@ class OoxmlSaveOptions implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'export_cell_name' => null  ,
+        'update_zoom' => null  ,
+        'enable_zip64' => null  ,
+        'embed_ooxml_as_ole_object' => null  ,
+        'compression_type' => null  ,
         'save_format' => null  ,
         'cached_file_folder' => null  ,
         'clear_data' => null  ,
@@ -102,6 +110,10 @@ class OoxmlSaveOptions implements  ArrayAccess
      */
     protected static $attributeMap = [
          'export_cell_name' => 'ExportCellName' ,
+         'update_zoom' => 'UpdateZoom' ,
+         'enable_zip64' => 'EnableZip64' ,
+         'embed_ooxml_as_ole_object' => 'EmbedOoxmlAsOleObject' ,
+         'compression_type' => 'CompressionType' ,
          'save_format' => 'SaveFormat' ,
          'cached_file_folder' => 'CachedFileFolder' ,
          'clear_data' => 'ClearData' ,
@@ -119,6 +131,10 @@ class OoxmlSaveOptions implements  ArrayAccess
      */
     protected static $setters = [
         'export_cell_name' => 'setExportCellName' ,
+        'update_zoom' => 'setUpdateZoom' ,
+        'enable_zip64' => 'setEnableZip64' ,
+        'embed_ooxml_as_ole_object' => 'setEmbedOoxmlAsOleObject' ,
+        'compression_type' => 'setCompressionType' ,
         'save_format' => 'setSaveFormat' ,
         'cached_file_folder' => 'setCachedFileFolder' ,
         'clear_data' => 'setClearData' ,
@@ -136,6 +152,10 @@ class OoxmlSaveOptions implements  ArrayAccess
      */
     protected static $getters = [
         'export_cell_name' => 'getExportCellName' ,
+        'update_zoom' => 'getUpdateZoom' ,
+        'enable_zip64' => 'getEnableZip64' ,
+        'embed_ooxml_as_ole_object' => 'getEmbedOoxmlAsOleObject' ,
+        'compression_type' => 'getCompressionType' ,
         'save_format' => 'getSaveFormat' ,
         'cached_file_folder' => 'getCachedFileFolder' ,
         'clear_data' => 'getClearData' ,
@@ -203,6 +223,10 @@ class OoxmlSaveOptions implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['export_cell_name'] = isset($data['export_cell_name']) ? $data['export_cell_name'] : null;
+        $this->container['update_zoom'] = isset($data['update_zoom']) ? $data['update_zoom'] : null;
+        $this->container['enable_zip64'] = isset($data['enable_zip64']) ? $data['enable_zip64'] : null;
+        $this->container['embed_ooxml_as_ole_object'] = isset($data['embed_ooxml_as_ole_object']) ? $data['embed_ooxml_as_ole_object'] : null;
+        $this->container['compression_type'] = isset($data['compression_type']) ? $data['compression_type'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
@@ -223,6 +247,18 @@ class OoxmlSaveOptions implements  ArrayAccess
         $invalidProperties = [];
         if ($this->container['export_cell_name'] === null) {
             $invalidProperties[] = "'export_cell_name' can't be null";
+        }
+        if ($this->container['update_zoom'] === null) {
+            $invalidProperties[] = "'update_zoom' can't be null";
+        }
+        if ($this->container['enable_zip64'] === null) {
+            $invalidProperties[] = "'enable_zip64' can't be null";
+        }
+        if ($this->container['embed_ooxml_as_ole_object'] === null) {
+            $invalidProperties[] = "'embed_ooxml_as_ole_object' can't be null";
+        }
+        if ($this->container['compression_type'] === null) {
+            $invalidProperties[] = "'compression_type' can't be null";
         }
         if ($this->container['save_format'] === null) {
             $invalidProperties[] = "'save_format' can't be null";
@@ -260,6 +296,18 @@ class OoxmlSaveOptions implements  ArrayAccess
     public function valid()
     {
         if ($this->container['export_cell_name'] === null) {
+                    return false;
+                }
+        if ($this->container['update_zoom'] === null) {
+                    return false;
+                }
+        if ($this->container['enable_zip64'] === null) {
+                    return false;
+                }
+        if ($this->container['embed_ooxml_as_ole_object'] === null) {
+                    return false;
+                }
+        if ($this->container['compression_type'] === null) {
                     return false;
                 }
         if ($this->container['save_format'] === null) {
@@ -308,6 +356,98 @@ class OoxmlSaveOptions implements  ArrayAccess
     public function setExportCellName($export_cell_name)
     {
         $this->container['export_cell_name'] = $export_cell_name;
+
+        return $this;
+    }
+   /**
+     * Gets update_zoom
+     *
+     * @return bool
+     */
+    public function getUpdateZoom()
+    {
+        return $this->container['update_zoom'];
+    }
+
+    /**
+     * Sets update_zoom
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setUpdateZoom($update_zoom)
+    {
+        $this->container['update_zoom'] = $update_zoom;
+
+        return $this;
+    }
+   /**
+     * Gets enable_zip64
+     *
+     * @return bool
+     */
+    public function getEnableZip64()
+    {
+        return $this->container['enable_zip64'];
+    }
+
+    /**
+     * Sets enable_zip64
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEnableZip64($enable_zip64)
+    {
+        $this->container['enable_zip64'] = $enable_zip64;
+
+        return $this;
+    }
+   /**
+     * Gets embed_ooxml_as_ole_object
+     *
+     * @return bool
+     */
+    public function getEmbedOoxmlAsOleObject()
+    {
+        return $this->container['embed_ooxml_as_ole_object'];
+    }
+
+    /**
+     * Sets embed_ooxml_as_ole_object
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEmbedOoxmlAsOleObject($embed_ooxml_as_ole_object)
+    {
+        $this->container['embed_ooxml_as_ole_object'] = $embed_ooxml_as_ole_object;
+
+        return $this;
+    }
+   /**
+     * Gets compression_type
+     *
+     * @return string
+     */
+    public function getCompressionType()
+    {
+        return $this->container['compression_type'];
+    }
+
+    /**
+     * Sets compression_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCompressionType($compression_type)
+    {
+        $this->container['compression_type'] = $compression_type;
 
         return $this;
     }

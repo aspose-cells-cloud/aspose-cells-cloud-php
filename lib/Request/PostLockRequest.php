@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostProtectRequest.cs">
+ * <copyright company="Aspose" file="PostLockRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PostProtect operation.
+ * Request model for  PostLock operation.
  */
 
-class PostProtectRequest extends BaseApiRequest
+class PostLockRequest extends BaseApiRequest
 {
 
     /*
@@ -57,21 +57,6 @@ class PostProtectRequest extends BaseApiRequest
     public function setFile($value)
     {
         $this->file = $value;
-    }
-
-    /*
-    * protectWorkbookRequst : 
-    */ 
-    public $protect_workbook_requst;
-
-    public function getProtectWorkbookRequst()
-    {
-        return $this->protect_workbook_requst;
-    }
-
-    public function setProtectWorkbookRequst($value)
-    {
-        $this->protect_workbook_requst = $value;
     }
 
     /*
@@ -98,18 +83,18 @@ class PostProtectRequest extends BaseApiRequest
         // verify the required parameter 'file' is set
         if ($this->file === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $file when calling PostProtect'
+                'Missing the required parameter $file when calling PostLock'
             );
         } 
 
-        // verify the required parameter 'protect_workbook_requst' is set
-        if ($this->protect_workbook_requst === null) {
+        // verify the required parameter 'password' is set
+        if ($this->password === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $protect_workbook_requst when calling PostProtect'
+                'Missing the required parameter $password when calling PostLock'
             );
         } 
 
-        $resourcePath = '/cells/protect';
+        $resourcePath = '/cells/lock';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -133,10 +118,6 @@ class PostProtectRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->protect_workbook_requst)) {
-            $_tempBody = $this->protect_workbook_requst;
-            $_tempBodyName =str_replace('_','', 'protect_workbook_requst');
-        }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

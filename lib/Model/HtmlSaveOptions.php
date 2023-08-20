@@ -46,6 +46,11 @@ class HtmlSaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'export_page_headers' => 'bool',
+        'export_page_footers' => 'bool',
+        'export_row_column_headings' => 'bool',
+        'show_all_sheets' => 'bool',
+        'image_options' => '\Aspose\Cells\Cloud\Model\ImageOrPrintOptions',
         'save_as_single_file' => 'bool',
         'export_hidden_worksheet' => 'bool',
         'export_grid_lines' => 'bool',
@@ -95,6 +100,11 @@ class HtmlSaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'export_page_headers' => null  ,
+        'export_page_footers' => null  ,
+        'export_row_column_headings' => null  ,
+        'show_all_sheets' => null  ,
+        'image_options' => null  ,
         'save_as_single_file' => null  ,
         'export_hidden_worksheet' => null  ,
         'export_grid_lines' => null  ,
@@ -165,6 +175,11 @@ class HtmlSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+         'export_page_headers' => 'ExportPageHeaders' ,
+         'export_page_footers' => 'ExportPageFooters' ,
+         'export_row_column_headings' => 'ExportRowColumnHeadings' ,
+         'show_all_sheets' => 'ShowAllSheets' ,
+         'image_options' => 'ImageOptions' ,
          'save_as_single_file' => 'SaveAsSingleFile' ,
          'export_hidden_worksheet' => 'ExportHiddenWorksheet' ,
          'export_grid_lines' => 'ExportGridLines' ,
@@ -214,6 +229,11 @@ class HtmlSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'export_page_headers' => 'setExportPageHeaders' ,
+        'export_page_footers' => 'setExportPageFooters' ,
+        'export_row_column_headings' => 'setExportRowColumnHeadings' ,
+        'show_all_sheets' => 'setShowAllSheets' ,
+        'image_options' => 'setImageOptions' ,
         'save_as_single_file' => 'setSaveAsSingleFile' ,
         'export_hidden_worksheet' => 'setExportHiddenWorksheet' ,
         'export_grid_lines' => 'setExportGridLines' ,
@@ -263,6 +283,11 @@ class HtmlSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'export_page_headers' => 'getExportPageHeaders' ,
+        'export_page_footers' => 'getExportPageFooters' ,
+        'export_row_column_headings' => 'getExportRowColumnHeadings' ,
+        'show_all_sheets' => 'getShowAllSheets' ,
+        'image_options' => 'getImageOptions' ,
         'save_as_single_file' => 'getSaveAsSingleFile' ,
         'export_hidden_worksheet' => 'getExportHiddenWorksheet' ,
         'export_grid_lines' => 'getExportGridLines' ,
@@ -362,6 +387,11 @@ class HtmlSaveOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['export_page_headers'] = isset($data['export_page_headers']) ? $data['export_page_headers'] : null;
+        $this->container['export_page_footers'] = isset($data['export_page_footers']) ? $data['export_page_footers'] : null;
+        $this->container['export_row_column_headings'] = isset($data['export_row_column_headings']) ? $data['export_row_column_headings'] : null;
+        $this->container['show_all_sheets'] = isset($data['show_all_sheets']) ? $data['show_all_sheets'] : null;
+        $this->container['image_options'] = isset($data['image_options']) ? $data['image_options'] : null;
         $this->container['save_as_single_file'] = isset($data['save_as_single_file']) ? $data['save_as_single_file'] : null;
         $this->container['export_hidden_worksheet'] = isset($data['export_hidden_worksheet']) ? $data['export_hidden_worksheet'] : null;
         $this->container['export_grid_lines'] = isset($data['export_grid_lines']) ? $data['export_grid_lines'] : null;
@@ -413,6 +443,21 @@ class HtmlSaveOptions implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['export_page_headers'] === null) {
+            $invalidProperties[] = "'export_page_headers' can't be null";
+        }
+        if ($this->container['export_page_footers'] === null) {
+            $invalidProperties[] = "'export_page_footers' can't be null";
+        }
+        if ($this->container['export_row_column_headings'] === null) {
+            $invalidProperties[] = "'export_row_column_headings' can't be null";
+        }
+        if ($this->container['show_all_sheets'] === null) {
+            $invalidProperties[] = "'show_all_sheets' can't be null";
+        }
+        if ($this->container['image_options'] === null) {
+            $invalidProperties[] = "'image_options' can't be null";
+        }
         if ($this->container['save_as_single_file'] === null) {
             $invalidProperties[] = "'save_as_single_file' can't be null";
         }
@@ -547,6 +592,21 @@ class HtmlSaveOptions implements  ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['export_page_headers'] === null) {
+                    return false;
+                }
+        if ($this->container['export_page_footers'] === null) {
+                    return false;
+                }
+        if ($this->container['export_row_column_headings'] === null) {
+                    return false;
+                }
+        if ($this->container['show_all_sheets'] === null) {
+                    return false;
+                }
+        if ($this->container['image_options'] === null) {
+                    return false;
+                }
         if ($this->container['save_as_single_file'] === null) {
                     return false;
                 }
@@ -671,6 +731,121 @@ class HtmlSaveOptions implements  ArrayAccess
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets export_page_headers
+     *
+     * @return bool
+     */
+    public function getExportPageHeaders()
+    {
+        return $this->container['export_page_headers'];
+    }
+
+    /**
+     * Sets export_page_headers
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setExportPageHeaders($export_page_headers)
+    {
+        $this->container['export_page_headers'] = $export_page_headers;
+
+        return $this;
+    }
+   /**
+     * Gets export_page_footers
+     *
+     * @return bool
+     */
+    public function getExportPageFooters()
+    {
+        return $this->container['export_page_footers'];
+    }
+
+    /**
+     * Sets export_page_footers
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setExportPageFooters($export_page_footers)
+    {
+        $this->container['export_page_footers'] = $export_page_footers;
+
+        return $this;
+    }
+   /**
+     * Gets export_row_column_headings
+     *
+     * @return bool
+     */
+    public function getExportRowColumnHeadings()
+    {
+        return $this->container['export_row_column_headings'];
+    }
+
+    /**
+     * Sets export_row_column_headings
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setExportRowColumnHeadings($export_row_column_headings)
+    {
+        $this->container['export_row_column_headings'] = $export_row_column_headings;
+
+        return $this;
+    }
+   /**
+     * Gets show_all_sheets
+     *
+     * @return bool
+     */
+    public function getShowAllSheets()
+    {
+        return $this->container['show_all_sheets'];
+    }
+
+    /**
+     * Sets show_all_sheets
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setShowAllSheets($show_all_sheets)
+    {
+        $this->container['show_all_sheets'] = $show_all_sheets;
+
+        return $this;
+    }
+   /**
+     * Gets image_options
+     *
+     * @return \Aspose\Cells\Cloud\Model\ImageOrPrintOptions
+     */
+    public function getImageOptions()
+    {
+        return $this->container['image_options'];
+    }
+
+    /**
+     * Sets image_options
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setImageOptions($image_options)
+    {
+        $this->container['image_options'] = $image_options;
+
+        return $this;
     }
    /**
      * Gets save_as_single_file

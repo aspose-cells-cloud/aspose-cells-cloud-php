@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AboveAverage.cs">
+ * <copyright company="Aspose" file="DigitalSignature.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class AboveAverage implements  ArrayAccess
+class DigitalSignature implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class AboveAverage implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AboveAverage';     
+    protected static $swaggerModelName = 'DigitalSignature';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,14 @@ class AboveAverage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_above_average' => 'bool',
-        'is_equal_average' => 'bool',
-        'std_dev' => 'int'
+        'comments' => 'string',
+        'sign_time' => 'string',
+        'id' => 'string',
+        'password' => 'string',
+        'image' => '[]',
+        'provider_id' => 'string',
+        'is_valid' => 'bool',
+        'x_ad_es_type' => 'string'
     ];
 
     /**
@@ -57,9 +62,14 @@ class AboveAverage implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_above_average' => null  ,
-        'is_equal_average' => null  ,
-        'std_dev' => null  
+        'comments' => null  ,
+        'sign_time' => null  ,
+        'id' => null  ,
+        'password' => null  ,
+        'image' => null  ,
+        'provider_id' => null  ,
+        'is_valid' => null  ,
+        'x_ad_es_type' => null  
     ];
 
     /**
@@ -89,9 +99,14 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'is_above_average' => 'IsAboveAverage' ,
-         'is_equal_average' => 'IsEqualAverage' ,
-         'std_dev' => 'StdDev' 
+         'comments' => 'Comments' ,
+         'sign_time' => 'SignTime' ,
+         'id' => 'Id' ,
+         'password' => 'Password' ,
+         'image' => 'Image' ,
+         'provider_id' => 'ProviderId' ,
+         'is_valid' => 'IsValid' ,
+         'x_ad_es_type' => 'XAdESType' 
     ];
 
     /**
@@ -100,9 +115,14 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_above_average' => 'setIsAboveAverage' ,
-        'is_equal_average' => 'setIsEqualAverage' ,
-        'std_dev' => 'setStdDev' 
+        'comments' => 'setComments' ,
+        'sign_time' => 'setSignTime' ,
+        'id' => 'setId' ,
+        'password' => 'setPassword' ,
+        'image' => 'setImage' ,
+        'provider_id' => 'setProviderId' ,
+        'is_valid' => 'setIsValid' ,
+        'x_ad_es_type' => 'setXAdESType' 
     ];
 
     /**
@@ -111,9 +131,14 @@ class AboveAverage implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_above_average' => 'getIsAboveAverage' ,
-        'is_equal_average' => 'getIsEqualAverage' ,
-        'std_dev' => 'getStdDev' 
+        'comments' => 'getComments' ,
+        'sign_time' => 'getSignTime' ,
+        'id' => 'getId' ,
+        'password' => 'getPassword' ,
+        'image' => 'getImage' ,
+        'provider_id' => 'getProviderId' ,
+        'is_valid' => 'getIsValid' ,
+        'x_ad_es_type' => 'getXAdESType' 
     ];
 
     /**
@@ -172,9 +197,14 @@ class AboveAverage implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_above_average'] = isset($data['is_above_average']) ? $data['is_above_average'] : null;
-        $this->container['is_equal_average'] = isset($data['is_equal_average']) ? $data['is_equal_average'] : null;
-        $this->container['std_dev'] = isset($data['std_dev']) ? $data['std_dev'] : null;
+        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['sign_time'] = isset($data['sign_time']) ? $data['sign_time'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['image'] = isset($data['image']) ? $data['image'] : null;
+        $this->container['provider_id'] = isset($data['provider_id']) ? $data['provider_id'] : null;
+        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
+        $this->container['x_ad_es_type'] = isset($data['x_ad_es_type']) ? $data['x_ad_es_type'] : null;
     }
 
     /**
@@ -185,14 +215,29 @@ class AboveAverage implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['is_above_average'] === null) {
-            $invalidProperties[] = "'is_above_average' can't be null";
+        if ($this->container['comments'] === null) {
+            $invalidProperties[] = "'comments' can't be null";
         }
-        if ($this->container['is_equal_average'] === null) {
-            $invalidProperties[] = "'is_equal_average' can't be null";
+        if ($this->container['sign_time'] === null) {
+            $invalidProperties[] = "'sign_time' can't be null";
         }
-        if ($this->container['std_dev'] === null) {
-            $invalidProperties[] = "'std_dev' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
+        }
+        if ($this->container['image'] === null) {
+            $invalidProperties[] = "'image' can't be null";
+        }
+        if ($this->container['provider_id'] === null) {
+            $invalidProperties[] = "'provider_id' can't be null";
+        }
+        if ($this->container['is_valid'] === null) {
+            $invalidProperties[] = "'is_valid' can't be null";
+        }
+        if ($this->container['x_ad_es_type'] === null) {
+            $invalidProperties[] = "'x_ad_es_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +250,213 @@ class AboveAverage implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['is_above_average'] === null) {
+        if ($this->container['comments'] === null) {
                     return false;
                 }
-        if ($this->container['is_equal_average'] === null) {
+        if ($this->container['sign_time'] === null) {
                     return false;
                 }
-        if ($this->container['std_dev'] === null) {
+        if ($this->container['id'] === null) {
+                    return false;
+                }
+        if ($this->container['password'] === null) {
+                    return false;
+                }
+        if ($this->container['image'] === null) {
+                    return false;
+                }
+        if ($this->container['provider_id'] === null) {
+                    return false;
+                }
+        if ($this->container['is_valid'] === null) {
+                    return false;
+                }
+        if ($this->container['x_ad_es_type'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets is_above_average
+     * Gets comments
      *
-     * @return bool
+     * @return string
      */
-    public function getIsAboveAverage()
+    public function getComments()
     {
-        return $this->container['is_above_average'];
+        return $this->container['comments'];
     }
 
     /**
-     * Sets is_above_average
+     * Sets comments
      *
-     *  Get or set the flag indicating whether the rule is an "above average" rule.   'true' indicates 'above average'.  Default value is true.            
+     *  
      *
      * @return $this
      */
-    public function setIsAboveAverage($is_above_average)
+    public function setComments($comments)
     {
-        $this->container['is_above_average'] = $is_above_average;
+        $this->container['comments'] = $comments;
 
         return $this;
     }
    /**
-     * Gets is_equal_average
+     * Gets sign_time
      *
-     * @return bool
+     * @return string
      */
-    public function getIsEqualAverage()
+    public function getSignTime()
     {
-        return $this->container['is_equal_average'];
+        return $this->container['sign_time'];
     }
 
     /**
-     * Sets is_equal_average
+     * Sets sign_time
      *
-     *  Get or set the flag indicating whether the 'aboveAverage' and 'belowAverage'   criteria is inclusive of the average itself, or exclusive of that value.   'true' indicates to include the average value in the criteria.  Default value   is false.            
+     *  
      *
      * @return $this
      */
-    public function setIsEqualAverage($is_equal_average)
+    public function setSignTime($sign_time)
     {
-        $this->container['is_equal_average'] = $is_equal_average;
+        $this->container['sign_time'] = $sign_time;
 
         return $this;
     }
    /**
-     * Gets std_dev
+     * Gets id
      *
-     * @return int
+     * @return string
      */
-    public function getStdDev()
+    public function getId()
     {
-        return $this->container['std_dev'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets std_dev
+     * Sets id
      *
-     *  Get or set the number of standard deviations to include above or below the  average in the conditional formatting rule. The input value must between  0 and 3 (include 0 and 3). Setting this value to 0 means stdDev is not set.   The default value is 0.            
+     *  
      *
      * @return $this
      */
-    public function setStdDev($std_dev)
+    public function setId($id)
     {
-        $this->container['std_dev'] = $std_dev;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+   /**
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
+
+        return $this;
+    }
+   /**
+     * Gets image
+     *
+     * @return []
+     */
+    public function getImage()
+    {
+        return $this->container['image'];
+    }
+
+    /**
+     * Sets image
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setImage($image)
+    {
+        $this->container['image'] = $image;
+
+        return $this;
+    }
+   /**
+     * Gets provider_id
+     *
+     * @return string
+     */
+    public function getProviderId()
+    {
+        return $this->container['provider_id'];
+    }
+
+    /**
+     * Sets provider_id
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setProviderId($provider_id)
+    {
+        $this->container['provider_id'] = $provider_id;
+
+        return $this;
+    }
+   /**
+     * Gets is_valid
+     *
+     * @return bool
+     */
+    public function getIsValid()
+    {
+        return $this->container['is_valid'];
+    }
+
+    /**
+     * Sets is_valid
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setIsValid($is_valid)
+    {
+        $this->container['is_valid'] = $is_valid;
+
+        return $this;
+    }
+   /**
+     * Gets x_ad_es_type
+     *
+     * @return string
+     */
+    public function getXAdESType()
+    {
+        return $this->container['x_ad_es_type'];
+    }
+
+    /**
+     * Sets x_ad_es_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setXAdESType($x_ad_es_type)
+    {
+        $this->container['x_ad_es_type'] = $x_ad_es_type;
 
         return $this;
     }
