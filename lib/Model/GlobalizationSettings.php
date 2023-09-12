@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CalculationOptions.cs">
+ * <copyright company="Aspose" file="GlobalizationSettings.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class CalculationOptions implements  ArrayAccess
+class GlobalizationSettings implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class CalculationOptions implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CalculationOptions';     
+    protected static $swaggerModelName = 'GlobalizationSettings';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,13 +46,11 @@ class CalculationOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'calc_stack_size' => 'int',
-        'ignore_error' => 'bool',
-        'precision_strategy' => 'string',
-        'recursive' => 'bool',
-        'custom_engine' => '\Aspose\Cells\Cloud\Model\AbstractCalculationEngine',
-        'calculation_monitor' => '\Aspose\Cells\Cloud\Model\AbstractCalculationMonitor',
-        'linked_data_sources' => '\Aspose\Cells\Cloud\Model\Workbook[]'
+        'chart_settings' => '\Aspose\Cells\Cloud\Model\ChartGlobalizationSettings',
+        'pivot_settings' => '\Aspose\Cells\Cloud\Model\PivotGlobalizationSettings',
+        'list_separator' => 'string',
+        'row_separator_of_formula_array' => 'string',
+        'column_separator_of_formula_array' => 'string'
     ];
 
     /**
@@ -61,13 +59,11 @@ class CalculationOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'calc_stack_size' => null  ,
-        'ignore_error' => null  ,
-        'precision_strategy' => null  ,
-        'recursive' => null  ,
-        'custom_engine' => null  ,
-        'calculation_monitor' => null  ,
-        'linked_data_sources' => null  
+        'chart_settings' => null  ,
+        'pivot_settings' => null  ,
+        'list_separator' => null  ,
+        'row_separator_of_formula_array' => null  ,
+        'column_separator_of_formula_array' => null  
     ];
 
     /**
@@ -97,13 +93,11 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'calc_stack_size' => 'CalcStackSize' ,
-         'ignore_error' => 'IgnoreError' ,
-         'precision_strategy' => 'PrecisionStrategy' ,
-         'recursive' => 'Recursive' ,
-         'custom_engine' => 'CustomEngine' ,
-         'calculation_monitor' => 'CalculationMonitor' ,
-         'linked_data_sources' => 'LinkedDataSources' 
+         'chart_settings' => 'ChartSettings' ,
+         'pivot_settings' => 'PivotSettings' ,
+         'list_separator' => 'ListSeparator' ,
+         'row_separator_of_formula_array' => 'RowSeparatorOfFormulaArray' ,
+         'column_separator_of_formula_array' => 'ColumnSeparatorOfFormulaArray' 
     ];
 
     /**
@@ -112,13 +106,11 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'calc_stack_size' => 'setCalcStackSize' ,
-        'ignore_error' => 'setIgnoreError' ,
-        'precision_strategy' => 'setPrecisionStrategy' ,
-        'recursive' => 'setRecursive' ,
-        'custom_engine' => 'setCustomEngine' ,
-        'calculation_monitor' => 'setCalculationMonitor' ,
-        'linked_data_sources' => 'setLinkedDataSources' 
+        'chart_settings' => 'setChartSettings' ,
+        'pivot_settings' => 'setPivotSettings' ,
+        'list_separator' => 'setListSeparator' ,
+        'row_separator_of_formula_array' => 'setRowSeparatorOfFormulaArray' ,
+        'column_separator_of_formula_array' => 'setColumnSeparatorOfFormulaArray' 
     ];
 
     /**
@@ -127,13 +119,11 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'calc_stack_size' => 'getCalcStackSize' ,
-        'ignore_error' => 'getIgnoreError' ,
-        'precision_strategy' => 'getPrecisionStrategy' ,
-        'recursive' => 'getRecursive' ,
-        'custom_engine' => 'getCustomEngine' ,
-        'calculation_monitor' => 'getCalculationMonitor' ,
-        'linked_data_sources' => 'getLinkedDataSources' 
+        'chart_settings' => 'getChartSettings' ,
+        'pivot_settings' => 'getPivotSettings' ,
+        'list_separator' => 'getListSeparator' ,
+        'row_separator_of_formula_array' => 'getRowSeparatorOfFormulaArray' ,
+        'column_separator_of_formula_array' => 'getColumnSeparatorOfFormulaArray' 
     ];
 
     /**
@@ -192,13 +182,11 @@ class CalculationOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
-        $this->container['ignore_error'] = isset($data['ignore_error']) ? $data['ignore_error'] : null;
-        $this->container['precision_strategy'] = isset($data['precision_strategy']) ? $data['precision_strategy'] : null;
-        $this->container['recursive'] = isset($data['recursive']) ? $data['recursive'] : null;
-        $this->container['custom_engine'] = isset($data['custom_engine']) ? $data['custom_engine'] : null;
-        $this->container['calculation_monitor'] = isset($data['calculation_monitor']) ? $data['calculation_monitor'] : null;
-        $this->container['linked_data_sources'] = isset($data['linked_data_sources']) ? $data['linked_data_sources'] : null;
+        $this->container['chart_settings'] = isset($data['chart_settings']) ? $data['chart_settings'] : null;
+        $this->container['pivot_settings'] = isset($data['pivot_settings']) ? $data['pivot_settings'] : null;
+        $this->container['list_separator'] = isset($data['list_separator']) ? $data['list_separator'] : null;
+        $this->container['row_separator_of_formula_array'] = isset($data['row_separator_of_formula_array']) ? $data['row_separator_of_formula_array'] : null;
+        $this->container['column_separator_of_formula_array'] = isset($data['column_separator_of_formula_array']) ? $data['column_separator_of_formula_array'] : null;
     }
 
     /**
@@ -209,26 +197,20 @@ class CalculationOptions implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['calc_stack_size'] === null) {
-            $invalidProperties[] = "'calc_stack_size' can't be null";
+        if ($this->container['chart_settings'] === null) {
+            $invalidProperties[] = "'chart_settings' can't be null";
         }
-        if ($this->container['ignore_error'] === null) {
-            $invalidProperties[] = "'ignore_error' can't be null";
+        if ($this->container['pivot_settings'] === null) {
+            $invalidProperties[] = "'pivot_settings' can't be null";
         }
-        if ($this->container['precision_strategy'] === null) {
-            $invalidProperties[] = "'precision_strategy' can't be null";
+        if ($this->container['list_separator'] === null) {
+            $invalidProperties[] = "'list_separator' can't be null";
         }
-        if ($this->container['recursive'] === null) {
-            $invalidProperties[] = "'recursive' can't be null";
+        if ($this->container['row_separator_of_formula_array'] === null) {
+            $invalidProperties[] = "'row_separator_of_formula_array' can't be null";
         }
-        if ($this->container['custom_engine'] === null) {
-            $invalidProperties[] = "'custom_engine' can't be null";
-        }
-        if ($this->container['calculation_monitor'] === null) {
-            $invalidProperties[] = "'calculation_monitor' can't be null";
-        }
-        if ($this->container['linked_data_sources'] === null) {
-            $invalidProperties[] = "'linked_data_sources' can't be null";
+        if ($this->container['column_separator_of_formula_array'] === null) {
+            $invalidProperties[] = "'column_separator_of_formula_array' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,187 +223,135 @@ class CalculationOptions implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['calc_stack_size'] === null) {
+        if ($this->container['chart_settings'] === null) {
                     return false;
                 }
-        if ($this->container['ignore_error'] === null) {
+        if ($this->container['pivot_settings'] === null) {
                     return false;
                 }
-        if ($this->container['precision_strategy'] === null) {
+        if ($this->container['list_separator'] === null) {
                     return false;
                 }
-        if ($this->container['recursive'] === null) {
+        if ($this->container['row_separator_of_formula_array'] === null) {
                     return false;
                 }
-        if ($this->container['custom_engine'] === null) {
-                    return false;
-                }
-        if ($this->container['calculation_monitor'] === null) {
-                    return false;
-                }
-        if ($this->container['linked_data_sources'] === null) {
+        if ($this->container['column_separator_of_formula_array'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets calc_stack_size
+     * Gets chart_settings
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\ChartGlobalizationSettings
      */
-    public function getCalcStackSize()
+    public function getChartSettings()
     {
-        return $this->container['calc_stack_size'];
+        return $this->container['chart_settings'];
     }
 
     /**
-     * Sets calc_stack_size
+     * Sets chart_settings
      *
-     *  
+     *  Gets or sets the globalization settings for Chart. 
      *
      * @return $this
      */
-    public function setCalcStackSize($calc_stack_size)
+    public function setChartSettings($chart_settings)
     {
-        $this->container['calc_stack_size'] = $calc_stack_size;
+        $this->container['chart_settings'] = $chart_settings;
 
         return $this;
     }
    /**
-     * Gets ignore_error
+     * Gets pivot_settings
      *
-     * @return bool
+     * @return \Aspose\Cells\Cloud\Model\PivotGlobalizationSettings
      */
-    public function getIgnoreError()
+    public function getPivotSettings()
     {
-        return $this->container['ignore_error'];
+        return $this->container['pivot_settings'];
     }
 
     /**
-     * Sets ignore_error
+     * Sets pivot_settings
      *
-     *  
+     *  Gets or sets the globalization settings for pivot table. 
      *
      * @return $this
      */
-    public function setIgnoreError($ignore_error)
+    public function setPivotSettings($pivot_settings)
     {
-        $this->container['ignore_error'] = $ignore_error;
+        $this->container['pivot_settings'] = $pivot_settings;
 
         return $this;
     }
    /**
-     * Gets precision_strategy
+     * Gets list_separator
      *
      * @return string
      */
-    public function getPrecisionStrategy()
+    public function getListSeparator()
     {
-        return $this->container['precision_strategy'];
+        return $this->container['list_separator'];
     }
 
     /**
-     * Sets precision_strategy
+     * Sets list_separator
      *
-     *  
+     *  Gets the separator for list, parameters of function, ...etc. 
      *
      * @return $this
      */
-    public function setPrecisionStrategy($precision_strategy)
+    public function setListSeparator($list_separator)
     {
-        $this->container['precision_strategy'] = $precision_strategy;
+        $this->container['list_separator'] = $list_separator;
 
         return $this;
     }
    /**
-     * Gets recursive
+     * Gets row_separator_of_formula_array
      *
-     * @return bool
+     * @return string
      */
-    public function getRecursive()
+    public function getRowSeparatorOfFormulaArray()
     {
-        return $this->container['recursive'];
+        return $this->container['row_separator_of_formula_array'];
     }
 
     /**
-     * Sets recursive
+     * Sets row_separator_of_formula_array
      *
-     *  
+     *  Gets the separator for rows in array data in formula. 
      *
      * @return $this
      */
-    public function setRecursive($recursive)
+    public function setRowSeparatorOfFormulaArray($row_separator_of_formula_array)
     {
-        $this->container['recursive'] = $recursive;
+        $this->container['row_separator_of_formula_array'] = $row_separator_of_formula_array;
 
         return $this;
     }
    /**
-     * Gets custom_engine
+     * Gets column_separator_of_formula_array
      *
-     * @return \Aspose\Cells\Cloud\Model\AbstractCalculationEngine
+     * @return string
      */
-    public function getCustomEngine()
+    public function getColumnSeparatorOfFormulaArray()
     {
-        return $this->container['custom_engine'];
+        return $this->container['column_separator_of_formula_array'];
     }
 
     /**
-     * Sets custom_engine
+     * Sets column_separator_of_formula_array
      *
-     *  The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. 
-     *
-     * @return $this
-     */
-    public function setCustomEngine($custom_engine)
-    {
-        $this->container['custom_engine'] = $custom_engine;
-
-        return $this;
-    }
-   /**
-     * Gets calculation_monitor
-     *
-     * @return \Aspose\Cells\Cloud\Model\AbstractCalculationMonitor
-     */
-    public function getCalculationMonitor()
-    {
-        return $this->container['calculation_monitor'];
-    }
-
-    /**
-     * Sets calculation_monitor
-     *
-     *  The monitor for user to track the progress of formula calculation. 
+     *  Gets the separator for the items in array's row data in formula. 
      *
      * @return $this
      */
-    public function setCalculationMonitor($calculation_monitor)
+    public function setColumnSeparatorOfFormulaArray($column_separator_of_formula_array)
     {
-        $this->container['calculation_monitor'] = $calculation_monitor;
-
-        return $this;
-    }
-   /**
-     * Gets linked_data_sources
-     *
-     * @return \Aspose\Cells\Cloud\Model\Workbook[]
-     */
-    public function getLinkedDataSources()
-    {
-        return $this->container['linked_data_sources'];
-    }
-
-    /**
-     * Sets linked_data_sources
-     *
-     *  Specifies the data sources for external links used in formulas. 
-     *
-     * @return $this
-     */
-    public function setLinkedDataSources($linked_data_sources)
-    {
-        $this->container['linked_data_sources'] = $linked_data_sources;
+        $this->container['column_separator_of_formula_array'] = $column_separator_of_formula_array;
 
         return $this;
     }

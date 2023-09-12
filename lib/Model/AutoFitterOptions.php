@@ -49,7 +49,12 @@ class AutoFitterOptions implements  ArrayAccess
         'auto_fit_merged_cells_type' => 'string',
         'auto_fit_merged_cells' => 'bool',
         'ignore_hidden' => 'bool',
-        'only_auto' => 'bool'
+        'only_auto' => 'bool',
+        'default_edit_language' => 'string',
+        'max_row_height' => 'double',
+        'auto_fit_wrapped_text_type' => 'string',
+        'format_strategy' => 'string',
+        'for_rendering' => 'bool'
     ];
 
     /**
@@ -61,7 +66,12 @@ class AutoFitterOptions implements  ArrayAccess
         'auto_fit_merged_cells_type' => null  ,
         'auto_fit_merged_cells' => null  ,
         'ignore_hidden' => null  ,
-        'only_auto' => null  
+        'only_auto' => null  ,
+        'default_edit_language' => null  ,
+        'max_row_height' => null  ,
+        'auto_fit_wrapped_text_type' => null  ,
+        'format_strategy' => null  ,
+        'for_rendering' => null  
     ];
 
     /**
@@ -94,7 +104,12 @@ class AutoFitterOptions implements  ArrayAccess
          'auto_fit_merged_cells_type' => 'AutoFitMergedCellsType' ,
          'auto_fit_merged_cells' => 'AutoFitMergedCells' ,
          'ignore_hidden' => 'IgnoreHidden' ,
-         'only_auto' => 'OnlyAuto' 
+         'only_auto' => 'OnlyAuto' ,
+         'default_edit_language' => 'DefaultEditLanguage' ,
+         'max_row_height' => 'MaxRowHeight' ,
+         'auto_fit_wrapped_text_type' => 'AutoFitWrappedTextType' ,
+         'format_strategy' => 'FormatStrategy' ,
+         'for_rendering' => 'ForRendering' 
     ];
 
     /**
@@ -106,7 +121,12 @@ class AutoFitterOptions implements  ArrayAccess
         'auto_fit_merged_cells_type' => 'setAutoFitMergedCellsType' ,
         'auto_fit_merged_cells' => 'setAutoFitMergedCells' ,
         'ignore_hidden' => 'setIgnoreHidden' ,
-        'only_auto' => 'setOnlyAuto' 
+        'only_auto' => 'setOnlyAuto' ,
+        'default_edit_language' => 'setDefaultEditLanguage' ,
+        'max_row_height' => 'setMaxRowHeight' ,
+        'auto_fit_wrapped_text_type' => 'setAutoFitWrappedTextType' ,
+        'format_strategy' => 'setFormatStrategy' ,
+        'for_rendering' => 'setForRendering' 
     ];
 
     /**
@@ -118,7 +138,12 @@ class AutoFitterOptions implements  ArrayAccess
         'auto_fit_merged_cells_type' => 'getAutoFitMergedCellsType' ,
         'auto_fit_merged_cells' => 'getAutoFitMergedCells' ,
         'ignore_hidden' => 'getIgnoreHidden' ,
-        'only_auto' => 'getOnlyAuto' 
+        'only_auto' => 'getOnlyAuto' ,
+        'default_edit_language' => 'getDefaultEditLanguage' ,
+        'max_row_height' => 'getMaxRowHeight' ,
+        'auto_fit_wrapped_text_type' => 'getAutoFitWrappedTextType' ,
+        'format_strategy' => 'getFormatStrategy' ,
+        'for_rendering' => 'getForRendering' 
     ];
 
     /**
@@ -181,6 +206,11 @@ class AutoFitterOptions implements  ArrayAccess
         $this->container['auto_fit_merged_cells'] = isset($data['auto_fit_merged_cells']) ? $data['auto_fit_merged_cells'] : null;
         $this->container['ignore_hidden'] = isset($data['ignore_hidden']) ? $data['ignore_hidden'] : null;
         $this->container['only_auto'] = isset($data['only_auto']) ? $data['only_auto'] : null;
+        $this->container['default_edit_language'] = isset($data['default_edit_language']) ? $data['default_edit_language'] : null;
+        $this->container['max_row_height'] = isset($data['max_row_height']) ? $data['max_row_height'] : null;
+        $this->container['auto_fit_wrapped_text_type'] = isset($data['auto_fit_wrapped_text_type']) ? $data['auto_fit_wrapped_text_type'] : null;
+        $this->container['format_strategy'] = isset($data['format_strategy']) ? $data['format_strategy'] : null;
+        $this->container['for_rendering'] = isset($data['for_rendering']) ? $data['for_rendering'] : null;
     }
 
     /**
@@ -203,6 +233,21 @@ class AutoFitterOptions implements  ArrayAccess
         if ($this->container['only_auto'] === null) {
             $invalidProperties[] = "'only_auto' can't be null";
         }
+        if ($this->container['default_edit_language'] === null) {
+            $invalidProperties[] = "'default_edit_language' can't be null";
+        }
+        if ($this->container['max_row_height'] === null) {
+            $invalidProperties[] = "'max_row_height' can't be null";
+        }
+        if ($this->container['auto_fit_wrapped_text_type'] === null) {
+            $invalidProperties[] = "'auto_fit_wrapped_text_type' can't be null";
+        }
+        if ($this->container['format_strategy'] === null) {
+            $invalidProperties[] = "'format_strategy' can't be null";
+        }
+        if ($this->container['for_rendering'] === null) {
+            $invalidProperties[] = "'for_rendering' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -224,6 +269,21 @@ class AutoFitterOptions implements  ArrayAccess
                     return false;
                 }
         if ($this->container['only_auto'] === null) {
+                    return false;
+                }
+        if ($this->container['default_edit_language'] === null) {
+                    return false;
+                }
+        if ($this->container['max_row_height'] === null) {
+                    return false;
+                }
+        if ($this->container['auto_fit_wrapped_text_type'] === null) {
+                    return false;
+                }
+        if ($this->container['format_strategy'] === null) {
+                    return false;
+                }
+        if ($this->container['for_rendering'] === null) {
                     return false;
                 }
         return true;
@@ -317,6 +377,121 @@ class AutoFitterOptions implements  ArrayAccess
     public function setOnlyAuto($only_auto)
     {
         $this->container['only_auto'] = $only_auto;
+
+        return $this;
+    }
+   /**
+     * Gets default_edit_language
+     *
+     * @return string
+     */
+    public function getDefaultEditLanguage()
+    {
+        return $this->container['default_edit_language'];
+    }
+
+    /**
+     * Sets default_edit_language
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDefaultEditLanguage($default_edit_language)
+    {
+        $this->container['default_edit_language'] = $default_edit_language;
+
+        return $this;
+    }
+   /**
+     * Gets max_row_height
+     *
+     * @return double
+     */
+    public function getMaxRowHeight()
+    {
+        return $this->container['max_row_height'];
+    }
+
+    /**
+     * Sets max_row_height
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMaxRowHeight($max_row_height)
+    {
+        $this->container['max_row_height'] = $max_row_height;
+
+        return $this;
+    }
+   /**
+     * Gets auto_fit_wrapped_text_type
+     *
+     * @return string
+     */
+    public function getAutoFitWrappedTextType()
+    {
+        return $this->container['auto_fit_wrapped_text_type'];
+    }
+
+    /**
+     * Sets auto_fit_wrapped_text_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAutoFitWrappedTextType($auto_fit_wrapped_text_type)
+    {
+        $this->container['auto_fit_wrapped_text_type'] = $auto_fit_wrapped_text_type;
+
+        return $this;
+    }
+   /**
+     * Gets format_strategy
+     *
+     * @return string
+     */
+    public function getFormatStrategy()
+    {
+        return $this->container['format_strategy'];
+    }
+
+    /**
+     * Sets format_strategy
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setFormatStrategy($format_strategy)
+    {
+        $this->container['format_strategy'] = $format_strategy;
+
+        return $this;
+    }
+   /**
+     * Gets for_rendering
+     *
+     * @return bool
+     */
+    public function getForRendering()
+    {
+        return $this->container['for_rendering'];
+    }
+
+    /**
+     * Sets for_rendering
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setForRendering($for_rendering)
+    {
+        $this->container['for_rendering'] = $for_rendering;
 
         return $this;
     }

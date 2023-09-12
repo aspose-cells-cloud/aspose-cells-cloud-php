@@ -90,7 +90,25 @@ class WorkbookSettings implements  ArrayAccess
         'window_height' => 'double',
         'window_left' => 'double',
         'window_top' => 'double',
-        'window_width' => 'double'
+        'window_width' => 'double',
+        'author' => 'string',
+        'check_custom_number_format' => 'bool',
+        'protection_type' => 'string',
+        'globalization_settings' => '\Aspose\Cells\Cloud\Model\GlobalizationSettings',
+        'password' => 'string',
+        'write_protection' => '\Aspose\Cells\Cloud\Model\WriteProtection',
+        'is_encrypted' => 'bool',
+        'is_protected' => 'bool',
+        'max_row' => 'int',
+        'max_column' => 'int',
+        'significant_digits' => 'int',
+        'check_compatibility' => 'bool',
+        'paper_size' => 'string',
+        'max_rows_of_shared_formula' => 'int',
+        'compliance' => 'string',
+        'quote_prefix_to_style' => 'bool',
+        'formula_settings' => '\Aspose\Cells\Cloud\Model\FormulaSettings',
+        'force_full_calculate' => 'bool'
     ];
 
     /**
@@ -143,7 +161,25 @@ class WorkbookSettings implements  ArrayAccess
         'window_height' => null  ,
         'window_left' => null  ,
         'window_top' => null  ,
-        'window_width' => null  
+        'window_width' => null  ,
+        'author' => null  ,
+        'check_custom_number_format' => null  ,
+        'protection_type' => null  ,
+        'globalization_settings' => null  ,
+        'password' => null  ,
+        'write_protection' => null  ,
+        'is_encrypted' => null  ,
+        'is_protected' => null  ,
+        'max_row' => null  ,
+        'max_column' => null  ,
+        'significant_digits' => null  ,
+        'check_compatibility' => null  ,
+        'paper_size' => null  ,
+        'max_rows_of_shared_formula' => null  ,
+        'compliance' => null  ,
+        'quote_prefix_to_style' => null  ,
+        'formula_settings' => null  ,
+        'force_full_calculate' => null  
     ];
 
     /**
@@ -217,7 +253,25 @@ class WorkbookSettings implements  ArrayAccess
          'window_height' => 'WindowHeight' ,
          'window_left' => 'WindowLeft' ,
          'window_top' => 'WindowTop' ,
-         'window_width' => 'WindowWidth' 
+         'window_width' => 'WindowWidth' ,
+         'author' => 'Author' ,
+         'check_custom_number_format' => 'CheckCustomNumberFormat' ,
+         'protection_type' => 'ProtectionType' ,
+         'globalization_settings' => 'GlobalizationSettings' ,
+         'password' => 'Password' ,
+         'write_protection' => 'WriteProtection' ,
+         'is_encrypted' => 'IsEncrypted' ,
+         'is_protected' => 'IsProtected' ,
+         'max_row' => 'MaxRow' ,
+         'max_column' => 'MaxColumn' ,
+         'significant_digits' => 'SignificantDigits' ,
+         'check_compatibility' => 'CheckCompatibility' ,
+         'paper_size' => 'PaperSize' ,
+         'max_rows_of_shared_formula' => 'MaxRowsOfSharedFormula' ,
+         'compliance' => 'Compliance' ,
+         'quote_prefix_to_style' => 'QuotePrefixToStyle' ,
+         'formula_settings' => 'FormulaSettings' ,
+         'force_full_calculate' => 'ForceFullCalculate' 
     ];
 
     /**
@@ -270,7 +324,25 @@ class WorkbookSettings implements  ArrayAccess
         'window_height' => 'setWindowHeight' ,
         'window_left' => 'setWindowLeft' ,
         'window_top' => 'setWindowTop' ,
-        'window_width' => 'setWindowWidth' 
+        'window_width' => 'setWindowWidth' ,
+        'author' => 'setAuthor' ,
+        'check_custom_number_format' => 'setCheckCustomNumberFormat' ,
+        'protection_type' => 'setProtectionType' ,
+        'globalization_settings' => 'setGlobalizationSettings' ,
+        'password' => 'setPassword' ,
+        'write_protection' => 'setWriteProtection' ,
+        'is_encrypted' => 'setIsEncrypted' ,
+        'is_protected' => 'setIsProtected' ,
+        'max_row' => 'setMaxRow' ,
+        'max_column' => 'setMaxColumn' ,
+        'significant_digits' => 'setSignificantDigits' ,
+        'check_compatibility' => 'setCheckCompatibility' ,
+        'paper_size' => 'setPaperSize' ,
+        'max_rows_of_shared_formula' => 'setMaxRowsOfSharedFormula' ,
+        'compliance' => 'setCompliance' ,
+        'quote_prefix_to_style' => 'setQuotePrefixToStyle' ,
+        'formula_settings' => 'setFormulaSettings' ,
+        'force_full_calculate' => 'setForceFullCalculate' 
     ];
 
     /**
@@ -323,7 +395,25 @@ class WorkbookSettings implements  ArrayAccess
         'window_height' => 'getWindowHeight' ,
         'window_left' => 'getWindowLeft' ,
         'window_top' => 'getWindowTop' ,
-        'window_width' => 'getWindowWidth' 
+        'window_width' => 'getWindowWidth' ,
+        'author' => 'getAuthor' ,
+        'check_custom_number_format' => 'getCheckCustomNumberFormat' ,
+        'protection_type' => 'getProtectionType' ,
+        'globalization_settings' => 'getGlobalizationSettings' ,
+        'password' => 'getPassword' ,
+        'write_protection' => 'getWriteProtection' ,
+        'is_encrypted' => 'getIsEncrypted' ,
+        'is_protected' => 'getIsProtected' ,
+        'max_row' => 'getMaxRow' ,
+        'max_column' => 'getMaxColumn' ,
+        'significant_digits' => 'getSignificantDigits' ,
+        'check_compatibility' => 'getCheckCompatibility' ,
+        'paper_size' => 'getPaperSize' ,
+        'max_rows_of_shared_formula' => 'getMaxRowsOfSharedFormula' ,
+        'compliance' => 'getCompliance' ,
+        'quote_prefix_to_style' => 'getQuotePrefixToStyle' ,
+        'formula_settings' => 'getFormulaSettings' ,
+        'force_full_calculate' => 'getForceFullCalculate' 
     ];
 
     /**
@@ -427,6 +517,24 @@ class WorkbookSettings implements  ArrayAccess
         $this->container['window_left'] = isset($data['window_left']) ? $data['window_left'] : null;
         $this->container['window_top'] = isset($data['window_top']) ? $data['window_top'] : null;
         $this->container['window_width'] = isset($data['window_width']) ? $data['window_width'] : null;
+        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
+        $this->container['check_custom_number_format'] = isset($data['check_custom_number_format']) ? $data['check_custom_number_format'] : null;
+        $this->container['protection_type'] = isset($data['protection_type']) ? $data['protection_type'] : null;
+        $this->container['globalization_settings'] = isset($data['globalization_settings']) ? $data['globalization_settings'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['write_protection'] = isset($data['write_protection']) ? $data['write_protection'] : null;
+        $this->container['is_encrypted'] = isset($data['is_encrypted']) ? $data['is_encrypted'] : null;
+        $this->container['is_protected'] = isset($data['is_protected']) ? $data['is_protected'] : null;
+        $this->container['max_row'] = isset($data['max_row']) ? $data['max_row'] : null;
+        $this->container['max_column'] = isset($data['max_column']) ? $data['max_column'] : null;
+        $this->container['significant_digits'] = isset($data['significant_digits']) ? $data['significant_digits'] : null;
+        $this->container['check_compatibility'] = isset($data['check_compatibility']) ? $data['check_compatibility'] : null;
+        $this->container['paper_size'] = isset($data['paper_size']) ? $data['paper_size'] : null;
+        $this->container['max_rows_of_shared_formula'] = isset($data['max_rows_of_shared_formula']) ? $data['max_rows_of_shared_formula'] : null;
+        $this->container['compliance'] = isset($data['compliance']) ? $data['compliance'] : null;
+        $this->container['quote_prefix_to_style'] = isset($data['quote_prefix_to_style']) ? $data['quote_prefix_to_style'] : null;
+        $this->container['formula_settings'] = isset($data['formula_settings']) ? $data['formula_settings'] : null;
+        $this->container['force_full_calculate'] = isset($data['force_full_calculate']) ? $data['force_full_calculate'] : null;
     }
 
     /**
@@ -572,6 +680,60 @@ class WorkbookSettings implements  ArrayAccess
         if ($this->container['window_width'] === null) {
             $invalidProperties[] = "'window_width' can't be null";
         }
+        if ($this->container['author'] === null) {
+            $invalidProperties[] = "'author' can't be null";
+        }
+        if ($this->container['check_custom_number_format'] === null) {
+            $invalidProperties[] = "'check_custom_number_format' can't be null";
+        }
+        if ($this->container['protection_type'] === null) {
+            $invalidProperties[] = "'protection_type' can't be null";
+        }
+        if ($this->container['globalization_settings'] === null) {
+            $invalidProperties[] = "'globalization_settings' can't be null";
+        }
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
+        }
+        if ($this->container['write_protection'] === null) {
+            $invalidProperties[] = "'write_protection' can't be null";
+        }
+        if ($this->container['is_encrypted'] === null) {
+            $invalidProperties[] = "'is_encrypted' can't be null";
+        }
+        if ($this->container['is_protected'] === null) {
+            $invalidProperties[] = "'is_protected' can't be null";
+        }
+        if ($this->container['max_row'] === null) {
+            $invalidProperties[] = "'max_row' can't be null";
+        }
+        if ($this->container['max_column'] === null) {
+            $invalidProperties[] = "'max_column' can't be null";
+        }
+        if ($this->container['significant_digits'] === null) {
+            $invalidProperties[] = "'significant_digits' can't be null";
+        }
+        if ($this->container['check_compatibility'] === null) {
+            $invalidProperties[] = "'check_compatibility' can't be null";
+        }
+        if ($this->container['paper_size'] === null) {
+            $invalidProperties[] = "'paper_size' can't be null";
+        }
+        if ($this->container['max_rows_of_shared_formula'] === null) {
+            $invalidProperties[] = "'max_rows_of_shared_formula' can't be null";
+        }
+        if ($this->container['compliance'] === null) {
+            $invalidProperties[] = "'compliance' can't be null";
+        }
+        if ($this->container['quote_prefix_to_style'] === null) {
+            $invalidProperties[] = "'quote_prefix_to_style' can't be null";
+        }
+        if ($this->container['formula_settings'] === null) {
+            $invalidProperties[] = "'formula_settings' can't be null";
+        }
+        if ($this->container['force_full_calculate'] === null) {
+            $invalidProperties[] = "'force_full_calculate' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -716,6 +878,60 @@ class WorkbookSettings implements  ArrayAccess
                     return false;
                 }
         if ($this->container['window_width'] === null) {
+                    return false;
+                }
+        if ($this->container['author'] === null) {
+                    return false;
+                }
+        if ($this->container['check_custom_number_format'] === null) {
+                    return false;
+                }
+        if ($this->container['protection_type'] === null) {
+                    return false;
+                }
+        if ($this->container['globalization_settings'] === null) {
+                    return false;
+                }
+        if ($this->container['password'] === null) {
+                    return false;
+                }
+        if ($this->container['write_protection'] === null) {
+                    return false;
+                }
+        if ($this->container['is_encrypted'] === null) {
+                    return false;
+                }
+        if ($this->container['is_protected'] === null) {
+                    return false;
+                }
+        if ($this->container['max_row'] === null) {
+                    return false;
+                }
+        if ($this->container['max_column'] === null) {
+                    return false;
+                }
+        if ($this->container['significant_digits'] === null) {
+                    return false;
+                }
+        if ($this->container['check_compatibility'] === null) {
+                    return false;
+                }
+        if ($this->container['paper_size'] === null) {
+                    return false;
+                }
+        if ($this->container['max_rows_of_shared_formula'] === null) {
+                    return false;
+                }
+        if ($this->container['compliance'] === null) {
+                    return false;
+                }
+        if ($this->container['quote_prefix_to_style'] === null) {
+                    return false;
+                }
+        if ($this->container['formula_settings'] === null) {
+                    return false;
+                }
+        if ($this->container['force_full_calculate'] === null) {
                     return false;
                 }
         return true;
@@ -1752,6 +1968,420 @@ class WorkbookSettings implements  ArrayAccess
     public function setWindowWidth($window_width)
     {
         $this->container['window_width'] = $window_width;
+
+        return $this;
+    }
+   /**
+     * Gets author
+     *
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->container['author'];
+    }
+
+    /**
+     * Sets author
+     *
+     *  Gets and sets the author of the file. 
+     *
+     * @return $this
+     */
+    public function setAuthor($author)
+    {
+        $this->container['author'] = $author;
+
+        return $this;
+    }
+   /**
+     * Gets check_custom_number_format
+     *
+     * @return bool
+     */
+    public function getCheckCustomNumberFormat()
+    {
+        return $this->container['check_custom_number_format'];
+    }
+
+    /**
+     * Sets check_custom_number_format
+     *
+     *  Indicates whether checking custom number format when setting Style.Custom. 
+     *
+     * @return $this
+     */
+    public function setCheckCustomNumberFormat($check_custom_number_format)
+    {
+        $this->container['check_custom_number_format'] = $check_custom_number_format;
+
+        return $this;
+    }
+   /**
+     * Gets protection_type
+     *
+     * @return string
+     */
+    public function getProtectionType()
+    {
+        return $this->container['protection_type'];
+    }
+
+    /**
+     * Sets protection_type
+     *
+     *  Gets the protection type of the workbook. 
+     *
+     * @return $this
+     */
+    public function setProtectionType($protection_type)
+    {
+        $this->container['protection_type'] = $protection_type;
+
+        return $this;
+    }
+   /**
+     * Gets globalization_settings
+     *
+     * @return \Aspose\Cells\Cloud\Model\GlobalizationSettings
+     */
+    public function getGlobalizationSettings()
+    {
+        return $this->container['globalization_settings'];
+    }
+
+    /**
+     * Sets globalization_settings
+     *
+     *  Gets and sets the globalization settings. 
+     *
+     * @return $this
+     */
+    public function setGlobalizationSettings($globalization_settings)
+    {
+        $this->container['globalization_settings'] = $globalization_settings;
+
+        return $this;
+    }
+   /**
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     *
+     *  Represents Workbook file encryption password. 
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
+
+        return $this;
+    }
+   /**
+     * Gets write_protection
+     *
+     * @return \Aspose\Cells\Cloud\Model\WriteProtection
+     */
+    public function getWriteProtection()
+    {
+        return $this->container['write_protection'];
+    }
+
+    /**
+     * Sets write_protection
+     *
+     *  Provides access to the workbook write protection options. 
+     *
+     * @return $this
+     */
+    public function setWriteProtection($write_protection)
+    {
+        $this->container['write_protection'] = $write_protection;
+
+        return $this;
+    }
+   /**
+     * Gets is_encrypted
+     *
+     * @return bool
+     */
+    public function getIsEncrypted()
+    {
+        return $this->container['is_encrypted'];
+    }
+
+    /**
+     * Sets is_encrypted
+     *
+     *  Gets a value that indicates whether a password is required to open this workbook. 
+     *
+     * @return $this
+     */
+    public function setIsEncrypted($is_encrypted)
+    {
+        $this->container['is_encrypted'] = $is_encrypted;
+
+        return $this;
+    }
+   /**
+     * Gets is_protected
+     *
+     * @return bool
+     */
+    public function getIsProtected()
+    {
+        return $this->container['is_protected'];
+    }
+
+    /**
+     * Sets is_protected
+     *
+     *  Gets a value that indicates whether the structure or window of the Workbook is protected. 
+     *
+     * @return $this
+     */
+    public function setIsProtected($is_protected)
+    {
+        $this->container['is_protected'] = $is_protected;
+
+        return $this;
+    }
+   /**
+     * Gets max_row
+     *
+     * @return int
+     */
+    public function getMaxRow()
+    {
+        return $this->container['max_row'];
+    }
+
+    /**
+     * Sets max_row
+     *
+     *  Gets the max row index, zero-based. 
+     *
+     * @return $this
+     */
+    public function setMaxRow($max_row)
+    {
+        $this->container['max_row'] = $max_row;
+
+        return $this;
+    }
+   /**
+     * Gets max_column
+     *
+     * @return int
+     */
+    public function getMaxColumn()
+    {
+        return $this->container['max_column'];
+    }
+
+    /**
+     * Sets max_column
+     *
+     *  Gets the max column index, zero-based. 
+     *
+     * @return $this
+     */
+    public function setMaxColumn($max_column)
+    {
+        $this->container['max_column'] = $max_column;
+
+        return $this;
+    }
+   /**
+     * Gets significant_digits
+     *
+     * @return int
+     */
+    public function getSignificantDigits()
+    {
+        return $this->container['significant_digits'];
+    }
+
+    /**
+     * Sets significant_digits
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setSignificantDigits($significant_digits)
+    {
+        $this->container['significant_digits'] = $significant_digits;
+
+        return $this;
+    }
+   /**
+     * Gets check_compatibility
+     *
+     * @return bool
+     */
+    public function getCheckCompatibility()
+    {
+        return $this->container['check_compatibility'];
+    }
+
+    /**
+     * Sets check_compatibility
+     *
+     *  Indicates whether check compatibility with earlier versions when saving workbook. 
+     *
+     * @return $this
+     */
+    public function setCheckCompatibility($check_compatibility)
+    {
+        $this->container['check_compatibility'] = $check_compatibility;
+
+        return $this;
+    }
+   /**
+     * Gets paper_size
+     *
+     * @return string
+     */
+    public function getPaperSize()
+    {
+        return $this->container['paper_size'];
+    }
+
+    /**
+     * Sets paper_size
+     *
+     *  Gets and sets the default print paper size. 
+     *
+     * @return $this
+     */
+    public function setPaperSize($paper_size)
+    {
+        $this->container['paper_size'] = $paper_size;
+
+        return $this;
+    }
+   /**
+     * Gets max_rows_of_shared_formula
+     *
+     * @return int
+     */
+    public function getMaxRowsOfSharedFormula()
+    {
+        return $this->container['max_rows_of_shared_formula'];
+    }
+
+    /**
+     * Sets max_rows_of_shared_formula
+     *
+     *  Gets and sets the max row number of shared formula. 
+     *
+     * @return $this
+     */
+    public function setMaxRowsOfSharedFormula($max_rows_of_shared_formula)
+    {
+        $this->container['max_rows_of_shared_formula'] = $max_rows_of_shared_formula;
+
+        return $this;
+    }
+   /**
+     * Gets compliance
+     *
+     * @return string
+     */
+    public function getCompliance()
+    {
+        return $this->container['compliance'];
+    }
+
+    /**
+     * Sets compliance
+     *
+     *  Specifies the OOXML version for the output document. The default value is Ecma376_2006. 
+     *
+     * @return $this
+     */
+    public function setCompliance($compliance)
+    {
+        $this->container['compliance'] = $compliance;
+
+        return $this;
+    }
+   /**
+     * Gets quote_prefix_to_style
+     *
+     * @return bool
+     */
+    public function getQuotePrefixToStyle()
+    {
+        return $this->container['quote_prefix_to_style'];
+    }
+
+    /**
+     * Sets quote_prefix_to_style
+     *
+     *  Indicates whether setting  property when entering the string value(which starts  with single quote mark ) to the cell 
+     *
+     * @return $this
+     */
+    public function setQuotePrefixToStyle($quote_prefix_to_style)
+    {
+        $this->container['quote_prefix_to_style'] = $quote_prefix_to_style;
+
+        return $this;
+    }
+   /**
+     * Gets formula_settings
+     *
+     * @return \Aspose\Cells\Cloud\Model\FormulaSettings
+     */
+    public function getFormulaSettings()
+    {
+        return $this->container['formula_settings'];
+    }
+
+    /**
+     * Sets formula_settings
+     *
+     *  Gets the settings for formula-related features. 
+     *
+     * @return $this
+     */
+    public function setFormulaSettings($formula_settings)
+    {
+        $this->container['formula_settings'] = $formula_settings;
+
+        return $this;
+    }
+   /**
+     * Gets force_full_calculate
+     *
+     * @return bool
+     */
+    public function getForceFullCalculate()
+    {
+        return $this->container['force_full_calculate'];
+    }
+
+    /**
+     * Sets force_full_calculate
+     *
+     *  Fully calculates every time when a calculation is triggered. 
+     *
+     * @return $this
+     */
+    public function setForceFullCalculate($force_full_calculate)
+    {
+        $this->container['force_full_calculate'] = $force_full_calculate;
 
         return $this;
     }

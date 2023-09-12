@@ -61,6 +61,12 @@ class ListObject implements  ArrayAccess
         'show_totals' => 'bool',
         'table_style_name' => 'string',
         'table_style_type' => 'string',
+        'data_range' => '\Aspose\Cells\Cloud\Model\Range',
+        'data_source_type' => 'string',
+        'comment' => 'string',
+        'xml_map' => '\Aspose\Cells\Cloud\Model\XmlMap',
+        'alternative_text' => 'string',
+        'alternative_description' => 'string',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -85,6 +91,12 @@ class ListObject implements  ArrayAccess
         'show_totals' => null  ,
         'table_style_name' => null  ,
         'table_style_type' => null  ,
+        'data_range' => null  ,
+        'data_source_type' => null  ,
+        'comment' => null  ,
+        'xml_map' => null  ,
+        'alternative_text' => null  ,
+        'alternative_description' => null  ,
         'link' => null  
     ];
 
@@ -130,6 +142,12 @@ class ListObject implements  ArrayAccess
          'show_totals' => 'ShowTotals' ,
          'table_style_name' => 'TableStyleName' ,
          'table_style_type' => 'TableStyleType' ,
+         'data_range' => 'DataRange' ,
+         'data_source_type' => 'DataSourceType' ,
+         'comment' => 'Comment' ,
+         'xml_map' => 'XmlMap' ,
+         'alternative_text' => 'AlternativeText' ,
+         'alternative_description' => 'AlternativeDescription' ,
          'link' => 'link' 
     ];
 
@@ -154,6 +172,12 @@ class ListObject implements  ArrayAccess
         'show_totals' => 'setShowTotals' ,
         'table_style_name' => 'setTableStyleName' ,
         'table_style_type' => 'setTableStyleType' ,
+        'data_range' => 'setDataRange' ,
+        'data_source_type' => 'setDataSourceType' ,
+        'comment' => 'setComment' ,
+        'xml_map' => 'setXmlMap' ,
+        'alternative_text' => 'setAlternativeText' ,
+        'alternative_description' => 'setAlternativeDescription' ,
         'link' => 'setlink' 
     ];
 
@@ -178,6 +202,12 @@ class ListObject implements  ArrayAccess
         'show_totals' => 'getShowTotals' ,
         'table_style_name' => 'getTableStyleName' ,
         'table_style_type' => 'getTableStyleType' ,
+        'data_range' => 'getDataRange' ,
+        'data_source_type' => 'getDataSourceType' ,
+        'comment' => 'getComment' ,
+        'xml_map' => 'getXmlMap' ,
+        'alternative_text' => 'getAlternativeText' ,
+        'alternative_description' => 'getAlternativeDescription' ,
         'link' => 'getlink' 
     ];
 
@@ -252,6 +282,12 @@ class ListObject implements  ArrayAccess
         $this->container['show_totals'] = isset($data['show_totals']) ? $data['show_totals'] : null;
         $this->container['table_style_name'] = isset($data['table_style_name']) ? $data['table_style_name'] : null;
         $this->container['table_style_type'] = isset($data['table_style_type']) ? $data['table_style_type'] : null;
+        $this->container['data_range'] = isset($data['data_range']) ? $data['data_range'] : null;
+        $this->container['data_source_type'] = isset($data['data_source_type']) ? $data['data_source_type'] : null;
+        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['xml_map'] = isset($data['xml_map']) ? $data['xml_map'] : null;
+        $this->container['alternative_text'] = isset($data['alternative_text']) ? $data['alternative_text'] : null;
+        $this->container['alternative_description'] = isset($data['alternative_description']) ? $data['alternative_description'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
     }
 
@@ -307,6 +343,24 @@ class ListObject implements  ArrayAccess
         }
         if ($this->container['table_style_type'] === null) {
             $invalidProperties[] = "'table_style_type' can't be null";
+        }
+        if ($this->container['data_range'] === null) {
+            $invalidProperties[] = "'data_range' can't be null";
+        }
+        if ($this->container['data_source_type'] === null) {
+            $invalidProperties[] = "'data_source_type' can't be null";
+        }
+        if ($this->container['comment'] === null) {
+            $invalidProperties[] = "'comment' can't be null";
+        }
+        if ($this->container['xml_map'] === null) {
+            $invalidProperties[] = "'xml_map' can't be null";
+        }
+        if ($this->container['alternative_text'] === null) {
+            $invalidProperties[] = "'alternative_text' can't be null";
+        }
+        if ($this->container['alternative_description'] === null) {
+            $invalidProperties[] = "'alternative_description' can't be null";
         }
         if ($this->container['link'] === null) {
             $invalidProperties[] = "'link' can't be null";
@@ -365,6 +419,24 @@ class ListObject implements  ArrayAccess
                     return false;
                 }
         if ($this->container['table_style_type'] === null) {
+                    return false;
+                }
+        if ($this->container['data_range'] === null) {
+                    return false;
+                }
+        if ($this->container['data_source_type'] === null) {
+                    return false;
+                }
+        if ($this->container['comment'] === null) {
+                    return false;
+                }
+        if ($this->container['xml_map'] === null) {
+                    return false;
+                }
+        if ($this->container['alternative_text'] === null) {
+                    return false;
+                }
+        if ($this->container['alternative_description'] === null) {
                     return false;
                 }
         if ($this->container['link'] === null) {
@@ -714,6 +786,144 @@ class ListObject implements  ArrayAccess
     public function setTableStyleType($table_style_type)
     {
         $this->container['table_style_type'] = $table_style_type;
+
+        return $this;
+    }
+   /**
+     * Gets data_range
+     *
+     * @return \Aspose\Cells\Cloud\Model\Range
+     */
+    public function getDataRange()
+    {
+        return $this->container['data_range'];
+    }
+
+    /**
+     * Sets data_range
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataRange($data_range)
+    {
+        $this->container['data_range'] = $data_range;
+
+        return $this;
+    }
+   /**
+     * Gets data_source_type
+     *
+     * @return string
+     */
+    public function getDataSourceType()
+    {
+        return $this->container['data_source_type'];
+    }
+
+    /**
+     * Sets data_source_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSourceType($data_source_type)
+    {
+        $this->container['data_source_type'] = $data_source_type;
+
+        return $this;
+    }
+   /**
+     * Gets comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->container['comment'];
+    }
+
+    /**
+     * Sets comment
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setComment($comment)
+    {
+        $this->container['comment'] = $comment;
+
+        return $this;
+    }
+   /**
+     * Gets xml_map
+     *
+     * @return \Aspose\Cells\Cloud\Model\XmlMap
+     */
+    public function getXmlMap()
+    {
+        return $this->container['xml_map'];
+    }
+
+    /**
+     * Sets xml_map
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setXmlMap($xml_map)
+    {
+        $this->container['xml_map'] = $xml_map;
+
+        return $this;
+    }
+   /**
+     * Gets alternative_text
+     *
+     * @return string
+     */
+    public function getAlternativeText()
+    {
+        return $this->container['alternative_text'];
+    }
+
+    /**
+     * Sets alternative_text
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAlternativeText($alternative_text)
+    {
+        $this->container['alternative_text'] = $alternative_text;
+
+        return $this;
+    }
+   /**
+     * Gets alternative_description
+     *
+     * @return string
+     */
+    public function getAlternativeDescription()
+    {
+        return $this->container['alternative_description'];
+    }
+
+    /**
+     * Sets alternative_description
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAlternativeDescription($alternative_description)
+    {
+        $this->container['alternative_description'] = $alternative_description;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListColumn.cs">
+ * <copyright company="Aspose" file="PivotGlobalizationSettings.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ListColumn implements  ArrayAccess
+class PivotGlobalizationSettings implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ListColumn implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ListColumn';     
+    protected static $swaggerModelName = 'PivotGlobalizationSettings';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,6 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'range' => '\Aspose\Cells\Cloud\Model\Range',
-        'totals_calculation' => 'string',
-        'formula' => 'string',
-        'totals_row_label' => 'string'
     ];
 
     /**
@@ -59,11 +54,6 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null  ,
-        'range' => null  ,
-        'totals_calculation' => null  ,
-        'formula' => null  ,
-        'totals_row_label' => null  
     ];
 
     /**
@@ -93,11 +83,6 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'name' => 'Name' ,
-         'range' => 'Range' ,
-         'totals_calculation' => 'TotalsCalculation' ,
-         'formula' => 'Formula' ,
-         'totals_row_label' => 'TotalsRowLabel' 
     ];
 
     /**
@@ -106,11 +91,6 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName' ,
-        'range' => 'setRange' ,
-        'totals_calculation' => 'setTotalsCalculation' ,
-        'formula' => 'setFormula' ,
-        'totals_row_label' => 'setTotalsRowLabel' 
     ];
 
     /**
@@ -119,11 +99,6 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName' ,
-        'range' => 'getRange' ,
-        'totals_calculation' => 'getTotalsCalculation' ,
-        'formula' => 'getFormula' ,
-        'totals_row_label' => 'getTotalsRowLabel' 
     ];
 
     /**
@@ -182,11 +157,6 @@ class ListColumn implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
-        $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
-        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
-        $this->container['totals_row_label'] = isset($data['totals_row_label']) ? $data['totals_row_label'] : null;
     }
 
     /**
@@ -197,21 +167,6 @@ class ListColumn implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
-        }
-        if ($this->container['totals_calculation'] === null) {
-            $invalidProperties[] = "'totals_calculation' can't be null";
-        }
-        if ($this->container['formula'] === null) {
-            $invalidProperties[] = "'formula' can't be null";
-        }
-        if ($this->container['totals_row_label'] === null) {
-            $invalidProperties[] = "'totals_row_label' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -223,137 +178,7 @@ class ListColumn implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['name'] === null) {
-                    return false;
-                }
-        if ($this->container['range'] === null) {
-                    return false;
-                }
-        if ($this->container['totals_calculation'] === null) {
-                    return false;
-                }
-        if ($this->container['formula'] === null) {
-                    return false;
-                }
-        if ($this->container['totals_row_label'] === null) {
-                    return false;
-                }
         return true;
-    }
-   /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     *  Gets and sets the name of the column.
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-   /**
-     * Gets range
-     *
-     * @return \Aspose\Cells\Cloud\Model\Range
-     */
-    public function getRange()
-    {
-        return $this->container['range'];
-    }
-
-    /**
-     * Sets range
-     *
-     *  Gets the range of this list column.            
-     *
-     * @return $this
-     */
-    public function setRange($range)
-    {
-        $this->container['range'] = $range;
-
-        return $this;
-    }
-   /**
-     * Gets totals_calculation
-     *
-     * @return string
-     */
-    public function getTotalsCalculation()
-    {
-        return $this->container['totals_calculation'];
-    }
-
-    /**
-     * Sets totals_calculation
-     *
-     *  Gets and sets the type of calculation in the Totals row of the list column.
-     *
-     * @return $this
-     */
-    public function setTotalsCalculation($totals_calculation)
-    {
-        $this->container['totals_calculation'] = $totals_calculation;
-
-        return $this;
-    }
-   /**
-     * Gets formula
-     *
-     * @return string
-     */
-    public function getFormula()
-    {
-        return $this->container['formula'];
-    }
-
-    /**
-     * Sets formula
-     *
-     *  Gets and sets the formula of the list column.            
-     *
-     * @return $this
-     */
-    public function setFormula($formula)
-    {
-        $this->container['formula'] = $formula;
-
-        return $this;
-    }
-   /**
-     * Gets totals_row_label
-     *
-     * @return string
-     */
-    public function getTotalsRowLabel()
-    {
-        return $this->container['totals_row_label'];
-    }
-
-    /**
-     * Sets totals_row_label
-     *
-     *  Gets and sets the display labels of total row. 
-     *
-     * @return $this
-     */
-    public function setTotalsRowLabel($totals_row_label)
-    {
-        $this->container['totals_row_label'] = $totals_row_label;
-
-        return $this;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CalculationOptions.cs">
+ * <copyright company="Aspose" file="QueryTable.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class CalculationOptions implements  ArrayAccess
+class QueryTable implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class CalculationOptions implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CalculationOptions';     
+    protected static $swaggerModelName = 'QueryTable';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,13 +46,11 @@ class CalculationOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'calc_stack_size' => 'int',
-        'ignore_error' => 'bool',
-        'precision_strategy' => 'string',
-        'recursive' => 'bool',
-        'custom_engine' => '\Aspose\Cells\Cloud\Model\AbstractCalculationEngine',
-        'calculation_monitor' => '\Aspose\Cells\Cloud\Model\AbstractCalculationMonitor',
-        'linked_data_sources' => '\Aspose\Cells\Cloud\Model\Workbook[]'
+        'connection_id' => 'int',
+        'name' => 'string',
+        'result_range' => '\Aspose\Cells\Cloud\Model\Range',
+        'preserve_formatting' => 'bool',
+        'adjust_column_width' => 'bool'
     ];
 
     /**
@@ -61,13 +59,11 @@ class CalculationOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'calc_stack_size' => null  ,
-        'ignore_error' => null  ,
-        'precision_strategy' => null  ,
-        'recursive' => null  ,
-        'custom_engine' => null  ,
-        'calculation_monitor' => null  ,
-        'linked_data_sources' => null  
+        'connection_id' => null  ,
+        'name' => null  ,
+        'result_range' => null  ,
+        'preserve_formatting' => null  ,
+        'adjust_column_width' => null  
     ];
 
     /**
@@ -97,13 +93,11 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'calc_stack_size' => 'CalcStackSize' ,
-         'ignore_error' => 'IgnoreError' ,
-         'precision_strategy' => 'PrecisionStrategy' ,
-         'recursive' => 'Recursive' ,
-         'custom_engine' => 'CustomEngine' ,
-         'calculation_monitor' => 'CalculationMonitor' ,
-         'linked_data_sources' => 'LinkedDataSources' 
+         'connection_id' => 'ConnectionId' ,
+         'name' => 'Name' ,
+         'result_range' => 'ResultRange' ,
+         'preserve_formatting' => 'PreserveFormatting' ,
+         'adjust_column_width' => 'AdjustColumnWidth' 
     ];
 
     /**
@@ -112,13 +106,11 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'calc_stack_size' => 'setCalcStackSize' ,
-        'ignore_error' => 'setIgnoreError' ,
-        'precision_strategy' => 'setPrecisionStrategy' ,
-        'recursive' => 'setRecursive' ,
-        'custom_engine' => 'setCustomEngine' ,
-        'calculation_monitor' => 'setCalculationMonitor' ,
-        'linked_data_sources' => 'setLinkedDataSources' 
+        'connection_id' => 'setConnectionId' ,
+        'name' => 'setName' ,
+        'result_range' => 'setResultRange' ,
+        'preserve_formatting' => 'setPreserveFormatting' ,
+        'adjust_column_width' => 'setAdjustColumnWidth' 
     ];
 
     /**
@@ -127,13 +119,11 @@ class CalculationOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'calc_stack_size' => 'getCalcStackSize' ,
-        'ignore_error' => 'getIgnoreError' ,
-        'precision_strategy' => 'getPrecisionStrategy' ,
-        'recursive' => 'getRecursive' ,
-        'custom_engine' => 'getCustomEngine' ,
-        'calculation_monitor' => 'getCalculationMonitor' ,
-        'linked_data_sources' => 'getLinkedDataSources' 
+        'connection_id' => 'getConnectionId' ,
+        'name' => 'getName' ,
+        'result_range' => 'getResultRange' ,
+        'preserve_formatting' => 'getPreserveFormatting' ,
+        'adjust_column_width' => 'getAdjustColumnWidth' 
     ];
 
     /**
@@ -192,13 +182,11 @@ class CalculationOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
-        $this->container['ignore_error'] = isset($data['ignore_error']) ? $data['ignore_error'] : null;
-        $this->container['precision_strategy'] = isset($data['precision_strategy']) ? $data['precision_strategy'] : null;
-        $this->container['recursive'] = isset($data['recursive']) ? $data['recursive'] : null;
-        $this->container['custom_engine'] = isset($data['custom_engine']) ? $data['custom_engine'] : null;
-        $this->container['calculation_monitor'] = isset($data['calculation_monitor']) ? $data['calculation_monitor'] : null;
-        $this->container['linked_data_sources'] = isset($data['linked_data_sources']) ? $data['linked_data_sources'] : null;
+        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['result_range'] = isset($data['result_range']) ? $data['result_range'] : null;
+        $this->container['preserve_formatting'] = isset($data['preserve_formatting']) ? $data['preserve_formatting'] : null;
+        $this->container['adjust_column_width'] = isset($data['adjust_column_width']) ? $data['adjust_column_width'] : null;
     }
 
     /**
@@ -209,26 +197,20 @@ class CalculationOptions implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['calc_stack_size'] === null) {
-            $invalidProperties[] = "'calc_stack_size' can't be null";
+        if ($this->container['connection_id'] === null) {
+            $invalidProperties[] = "'connection_id' can't be null";
         }
-        if ($this->container['ignore_error'] === null) {
-            $invalidProperties[] = "'ignore_error' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['precision_strategy'] === null) {
-            $invalidProperties[] = "'precision_strategy' can't be null";
+        if ($this->container['result_range'] === null) {
+            $invalidProperties[] = "'result_range' can't be null";
         }
-        if ($this->container['recursive'] === null) {
-            $invalidProperties[] = "'recursive' can't be null";
+        if ($this->container['preserve_formatting'] === null) {
+            $invalidProperties[] = "'preserve_formatting' can't be null";
         }
-        if ($this->container['custom_engine'] === null) {
-            $invalidProperties[] = "'custom_engine' can't be null";
-        }
-        if ($this->container['calculation_monitor'] === null) {
-            $invalidProperties[] = "'calculation_monitor' can't be null";
-        }
-        if ($this->container['linked_data_sources'] === null) {
-            $invalidProperties[] = "'linked_data_sources' can't be null";
+        if ($this->container['adjust_column_width'] === null) {
+            $invalidProperties[] = "'adjust_column_width' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,187 +223,135 @@ class CalculationOptions implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['calc_stack_size'] === null) {
+        if ($this->container['connection_id'] === null) {
                     return false;
                 }
-        if ($this->container['ignore_error'] === null) {
+        if ($this->container['name'] === null) {
                     return false;
                 }
-        if ($this->container['precision_strategy'] === null) {
+        if ($this->container['result_range'] === null) {
                     return false;
                 }
-        if ($this->container['recursive'] === null) {
+        if ($this->container['preserve_formatting'] === null) {
                     return false;
                 }
-        if ($this->container['custom_engine'] === null) {
-                    return false;
-                }
-        if ($this->container['calculation_monitor'] === null) {
-                    return false;
-                }
-        if ($this->container['linked_data_sources'] === null) {
+        if ($this->container['adjust_column_width'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets calc_stack_size
+     * Gets connection_id
      *
      * @return int
      */
-    public function getCalcStackSize()
+    public function getConnectionId()
     {
-        return $this->container['calc_stack_size'];
+        return $this->container['connection_id'];
     }
 
     /**
-     * Sets calc_stack_size
+     * Sets connection_id
      *
      *  
      *
      * @return $this
      */
-    public function setCalcStackSize($calc_stack_size)
+    public function setConnectionId($connection_id)
     {
-        $this->container['calc_stack_size'] = $calc_stack_size;
+        $this->container['connection_id'] = $connection_id;
 
         return $this;
     }
    /**
-     * Gets ignore_error
-     *
-     * @return bool
-     */
-    public function getIgnoreError()
-    {
-        return $this->container['ignore_error'];
-    }
-
-    /**
-     * Sets ignore_error
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setIgnoreError($ignore_error)
-    {
-        $this->container['ignore_error'] = $ignore_error;
-
-        return $this;
-    }
-   /**
-     * Gets precision_strategy
+     * Gets name
      *
      * @return string
      */
-    public function getPrecisionStrategy()
+    public function getName()
     {
-        return $this->container['precision_strategy'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets precision_strategy
+     * Sets name
      *
      *  
      *
      * @return $this
      */
-    public function setPrecisionStrategy($precision_strategy)
+    public function setName($name)
     {
-        $this->container['precision_strategy'] = $precision_strategy;
+        $this->container['name'] = $name;
 
         return $this;
     }
    /**
-     * Gets recursive
+     * Gets result_range
+     *
+     * @return \Aspose\Cells\Cloud\Model\Range
+     */
+    public function getResultRange()
+    {
+        return $this->container['result_range'];
+    }
+
+    /**
+     * Sets result_range
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setResultRange($result_range)
+    {
+        $this->container['result_range'] = $result_range;
+
+        return $this;
+    }
+   /**
+     * Gets preserve_formatting
      *
      * @return bool
      */
-    public function getRecursive()
+    public function getPreserveFormatting()
     {
-        return $this->container['recursive'];
+        return $this->container['preserve_formatting'];
     }
 
     /**
-     * Sets recursive
+     * Sets preserve_formatting
      *
      *  
      *
      * @return $this
      */
-    public function setRecursive($recursive)
+    public function setPreserveFormatting($preserve_formatting)
     {
-        $this->container['recursive'] = $recursive;
+        $this->container['preserve_formatting'] = $preserve_formatting;
 
         return $this;
     }
    /**
-     * Gets custom_engine
+     * Gets adjust_column_width
      *
-     * @return \Aspose\Cells\Cloud\Model\AbstractCalculationEngine
+     * @return bool
      */
-    public function getCustomEngine()
+    public function getAdjustColumnWidth()
     {
-        return $this->container['custom_engine'];
+        return $this->container['adjust_column_width'];
     }
 
     /**
-     * Sets custom_engine
+     * Sets adjust_column_width
      *
-     *  The custom formula calculation engine to extend the default calculation engine of Aspose.Cells. 
-     *
-     * @return $this
-     */
-    public function setCustomEngine($custom_engine)
-    {
-        $this->container['custom_engine'] = $custom_engine;
-
-        return $this;
-    }
-   /**
-     * Gets calculation_monitor
-     *
-     * @return \Aspose\Cells\Cloud\Model\AbstractCalculationMonitor
-     */
-    public function getCalculationMonitor()
-    {
-        return $this->container['calculation_monitor'];
-    }
-
-    /**
-     * Sets calculation_monitor
-     *
-     *  The monitor for user to track the progress of formula calculation. 
+     *  
      *
      * @return $this
      */
-    public function setCalculationMonitor($calculation_monitor)
+    public function setAdjustColumnWidth($adjust_column_width)
     {
-        $this->container['calculation_monitor'] = $calculation_monitor;
-
-        return $this;
-    }
-   /**
-     * Gets linked_data_sources
-     *
-     * @return \Aspose\Cells\Cloud\Model\Workbook[]
-     */
-    public function getLinkedDataSources()
-    {
-        return $this->container['linked_data_sources'];
-    }
-
-    /**
-     * Sets linked_data_sources
-     *
-     *  Specifies the data sources for external links used in formulas. 
-     *
-     * @return $this
-     */
-    public function setLinkedDataSources($linked_data_sources)
-    {
-        $this->container['linked_data_sources'] = $linked_data_sources;
+        $this->container['adjust_column_width'] = $adjust_column_width;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListColumn.cs">
+ * <copyright company="Aspose" file="AbstractCalculationEngine.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ListColumn implements  ArrayAccess
+class AbstractCalculationEngine implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ListColumn implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ListColumn';     
+    protected static $swaggerModelName = 'AbstractCalculationEngine';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,9 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'range' => '\Aspose\Cells\Cloud\Model\Range',
-        'totals_calculation' => 'string',
-        'formula' => 'string',
-        'totals_row_label' => 'string'
+        'is_param_literal_required' => 'bool',
+        'is_param_array_mode_required' => 'bool',
+        'process_built_in_functions' => 'bool'
     ];
 
     /**
@@ -59,11 +57,9 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null  ,
-        'range' => null  ,
-        'totals_calculation' => null  ,
-        'formula' => null  ,
-        'totals_row_label' => null  
+        'is_param_literal_required' => null  ,
+        'is_param_array_mode_required' => null  ,
+        'process_built_in_functions' => null  
     ];
 
     /**
@@ -93,11 +89,9 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'name' => 'Name' ,
-         'range' => 'Range' ,
-         'totals_calculation' => 'TotalsCalculation' ,
-         'formula' => 'Formula' ,
-         'totals_row_label' => 'TotalsRowLabel' 
+         'is_param_literal_required' => 'IsParamLiteralRequired' ,
+         'is_param_array_mode_required' => 'IsParamArrayModeRequired' ,
+         'process_built_in_functions' => 'ProcessBuiltInFunctions' 
     ];
 
     /**
@@ -106,11 +100,9 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName' ,
-        'range' => 'setRange' ,
-        'totals_calculation' => 'setTotalsCalculation' ,
-        'formula' => 'setFormula' ,
-        'totals_row_label' => 'setTotalsRowLabel' 
+        'is_param_literal_required' => 'setIsParamLiteralRequired' ,
+        'is_param_array_mode_required' => 'setIsParamArrayModeRequired' ,
+        'process_built_in_functions' => 'setProcessBuiltInFunctions' 
     ];
 
     /**
@@ -119,11 +111,9 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName' ,
-        'range' => 'getRange' ,
-        'totals_calculation' => 'getTotalsCalculation' ,
-        'formula' => 'getFormula' ,
-        'totals_row_label' => 'getTotalsRowLabel' 
+        'is_param_literal_required' => 'getIsParamLiteralRequired' ,
+        'is_param_array_mode_required' => 'getIsParamArrayModeRequired' ,
+        'process_built_in_functions' => 'getProcessBuiltInFunctions' 
     ];
 
     /**
@@ -182,11 +172,9 @@ class ListColumn implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
-        $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
-        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
-        $this->container['totals_row_label'] = isset($data['totals_row_label']) ? $data['totals_row_label'] : null;
+        $this->container['is_param_literal_required'] = isset($data['is_param_literal_required']) ? $data['is_param_literal_required'] : null;
+        $this->container['is_param_array_mode_required'] = isset($data['is_param_array_mode_required']) ? $data['is_param_array_mode_required'] : null;
+        $this->container['process_built_in_functions'] = isset($data['process_built_in_functions']) ? $data['process_built_in_functions'] : null;
     }
 
     /**
@@ -197,20 +185,14 @@ class ListColumn implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['is_param_literal_required'] === null) {
+            $invalidProperties[] = "'is_param_literal_required' can't be null";
         }
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
+        if ($this->container['is_param_array_mode_required'] === null) {
+            $invalidProperties[] = "'is_param_array_mode_required' can't be null";
         }
-        if ($this->container['totals_calculation'] === null) {
-            $invalidProperties[] = "'totals_calculation' can't be null";
-        }
-        if ($this->container['formula'] === null) {
-            $invalidProperties[] = "'formula' can't be null";
-        }
-        if ($this->container['totals_row_label'] === null) {
-            $invalidProperties[] = "'totals_row_label' can't be null";
+        if ($this->container['process_built_in_functions'] === null) {
+            $invalidProperties[] = "'process_built_in_functions' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +205,83 @@ class ListColumn implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['name'] === null) {
+        if ($this->container['is_param_literal_required'] === null) {
                     return false;
                 }
-        if ($this->container['range'] === null) {
+        if ($this->container['is_param_array_mode_required'] === null) {
                     return false;
                 }
-        if ($this->container['totals_calculation'] === null) {
-                    return false;
-                }
-        if ($this->container['formula'] === null) {
-                    return false;
-                }
-        if ($this->container['totals_row_label'] === null) {
+        if ($this->container['process_built_in_functions'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets name
+     * Gets is_param_literal_required
      *
-     * @return string
+     * @return bool
      */
-    public function getName()
+    public function getIsParamLiteralRequired()
     {
-        return $this->container['name'];
+        return $this->container['is_param_literal_required'];
     }
 
     /**
-     * Sets name
+     * Sets is_param_literal_required
      *
-     *  Gets and sets the name of the column.
+     *  Indicates whether this engine needs the literal text of parameter while doing calculation. Default value is false. 
      *
      * @return $this
      */
-    public function setName($name)
+    public function setIsParamLiteralRequired($is_param_literal_required)
     {
-        $this->container['name'] = $name;
+        $this->container['is_param_literal_required'] = $is_param_literal_required;
 
         return $this;
     }
    /**
-     * Gets range
+     * Gets is_param_array_mode_required
      *
-     * @return \Aspose\Cells\Cloud\Model\Range
+     * @return bool
      */
-    public function getRange()
+    public function getIsParamArrayModeRequired()
     {
-        return $this->container['range'];
+        return $this->container['is_param_array_mode_required'];
     }
 
     /**
-     * Sets range
+     * Sets is_param_array_mode_required
      *
-     *  Gets the range of this list column.            
+     *  Indicates whether this engine needs the parameter to be calculated in array mode. Default value is false.            If  is required when calculating custom            functions, this property needs to be set as true. 
      *
      * @return $this
      */
-    public function setRange($range)
+    public function setIsParamArrayModeRequired($is_param_array_mode_required)
     {
-        $this->container['range'] = $range;
+        $this->container['is_param_array_mode_required'] = $is_param_array_mode_required;
 
         return $this;
     }
    /**
-     * Gets totals_calculation
+     * Gets process_built_in_functions
      *
-     * @return string
+     * @return bool
      */
-    public function getTotalsCalculation()
+    public function getProcessBuiltInFunctions()
     {
-        return $this->container['totals_calculation'];
+        return $this->container['process_built_in_functions'];
     }
 
     /**
-     * Sets totals_calculation
+     * Sets process_built_in_functions
      *
-     *  Gets and sets the type of calculation in the Totals row of the list column.
-     *
-     * @return $this
-     */
-    public function setTotalsCalculation($totals_calculation)
-    {
-        $this->container['totals_calculation'] = $totals_calculation;
-
-        return $this;
-    }
-   /**
-     * Gets formula
-     *
-     * @return string
-     */
-    public function getFormula()
-    {
-        return $this->container['formula'];
-    }
-
-    /**
-     * Sets formula
-     *
-     *  Gets and sets the formula of the list column.            
+     *  Whether built-in functions that have been supported by the built-in engine            should be checked and processed by this implementation.            Default is false.            If user needs to change the calculation logic of some built-in functions, this property should be set as true.            Otherwise please leave this property as false for performance consideration. 
      *
      * @return $this
      */
-    public function setFormula($formula)
+    public function setProcessBuiltInFunctions($process_built_in_functions)
     {
-        $this->container['formula'] = $formula;
-
-        return $this;
-    }
-   /**
-     * Gets totals_row_label
-     *
-     * @return string
-     */
-    public function getTotalsRowLabel()
-    {
-        return $this->container['totals_row_label'];
-    }
-
-    /**
-     * Sets totals_row_label
-     *
-     *  Gets and sets the display labels of total row. 
-     *
-     * @return $this
-     */
-    public function setTotalsRowLabel($totals_row_label)
-    {
-        $this->container['totals_row_label'] = $totals_row_label;
+        $this->container['process_built_in_functions'] = $process_built_in_functions;
 
         return $this;
     }

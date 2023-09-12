@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListColumn.cs">
+ * <copyright company="Aspose" file="XmlMap.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ListColumn implements  ArrayAccess
+class XmlMap implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ListColumn implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ListColumn';     
+    protected static $swaggerModelName = 'XmlMap';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -47,10 +47,8 @@ class ListColumn implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'range' => '\Aspose\Cells\Cloud\Model\Range',
-        'totals_calculation' => 'string',
-        'formula' => 'string',
-        'totals_row_label' => 'string'
+        'root_element_name' => 'string',
+        'data_binding' => '\Aspose\Cells\Cloud\Model\XmlDataBinding'
     ];
 
     /**
@@ -60,10 +58,8 @@ class ListColumn implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null  ,
-        'range' => null  ,
-        'totals_calculation' => null  ,
-        'formula' => null  ,
-        'totals_row_label' => null  
+        'root_element_name' => null  ,
+        'data_binding' => null  
     ];
 
     /**
@@ -94,10 +90,8 @@ class ListColumn implements  ArrayAccess
      */
     protected static $attributeMap = [
          'name' => 'Name' ,
-         'range' => 'Range' ,
-         'totals_calculation' => 'TotalsCalculation' ,
-         'formula' => 'Formula' ,
-         'totals_row_label' => 'TotalsRowLabel' 
+         'root_element_name' => 'RootElementName' ,
+         'data_binding' => 'DataBinding' 
     ];
 
     /**
@@ -107,10 +101,8 @@ class ListColumn implements  ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName' ,
-        'range' => 'setRange' ,
-        'totals_calculation' => 'setTotalsCalculation' ,
-        'formula' => 'setFormula' ,
-        'totals_row_label' => 'setTotalsRowLabel' 
+        'root_element_name' => 'setRootElementName' ,
+        'data_binding' => 'setDataBinding' 
     ];
 
     /**
@@ -120,10 +112,8 @@ class ListColumn implements  ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName' ,
-        'range' => 'getRange' ,
-        'totals_calculation' => 'getTotalsCalculation' ,
-        'formula' => 'getFormula' ,
-        'totals_row_label' => 'getTotalsRowLabel' 
+        'root_element_name' => 'getRootElementName' ,
+        'data_binding' => 'getDataBinding' 
     ];
 
     /**
@@ -183,10 +173,8 @@ class ListColumn implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
-        $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
-        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
-        $this->container['totals_row_label'] = isset($data['totals_row_label']) ? $data['totals_row_label'] : null;
+        $this->container['root_element_name'] = isset($data['root_element_name']) ? $data['root_element_name'] : null;
+        $this->container['data_binding'] = isset($data['data_binding']) ? $data['data_binding'] : null;
     }
 
     /**
@@ -200,17 +188,11 @@ class ListColumn implements  ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
+        if ($this->container['root_element_name'] === null) {
+            $invalidProperties[] = "'root_element_name' can't be null";
         }
-        if ($this->container['totals_calculation'] === null) {
-            $invalidProperties[] = "'totals_calculation' can't be null";
-        }
-        if ($this->container['formula'] === null) {
-            $invalidProperties[] = "'formula' can't be null";
-        }
-        if ($this->container['totals_row_label'] === null) {
-            $invalidProperties[] = "'totals_row_label' can't be null";
+        if ($this->container['data_binding'] === null) {
+            $invalidProperties[] = "'data_binding' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,16 +208,10 @@ class ListColumn implements  ArrayAccess
         if ($this->container['name'] === null) {
                     return false;
                 }
-        if ($this->container['range'] === null) {
+        if ($this->container['root_element_name'] === null) {
                     return false;
                 }
-        if ($this->container['totals_calculation'] === null) {
-                    return false;
-                }
-        if ($this->container['formula'] === null) {
-                    return false;
-                }
-        if ($this->container['totals_row_label'] === null) {
+        if ($this->container['data_binding'] === null) {
                     return false;
                 }
         return true;
@@ -253,7 +229,7 @@ class ListColumn implements  ArrayAccess
     /**
      * Sets name
      *
-     *  Gets and sets the name of the column.
+     *  Returns or sets the name of the object. 
      *
      * @return $this
      */
@@ -264,94 +240,48 @@ class ListColumn implements  ArrayAccess
         return $this;
     }
    /**
-     * Gets range
+     * Gets root_element_name
      *
-     * @return \Aspose\Cells\Cloud\Model\Range
+     * @return string
      */
-    public function getRange()
+    public function getRootElementName()
     {
-        return $this->container['range'];
+        return $this->container['root_element_name'];
     }
 
     /**
-     * Sets range
+     * Sets root_element_name
      *
-     *  Gets the range of this list column.            
+     *  Gets root element name. 
      *
      * @return $this
      */
-    public function setRange($range)
+    public function setRootElementName($root_element_name)
     {
-        $this->container['range'] = $range;
+        $this->container['root_element_name'] = $root_element_name;
 
         return $this;
     }
    /**
-     * Gets totals_calculation
+     * Gets data_binding
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\XmlDataBinding
      */
-    public function getTotalsCalculation()
+    public function getDataBinding()
     {
-        return $this->container['totals_calculation'];
+        return $this->container['data_binding'];
     }
 
     /**
-     * Sets totals_calculation
+     * Sets data_binding
      *
-     *  Gets and sets the type of calculation in the Totals row of the list column.
-     *
-     * @return $this
-     */
-    public function setTotalsCalculation($totals_calculation)
-    {
-        $this->container['totals_calculation'] = $totals_calculation;
-
-        return $this;
-    }
-   /**
-     * Gets formula
-     *
-     * @return string
-     */
-    public function getFormula()
-    {
-        return $this->container['formula'];
-    }
-
-    /**
-     * Sets formula
-     *
-     *  Gets and sets the formula of the list column.            
+     *  Gets an  of this map. 
      *
      * @return $this
      */
-    public function setFormula($formula)
+    public function setDataBinding($data_binding)
     {
-        $this->container['formula'] = $formula;
-
-        return $this;
-    }
-   /**
-     * Gets totals_row_label
-     *
-     * @return string
-     */
-    public function getTotalsRowLabel()
-    {
-        return $this->container['totals_row_label'];
-    }
-
-    /**
-     * Sets totals_row_label
-     *
-     *  Gets and sets the display labels of total row. 
-     *
-     * @return $this
-     */
-    public function setTotalsRowLabel($totals_row_label)
-    {
-        $this->container['totals_row_label'] = $totals_row_label;
+        $this->container['data_binding'] = $data_binding;
 
         return $this;
     }

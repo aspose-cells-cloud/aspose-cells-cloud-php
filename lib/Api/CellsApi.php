@@ -178,6 +178,8 @@ use Aspose\Cells\Cloud\Request\PostWorksheetListObjectRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetListObjectConvertToRangeRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetListObjectSummarizeWithPivotTableRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetListObjectSortTableRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListObjectRemoveDuplicatesRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetListObjectInsertSlicerRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetListColumnRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetListColumnsTotalRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetOleObjectsRequest;
@@ -242,6 +244,7 @@ use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeStyleRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetCellsRangeValueRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeValueRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMoveToRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeSortRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeOutlineBorderRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeColumnWidthRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeRowHeightRequest;
@@ -364,6 +367,8 @@ use Aspose\Cells\Cloud\Model\FilesUploadResult;
 use Aspose\Cells\Cloud\Model\StorageFile;
 use Aspose\Cells\Cloud\Model\GoogleDriveStorageFile;
 use Aspose\Cells\Cloud\Model\AboveAverage;
+use Aspose\Cells\Cloud\Model\AbstractCalculationEngine;
+use Aspose\Cells\Cloud\Model\AbstractCalculationMonitor;
 use Aspose\Cells\Cloud\Model\AutoFilter;
 use Aspose\Cells\Cloud\Model\AutoFitterOptions;
 use Aspose\Cells\Cloud\Model\Border;
@@ -401,6 +406,8 @@ use Aspose\Cells\Cloud\Model\Font;
 use Aspose\Cells\Cloud\Model\FontSetting;
 use Aspose\Cells\Cloud\Model\FormatCondition;
 use Aspose\Cells\Cloud\Model\FormulaFormatCondition;
+use Aspose\Cells\Cloud\Model\FormulaSettings;
+use Aspose\Cells\Cloud\Model\GlobalizationSettings;
 use Aspose\Cells\Cloud\Model\HorizontalPageBreak;
 use Aspose\Cells\Cloud\Model\HorizontalPageBreaks;
 use Aspose\Cells\Cloud\Model\Hyperlink;
@@ -421,7 +428,9 @@ use Aspose\Cells\Cloud\Model\PageSection;
 use Aspose\Cells\Cloud\Model\PageSetup;
 use Aspose\Cells\Cloud\Model\PasteOptions;
 use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
+use Aspose\Cells\Cloud\Model\Protection;
 use Aspose\Cells\Cloud\Model\ProtectSheetParameter;
+use Aspose\Cells\Cloud\Model\QueryTable;
 use Aspose\Cells\Cloud\Model\Range;
 use Aspose\Cells\Cloud\Model\Ranges;
 use Aspose\Cells\Cloud\Model\Row;
@@ -450,6 +459,9 @@ use Aspose\Cells\Cloud\Model\Workbook;
 use Aspose\Cells\Cloud\Model\WorkbookSettings;
 use Aspose\Cells\Cloud\Model\Worksheet;
 use Aspose\Cells\Cloud\Model\Worksheets;
+use Aspose\Cells\Cloud\Model\WriteProtection;
+use Aspose\Cells\Cloud\Model\XmlDataBinding;
+use Aspose\Cells\Cloud\Model\XmlMap;
 use Aspose\Cells\Cloud\Model\CellsObjectOperateTaskParameter;
 use Aspose\Cells\Cloud\Model\ConvertTaskParameter;
 use Aspose\Cells\Cloud\Model\ConvertWorksheetTaskParameter;
@@ -504,6 +516,8 @@ use Aspose\Cells\Cloud\Model\AutoFilterResponse;
 use Aspose\Cells\Cloud\Model\AutoShapeResponse;
 use Aspose\Cells\Cloud\Model\AutoShapesResponse;
 use Aspose\Cells\Cloud\Model\AxisResponse;
+use Aspose\Cells\Cloud\Model\BarcodeResponse;
+use Aspose\Cells\Cloud\Model\BarcodeResponseList;
 use Aspose\Cells\Cloud\Model\BorderResponse;
 use Aspose\Cells\Cloud\Model\ButtonResponse;
 use Aspose\Cells\Cloud\Model\CalculateFormulaResponse;
@@ -610,26 +624,36 @@ use Aspose\Cells\Cloud\Model\WorksheetReplaceResponse;
 use Aspose\Cells\Cloud\Model\WorksheetResponse;
 use Aspose\Cells\Cloud\Model\WorksheetsResponse;
 use Aspose\Cells\Cloud\Model\BatchConvertRequest;
+use Aspose\Cells\Cloud\Model\BatchLockRequest;
+use Aspose\Cells\Cloud\Model\BatchProtectRequest;
+use Aspose\Cells\Cloud\Model\BatchSplitRequest;
 use Aspose\Cells\Cloud\Model\ColorFilterRequest;
 use Aspose\Cells\Cloud\Model\ConvertParameter;
 use Aspose\Cells\Cloud\Model\CreatePivotTableRequest;
+use Aspose\Cells\Cloud\Model\ImportXMLRequest;
 use Aspose\Cells\Cloud\Model\MatchConditionRequest;
 use Aspose\Cells\Cloud\Model\PasswordRequest;
 use Aspose\Cells\Cloud\Model\PivotTableFieldRequest;
+use Aspose\Cells\Cloud\Model\ProtectWorkbookRequst;
 use Aspose\Cells\Cloud\Model\RangeCopyRequest;
 use Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest;
 use Aspose\Cells\Cloud\Model\RangeSetStyleRequest;
+use Aspose\Cells\Cloud\Model\RangeSortRequest;
 use Aspose\Cells\Cloud\Model\TableTotalRequest;
 use Aspose\Cells\Cloud\Model\TextWaterMarkerRequest;
 use Aspose\Cells\Cloud\Model\TotalRequest;
 use Aspose\Cells\Cloud\Model\WorkbookEncryptionRequest;
 use Aspose\Cells\Cloud\Model\WorkbookProtectionRequest;
 use Aspose\Cells\Cloud\Model\WorksheetMovingRequest;
+use Aspose\Cells\Cloud\Model\ImageOrPrintOptions;
+use Aspose\Cells\Cloud\Model\RenderingFont;
+use Aspose\Cells\Cloud\Model\RenderingWatermark;
 use Aspose\Cells\Cloud\Model\PivotField;
 use Aspose\Cells\Cloud\Model\PivotFilter;
 use Aspose\Cells\Cloud\Model\PivotItem;
 use Aspose\Cells\Cloud\Model\PivotTable;
 use Aspose\Cells\Cloud\Model\PivotTables;
+use Aspose\Cells\Cloud\Model\PivotGlobalizationSettings;
 use Aspose\Cells\Cloud\Model\CustomParserConfig;
 use Aspose\Cells\Cloud\Model\Import2DimensionDoubleArrayOption;
 use Aspose\Cells\Cloud\Model\Import2DimensionIntArrayOption;
@@ -641,6 +665,7 @@ use Aspose\Cells\Cloud\Model\ImportDoubleArrayOption;
 use Aspose\Cells\Cloud\Model\ImportIntArrayOption;
 use Aspose\Cells\Cloud\Model\ImportOption;
 use Aspose\Cells\Cloud\Model\ImportPictureOption;
+use Aspose\Cells\Cloud\Model\ImportPosition;
 use Aspose\Cells\Cloud\Model\ImportStringArrayOption;
 use Aspose\Cells\Cloud\Model\ArcShape;
 use Aspose\Cells\Cloud\Model\Area;
@@ -681,6 +706,8 @@ use Aspose\Cells\Cloud\Model\Spinner;
 use Aspose\Cells\Cloud\Model\TextBox;
 use Aspose\Cells\Cloud\Model\TextureFill;
 use Aspose\Cells\Cloud\Model\TilePicOption;
+use Aspose\Cells\Cloud\Model\DigitalSignature;
+use Aspose\Cells\Cloud\Model\ChartGlobalizationSettings;
 use Aspose\Cells\Cloud\Model\Axis;
 use Aspose\Cells\Cloud\Model\Chart;
 use Aspose\Cells\Cloud\Model\ChartArea;
@@ -712,6 +739,7 @@ use Aspose\Cells\Cloud\Model\Trendlines;
 use Aspose\Cells\Cloud\Model\Walls;
 use Aspose\Cells\Cloud\Model\Error;
 use Aspose\Cells\Cloud\Model\ErrorDetails;
+
 /**
  * CellsApi Class Doc Comment
  *
@@ -61227,6 +61255,19 @@ class CellsApi
         return $response;
     }
 
+    /// <summary>
+    /// Sets outline border around a range of cells.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeSortRequest" /></param>
+    public function postWorksheetCellsRangeSort( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
     /**
      * Operation cellsRangesPostWorksheetCellsRangeMoveToWithHttpInfo
      *
@@ -103760,6 +103801,32 @@ class CellsApi
         return  $response;
     }
 
+   /// <summary>
+    /// Remove duplicates on list object.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListObjectRemoveDuplicatesRequest" /></param>
+    public function postWorksheetListObjectRemoveDuplicates( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Insert slicer for list object.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetListObjectInsertSlicerRequest" /></param>
+    public function postWorksheetListObjectInsertSlicer( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+        
     /// <summary>
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetListColumnRequest" /></param>

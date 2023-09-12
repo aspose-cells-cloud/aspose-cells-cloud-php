@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BarcodeResponse.cs">
+ * <copyright company="Aspose" file="XmlDataBinding.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class BarcodeResponse implements  ArrayAccess
+class XmlDataBinding implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class BarcodeResponse implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BarcodeResponse';     
+    protected static $swaggerModelName = 'XmlDataBinding';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,10 +46,7 @@ class BarcodeResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'barcode_value' => 'string',
-        'barcode_type' => 'string',
-        'region' => '\Aspose\Cells\Cloud\Model\Point[]',
-        'checksum' => 'string'
+        'url' => 'string'
     ];
 
     /**
@@ -58,10 +55,7 @@ class BarcodeResponse implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'barcode_value' => null  ,
-        'barcode_type' => null  ,
-        'region' => null  ,
-        'checksum' => null  
+        'url' => null  
     ];
 
     /**
@@ -91,10 +85,7 @@ class BarcodeResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'barcode_value' => 'BarcodeValue' ,
-         'barcode_type' => 'BarcodeType' ,
-         'region' => 'Region' ,
-         'checksum' => 'Checksum' 
+         'url' => 'Url' 
     ];
 
     /**
@@ -103,10 +94,7 @@ class BarcodeResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'barcode_value' => 'setBarcodeValue' ,
-        'barcode_type' => 'setBarcodeType' ,
-        'region' => 'setRegion' ,
-        'checksum' => 'setChecksum' 
+        'url' => 'setUrl' 
     ];
 
     /**
@@ -115,10 +103,7 @@ class BarcodeResponse implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'barcode_value' => 'getBarcodeValue' ,
-        'barcode_type' => 'getBarcodeType' ,
-        'region' => 'getRegion' ,
-        'checksum' => 'getChecksum' 
+        'url' => 'getUrl' 
     ];
 
     /**
@@ -177,10 +162,7 @@ class BarcodeResponse implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['barcode_value'] = isset($data['barcode_value']) ? $data['barcode_value'] : null;
-        $this->container['barcode_type'] = isset($data['barcode_type']) ? $data['barcode_type'] : null;
-        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
-        $this->container['checksum'] = isset($data['checksum']) ? $data['checksum'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -191,17 +173,8 @@ class BarcodeResponse implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['barcode_value'] === null) {
-            $invalidProperties[] = "'barcode_value' can't be null";
-        }
-        if ($this->container['barcode_type'] === null) {
-            $invalidProperties[] = "'barcode_type' can't be null";
-        }
-        if ($this->container['region'] === null) {
-            $invalidProperties[] = "'region' can't be null";
-        }
-        if ($this->container['checksum'] === null) {
-            $invalidProperties[] = "'checksum' can't be null";
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
         }
         return $invalidProperties;
     }
@@ -214,109 +187,31 @@ class BarcodeResponse implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['barcode_value'] === null) {
-                    return false;
-                }
-        if ($this->container['barcode_type'] === null) {
-                    return false;
-                }
-        if ($this->container['region'] === null) {
-                    return false;
-                }
-        if ($this->container['checksum'] === null) {
+        if ($this->container['url'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets barcode_value
+     * Gets url
      *
      * @return string
      */
-    public function getBarcodeValue()
+    public function getUrl()
     {
-        return $this->container['barcode_value'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets barcode_value
+     * Sets url
      *
-     *  Gets or sets barcode data.            
-     *
-     * @return $this
-     */
-    public function setBarcodeValue($barcode_value)
-    {
-        $this->container['barcode_value'] = $barcode_value;
-
-        return $this;
-    }
-   /**
-     * Gets barcode_type
-     *
-     * @return string
-     */
-    public function getBarcodeType()
-    {
-        return $this->container['barcode_type'];
-    }
-
-    /**
-     * Sets barcode_type
-     *
-     *  Gets or sets type of the barcode.            
+     *  Gets source url of this data binding. 
      *
      * @return $this
      */
-    public function setBarcodeType($barcode_type)
+    public function setUrl($url)
     {
-        $this->container['barcode_type'] = $barcode_type;
-
-        return $this;
-    }
-   /**
-     * Gets region
-     *
-     * @return \Aspose\Cells\Cloud\Model\Point[]
-     */
-    public function getRegion()
-    {
-        return $this->container['region'];
-    }
-
-    /**
-     * Sets region
-     *
-     *  Gets or sets region with barcode.            
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->container['region'] = $region;
-
-        return $this;
-    }
-   /**
-     * Gets checksum
-     *
-     * @return string
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /**
-     * Sets checksum
-     *
-     *  Gets or sets checksum of barcode.            
-     *
-     * @return $this
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
+        $this->container['url'] = $url;
 
         return $this;
     }

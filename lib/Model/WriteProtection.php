@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListColumn.cs">
+ * <copyright company="Aspose" file="WriteProtection.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ListColumn implements  ArrayAccess
+class WriteProtection implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ListColumn implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ListColumn';     
+    protected static $swaggerModelName = 'WriteProtection';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,10 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'range' => '\Aspose\Cells\Cloud\Model\Range',
-        'totals_calculation' => 'string',
-        'formula' => 'string',
-        'totals_row_label' => 'string'
+        'author' => 'string',
+        'recommend_read_only' => 'bool',
+        'is_write_protected' => 'bool',
+        'password' => 'string'
     ];
 
     /**
@@ -59,11 +58,10 @@ class ListColumn implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'name' => null  ,
-        'range' => null  ,
-        'totals_calculation' => null  ,
-        'formula' => null  ,
-        'totals_row_label' => null  
+        'author' => null  ,
+        'recommend_read_only' => null  ,
+        'is_write_protected' => null  ,
+        'password' => null  
     ];
 
     /**
@@ -93,11 +91,10 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'name' => 'Name' ,
-         'range' => 'Range' ,
-         'totals_calculation' => 'TotalsCalculation' ,
-         'formula' => 'Formula' ,
-         'totals_row_label' => 'TotalsRowLabel' 
+         'author' => 'Author' ,
+         'recommend_read_only' => 'RecommendReadOnly' ,
+         'is_write_protected' => 'IsWriteProtected' ,
+         'password' => 'Password' 
     ];
 
     /**
@@ -106,11 +103,10 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName' ,
-        'range' => 'setRange' ,
-        'totals_calculation' => 'setTotalsCalculation' ,
-        'formula' => 'setFormula' ,
-        'totals_row_label' => 'setTotalsRowLabel' 
+        'author' => 'setAuthor' ,
+        'recommend_read_only' => 'setRecommendReadOnly' ,
+        'is_write_protected' => 'setIsWriteProtected' ,
+        'password' => 'setPassword' 
     ];
 
     /**
@@ -119,11 +115,10 @@ class ListColumn implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName' ,
-        'range' => 'getRange' ,
-        'totals_calculation' => 'getTotalsCalculation' ,
-        'formula' => 'getFormula' ,
-        'totals_row_label' => 'getTotalsRowLabel' 
+        'author' => 'getAuthor' ,
+        'recommend_read_only' => 'getRecommendReadOnly' ,
+        'is_write_protected' => 'getIsWriteProtected' ,
+        'password' => 'getPassword' 
     ];
 
     /**
@@ -182,11 +177,10 @@ class ListColumn implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
-        $this->container['totals_calculation'] = isset($data['totals_calculation']) ? $data['totals_calculation'] : null;
-        $this->container['formula'] = isset($data['formula']) ? $data['formula'] : null;
-        $this->container['totals_row_label'] = isset($data['totals_row_label']) ? $data['totals_row_label'] : null;
+        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
+        $this->container['recommend_read_only'] = isset($data['recommend_read_only']) ? $data['recommend_read_only'] : null;
+        $this->container['is_write_protected'] = isset($data['is_write_protected']) ? $data['is_write_protected'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -197,20 +191,17 @@ class ListColumn implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+        if ($this->container['author'] === null) {
+            $invalidProperties[] = "'author' can't be null";
         }
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
+        if ($this->container['recommend_read_only'] === null) {
+            $invalidProperties[] = "'recommend_read_only' can't be null";
         }
-        if ($this->container['totals_calculation'] === null) {
-            $invalidProperties[] = "'totals_calculation' can't be null";
+        if ($this->container['is_write_protected'] === null) {
+            $invalidProperties[] = "'is_write_protected' can't be null";
         }
-        if ($this->container['formula'] === null) {
-            $invalidProperties[] = "'formula' can't be null";
-        }
-        if ($this->container['totals_row_label'] === null) {
-            $invalidProperties[] = "'totals_row_label' can't be null";
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +214,109 @@ class ListColumn implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['name'] === null) {
+        if ($this->container['author'] === null) {
                     return false;
                 }
-        if ($this->container['range'] === null) {
+        if ($this->container['recommend_read_only'] === null) {
                     return false;
                 }
-        if ($this->container['totals_calculation'] === null) {
+        if ($this->container['is_write_protected'] === null) {
                     return false;
                 }
-        if ($this->container['formula'] === null) {
-                    return false;
-                }
-        if ($this->container['totals_row_label'] === null) {
+        if ($this->container['password'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets name
+     * Gets author
      *
      * @return string
      */
-    public function getName()
+    public function getAuthor()
     {
-        return $this->container['name'];
+        return $this->container['author'];
     }
 
     /**
-     * Sets name
+     * Sets author
      *
-     *  Gets and sets the name of the column.
+     *  Gets and sets the author. 
      *
      * @return $this
      */
-    public function setName($name)
+    public function setAuthor($author)
     {
-        $this->container['name'] = $name;
+        $this->container['author'] = $author;
 
         return $this;
     }
    /**
-     * Gets range
+     * Gets recommend_read_only
      *
-     * @return \Aspose\Cells\Cloud\Model\Range
+     * @return bool
      */
-    public function getRange()
+    public function getRecommendReadOnly()
     {
-        return $this->container['range'];
+        return $this->container['recommend_read_only'];
     }
 
     /**
-     * Sets range
+     * Sets recommend_read_only
      *
-     *  Gets the range of this list column.            
+     *  Indicates if the Read Only Recommended option is selected. 
      *
      * @return $this
      */
-    public function setRange($range)
+    public function setRecommendReadOnly($recommend_read_only)
     {
-        $this->container['range'] = $range;
+        $this->container['recommend_read_only'] = $recommend_read_only;
 
         return $this;
     }
    /**
-     * Gets totals_calculation
+     * Gets is_write_protected
      *
-     * @return string
+     * @return bool
      */
-    public function getTotalsCalculation()
+    public function getIsWriteProtected()
     {
-        return $this->container['totals_calculation'];
+        return $this->container['is_write_protected'];
     }
 
     /**
-     * Sets totals_calculation
+     * Sets is_write_protected
      *
-     *  Gets and sets the type of calculation in the Totals row of the list column.
+     *  Indicates whether this workbook is write protected. 
      *
      * @return $this
      */
-    public function setTotalsCalculation($totals_calculation)
+    public function setIsWriteProtected($is_write_protected)
     {
-        $this->container['totals_calculation'] = $totals_calculation;
+        $this->container['is_write_protected'] = $is_write_protected;
 
         return $this;
     }
    /**
-     * Gets formula
+     * Gets password
      *
      * @return string
      */
-    public function getFormula()
+    public function getPassword()
     {
-        return $this->container['formula'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets formula
+     * Sets password
      *
-     *  Gets and sets the formula of the list column.            
-     *
-     * @return $this
-     */
-    public function setFormula($formula)
-    {
-        $this->container['formula'] = $formula;
-
-        return $this;
-    }
-   /**
-     * Gets totals_row_label
-     *
-     * @return string
-     */
-    public function getTotalsRowLabel()
-    {
-        return $this->container['totals_row_label'];
-    }
-
-    /**
-     * Sets totals_row_label
-     *
-     *  Gets and sets the display labels of total row. 
+     *  Sets the protected password to modify the file. 
      *
      * @return $this
      */
-    public function setTotalsRowLabel($totals_row_label)
+    public function setPassword($password)
     {
-        $this->container['totals_row_label'] = $totals_row_label;
+        $this->container['password'] = $password;
 
         return $this;
     }
