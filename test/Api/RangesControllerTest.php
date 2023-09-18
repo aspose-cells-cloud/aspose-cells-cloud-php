@@ -46,6 +46,7 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeStyleRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeUnMergeRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeValueRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetCellsRangeRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeSortRequest; 
 
 use PHPUnit\Framework\TestCase;
 class RangesControllerTest extends \PHPUnit_Framework_TestCase
@@ -426,5 +427,37 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->deleteWorksheetCellsRange($request);
+    }
+
+    /// <summary>
+    /// Test for PostWorksheetCellsRangeSort of RangesController.
+    /// </summary>
+
+    public function testPostWorksheetCellsRangeSort()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "Group.xlsx";
+        $remoteName = "Group.xlsx";
+
+        $rangeOperateDataSorter = new \Aspose\Cells\Cloud\Model\DataSorter();
+        $rangeOperateDataSorter->setCaseSensitive('true' ); 
+        $rangeOperateCellArea = new \Aspose\Cells\Cloud\Model\Range();
+        $rangeOperateCellArea->setColumnCount(3 ); 
+        $rangeOperateCellArea->setFirstColumn(0 ); 
+        $rangeOperateCellArea->setFirstRow(0 ); 
+        $rangeOperateCellArea->setRowCount(15 ); 
+        $rangeOperate = new \Aspose\Cells\Cloud\Model\RangeSortRequest();
+        $rangeOperate->setDataSorter($rangeOperateDataSorter ); 
+        $rangeOperate->setCellArea($rangeOperateCellArea ); 
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
+        $request = new PostWorksheetCellsRangeSortRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "book1");
+        $request->setRangeOperate( $rangeOperate);
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postWorksheetCellsRangeSort($request);
     }
 }

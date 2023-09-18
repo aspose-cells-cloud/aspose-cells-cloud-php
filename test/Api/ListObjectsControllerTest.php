@@ -43,6 +43,8 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetListColumnsTotalRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectConvertToRangeRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectSortTableRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectInsertSlicerRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectRemoveDuplicatesRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectSummarizeWithPivotTableRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetListObjectRequest; 
 
@@ -362,4 +364,49 @@ class ListObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setStorageName( "");
         $this->instance->postWorksheetListColumnsTotal($request);
     }
+    /// <summary>
+    /// Test for PostWorksheetListObjectRemoveDuplicates of ListObjectsController.
+    /// </summary>
+
+    public function testPostWorksheetListObjectRemoveDuplicates()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "TestTables.xlsx";
+        $remoteName = "TestTables.xlsx";
+
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
+        $request = new PostWorksheetListObjectRemoveDuplicatesRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "Sheet2");
+        $request->setListObjectIndex( 0);
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postWorksheetListObjectRemoveDuplicates($request);
+    }
+
+    /// <summary>
+    /// Test for TestPostWorksheetListObjectInsertSlicer of ListObjectsController.
+    /// </summary>
+
+    public function testPostWorksheetListObjectInsertSlicer()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "TestTables.xlsx";
+        $remoteName = "TestTables.xlsx";
+
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
+        $request = new PostWorksheetListObjectInsertSlicerRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "Sheet1");
+        $request->setListObjectIndex( 0);
+        $request->setColumnIndex( 2);
+        $request->setDestCellName( "j9");
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postWorksheetListObjectInsertSlicer($request);
+    }    
 }
