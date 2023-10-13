@@ -949,7 +949,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets auto_compress_pictures
      *
-     *  
+     *  Specifies a boolean value that indicates the application automatically compressed pictures in the workbook. 
      *
      * @return $this
      */
@@ -972,7 +972,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets auto_recover
      *
-     *  
+     *  Indicates whether the file is mark for auto-recovery. 
      *
      * @return $this
      */
@@ -995,7 +995,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets build_version
      *
-     *  Specifies the incremental public release of the application.            
+     *  Specifies the incremental public release of the application. 
      *
      * @return $this
      */
@@ -1018,7 +1018,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets calc_mode
      *
-     *  It specifies whether to calculate formulas manually, automatically or automaticallyexcept for multiple table operations.            
+     *  It specifies whether to calculate formulas manually,            automatically or automatically except for multiple table operations. 
      *
      * @return $this
      */
@@ -1041,7 +1041,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets calc_stack_size
      *
-     *  Specifies the stack size for calculating cells recursively.  The large valuefor this size will give better performance when there are lots of cells needto be calculated recursively.  On the other hand, larger value will raisethe stakes of StackOverflowException.  If use gets StackOverflowExceptionwhen calculating formulas, this value should be decreased.            
+     *  Specifies the stack size for calculating cells recursively.            The large value for this size will give better performance when there are lots of cells need to be calculated recursively.            On the other hand, larger value will raise the risk of StackOverflowException.            If user gets StackOverflowException when calculating formulas, this value should be decreased. 
      *
      * @return $this
      */
@@ -1064,7 +1064,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets calculation_id
      *
-     *  Specifies the version of the calculation engine used to calculate valuesin the workbook.            
+     *  Specifies the version of the calculation engine used to calculate values in the workbook. 
      *
      * @return $this
      */
@@ -1110,7 +1110,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets check_excel_restriction
      *
-     *  Whether check restriction of excel file when user modify cells related objects. For example, excel does not allow inputting string value longer than 32K. When you input a value longer than 32K such as by Cell.PutValue(string),if this property is true, you will get an Exception.  If this property isfalse, we will accept your input string value as the cell's value so thatlater you can output the complete string value for other file formats suchas CSV.  However, if you have set such kind of value that is invalid forexcel file format, you should not save the workbook as excel file formatlater. Otherwise there may be unexpected error for the generated excel file.            
+     *  Whether check restriction of excel file when user modify cells related objects.            For example, excel does not allow inputting string value longer than 32K.            When you input a value longer than 32K such as by Cell.PutValue(string), if this property is true, you will get an Exception.            If this property is false, we will accept your input string value as the cell's value so that later            you can output the complete string value for other file formats such as CSV.            However, if you have set such kind of value that is invalid for excel file format,            you should not save the workbook as excel file format later. Otherwise there may be unexpected error for the generated excel file. 
      *
      * @return $this
      */
@@ -1133,7 +1133,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets crash_save
      *
-     *  
+     *  indicates whether the application last saved the workbook file after a crash. 
      *
      * @return $this
      */
@@ -1156,7 +1156,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets create_calc_chain
      *
-     *  Indicates whether create calculated formulas chain.            
+     *  Whether creates calculated formulas chain. Default is false. 
      *
      * @return $this
      */
@@ -1179,7 +1179,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets data_extract_load
      *
-     *  
+     *  indicates whether the application last opened the workbook for data recovery. 
      *
      * @return $this
      */
@@ -1202,7 +1202,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets date1904
      *
-     *  Gets or sets a value which represents if the workbook uses the 1904 datesystem.            
+     *  Gets or sets a value which represents if the workbook uses the 1904 date system. 
      *
      * @return $this
      */
@@ -1225,7 +1225,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets display_drawing_objects
      *
-     *  Indicates whether and how to show objects in the workbook.            
+     *  Indicates whether and how to show objects in the workbook. 
      *
      * @return $this
      */
@@ -1248,7 +1248,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets enable_macros
      *
-     *  
+     *  Enable macros; 
      *
      * @return $this
      */
@@ -1271,7 +1271,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets first_visible_tab
      *
-     *  Gets or sets the first visible worksheet tab.            
+     *  Gets or sets the first visible worksheet tab. 
      *
      * @return $this
      */
@@ -1294,7 +1294,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets hide_pivot_field_list
      *
-     *  
+     *  Gets and sets whether hide the field list for the PivotTable. 
      *
      * @return $this
      */
@@ -1317,7 +1317,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets is_default_encrypted
      *
-     *  
+     *  Indicates whether encrypting the workbook with default password if Structure and Windows of the workbook are locked. 
      *
      * @return $this
      */
@@ -1340,7 +1340,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets is_hidden
      *
-     *  Indicates whether this workbook is hidden.            
+     *  Indicates whether this workbook is hidden. 
      *
      * @return $this
      */
@@ -1363,7 +1363,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets is_h_scroll_bar_visible
      *
-     *  Gets or sets a value indicating whether the generated spreadsheet will containa horizontal scroll bar.                         Remarks:The default value is true.             
+     *  Gets or sets a value indicating whether the generated spreadsheet will contain a horizontal scroll bar. 
      *
      * @return $this
      */
@@ -1386,7 +1386,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets is_minimized
      *
-     *  Represents whether the generated spreadsheet will be opened Minimized.            
+     *  Represents whether the generated spreadsheet will be opened Minimized. 
      *
      * @return $this
      */
@@ -1409,7 +1409,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets is_v_scroll_bar_visible
      *
-     *  Gets or sets a value indicating whether the generated spreadsheet will containa vertical scroll bar.                         Remarks:The default value is true.             
+     *  Gets or sets a value indicating whether the generated spreadsheet will contain a vertical scroll bar. 
      *
      * @return $this
      */
@@ -1432,7 +1432,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets iteration
      *
-     *  Indicates if Aspose.Cells will use iteration to resolve circular references.            
+     *  Indicates whether enable iterative calculation to resolve circular references. 
      *
      * @return $this
      */
@@ -1455,7 +1455,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets language_code
      *
-     *  Gets or sets the user interface language of the Workbook version based onCountryCode that has saved the file.            
+     *  Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file. 
      *
      * @return $this
      */
@@ -1478,7 +1478,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets max_change
      *
-     *  Returns or sets the maximum number of change that Microsoft Excel can useto resolve a circular reference.            
+     *  Returns or sets the maximum number of change to resolve a circular reference. 
      *
      * @return $this
      */
@@ -1501,7 +1501,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets max_iteration
      *
-     *  Returns or sets the maximum number of iterations that Aspose.Cells can useto resolve a circular reference.            
+     *  Returns or sets the maximum number of iterations to resolve a circular reference. 
      *
      * @return $this
      */
@@ -1524,7 +1524,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets memory_setting
      *
-     *  
+     *  Gets or sets the memory usage options. The new option will be taken as the default option for newly created worksheets but does not take effect for existing worksheets. 
      *
      * @return $this
      */
@@ -1547,7 +1547,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets number_decimal_separator
      *
-     *  
+     *  Gets or sets the decimal separator for formatting/parsing numeric values. Default is the decimal separator of current Region. 
      *
      * @return $this
      */
@@ -1570,7 +1570,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets number_group_separator
      *
-     *  
+     *  Gets or sets the character that separates groups of digits to the left of the decimal in numeric values. Default is the group separator of current Region. 
      *
      * @return $this
      */
@@ -1593,7 +1593,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets parsing_formula_on_open
      *
-     *  Indicates whether parsing the formula when reading the file.                         Remarks:Only applies for Excel Xlsx,Xltx, Xltm,Xlsm file because the formulas inthe files are stored with a string formula.             
+     *  Indicates whether parsing the formula when reading the file. 
      *
      * @return $this
      */
@@ -1616,7 +1616,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets precision_as_displayed
      *
-     *  True if calculations in this workbook will be done using only the precisionof the numbers as they're displayed            
+     *  True if calculations in this workbook will be done using only the precision of the numbers as they're displayed 
      *
      * @return $this
      */
@@ -1639,7 +1639,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets recalculate_before_save
      *
-     *  Indicates whether to recalculate before saving the document.            
+     *  Indicates whether to recalculate before saving the document. 
      *
      * @return $this
      */
@@ -1662,7 +1662,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets re_calculate_on_open
      *
-     *  Indicates whether re-calculate all formulas on opening file.            
+     *  Indicates whether re-calculate all formulas on opening file. 
      *
      * @return $this
      */
@@ -1708,7 +1708,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets region
      *
-     *  Gets or sets the system regional settings based on CountryCode at the timethe file was saved.                         Remarks:If you do not want to use the region saved in the file, please reset it afterreading the file.             
+     *  Gets or sets the regional settings for workbook. 
      *
      * @return $this
      */
@@ -1731,7 +1731,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets remove_personal_information
      *
-     *  
+     *  True if personal information can be removed from the specified workbook. 
      *
      * @return $this
      */
@@ -1754,7 +1754,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets repair_load
      *
-     *  
+     *  Indicates whether the application last opened the workbook in safe or repair mode. 
      *
      * @return $this
      */
@@ -1777,7 +1777,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets shared
      *
-     *  Gets or sets a value that indicates whether the Workbook is shared.                         Remarks:The default value is false.             
+     *  Gets or sets a value that indicates whether the Workbook is shared. 
      *
      * @return $this
      */
@@ -1800,7 +1800,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets sheet_tab_bar_width
      *
-     *  Width of worksheet tab bar (in 1/1000 of window width).            
+     *  Width of worksheet tab bar (in 1/1000 of window width). 
      *
      * @return $this
      */
@@ -1823,7 +1823,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets show_tabs
      *
-     *  Get or sets a value whether the Workbook tabs are displayed.                         Remarks:The default value is true.             
+     *  Get or sets a value whether the Workbook tabs are displayed. 
      *
      * @return $this
      */
@@ -1846,7 +1846,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets update_adjacent_cells_border
      *
-     *  Indicates whether update adjacent cells' border.                         Remarks:The default value is true.  For example: the bottom border of the cell A1is update, the top border of the cell A2 should be changed too.             
+     *  Indicates whether update adjacent cells' border. 
      *
      * @return $this
      */
@@ -1869,7 +1869,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets update_links_type
      *
-     *  
+     *  Gets and sets how updates external links when the workbook is opened. 
      *
      * @return $this
      */
@@ -1892,7 +1892,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets window_height
      *
-     *  The height of the window, in unit of point.            
+     *  The height of the window, in unit of point. 
      *
      * @return $this
      */
@@ -1915,7 +1915,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets window_left
      *
-     *  The distance from the left edge of the client area to the left edge of thewindow, in unit of point.            
+     *  The distance from the left edge of the client area to the left edge of the window, in unit of point. 
      *
      * @return $this
      */
@@ -1938,7 +1938,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets window_top
      *
-     *  The distance from the top edge of the client area to the top edge of thewindow, in unit of point.            
+     *  The distance from the top edge of the client area to the top edge of the window, in unit of point. 
      *
      * @return $this
      */
@@ -1961,7 +1961,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets window_width
      *
-     *  The width of the window, in unit of point.            
+     *  The width of the window, in unit of point. 
      *
      * @return $this
      */
@@ -2214,7 +2214,7 @@ class WorkbookSettings implements  ArrayAccess
     /**
      * Sets significant_digits
      *
-     *  
+     *  Gets and sets the number of significant digits.            The default value is . 
      *
      * @return $this
      */

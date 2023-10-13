@@ -301,7 +301,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets auto_scale_font
      *
-     *  
+     *  True if the text in the object changes font size when the object size changes.                         The default value is True.
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets background_mode
      *
-     *  
+     *  Gets and sets the display mode of the background
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Returns a Border object that represents the border of the object
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Gets a  object which represents the font setting of the specified chart data table.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets has_border_horizontal
      *
-     *  
+     *  True if the chart data table has horizontal cell borders
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets has_border_outline
      *
-     *  
+     *  True if the chart data table has outline borders
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets has_border_vertical
      *
-     *  
+     *  True if the chart data table has vertical cell borders
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class ChartDataTable implements  ArrayAccess
     /**
      * Sets show_legend_key
      *
-     *  
+     *  True if the data label legend key is visible.
      *
      * @return $this
      */

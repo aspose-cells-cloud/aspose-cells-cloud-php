@@ -277,7 +277,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets source_folder
      *
-     *  
+     *  The directory stores files that need to format conversion.
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets source_storage
      *
-     *  
+     *  Aspose Cloud storage name.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets match_condition
      *
-     *  
+     *  Indicates the match condition that needs to be processed for the file name.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets format
      *
-     *  
+     *  Conversion format.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets out_folder
      *
-     *  
+     *  The directory that stores files whose format conversion was successful.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets out_storage
      *
-     *  
+     *  Aspose Cloud storage name.
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class BatchConvertRequest implements  ArrayAccess
     /**
      * Sets save_options
      *
-     *  
+     *  Indicates save options.
      *
      * @return $this
      */

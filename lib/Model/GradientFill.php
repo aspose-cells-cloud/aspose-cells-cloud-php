@@ -241,7 +241,7 @@ class GradientFill implements  ArrayAccess
     /**
      * Sets fill_type
      *
-     *  
+     *  Gets the gradient fill type. 
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class GradientFill implements  ArrayAccess
     /**
      * Sets direction_type
      *
-     *  
+     *  Gets the gradient direction type. 
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class GradientFill implements  ArrayAccess
     /**
      * Sets angle
      *
-     *  
+     *  The angle of linear fill. 
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class GradientFill implements  ArrayAccess
     /**
      * Sets gradient_stops
      *
-     *  
+     *  Represents the gradient stop collection. 
      *
      * @return $this
      */

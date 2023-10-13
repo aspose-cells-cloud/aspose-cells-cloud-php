@@ -325,7 +325,7 @@ class MarkdownSaveOptions implements  ArrayAccess
     /**
      * Sets encoding
      *
-     *  
+     *  Gets and sets the default encoding.
      *
      * @return $this
      */
@@ -348,7 +348,7 @@ class MarkdownSaveOptions implements  ArrayAccess
     /**
      * Sets format_strategy
      *
-     *  
+     *  The Data provider to provide cells data for saving workbook in light mode.
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class MarkdownSaveOptions implements  ArrayAccess
     /**
      * Sets line_separator
      *
-     *  
+     *  Gets and sets the line separator.
      *
      * @return $this
      */

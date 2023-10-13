@@ -253,7 +253,7 @@ class ColorFilter implements  ArrayAccess
     /**
      * Sets filter_by_fill_color
      *
-     *  
+     *  Flag indicating whether filter by the cell's fill color. 
      *
      * @return $this
      */

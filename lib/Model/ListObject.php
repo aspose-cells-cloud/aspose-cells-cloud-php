@@ -457,7 +457,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets auto_filter
      *
-     *  
+     *  Gets auto filter.
      *
      * @return $this
      */
@@ -480,7 +480,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets display_name
      *
-     *  
+     *  Gets and sets the display name.
      *
      * @return $this
      */
@@ -503,7 +503,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets start_column
      *
-     *  
+     *  Gets the start column of the range.
      *
      * @return $this
      */
@@ -526,7 +526,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets start_row
      *
-     *  
+     *  Gets the start row of the range.
      *
      * @return $this
      */
@@ -549,7 +549,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets end_column
      *
-     *  
+     *  Gets the end column of the range.
      *
      * @return $this
      */
@@ -572,7 +572,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets end_row
      *
-     *  
+     *  Gets the end  row of the range.
      *
      * @return $this
      */
@@ -595,7 +595,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets list_columns
      *
-     *  
+     *  Gets ListColumns of the ListObject.
      *
      * @return $this
      */
@@ -618,7 +618,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets show_header_row
      *
-     *  
+     *  Gets and sets whether this ListObject show header row.
      *
      * @return $this
      */
@@ -641,7 +641,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets show_table_style_column_stripes
      *
-     *  
+     *  Indicates whether column stripe formatting is applied.
      *
      * @return $this
      */
@@ -664,7 +664,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets show_table_style_first_column
      *
-     *  
+     *  Indicates whether the first column in the table should have the style applied.
      *
      * @return $this
      */
@@ -687,7 +687,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets show_table_style_last_column
      *
-     *  
+     *  Indicates whether the last column in the table should have the style applied.
      *
      * @return $this
      */
@@ -710,7 +710,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets show_table_style_row_stripes
      *
-     *  
+     *  Indicates whether row stripe formatting is applied.
      *
      * @return $this
      */
@@ -733,7 +733,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets show_totals
      *
-     *  
+     *  Gets and sets whether this ListObject show total row.
      *
      * @return $this
      */
@@ -756,7 +756,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets table_style_name
      *
-     *  
+     *  Gets and sets the table style name.
      *
      * @return $this
      */
@@ -779,7 +779,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets table_style_type
      *
-     *  
+     *  Gets and the built-in table style.
      *
      * @return $this
      */
@@ -802,7 +802,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets data_range
      *
-     *  
+     *  Gets the data range of the ListObject.
      *
      * @return $this
      */
@@ -825,7 +825,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets data_source_type
      *
-     *  
+     *  Gets the data source type of the table.
      *
      * @return $this
      */
@@ -848,7 +848,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets comment
      *
-     *  
+     *  Gets and sets the comment of the table.
      *
      * @return $this
      */
@@ -871,7 +871,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets xml_map
      *
-     *  
+     *  Gets an  used for this list.
      *
      * @return $this
      */
@@ -894,7 +894,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets alternative_text
      *
-     *  
+     *  Gets and sets the alternative text.
      *
      * @return $this
      */
@@ -917,7 +917,7 @@ class ListObject implements  ArrayAccess
     /**
      * Sets alternative_description
      *
-     *  
+     *  Gets and sets the alternative description.
      *
      * @return $this
      */

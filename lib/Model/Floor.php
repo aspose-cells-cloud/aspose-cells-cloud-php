@@ -277,7 +277,7 @@ class Floor implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Gets or sets the border .
      *
      * @return $this
      */

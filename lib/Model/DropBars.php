@@ -229,7 +229,7 @@ class DropBars implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Gets the .
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class DropBars implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Gets the border .
      *
      * @return $this
      */

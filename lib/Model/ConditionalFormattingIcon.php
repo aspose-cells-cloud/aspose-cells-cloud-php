@@ -229,7 +229,7 @@ class ConditionalFormattingIcon implements  ArrayAccess
     /**
      * Sets image_data
      *
-     *  Gets the icon set data.            
+     *  Gets the icon set data. 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class ConditionalFormattingIcon implements  ArrayAccess
     /**
      * Sets index
      *
-     *  Gets and sets the icon's index in the icon set.            
+     *  Gets and sets the icon's index in the icon set. 
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class ConditionalFormattingIcon implements  ArrayAccess
     /**
      * Sets type
      *
-     *  Gets and sets the icon set type.            
+     *  Gets and sets the icon set type. 
      *
      * @return $this
      */

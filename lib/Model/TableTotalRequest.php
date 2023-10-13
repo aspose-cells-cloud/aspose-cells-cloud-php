@@ -229,7 +229,7 @@ class TableTotalRequest implements  ArrayAccess
     /**
      * Sets list_column_index
      *
-     *  
+     *  Indicates list column index.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class TableTotalRequest implements  ArrayAccess
     /**
      * Sets totals_calculation
      *
-     *  
+     *  Indicates totals calculation.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class TableTotalRequest implements  ArrayAccess
     /**
      * Sets custom_formula
      *
-     *  
+     *  Indicates custom formula.
      *
      * @return $this
      */

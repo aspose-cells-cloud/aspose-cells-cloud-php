@@ -397,7 +397,7 @@ class PlotArea implements  ArrayAccess
     /**
      * Sets inner_height
      *
-     *  
+     *  Gets or sets the height of plot area in units of 1/4000 of the chart area.
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class PlotArea implements  ArrayAccess
     /**
      * Sets inner_width
      *
-     *  
+     *  Gets or sets the width  of plot area in units of 1/4000 of the chart area.
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class PlotArea implements  ArrayAccess
     /**
      * Sets inner_x
      *
-     *  
+     *  Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class PlotArea implements  ArrayAccess
     /**
      * Sets inner_y
      *
-     *  
+     *  Gets or gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
      *
      * @return $this
      */

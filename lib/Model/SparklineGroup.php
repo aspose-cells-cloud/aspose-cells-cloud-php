@@ -517,7 +517,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets display_hidden
      *
-     *  Indicates whether to show data in hidden rows and columns.
+     *  Indicates whether to show data in hidden rows and columns. 
      *
      * @return $this
      */
@@ -540,7 +540,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets first_point_color
      *
-     *  Gets and sets the color of the first point of data in the sparkline group.
+     *  Gets and sets the color of the first point of data in the sparkline group. 
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets high_point_color
      *
-     *  Gets and sets the color of the highest points of data in the sparkline group.
+     *  Gets and sets the color of the highest points of data in the sparkline group. 
      *
      * @return $this
      */
@@ -586,7 +586,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets horizontal_axis_color
      *
-     *  Gets and sets the color of the horizontal axis in the sparkline group.
+     *  Gets and sets the color of the horizontal axis in the sparkline group. 
      *
      * @return $this
      */
@@ -609,7 +609,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets horizontal_axis_date_range
      *
-     *  Represents the range that contains the date values for the sparkline data.
+     *  Represents the range that contains the date values for the sparkline data. 
      *
      * @return $this
      */
@@ -632,7 +632,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets last_point_color
      *
-     *  Gets and sets the color of the last point of data in the sparkline group.
+     *  Gets and sets the color of the last point of data in the sparkline group. 
      *
      * @return $this
      */
@@ -655,7 +655,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets line_weight
      *
-     *  Gets and sets the line weight in each line sparkline in the sparkline group,  in the unit of points.            
+     *  Gets and sets the line weight in each line sparkline in the sparkline group, in the unit of points. 
      *
      * @return $this
      */
@@ -678,7 +678,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets low_point_color
      *
-     *  Gets and sets the color of the lowest points of data in the sparkline group.
+     *  Gets and sets the color of the lowest points of data in the sparkline group. 
      *
      * @return $this
      */
@@ -701,7 +701,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets markers_color
      *
-     *  Gets and sets the color of points in each line sparkline in the sparkline group.
+     *  Gets and sets the color of points in each line sparkline in the sparkline group. 
      *
      * @return $this
      */
@@ -724,7 +724,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets negative_points_color
      *
-     *  Gets and sets the color of the negative values on the sparkline group.            
+     *  Gets and sets the color of the negative values on the sparkline group. 
      *
      * @return $this
      */
@@ -747,7 +747,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets plot_empty_cells_type
      *
-     *  Indicates how to plot empty cells.
+     *  Indicates how to plot empty cells. 
      *
      * @return $this
      */
@@ -770,7 +770,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets plot_right_to_left
      *
-     *  Indicates whether the plot data is right to left.
+     *  Indicates whether the plot data is right to left. 
      *
      * @return $this
      */
@@ -793,7 +793,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets preset_style
      *
-     *  Gets and sets the preset style type of the sparkline group.
+     *  Gets and sets the preset style type of the sparkline group. 
      *
      * @return $this
      */
@@ -816,7 +816,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets series_color
      *
-     *  Gets and sets the color of the sparklines in the sparkline group.            
+     *  Gets and sets the color of the sparklines in the sparkline group. 
      *
      * @return $this
      */
@@ -839,7 +839,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_first_point
      *
-     *  Indicates whether to highlight the first point of data in the sparkline group.
+     *  Indicates whether to highlight the first point of data in the sparkline group. 
      *
      * @return $this
      */
@@ -862,7 +862,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_high_point
      *
-     *  Indicates whether to highlight the highest points of data in the sparkline group.
+     *  Indicates whether to highlight the highest points of data in the sparkline group. 
      *
      * @return $this
      */
@@ -885,7 +885,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_horizontal_axis
      *
-     *  Indicates whether to show the sparkline horizontal axis. The horizontal axis   appears if the sparkline has data that crosses the zero axis.            
+     *  Indicates whether to show the sparkline horizontal axis.            The horizontal axis appears if the sparkline has data that crosses the zero axis. 
      *
      * @return $this
      */
@@ -908,7 +908,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_last_point
      *
-     *  Indicates whether to highlight the last point of data in the sparkline group.
+     *  Indicates whether to highlight the last point of data in the sparkline group. 
      *
      * @return $this
      */
@@ -931,7 +931,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_low_point
      *
-     *  Indicates whether to highlight the lowest points of data in the sparkline group.            
+     *  Indicates whether to highlight the lowest points of data in the sparkline group. 
      *
      * @return $this
      */
@@ -954,7 +954,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_markers
      *
-     *  Indicates whether to highlight each point in each line sparkline in the sparkline  group.
+     *  Indicates whether to highlight each point in each line sparkline in the sparkline group. 
      *
      * @return $this
      */
@@ -977,7 +977,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets show_negative_points
      *
-     *  Indicates whether to highlight the negative values on the sparkline group with a different color or marker.
+     *  Indicates whether to highlight the negative values on the sparkline group with a different color or marker. 
      *
      * @return $this
      */
@@ -1000,7 +1000,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets sparkline_collection
      *
-     *  Gets the Aspose.Cells.Charts.SparklineGroup.SparklineCollection object of the sparkline group.
+     *  Gets the collection of  object. 
      *
      * @return $this
      */
@@ -1023,7 +1023,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets type
      *
-     *  Indicates the sparkline type of the sparkline group.
+     *  Indicates the sparkline type of the sparkline group. 
      *
      * @return $this
      */
@@ -1046,7 +1046,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets vertical_axis_max_value
      *
-     *  Gets and sets the custom maximum value for the vertical axis.
+     *  Gets and sets the custom maximum value for the vertical axis. 
      *
      * @return $this
      */
@@ -1069,7 +1069,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets vertical_axis_max_value_type
      *
-     *  Represents the vertical axis maximum value type.
+     *  Represents the vertical axis maximum value type. 
      *
      * @return $this
      */
@@ -1092,7 +1092,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets vertical_axis_min_value
      *
-     *  Gets and sets the custom minimum value for the vertical axis.
+     *  Gets and sets the custom minimum value for the vertical axis. 
      *
      * @return $this
      */
@@ -1115,7 +1115,7 @@ class SparklineGroup implements  ArrayAccess
     /**
      * Sets vertical_axis_min_value_type
      *
-     *  Represents the vertical axis minimum value type.            
+     *  Represents the vertical axis minimum value type. 
      *
      * @return $this
      */

@@ -301,7 +301,7 @@ class FilterColumn implements  ArrayAccess
     /**
      * Sets field_index
      *
-     *  
+     *  Gets and sets the column offset in the range. 
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class FilterColumn implements  ArrayAccess
     /**
      * Sets filter_type
      *
-     *  
+     *  Gets and sets the type fo filtering data. 
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class FilterColumn implements  ArrayAccess
     /**
      * Sets visibledropdown
      *
-     *  
+     *  Indicates whether the AutoFilter button for this column is visible. 
      *
      * @return $this
      */

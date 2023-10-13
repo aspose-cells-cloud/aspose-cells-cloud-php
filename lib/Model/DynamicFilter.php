@@ -229,7 +229,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Sets dynamic_filter_type
      *
-     *  
+     *  Gets and sets the dynamic filter type. 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Sets max_value
      *
-     *  
+     *  Gets and sets the dynamic filter max value. 
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DynamicFilter implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  Gets and sets the dynamic filter value. 
      *
      * @return $this
      */

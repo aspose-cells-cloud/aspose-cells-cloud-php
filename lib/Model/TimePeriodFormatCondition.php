@@ -205,7 +205,7 @@ class TimePeriodFormatCondition implements  ArrayAccess
     /**
      * Sets time_period
      *
-     *  
+     *  The applicable time period in a "date occurring…" conditional formatting                rule. Valid only for type = timePeriod.  The default value is TimePeriodType.Today
      *
      * @return $this
      */

@@ -301,7 +301,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Gets the area.
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Gets the border.
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets data_labels
      *
-     *  
+     *  Returns a DataLabels object that represents the data label associated with the point.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets explosion
      *
-     *  
+     *  The distance of an open pie slice from the center of the pie chart is expressed as a percentage of the pie diameter.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets marker
      *
-     *  
+     *  Gets the marker.
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  True if the chartpoint has a shadow.
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets x_value
      *
-     *  
+     *  Gets or sets the X value of the chart point.
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class ChartPoint implements  ArrayAccess
     /**
      * Sets y_value
      *
-     *  
+     *  Gets or sets the Y value of the chart point.
      *
      * @return $this
      */

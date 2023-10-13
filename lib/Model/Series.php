@@ -781,7 +781,7 @@ class Series implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Represents the background area of Series object.
      *
      * @return $this
      */
@@ -804,7 +804,7 @@ class Series implements  ArrayAccess
     /**
      * Sets bar3_d_shape_type
      *
-     *  
+     *  Gets or sets the 3D shape type used with the 3-D bar or column chart.
      *
      * @return $this
      */
@@ -827,7 +827,7 @@ class Series implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Represents border of Series object.
      *
      * @return $this
      */
@@ -850,7 +850,7 @@ class Series implements  ArrayAccess
     /**
      * Sets bubble_scale
      *
-     *  
+     *  Gets or sets the scale factor for bubbles in the specified chart group.                         It can be an integer value from 0 (zero) to 300,                         corresponding to a percentage of the default size.                        Applies only to bubble charts.
      *
      * @return $this
      */
@@ -873,7 +873,7 @@ class Series implements  ArrayAccess
     /**
      * Sets bubble_sizes
      *
-     *  
+     *  Gets or sets the bubble sizes values of the chart series.
      *
      * @return $this
      */
@@ -896,7 +896,7 @@ class Series implements  ArrayAccess
     /**
      * Sets count_of_data_values
      *
-     *  
+     *  Gets the number of the data values.
      *
      * @return $this
      */
@@ -919,7 +919,7 @@ class Series implements  ArrayAccess
     /**
      * Sets data_labels
      *
-     *  
+     *  Represents the DataLabels object for the specified ASeries.
      *
      * @return $this
      */
@@ -942,7 +942,7 @@ class Series implements  ArrayAccess
     /**
      * Sets display_name
      *
-     *  
+     *  Gets the series's name that displays on the chart graph.
      *
      * @return $this
      */
@@ -965,7 +965,7 @@ class Series implements  ArrayAccess
     /**
      * Sets doughnut_hole_size
      *
-     *  
+     *  Returns or sets the size of the hole in a doughnut chart group.                         The hole size is expressed as a percentage of the chart size, between 10 and 90 percent.
      *
      * @return $this
      */
@@ -988,7 +988,7 @@ class Series implements  ArrayAccess
     /**
      * Sets down_bars
      *
-     *  
+     *  Returns a  object that represents the down bars on a line chart.                        Applies only to line charts.
      *
      * @return $this
      */
@@ -1011,7 +1011,7 @@ class Series implements  ArrayAccess
     /**
      * Sets drop_lines
      *
-     *  
+     *  Returns a  object that represents the drop lines for a series on the line chart or area chart.                        Applies only to line chart or area charts.
      *
      * @return $this
      */
@@ -1034,7 +1034,7 @@ class Series implements  ArrayAccess
     /**
      * Sets explosion
      *
-     *  
+     *  The distance of an open pie slice from the center of the pie chart is expressed as a percentage of the pie diameter.
      *
      * @return $this
      */
@@ -1057,7 +1057,7 @@ class Series implements  ArrayAccess
     /**
      * Sets first_slice_angle
      *
-     *  
+     *  Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).                         Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
      *
      * @return $this
      */
@@ -1080,7 +1080,7 @@ class Series implements  ArrayAccess
     /**
      * Sets gap_width
      *
-     *  
+     *  Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.                        The value of this property must be between 0 and 500.
      *
      * @return $this
      */
@@ -1103,7 +1103,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has3_d_effect
      *
-     *  
+     *  True if the series has a three-dimensional appearance.                         Applies only to bubble charts.
      *
      * @return $this
      */
@@ -1126,7 +1126,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has_drop_lines
      *
-     *  
+     *  True if the chart has drop lines.                        Applies only to line chart or area charts.
      *
      * @return $this
      */
@@ -1149,7 +1149,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has_hi_lo_lines
      *
-     *  
+     *  True if the line chart has high-low lines.                          Applies only to line charts.
      *
      * @return $this
      */
@@ -1172,7 +1172,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has_leader_lines
      *
-     *  
+     *  True if the series has leader lines.
      *
      * @return $this
      */
@@ -1195,7 +1195,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has_radar_axis_labels
      *
-     *  
+     *  True if a radar chart has category axis labels. Applies only to radar charts.
      *
      * @return $this
      */
@@ -1218,7 +1218,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has_series_lines
      *
-     *  
+     *  True if a stacked column chart or bar chart has series lines or                        if a Pie of Pie chart or Bar of Pie chart has connector lines between the two sections.                         Applies only to stacked column charts, bar charts, Pie of Pie charts, or Bar of Pie charts.
      *
      * @return $this
      */
@@ -1241,7 +1241,7 @@ class Series implements  ArrayAccess
     /**
      * Sets has_up_down_bars
      *
-     *  
+     *  True if a line chart has up and down bars.                        Applies only to line charts.
      *
      * @return $this
      */
@@ -1264,7 +1264,7 @@ class Series implements  ArrayAccess
     /**
      * Sets hi_lo_lines
      *
-     *  
+     *  Returns a HiLoLines object that represents the high-low lines for a series on a line chart.                         Applies only to line charts.
      *
      * @return $this
      */
@@ -1287,7 +1287,7 @@ class Series implements  ArrayAccess
     /**
      * Sets is_auto_split
      *
-     *  
+     *  Indicates whether the threshold value is automatic.
      *
      * @return $this
      */
@@ -1310,7 +1310,7 @@ class Series implements  ArrayAccess
     /**
      * Sets is_color_varied
      *
-     *  
+     *  Represents if the color of points is varied.                         The chart must contain only one series.
      *
      * @return $this
      */
@@ -1333,7 +1333,7 @@ class Series implements  ArrayAccess
     /**
      * Sets leader_lines
      *
-     *  
+     *  Represents leader lines on a chart. Leader lines connect data labels to data points.                         This object isn’t a collection; there’s no object that represents a single leader line.
      *
      * @return $this
      */
@@ -1356,7 +1356,7 @@ class Series implements  ArrayAccess
     /**
      * Sets legend_entry
      *
-     *  
+     *  Gets the legend entry according to this series.
      *
      * @return $this
      */
@@ -1402,7 +1402,7 @@ class Series implements  ArrayAccess
     /**
      * Sets marker
      *
-     *  
+     *  Gets the marker.
      *
      * @return $this
      */
@@ -1425,7 +1425,7 @@ class Series implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets or sets the name of the data series.
      *
      * @return $this
      */
@@ -1448,7 +1448,7 @@ class Series implements  ArrayAccess
     /**
      * Sets overlap
      *
-     *  
+     *  Specifies how bars and columns are positioned.                        Can be a value between – 100 and 100.                         Applies only to 2-D bar and 2-D column charts.
      *
      * @return $this
      */
@@ -1471,7 +1471,7 @@ class Series implements  ArrayAccess
     /**
      * Sets plot_on_second_axis
      *
-     *  
+     *  Indicates if this series is plotted on second value axis.
      *
      * @return $this
      */
@@ -1494,7 +1494,7 @@ class Series implements  ArrayAccess
     /**
      * Sets points
      *
-     *  
+     *  Gets the collection of points in a series in a chart.
      *
      * @return $this
      */
@@ -1517,7 +1517,7 @@ class Series implements  ArrayAccess
     /**
      * Sets second_plot_size
      *
-     *  
+     *  Returns or sets the size of the secondary section of either a pie of pie chart or a bar of pie chart,                         as a percentage of the size of the primary pie.                        Can be a value from 5 to 200.
      *
      * @return $this
      */
@@ -1540,7 +1540,7 @@ class Series implements  ArrayAccess
     /**
      * Sets series_lines
      *
-     *  
+     *  Returns a SeriesLines object that represents the series lines for a stacked bar chart or a stacked column chart.                        Applies only to stacked bar and stacked column charts.
      *
      * @return $this
      */
@@ -1563,7 +1563,7 @@ class Series implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  True if the series has a shadow.
      *
      * @return $this
      */
@@ -1586,7 +1586,7 @@ class Series implements  ArrayAccess
     /**
      * Sets shape_properties
      *
-     *  
+     *  Gets the  object that holds the visual shape properties of the Series.
      *
      * @return $this
      */
@@ -1609,7 +1609,7 @@ class Series implements  ArrayAccess
     /**
      * Sets show_negative_bubbles
      *
-     *  
+     *  True if negative bubbles are shown for the chart group. Valid only for bubble charts.
      *
      * @return $this
      */
@@ -1632,7 +1632,7 @@ class Series implements  ArrayAccess
     /**
      * Sets size_represents
      *
-     *  
+     *  Gets or sets what the bubble size represents on a bubble chart.
      *
      * @return $this
      */
@@ -1655,7 +1655,7 @@ class Series implements  ArrayAccess
     /**
      * Sets smooth
      *
-     *  
+     *  Represents curve smoothing.                         True if curve smoothing is turned on for the line chart or scatter chart.                        Applies only to line and scatter connected by lines charts.
      *
      * @return $this
      */
@@ -1678,7 +1678,7 @@ class Series implements  ArrayAccess
     /**
      * Sets split_type
      *
-     *  
+     *  Returns or sets a value that how to determine which data points are in the second pie or bar on a pie of pie or bar of                        pie chart.
      *
      * @return $this
      */
@@ -1701,7 +1701,7 @@ class Series implements  ArrayAccess
     /**
      * Sets split_value
      *
-     *  
+     *  Returns or sets a value that shall be used to determine which data points are in the second pie or bar on                        a pie of pie or bar of pie chart.
      *
      * @return $this
      */
@@ -1724,7 +1724,7 @@ class Series implements  ArrayAccess
     /**
      * Sets trend_lines
      *
-     *  
+     *  Returns an object that represents a collection of all the trendlines for the series.
      *
      * @return $this
      */
@@ -1747,7 +1747,7 @@ class Series implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets or sets a data series' type.
      *
      * @return $this
      */
@@ -1770,7 +1770,7 @@ class Series implements  ArrayAccess
     /**
      * Sets up_bars
      *
-     *  
+     *  Returns an DropBars object that represents the up bars on a line chart.                        Applies only to line charts.
      *
      * @return $this
      */
@@ -1793,7 +1793,7 @@ class Series implements  ArrayAccess
     /**
      * Sets values
      *
-     *  
+     *  Represents the data of the chart series.
      *
      * @return $this
      */
@@ -1816,7 +1816,7 @@ class Series implements  ArrayAccess
     /**
      * Sets x_error_bar
      *
-     *  
+     *  Represents X direction error bar of the series.
      *
      * @return $this
      */
@@ -1839,7 +1839,7 @@ class Series implements  ArrayAccess
     /**
      * Sets x_values
      *
-     *  
+     *  Represents the x values of the chart series.
      *
      * @return $this
      */
@@ -1862,7 +1862,7 @@ class Series implements  ArrayAccess
     /**
      * Sets y_error_bar
      *
-     *  
+     *  Represents Y direction error bar of the series.
      *
      * @return $this
      */

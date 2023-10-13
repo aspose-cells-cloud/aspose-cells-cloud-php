@@ -299,7 +299,7 @@ class WorksheetOperateParameter implements  ArrayAccess
     /**
      * Sets new_name
      *
-     *  
+     *  rename worksheet name
      *
      * @return $this
      */

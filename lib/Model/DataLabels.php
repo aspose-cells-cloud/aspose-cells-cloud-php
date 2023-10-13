@@ -577,7 +577,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets is_auto_text
      *
-     *  
+     *  Indicates the text is auto generated.
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets number
      *
-     *  
+     *  Gets and sets the built-in number format.
      *
      * @return $this
      */
@@ -669,7 +669,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets number_format
      *
-     *  
+     *  Represents the format string for the DataLabels object.
      *
      * @return $this
      */
@@ -692,7 +692,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets number_format_linked
      *
-     *  
+     *  True if the number format is linked to the cells                         (so that the number format changes in the labels when it changes in the cells).
      *
      * @return $this
      */
@@ -715,7 +715,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets position
      *
-     *  
+     *  Represents the position of the data label.
      *
      * @return $this
      */
@@ -761,7 +761,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets separator
      *
-     *  
+     *  Gets or sets the separator type used for the data labels on a chart.
      *
      * @return $this
      */
@@ -784,7 +784,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets show_bubble_size
      *
-     *  
+     *  Represents a specified chart's data label percentage value display behavior. True displays the percentage value. False to hide.
      *
      * @return $this
      */
@@ -807,7 +807,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets show_category_name
      *
-     *  
+     *  Represents a specified chart's data label category name display behavior.True to display the category name for the data labels on a chart. False to hide.
      *
      * @return $this
      */
@@ -830,7 +830,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets show_legend_key
      *
-     *  
+     *  Represents a specified chart's data label legend key display behavior.                        True if the data label legend key is visible.
      *
      * @return $this
      */
@@ -853,7 +853,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets show_percentage
      *
-     *  
+     *  Represents a specified chart's data label percentage value display behavior. True displays the percentage value. False to hide.
      *
      * @return $this
      */
@@ -876,7 +876,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets show_series_name
      *
-     *  
+     *  Returns or sets a Boolean to indicate the series name display behavior for the data labels on a chart.                        True to show the series name. False to hide.
      *
      * @return $this
      */
@@ -899,7 +899,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets show_value
      *
-     *  
+     *  Represents a specified chart's data label values display behavior. True displays the values. False to hide.
      *
      * @return $this
      */
@@ -922,7 +922,7 @@ class DataLabels implements  ArrayAccess
     /**
      * Sets text
      *
-     *  
+     *  Gets or sets the text of data label.
      *
      * @return $this
      */

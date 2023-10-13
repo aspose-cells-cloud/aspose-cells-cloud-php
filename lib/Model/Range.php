@@ -301,7 +301,7 @@ class Range implements  ArrayAccess
     /**
      * Sets column_count
      *
-     *  Gets the count of columns in the range.
+     *  Gets the count of columns in the range. 
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class Range implements  ArrayAccess
     /**
      * Sets column_width
      *
-     *  Sets or gets the column width of this range
+     *  Sets or gets the column width of this range 
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class Range implements  ArrayAccess
     /**
      * Sets first_column
      *
-     *  Gets the index of the first column of the range.
+     *  Gets the index of the first column of the range. 
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class Range implements  ArrayAccess
     /**
      * Sets first_row
      *
-     *  Gets the index of the first row of the range.
+     *  Gets the index of the first row of the range. 
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class Range implements  ArrayAccess
     /**
      * Sets name
      *
-     *  Gets or sets the name of the range.
+     *  Gets or sets the name of the range. 
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class Range implements  ArrayAccess
     /**
      * Sets refers_to
      *
-     *  Gets the range's refers to.
+     *  Gets the range's refers to. 
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class Range implements  ArrayAccess
     /**
      * Sets row_count
      *
-     *  Gets the count of rows in the range.
+     *  Gets the count of rows in the range. 
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class Range implements  ArrayAccess
     /**
      * Sets row_height
      *
-     *  Sets or gets the height of rows in this range
+     *  Sets or gets the height of rows in this range 
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class Range implements  ArrayAccess
     /**
      * Sets worksheet
      *
-     *  Gets the Aspose.Cells.Range.Worksheetobject which contains this range.
+     *  Gets the object which contains this range. 
      *
      * @return $this
      */

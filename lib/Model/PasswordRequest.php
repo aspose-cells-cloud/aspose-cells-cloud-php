@@ -205,7 +205,7 @@ class PasswordRequest implements  ArrayAccess
     /**
      * Sets password
      *
-     *  
+     *  Password.
      *
      * @return $this
      */

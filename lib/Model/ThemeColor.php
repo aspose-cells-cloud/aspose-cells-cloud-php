@@ -217,7 +217,7 @@ class ThemeColor implements  ArrayAccess
     /**
      * Sets color_type
      *
-     *  
+     *  Gets and sets the theme type. 
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class ThemeColor implements  ArrayAccess
     /**
      * Sets tint
      *
-     *  
+     *  Gets and sets the tint value. 
      *
      * @return $this
      */

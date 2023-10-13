@@ -433,7 +433,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets attached_files_directory
      *
-     *  
+     *  The directory that the attached files will be saved to.  Only for saving to html stream.
      *
      * @return $this
      */
@@ -456,7 +456,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets attached_files_url_prefix
      *
-     *  
+     *  Specify the Url prefix of attached files such as image in the html file. Only for saving to html stream.
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets encoding
      *
-     *  
+     *  If not set,use Encoding.UTF8 as default enconding type.
      *
      * @return $this
      */
@@ -502,7 +502,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets export_active_worksheet_only
      *
-     *  
+     *  Indicates if exporting the whole workbook to html file.
      *
      * @return $this
      */
@@ -525,7 +525,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets export_chart_image_format
      *
-     *  
+     *  Get or set the format of chart image before exporting
      *
      * @return $this
      */
@@ -548,7 +548,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets export_images_as_base64
      *
-     *  
+     *  Specifies whether images are saved in Base64 format to HTML, MHTML or EPUB.
      *
      * @return $this
      */
@@ -571,7 +571,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets hidden_col_display_type
      *
-     *  
+     *  Hidden column(the width of this column is 0) in excel,before save this into                html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden"
      *
      * @return $this
      */
@@ -594,7 +594,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets hidden_row_display_type
      *
-     *  
+     *  Hidden row(the height of this row is 0) in excel,before save this into html                format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden"
      *
      * @return $this
      */
@@ -617,7 +617,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets html_cross_string_type
      *
-     *  
+     *  Indicates if a cross-cell string will be displayed in the same way as MS               Excel when saving an Excel file in html format.  By default the value is               Default, so, for cross-cell strings, there is little difference between the               html files created by Aspose.Cells and MS Excel. But the performance for               creating large html files,setting the value to Cross would be several times               faster than setting it to Default or Fit2Cell.
      *
      * @return $this
      */
@@ -640,7 +640,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets is_exp_image_to_temp_dir
      *
-     *  
+     *  Indicates if export image files to temp directory.  Only for saving to html  stream.
      *
      * @return $this
      */
@@ -663,7 +663,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets page_title
      *
-     *  
+     *  The title of the html page.  Only for saving to html stream.
      *
      * @return $this
      */
@@ -686,7 +686,7 @@ class MHtmlSaveOptions implements  ArrayAccess
     /**
      * Sets parse_html_tag_in_cell
      *
-     *  
+     *  Parse html tag in cell,like ,as cell value,or as html tag,default is true
      *
      * @return $this
      */

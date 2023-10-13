@@ -45,7 +45,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * offset : 
+    * offset : Original workbook folder.
     */ 
     public $offset;
 
@@ -90,7 +90,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * count : 
+    * count : Storage name.
     */ 
     public $count;
 
@@ -105,7 +105,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The workdook folder.
     */ 
     public $folder;
 

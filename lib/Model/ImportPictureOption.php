@@ -428,7 +428,7 @@ class ImportPictureOption implements  ArrayAccess
     /**
      * Sets data
      *
-     *  
+     *  base64
      *
      * @return $this
      */

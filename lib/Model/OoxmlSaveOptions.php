@@ -349,7 +349,7 @@ class OoxmlSaveOptions implements  ArrayAccess
     /**
      * Sets export_cell_name
      *
-     *  
+     *  Indicates if export cell name to Excel2007 .xlsx (.xlsm, .xltx, .xltm) file.               If the output file may be accessed by SQL Server DTS, this value must be               true.  Setting the value to false will highly increase the performance and               reduce the file size when creating large file.  Default value is false.
      *
      * @return $this
      */
@@ -372,7 +372,7 @@ class OoxmlSaveOptions implements  ArrayAccess
     /**
      * Sets update_zoom
      *
-     *  
+     *  Indicates whether update scaling factor before saving the file if the PageSetup.FitToPagesWide and PageSetup.FitToPagesTall properties control how the worksheet is scaled.
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class OoxmlSaveOptions implements  ArrayAccess
     /**
      * Sets enable_zip64
      *
-     *  
+     *  Always use ZIP64 extensions when writing zip archives, even when unnecessary.
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class OoxmlSaveOptions implements  ArrayAccess
     /**
      * Sets embed_ooxml_as_ole_object
      *
-     *  
+     *  Indicates whether embedding Ooxml files of OleObject as ole object.
      *
      * @return $this
      */
@@ -441,7 +441,7 @@ class OoxmlSaveOptions implements  ArrayAccess
     /**
      * Sets compression_type
      *
-     *  
+     *  Gets and sets the compression type for ooxml file.
      *
      * @return $this
      */

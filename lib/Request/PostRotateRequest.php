@@ -45,7 +45,7 @@ class PostRotateRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : 270/90/row/col/row2col
     */ 
     public $file;
 

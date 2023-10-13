@@ -349,7 +349,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Gets the area. 
      *
      * @return $this
      */
@@ -372,7 +372,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets auto_scale_font
      *
-     *  
+     *  True if the text in the object changes font size when the object size changes. The default value is True. 
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets background_mode
      *
-     *  
+     *  Gets and sets the display mode of the background 
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Gets the border. 
      *
      * @return $this
      */
@@ -441,7 +441,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Gets a  object of the specified ChartFrame object. 
      *
      * @return $this
      */
@@ -464,7 +464,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets is_automatic_size
      *
-     *  
+     *  Indicates whether the chart frame is automatic sized. 
      *
      * @return $this
      */
@@ -487,7 +487,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets is_inner_mode
      *
-     *  
+     *  Indicates whether the size of the plot area size includes the tick marks, and the axis labels.            False specifies that the size shall determine the size of the plot area, the tick marks, and the axis labels. 
      *
      * @return $this
      */
@@ -510,7 +510,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  True if the frame has a shadow. 
      *
      * @return $this
      */
@@ -533,7 +533,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets shape_properties
      *
-     *  
+     *  Gets the  object. 
      *
      * @return $this
      */
@@ -556,7 +556,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets width
      *
-     *  
+     *  Gets or sets the width of frame in units of 1/4000 of the chart area. 
      *
      * @return $this
      */
@@ -579,7 +579,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets height
      *
-     *  
+     *  Gets or sets the height of frame in units of 1/4000 of the chart area. 
      *
      * @return $this
      */
@@ -602,7 +602,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets x
      *
-     *  
+     *  Gets or sets the x coordinate of the upper left corner in units of 1/4000 of the chart area. 
      *
      * @return $this
      */
@@ -625,7 +625,7 @@ class ChartFrame implements  ArrayAccess
     /**
      * Sets y
      *
-     *  
+     *  Gets or sets the y coordinate of the upper left corner in units of 1/4000 of the chart area. 
      *
      * @return $this
      */

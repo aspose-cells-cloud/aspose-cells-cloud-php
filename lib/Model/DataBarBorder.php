@@ -217,7 +217,7 @@ class DataBarBorder implements  ArrayAccess
     /**
      * Sets color
      *
-     *  Gets or sets the border's color of data bars specified by a conditional formatting rule.
+     *  Gets or sets the border's color of data bars specified by a conditional formatting rule. 
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class DataBarBorder implements  ArrayAccess
     /**
      * Sets type
      *
-     *  Gets or sets the border's type of data bars specified by a conditional formatting rule.
+     *  Gets or sets the border's type of data bars specified by a conditional formatting rule. 
      *
      * @return $this
      */

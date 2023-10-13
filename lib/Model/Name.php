@@ -289,7 +289,7 @@ class Name implements  ArrayAccess
     /**
      * Sets comment
      *
-     *  
+     *  Gets and sets the comment of the name.                        Only applies for Excel 2007.
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class Name implements  ArrayAccess
     /**
      * Sets is_referred
      *
-     *  
+     *  Indicates whether this name is referred by other formulas.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class Name implements  ArrayAccess
     /**
      * Sets is_visible
      *
-     *  
+     *  Indicates whether the name is visible.
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class Name implements  ArrayAccess
     /**
      * Sets r1_c1_refers_to
      *
-     *  
+     *  Gets or sets a R1C1 reference of the .
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class Name implements  ArrayAccess
     /**
      * Sets refers_to
      *
-     *  
+     *  Returns or sets the formula that the name is defined to refer to, beginning with an equal sign.
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class Name implements  ArrayAccess
     /**
      * Sets text
      *
-     *  
+     *  Gets the name text of the object.
      *
      * @return $this
      */

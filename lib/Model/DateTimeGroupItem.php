@@ -277,7 +277,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets date_time_grouping_type
      *
-     *  
+     *  Gets and sets the group type.
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets day
      *
-     *  
+     *  Gets and sets the day of the grouped date time.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets hour
      *
-     *  
+     *  Gets and sets the hour of the grouped date time.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets minute
      *
-     *  
+     *  Gets and sets the minute of the grouped date time.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets month
      *
-     *  
+     *  Gets and sets the month of the grouped date time.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets second
      *
-     *  
+     *  Gets and sets the second of the grouped date time.
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class DateTimeGroupItem implements  ArrayAccess
     /**
      * Sets year
      *
-     *  
+     *  Gets and sets the year of the grouped date time.
      *
      * @return $this
      */

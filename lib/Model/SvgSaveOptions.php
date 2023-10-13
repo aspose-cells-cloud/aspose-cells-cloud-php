@@ -301,7 +301,7 @@ class SvgSaveOptions implements  ArrayAccess
     /**
      * Sets sheet_index
      *
-     *  
+     *  Gets and sets which worksheet should be exported.  If the value is -1, the                active worksheet will be exported.
      *
      * @return $this
      */

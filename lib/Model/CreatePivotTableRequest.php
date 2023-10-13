@@ -277,7 +277,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Pivot table name
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets source_data
      *
-     *  
+     *  The data for the new PivotTable cache.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets dest_cell_name
      *
-     *  
+     *  The cell in the upper-left corner of the PivotTable report's destination range.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets use_same_source
      *
-     *  
+     *  Indicates whether using same data source when another existing pivot table has used this data source.If the property is true, it will save memory.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets pivot_field_rows
      *
-     *  
+     *  Represents row fields in a PivotTable report.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets pivot_field_columns
      *
-     *  
+     *  Represents column fields in a PivotTable report.
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class CreatePivotTableRequest implements  ArrayAccess
     /**
      * Sets pivot_field_data
      *
-     *  
+     *  Represents data fields in a PivotTable report.
      *
      * @return $this
      */

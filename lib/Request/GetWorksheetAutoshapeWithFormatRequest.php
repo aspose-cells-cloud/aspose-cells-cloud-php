@@ -45,7 +45,7 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : Worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * autoshapeNumber : 
+    * autoshapeNumber : The autoshape number.
     */ 
     public $autoshape_number;
 
@@ -90,7 +90,7 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : Autoshape conversion format.
     */ 
     public $format;
 
@@ -105,7 +105,7 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The document folder.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

@@ -348,7 +348,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets interrupt_monitor
      *
-     *  
+     *  Gets and sets the interrupt monitor.
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets language_code
      *
-     *  
+     *  Gets or sets the user interface language of the Workbook version based on CountryCode that has saved the file.
      *
      * @return $this
      */
@@ -417,7 +417,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets load_format
      *
-     *  
+     *  Gets the load format.
      *
      * @return $this
      */
@@ -463,7 +463,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets parsing_formula_on_open
      *
-     *  
+     *  Indicates whether parsing the formula when reading the file.
      *
      * @return $this
      */
@@ -486,7 +486,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets password
      *
-     *  
+     *  Gets and set the password of the workbook.
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets region
      *
-     *  
+     *  Gets or sets the system regional settings based on CountryCode at the time the file was loaded.
      *
      * @return $this
      */
@@ -532,7 +532,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets standard_font
      *
-     *  
+     *  Sets the default standard font name
      *
      * @return $this
      */
@@ -555,7 +555,7 @@ class LoadOptions implements  ArrayAccess
     /**
      * Sets standard_font_size
      *
-     *  
+     *  Sets the default standard font size.
      *
      * @return $this
      */

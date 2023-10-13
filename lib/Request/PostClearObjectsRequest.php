@@ -45,7 +45,7 @@ class PostClearObjectsRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : chart/comment/picture/shape/listobject/hyperlink/oleobject/pivottable/validation/Background
     */ 
     public $file;
 

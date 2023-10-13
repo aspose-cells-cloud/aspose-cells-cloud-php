@@ -60,18 +60,18 @@ class PostProtectRequest extends BaseApiRequest
     }
 
     /*
-    * protectWorkbookRequst : 
+    * protectWorkbookRequest : 
     */ 
-    public $protect_workbook_requst;
+    public $protect_workbook_request;
 
-    public function getProtectWorkbookRequst()
+    public function getProtectWorkbookRequest()
     {
-        return $this->protect_workbook_requst;
+        return $this->protect_workbook_request;
     }
 
-    public function setProtectWorkbookRequst($value)
+    public function setProtectWorkbookRequest($value)
     {
-        $this->protect_workbook_requst = $value;
+        $this->protect_workbook_request = $value;
     }
 
     /*
@@ -102,10 +102,10 @@ class PostProtectRequest extends BaseApiRequest
             );
         } 
 
-        // verify the required parameter 'protect_workbook_requst' is set
-        if ($this->protect_workbook_requst === null) {
+        // verify the required parameter 'protect_workbook_request' is set
+        if ($this->protect_workbook_request === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $protect_workbook_requst when calling PostProtect'
+                'Missing the required parameter $protect_workbook_request when calling PostProtect'
             );
         } 
 
@@ -133,9 +133,9 @@ class PostProtectRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->protect_workbook_requst)) {
-            $_tempBody = $this->protect_workbook_requst;
-            $_tempBodyName =str_replace('_','', 'protect_workbook_requst');
+        if (isset($this->protect_workbook_request)) {
+            $_tempBody = $this->protect_workbook_request;
+            $_tempBodyName =str_replace('_','', 'protect_workbook_request');
         }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(

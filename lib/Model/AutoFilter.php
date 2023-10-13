@@ -253,7 +253,7 @@ class AutoFilter implements  ArrayAccess
     /**
      * Sets filter_columns
      *
-     *  
+     *  Gets the collection of the filter columns.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class AutoFilter implements  ArrayAccess
     /**
      * Sets range
      *
-     *  
+     *  Represents the range to which the specified AutoFilter applies.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class AutoFilter implements  ArrayAccess
     /**
      * Sets sorter
      *
-     *  
+     *  Gets the data sorter.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class AutoFilter implements  ArrayAccess
     /**
      * Sets show_filter_button
      *
-     *  
+     *  Indicates whether the AutoFilter button for this column is visible.
      *
      * @return $this
      */

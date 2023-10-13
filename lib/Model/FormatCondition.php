@@ -373,7 +373,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets priority
      *
-     *  
+     *  The priority of this conditional formatting rule. This value is used to determine which                        format should be evaluated and rendered. Lower numeric values are higher priority than                        higher numeric values, where '1' is the highest priority.
      *
      * @return $this
      */
@@ -396,7 +396,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets and sets whether the conditional format Type.
      *
      * @return $this
      */
@@ -419,7 +419,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets stop_if_true
      *
-     *  
+     *  True, no rules with lower priority may be applied over this rule, when this rule evaluates to true.                        Only applies for Excel 2007;
      *
      * @return $this
      */
@@ -442,7 +442,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets above_average
      *
-     *  
+     *  Get the conditional formatting's "AboveAverage" instance.                        The default instance's rule highlights cells that are                         above the average for all values in the range.                        Valid only for type = AboveAverage.
      *
      * @return $this
      */
@@ -465,7 +465,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets color_scale
      *
-     *  
+     *  Get the conditional formatting's "ColorScale" instance.                        The default instance is a "green-yellow-red" 3ColorScale .                        Valid only for type = ColorScale.
      *
      * @return $this
      */
@@ -488,7 +488,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets data_bar
      *
-     *  
+     *  Get the conditional formatting's "DataBar" instance.                        The default instance's color is blue.                        Valid only for type is DataBar.
      *
      * @return $this
      */
@@ -511,7 +511,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets formula1
      *
-     *  
+     *  Gets and sets the value or expression associated with conditional formatting.
      *
      * @return $this
      */
@@ -534,7 +534,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets formula2
      *
-     *  
+     *  Gets and sets the value or expression associated with conditional formatting.
      *
      * @return $this
      */
@@ -557,7 +557,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets icon_set
      *
-     *  
+     *  Get the conditional formatting's "IconSet" instance.                        The default instance's IconSetType is TrafficLights31.                        Valid only for type = IconSet.
      *
      * @return $this
      */
@@ -580,7 +580,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets operator
      *
-     *  
+     *  Gets and sets the conditional format operator type.
      *
      * @return $this
      */
@@ -603,7 +603,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets style
      *
-     *  
+     *  Gets or setts style of conditional formatted cell ranges.
      *
      * @return $this
      */
@@ -626,7 +626,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets text
      *
-     *  
+     *  The text value in a "text contains" conditional formatting rule.                         Valid only for type = containsText, notContainsText, beginsWith and endsWith.                        The default value is null.
      *
      * @return $this
      */
@@ -649,7 +649,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets time_period
      *
-     *  
+     *  The applicable time period in a "date occurring…" conditional formatting rule.                         Valid only for type = timePeriod.                        The default value is TimePeriodType.Today.
      *
      * @return $this
      */
@@ -672,7 +672,7 @@ class FormatCondition implements  ArrayAccess
     /**
      * Sets top10
      *
-     *  
+     *  Get the conditional formatting's "Top10" instance.                        The default instance's rule highlights cells whose                        values fall in the top 10 bracket.                        Valid only for type is Top10.
      *
      * @return $this
      */

@@ -397,7 +397,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_deleting_column
      *
-     *  
+     *  Represents if the deletion of columns is allowed on a protected worksheet. 
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_deleting_row
      *
-     *  
+     *  Represents if the deletion of rows is allowed on a protected worksheet. 
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_filtering
      *
-     *  
+     *  Represents if the user is allowed to make use of an AutoFilter that was created before the sheet was protected. 
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_formatting_cell
      *
-     *  
+     *  Represents if the formatting of cells is allowed on a protected worksheet. 
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_formatting_column
      *
-     *  
+     *  Represents if the formatting of columns is allowed on a protected worksheet 
      *
      * @return $this
      */
@@ -512,7 +512,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_formatting_row
      *
-     *  
+     *  Represents if the formatting of rows is allowed on a protected worksheet 
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_inserting_column
      *
-     *  
+     *  Represents if the insertion of columns is allowed on a protected worksheet 
      *
      * @return $this
      */
@@ -558,7 +558,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_inserting_hyperlink
      *
-     *  
+     *  Represents if the insertion of hyperlinks is allowed on a protected worksheet 
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_inserting_row
      *
-     *  
+     *  Represents if the insertion of rows is allowed on a protected worksheet 
      *
      * @return $this
      */
@@ -604,7 +604,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_sorting
      *
-     *  
+     *  Represents if the sorting option is allowed on a protected worksheet. 
      *
      * @return $this
      */
@@ -627,7 +627,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_using_pivot_table
      *
-     *  
+     *  Represents if the user is allowed to manipulate pivot tables on a protected worksheet. 
      *
      * @return $this
      */
@@ -650,7 +650,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_editing_content
      *
-     *  
+     *  Represents if the user is allowed to edit contents of locked cells on a protected worksheet. 
      *
      * @return $this
      */
@@ -673,7 +673,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_editing_object
      *
-     *  
+     *  Represents if the user is allowed to manipulate drawing objects on a protected worksheet. 
      *
      * @return $this
      */
@@ -696,7 +696,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_editing_scenario
      *
-     *  
+     *  Represents if the user is allowed to edit scenarios on a protected worksheet. 
      *
      * @return $this
      */
@@ -719,7 +719,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets password
      *
-     *  
+     *  Represents the password to protect the worksheet. 
      *
      * @return $this
      */
@@ -742,7 +742,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_selecting_locked_cell
      *
-     *  
+     *  Represents if the user is allowed to select locked cells on a protected worksheet. 
      *
      * @return $this
      */
@@ -765,7 +765,7 @@ class Protection implements  ArrayAccess
     /**
      * Sets allow_selecting_unlocked_cell
      *
-     *  
+     *  Represents if the user is allowed to select unlocked cells on a protected worksheet. 
      *
      * @return $this
      */

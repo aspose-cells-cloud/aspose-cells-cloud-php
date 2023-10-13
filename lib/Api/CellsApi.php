@@ -237,7 +237,7 @@ use Aspose\Cells\Cloud\Request\GetDocumentPropertyRequest;
 use Aspose\Cells\Cloud\Request\PutDocumentPropertyRequest;
 use Aspose\Cells\Cloud\Request\DeleteDocumentPropertyRequest;
 use Aspose\Cells\Cloud\Request\DeleteDocumentPropertiesRequest;
-use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesCopyRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMergeRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeUnMergeRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeStyleRequest;
@@ -397,6 +397,7 @@ use Aspose\Cells\Cloud\Model\CustomFilter;
 use Aspose\Cells\Cloud\Model\DataBar;
 use Aspose\Cells\Cloud\Model\DataBarBorder;
 use Aspose\Cells\Cloud\Model\DataSorter;
+use Aspose\Cells\Cloud\Model\DataSorterKey;
 use Aspose\Cells\Cloud\Model\DateTimeGroupItem;
 use Aspose\Cells\Cloud\Model\DynamicFilter;
 use Aspose\Cells\Cloud\Model\FileInfo;
@@ -634,7 +635,7 @@ use Aspose\Cells\Cloud\Model\ImportXMLRequest;
 use Aspose\Cells\Cloud\Model\MatchConditionRequest;
 use Aspose\Cells\Cloud\Model\PasswordRequest;
 use Aspose\Cells\Cloud\Model\PivotTableFieldRequest;
-use Aspose\Cells\Cloud\Model\ProtectWorkbookRequst;
+use Aspose\Cells\Cloud\Model\ProtectWorkbookRequest;
 use Aspose\Cells\Cloud\Model\RangeCopyRequest;
 use Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest;
 use Aspose\Cells\Cloud\Model\RangeSetStyleRequest;
@@ -104510,11 +104511,11 @@ class CellsApi
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
     }
-
     /// <summary>
+    /// Copys content to destination range from source range in worksheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="PostWorksheetCellsRangesRequest" /></param>
-    public function postWorksheetCellsRanges( $request)
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangesCopyRequest" /></param>
+    public function postWorksheetCellsRangesCopy( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';

@@ -637,7 +637,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets and sets the name of the shape.
      *
      * @return $this
      */
@@ -660,7 +660,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets mso_drawing_type
      *
-     *  
+     *  Gets mso drawing type.
      *
      * @return $this
      */
@@ -683,7 +683,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets auto_shape_type
      *
-     *  
+     *  Gets and sets the auto shape type.
      *
      * @return $this
      */
@@ -706,7 +706,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets placement
      *
-     *  
+     *  Represents the way the drawing object is attached to the cells below it.                        The property controls the placement of an object on a worksheet.
      *
      * @return $this
      */
@@ -729,7 +729,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets upper_left_row
      *
-     *  
+     *  Represents upper left corner row index.
      *
      * @return $this
      */
@@ -752,7 +752,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets top
      *
-     *  
+     *  Represents the vertical offset of shape from its top row, in unit of pixels.
      *
      * @return $this
      */
@@ -775,7 +775,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets upper_left_column
      *
-     *  
+     *  Represents upper left corner column index.
      *
      * @return $this
      */
@@ -798,7 +798,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets left
      *
-     *  
+     *  Represents the horizontal offset of shape from its left column, in unit of pixels.
      *
      * @return $this
      */
@@ -821,7 +821,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets lower_right_row
      *
-     *  
+     *  Represents lower right corner row index.
      *
      * @return $this
      */
@@ -844,7 +844,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets bottom
      *
-     *  
+     *  Represents the width of the shape's vertical offset from its lower bottom corner row, in unit of pixels.
      *
      * @return $this
      */
@@ -867,7 +867,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets lower_right_column
      *
-     *  
+     *  Represents lower right corner column index.
      *
      * @return $this
      */
@@ -890,7 +890,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets right
      *
-     *  
+     *  Represents the width of the shape's horizontal  offset from its lower right corner column, in unit of pixels.
      *
      * @return $this
      */
@@ -913,7 +913,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets width
      *
-     *  
+     *  Represents the width of shape, in unit of pixels.
      *
      * @return $this
      */
@@ -936,7 +936,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets height
      *
-     *  
+     *  Represents the height of shape, in unit of pixel.
      *
      * @return $this
      */
@@ -959,7 +959,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets x
      *
-     *  
+     *  Gets and sets the horizontal offset of shape from worksheet left border,in unit of pixels.
      *
      * @return $this
      */
@@ -982,7 +982,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets y
      *
-     *  
+     *  Gets and sets the vertical offset of shape from worksheet top border,in unit of pixels.
      *
      * @return $this
      */
@@ -1005,7 +1005,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets rotation_angle
      *
-     *  
+     *  Gets and sets the rotation of the shape.
      *
      * @return $this
      */
@@ -1028,7 +1028,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets html_text
      *
-     *  
+     *  Gets and sets the html string which contains data and some formats in this textbox.
      *
      * @return $this
      */
@@ -1051,7 +1051,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets text
      *
-     *  
+     *  Represents the string in this TextBox object.
      *
      * @return $this
      */
@@ -1074,7 +1074,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets alternative_text
      *
-     *  
+     *  Returns or sets the descriptive (alternative) text string of the  object.
      *
      * @return $this
      */
@@ -1097,7 +1097,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets text_horizontal_alignment
      *
-     *  
+     *  Gets and sets the text horizontal alignment type of the shape.
      *
      * @return $this
      */
@@ -1120,7 +1120,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets text_horizontal_overflow
      *
-     *  
+     *  Gets and sets the text horizontal overflow type of the shape which contains text.
      *
      * @return $this
      */
@@ -1143,7 +1143,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets text_orientation_type
      *
-     *  
+     *  Gets and sets the text orientation type of the shape.
      *
      * @return $this
      */
@@ -1166,7 +1166,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets text_vertical_alignment
      *
-     *  
+     *  Gets and sets the text vertical alignment type of the shape.
      *
      * @return $this
      */
@@ -1189,7 +1189,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets text_vertical_overflow
      *
-     *  
+     *  Gets and sets the text vertical overflow type of the shape which contains text.
      *
      * @return $this
      */
@@ -1212,7 +1212,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_group
      *
-     *  
+     *  Indicates whether the shape is a group.
      *
      * @return $this
      */
@@ -1235,7 +1235,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_hidden
      *
-     *  
+     *  Indicates whether the object is visible.
      *
      * @return $this
      */
@@ -1258,7 +1258,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_lock_aspect_ratio
      *
-     *  
+     *  True means that don't allow changes in aspect ratio.
      *
      * @return $this
      */
@@ -1281,7 +1281,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_locked
      *
-     *  
+     *  True if the object is locked, False if the object can be modified when the sheet is protected.
      *
      * @return $this
      */
@@ -1304,7 +1304,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_printable
      *
-     *  
+     *  True if the object is printable
      *
      * @return $this
      */
@@ -1327,7 +1327,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_text_wrapped
      *
-     *  
+     *  Gets and sets the text wrapped type of the shape which contains text.
      *
      * @return $this
      */
@@ -1350,7 +1350,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets is_word_art
      *
-     *  
+     *  Indicates whether this shape is a word art.
      *
      * @return $this
      */
@@ -1373,7 +1373,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets linked_cell
      *
-     *  
+     *  Gets or sets the worksheet range linked to the control's value.
      *
      * @return $this
      */
@@ -1396,7 +1396,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets z_order_position
      *
-     *  
+     *  Returns the position of a shape in the z-order.
      *
      * @return $this
      */
@@ -1419,7 +1419,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Represents the font of shape.
      *
      * @return $this
      */
@@ -1442,7 +1442,7 @@ class Shape implements  ArrayAccess
     /**
      * Sets hyperlink
      *
-     *  
+     *  Gets the hyperlink of the shape.
      *
      * @return $this
      */

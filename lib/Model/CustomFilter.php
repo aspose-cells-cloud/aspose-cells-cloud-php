@@ -217,7 +217,7 @@ class CustomFilter implements  ArrayAccess
     /**
      * Sets criteria
      *
-     *  
+     *  Gets and sets the criteria. 
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class CustomFilter implements  ArrayAccess
     /**
      * Sets filter_operator_type
      *
-     *  
+     *  Gets and sets the filter operator type. 
      *
      * @return $this
      */

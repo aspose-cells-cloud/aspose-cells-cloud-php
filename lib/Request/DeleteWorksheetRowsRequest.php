@@ -45,7 +45,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * startrow : 
+    * startrow : The begin row index to be operated.
     */ 
     public $startrow;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * totalRows : 
+    * totalRows : Number of rows to be operated.
     */ 
     public $total_rows;
 
@@ -105,7 +105,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * updateReference : 
+    * updateReference : Indicates if update references in other worksheets.
     */ 
     public $update_reference;
 
@@ -120,7 +120,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : Original workbook folder.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : Storage name.
     */ 
     public $storage_name;
 

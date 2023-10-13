@@ -241,7 +241,7 @@ class Top10Filter implements  ArrayAccess
     /**
      * Sets criteria
      *
-     *  
+     *   
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class Top10Filter implements  ArrayAccess
     /**
      * Sets is_percent
      *
-     *  
+     *  Indicates whether the items is percent. 
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class Top10Filter implements  ArrayAccess
     /**
      * Sets is_top
      *
-     *  
+     *  Indicates whether it's top filter. 
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class Top10Filter implements  ArrayAccess
     /**
      * Sets items
      *
-     *  
+     *  Gets and sets the items of the filter. 
      *
      * @return $this
      */

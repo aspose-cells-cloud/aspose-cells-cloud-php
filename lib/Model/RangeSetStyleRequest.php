@@ -217,7 +217,7 @@ class RangeSetStyleRequest implements  ArrayAccess
     /**
      * Sets range
      *
-     *  
+     *  Encapsulates the object that represents a range of cells within a spreadsheet.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class RangeSetStyleRequest implements  ArrayAccess
     /**
      * Sets style
      *
-     *  
+     *  Represents display style of excel document,such as font,color,alignment,border,etc.            
      *
      * @return $this
      */

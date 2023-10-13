@@ -241,7 +241,7 @@ class NegativeBarFormat implements  ArrayAccess
     /**
      * Sets border_color
      *
-     *  Gets or sets a FormatColor object that you can use to specify the border   color for negative data bars.            
+     *  Gets or sets a FormatColor object that you can use to specify the border color for negative data bars. 
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class NegativeBarFormat implements  ArrayAccess
     /**
      * Sets border_color_type
      *
-     *  Gets whether to use the same border color as positive data bars.            
+     *  Gets whether to use the same border color as positive data bars. 
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class NegativeBarFormat implements  ArrayAccess
     /**
      * Sets color
      *
-     *  Gets or sets a FormatColor object that you can use to specify the fill color   for negative data bars.            
+     *  Gets or sets a FormatColor object that you can use to specify the fill color for negative data bars. 
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class NegativeBarFormat implements  ArrayAccess
     /**
      * Sets color_type
      *
-     *  Gets or sets whether to use the same fill color as positive data bars.
+     *  Gets or sets whether to use the same fill color as positive data bars. 
      *
      * @return $this
      */

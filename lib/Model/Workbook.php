@@ -325,7 +325,7 @@ class Workbook implements  ArrayAccess
     /**
      * Sets file_name
      *
-     *  
+     *  Gets and sets the current file name. 
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class Workbook implements  ArrayAccess
     /**
      * Sets worksheets
      *
-     *  
+     *  Gets the  collection in the spreadsheet. 
      *
      * @return $this
      */
@@ -394,7 +394,7 @@ class Workbook implements  ArrayAccess
     /**
      * Sets default_style
      *
-     *  
+     *  Gets or sets the default  object of the workbook. 
      *
      * @return $this
      */
@@ -463,7 +463,7 @@ class Workbook implements  ArrayAccess
     /**
      * Sets settings
      *
-     *  
+     *  Represents the workbook settings. 
      *
      * @return $this
      */

@@ -600,7 +600,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets backward
      *
-     *  
+     *  Returns or sets the number of periods (or units on a scatter chart) that the trendline extends backward.                         The number of periods must be greater than or equal to zero.                        If the chart type is column ,the number of periods must be between 0 and 0.5
      *
      * @return $this
      */
@@ -623,7 +623,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets data_labels
      *
-     *  
+     *  Represents the DataLabels object for the specified series.
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets display_equation
      *
-     *  
+     *  Represents if the equation for the trendline is displayed on the chart (in the same data label as the R-squared value). Setting this property to True automatically turns on data labels.
      *
      * @return $this
      */
@@ -669,7 +669,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets display_r_squared
      *
-     *  
+     *  Represents if the R-squared value of the trendline is displayed on the chart (in the same data label as the equation). Setting this property to True automatically turns on data labels.
      *
      * @return $this
      */
@@ -692,7 +692,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets forward
      *
-     *  
+     *  Returns or sets the number of periods (or units on a scatter chart) that the trendline extends forward.                        The number of periods must be greater than or equal to zero.
      *
      * @return $this
      */
@@ -715,7 +715,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets intercept
      *
-     *  
+     *  Returns or sets the point where the trendline crosses the value axis.
      *
      * @return $this
      */
@@ -738,7 +738,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets is_name_auto
      *
-     *  
+     *  Returns if Microsoft Excel automatically determines the name of the trendline.
      *
      * @return $this
      */
@@ -761,7 +761,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets legend_entry
      *
-     *  
+     *  Gets the legend entry according to this trendline
      *
      * @return $this
      */
@@ -784,7 +784,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Returns the name of the trendline.
      *
      * @return $this
      */
@@ -807,7 +807,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets order
      *
-     *  
+     *  Returns or sets the trendline order (an integer greater than 1) when the trendline type is Polynomial.                         The order must be between 2 and 6.
      *
      * @return $this
      */
@@ -830,7 +830,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets period
      *
-     *  
+     *  Returns or sets the period for the moving-average trendline.
      *
      * @return $this
      */
@@ -853,7 +853,7 @@ class Trendline implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Returns the trendline type.
      *
      * @return $this
      */

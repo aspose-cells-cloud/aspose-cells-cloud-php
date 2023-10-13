@@ -229,7 +229,7 @@ class SolidFill implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Gets or sets the . 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class SolidFill implements  ArrayAccess
     /**
      * Sets cells_color
      *
-     *  
+     *  Gets and sets the  object. 
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class SolidFill implements  ArrayAccess
     /**
      * Sets transparency
      *
-     *  
+     *  Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear). 
      *
      * @return $this
      */

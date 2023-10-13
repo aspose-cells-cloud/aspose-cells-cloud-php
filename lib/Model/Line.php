@@ -421,7 +421,7 @@ class Line implements  ArrayAccess
     /**
      * Sets begin_arrow_length
      *
-     *  
+     *  Specifies the length of the arrowhead for the begin of a line. 
      *
      * @return $this
      */
@@ -444,7 +444,7 @@ class Line implements  ArrayAccess
     /**
      * Sets begin_arrow_width
      *
-     *  
+     *  Specifies the width of the arrowhead for the begin of a line. 
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class Line implements  ArrayAccess
     /**
      * Sets begin_type
      *
-     *  
+     *  Specifies an arrowhead for the begin of a line. 
      *
      * @return $this
      */
@@ -490,7 +490,7 @@ class Line implements  ArrayAccess
     /**
      * Sets cap_type
      *
-     *  
+     *  Specifies the ending caps. 
      *
      * @return $this
      */
@@ -513,7 +513,7 @@ class Line implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Represents the  of the line. 
      *
      * @return $this
      */
@@ -536,7 +536,7 @@ class Line implements  ArrayAccess
     /**
      * Sets compound_type
      *
-     *  
+     *  Specifies the compound line type 
      *
      * @return $this
      */
@@ -559,7 +559,7 @@ class Line implements  ArrayAccess
     /**
      * Sets dash_type
      *
-     *  
+     *  Specifies the dash line type 
      *
      * @return $this
      */
@@ -582,7 +582,7 @@ class Line implements  ArrayAccess
     /**
      * Sets end_arrow_length
      *
-     *  
+     *  Specifies the length of the arrowhead for the end of a line. 
      *
      * @return $this
      */
@@ -605,7 +605,7 @@ class Line implements  ArrayAccess
     /**
      * Sets end_arrow_width
      *
-     *  
+     *  Specifies the width of the arrowhead for the end of a line. 
      *
      * @return $this
      */
@@ -628,7 +628,7 @@ class Line implements  ArrayAccess
     /**
      * Sets end_type
      *
-     *  
+     *  Specifies an arrowhead for the end of a line. 
      *
      * @return $this
      */
@@ -651,7 +651,7 @@ class Line implements  ArrayAccess
     /**
      * Sets gradient_fill
      *
-     *  
+     *  Represents gradient fill. 
      *
      * @return $this
      */
@@ -674,7 +674,7 @@ class Line implements  ArrayAccess
     /**
      * Sets is_auto
      *
-     *  
+     *  Indicates whether this line style is auto assigned. 
      *
      * @return $this
      */
@@ -697,7 +697,7 @@ class Line implements  ArrayAccess
     /**
      * Sets is_automatic_color
      *
-     *  
+     *  Indicates whether the color of line is automatic assigned. 
      *
      * @return $this
      */
@@ -720,7 +720,7 @@ class Line implements  ArrayAccess
     /**
      * Sets is_visible
      *
-     *  
+     *  Represents whether the line is visible. 
      *
      * @return $this
      */
@@ -743,7 +743,7 @@ class Line implements  ArrayAccess
     /**
      * Sets join_type
      *
-     *  
+     *  Specifies the joining caps. 
      *
      * @return $this
      */
@@ -766,7 +766,7 @@ class Line implements  ArrayAccess
     /**
      * Sets style
      *
-     *  
+     *  Represents the style of the line. 
      *
      * @return $this
      */
@@ -789,7 +789,7 @@ class Line implements  ArrayAccess
     /**
      * Sets transparency
      *
-     *  
+     *  Returns or sets the degree of transparency of the line as a value from 0.0 (opaque) through 1.0 (clear). 
      *
      * @return $this
      */
@@ -812,7 +812,7 @@ class Line implements  ArrayAccess
     /**
      * Sets weight
      *
-     *  
+     *  Gets or sets the  of the line. 
      *
      * @return $this
      */
@@ -835,7 +835,7 @@ class Line implements  ArrayAccess
     /**
      * Sets weight_pt
      *
-     *  
+     *  Gets or sets the weight of the line in unit of points. 
      *
      * @return $this
      */

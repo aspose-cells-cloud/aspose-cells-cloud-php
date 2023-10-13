@@ -373,7 +373,7 @@ class Legend implements  ArrayAccess
     /**
      * Sets position
      *
-     *  
+     *  Gets or sets the legend position type.
      *
      * @return $this
      */
@@ -396,7 +396,7 @@ class Legend implements  ArrayAccess
     /**
      * Sets legend_entries
      *
-     *  
+     *  Gets a collection of all the LegendEntry objects in the specified chart legend.                        Setting the legend entries of the surface chart is not supported.                        So it will return null if the chart type is surface chart type.
      *
      * @return $this
      */

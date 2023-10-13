@@ -709,7 +709,7 @@ class ComboBox implements  ArrayAccess
     /**
      * Sets drop_down_lines
      *
-     *  
+     *  Gets or sets the number of list lines displayed in the drop-down portion of a combo box.
      *
      * @return $this
      */
@@ -755,7 +755,7 @@ class ComboBox implements  ArrayAccess
     /**
      * Sets selected_cell
      *
-     *  
+     *  Gets the selected cell in the input range of the combo box.
      *
      * @return $this
      */
@@ -778,7 +778,7 @@ class ComboBox implements  ArrayAccess
     /**
      * Sets selected_index
      *
-     *  
+     *  Gets or sets the index number of the currently selected item in a list box or combo box.                        Zero-based.
      *
      * @return $this
      */
@@ -801,7 +801,7 @@ class ComboBox implements  ArrayAccess
     /**
      * Sets selected_value
      *
-     *  
+     *  Gets the selected value of the combox box.
      *
      * @return $this
      */
@@ -824,7 +824,7 @@ class ComboBox implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  Indicates whether the combobox has 3-D shading.
      *
      * @return $this
      */

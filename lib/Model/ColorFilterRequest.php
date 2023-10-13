@@ -229,7 +229,7 @@ class ColorFilterRequest implements  ArrayAccess
     /**
      * Sets pattern
      *
-     *  
+     *  Gets or sets the fill pattern type
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class ColorFilterRequest implements  ArrayAccess
     /**
      * Sets foreground_color
      *
-     *  
+     *  Foreground color
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class ColorFilterRequest implements  ArrayAccess
     /**
      * Sets background_color
      *
-     *  
+     *  Background color
      *
      * @return $this
      */

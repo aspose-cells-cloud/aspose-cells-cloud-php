@@ -334,7 +334,7 @@ class SplitWorkbookTaskParameter implements  ArrayAccess
     /**
      * Sets split_name_rule
      *
-     *  
+     *  SheetName /NewGuid
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class SplitWorkbookTaskParameter implements  ArrayAccess
     /**
      * Sets vertical_resolution
      *
-     *  
+     *  When destination file format is image , vertical resolution can not be null.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class SplitWorkbookTaskParameter implements  ArrayAccess
     /**
      * Sets horizontal_resolution
      *
-     *  
+     *  When destination file format is image , horizontal resolution can not be null.
      *
      * @return $this
      */

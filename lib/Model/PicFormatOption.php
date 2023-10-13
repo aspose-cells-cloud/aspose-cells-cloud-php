@@ -265,7 +265,7 @@ class PicFormatOption implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets or sets the picture fill type. 
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class PicFormatOption implements  ArrayAccess
     /**
      * Sets scale
      *
-     *  
+     *  Gets or sets how many the picture stack and scale with. 
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class PicFormatOption implements  ArrayAccess
     /**
      * Sets left
      *
-     *  
+     *  Gets or sets the left offset for stretching picture. 
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class PicFormatOption implements  ArrayAccess
     /**
      * Sets right
      *
-     *  
+     *  Gets or sets the right offset for stretching picture. 
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class PicFormatOption implements  ArrayAccess
     /**
      * Sets top
      *
-     *  
+     *  Gets or sets the top offset for stretching picture. 
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class PicFormatOption implements  ArrayAccess
     /**
      * Sets bottom
      *
-     *  
+     *  Gets or sets the bottom offset for stretching picture. 
      *
      * @return $this
      */

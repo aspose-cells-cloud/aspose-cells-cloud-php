@@ -265,7 +265,7 @@ class Area implements  ArrayAccess
     /**
      * Sets background_color
      *
-     *  
+     *  Gets or sets the background  of the . 
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class Area implements  ArrayAccess
     /**
      * Sets fill_format
      *
-     *  
+     *  Represents a  object that contains fill formatting properties for the specified chart or shape. 
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class Area implements  ArrayAccess
     /**
      * Sets foreground_color
      *
-     *  
+     *  Gets or sets the foreground . 
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class Area implements  ArrayAccess
     /**
      * Sets invert_if_negative
      *
-     *  
+     *  If the property is true and the value of chart point is a negative number,            the foreground color and background color will be exchanged. 
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class Area implements  ArrayAccess
     /**
      * Sets transparency
      *
-     *  
+     *  Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear). 
      *
      * @return $this
      */

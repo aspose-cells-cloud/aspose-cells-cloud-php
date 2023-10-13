@@ -75,18 +75,18 @@ class PostWorksheetCellsRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * rangeOperate : Range Set OutlineBorder Request 
+    * rangeSortRequest : Range Sort Request 
     */ 
-    public $range_operate;
+    public $range_sort_request;
 
-    public function getRangeOperate()
+    public function getRangeSortRequest()
     {
-        return $this->range_operate;
+        return $this->range_sort_request;
     }
 
-    public function setRangeOperate($value)
+    public function setRangeSortRequest($value)
     {
-        $this->range_operate = $value;
+        $this->range_sort_request = $value;
     }
 
     /*
@@ -139,10 +139,10 @@ class PostWorksheetCellsRangeSortRequest extends BaseApiRequest
             );
         } 
 
-        // verify the required parameter 'range_operate' is set
-        if ($this->range_operate === null) {
+        // verify the required parameter 'range_sort_request' is set
+        if ($this->range_sort_request === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $range_operate when calling PostWorksheetCellsRangeSort'
+                'Missing the required parameter $range_sort_request when calling PostWorksheetCellsRangeSort'
             );
         } 
 
@@ -179,9 +179,9 @@ class PostWorksheetCellsRangeSortRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->range_operate)) {
-            $_tempBody = $this->range_operate;
-            $_tempBodyName =str_replace('_','', 'range_operate');
+        if (isset($this->range_sort_request)) {
+            $_tempBody = $this->range_sort_request;
+            $_tempBodyName =str_replace('_','', 'range_sort_request');
         }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(

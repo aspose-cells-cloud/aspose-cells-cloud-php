@@ -229,7 +229,7 @@ class CustomParserConfig implements  ArrayAccess
     /**
      * Sets column_index
      *
-     *  
+     *  Point Column
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class CustomParserConfig implements  ArrayAccess
     /**
      * Sets parse_method
      *
-     *  
+     *  data parser method.             ToDateTime            ToString
      *
      * @return $this
      */

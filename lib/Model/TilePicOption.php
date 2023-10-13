@@ -265,7 +265,7 @@ class TilePicOption implements  ArrayAccess
     /**
      * Sets offset_x
      *
-     *  
+     *  Gets or sets the X offset for tiling picture. 
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class TilePicOption implements  ArrayAccess
     /**
      * Sets offset_y
      *
-     *  
+     *  Gets or sets the Y offset for tiling picture. 
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class TilePicOption implements  ArrayAccess
     /**
      * Sets scale_x
      *
-     *  
+     *  Gets or sets the X scale for tiling picture. 
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class TilePicOption implements  ArrayAccess
     /**
      * Sets scale_y
      *
-     *  
+     *  Gets or sets the Y scale for tiling picture. 
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class TilePicOption implements  ArrayAccess
     /**
      * Sets alignment_type
      *
-     *  
+     *  Gets or sets the alignment for tiling. 
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class TilePicOption implements  ArrayAccess
     /**
      * Sets mirror_type
      *
-     *  
+     *  Gets or sets the mirror type for tiling. 
      *
      * @return $this
      */

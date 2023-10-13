@@ -60,18 +60,18 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * protection : Protection settings, only password can be specified.
+    * password : Protection settings, only password can be specified.
     */ 
-    public $protection;
+    public $password;
 
-    public function getProtection()
+    public function getPassword()
     {
-        return $this->protection;
+        return $this->password;
     }
 
-    public function setProtection($value)
+    public function setPassword($value)
     {
-        $this->protection = $value;
+        $this->password = $value;
     }
 
     /*
@@ -117,10 +117,10 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
             );
         } 
 
-        // verify the required parameter 'protection' is set
-        if ($this->protection === null) {
+        // verify the required parameter 'password' is set
+        if ($this->password === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $protection when calling DeleteUnProtectWorkbook'
+                'Missing the required parameter $password when calling DeleteUnProtectWorkbook'
             );
         } 
 
@@ -138,6 +138,10 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
                 $resourcePath
             );
         }
+        // query params : password
+        if ($this->password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
         // query params : folder
         if ($this->folder !== null) {
             $queryParams['folder'] = ObjectSerializer::toQueryValue($this->folder);
@@ -149,10 +153,6 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->protection)) {
-            $_tempBody = $this->protection;
-            $_tempBodyName =str_replace('_','', 'protection');
-        }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

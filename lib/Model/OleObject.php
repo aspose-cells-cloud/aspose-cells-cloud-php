@@ -721,7 +721,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets display_as_icon
      *
-     *  
+     *  True if the specified object is displayed as an icon                         and the image will not be auto changed.
      *
      * @return $this
      */
@@ -744,7 +744,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets file_format_type
      *
-     *  
+     *  Gets and sets the file type of the embedded ole object data
      *
      * @return $this
      */
@@ -767,7 +767,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets image_source_full_name
      *
-     *  
+     *  Gets or sets the path and name of the source file for the linked image.
      *
      * @return $this
      */
@@ -790,7 +790,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets is_auto_size
      *
-     *  
+     *  True indicates that the size of the ole object will be auto changed as the size of snapshot of the embedded content                        when the ole object is activated.
      *
      * @return $this
      */
@@ -813,7 +813,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets is_link
      *
-     *  
+     *  Returns true if the OleObject links to the file.
      *
      * @return $this
      */
@@ -836,7 +836,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets prog_id
      *
-     *  
+     *  Gets or sets the ProgID of the OLE object.
      *
      * @return $this
      */
@@ -859,7 +859,7 @@ class OleObject implements  ArrayAccess
     /**
      * Sets source_full_name
      *
-     *  
+     *  Returns the source full name of the source file for the linked OLE object.
      *
      * @return $this
      */

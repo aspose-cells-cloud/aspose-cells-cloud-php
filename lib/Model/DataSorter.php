@@ -50,7 +50,8 @@ class DataSorter implements  ArrayAccess
         'has_headers' => 'bool',
         'key_list' => '\Aspose\Cells\Cloud\Model\SortKey[]',
         'sort_left_to_right' => 'bool',
-        'sort_as_number' => 'bool'
+        'sort_as_number' => 'bool',
+        'keys' => '\Aspose\Cells\Cloud\Model\DataSorterKey[]'
     ];
 
     /**
@@ -63,7 +64,8 @@ class DataSorter implements  ArrayAccess
         'has_headers' => null  ,
         'key_list' => null  ,
         'sort_left_to_right' => null  ,
-        'sort_as_number' => null  
+        'sort_as_number' => null  ,
+        'keys' => null  
     ];
 
     /**
@@ -97,7 +99,8 @@ class DataSorter implements  ArrayAccess
          'has_headers' => 'HasHeaders' ,
          'key_list' => 'KeyList' ,
          'sort_left_to_right' => 'SortLeftToRight' ,
-         'sort_as_number' => 'SortAsNumber' 
+         'sort_as_number' => 'SortAsNumber' ,
+         'keys' => 'Keys' 
     ];
 
     /**
@@ -110,7 +113,8 @@ class DataSorter implements  ArrayAccess
         'has_headers' => 'setHasHeaders' ,
         'key_list' => 'setKeyList' ,
         'sort_left_to_right' => 'setSortLeftToRight' ,
-        'sort_as_number' => 'setSortAsNumber' 
+        'sort_as_number' => 'setSortAsNumber' ,
+        'keys' => 'setKeys' 
     ];
 
     /**
@@ -123,7 +127,8 @@ class DataSorter implements  ArrayAccess
         'has_headers' => 'getHasHeaders' ,
         'key_list' => 'getKeyList' ,
         'sort_left_to_right' => 'getSortLeftToRight' ,
-        'sort_as_number' => 'getSortAsNumber' 
+        'sort_as_number' => 'getSortAsNumber' ,
+        'keys' => 'getKeys' 
     ];
 
     /**
@@ -187,6 +192,7 @@ class DataSorter implements  ArrayAccess
         $this->container['key_list'] = isset($data['key_list']) ? $data['key_list'] : null;
         $this->container['sort_left_to_right'] = isset($data['sort_left_to_right']) ? $data['sort_left_to_right'] : null;
         $this->container['sort_as_number'] = isset($data['sort_as_number']) ? $data['sort_as_number'] : null;
+        $this->container['keys'] = isset($data['keys']) ? $data['keys'] : null;
     }
 
     /**
@@ -211,6 +217,9 @@ class DataSorter implements  ArrayAccess
         }
         if ($this->container['sort_as_number'] === null) {
             $invalidProperties[] = "'sort_as_number' can't be null";
+        }
+        if ($this->container['keys'] === null) {
+            $invalidProperties[] = "'keys' can't be null";
         }
         return $invalidProperties;
     }
@@ -238,6 +247,9 @@ class DataSorter implements  ArrayAccess
         if ($this->container['sort_as_number'] === null) {
                     return false;
                 }
+        if ($this->container['keys'] === null) {
+                    return false;
+                }
         return true;
     }
    /**
@@ -253,7 +265,7 @@ class DataSorter implements  ArrayAccess
     /**
      * Sets case_sensitive
      *
-     *  
+     *  Gets and sets whether case sensitive when comparing string. 
      *
      * @return $this
      */
@@ -276,7 +288,7 @@ class DataSorter implements  ArrayAccess
     /**
      * Sets has_headers
      *
-     *  
+     *  Represents whether the range has headers. 
      *
      * @return $this
      */
@@ -299,7 +311,7 @@ class DataSorter implements  ArrayAccess
     /**
      * Sets key_list
      *
-     *  
+     *  Gets the key list of data sorter.            
      *
      * @return $this
      */
@@ -322,7 +334,7 @@ class DataSorter implements  ArrayAccess
     /**
      * Sets sort_left_to_right
      *
-     *  
+     *  True means that sorting orientation is from left to right.            False means that sorting orientation is from top to bottom.            The default value is false. 
      *
      * @return $this
      */
@@ -345,13 +357,36 @@ class DataSorter implements  ArrayAccess
     /**
      * Sets sort_as_number
      *
-     *  
+     *  Indicates whether sorting anything that looks like a number. 
      *
      * @return $this
      */
     public function setSortAsNumber($sort_as_number)
     {
         $this->container['sort_as_number'] = $sort_as_number;
+
+        return $this;
+    }
+   /**
+     * Gets keys
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSorterKey[]
+     */
+    public function getKeys()
+    {
+        return $this->container['keys'];
+    }
+
+    /**
+     * Sets keys
+     *
+     *  Gets the key list of data sorter. 
+     *
+     * @return $this
+     */
+    public function setKeys($keys)
+    {
+        $this->container['keys'] = $keys;
 
         return $this;
     }

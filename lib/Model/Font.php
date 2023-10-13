@@ -313,7 +313,7 @@ class Font implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Gets or sets the  of the font. 
      *
      * @return $this
      */
@@ -336,7 +336,7 @@ class Font implements  ArrayAccess
     /**
      * Sets double_size
      *
-     *  
+     *  Gets and sets the double size of the font. 
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class Font implements  ArrayAccess
     /**
      * Sets is_bold
      *
-     *  
+     *  Gets or sets a value indicating whether the font is bold. 
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class Font implements  ArrayAccess
     /**
      * Sets is_italic
      *
-     *  
+     *  Gets or sets a value indicating whether the font is italic. 
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class Font implements  ArrayAccess
     /**
      * Sets is_strikeout
      *
-     *  
+     *  Gets or sets a value indicating whether the font is single strikeout. 
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class Font implements  ArrayAccess
     /**
      * Sets is_subscript
      *
-     *  
+     *  Gets or sets a value indicating whether the font is subscript. 
      *
      * @return $this
      */
@@ -451,7 +451,7 @@ class Font implements  ArrayAccess
     /**
      * Sets is_superscript
      *
-     *  
+     *  Gets or sets a value indicating whether the font is super script. 
      *
      * @return $this
      */
@@ -474,7 +474,7 @@ class Font implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets  or sets the name of the . 
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class Font implements  ArrayAccess
     /**
      * Sets size
      *
-     *  
+     *  Gets or sets the size of the font. 
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class Font implements  ArrayAccess
     /**
      * Sets underline
      *
-     *  
+     *  Gets or sets the font underline type. 
      *
      * @return $this
      */

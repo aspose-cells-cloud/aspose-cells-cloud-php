@@ -265,7 +265,7 @@ class FillFormat implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets and sets the fill type. 
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class FillFormat implements  ArrayAccess
     /**
      * Sets solid_fill
      *
-     *  
+     *  Gets  object. 
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class FillFormat implements  ArrayAccess
     /**
      * Sets pattern_fill
      *
-     *  
+     *  Gets  object. 
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class FillFormat implements  ArrayAccess
     /**
      * Sets texture_fill
      *
-     *  
+     *  Gets  object. 
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class FillFormat implements  ArrayAccess
     /**
      * Sets gradient_fill
      *
-     *  
+     *  Gets  object. 
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class FillFormat implements  ArrayAccess
     /**
      * Sets image_data
      *
-     *  
+     *  Gets and sets the picture image data. 
      *
      * @return $this
      */

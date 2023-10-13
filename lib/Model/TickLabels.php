@@ -337,7 +337,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets auto_scale_font
      *
-     *  
+     *  True if the text in the object changes font size when the object size changes. The default value is True.
      *
      * @return $this
      */
@@ -360,7 +360,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets background_mode
      *
-     *  
+     *  Gets and sets the display mode of the background
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Returns a  object that represents the font of the specified TickLabels object.
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets number
      *
-     *  
+     *  Represents the format number for the TickLabels object.
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets number_format
      *
-     *  
+     *  Represents the format string for the TickLabels object.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets number_format_linked
      *
-     *  
+     *  True if the number format is linked to the cells                         (so that the number format changes in the labels when it changes in the cells).
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets offset
      *
-     *  
+     *  Gets and sets the distance of labels from the axis.
      *
      * @return $this
      */
@@ -498,7 +498,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets rotation_angle
      *
-     *  
+     *  Represents text rotation angle in clockwise.
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets text_direction
      *
-     *  
+     *  Represents text reading order.
      *
      * @return $this
      */
@@ -544,7 +544,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets reading_order
      *
-     *  
+     *  Represents text reading order.
      *
      * @return $this
      */
@@ -567,7 +567,7 @@ class TickLabels implements  ArrayAccess
     /**
      * Sets direction_type
      *
-     *  
+     *  Gets and sets the direction of text.
      *
      * @return $this
      */

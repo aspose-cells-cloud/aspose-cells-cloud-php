@@ -45,7 +45,7 @@ class PostWatermarkRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : e.g. #1032ff
     */ 
     public $file;
 

@@ -301,7 +301,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets source_folder
      *
-     *  
+     *  The directory stores files that need to format conversion.            
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets source_storage
      *
-     *  
+     *  Aspose Cloud storage name
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets match_condition
      *
-     *  
+     *  Indicates the match condition that needs to be processed for the file name.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets format
      *
-     *  
+     *  Output file format
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets from_index
      *
-     *  
+     *  From worksheet index of workbook.
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets to_index
      *
-     *  
+     *  To worksheet index of workbook.
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets out_folder
      *
-     *  
+     *  The directory that stores files whose format conversion was successful.
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets out_storage
      *
-     *  
+     *  Aspose Cloud storage name.
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class BatchSplitRequest implements  ArrayAccess
     /**
      * Sets save_options
      *
-     *  
+     *  Indicates save options.
      *
      * @return $this
      */

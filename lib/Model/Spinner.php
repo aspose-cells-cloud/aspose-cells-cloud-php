@@ -697,7 +697,7 @@ class Spinner implements  ArrayAccess
     /**
      * Sets current_value
      *
-     *  
+     *  Gets or sets the current value.
      *
      * @return $this
      */
@@ -720,7 +720,7 @@ class Spinner implements  ArrayAccess
     /**
      * Sets incremental_change
      *
-     *  
+     *  Gets or sets the amount that the scroll bar or spinner is incremented a line scroll.
      *
      * @return $this
      */
@@ -743,7 +743,7 @@ class Spinner implements  ArrayAccess
     /**
      * Sets max
      *
-     *  
+     *  Gets or sets the maximum value of a scroll bar or spinner range.
      *
      * @return $this
      */
@@ -766,7 +766,7 @@ class Spinner implements  ArrayAccess
     /**
      * Sets min
      *
-     *  
+     *  Gets or sets the minimum value of a scroll bar or spinner range.
      *
      * @return $this
      */
@@ -789,7 +789,7 @@ class Spinner implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  Indicates whether the shape has 3-D shading.
      *
      * @return $this
      */

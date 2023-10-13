@@ -253,7 +253,7 @@ class LegendEntry implements  ArrayAccess
     /**
      * Sets auto_scale_font
      *
-     *  
+     *  True if the text in the object changes font size when the object size changes.                         The default value is True.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class LegendEntry implements  ArrayAccess
     /**
      * Sets background_mode
      *
-     *  
+     *  Gets and sets the display mode of the background
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class LegendEntry implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Gets a  object of the specified ChartFrame object.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class LegendEntry implements  ArrayAccess
     /**
      * Sets is_deleted
      *
-     *  
+     *  Gets and sets whether the legend entry is deleted.
      *
      * @return $this
      */

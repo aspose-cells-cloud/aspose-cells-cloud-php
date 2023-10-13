@@ -265,7 +265,7 @@ class TextureFill implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets and sets the texture type 
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class TextureFill implements  ArrayAccess
     /**
      * Sets transparency
      *
-     *  
+     *  Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear). 
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class TextureFill implements  ArrayAccess
     /**
      * Sets scale
      *
-     *  
+     *  Gets and sets the picture format scale. 
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class TextureFill implements  ArrayAccess
     /**
      * Sets tile_pic_option
      *
-     *  
+     *  Gets or sets tile picture option. 
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class TextureFill implements  ArrayAccess
     /**
      * Sets pic_format_option
      *
-     *  
+     *  Gets or sets picture format option. 
      *
      * @return $this
      */

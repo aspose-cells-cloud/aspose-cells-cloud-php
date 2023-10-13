@@ -397,7 +397,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets alert_style
      *
-     *  
+     *  Represents the validation alert style.
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets area_list
      *
-     *  
+     *  Represents a collection of Aspose.Cells.CellArea which contains the data                validation settings.
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets error_message
      *
-     *  
+     *  Represents the data validation error message.
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets error_title
      *
-     *  
+     *  Represents the title of the data-validation error dialog box.
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets formula1
      *
-     *  
+     *  Represents the value or expression associated with the data validation.
      *
      * @return $this
      */
@@ -512,7 +512,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets formula2
      *
-     *  
+     *  Represents the value or expression associated with the data validation.
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets ignore_blank
      *
-     *  
+     *  Indicates whether blank values are permitted by the range data validation.
      *
      * @return $this
      */
@@ -558,7 +558,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets in_cell_drop_down
      *
-     *  
+     *  Indicates whether data validation displays a drop-down list that contains acceptable values.
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets input_message
      *
-     *  
+     *  Represents the data validation input message.
      *
      * @return $this
      */
@@ -604,7 +604,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets input_title
      *
-     *  
+     *  Represents the title of the data-validation input dialog box.
      *
      * @return $this
      */
@@ -627,7 +627,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets operator
      *
-     *  
+     *  Represents the operator for the data validation.
      *
      * @return $this
      */
@@ -650,7 +650,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets show_error
      *
-     *  
+     *  Indicates whether the data validation error message will be displayed whenever the user enters invalid data.
      *
      * @return $this
      */
@@ -673,7 +673,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets show_input
      *
-     *  
+     *  Indicates whether the data validation input message will be displayed whenever the user selects a cell in the data validation range.
      *
      * @return $this
      */
@@ -696,7 +696,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Represents the data validation type.
      *
      * @return $this
      */
@@ -719,7 +719,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets value1
      *
-     *  
+     *  Represents the first value associated with the data validation.
      *
      * @return $this
      */
@@ -742,7 +742,7 @@ class Validation implements  ArrayAccess
     /**
      * Sets value2
      *
-     *  
+     *  Represents the second value associated with the data validation.
      *
      * @return $this
      */

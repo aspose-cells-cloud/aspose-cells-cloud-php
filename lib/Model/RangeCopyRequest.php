@@ -241,7 +241,7 @@ class RangeCopyRequest implements  ArrayAccess
     /**
      * Sets operate
      *
-     *  
+     *  copydata, copystyle, copyto, copyvalue.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class RangeCopyRequest implements  ArrayAccess
     /**
      * Sets source
      *
-     *  
+     *  Source range. 
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class RangeCopyRequest implements  ArrayAccess
     /**
      * Sets target
      *
-     *  
+     *  Target range.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class RangeCopyRequest implements  ArrayAccess
     /**
      * Sets paste_options
      *
-     *  
+     *  Represents the paste special options.            
      *
      * @return $this
      */

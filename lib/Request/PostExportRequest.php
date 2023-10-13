@@ -45,7 +45,7 @@ class PostExportRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : workbook/worksheet/chart/comment/picture/shape/listobject/oleobject
     */ 
     public $file;
 

@@ -241,7 +241,7 @@ class PasteOptions implements  ArrayAccess
     /**
      * Sets only_visible_cells
      *
-     *  
+     *  True means only copying visible cells. 
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class PasteOptions implements  ArrayAccess
     /**
      * Sets paste_type
      *
-     *  
+     *  The paste special type. 
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class PasteOptions implements  ArrayAccess
     /**
      * Sets skip_blanks
      *
-     *  
+     *  Indicates whether skips blank cells. 
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class PasteOptions implements  ArrayAccess
     /**
      * Sets transpose
      *
-     *  
+     *  True to transpose rows and columns when the range is pasted. The default value is False. 
      *
      * @return $this
      */

@@ -528,7 +528,7 @@ class ErrorBar implements  ArrayAccess
     /**
      * Sets amount
      *
-     *  
+     *  Represents amount of error bar.                         The amount must be greater than or equal to zero.
      *
      * @return $this
      */
@@ -551,7 +551,7 @@ class ErrorBar implements  ArrayAccess
     /**
      * Sets display_type
      *
-     *  
+     *  Represents error bar display type.
      *
      * @return $this
      */
@@ -574,7 +574,7 @@ class ErrorBar implements  ArrayAccess
     /**
      * Sets minus_value
      *
-     *  
+     *  Represents negative error amount when error bar type is Custom.
      *
      * @return $this
      */
@@ -597,7 +597,7 @@ class ErrorBar implements  ArrayAccess
     /**
      * Sets plus_value
      *
-     *  
+     *  Represents positive error amount when error bar type is Custom.
      *
      * @return $this
      */
@@ -620,7 +620,7 @@ class ErrorBar implements  ArrayAccess
     /**
      * Sets show_marker_t_top
      *
-     *  
+     *  Indicates if formatting error bars with a T-top.
      *
      * @return $this
      */
@@ -643,7 +643,7 @@ class ErrorBar implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Represents error bar amount type.
      *
      * @return $this
      */

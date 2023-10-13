@@ -337,7 +337,7 @@ class JsonSaveOptions implements  ArrayAccess
     /**
      * Sets export_area
      *
-     *  
+     *  Gets or sets the exporting range.
      *
      * @return $this
      */
@@ -360,7 +360,7 @@ class JsonSaveOptions implements  ArrayAccess
     /**
      * Sets has_header_row
      *
-     *  
+     *  Indicates whether the range contains header row.
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class JsonSaveOptions implements  ArrayAccess
     /**
      * Sets export_as_string
      *
-     *  
+     *  Exports the string value of the cells to json.
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class JsonSaveOptions implements  ArrayAccess
     /**
      * Sets indent
      *
-     *  
+     *  Indicates the indent.
      *
      * @return $this
      */

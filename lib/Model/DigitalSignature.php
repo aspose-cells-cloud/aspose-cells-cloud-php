@@ -289,7 +289,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets comments
      *
-     *  
+     *  The purpose to signature.
      *
      * @return $this
      */
@@ -312,7 +312,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets sign_time
      *
-     *  
+     *  The time when the document was signed.
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets id
      *
-     *  
+     *  Specifies a GUID which can be cross-referenced with the GUID of the signature line stored in the document content. Default value is Empty (all zeroes) Guid.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets password
      *
-     *  
+     *  Specifies the text of actual signature in the digital signature. Default value is Empty.            
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets image
      *
-     *  
+     *  Specifies an image for the digital signature. Default value is null.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets provider_id
      *
-     *  
+     *  Specifies the class ID of the signature provider. Default value is Empty (all zeroes) Guid.            
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets is_valid
      *
-     *  
+     *  If this digital signature is valid and the document has not been tampered with, this value will be true.
      *
      * @return $this
      */
@@ -450,7 +450,7 @@ class DigitalSignature implements  ArrayAccess
     /**
      * Sets x_ad_es_type
      *
-     *  
+     *  XAdES type. Default value is None(XAdES is off).
      *
      * @return $this
      */

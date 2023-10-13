@@ -649,7 +649,7 @@ class CommentShape implements  ArrayAccess
     /**
      * Sets comment
      *
-     *  
+     *  Gets the comment object.
      *
      * @return $this
      */

@@ -241,7 +241,7 @@ class Marker implements  ArrayAccess
     /**
      * Sets border
      *
-     *  
+     *  Gets the border.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class Marker implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Gets the area.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class Marker implements  ArrayAccess
     /**
      * Sets marker_size
      *
-     *  
+     *  Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class Marker implements  ArrayAccess
     /**
      * Sets marker_style
      *
-     *  
+     *  Represents the marker style. Applies to line chart, scatter chart, or radar chart.
      *
      * @return $this
      */

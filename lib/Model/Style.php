@@ -469,7 +469,7 @@ class Style implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Gets a  object. 
      *
      * @return $this
      */
@@ -492,7 +492,7 @@ class Style implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets or sets the name of the style. 
      *
      * @return $this
      */
@@ -515,7 +515,7 @@ class Style implements  ArrayAccess
     /**
      * Sets culture_custom
      *
-     *  
+     *  Gets and sets the culture-dependent pattern string for number format.            If no number format has been set for this object, null will be returned.            If number format is builtin, the pattern string corresponding to the builtin number will be returned. 
      *
      * @return $this
      */
@@ -538,7 +538,7 @@ class Style implements  ArrayAccess
     /**
      * Sets custom
      *
-     *  
+     *  Represents the custom number format string of this style object.            If the custom number format is not set(For example, the number format is builtin), "" will be returned. 
      *
      * @return $this
      */
@@ -561,7 +561,7 @@ class Style implements  ArrayAccess
     /**
      * Sets background_color
      *
-     *  
+     *  Gets or sets a style's background color. 
      *
      * @return $this
      */
@@ -584,7 +584,7 @@ class Style implements  ArrayAccess
     /**
      * Sets foreground_color
      *
-     *  
+     *  Gets or sets a style's foreground color. 
      *
      * @return $this
      */
@@ -607,7 +607,7 @@ class Style implements  ArrayAccess
     /**
      * Sets is_formula_hidden
      *
-     *  
+     *  Represents if the formula will be hidden when the worksheet is protected. 
      *
      * @return $this
      */
@@ -630,7 +630,7 @@ class Style implements  ArrayAccess
     /**
      * Sets is_date_time
      *
-     *  
+     *  Indicates whether the number format is a date format. 
      *
      * @return $this
      */
@@ -653,7 +653,7 @@ class Style implements  ArrayAccess
     /**
      * Sets is_text_wrapped
      *
-     *  
+     *  Gets or sets a value indicating whether the text within a cell is wrapped. 
      *
      * @return $this
      */
@@ -676,7 +676,7 @@ class Style implements  ArrayAccess
     /**
      * Sets is_gradient
      *
-     *  
+     *  Indicates whether the cell shading is a gradient pattern. 
      *
      * @return $this
      */
@@ -699,7 +699,7 @@ class Style implements  ArrayAccess
     /**
      * Sets is_locked
      *
-     *  
+     *  Gets or sets a value indicating whether a cell can be modified or not. 
      *
      * @return $this
      */
@@ -722,7 +722,7 @@ class Style implements  ArrayAccess
     /**
      * Sets is_percent
      *
-     *  
+     *  Indicates whether the number format is a percent format. 
      *
      * @return $this
      */
@@ -745,7 +745,7 @@ class Style implements  ArrayAccess
     /**
      * Sets shrink_to_fit
      *
-     *  
+     *  Represents if text automatically shrinks to fit in the available column width. 
      *
      * @return $this
      */
@@ -768,7 +768,7 @@ class Style implements  ArrayAccess
     /**
      * Sets indent_level
      *
-     *  
+     *  Represents the indent level for the cell or range. Can only be an integer from 0 to 250. 
      *
      * @return $this
      */
@@ -791,7 +791,7 @@ class Style implements  ArrayAccess
     /**
      * Sets number
      *
-     *  
+     *  Gets or sets the display format of numbers and dates. The formatting patterns are different for different regions. 
      *
      * @return $this
      */
@@ -814,7 +814,7 @@ class Style implements  ArrayAccess
     /**
      * Sets rotation_angle
      *
-     *  
+     *  Represents text rotation angle. 
      *
      * @return $this
      */
@@ -837,7 +837,7 @@ class Style implements  ArrayAccess
     /**
      * Sets pattern
      *
-     *  
+     *  Gets or sets the cell background pattern type. 
      *
      * @return $this
      */
@@ -860,7 +860,7 @@ class Style implements  ArrayAccess
     /**
      * Sets text_direction
      *
-     *  
+     *  Represents text reading order. 
      *
      * @return $this
      */
@@ -883,7 +883,7 @@ class Style implements  ArrayAccess
     /**
      * Sets vertical_alignment
      *
-     *  
+     *  Gets or sets the vertical alignment type of the text in a cell. 
      *
      * @return $this
      */
@@ -906,7 +906,7 @@ class Style implements  ArrayAccess
     /**
      * Sets horizontal_alignment
      *
-     *  
+     *  Gets or sets the horizontal alignment type of the text in a cell. 
      *
      * @return $this
      */
@@ -952,7 +952,7 @@ class Style implements  ArrayAccess
     /**
      * Sets background_theme_color
      *
-     *  
+     *  Gets and sets the background theme color. 
      *
      * @return $this
      */
@@ -975,7 +975,7 @@ class Style implements  ArrayAccess
     /**
      * Sets foreground_theme_color
      *
-     *  
+     *  Gets and sets the foreground theme color. 
      *
      * @return $this
      */

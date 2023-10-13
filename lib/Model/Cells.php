@@ -277,7 +277,7 @@ class Cells implements  ArrayAccess
     /**
      * Sets max_row
      *
-     *  
+     *  Maximum row index of cell which contains data or style.
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class Cells implements  ArrayAccess
     /**
      * Sets max_column
      *
-     *  
+     *  Maximum column index of those cells that have been instantiated in the collection(does not include the column                        where style is defined for the whole column but no cell has been instantiated in it).
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class Cells implements  ArrayAccess
     /**
      * Sets rows
      *
-     *  
+     *  Gets the collection of  objects that represents the individual rows in this worksheet.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class Cells implements  ArrayAccess
     /**
      * Sets columns
      *
-     *  
+     *  Gets the collection of  objects that represents the individual columns in this worksheet.
      *
      * @return $this
      */

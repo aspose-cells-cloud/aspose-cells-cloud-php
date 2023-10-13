@@ -60,18 +60,18 @@ class PostProtectWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * protection : The protection settings.
+    * protectWorkbookRequest : The protection settings.
     */ 
-    public $protection;
+    public $protect_workbook_request;
 
-    public function getProtection()
+    public function getProtectWorkbookRequest()
     {
-        return $this->protection;
+        return $this->protect_workbook_request;
     }
 
-    public function setProtection($value)
+    public function setProtectWorkbookRequest($value)
     {
-        $this->protection = $value;
+        $this->protect_workbook_request = $value;
     }
 
     /*
@@ -117,10 +117,10 @@ class PostProtectWorkbookRequest extends BaseApiRequest
             );
         } 
 
-        // verify the required parameter 'protection' is set
-        if ($this->protection === null) {
+        // verify the required parameter 'protect_workbook_request' is set
+        if ($this->protect_workbook_request === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $protection when calling PostProtectWorkbook'
+                'Missing the required parameter $protect_workbook_request when calling PostProtectWorkbook'
             );
         } 
 
@@ -149,9 +149,9 @@ class PostProtectWorkbookRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->protection)) {
-            $_tempBody = $this->protection;
-            $_tempBodyName =str_replace('_','', 'protection');
+        if (isset($this->protect_workbook_request)) {
+            $_tempBody = $this->protect_workbook_request;
+            $_tempBodyName =str_replace('_','', 'protect_workbook_request');
         }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(

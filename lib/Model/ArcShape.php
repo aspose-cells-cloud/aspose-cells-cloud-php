@@ -709,7 +709,7 @@ class ArcShape implements  ArrayAccess
     /**
      * Sets begin_arrowhead_length
      *
-     *  
+     *  Gets and sets the begin arrow head length of the line.
      *
      * @return $this
      */
@@ -732,7 +732,7 @@ class ArcShape implements  ArrayAccess
     /**
      * Sets begin_arrowhead_style
      *
-     *  
+     *  Gets and sets the begin arrow head style of the line.
      *
      * @return $this
      */
@@ -755,7 +755,7 @@ class ArcShape implements  ArrayAccess
     /**
      * Sets begin_arrowhead_width
      *
-     *  
+     *  Gets and sets the begin arrow head width of the line.
      *
      * @return $this
      */
@@ -778,7 +778,7 @@ class ArcShape implements  ArrayAccess
     /**
      * Sets end_arrowhead_length
      *
-     *  
+     *  Gets and sets the end arrow head length of the line.
      *
      * @return $this
      */
@@ -801,7 +801,7 @@ class ArcShape implements  ArrayAccess
     /**
      * Sets end_arrowhead_style
      *
-     *  
+     *  Gets and sets the end arrow head style of the line.
      *
      * @return $this
      */
@@ -824,7 +824,7 @@ class ArcShape implements  ArrayAccess
     /**
      * Sets end_arrowhead_width
      *
-     *  
+     *  Gets and sets the end arrow head width of the line.
      *
      * @return $this
      */

@@ -301,7 +301,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets auto_fit_merged_cells_type
      *
-     *  
+     *  Gets and set the type of auto fitting row height of merged cells.
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets auto_fit_merged_cells
      *
-     *  
+     *  Indicates whether auto fit row height when the cells is merged in a row.                        The default value is false.
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets ignore_hidden
      *
-     *  
+     *  Ignores the hidden rows/columns.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets only_auto
      *
-     *  
+     *  Indicates whether only fit the rows which height are not customed.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets default_edit_language
      *
-     *  
+     *  Gets or sets default edit language.
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets max_row_height
      *
-     *  
+     *  Gets and sets the max row height(in unit of Point) when autofitting rows.
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets auto_fit_wrapped_text_type
      *
-     *  
+     *  Gets and sets the type of auto fitting wrapped text.
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets format_strategy
      *
-     *  
+     *  Gets and sets the formatted strategy.
      *
      * @return $this
      */
@@ -485,7 +485,7 @@ class AutoFitterOptions implements  ArrayAccess
     /**
      * Sets for_rendering
      *
-     *  
+     *  Indicates whether fit for rendering purpose.
      *
      * @return $this
      */

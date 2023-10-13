@@ -673,7 +673,7 @@ class CheckBox implements  ArrayAccess
     /**
      * Sets checked_value
      *
-     *  
+     *  Gets or set checkbox' value.
      *
      * @return $this
      */
@@ -696,7 +696,7 @@ class CheckBox implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  Indicates whether the combobox has 3-D shading.
      *
      * @return $this
      */
@@ -719,7 +719,7 @@ class CheckBox implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  Indicates if the checkbox is checked or not.
      *
      * @return $this
      */

@@ -613,7 +613,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Gets the .
      *
      * @return $this
      */
@@ -636,7 +636,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets axis_between_categories
      *
-     *  
+     *  Represents if the value axis crosses the category axis between categories.
      *
      * @return $this
      */
@@ -659,7 +659,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets axis_line
      *
-     *  
+     *  Gets the appearance of an Axis.
      *
      * @return $this
      */
@@ -682,7 +682,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets base_unit_scale
      *
-     *  
+     *  Represents the base unit scale for the category axis.
      *
      * @return $this
      */
@@ -705,7 +705,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets category_type
      *
-     *  
+     *  Represents the category axis type.
      *
      * @return $this
      */
@@ -728,7 +728,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets cross_at
      *
-     *  
+     *  Represents the point on the value axis where the category axis crosses it.
      *
      * @return $this
      */
@@ -751,7 +751,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets cross_type
      *
-     *  
+     *  Represents the  on the specified axis where the other axis crosses.
      *
      * @return $this
      */
@@ -774,7 +774,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets display_unit
      *
-     *  
+     *  Represents the unit label for the specified axis.
      *
      * @return $this
      */
@@ -797,7 +797,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets display_unit_label
      *
-     *  
+     *  Represents a unit label on an axis in the specified chart.                         Unit labels are useful for charting large values— for example, in the millions or billions.
      *
      * @return $this
      */
@@ -820,7 +820,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets has_multi_level_labels
      *
-     *  
+     *  Indicates whether the labels shall be shown as multi level.
      *
      * @return $this
      */
@@ -843,7 +843,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_automatic_major_unit
      *
-     *  
+     *  Indicates whether the major unit of the axis is automatically assigned.
      *
      * @return $this
      */
@@ -866,7 +866,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_automatic_max_value
      *
-     *  
+     *  Indicates whether the max value is automatically assigned.
      *
      * @return $this
      */
@@ -889,7 +889,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_automatic_minor_unit
      *
-     *  
+     *  Indicates whether the minor unit of the axis is automatically assigned.
      *
      * @return $this
      */
@@ -912,7 +912,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_automatic_min_value
      *
-     *  
+     *  Indicates whether the min value is automatically assigned.
      *
      * @return $this
      */
@@ -935,7 +935,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_display_unit_label_shown
      *
-     *  
+     *  Represents if the display unit label is shown on the specified axis.
      *
      * @return $this
      */
@@ -958,7 +958,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_logarithmic
      *
-     *  
+     *  Represents if the value axis scale type is logarithmic or not.
      *
      * @return $this
      */
@@ -981,7 +981,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_plot_order_reversed
      *
-     *  
+     *  Represents if Microsoft Excel plots data points from last to first.
      *
      * @return $this
      */
@@ -1004,7 +1004,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets is_visible
      *
-     *  
+     *  Represents if the axis is visible.
      *
      * @return $this
      */
@@ -1027,7 +1027,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets log_base
      *
-     *  
+     *  Represents the logarithmic base. Default value is 10.Only applies for Excel2007.
      *
      * @return $this
      */
@@ -1050,7 +1050,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets major_grid_lines
      *
-     *  
+     *  Represents major gridlines on a chart axis.
      *
      * @return $this
      */
@@ -1073,7 +1073,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets major_tick_mark
      *
-     *  
+     *  Represents the type of major tick mark for the specified axis.
      *
      * @return $this
      */
@@ -1096,7 +1096,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets major_unit
      *
-     *  
+     *  Represents the major units for the axis.
      *
      * @return $this
      */
@@ -1119,7 +1119,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets major_unit_scale
      *
-     *  
+     *  Represents the major unit scale for the category axis.
      *
      * @return $this
      */
@@ -1142,7 +1142,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets max_value
      *
-     *  
+     *  Represents the maximum value on the value axis.
      *
      * @return $this
      */
@@ -1165,7 +1165,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets minor_grid_lines
      *
-     *  
+     *  Represents minor gridlines on a chart axis.
      *
      * @return $this
      */
@@ -1188,7 +1188,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets minor_tick_mark
      *
-     *  
+     *  Represents the type of minor tick mark for the specified axis.
      *
      * @return $this
      */
@@ -1211,7 +1211,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets minor_unit
      *
-     *  
+     *  Represents the minor units for the axis.
      *
      * @return $this
      */
@@ -1234,7 +1234,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets minor_unit_scale
      *
-     *  
+     *  Represents the major unit scale for the category axis.
      *
      * @return $this
      */
@@ -1257,7 +1257,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets min_value
      *
-     *  
+     *  Represents the minimum value on the value axis.
      *
      * @return $this
      */
@@ -1280,7 +1280,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets tick_label_position
      *
-     *  
+     *  Represents the position of tick-mark labels on the specified axis.
      *
      * @return $this
      */
@@ -1303,7 +1303,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets tick_labels
      *
-     *  
+     *  Returns a  object that represents the tick-mark labels for the specified axis.
      *
      * @return $this
      */
@@ -1326,7 +1326,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets tick_label_spacing
      *
-     *  
+     *  Represents the number of categories or series between tick-mark labels. Applies only to category and series axes.
      *
      * @return $this
      */
@@ -1349,7 +1349,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets tick_mark_spacing
      *
-     *  
+     *  Returns or sets the number of categories or series between tick marks. Applies only to category and series axes.
      *
      * @return $this
      */
@@ -1372,7 +1372,7 @@ class Axis implements  ArrayAccess
     /**
      * Sets title
      *
-     *  
+     *  Gets the axis' title.
      *
      * @return $this
      */

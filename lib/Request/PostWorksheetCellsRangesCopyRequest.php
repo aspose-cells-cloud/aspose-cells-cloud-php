@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostWorksheetCellsRangesRequest.cs">
+ * <copyright company="Aspose" file="PostWorksheetCellsRangesCopyRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PostWorksheetCellsRanges operation.
+ * Request model for  PostWorksheetCellsRangesCopy operation.
  */
 
-class PostWorksheetCellsRangesRequest extends BaseApiRequest
+class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
 {
 
     /*
@@ -128,25 +128,25 @@ class PostWorksheetCellsRangesRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling PostWorksheetCellsRanges'
+                'Missing the required parameter $name when calling PostWorksheetCellsRangesCopy'
             );
         } 
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sheet_name when calling PostWorksheetCellsRanges'
+                'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangesCopy'
             );
         } 
 
         // verify the required parameter 'range_operate' is set
         if ($this->range_operate === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $range_operate when calling PostWorksheetCellsRanges'
+                'Missing the required parameter $range_operate when calling PostWorksheetCellsRangesCopy'
             );
         } 
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges';
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/copy';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

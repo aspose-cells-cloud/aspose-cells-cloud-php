@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PivotTableFieldRequest.cs">
+ * <copyright company="Aspose" file="DataSorterKey.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class PivotTableFieldRequest implements  ArrayAccess
+class DataSorterKey implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class PivotTableFieldRequest implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'PivotTableFieldRequest';     
+    protected static $swaggerModelName = 'DataSorterKey';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,7 +46,12 @@ class PivotTableFieldRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => 'int[]'
+        'order' => 'string',
+        'index' => 'int',
+        'type' => 'string',
+        'icon_set_type' => 'string',
+        'icon_id' => 'int',
+        'color' => '\Aspose\Cells\Cloud\Model\Color'
     ];
 
     /**
@@ -55,7 +60,12 @@ class PivotTableFieldRequest implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data' => null  
+        'order' => null  ,
+        'index' => null  ,
+        'type' => null  ,
+        'icon_set_type' => null  ,
+        'icon_id' => null  ,
+        'color' => null  
     ];
 
     /**
@@ -85,7 +95,12 @@ class PivotTableFieldRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'data' => 'Data' 
+         'order' => 'Order' ,
+         'index' => 'Index' ,
+         'type' => 'Type' ,
+         'icon_set_type' => 'IconSetType' ,
+         'icon_id' => 'IconId' ,
+         'color' => 'Color' 
     ];
 
     /**
@@ -94,7 +109,12 @@ class PivotTableFieldRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData' 
+        'order' => 'setOrder' ,
+        'index' => 'setIndex' ,
+        'type' => 'setType' ,
+        'icon_set_type' => 'setIconSetType' ,
+        'icon_id' => 'setIconId' ,
+        'color' => 'setColor' 
     ];
 
     /**
@@ -103,7 +123,12 @@ class PivotTableFieldRequest implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData' 
+        'order' => 'getOrder' ,
+        'index' => 'getIndex' ,
+        'type' => 'getType' ,
+        'icon_set_type' => 'getIconSetType' ,
+        'icon_id' => 'getIconId' ,
+        'color' => 'getColor' 
     ];
 
     /**
@@ -162,7 +187,12 @@ class PivotTableFieldRequest implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['index'] = isset($data['index']) ? $data['index'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['icon_set_type'] = isset($data['icon_set_type']) ? $data['icon_set_type'] : null;
+        $this->container['icon_id'] = isset($data['icon_id']) ? $data['icon_id'] : null;
+        $this->container['color'] = isset($data['color']) ? $data['color'] : null;
     }
 
     /**
@@ -173,8 +203,23 @@ class PivotTableFieldRequest implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
+        if ($this->container['order'] === null) {
+            $invalidProperties[] = "'order' can't be null";
+        }
+        if ($this->container['index'] === null) {
+            $invalidProperties[] = "'index' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        if ($this->container['icon_set_type'] === null) {
+            $invalidProperties[] = "'icon_set_type' can't be null";
+        }
+        if ($this->container['icon_id'] === null) {
+            $invalidProperties[] = "'icon_id' can't be null";
+        }
+        if ($this->container['color'] === null) {
+            $invalidProperties[] = "'color' can't be null";
         }
         return $invalidProperties;
     }
@@ -187,31 +232,161 @@ class PivotTableFieldRequest implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['data'] === null) {
+        if ($this->container['order'] === null) {
+                    return false;
+                }
+        if ($this->container['index'] === null) {
+                    return false;
+                }
+        if ($this->container['type'] === null) {
+                    return false;
+                }
+        if ($this->container['icon_set_type'] === null) {
+                    return false;
+                }
+        if ($this->container['icon_id'] === null) {
+                    return false;
+                }
+        if ($this->container['color'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets data
+     * Gets order
      *
-     * @return int[]
+     * @return string
      */
-    public function getData()
+    public function getOrder()
     {
-        return $this->container['data'];
+        return $this->container['order'];
     }
 
     /**
-     * Sets data
+     * Sets order
      *
-     *  Intdex array.
+     *  Indicates the order of sorting. 
      *
      * @return $this
      */
-    public function setData($data)
+    public function setOrder($order)
     {
-        $this->container['data'] = $data;
+        $this->container['order'] = $order;
+
+        return $this;
+    }
+   /**
+     * Gets index
+     *
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->container['index'];
+    }
+
+    /**
+     * Sets index
+     *
+     *  Gets the sorted column index(absolute position, column A is 0, B is 1, ...). 
+     *
+     * @return $this
+     */
+    public function setIndex($index)
+    {
+        $this->container['index'] = $index;
+
+        return $this;
+    }
+   /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     *  Represents the type of sorting. 
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+   /**
+     * Gets icon_set_type
+     *
+     * @return string
+     */
+    public function getIconSetType()
+    {
+        return $this->container['icon_set_type'];
+    }
+
+    /**
+     * Sets icon_set_type
+     *
+     *  Represents the icon set type. 
+     *
+     * @return $this
+     */
+    public function setIconSetType($icon_set_type)
+    {
+        $this->container['icon_set_type'] = $icon_set_type;
+
+        return $this;
+    }
+   /**
+     * Gets icon_id
+     *
+     * @return int
+     */
+    public function getIconId()
+    {
+        return $this->container['icon_id'];
+    }
+
+    /**
+     * Sets icon_id
+     *
+     *  Represents the id of the icon set type. 
+     *
+     * @return $this
+     */
+    public function setIconId($icon_id)
+    {
+        $this->container['icon_id'] = $icon_id;
+
+        return $this;
+    }
+   /**
+     * Gets color
+     *
+     * @return \Aspose\Cells\Cloud\Model\Color
+     */
+    public function getColor()
+    {
+        return $this->container['color'];
+    }
+
+    /**
+     * Sets color
+     *
+     *  Gets the sorted color. 
+     *
+     * @return $this
+     */
+    public function setColor($color)
+    {
+        $this->container['color'] = $color;
 
         return $this;
     }

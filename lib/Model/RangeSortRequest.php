@@ -217,7 +217,7 @@ class RangeSortRequest implements  ArrayAccess
     /**
      * Sets data_sorter
      *
-     *  
+     *  Summary description for DataSorter.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class RangeSortRequest implements  ArrayAccess
     /**
      * Sets cell_area
      *
-     *  
+     *  Encapsulates the object that represents a range of cells within a spreadsheet.
      *
      * @return $this
      */

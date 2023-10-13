@@ -229,7 +229,7 @@ class VerticalPageBreak implements  ArrayAccess
     /**
      * Sets column
      *
-     *  
+     *  Gets the column index of the vertical page break. 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class VerticalPageBreak implements  ArrayAccess
     /**
      * Sets end_row
      *
-     *  
+     *  Gets the end row index of the vertical page break. 
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class VerticalPageBreak implements  ArrayAccess
     /**
      * Sets start_row
      *
-     *  
+     *  Gets the start row index of the vertical page break. 
      *
      * @return $this
      */

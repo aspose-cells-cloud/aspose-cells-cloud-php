@@ -325,7 +325,7 @@ class SpreadsheetML2003SaveOptions implements  ArrayAccess
     /**
      * Sets export_column_index_of_cell
      *
-     *  
+     *  The default value is false, it means that column index will be ignored if the cell is contiguous to the previous cell.
      *
      * @return $this
      */
@@ -348,7 +348,7 @@ class SpreadsheetML2003SaveOptions implements  ArrayAccess
     /**
      * Sets is_indented_formatting
      *
-     *  
+     *  Causes child elements to be indented.The default value is true.  If the value is false, it will reduce the size of the xml file
      *
      * @return $this
      */
@@ -371,7 +371,7 @@ class SpreadsheetML2003SaveOptions implements  ArrayAccess
     /**
      * Sets limit_as_xls
      *
-     *  
+     *  Limit as xls, the max row index is 65535 and the max column index is 255.
      *
      * @return $this
      */

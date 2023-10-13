@@ -265,7 +265,7 @@ class IconSet implements  ArrayAccess
     /**
      * Sets cf_icons
      *
-     *  Get theAspose.Cells.ConditionalFormattingIcon from the collection
+     *  Get the from the collection 
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class IconSet implements  ArrayAccess
     /**
      * Sets cfvos
      *
-     *  Get the CFValueObjects instance.
+     *  Get the CFValueObjects instance. 
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class IconSet implements  ArrayAccess
     /**
      * Sets is_custom
      *
-     *  Indicates whether the icon set is custom.  Default value is false.
+     *  Indicates whether the icon set is custom.            Default value is false. 
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class IconSet implements  ArrayAccess
     /**
      * Sets reverse
      *
-     *  Get or set the flag indicating whether to reverses the default order of the  icons in this icon set.  Default value is false.            
+     *  Get or set the flag indicating whether to reverses the default order of the icons in this icon set.            Default value is false. 
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class IconSet implements  ArrayAccess
     /**
      * Sets show_value
      *
-     *  Get or set the flag indicating whether to show the values of the cells on   which this icon set is applied.  Default value is true.            
+     *  Get or set the flag indicating whether to show the values of the cells on which this icon set is applied.            Default value is true. 
      *
      * @return $this
      */

@@ -517,7 +517,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets display_doc_title
      *
-     *  
+     *  Indicates whether the window's title bar should display the document title.
      *
      * @return $this
      */
@@ -540,7 +540,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets export_document_structure
      *
-     *  
+     *  Indicates whether to export document structure.
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets emf_render_setting
      *
-     *  
+     *  Setting for rendering Emf metafile.
      *
      * @return $this
      */
@@ -586,7 +586,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets custom_properties_export
      *
-     *  
+     *  Specifies the way CustomDocumentPropertyCollection are exported to PDF file.
      *
      * @return $this
      */
@@ -609,7 +609,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets optimization_type
      *
-     *  
+     *  Gets and sets pdf optimization type.
      *
      * @return $this
      */
@@ -632,7 +632,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets producer
      *
-     *  
+     *  Gets and sets producer of generated pdf document.
      *
      * @return $this
      */
@@ -655,7 +655,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets pdf_compression
      *
-     *  
+     *  Indicate the compression algorithm.
      *
      * @return $this
      */
@@ -678,7 +678,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets font_encoding
      *
-     *  
+     *  Gets or sets embedded font encoding in pdf.
      *
      * @return $this
      */
@@ -701,7 +701,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets watermark
      *
-     *  
+     *  Gets or sets watermark to output.
      *
      * @return $this
      */
@@ -724,7 +724,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets calculate_formula
      *
-     *  
+     *  Indicates whether calculate formulas before saving pdf file.The default value is false.
      *
      * @return $this
      */
@@ -747,7 +747,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets check_font_compatibility
      *
-     *  
+     *  Indicates whether check font compatibility for every character in text.                The default value is true.  Disable this property may give better performance.                 But when the default or specified font of text/character cannot be used                to render it, unreadable characters(such as block) maybe occur in the generated                pdf.  For such situation user should keep this property as true so that alternative                font can be searched and used to render the text instead;
      *
      * @return $this
      */
@@ -770,7 +770,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets compliance
      *
-     *  
+     *  Workbook converts to pdf will according to PdfCompliance in this property.
      *
      * @return $this
      */
@@ -793,7 +793,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets default_font
      *
-     *  
+     *  When characters in the Excel are unicode and not be set with correct font in cell style,              They may appear as block in pdf,image.  Set the DefaultFont such as MingLiu or MS Gothic to show these characters.               If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
      *
      * @return $this
      */
@@ -816,7 +816,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets one_page_per_sheet
      *
-     *  
+     *  If OnePagePerSheet is true , all content of one sheet will output to only            one page in result. The paper size of pagesetup will be invalid, and the               other settings of pagesetup will still take effect.
      *
      * @return $this
      */
@@ -839,7 +839,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets printing_page_type
      *
-     *  
+     *  Indicates which pages will not be printed.
      *
      * @return $this
      */
@@ -862,7 +862,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets security_options
      *
-     *  
+     *  Set this options, when security is need in xls2pdf result.
      *
      * @return $this
      */
@@ -885,7 +885,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets desired_ppi
      *
-     *  
+     *  Set desired PPI(pixels per inch) of resample images and jpeg quality  All images will be converted to JPEG with the specified quality setting, and images that are greater than the specified PPI (pixels per inch) will be resampled.              Desired pixels per inch. 220 high quality. 150 screen quality. 96 email quality.
      *
      * @return $this
      */
@@ -908,7 +908,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets jpeg_quality
      *
-     *  
+     *  Set desired PPI(pixels per inch) of resample images and jpeg quality  All images will be converted to JPEG with the specified quality setting, and images that are greater than the specified PPI (pixels per inch) will be resampled.              0 - 100% JPEG quality.
      *
      * @return $this
      */
@@ -931,7 +931,7 @@ class PdfSaveOptions implements  ArrayAccess
     /**
      * Sets image_type
      *
-     *  
+     *  Represents the image type when converting the chart and shape .
      *
      * @return $this
      */

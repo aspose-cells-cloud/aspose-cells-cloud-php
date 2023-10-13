@@ -217,7 +217,7 @@ class IconFilter implements  ArrayAccess
     /**
      * Sets icon_id
      *
-     *  
+     *  Gets and sets Zero-based index of an icon in an icon set. 
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class IconFilter implements  ArrayAccess
     /**
      * Sets icon_set_type
      *
-     *  
+     *  Gets and sets which icon set is used in the filter criteria. 
      *
      * @return $this
      */

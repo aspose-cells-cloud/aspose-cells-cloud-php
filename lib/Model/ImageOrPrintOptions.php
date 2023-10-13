@@ -493,7 +493,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets text_cross_type
      *
-     *  
+     *  TextCrossType
      *
      * @return $this
      */
@@ -516,7 +516,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets gridline_type
      *
-     *  
+     *  GridlineType
      *
      * @return $this
      */
@@ -884,7 +884,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets default_edit_language
      *
-     *  
+     *  DefaultEditLanguage
      *
      * @return $this
      */
@@ -907,7 +907,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets tiff_color_depth
      *
-     *  
+     *  ColorDepth
      *
      * @return $this
      */
@@ -930,7 +930,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets tiff_compression
      *
-     *  
+     *  TiffCompression
      *
      * @return $this
      */
@@ -953,7 +953,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets printing_page
      *
-     *  
+     *  PrintingPageType
      *
      * @return $this
      */
@@ -999,7 +999,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets image_type
      *
-     *  
+     *  ImageType
      *
      * @return $this
      */
@@ -1045,7 +1045,7 @@ class ImageOrPrintOptions implements  ArrayAccess
     /**
      * Sets tiff_binarization_method
      *
-     *  
+     *  ImageBinarizationMethod
      *
      * @return $this
      */

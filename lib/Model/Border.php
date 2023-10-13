@@ -253,7 +253,7 @@ class Border implements  ArrayAccess
     /**
      * Sets line_style
      *
-     *  
+     *  Gets or sets the cell border type. 
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class Border implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Gets or sets the  of the border. 
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class Border implements  ArrayAccess
     /**
      * Sets theme_color
      *
-     *  
+     *  Gets and sets the theme color of the border. 
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class Border implements  ArrayAccess
     /**
      * Sets argb_color
      *
-     *  
+     *  Gets and sets the color with a 32-bit ARGB value. 
      *
      * @return $this
      */

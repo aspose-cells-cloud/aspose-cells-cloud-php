@@ -229,7 +229,7 @@ class HorizontalPageBreak implements  ArrayAccess
     /**
      * Sets row
      *
-     *  
+     *  Gets the zero based row index. 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class HorizontalPageBreak implements  ArrayAccess
     /**
      * Sets end_column
      *
-     *  
+     *  Gets the end column index of this horizontal page break. 
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class HorizontalPageBreak implements  ArrayAccess
     /**
      * Sets start_column
      *
-     *  
+     *  Gets the start column index of this horizontal page break. 
      *
      * @return $this
      */

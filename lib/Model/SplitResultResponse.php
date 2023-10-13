@@ -229,7 +229,7 @@ class SplitResultResponse implements  ArrayAccess
     /**
      * Sets result
      *
-     *  
+     *  Gets or sets the splitting result.
      *
      * @return $this
      */

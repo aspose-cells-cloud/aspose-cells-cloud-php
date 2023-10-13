@@ -276,7 +276,7 @@ class TextWaterMarkerRequest implements  ArrayAccess
     /**
      * Sets font_name
      *
-     *  
+     *  Indicates font name.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class TextWaterMarkerRequest implements  ArrayAccess
     /**
      * Sets font_size
      *
-     *  
+     *  Indicates font size.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class TextWaterMarkerRequest implements  ArrayAccess
     /**
      * Sets height
      *
-     *  
+     *  Indicates image height.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class TextWaterMarkerRequest implements  ArrayAccess
     /**
      * Sets width
      *
-     *  
+     *  Indicates image width.
      *
      * @return $this
      */

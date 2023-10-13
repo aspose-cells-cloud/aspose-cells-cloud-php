@@ -277,7 +277,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets pattern
      *
-     *  
+     *  Gets or sets the fill pattern type 
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets background_cells_color
      *
-     *  
+     *  Gets and sets the foreground  object. 
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets foreground_cells_color
      *
-     *  
+     *  Gets and sets the foreground  object. 
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets foreground_color
      *
-     *  
+     *  Gets or sets the foreground . 
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets background_color
      *
-     *  
+     *  Gets or sets the background  of the . 
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets back_transparency
      *
-     *  
+     *  Gets or sets the transparency of background color. 
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class PatternFill implements  ArrayAccess
     /**
      * Sets fore_transparency
      *
-     *  
+     *  Gets or sets the transparency of foreground color. 
      *
      * @return $this
      */

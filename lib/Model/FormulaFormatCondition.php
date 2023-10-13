@@ -229,7 +229,7 @@ class FormulaFormatCondition implements  ArrayAccess
     /**
      * Sets formula1
      *
-     *  
+     *  Gets and sets the value or expression associated with conditional formatting.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class FormulaFormatCondition implements  ArrayAccess
     /**
      * Sets formula2
      *
-     *  
+     *  Gets and sets the value or expression associated with conditional formatting.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class FormulaFormatCondition implements  ArrayAccess
     /**
      * Sets operator
      *
-     *  
+     *  Gets and sets the conditional format operator type.
      *
      * @return $this
      */

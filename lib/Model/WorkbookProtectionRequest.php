@@ -217,7 +217,7 @@ class WorkbookProtectionRequest implements  ArrayAccess
     /**
      * Sets protection_type
      *
-     *  Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS  
+     *  Protection type. Can be ALL, CONTENTS, NONE, OBJECTS, SCENARIOS, STRUCTURE, WINDOWS
      *
      * @return $this
      */

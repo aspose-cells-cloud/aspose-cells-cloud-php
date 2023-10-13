@@ -45,7 +45,7 @@ class PostReverseRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : rows/cols/both
     */ 
     public $file;
 

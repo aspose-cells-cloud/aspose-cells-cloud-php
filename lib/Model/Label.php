@@ -1051,7 +1051,7 @@ class Label implements  ArrayAccess
     /**
      * Sets text
      *
-     *  
+     *  Gets or sets the text of display unit label.
      *
      * @return $this
      */

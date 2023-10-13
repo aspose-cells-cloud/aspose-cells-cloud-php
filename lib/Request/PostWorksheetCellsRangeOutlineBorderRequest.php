@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeOutlineBorderRequest extends BaseApiRequest
     }
 
     /*
-    * rangeOperate : Range Set OutlineBorder Request 
+    * rangeOperate : Range Set OutlineBorder Request.
     */ 
     public $range_operate;
 

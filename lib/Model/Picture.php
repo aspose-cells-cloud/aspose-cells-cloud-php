@@ -709,7 +709,7 @@ class Picture implements  ArrayAccess
     /**
      * Sets border_line_color
      *
-     *  
+     *  Represents the  of the border line of a picture.
      *
      * @return $this
      */
@@ -732,7 +732,7 @@ class Picture implements  ArrayAccess
     /**
      * Sets border_weight
      *
-     *  
+     *  Gets or sets the weight of the border line of a picture in units of pt.
      *
      * @return $this
      */
@@ -755,7 +755,7 @@ class Picture implements  ArrayAccess
     /**
      * Sets original_height
      *
-     *  
+     *  Gets the original height of the picture.
      *
      * @return $this
      */
@@ -778,7 +778,7 @@ class Picture implements  ArrayAccess
     /**
      * Sets original_width
      *
-     *  
+     *  Gets the original width of the picture.
      *
      * @return $this
      */
@@ -824,7 +824,7 @@ class Picture implements  ArrayAccess
     /**
      * Sets source_full_name
      *
-     *  
+     *  Gets or sets the path and name of the source file for the linked image.
      *
      * @return $this
      */

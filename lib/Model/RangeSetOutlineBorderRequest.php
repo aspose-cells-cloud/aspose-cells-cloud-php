@@ -241,7 +241,7 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
     /**
      * Sets range
      *
-     *  
+     *  Encapsulates the object that represents a range of cells within a spreadsheet.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
     /**
      * Sets border_edge
      *
-     *  
+     *  LeftBorder, RightBorder, TopBorder, BottomBorder, DiagonalDown, DiagonalUp, Vertical and Horizontal.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
     /**
      * Sets border_style
      *
-     *  
+     *  None, Thin, Medium, Dashed, Dotted, Thick, Double, Hair, MediumDashed, DashDot, MediumDashDot, DashDotDot, MediumDashDotDot and SlantedDashDot.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class RangeSetOutlineBorderRequest implements  ArrayAccess
     /**
      * Sets border_color
      *
-     *  
+     *  Border color.
      *
      * @return $this
      */

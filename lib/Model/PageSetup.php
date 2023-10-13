@@ -613,7 +613,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets black_and_white
      *
-     *  
+     *  Represents if elements of the document will be printed in black and white.
      *
      * @return $this
      */
@@ -636,7 +636,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets bottom_margin
      *
-     *  
+     *  Represents the size of the bottom margin, in unit of centimeters.
      *
      * @return $this
      */
@@ -659,7 +659,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets center_horizontally
      *
-     *  
+     *  Represent if the sheet is printed centered horizontally.
      *
      * @return $this
      */
@@ -682,7 +682,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets center_vertically
      *
-     *  
+     *  Represent if the sheet is printed centered vertically.
      *
      * @return $this
      */
@@ -705,7 +705,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets first_page_number
      *
-     *  
+     *  Represents the first page number that will be used when this sheet is printed.
      *
      * @return $this
      */
@@ -728,7 +728,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets fit_to_pages_tall
      *
-     *  
+     *  Represents  the number of pages tall the worksheet will be scaled to when it's printed.                        The default value is 1.
      *
      * @return $this
      */
@@ -751,7 +751,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets fit_to_pages_wide
      *
-     *  
+     *  Represents the number of pages wide the worksheet will be scaled to when it's printed.                        The default value is 1.
      *
      * @return $this
      */
@@ -774,7 +774,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets footer_margin
      *
-     *  
+     *  Represents the distance from the bottom of the page to the footer, in unit of centimeters.
      *
      * @return $this
      */
@@ -797,7 +797,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets header_margin
      *
-     *  
+     *  Represents the distance from the top of the page to the header, in unit of centimeters.
      *
      * @return $this
      */
@@ -820,7 +820,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets is_auto_first_page_number
      *
-     *  
+     *  Indicates whether the first the page number is automatically assigned.
      *
      * @return $this
      */
@@ -843,7 +843,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets is_hf_align_margins
      *
-     *  
+     *  Indicates whether header and footer margins are aligned with the page margins.                        If this property is true, the left header and footer will be aligned with the left margin,                        and the right header and footer will be aligned with the right margin.                        This option is enabled by default.
      *
      * @return $this
      */
@@ -866,7 +866,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets is_hf_diff_first
      *
-     *  
+     *  True means that the header/footer of the first page is different with other pages.
      *
      * @return $this
      */
@@ -889,7 +889,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets is_hf_diff_odd_even
      *
-     *  
+     *  True means that the header/footer of the odd pages is different with odd pages.
      *
      * @return $this
      */
@@ -912,7 +912,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets is_hf_scale_with_doc
      *
-     *  
+     *  Indicates whether header and footer are scaled with document scaling.                        Only applies for Excel 2007.
      *
      * @return $this
      */
@@ -935,7 +935,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets is_percent_scale
      *
-     *  
+     *  If this property is False, the FitToPagesWide and FitToPagesTall properties control how the worksheet is scaled.
      *
      * @return $this
      */
@@ -958,7 +958,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets left_margin
      *
-     *  
+     *  Represents the size of the left margin, in unit of centimeters.
      *
      * @return $this
      */
@@ -981,7 +981,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets order
      *
-     *  
+     *  Represents the order that Microsoft Excel uses to number pages when printing a large worksheet.
      *
      * @return $this
      */
@@ -1004,7 +1004,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets orientation
      *
-     *  
+     *  Represents page print orientation.
      *
      * @return $this
      */
@@ -1027,7 +1027,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets paper_size
      *
-     *  
+     *  Represents the size of the paper.
      *
      * @return $this
      */
@@ -1050,7 +1050,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_area
      *
-     *  
+     *  Represents the range to be printed.
      *
      * @return $this
      */
@@ -1073,7 +1073,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_comments
      *
-     *  
+     *  Represents the way comments are printed with the sheet.
      *
      * @return $this
      */
@@ -1096,7 +1096,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_copies
      *
-     *  
+     *  Get and sets number of copies to print.
      *
      * @return $this
      */
@@ -1119,7 +1119,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_draft
      *
-     *  
+     *  Represents if the sheet will be printed without graphics.
      *
      * @return $this
      */
@@ -1142,7 +1142,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_errors
      *
-     *  
+     *  Specifies the type of print error displayed.
      *
      * @return $this
      */
@@ -1165,7 +1165,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_gridlines
      *
-     *  
+     *  Represents if cell gridlines are printed on the page.
      *
      * @return $this
      */
@@ -1188,7 +1188,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_headings
      *
-     *  
+     *  Represents if row and column headings are printed with this page.
      *
      * @return $this
      */
@@ -1211,7 +1211,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_quality
      *
-     *  
+     *  Represents the print quality.
      *
      * @return $this
      */
@@ -1234,7 +1234,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_title_columns
      *
-     *  
+     *  Represents the columns that contain the cells to be repeated on the left side of each page.
      *
      * @return $this
      */
@@ -1257,7 +1257,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets print_title_rows
      *
-     *  
+     *  Represents the rows that contain the cells to be repeated at the top of each page.
      *
      * @return $this
      */
@@ -1280,7 +1280,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets right_margin
      *
-     *  
+     *  Represents the size of the right margin, in unit of centimeters.
      *
      * @return $this
      */
@@ -1303,7 +1303,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets top_margin
      *
-     *  
+     *  Represents the size of the top margin, in unit of centimeters.
      *
      * @return $this
      */
@@ -1326,7 +1326,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets zoom
      *
-     *  
+     *  Represents the scaling factor in percent. It should be between 10 and 400.
      *
      * @return $this
      */
@@ -1349,7 +1349,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets header
      *
-     *  
+     *  Represents the page header.
      *
      * @return $this
      */
@@ -1372,7 +1372,7 @@ class PageSetup implements  ArrayAccess
     /**
      * Sets footer
      *
-     *  
+     *  Represents the page footor.
      *
      * @return $this
      */

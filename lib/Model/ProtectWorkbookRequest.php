@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ProtectWorkbookRequst.cs">
+ * <copyright company="Aspose" file="ProtectWorkbookRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 use \ArrayAccess;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ProtectWorkbookRequst implements  ArrayAccess
+class ProtectWorkbookRequest implements  ArrayAccess
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProtectWorkbookRequst';     
+    protected static $swaggerModelName = 'ProtectWorkbookRequest';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,7 +46,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'aways_open_only_ready' => 'bool',
+        'aways_open_read_only' => 'bool',
         'encrypt_with_password' => 'string',
         'protect_current_sheet' => '\Aspose\Cells\Cloud\Model\Protection',
         'protect_workbook_structure' => 'string',
@@ -60,7 +60,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'aways_open_only_ready' => null  ,
+        'aways_open_read_only' => null  ,
         'encrypt_with_password' => null  ,
         'protect_current_sheet' => null  ,
         'protect_workbook_structure' => null  ,
@@ -95,7 +95,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-         'aways_open_only_ready' => 'AwaysOpenOnlyReady' ,
+         'aways_open_read_only' => 'AwaysOpenReadOnly' ,
          'encrypt_with_password' => 'EncryptWithPassword' ,
          'protect_current_sheet' => 'ProtectCurrentSheet' ,
          'protect_workbook_structure' => 'ProtectWorkbookStructure' ,
@@ -109,7 +109,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'aways_open_only_ready' => 'setAwaysOpenOnlyReady' ,
+        'aways_open_read_only' => 'setAwaysOpenReadOnly' ,
         'encrypt_with_password' => 'setEncryptWithPassword' ,
         'protect_current_sheet' => 'setProtectCurrentSheet' ,
         'protect_workbook_structure' => 'setProtectWorkbookStructure' ,
@@ -123,7 +123,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'aways_open_only_ready' => 'getAwaysOpenOnlyReady' ,
+        'aways_open_read_only' => 'getAwaysOpenReadOnly' ,
         'encrypt_with_password' => 'getEncryptWithPassword' ,
         'protect_current_sheet' => 'getProtectCurrentSheet' ,
         'protect_workbook_structure' => 'getProtectWorkbookStructure' ,
@@ -187,7 +187,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['aways_open_only_ready'] = isset($data['aways_open_only_ready']) ? $data['aways_open_only_ready'] : null;
+        $this->container['aways_open_read_only'] = isset($data['aways_open_read_only']) ? $data['aways_open_read_only'] : null;
         $this->container['encrypt_with_password'] = isset($data['encrypt_with_password']) ? $data['encrypt_with_password'] : null;
         $this->container['protect_current_sheet'] = isset($data['protect_current_sheet']) ? $data['protect_current_sheet'] : null;
         $this->container['protect_workbook_structure'] = isset($data['protect_workbook_structure']) ? $data['protect_workbook_structure'] : null;
@@ -203,8 +203,8 @@ class ProtectWorkbookRequst implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['aways_open_only_ready'] === null) {
-            $invalidProperties[] = "'aways_open_only_ready' can't be null";
+        if ($this->container['aways_open_read_only'] === null) {
+            $invalidProperties[] = "'aways_open_read_only' can't be null";
         }
         if ($this->container['encrypt_with_password'] === null) {
             $invalidProperties[] = "'encrypt_with_password' can't be null";
@@ -232,7 +232,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
      */
     public function valid()
     {
-        if ($this->container['aways_open_only_ready'] === null) {
+        if ($this->container['aways_open_read_only'] === null) {
                     return false;
                 }
         if ($this->container['encrypt_with_password'] === null) {
@@ -253,25 +253,25 @@ class ProtectWorkbookRequst implements  ArrayAccess
         return true;
     }
    /**
-     * Gets aways_open_only_ready
+     * Gets aways_open_read_only
      *
      * @return bool
      */
-    public function getAwaysOpenOnlyReady()
+    public function getAwaysOpenReadOnly()
     {
-        return $this->container['aways_open_only_ready'];
+        return $this->container['aways_open_read_only'];
     }
 
     /**
-     * Sets aways_open_only_ready
+     * Sets aways_open_read_only
      *
-     *  
+     *  Indicates aways open read-only.
      *
      * @return $this
      */
-    public function setAwaysOpenOnlyReady($aways_open_only_ready)
+    public function setAwaysOpenReadOnly($aways_open_read_only)
     {
-        $this->container['aways_open_only_ready'] = $aways_open_only_ready;
+        $this->container['aways_open_read_only'] = $aways_open_read_only;
 
         return $this;
     }
@@ -288,7 +288,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
     /**
      * Sets encrypt_with_password
      *
-     *  
+     *  Indicates encrypt with password.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
     /**
      * Sets protect_current_sheet
      *
-     *  
+     *  Represents the various types of protection options available for a worksheet.            
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
     /**
      * Sets protect_workbook_structure
      *
-     *  
+     *  Indicates protect workbook structure. All, Contents, Objects, Scenarios, Structure, Windows, and None.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
     /**
      * Sets digital_signature
      *
-     *  
+     *  Indicates signature in file.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class ProtectWorkbookRequst implements  ArrayAccess
     /**
      * Sets mark_as_final
      *
-     *  
+     *  Indicates mark as final.
      *
      * @return $this
      */

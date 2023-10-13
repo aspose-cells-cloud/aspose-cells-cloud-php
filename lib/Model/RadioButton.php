@@ -673,7 +673,7 @@ class RadioButton implements  ArrayAccess
     /**
      * Sets group_box
      *
-     *  
+     *  Gets the GroupBox that contains this RadioButton.
      *
      * @return $this
      */
@@ -696,7 +696,7 @@ class RadioButton implements  ArrayAccess
     /**
      * Sets is_checked
      *
-     *  
+     *  Indicates if the radiobutton is checked or not.
      *
      * @return $this
      */
@@ -719,7 +719,7 @@ class RadioButton implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  Indicates whether the combobox has 3-D shading.
      *
      * @return $this
      */

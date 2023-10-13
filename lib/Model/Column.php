@@ -265,7 +265,7 @@ class Column implements  ArrayAccess
     /**
      * Sets group_level
      *
-     *  
+     *  Gets the group level of the column.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class Column implements  ArrayAccess
     /**
      * Sets index
      *
-     *  
+     *  Gets the index of this column.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class Column implements  ArrayAccess
     /**
      * Sets is_hidden
      *
-     *  
+     *  Indicates whether the column is hidden.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class Column implements  ArrayAccess
     /**
      * Sets width
      *
-     *  
+     *  Gets and sets the column width in unit of characters.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class Column implements  ArrayAccess
     /**
      * Sets style
      *
-     *  
+     *  Gets the style of this column.
      *
      * @return $this
      */

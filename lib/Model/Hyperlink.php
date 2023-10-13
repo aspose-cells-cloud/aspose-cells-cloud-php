@@ -265,7 +265,7 @@ class Hyperlink implements  ArrayAccess
     /**
      * Sets address
      *
-     *  
+     *  Represents the address of a hyperlink.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class Hyperlink implements  ArrayAccess
     /**
      * Sets area
      *
-     *  
+     *  Gets the range of hyperlink.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class Hyperlink implements  ArrayAccess
     /**
      * Sets screen_tip
      *
-     *  
+     *  Returns or sets the ScreenTip text for the specified hyperlink.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class Hyperlink implements  ArrayAccess
     /**
      * Sets text_to_display
      *
-     *  
+     *  Represents the text to be displayed for the specified hyperlink. The default value is the address of the hyperlink.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class Hyperlink implements  ArrayAccess
     /**
      * Sets link_type
      *
-     *  
+     *  Gets the link type.
      *
      * @return $this
      */

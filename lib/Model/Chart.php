@@ -721,7 +721,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets auto_scaling
      *
-     *  
+     *  True if Microsoft Excel scales a 3-D chart so that it's closer in size to the equivalent 2-D chart.                         The RightAngleAxes property must be True.
      *
      * @return $this
      */
@@ -744,7 +744,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets back_wall
      *
-     *  
+     *  Returns a  object that represents the back wall of a 3-D chart.
      *
      * @return $this
      */
@@ -767,7 +767,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets category_axis
      *
-     *  
+     *  Gets the chart's X axis.
      *
      * @return $this
      */
@@ -790,7 +790,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets chart_area
      *
-     *  
+     *  Gets the chart area in the worksheet.
      *
      * @return $this
      */
@@ -813,7 +813,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets chart_data_table
      *
-     *  
+     *  Represents the chart data table.
      *
      * @return $this
      */
@@ -836,7 +836,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets chart_object
      *
-     *  
+     *  Represents the chartShape;
      *
      * @return $this
      */
@@ -859,7 +859,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets depth_percent
      *
-     *  
+     *  Represents the depth of a 3-D chart as a percentage of the chart width (between 20 and 2000 percent).
      *
      * @return $this
      */
@@ -882,7 +882,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets elevation
      *
-     *  
+     *  Represents the elevation of the 3-D chart view, in degrees.
      *
      * @return $this
      */
@@ -905,7 +905,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets first_slice_angle
      *
-     *  
+     *  Gets or sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical).                         Applies only to pie, 3-D pie, and doughnut charts, 0 to 360.
      *
      * @return $this
      */
@@ -928,7 +928,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets floor
      *
-     *  
+     *  Returns a  object that represents the walls of a 3-D chart.
      *
      * @return $this
      */
@@ -951,7 +951,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets gap_depth
      *
-     *  
+     *  Gets or sets the distance between the data series in a 3-D chart, as a percentage of the marker width.                        The value of this property must be between 0 and 500.
      *
      * @return $this
      */
@@ -974,7 +974,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets gap_width
      *
-     *  
+     *  Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.                        The value of this property must be between 0 and 500.
      *
      * @return $this
      */
@@ -997,7 +997,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets height_percent
      *
-     *  
+     *  Returns or sets the height of a 3-D chart as a percentage of the chart width (between 5 and 500 percent).
      *
      * @return $this
      */
@@ -1020,7 +1020,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets hide_pivot_field_buttons
      *
-     *  
+     *  Indicates whether hide the pivot chart field buttons only when the chart is PivotChart.
      *
      * @return $this
      */
@@ -1043,7 +1043,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets is3_d
      *
-     *  
+     *  Indicates whether the chart is a 3d chart.
      *
      * @return $this
      */
@@ -1066,7 +1066,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets is_rectangular_cornered
      *
-     *  
+     *  Gets or sets a value indicating whether the chart area is rectangular cornered.                        Default is true.
      *
      * @return $this
      */
@@ -1089,7 +1089,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets legend
      *
-     *  
+     *  Gets the chart legend.
      *
      * @return $this
      */
@@ -1112,7 +1112,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets and sets the name of the chart.
      *
      * @return $this
      */
@@ -1135,7 +1135,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets n_series
      *
-     *  
+     *  Gets a  collection representing the data series in the chart.
      *
      * @return $this
      */
@@ -1158,7 +1158,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets page_setup
      *
-     *  
+     *  Represents the page setup description in this chart.
      *
      * @return $this
      */
@@ -1181,7 +1181,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets perspective
      *
-     *  
+     *  Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.                        This property is ignored if the RightAngleAxes property is True.
      *
      * @return $this
      */
@@ -1204,7 +1204,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets pivot_source
      *
-     *  
+     *  The source is the data of the pivotTable.                        If PivotSource is not empty ,the chart is PivotChart.
      *
      * @return $this
      */
@@ -1227,7 +1227,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets placement
      *
-     *  
+     *  Represents the way the chart is attached to the cells below it.
      *
      * @return $this
      */
@@ -1250,7 +1250,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets plot_area
      *
-     *  
+     *  Gets the chart's plot area which includes axis tick labels.
      *
      * @return $this
      */
@@ -1273,7 +1273,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets plot_empty_cells_type
      *
-     *  
+     *  Gets and sets  how to plot the empty cells.
      *
      * @return $this
      */
@@ -1296,7 +1296,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets plot_visible_cells
      *
-     *  
+     *  Indicates whether only plot visible cells.
      *
      * @return $this
      */
@@ -1319,7 +1319,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets print_size
      *
-     *  
+     *  Gets and sets the printed chart size.
      *
      * @return $this
      */
@@ -1342,7 +1342,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets right_angle_axes
      *
-     *  
+     *  True if the chart axes are at right angles. Applies only for 3-D charts(except Column3D and 3-D Pie Charts).
      *
      * @return $this
      */
@@ -1365,7 +1365,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets rotation_angle
      *
-     *  
+     *  Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
      *
      * @return $this
      */
@@ -1388,7 +1388,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets second_category_axis
      *
-     *  
+     *  Gets the chart's second X axis.
      *
      * @return $this
      */
@@ -1411,7 +1411,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets second_value_axis
      *
-     *  
+     *  Gets the chart's second Y axis.
      *
      * @return $this
      */
@@ -1434,7 +1434,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets series_axis
      *
-     *  
+     *  Gets the chart's series axis.
      *
      * @return $this
      */
@@ -1457,7 +1457,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets shapes
      *
-     *  
+     *  Returns all drawing shapes in this chart.
      *
      * @return $this
      */
@@ -1480,7 +1480,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets show_data_table
      *
-     *  
+     *  Gets or sets a value indicating whether the chart displays a data table.
      *
      * @return $this
      */
@@ -1503,7 +1503,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets show_legend
      *
-     *  
+     *  Gets or sets a value indicating whether the chart legend will be displayed. Default is true.
      *
      * @return $this
      */
@@ -1526,7 +1526,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets side_wall
      *
-     *  
+     *  Returns a  object that represents the side wall of a 3-D chart.
      *
      * @return $this
      */
@@ -1549,7 +1549,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets size_with_window
      *
-     *  
+     *  True if Microsoft Excel resizes the chart to match the size of the chart sheet window.
      *
      * @return $this
      */
@@ -1572,7 +1572,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets style
      *
-     *  
+     *  Gets and sets the builtin style.
      *
      * @return $this
      */
@@ -1595,7 +1595,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets title
      *
-     *  
+     *  Gets the chart's title.
      *
      * @return $this
      */
@@ -1618,7 +1618,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets or sets a chart's type.
      *
      * @return $this
      */
@@ -1641,7 +1641,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets value_axis
      *
-     *  
+     *  Gets the chart's Y axis.
      *
      * @return $this
      */
@@ -1664,7 +1664,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets walls
      *
-     *  
+     *  Returns a  object that represents the walls of a 3-D chart.
      *
      * @return $this
      */
@@ -1687,7 +1687,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets walls_and_gridlines2_d
      *
-     *  
+     *  True if gridlines are drawn two-dimensionally on a 3-D chart.
      *
      * @return $this
      */

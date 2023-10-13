@@ -253,7 +253,7 @@ class FontSetting implements  ArrayAccess
     /**
      * Sets font
      *
-     *  
+     *  Returns the font of this object. 
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class FontSetting implements  ArrayAccess
     /**
      * Sets length
      *
-     *  
+     *  Gets the length of the characters. 
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class FontSetting implements  ArrayAccess
     /**
      * Sets start_index
      *
-     *  
+     *  Gets the start index of the characters. 
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class FontSetting implements  ArrayAccess
     /**
      * Sets text_options
      *
-     *  
+     *  Returns the text options. 
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class FontSetting implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Gets the type of text node. 
      *
      * @return $this
      */

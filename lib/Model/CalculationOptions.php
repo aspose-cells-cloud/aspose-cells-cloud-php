@@ -277,7 +277,7 @@ class CalculationOptions implements  ArrayAccess
     /**
      * Sets calc_stack_size
      *
-     *  
+     *  Specifies the stack size for calculating cells recursively. 
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class CalculationOptions implements  ArrayAccess
     /**
      * Sets ignore_error
      *
-     *  
+     *  Indicates whether errors encountered while calculating formulas should be ignored.            The error may be unsupported function, external links, etc.            The default value is true. 
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class CalculationOptions implements  ArrayAccess
     /**
      * Sets precision_strategy
      *
-     *  
+     *  Specifies the strategy for processing precision of calculation. 
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class CalculationOptions implements  ArrayAccess
     /**
      * Sets recursive
      *
-     *  
+     *  Indicates whether calculate the dependent cells recursively when calculating one cell and it depends on other cells.            The default value is true. 
      *
      * @return $this
      */

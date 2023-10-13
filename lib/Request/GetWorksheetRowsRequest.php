@@ -45,7 +45,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * offset : 
+    * offset : Original workbook folder.
     */ 
     public $offset;
 
@@ -90,7 +90,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * count : 
+    * count : Storage name.
     */ 
     public $count;
 

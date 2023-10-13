@@ -397,7 +397,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets begin_arrowhead_length
      *
-     *  
+     *  Gets and sets the begin arrow length type of the line.
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets begin_arrowhead_style
      *
-     *  
+     *  Gets and sets the begin arrow type of the line.
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets begin_arrowhead_width
      *
-     *  
+     *  Gets and sets the begin arrow width type of the line.
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets cap_type
      *
-     *  
+     *  Specifies the ending caps.
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets compound_type
      *
-     *  
+     *  Specifies the line compound type.
      *
      * @return $this
      */
@@ -512,7 +512,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets dash_style
      *
-     *  
+     *  Specifies the line dash type.
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets end_arrowhead_length
      *
-     *  
+     *  Gets and sets the end arrow length type of the line.
      *
      * @return $this
      */
@@ -558,7 +558,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets end_arrowhead_style
      *
-     *  
+     *  Gets and sets the end arrow type of the line.
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets end_arrowhead_width
      *
-     *  
+     *  Gets and sets the end arrow width type of the line.
      *
      * @return $this
      */
@@ -604,7 +604,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets join_type
      *
-     *  
+     *  Specifies the line join type.
      *
      * @return $this
      */
@@ -627,7 +627,7 @@ class LineFormat implements  ArrayAccess
     /**
      * Sets weight
      *
-     *  
+     *  Gets or sets the weight of the line in unit of points.
      *
      * @return $this
      */

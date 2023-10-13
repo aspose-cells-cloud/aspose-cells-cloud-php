@@ -217,7 +217,7 @@ class MatchConditionRequest implements  ArrayAccess
     /**
      * Sets regex_pattern
      *
-     *  
+     *  Regex Pattern.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class MatchConditionRequest implements  ArrayAccess
     /**
      * Sets full_match_conditions
      *
-     *  
+     *  Name list.
      *
      * @return $this
      */

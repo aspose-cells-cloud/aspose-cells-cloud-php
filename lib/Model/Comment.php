@@ -360,7 +360,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets author
      *
-     *  
+     *  Gets and sets Name of the original comment author
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets html_note
      *
-     *  
+     *  Gets and sets the html string which contains data and some formats in this comment.
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets note
      *
-     *  
+     *  Represents the content of comment.
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets auto_size
      *
-     *  
+     *  Indicates if size of comment is adjusted automatically according to its content.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets is_visible
      *
-     *  
+     *  Represents if the comment is visible or not.
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets width
      *
-     *  
+     *  Represents the width of the comment, in unit of pixels.
      *
      * @return $this
      */
@@ -498,7 +498,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets height
      *
-     *  
+     *  Represents the Height of the comment, in unit of pixels.
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets text_horizontal_alignment
      *
-     *  
+     *  Gets and sets the text horizontal alignment type of the comment.
      *
      * @return $this
      */
@@ -544,7 +544,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets text_orientation_type
      *
-     *  
+     *  Gets and sets the text orientation type of the comment.
      *
      * @return $this
      */
@@ -567,7 +567,7 @@ class Comment implements  ArrayAccess
     /**
      * Sets text_vertical_alignment
      *
-     *  
+     *  Gets and sets the text vertical alignment type of the comment.
      *
      * @return $this
      */

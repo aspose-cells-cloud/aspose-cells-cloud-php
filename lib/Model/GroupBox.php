@@ -649,7 +649,7 @@ class GroupBox implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  Indicates whether the groupbox has shadow.
      *
      * @return $this
      */

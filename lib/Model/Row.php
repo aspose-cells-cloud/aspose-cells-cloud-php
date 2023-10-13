@@ -289,7 +289,7 @@ class Row implements  ArrayAccess
     /**
      * Sets group_level
      *
-     *  
+     *  Gets the group level of the row.
      *
      * @return $this
      */
@@ -312,7 +312,7 @@ class Row implements  ArrayAccess
     /**
      * Sets height
      *
-     *  
+     *  Gets and sets the row height in unit of Points.
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class Row implements  ArrayAccess
     /**
      * Sets index
      *
-     *  
+     *  Gets the index of this row.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class Row implements  ArrayAccess
     /**
      * Sets is_blank
      *
-     *  
+     *  Indicates whether the row contains any data
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class Row implements  ArrayAccess
     /**
      * Sets is_height_matched
      *
-     *  
+     *  Indicates that row height and default font height matches.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class Row implements  ArrayAccess
     /**
      * Sets is_hidden
      *
-     *  
+     *  Indicates whether the row is hidden.
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class Row implements  ArrayAccess
     /**
      * Sets style
      *
-     *  
+     *  Represents the style of this row.
      *
      * @return $this
      */

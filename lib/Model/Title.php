@@ -433,7 +433,7 @@ class Title implements  ArrayAccess
     /**
      * Sets is_visible
      *
-     *  
+     *  Represents whether the title is visible.
      *
      * @return $this
      */
@@ -502,7 +502,7 @@ class Title implements  ArrayAccess
     /**
      * Sets text
      *
-     *  
+     *  Gets or sets the text of display unit label.
      *
      * @return $this
      */

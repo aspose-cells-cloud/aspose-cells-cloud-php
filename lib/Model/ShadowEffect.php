@@ -277,7 +277,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets angle
      *
-     *  
+     *  Gets and sets the lighting angle. Range from 0 to 359.9 degrees. 
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets blur
      *
-     *  
+     *  Gets and sets the blur of the shadow. Range from 0 to 100 points. 
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets color
      *
-     *  
+     *  Gets and sets the color of the shadow. 
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets distance
      *
-     *  
+     *  Gets and sets the distance of the shadow. Range from 0 to 200 points. 
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets preset_type
      *
-     *  
+     *  Gets and sets the preset shadow type of the shadow. 
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets size
      *
-     *  
+     *  Gets and sets the size of the shadow. Range from 0 to 2.0.             Meaningless in inner shadow. 
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class ShadowEffect implements  ArrayAccess
     /**
      * Sets transparency
      *
-     *  
+     *  Gets and sets the degree of transparency of the shadow. Range from 0.0 (opaque) to 1.0 (clear). 
      *
      * @return $this
      */

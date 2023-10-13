@@ -433,7 +433,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets chart_image_type
      *
-     *  
+     *  Indicate the chart imagetype when converting.
      *
      * @return $this
      */
@@ -456,7 +456,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets embeded_image_name_in_svg
      *
-     *  
+     *  Indicate the filename of embeded image in svg. This should be full path with directory like "c:\\xpsEmbeded"
      *
      * @return $this
      */
@@ -479,7 +479,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets horizontal_resolution
      *
-     *  
+     *  Gets or sets the horizontal resolution for generated images, in dots per inch.                 Applies generating image method except Emf format images.               The default value is 96.
      *
      * @return $this
      */
@@ -502,7 +502,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets image_format
      *
-     *  
+     *  Gets or sets the format of the generated images.  Don't apply the method that returns a Bitmap object.             The default value is ImageFormat.Bmp.  Don't apply the method that returns a Bitmap object.
      *
      * @return $this
      */
@@ -525,7 +525,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets is_cell_auto_fit
      *
-     *  
+     *  Indicates whether the width and height of the cells is automatically fitted by cell value. The default value is false.
      *
      * @return $this
      */
@@ -548,7 +548,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets one_page_per_sheet
      *
-     *  
+     *  If OnePagePerSheet is true , all content of one sheet will output to only                one page in result. The paper size of pagesetup will be invalid, and the                other settings of pagesetup will still take effect.
      *
      * @return $this
      */
@@ -571,7 +571,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets only_area
      *
-     *  
+     *  If this property is true , onle Area will be output, and no scale will take effect.
      *
      * @return $this
      */
@@ -594,7 +594,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets printing_page
      *
-     *  
+     *  Indicates which pages will not be printed.
      *
      * @return $this
      */
@@ -617,7 +617,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets print_with_status_dialog
      *
-     *  
+     *  If PrintWithStatusDialog = true , there will be a dialog that shows current print status.  else no such dialog will show.
      *
      * @return $this
      */
@@ -640,7 +640,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets quality
      *
-     *  
+     *  Gets or sets a value determining the quality of the generated images to apply only when saving pages to the Jpeg format.            Has effect only when saving to JPEG.  The value must be between 0 and 100. The default value is 100.
      *
      * @return $this
      */
@@ -663,7 +663,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets tiff_compression
      *
-     *  
+     *  Gets or sets the type of compression to apply only when saving pages to the Tiff format.            Has effect only when saving to TIFF.  The default value is Lzw.
      *
      * @return $this
      */
@@ -686,7 +686,7 @@ class ImageSaveOptions implements  ArrayAccess
     /**
      * Sets vertical_resolution
      *
-     *  
+     *  Gets or sets the vertical resolution for generated images, in dots per inch.            Applies generating image method except Emf format image.            The default value is 96.
      *
      * @return $this
      */

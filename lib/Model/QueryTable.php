@@ -253,7 +253,7 @@ class QueryTable implements  ArrayAccess
     /**
      * Sets connection_id
      *
-     *  
+     *  Gets the connection id of the query table.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class QueryTable implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets the name of querytable.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class QueryTable implements  ArrayAccess
     /**
      * Sets result_range
      *
-     *  
+     *  Gets the range of the result.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class QueryTable implements  ArrayAccess
     /**
      * Sets preserve_formatting
      *
-     *  
+     *  Returns or sets the PreserveFormatting of the object.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class QueryTable implements  ArrayAccess
     /**
      * Sets adjust_column_width
      *
-     *  
+     *  Returns or sets the AdjustColumnWidth of the object.
      *
      * @return $this
      */

@@ -289,7 +289,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets save_format
      *
-     *  
+     *  Save format name
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets enable_http_compression
      *
-     *  
+     *  whether http compression is to be used.
      *
      * @return $this
      */
@@ -404,7 +404,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets refresh_chart_cache
      *
-     *  
+     *  Indicates whether refreshing chart cache data
      *
      * @return $this
      */
@@ -427,7 +427,7 @@ class SaveOptions implements  ArrayAccess
     /**
      * Sets sort_names
      *
-     *  
+     *  Indicates whether sorting defined names before saving file.
      *
      * @return $this
      */

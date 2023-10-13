@@ -744,7 +744,7 @@ class ListBox implements  ArrayAccess
     /**
      * Sets item_count
      *
-     *  
+     *  Gets the number of items in the list box.
      *
      * @return $this
      */
@@ -767,7 +767,7 @@ class ListBox implements  ArrayAccess
     /**
      * Sets page_change
      *
-     *  
+     *  Specifies the amount by which the control's value is changed                         when the user clicks on the scrollbar's page up or page down region.
      *
      * @return $this
      */
@@ -790,7 +790,7 @@ class ListBox implements  ArrayAccess
     /**
      * Sets selected_cells
      *
-     *  
+     *  Gets the selected cells.                        Returns null if the input range is not set or no item is selected
      *
      * @return $this
      */
@@ -813,7 +813,7 @@ class ListBox implements  ArrayAccess
     /**
      * Sets selected_index
      *
-     *  
+     *  Gets or sets the index number of the currently selected item in a list box or combo box.                        Zero-based.
      *
      * @return $this
      */
@@ -836,7 +836,7 @@ class ListBox implements  ArrayAccess
     /**
      * Sets selection_type
      *
-     *  
+     *  Gets or sets the selection mode of the specified list box.
      *
      * @return $this
      */
@@ -859,7 +859,7 @@ class ListBox implements  ArrayAccess
     /**
      * Sets shadow
      *
-     *  
+     *  Indicates whether the combobox has 3-D shading.
      *
      * @return $this
      */

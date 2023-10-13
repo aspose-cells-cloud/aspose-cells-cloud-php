@@ -253,7 +253,7 @@ class ListColumn implements  ArrayAccess
     /**
      * Sets name
      *
-     *  Gets and sets the name of the column.
+     *  Gets and sets the name of the column. 
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class ListColumn implements  ArrayAccess
     /**
      * Sets range
      *
-     *  Gets the range of this list column.            
+     *  Gets the range of this list column. 
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class ListColumn implements  ArrayAccess
     /**
      * Sets totals_calculation
      *
-     *  Gets and sets the type of calculation in the Totals row of the list column.
+     *  Gets and sets the type of calculation in the Totals row of the list column. 
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class ListColumn implements  ArrayAccess
     /**
      * Sets formula
      *
-     *  Gets and sets the formula of the list column.            
+     *  Gets and sets the formula of the list column. 
      *
      * @return $this
      */

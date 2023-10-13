@@ -397,7 +397,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  Gets the name of the cell.
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets row
      *
-     *  
+     *  Gets row number (zero based) of the cell.
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets column
      *
-     *  
+     *  Gets column number (zero based) of the cell.
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets value
      *
-     *  
+     *  Gets the value contained in this cell.
      *
      * @return $this
      */
@@ -489,7 +489,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets type
      *
-     *  
+     *  Represents cell value type.
      *
      * @return $this
      */
@@ -512,7 +512,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets formula
      *
-     *  
+     *  Gets or sets a formula of the .
      *
      * @return $this
      */
@@ -535,7 +535,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_formula
      *
-     *  
+     *  Represents if the specified cell contains formula.
      *
      * @return $this
      */
@@ -558,7 +558,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_merged
      *
-     *  
+     *  Checks if a cell is part of a merged range or not.
      *
      * @return $this
      */
@@ -581,7 +581,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_array_header
      *
-     *  
+     *  Indicates the cell's formula is and array formula                         and it is the first cell of the array.
      *
      * @return $this
      */
@@ -604,7 +604,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_in_array
      *
-     *  
+     *  Indicates whether the cell formula is an array formula.
      *
      * @return $this
      */
@@ -627,7 +627,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_error_value
      *
-     *  
+     *  Checks if the value of this cell is an error.
      *
      * @return $this
      */
@@ -650,7 +650,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_in_table
      *
-     *  
+     *  Indicates whether this cell is part of table formula.
      *
      * @return $this
      */
@@ -673,7 +673,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets is_style_set
      *
-     *  
+     *  Indicates if the cell's style is set. If return false, it means this cell has a default cell format.
      *
      * @return $this
      */
@@ -696,7 +696,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets html_string
      *
-     *  
+     *  Gets and sets the html string which contains data and some formats in this cell.
      *
      * @return $this
      */
@@ -742,7 +742,7 @@ class Cell implements  ArrayAccess
     /**
      * Sets worksheet
      *
-     *  
+     *  Gets the parent worksheet.
      *
      * @return $this
      */
