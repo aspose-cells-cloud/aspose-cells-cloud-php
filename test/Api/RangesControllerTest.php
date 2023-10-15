@@ -41,7 +41,8 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMergeRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMoveToRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeOutlineBorderRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeRowHeightRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesRequest; 
+// use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesCopyRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeStyleRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeUnMergeRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeValueRequest; 
@@ -109,7 +110,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $rangeOperate->setTarget($rangeOperateTarget ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PostWorksheetCellsRangesRequest();
+        $request = new PostWorksheetCellsRangesCopyRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setRangeOperate( $rangeOperate);
@@ -455,7 +456,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request = new PostWorksheetCellsRangeSortRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "book1");
-        $request->setRangeOperate( $rangeOperate);
+        $request->getRangeSortRequest( $rangeOperate);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->postWorksheetCellsRangeSort($request);

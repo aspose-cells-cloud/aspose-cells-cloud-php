@@ -50,7 +50,7 @@ use \Aspose\Cells\Cloud\Request\PostSearchRequest;
 use \Aspose\Cells\Cloud\Request\PostSplitRequest; 
 use \Aspose\Cells\Cloud\Request\PostUnlockRequest; 
 use \Aspose\Cells\Cloud\Request\PostWatermarkRequest; 
-use \Aspose\Cells\Cloud\Model\ProtectWorkbookRequst;
+use \Aspose\Cells\Cloud\Model\ProtectWorkbookRequest;
 use PHPUnit\Framework\TestCase;
 class LightCellsTest extends \PHPUnit_Framework_TestCase
 {
@@ -4330,9 +4330,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostProtectRequest();
         $request->setFile( $mapFiles);
-        $protectWorkbookRequest = new ProtectWorkbookRequst();
-        $protectWorkbookRequest->setAwaysOpenOnlyReady('true');
-        $request->setProtectWorkbookRequst($protectWorkbookRequest);
+        $protectWorkbookRequest = new ProtectWorkbookRequest();
+        $protectWorkbookRequest->setAwaysOpenReadOnly('true');
+        $request->setProtectWorkbookRequest($protectWorkbookRequest);
         $this->instance->postProtect($request);
     }
 

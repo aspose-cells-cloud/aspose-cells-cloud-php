@@ -186,9 +186,9 @@ class WorkbookControllerTest extends \PHPUnit_Framework_TestCase
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        $protection = new \Aspose\Cells\Cloud\Model\WorkbookProtectionRequest();
-        $protection->setPassword("123456" ); 
-        $protection->setProtectionType("ALL" ); 
+        $protection = new \Aspose\Cells\Cloud\Model\ProtectWorkbookRequest();
+        $protection->setEncryptWithPassword("123456" ); 
+        $protection->setAwaysOpenReadOnly( 'true' ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostProtectWorkbookRequest();
@@ -210,14 +210,11 @@ class WorkbookControllerTest extends \PHPUnit_Framework_TestCase
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        $protection = new \Aspose\Cells\Cloud\Model\WorkbookProtectionRequest();
-        $protection->setPassword("123456" ); 
-        $protection->setProtectionType("ALL" ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteUnProtectWorkbookRequest();
         $request->setName( $remoteName);
-        $request->setProtection( $protection);
+        $request->setPassword("123456" );
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->deleteUnProtectWorkbook($request);
