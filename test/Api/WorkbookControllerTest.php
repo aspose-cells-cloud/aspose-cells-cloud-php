@@ -193,7 +193,7 @@ class WorkbookControllerTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostProtectWorkbookRequest();
         $request->setName( $remoteName);
-        $request->setProtection( $protection);
+        $request->setProtectWorkbookRequest( $protection);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->postProtectWorkbook($request);

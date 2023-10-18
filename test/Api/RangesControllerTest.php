@@ -116,7 +116,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRangeOperate( $rangeOperate);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRanges($request);
+        $this->instance->postWorksheetCellsRangesCopy($request);
     }
 
     /// <summary>
@@ -456,7 +456,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request = new PostWorksheetCellsRangeSortRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "book1");
-        $request->getRangeSortRequest( $rangeOperate);
+        $request->setRangeSortRequest( $rangeOperate);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->postWorksheetCellsRangeSort($request);

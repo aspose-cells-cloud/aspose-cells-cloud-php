@@ -34,9 +34,13 @@ use \Aspose\Cells\Cloud\ApiException;
 use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
-use \Aspose\Cells\Cloud\Request\PostProtectRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesCopyRequest; 
 use \Aspose\Cells\Cloud\Model\ProtectWorkbookRequst;
+use \Aspose\Cells\Cloud\Model\Range;
+use \Aspose\Cells\Cloud\Model\RangeCopyRequest;
+use \Aspose\Cells\Cloud\Request\PostProtectWorkbookRequest;
 use PHPUnit\Framework\TestCase;
+
 class LightCellsTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -70,21 +74,37 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
     {
     }
 
-    public function testPostProtect()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
 
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
+    public function testPostWorksheetCellsRanges()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "Book1.xlsx";
+        $remoteName = "Book1.xlsx";
+
+        $rangeOperateSource = new \Aspose\Cells\Cloud\Model\Range();
+        $rangeOperateSource->setColumnCount(1 ); 
+        $rangeOperateSource->setColumnWidth(10.0 ); 
+        $rangeOperateSource->setFirstRow(1 ); 
+        $rangeOperateSource->setRowCount(10 ); 
+        $rangeOperateTarget = new \Aspose\Cells\Cloud\Model\Range();
+        $rangeOperateTarget->setColumnCount(1 ); 
+        $rangeOperateTarget->setColumnWidth(10.0 ); 
+        $rangeOperateTarget->setFirstRow(10 ); 
+        $rangeOperateTarget->setRowCount(10 ); 
+        $rangeOperate = new \Aspose\Cells\Cloud\Model\RangeCopyRequest();
+        $rangeOperate->setOperate("copydata" ); 
+        $rangeOperate->setSource($rangeOperateSource ); 
+        $rangeOperate->setTarget($rangeOperateTarget ); 
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PostProtectRequest();
-        $request->setFile( $mapFiles);
-        $request->setPassword('12345');
-        $protectWorkbookRequest = new ProtectWorkbookRequst();
-        $request->setProtectWorkbookRequst($protectWorkbookRequest);
-        $this->instance->postProtect($request);
+        $request = new PostWorksheetCellsRangesCopyRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "Sheet1");
+        $request->setRangeOperate( $rangeOperate);
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postWorksheetCellsRangesCopy($request);
     }
 
 }
