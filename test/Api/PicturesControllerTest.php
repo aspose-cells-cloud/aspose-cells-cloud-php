@@ -35,10 +35,10 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\DeleteWorksheetPictureRequest; 
-use \Aspose\Cells\Cloud\Request\DeleteWorkSheetPicturesRequest; 
+use \Aspose\Cells\Cloud\Request\DeleteWorksheetPicturesRequest; 
 use \Aspose\Cells\Cloud\Request\GetWorksheetPicturesRequest; 
 use \Aspose\Cells\Cloud\Request\GetWorksheetPictureWithFormatRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorkSheetPictureRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetPictureRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetAddPictureRequest; 
 
 use PHPUnit\Framework\TestCase;
@@ -148,10 +148,10 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /// <summary>
-    /// Test for PostWorkSheetPicture of PicturesController.
+    /// Test for PostWorksheetPicture of PicturesController.
     /// </summary>
 
-    public function testPostWorkSheetPicture()
+    public function testPostWorksheetPicture()
     {
         $remoteFolder = "TestData/In";
 
@@ -163,14 +163,14 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
         $picture->setBottom(10 ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PostWorkSheetPictureRequest();
+        $request = new PostWorksheetPictureRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet6");
         $request->setPictureIndex( 0);
         $request->setPicture( $picture);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorkSheetPicture($request);
+        $this->instance->postWorksheetPicture($request);
     }
 
     /// <summary>
@@ -196,10 +196,10 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /// <summary>
-    /// Test for DeleteWorkSheetPictures of PicturesController.
+    /// Test for DeleteWorksheetPictures of PicturesController.
     /// </summary>
 
-    public function testDeleteWorkSheetPictures()
+    public function testDeleteWorksheetPictures()
     {
         $remoteFolder = "TestData/In";
 
@@ -208,11 +208,11 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new DeleteWorkSheetPicturesRequest();
+        $request = new DeleteWorksheetPicturesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet6");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorkSheetPictures($request);
+        $this->instance->deleteWorksheetPictures($request);
     }
 }

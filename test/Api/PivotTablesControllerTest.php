@@ -172,7 +172,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
      
         $request = new GetWorksheetPivotTableFiltersRequest();
         $request->setName( $remoteName);
-        $request->setSheetName( "Sheet3");
+        $request->setSheetName( "Sheet4");
         $request->setPivotTableIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
@@ -217,7 +217,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
      
         $request = new PutWorksheetPivotTableRequest();
         $request->setName( $remoteName);
-        $request->setSheetName( "Sheet3");
+        $request->setSheetName( "Sheet4");
         $request->setFolder( $remoteFolder);
         $request->setSourceData( "=Sheet1!C6:E13");
         $request->setDestCellName( "C1");
@@ -606,7 +606,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
      
         $request = new DeleteWorksheetPivotTableFilterRequest();
         $request->setName( $remoteName);
-        $request->setSheetName( "Sheet4");
+        $request->setSheetName( "Sheet3");
         $request->setPivotTableIndex( 0);
         $request->setFieldIndex( 0);
         $request->setNeedReCalculate( 'true');

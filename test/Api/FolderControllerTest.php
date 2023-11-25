@@ -107,7 +107,7 @@ class FolderControllerTest extends \PHPUnit_Framework_TestCase
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new CreateFolderRequest();
-        $request->setPath( "OutResul/NewFolder");
+        $request->setPath( "OutResult/NewFolder");
         $request->setStorageName( "");
         $this->instance->createFolder($request);
     }

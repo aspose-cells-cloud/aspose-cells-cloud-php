@@ -47,7 +47,8 @@ class ImportXMLRequest implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'xml_file_source' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'import_position' => '\Aspose\Cells\Cloud\Model\ImportPosition'
+        'import_position' => '\Aspose\Cells\Cloud\Model\ImportPosition',
+        'xml_content' => 'string'
     ];
 
     /**
@@ -57,7 +58,8 @@ class ImportXMLRequest implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'xml_file_source' => null  ,
-        'import_position' => null  
+        'import_position' => null  ,
+        'xml_content' => null  
     ];
 
     /**
@@ -88,7 +90,8 @@ class ImportXMLRequest implements  ArrayAccess
      */
     protected static $attributeMap = [
          'xml_file_source' => 'XMLFileSource' ,
-         'import_position' => 'ImportPosition' 
+         'import_position' => 'ImportPosition' ,
+         'xml_content' => 'XMLContent' 
     ];
 
     /**
@@ -98,7 +101,8 @@ class ImportXMLRequest implements  ArrayAccess
      */
     protected static $setters = [
         'xml_file_source' => 'setXMLFileSource' ,
-        'import_position' => 'setImportPosition' 
+        'import_position' => 'setImportPosition' ,
+        'xml_content' => 'setXMLContent' 
     ];
 
     /**
@@ -108,7 +112,8 @@ class ImportXMLRequest implements  ArrayAccess
      */
     protected static $getters = [
         'xml_file_source' => 'getXMLFileSource' ,
-        'import_position' => 'getImportPosition' 
+        'import_position' => 'getImportPosition' ,
+        'xml_content' => 'getXMLContent' 
     ];
 
     /**
@@ -169,6 +174,7 @@ class ImportXMLRequest implements  ArrayAccess
     {
         $this->container['xml_file_source'] = isset($data['xml_file_source']) ? $data['xml_file_source'] : null;
         $this->container['import_position'] = isset($data['import_position']) ? $data['import_position'] : null;
+        $this->container['xml_content'] = isset($data['xml_content']) ? $data['xml_content'] : null;
     }
 
     /**
@@ -185,6 +191,9 @@ class ImportXMLRequest implements  ArrayAccess
         if ($this->container['import_position'] === null) {
             $invalidProperties[] = "'import_position' can't be null";
         }
+        if ($this->container['xml_content'] === null) {
+            $invalidProperties[] = "'xml_content' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -200,6 +209,9 @@ class ImportXMLRequest implements  ArrayAccess
                     return false;
                 }
         if ($this->container['import_position'] === null) {
+                    return false;
+                }
+        if ($this->container['xml_content'] === null) {
                     return false;
                 }
         return true;
@@ -247,6 +259,29 @@ class ImportXMLRequest implements  ArrayAccess
     public function setImportPosition($import_position)
     {
         $this->container['import_position'] = $import_position;
+
+        return $this;
+    }
+   /**
+     * Gets xml_content
+     *
+     * @return string
+     */
+    public function getXMLContent()
+    {
+        return $this->container['xml_content'];
+    }
+
+    /**
+     * Sets xml_content
+     *
+     *  Base64String default is null
+     *
+     * @return $this
+     */
+    public function setXMLContent($xml_content)
+    {
+        $this->container['xml_content'] = $xml_content;
 
         return $this;
     }

@@ -41,10 +41,10 @@ use \Aspose\Cells\Cloud\Request\GetWorksheetListObjectsRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetListColumnRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListColumnsTotalRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectConvertToRangeRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectSortTableRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectInsertSlicerRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectRemoveDuplicatesRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectSortTableRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetListObjectSummarizeWithPivotTableRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetListObjectRequest; 
 
@@ -364,6 +364,7 @@ class ListObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setStorageName( "");
         $this->instance->postWorksheetListColumnsTotal($request);
     }
+
     /// <summary>
     /// Test for PostWorksheetListObjectRemoveDuplicates of ListObjectsController.
     /// </summary>
@@ -408,5 +409,5 @@ class ListObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->postWorksheetListObjectInsertSlicer($request);
-    }    
+    }
 }

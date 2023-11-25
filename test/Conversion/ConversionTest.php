@@ -76,7 +76,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_csv_DotNetSDKOutResultPostExcelSaveAscsv()
+    public function testWorkbookSaveAs_csv_OutResultPostExcelSaveAscsv()
     {
         $remoteFolder = "TestData/In";
 
@@ -84,7 +84,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "csv";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.csv";
+        $newfilename = "outResult/PostExcelSaveAs.csv";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -102,7 +102,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xls_DotNetSDKOutResultPostExcelSaveAsxls()
+    public function testWorkbookSaveAs_xls_OutResultPostExcelSaveAsxls()
     {
         $remoteFolder = "TestData/In";
 
@@ -110,7 +110,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xls";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xls";
+        $newfilename = "outResult/PostExcelSaveAs.xls";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -128,7 +128,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_html_DotNetSDKOutResultPostExcelSaveAshtml()
+    public function testWorkbookSaveAs_html_OutResultPostExcelSaveAshtml()
     {
         $remoteFolder = "TestData/In";
 
@@ -136,7 +136,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "html";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.html";
+        $newfilename = "outResult/PostExcelSaveAs.html";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -154,7 +154,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_mhtml_DotNetSDKOutResultPostExcelSaveAsmhtml()
+    public function testWorkbookSaveAs_mhtml_OutResultPostExcelSaveAsmhtml()
     {
         $remoteFolder = "TestData/In";
 
@@ -162,7 +162,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "mhtml";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.mhtml";
+        $newfilename = "outResult/PostExcelSaveAs.mhtml";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -180,7 +180,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_ods_DotNetSDKOutResultPostExcelSaveAsods()
+    public function testWorkbookSaveAs_ods_OutResultPostExcelSaveAsods()
     {
         $remoteFolder = "TestData/In";
 
@@ -188,7 +188,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "ods";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.ods";
+        $newfilename = "outResult/PostExcelSaveAs.ods";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -206,7 +206,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_pdf_DotNetSDKOutResultPostExcelSaveAspdf()
+    public function testWorkbookSaveAs_pdf_OutResultPostExcelSaveAspdf()
     {
         $remoteFolder = "TestData/In";
 
@@ -214,7 +214,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "pdf";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.pdf";
+        $newfilename = "outResult/PostExcelSaveAs.pdf";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -232,7 +232,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xml_DotNetSDKOutResultPostExcelSaveAsxml()
+    public function testWorkbookSaveAs_xml_OutResultPostExcelSaveAsxml()
     {
         $remoteFolder = "TestData/In";
 
@@ -240,7 +240,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xml";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xml";
+        $newfilename = "outResult/PostExcelSaveAs.xml";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -258,7 +258,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_txt_DotNetSDKOutResultPostExcelSaveAstxt()
+    public function testWorkbookSaveAs_txt_OutResultPostExcelSaveAstxt()
     {
         $remoteFolder = "TestData/In";
 
@@ -266,7 +266,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "txt";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.txt";
+        $newfilename = "outResult/PostExcelSaveAs.txt";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -284,7 +284,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_tif_DotNetSDKOutResultPostExcelSaveAstif()
+    public function testWorkbookSaveAs_tif_OutResultPostExcelSaveAstif()
     {
         $remoteFolder = "TestData/In";
 
@@ -292,7 +292,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "tif";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.tif";
+        $newfilename = "outResult/PostExcelSaveAs.tif";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -310,7 +310,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xlsb_DotNetSDKOutResultPostExcelSaveAsxlsb()
+    public function testWorkbookSaveAs_xlsb_OutResultPostExcelSaveAsxlsb()
     {
         $remoteFolder = "TestData/In";
 
@@ -318,7 +318,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xlsb";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xlsb";
+        $newfilename = "outResult/PostExcelSaveAs.xlsb";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -336,7 +336,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xlsm_DotNetSDKOutResultPostExcelSaveAsxlsm()
+    public function testWorkbookSaveAs_xlsm_OutResultPostExcelSaveAsxlsm()
     {
         $remoteFolder = "TestData/In";
 
@@ -344,7 +344,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xlsm";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xlsm";
+        $newfilename = "outResult/PostExcelSaveAs.xlsm";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -362,7 +362,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xlsx_DotNetSDKOutResultPostExcelSaveAsxlsx()
+    public function testWorkbookSaveAs_xlsx_OutResultPostExcelSaveAsxlsx()
     {
         $remoteFolder = "TestData/In";
 
@@ -370,7 +370,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xlsx";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xlsx";
+        $newfilename = "outResult/PostExcelSaveAs.xlsx";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -388,7 +388,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xltm_DotNetSDKOutResultPostExcelSaveAsxltm()
+    public function testWorkbookSaveAs_xltm_OutResultPostExcelSaveAsxltm()
     {
         $remoteFolder = "TestData/In";
 
@@ -396,7 +396,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xltm";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xltm";
+        $newfilename = "outResult/PostExcelSaveAs.xltm";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -414,7 +414,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xltx_DotNetSDKOutResultPostExcelSaveAsxltx()
+    public function testWorkbookSaveAs_xltx_OutResultPostExcelSaveAsxltx()
     {
         $remoteFolder = "TestData/In";
 
@@ -422,7 +422,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xltx";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xltx";
+        $newfilename = "outResult/PostExcelSaveAs.xltx";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -440,7 +440,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xps_DotNetSDKOutResultPostExcelSaveAsxps()
+    public function testWorkbookSaveAs_xps_OutResultPostExcelSaveAsxps()
     {
         $remoteFolder = "TestData/In";
 
@@ -448,7 +448,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xps";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.xps";
+        $newfilename = "outResult/PostExcelSaveAs.xps";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -466,7 +466,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_png_DotNetSDKOutResultPostExcelSaveAspng()
+    public function testWorkbookSaveAs_png_OutResultPostExcelSaveAspng()
     {
         $remoteFolder = "TestData/In";
 
@@ -474,7 +474,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "png";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.png";
+        $newfilename = "outResult/PostExcelSaveAs.png";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -492,111 +492,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_jpg_DotNetSDKOutResultPostExcelSaveAsjpg()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "jpg";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.jpg";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_gif_DotNetSDKOutResultPostExcelSaveAsgif()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "gif";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.gif";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_emf_DotNetSDKOutResultPostExcelSaveAsemf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "emf";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.emf";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_bmp_DotNetSDKOutResultPostExcelSaveAsbmp()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "bmp";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.bmp";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_md_DotNetSDKOutResultPostExcelSaveAsmd()
+    public function testWorkbookSaveAs_md_OutResultPostExcelSaveAsmd()
     {
         $remoteFolder = "TestData/In";
 
@@ -604,7 +500,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "md";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.md";
+        $newfilename = "outResult/PostExcelSaveAs.md";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -622,7 +518,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_numbers_DotNetSDKOutResultPostExcelSaveAsnumbers()
+    public function testWorkbookSaveAs_numbers_OutResultPostExcelSaveAsnumbers()
     {
         $remoteFolder = "TestData/In";
 
@@ -630,7 +526,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "numbers";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.numbers";
+        $newfilename = "outResult/PostExcelSaveAs.numbers";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -648,33 +544,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_wmf_DotNetSDKOutResultPostExcelSaveAswmf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "wmf";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.wmf";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_svg_DotNetSDKOutResultPostExcelSaveAssvg()
+    public function testWorkbookSaveAs_svg_OutResultPostExcelSaveAssvg()
     {
         $remoteFolder = "TestData/In";
 
@@ -682,7 +552,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "svg";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.svg";
+        $newfilename = "outResult/PostExcelSaveAs.svg";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -700,7 +570,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_docx_DotNetSDKOutResultPostExcelSaveAsdocx()
+    public function testWorkbookSaveAs_docx_OutResultPostExcelSaveAsdocx()
     {
         $remoteFolder = "TestData/In";
 
@@ -708,7 +578,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "docx";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.docx";
+        $newfilename = "outResult/PostExcelSaveAs.docx";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -726,7 +596,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_pptx_DotNetSDKOutResultPostExcelSaveAspptx()
+    public function testWorkbookSaveAs_pptx_OutResultPostExcelSaveAspptx()
     {
         $remoteFolder = "TestData/In";
 
@@ -734,7 +604,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "pptx";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.pptx";
+        $newfilename = "outResult/PostExcelSaveAs.pptx";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -752,7 +622,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_json_DotNetSDKOutResultPostExcelSaveAsjson()
+    public function testWorkbookSaveAs_json_OutResultPostExcelSaveAsjson()
     {
         $remoteFolder = "TestData/In";
 
@@ -760,7 +630,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "json";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.json";
+        $newfilename = "outResult/PostExcelSaveAs.json";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -778,7 +648,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_sql_DotNetSDKOutResultPostExcelSaveAssql()
+    public function testWorkbookSaveAs_sql_OutResultPostExcelSaveAssql()
     {
         $remoteFolder = "TestData/In";
 
@@ -786,7 +656,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "sql";
-        $newfilename = "dotNetSDK/OutResult/PostExcelSaveAs.sql";
+        $newfilename = "outResult/PostExcelSaveAs.sql";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -1024,94 +894,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
-    public function testGetWorkbookFormat_xlsm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsm";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_xlsx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsx";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_xltm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltm";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_xltx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltx";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
     public function testGetWorkbookFormat_xps()
     {
         $remoteFolder = "TestData/In";
@@ -1142,94 +924,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "png";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_jpg()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "jpg";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_gif()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "gif";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_emf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "emf";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_bmp()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "bmp";
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -1650,98 +1344,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbook_xlsm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsm";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_xlsx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsx";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_xltm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltm";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_xltx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltx";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
     public function testConvertWorkbook_xps()
     {
         $remoteFolder = "TestData/In";
@@ -1773,98 +1375,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "png";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_jpg()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "jpg";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_gif()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "gif";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_emf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "emf";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_bmp()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "bmp";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2064,7 +1574,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_csv_DotNetSDKOutResultConvertWorkbookcsv()
+    public function testConvertWorkbookSaveCloud_csv_OutResultConvertWorkbookcsv()
     {
         $remoteFolder = "TestData/In";
 
@@ -2072,7 +1582,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "csv";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.csv";
+        $outPath = "outResult/ConvertWorkbook.csv";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2089,7 +1599,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xls_DotNetSDKOutResultConvertWorkbookxls()
+    public function testConvertWorkbookSaveCloud_xls_OutResultConvertWorkbookxls()
     {
         $remoteFolder = "TestData/In";
 
@@ -2097,7 +1607,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xls";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xls";
+        $outPath = "outResult/ConvertWorkbook.xls";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2114,7 +1624,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_html_DotNetSDKOutResultConvertWorkbookhtml()
+    public function testConvertWorkbookSaveCloud_html_OutResultConvertWorkbookhtml()
     {
         $remoteFolder = "TestData/In";
 
@@ -2122,7 +1632,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "html";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.html";
+        $outPath = "outResult/ConvertWorkbook.html";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2139,7 +1649,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_mhtml_DotNetSDKOutResultConvertWorkbookmhtml()
+    public function testConvertWorkbookSaveCloud_mhtml_OutResultConvertWorkbookmhtml()
     {
         $remoteFolder = "TestData/In";
 
@@ -2147,7 +1657,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "mhtml";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.mhtml";
+        $outPath = "outResult/ConvertWorkbook.mhtml";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2164,7 +1674,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_ods_DotNetSDKOutResultConvertWorkbookods()
+    public function testConvertWorkbookSaveCloud_ods_OutResultConvertWorkbookods()
     {
         $remoteFolder = "TestData/In";
 
@@ -2172,7 +1682,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "ods";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.ods";
+        $outPath = "outResult/ConvertWorkbook.ods";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2189,7 +1699,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_pdf_DotNetSDKOutResultConvertWorkbookpdf()
+    public function testConvertWorkbookSaveCloud_pdf_OutResultConvertWorkbookpdf()
     {
         $remoteFolder = "TestData/In";
 
@@ -2197,7 +1707,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "pdf";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.pdf";
+        $outPath = "outResult/ConvertWorkbook.pdf";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2214,7 +1724,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xml_DotNetSDKOutResultConvertWorkbookxml()
+    public function testConvertWorkbookSaveCloud_xml_OutResultConvertWorkbookxml()
     {
         $remoteFolder = "TestData/In";
 
@@ -2222,7 +1732,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xml";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xml";
+        $outPath = "outResult/ConvertWorkbook.xml";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2239,7 +1749,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_txt_DotNetSDKOutResultConvertWorkbooktxt()
+    public function testConvertWorkbookSaveCloud_txt_OutResultConvertWorkbooktxt()
     {
         $remoteFolder = "TestData/In";
 
@@ -2247,7 +1757,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "txt";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.txt";
+        $outPath = "outResult/ConvertWorkbook.txt";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2264,7 +1774,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_tif_DotNetSDKOutResultConvertWorkbooktif()
+    public function testConvertWorkbookSaveCloud_tif_OutResultConvertWorkbooktif()
     {
         $remoteFolder = "TestData/In";
 
@@ -2272,7 +1782,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "tif";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.tif";
+        $outPath = "outResult/ConvertWorkbook.tif";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2289,7 +1799,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xlsb_DotNetSDKOutResultConvertWorkbookxlsb()
+    public function testConvertWorkbookSaveCloud_xlsb_OutResultConvertWorkbookxlsb()
     {
         $remoteFolder = "TestData/In";
 
@@ -2297,7 +1807,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xlsb";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xlsb";
+        $outPath = "outResult/ConvertWorkbook.xlsb";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2314,7 +1824,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xlsm_DotNetSDKOutResultConvertWorkbookxlsm()
+    public function testConvertWorkbookSaveCloud_xlsm_OutResultConvertWorkbookxlsm()
     {
         $remoteFolder = "TestData/In";
 
@@ -2322,7 +1832,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xlsm";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xlsm";
+        $outPath = "outResult/ConvertWorkbook.xlsm";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2339,7 +1849,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xlsx_DotNetSDKOutResultConvertWorkbookxlsx()
+    public function testConvertWorkbookSaveCloud_xlsx_OutResultConvertWorkbookxlsx()
     {
         $remoteFolder = "TestData/In";
 
@@ -2347,7 +1857,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xlsx";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xlsx";
+        $outPath = "outResult/ConvertWorkbook.xlsx";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2364,7 +1874,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xltm_DotNetSDKOutResultConvertWorkbookxltm()
+    public function testConvertWorkbookSaveCloud_xltm_OutResultConvertWorkbookxltm()
     {
         $remoteFolder = "TestData/In";
 
@@ -2372,7 +1882,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xltm";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xltm";
+        $outPath = "outResult/ConvertWorkbook.xltm";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2389,7 +1899,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xltx_DotNetSDKOutResultConvertWorkbookxltx()
+    public function testConvertWorkbookSaveCloud_xltx_OutResultConvertWorkbookxltx()
     {
         $remoteFolder = "TestData/In";
 
@@ -2397,7 +1907,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xltx";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xltx";
+        $outPath = "outResult/ConvertWorkbook.xltx";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2414,7 +1924,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xps_DotNetSDKOutResultConvertWorkbookxps()
+    public function testConvertWorkbookSaveCloud_xps_OutResultConvertWorkbookxps()
     {
         $remoteFolder = "TestData/In";
 
@@ -2422,7 +1932,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "xps";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.xps";
+        $outPath = "outResult/ConvertWorkbook.xps";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2439,7 +1949,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_png_DotNetSDKOutResultConvertWorkbookpng()
+    public function testConvertWorkbookSaveCloud_png_OutResultConvertWorkbookpng()
     {
         $remoteFolder = "TestData/In";
 
@@ -2447,7 +1957,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "png";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.png";
+        $outPath = "outResult/ConvertWorkbook.png";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2464,107 +1974,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_jpg_DotNetSDKOutResultConvertWorkbookjpg()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "jpg";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.jpg";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_gif_DotNetSDKOutResultConvertWorkbookgif()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "gif";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.gif";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_emf_DotNetSDKOutResultConvertWorkbookemf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "emf";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.emf";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_bmp_DotNetSDKOutResultConvertWorkbookbmp()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "bmp";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.bmp";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_md_DotNetSDKOutResultConvertWorkbookmd()
+    public function testConvertWorkbookSaveCloud_md_OutResultConvertWorkbookmd()
     {
         $remoteFolder = "TestData/In";
 
@@ -2572,7 +1982,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "md";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.md";
+        $outPath = "outResult/ConvertWorkbook.md";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2589,7 +1999,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_numbers_DotNetSDKOutResultConvertWorkbooknumbers()
+    public function testConvertWorkbookSaveCloud_numbers_OutResultConvertWorkbooknumbers()
     {
         $remoteFolder = "TestData/In";
 
@@ -2597,7 +2007,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "numbers";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.numbers";
+        $outPath = "outResult/ConvertWorkbook.numbers";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2614,32 +2024,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_wmf_DotNetSDKOutResultConvertWorkbookwmf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "wmf";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.wmf";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_svg_DotNetSDKOutResultConvertWorkbooksvg()
+    public function testConvertWorkbookSaveCloud_svg_OutResultConvertWorkbooksvg()
     {
         $remoteFolder = "TestData/In";
 
@@ -2647,7 +2032,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "svg";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.svg";
+        $outPath = "outResult/ConvertWorkbook.svg";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2664,7 +2049,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_docx_DotNetSDKOutResultConvertWorkbookdocx()
+    public function testConvertWorkbookSaveCloud_docx_OutResultConvertWorkbookdocx()
     {
         $remoteFolder = "TestData/In";
 
@@ -2672,7 +2057,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "docx";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.docx";
+        $outPath = "outResult/ConvertWorkbook.docx";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2689,7 +2074,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_pptx_DotNetSDKOutResultConvertWorkbookpptx()
+    public function testConvertWorkbookSaveCloud_pptx_OutResultConvertWorkbookpptx()
     {
         $remoteFolder = "TestData/In";
 
@@ -2697,7 +2082,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "pptx";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.pptx";
+        $outPath = "outResult/ConvertWorkbook.pptx";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2714,7 +2099,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_json_DotNetSDKOutResultConvertWorkbookjson()
+    public function testConvertWorkbookSaveCloud_json_OutResultConvertWorkbookjson()
     {
         $remoteFolder = "TestData/In";
 
@@ -2722,7 +2107,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "json";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.json";
+        $outPath = "outResult/ConvertWorkbook.json";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
@@ -2739,7 +2124,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_sql_DotNetSDKOutResultConvertWorkbooksql()
+    public function testConvertWorkbookSaveCloud_sql_OutResultConvertWorkbooksql()
     {
         $remoteFolder = "TestData/In";
 
@@ -2747,7 +2132,7 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "sql";
-        $outPath = "dotNetSDK/OutResult/ConvertWorkbook.sql";
+        $outPath = "outResult/ConvertWorkbook.sql";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);

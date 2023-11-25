@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/23.10)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/23.11)
 
 # PHP SDK for Spreadsheet Processing in Cloud
 
@@ -24,13 +24,13 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 23.10
+## Feature & Enhancements in Version 23.11
 
 Full list of issues covering all changes in this release:
 
-- Fix protect workbook request.
-- Fix range copy api.
-- Optimize workbook protect API.
+- Optimize import xml data into Excel file.
+- Optimize import json data into Excel file.
+- **Remove deprecated functions, class and test case.**
 
 
 ## Read Other Formats
@@ -87,18 +87,25 @@ public function __construct() {
 }
 
 public function postImportDataCloudFile() {
-    $name ='Book1.xlsx';
-    $folder = "Temp";
-    $data = new ImportIntArrayOption();
-    $data->setDestinationWorksheet('Sheet1');
-    $data->setFirstColumn(1);
-    $data->setFirstRow(3);
-    $data->setImportDataType('IntArray');
-    $data->setIsVertical('true');
-    $data->setData(array(1, 2, 3, 4)) ;
-    $sourceFolder = ".\\data\\";
-     $this->cells->uploadFile($folder . "/" .  $name , $sourceFolder. $name);
-    $result = $this->cells->cellsWorkbookPostImportData($name, $data,  $folder);
+        $remoteFolder = "TestData/In";
+        $remoteName = "Book1.xlsx";
+
+        $importOptionData = array ( 1, 2,3, 4        );
+        $importOption = new \Aspose\Cells\Cloud\Model\ImportIntArrayOption();
+        $importOption->setDestinationWorksheet("Sheet1" ); 
+        $importOption->setFirstColumn(1 ); 
+        $importOption->setFirstRow(3 ); 
+        $importOption->setImportDataType("IntArray" ); 
+        $importOption->setIsInsert('true' ); 
+        $importOption->setIsVertical('true' ); 
+        $importOption->setData($importOptionData ); 
+     
+        $request = new PostImportDataRequest();
+        $request->setName( $remoteName);
+        $request->setImportOption( $importOption);
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postImportData($request);
 }
 }
 

@@ -43,14 +43,14 @@ use \Aspose\Cells\Cloud\Request\PostExportRequest;
 use \Aspose\Cells\Cloud\Request\PostMergeRequest; 
 use \Aspose\Cells\Cloud\Request\PostMetadataRequest; 
 use \Aspose\Cells\Cloud\Request\PostProtectRequest; 
+use \Aspose\Cells\Cloud\Request\PostRepairRequest; 
 use \Aspose\Cells\Cloud\Request\PostReplaceRequest; 
 use \Aspose\Cells\Cloud\Request\PostReverseRequest; 
-use \Aspose\Cells\Cloud\Request\PostRepairRequest; 
 use \Aspose\Cells\Cloud\Request\PostSearchRequest; 
 use \Aspose\Cells\Cloud\Request\PostSplitRequest; 
 use \Aspose\Cells\Cloud\Request\PostUnlockRequest; 
 use \Aspose\Cells\Cloud\Request\PostWatermarkRequest; 
-use \Aspose\Cells\Cloud\Model\ProtectWorkbookRequest;
+
 use PHPUnit\Framework\TestCase;
 class LightCellsTest extends \PHPUnit_Framework_TestCase
 {
@@ -4325,14 +4325,38 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $dataSourceXlsx = "datasource.xlsx";
 
         $mapFiles = array ();
+        $protectWorkbookRequest = new \Aspose\Cells\Cloud\Model\ProtectWorkbookRequest();
+        $protectWorkbookRequest->setAwaysOpenReadOnly('true' ); 
+        $protectWorkbookRequest->setEncryptWithPassword("123456" ); 
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
         $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
      
         $request = new PostProtectRequest();
         $request->setFile( $mapFiles);
-        $protectWorkbookRequest = new ProtectWorkbookRequest();
-        $protectWorkbookRequest->setAwaysOpenReadOnly('true');
-        $request->setProtectWorkbookRequest($protectWorkbookRequest);
+        $request->setProtectWorkbookRequest( $protectWorkbookRequest);
+        $request->setPassword( "123456");
+        $this->instance->postProtect($request);
+    }
+
+    /// <summary>
+    /// Test for save workbook as one of the available formats.
+    /// </summary>
+
+    public function testPostProtect_ProtectWorkbookRequest()
+    {
+        $assemblyTestXlsx = "assemblytest.xlsx";
+        $dataSourceXlsx = "datasource.xlsx";
+
+        $mapFiles = array ();
+        $protectWorkbookRequest = new \Aspose\Cells\Cloud\Model\ProtectWorkbookRequest();
+        $protectWorkbookRequest->setAwaysOpenReadOnly('true' ); 
+        $protectWorkbookRequest->setEncryptWithPassword("123456" ); 
+        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
+        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
+     
+        $request = new PostProtectRequest();
+        $request->setFile( $mapFiles);
+        $request->setProtectWorkbookRequest( $protectWorkbookRequest);
         $this->instance->postProtect($request);
     }
 
@@ -4625,6 +4649,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setObjecttype( $objecttype);
         $this->instance->postClearObjects($request);
     }
+
     /// <summary>
     /// Test for repair workbook as one of the available formats.
     /// </summary>

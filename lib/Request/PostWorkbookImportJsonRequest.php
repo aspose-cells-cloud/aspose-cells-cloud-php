@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostWorkbookImportXMLRequest.cs">
+ * <copyright company="Aspose" file="PostWorkbookImportJsonRequest.cs">
  *   Copyright (c) 2023 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PostWorkbookImportXML operation.
+ * Request model for  PostWorkbookImportJson operation.
  */
 
-class PostWorkbookImportXMLRequest extends BaseApiRequest
+class PostWorkbookImportJsonRequest extends BaseApiRequest
 {
 
     /*
@@ -60,18 +60,18 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * importXMLRequest : 
+    * importJsonRequest : 
     */ 
-    public $import_xml_request;
+    public $import_json_request;
 
-    public function getImportXMLRequest()
+    public function getImportJsonRequest()
     {
-        return $this->import_xml_request;
+        return $this->import_json_request;
     }
 
-    public function setImportXMLRequest($value)
+    public function setImportJsonRequest($value)
     {
-        $this->import_xml_request = $value;
+        $this->import_json_request = $value;
     }
 
     /*
@@ -173,18 +173,18 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
         // verify the required parameter 'name' is set
         if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling PostWorkbookImportXML'
+                'Missing the required parameter $name when calling PostWorkbookImportJson'
             );
         } 
 
-        // verify the required parameter 'import_xml_request' is set
-        if ($this->import_xml_request === null) {
+        // verify the required parameter 'import_json_request' is set
+        if ($this->import_json_request === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $import_xml_request when calling PostWorkbookImportXML'
+                'Missing the required parameter $import_json_request when calling PostWorkbookImportJson'
             );
         } 
 
-        $resourcePath = '/cells/{name}/importxml';
+        $resourcePath = '/cells/{name}/importjson';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -225,9 +225,9 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->import_xml_request)) {
-            $_tempBody = $this->import_xml_request;
-            $_tempBodyName =str_replace('_','', 'import_xml_request');
+        if (isset($this->import_json_request)) {
+            $_tempBody = $this->import_json_request;
+            $_tempBodyName =str_replace('_','', 'import_json_request');
         }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(

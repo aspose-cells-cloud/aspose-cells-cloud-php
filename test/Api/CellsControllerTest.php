@@ -811,7 +811,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request = new GetWorksheetRowRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
-        $request->setRowIndex( 0);
+        $request->setRowIndex( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->getWorksheetRow($request);
@@ -903,7 +903,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request = new PutInsertWorksheetRowRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
-        $request->setRowIndex( 0);
+        $request->setRowIndex( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->putInsertWorksheetRow($request);
@@ -925,7 +925,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request = new PostUpdateWorksheetRowRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
-        $request->setRowIndex( 0);
+        $request->setRowIndex( 1);
         $request->setHeight( 10.8);
         $request->setCount( 9);
         $request->setFolder( $remoteFolder);

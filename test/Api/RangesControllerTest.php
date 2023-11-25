@@ -41,13 +41,12 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMergeRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeMoveToRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeOutlineBorderRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeRowHeightRequest; 
-// use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangesCopyRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeSortRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeStyleRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeUnMergeRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeValueRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetCellsRangeRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeSortRequest; 
 
 use PHPUnit\Framework\TestCase;
 class RangesControllerTest extends \PHPUnit_Framework_TestCase
@@ -87,7 +86,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
     /// Test for PostWorksheetCellsRanges of RangesController.
     /// </summary>
 
-    public function testPostWorksheetCellsRanges()
+    public function testPostWorksheetCellsRangesCopy()
     {
         $remoteFolder = "TestData/In";
 
@@ -441,22 +440,22 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $localName = "Group.xlsx";
         $remoteName = "Group.xlsx";
 
-        $rangeOperateDataSorter = new \Aspose\Cells\Cloud\Model\DataSorter();
-        $rangeOperateDataSorter->setCaseSensitive('true' ); 
-        $rangeOperateCellArea = new \Aspose\Cells\Cloud\Model\Range();
-        $rangeOperateCellArea->setColumnCount(3 ); 
-        $rangeOperateCellArea->setFirstColumn(0 ); 
-        $rangeOperateCellArea->setFirstRow(0 ); 
-        $rangeOperateCellArea->setRowCount(15 ); 
-        $rangeOperate = new \Aspose\Cells\Cloud\Model\RangeSortRequest();
-        $rangeOperate->setDataSorter($rangeOperateDataSorter ); 
-        $rangeOperate->setCellArea($rangeOperateCellArea ); 
+        $rangeSortRequestDataSorter = new \Aspose\Cells\Cloud\Model\DataSorter();
+        $rangeSortRequestDataSorter->setCaseSensitive('true' ); 
+        $rangeSortRequestCellArea = new \Aspose\Cells\Cloud\Model\Range();
+        $rangeSortRequestCellArea->setColumnCount(3 ); 
+        $rangeSortRequestCellArea->setFirstColumn(0 ); 
+        $rangeSortRequestCellArea->setFirstRow(0 ); 
+        $rangeSortRequestCellArea->setRowCount(15 ); 
+        $rangeSortRequest = new \Aspose\Cells\Cloud\Model\RangeSortRequest();
+        $rangeSortRequest->setDataSorter($rangeSortRequestDataSorter ); 
+        $rangeSortRequest->setCellArea($rangeSortRequestCellArea ); 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeSortRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "book1");
-        $request->setRangeSortRequest( $rangeOperate);
+        $request->setRangeSortRequest( $rangeSortRequest);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->postWorksheetCellsRangeSort($request);
