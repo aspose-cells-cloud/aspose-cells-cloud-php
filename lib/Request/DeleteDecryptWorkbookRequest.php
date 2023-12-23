@@ -45,7 +45,7 @@ class DeleteDecryptWorkbookRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class DeleteDecryptWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * encryption : Encryption settings, only password can be specified.
+    * encryption : WorkbookEncryptionRequestEncryption parameters.
     */ 
     public $encryption;
 
@@ -75,7 +75,7 @@ class DeleteDecryptWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class DeleteDecryptWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

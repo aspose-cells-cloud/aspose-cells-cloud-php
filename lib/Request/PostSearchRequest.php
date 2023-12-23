@@ -45,7 +45,7 @@ class PostSearchRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : Find content
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostSearchRequest extends BaseApiRequest
     }
 
     /*
-    * text : 
+    * text : Find content
     */ 
     public $text;
 
@@ -75,7 +75,7 @@ class PostSearchRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PostSearchRequest extends BaseApiRequest
     }
 
     /*
-    * sheetname : 
+    * sheetname : The worksheet name. Locate the specified text content in the worksheet.
     */ 
     public $sheetname;
 
@@ -105,7 +105,7 @@ class PostSearchRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 

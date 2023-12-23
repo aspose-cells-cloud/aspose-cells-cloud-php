@@ -94,7 +94,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "csv";
+        $outFormat = "csv";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -102,7 +102,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -115,7 +115,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "xls";
+        $outFormat = "xls";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -123,7 +123,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -136,7 +136,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "html";
+        $outFormat = "html";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -144,7 +144,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -157,7 +157,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "mhtml";
+        $outFormat = "mhtml";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -165,7 +165,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -178,7 +178,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "ods";
+        $outFormat = "ods";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -186,7 +186,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -199,7 +199,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "pdf";
+        $outFormat = "pdf";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -207,7 +207,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -220,7 +220,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "xml";
+        $outFormat = "xml";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -228,7 +228,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -241,7 +241,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "txt";
+        $outFormat = "txt";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -249,7 +249,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -262,7 +262,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "tif";
+        $outFormat = "tif";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -270,7 +270,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -283,7 +283,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "xlsb";
+        $outFormat = "xlsb";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -291,28 +291,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_xlsm()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "xlsm";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -325,7 +304,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "xlsx";
+        $outFormat = "xlsx";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -333,49 +312,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_xltm()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "xltm";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_xltx()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "xltx";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -388,7 +325,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "xps";
+        $outFormat = "xps";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -396,7 +333,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -409,7 +346,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "png";
+        $outFormat = "png";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -417,7 +354,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -430,7 +367,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "jpg";
+        $outFormat = "jpg";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -438,70 +375,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_gif()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "gif";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_emf()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "emf";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_bmp()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "bmp";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -514,7 +388,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "md";
+        $outFormat = "md";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -522,7 +396,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -535,7 +409,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "numbers";
+        $outFormat = "numbers";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -543,28 +417,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->postSplit($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_wmf()
-    {
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "wmf";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -577,7 +430,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "svg";
+        $outFormat = "svg";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -585,7 +438,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -598,7 +451,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "docx";
+        $outFormat = "docx";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -606,7 +459,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -619,7 +472,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "pptx";
+        $outFormat = "pptx";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -627,7 +480,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -640,7 +493,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "json";
+        $outFormat = "json";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -648,7 +501,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -661,7 +514,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
-        $format = "sql";
+        $outFormat = "sql";
 
         $mapFiles = array ();
         $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
@@ -669,7 +522,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $outFormat);
         $this->instance->postSplit($request);
     }
 
@@ -3672,7 +3525,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3695,7 +3548,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3718,7 +3571,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3741,7 +3594,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3764,7 +3617,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3787,7 +3640,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3810,7 +3663,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3833,7 +3686,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3856,7 +3709,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3879,7 +3732,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3902,7 +3755,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3925,7 +3778,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3948,7 +3801,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3971,7 +3824,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -3994,7 +3847,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4017,7 +3870,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4040,7 +3893,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4063,7 +3916,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4086,7 +3939,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4109,7 +3962,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4132,7 +3985,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4155,7 +4008,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4178,7 +4031,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4201,7 +4054,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4224,7 +4077,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4247,7 +4100,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4270,7 +4123,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4293,7 +4146,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostMergeRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
         $this->instance->postMerge($request);
     }
@@ -4665,7 +4518,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postRepair($request);
     }
 
@@ -4684,7 +4537,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postRepair($request);
     }
 
@@ -4703,7 +4556,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postRepair($request);
     }
 
@@ -4722,7 +4575,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
      
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postRepair($request);
     }
 
@@ -4743,7 +4596,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostReverseRequest();
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postReverse($request);
     }
 
@@ -4764,7 +4617,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostReverseRequest();
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postReverse($request);
     }
 
@@ -4785,7 +4638,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostReverseRequest();
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postReverse($request);
     }
 
@@ -4806,7 +4659,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostReverseRequest();
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postReverse($request);
     }
 
@@ -4827,7 +4680,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostReverseRequest();
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postReverse($request);
     }
 
@@ -4848,7 +4701,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostReverseRequest();
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postReverse($request);
     }
 

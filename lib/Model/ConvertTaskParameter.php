@@ -48,6 +48,7 @@ class ConvertTaskParameter implements  ArrayAccess
     protected static $swaggerTypes = [
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'destination_file' => 'string',
+        'region' => 'string',
         'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions'
     ];
 
@@ -59,6 +60,7 @@ class ConvertTaskParameter implements  ArrayAccess
     protected static $swaggerFormats = [
         'workbook' => null  ,
         'destination_file' => null  ,
+        'region' => null  ,
         'save_options' => null  
     ];
 
@@ -91,6 +93,7 @@ class ConvertTaskParameter implements  ArrayAccess
     protected static $attributeMap = [
          'workbook' => 'Workbook' ,
          'destination_file' => 'DestinationFile' ,
+         'region' => 'Region' ,
          'save_options' => 'SaveOptions' 
     ];
 
@@ -102,6 +105,7 @@ class ConvertTaskParameter implements  ArrayAccess
     protected static $setters = [
         'workbook' => 'setWorkbook' ,
         'destination_file' => 'setDestinationFile' ,
+        'region' => 'setRegion' ,
         'save_options' => 'setSaveOptions' 
     ];
 
@@ -113,6 +117,7 @@ class ConvertTaskParameter implements  ArrayAccess
     protected static $getters = [
         'workbook' => 'getWorkbook' ,
         'destination_file' => 'getDestinationFile' ,
+        'region' => 'getRegion' ,
         'save_options' => 'getSaveOptions' 
     ];
 
@@ -174,6 +179,7 @@ class ConvertTaskParameter implements  ArrayAccess
     {
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
         $this->container['destination_file'] = isset($data['destination_file']) ? $data['destination_file'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
     }
 
@@ -190,6 +196,9 @@ class ConvertTaskParameter implements  ArrayAccess
         }
         if ($this->container['destination_file'] === null) {
             $invalidProperties[] = "'destination_file' can't be null";
+        }
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
         }
         if ($this->container['save_options'] === null) {
             $invalidProperties[] = "'save_options' can't be null";
@@ -209,6 +218,9 @@ class ConvertTaskParameter implements  ArrayAccess
                     return false;
                 }
         if ($this->container['destination_file'] === null) {
+                    return false;
+                }
+        if ($this->container['region'] === null) {
                     return false;
                 }
         if ($this->container['save_options'] === null) {
@@ -259,6 +271,29 @@ class ConvertTaskParameter implements  ArrayAccess
     public function setDestinationFile($destination_file)
     {
         $this->container['destination_file'] = $destination_file;
+
+        return $this;
+    }
+   /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
 
         return $this;
     }

@@ -45,7 +45,7 @@ class PostBatchUnlockRequest extends BaseApiRequest
 {
 
     /*
-    * batchLockRequest : 
+    * batchLockRequest : BatchLockRequest Batch locking file request.  
     */ 
     public $batch_lock_request;
 

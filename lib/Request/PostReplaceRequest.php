@@ -45,7 +45,7 @@ class PostReplaceRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : Find content
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * text : 
+    * text : Find content
     */ 
     public $text;
 
@@ -75,7 +75,7 @@ class PostReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * newtext : 
+    * newtext : Replace content
     */ 
     public $newtext;
 
@@ -90,7 +90,7 @@ class PostReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * sheetname : 
+    * sheetname : The worksheet name. Locate the specified text content in the worksheet.
     */ 
     public $sheetname;
 
@@ -120,7 +120,7 @@ class PostReplaceRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 

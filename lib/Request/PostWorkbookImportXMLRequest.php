@@ -45,7 +45,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook(Excel/ODS/...) name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * importXMLRequest : 
+    * importXMLRequest : Import XML request.
     */ 
     public $import_xml_request;
 
@@ -75,7 +75,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * password : password
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 
@@ -120,7 +120,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : Output file path.
+    * outPath : Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder.
     */ 
     public $out_path;
 
@@ -135,7 +135,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * outStorageName : Storage name for output file.
+    * outStorageName : The storage name where the output file is situated.
     */ 
     public $out_storage_name;
 
@@ -150,7 +150,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : check Excel restriction.
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -162,6 +162,21 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -221,6 +236,10 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
     // body params
         $_tempBody = null;

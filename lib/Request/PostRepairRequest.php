@@ -45,7 +45,7 @@ class PostRepairRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $file;
 
@@ -60,18 +60,18 @@ class PostRepairRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
-    public $format;
+    public $out_format;
 
-    public function getFormat()
+    public function getOutFormat()
     {
-        return $this->format;
+        return $this->out_format;
     }
 
-    public function setFormat($value)
+    public function setOutFormat($value)
     {
-        $this->format = $value;
+        $this->out_format = $value;
     }
 
     public function __construct()
@@ -93,9 +93,9 @@ class PostRepairRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : format
-        if ($this->format !== null) {
-            $queryParams['format'] = ObjectSerializer::toQueryValue($this->format);
+        // query params : out_format
+        if ($this->out_format !== null) {
+            $queryParams['outFormat'] = ObjectSerializer::toQueryValue($this->out_format);
         }
         if ($this->file !== null) {
             $multipart = true;

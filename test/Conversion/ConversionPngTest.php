@@ -212,29 +212,6 @@ class ConversionPngTest extends \PHPUnit_Framework_TestCase
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbook_xlsb()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "cloud.png";
-        $remoteName = "cloud.png";
-
-        $format = "xlsb";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
     public function testConvertWorkbook_xps()
     {
         $remoteFolder = "TestData/In";
@@ -358,75 +335,6 @@ class ConversionPngTest extends \PHPUnit_Framework_TestCase
         $remoteName = "cloud.png";
 
         $format = "docx";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_pptx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "cloud.png";
-        $remoteName = "cloud.png";
-
-        $format = "pptx";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_json()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "cloud.png";
-        $remoteName = "cloud.png";
-
-        $format = "json";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_sql()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "cloud.png";
-        $remoteName = "cloud.png";
-
-        $format = "sql";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);

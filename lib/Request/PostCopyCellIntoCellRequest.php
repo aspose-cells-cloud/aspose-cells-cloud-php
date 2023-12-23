@@ -45,7 +45,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * destCellName : Destination cell name
+    * destCellName : The destination cell name.
     */ 
     public $dest_cell_name;
 
@@ -75,7 +75,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : Destination worksheet name.
+    * sheetName : The destination worksheet name.
     */ 
     public $sheet_name;
 
@@ -90,7 +90,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * worksheet : Source worksheet name.
+    * worksheet : The source worksheet name.
     */ 
     public $worksheet;
 
@@ -105,7 +105,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * cellname : Source cell name
+    * cellname : The source cell name.
     */ 
     public $cellname;
 
@@ -120,7 +120,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * row : Source row
+    * row : The source row index.
     */ 
     public $row;
 
@@ -135,7 +135,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * column : Source column
+    * column : The source column index.
     */ 
     public $column;
 
@@ -150,7 +150,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

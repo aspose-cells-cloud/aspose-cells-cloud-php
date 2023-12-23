@@ -45,7 +45,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * digitalsignaturefile : Digital signature file parameters.
+    * digitalsignaturefile : The digital signature file path should include both the folder and the file name, along with the extension.
     */ 
     public $digitalsignaturefile;
 
@@ -75,7 +75,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

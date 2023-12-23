@@ -45,7 +45,7 @@ class PostBatchProtectRequest extends BaseApiRequest
 {
 
     /*
-    * batchProtectRequest : 
+    * batchProtectRequest : BatchProtectRequest Batch protection file request.  
     */ 
     public $batch_protect_request;
 

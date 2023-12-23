@@ -120,7 +120,7 @@ class PutWorksheetColorFilterRequest extends BaseApiRequest
     }
 
     /*
-    * matchBlanks : Match all blank or  not blank cell in the list.(true/false)
+    * matchBlanks : Match all blank cell in the list.
     */ 
     public $match_blanks;
 
@@ -135,7 +135,7 @@ class PutWorksheetColorFilterRequest extends BaseApiRequest
     }
 
     /*
-    * refresh : If true, hide the filtered rows.
+    * refresh : Refresh auto filters to hide or unhide the rows.
     */ 
     public $refresh;
 
@@ -150,7 +150,7 @@ class PutWorksheetColorFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PutWorksheetColorFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

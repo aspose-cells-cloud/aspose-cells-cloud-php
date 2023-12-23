@@ -45,7 +45,7 @@ class PostImportDataRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostImportDataRequest extends BaseApiRequest
     }
 
     /*
-    * importOption : 
+    * importOption : Import option. They are include of ImportCSVDataOption, ImportBatchDataOption, ImportPictureOption, ImportStringArrayOption, Import2DimensionStringArrayOption, and so on.  
     */ 
     public $import_option;
 
@@ -75,7 +75,7 @@ class PostImportDataRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PostImportDataRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 
@@ -102,6 +102,21 @@ class PostImportDataRequest extends BaseApiRequest
     public function setStorageName($value)
     {
         $this->storage_name = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -138,6 +153,10 @@ class PostImportDataRequest extends BaseApiRequest
         // query params : storage_name
         if ($this->storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
     // body params
         $_tempBody = null;

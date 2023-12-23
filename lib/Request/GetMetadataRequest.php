@@ -45,7 +45,7 @@ class GetMetadataRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : Cells document property name.
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class GetMetadataRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : Cells document property name.
     */ 
     public $type;
 
@@ -75,7 +75,7 @@ class GetMetadataRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class GetMetadataRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 

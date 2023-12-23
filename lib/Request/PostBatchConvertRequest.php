@@ -45,7 +45,7 @@ class PostBatchConvertRequest extends BaseApiRequest
 {
 
     /*
-    * batchConvertRequest : 
+    * batchConvertRequest : BatchConvertRequest Batch conversion file request. 
     */ 
     public $batch_convert_request;
 

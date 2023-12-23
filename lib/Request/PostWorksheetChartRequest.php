@@ -45,7 +45,7 @@ class PostWorksheetChartRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -90,7 +90,7 @@ class PostWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * chart : Represents a specified chart.
+    * chart : Chart Represents a specified chart.
     */ 
     public $chart;
 
@@ -105,7 +105,7 @@ class PostWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostWorksheetChartRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

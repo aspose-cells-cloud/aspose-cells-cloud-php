@@ -45,7 +45,7 @@ class PostExportRequest extends BaseApiRequest
 {
 
     /*
-    * File : workbook/worksheet/chart/comment/picture/shape/listobject/oleobject
+    * File : Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject.
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * objectType : workbook/worksheet/chart/comment/picture/shape/listobject/oleobject
+    * objectType : Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject.
     */ 
     public $object_type;
 
@@ -75,7 +75,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * format : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    * format : The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
     */ 
     public $format;
 
@@ -90,7 +90,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -117,6 +117,21 @@ class PostExportRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -153,6 +168,10 @@ class PostExportRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         if ($this->file !== null) {
             $multipart = true;

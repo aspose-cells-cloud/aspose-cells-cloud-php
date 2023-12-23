@@ -60,7 +60,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * newfilename : The new file name.
+    * newfilename : newfilename to save the result.The `newfilename` should encompass both the filename and extension.
     */ 
     public $newfilename;
 
@@ -120,7 +120,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 
@@ -150,7 +150,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * outStorageName : 
+    * outStorageName : The storage name where the output file is situated.
     */ 
     public $out_storage_name;
 
@@ -165,7 +165,7 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -177,6 +177,21 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -240,6 +255,10 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
     // body params
         $_tempBody = null;

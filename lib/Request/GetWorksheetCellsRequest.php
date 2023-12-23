@@ -45,7 +45,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
 {
 
     /*
-    * name : Document name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -105,7 +105,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Document's folder name.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetCellsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

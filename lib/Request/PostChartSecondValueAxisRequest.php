@@ -45,7 +45,7 @@ class PostChartSecondValueAxisRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostChartSecondValueAxisRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostChartSecondValueAxisRequest extends BaseApiRequest
     }
 
     /*
-    * chartIndex : 
+    * chartIndex : The chart index.
     */ 
     public $chart_index;
 
@@ -90,7 +90,7 @@ class PostChartSecondValueAxisRequest extends BaseApiRequest
     }
 
     /*
-    * axis : 
+    * axis : Axis 
     */ 
     public $axis;
 
@@ -105,7 +105,7 @@ class PostChartSecondValueAxisRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class PostChartSecondValueAxisRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

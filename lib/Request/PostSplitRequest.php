@@ -45,7 +45,7 @@ class PostSplitRequest extends BaseApiRequest
 {
 
     /*
-    * File : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    * File : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $file;
 
@@ -60,22 +60,22 @@ class PostSplitRequest extends BaseApiRequest
     }
 
     /*
-    * format : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    * outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
-    public $format;
+    public $out_format;
 
-    public function getFormat()
+    public function getOutFormat()
     {
-        return $this->format;
+        return $this->out_format;
     }
 
-    public function setFormat($value)
+    public function setOutFormat($value)
     {
-        $this->format = $value;
+        $this->out_format = $value;
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -120,7 +120,7 @@ class PostSplitRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -132,6 +132,21 @@ class PostSplitRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -147,10 +162,10 @@ class PostSplitRequest extends BaseApiRequest
             );
         } 
 
-        // verify the required parameter 'format' is set
-        if ($this->format === null) {
+        // verify the required parameter 'out_format' is set
+        if ($this->out_format === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $format when calling PostSplit'
+                'Missing the required parameter $out_format when calling PostSplit'
             );
         } 
 
@@ -160,9 +175,9 @@ class PostSplitRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : format
-        if ($this->format !== null) {
-            $queryParams['format'] = ObjectSerializer::toQueryValue($this->format);
+        // query params : out_format
+        if ($this->out_format !== null) {
+            $queryParams['outFormat'] = ObjectSerializer::toQueryValue($this->out_format);
         }
         // query params : password
         if ($this->password !== null) {
@@ -179,6 +194,10 @@ class PostSplitRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         if ($this->file !== null) {
             $multipart = true;

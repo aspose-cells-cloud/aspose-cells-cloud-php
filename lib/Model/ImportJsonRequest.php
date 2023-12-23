@@ -229,7 +229,7 @@ class ImportJsonRequest implements  ArrayAccess
     /**
      * Sets json_file_source
      *
-     *  XML file source
+     *  Json file source
      *
      * @return $this
      */

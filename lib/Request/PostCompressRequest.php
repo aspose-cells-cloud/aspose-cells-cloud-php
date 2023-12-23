@@ -45,7 +45,7 @@ class PostCompressRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : Compress level. The compression ratio 1-100.
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostCompressRequest extends BaseApiRequest
     }
 
     /*
-    * CompressLevel : 
+    * CompressLevel : Compress level. The compression ratio 1-100.
     */ 
     public $compress_level;
 
@@ -75,7 +75,7 @@ class PostCompressRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PostCompressRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 

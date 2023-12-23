@@ -281,29 +281,6 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbook_xlsx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "codegen-spec.json";
-        $remoteName = "codegen-spec.json";
-
-        $format = "xlsx";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
     public function testConvertWorkbook_xps()
     {
         $remoteFolder = "TestData/In";
@@ -312,29 +289,6 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
         $remoteName = "codegen-spec.json";
 
         $format = "xps";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_png()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "codegen-spec.json";
-        $remoteName = "codegen-spec.json";
-
-        $format = "png";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);

@@ -102,32 +102,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
-    public function testWorkbookSaveAs_xls_OutResultPostExcelSaveAsxls()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xls";
-        $newfilename = "outResult/PostExcelSaveAs.xls";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
     public function testWorkbookSaveAs_html_OutResultPostExcelSaveAshtml()
     {
         $remoteFolder = "TestData/In";
@@ -319,110 +293,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
 
         $format = "xlsb";
         $newfilename = "outResult/PostExcelSaveAs.xlsb";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_xlsm_OutResultPostExcelSaveAsxlsm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsm";
-        $newfilename = "outResult/PostExcelSaveAs.xlsm";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_xlsx_OutResultPostExcelSaveAsxlsx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsx";
-        $newfilename = "outResult/PostExcelSaveAs.xlsx";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_xltm_OutResultPostExcelSaveAsxltm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltm";
-        $newfilename = "outResult/PostExcelSaveAs.xltm";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-        $this->instance->postWorkbookSaveAs($request);
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_xltx_OutResultPostExcelSaveAsxltx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltx";
-        $newfilename = "outResult/PostExcelSaveAs.xltx";
 
         $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
         $saveOptions->setSaveFormat($format ); 
@@ -696,28 +566,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
-    public function testGetWorkbookFormat_xls()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xls";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
     public function testGetWorkbookFormat_html()
     {
         $remoteFolder = "TestData/In";
@@ -872,28 +720,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
-    public function testGetWorkbookFormat_xlsb()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsb";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
     public function testGetWorkbookFormat_xps()
     {
         $remoteFolder = "TestData/In";
@@ -968,28 +794,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
         $remoteName = "Book1.xlsx";
 
         $format = "numbers";
-
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-        $this->instance->getWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testGetWorkbookFormat_wmf()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "wmf";
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -1824,56 +1628,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
-    public function testConvertWorkbookSaveCloud_xlsm_OutResultConvertWorkbookxlsm()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsm";
-        $outPath = "outResult/ConvertWorkbook.xlsm";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_xlsx_OutResultConvertWorkbookxlsx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xlsx";
-        $outPath = "outResult/ConvertWorkbook.xlsx";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
     public function testConvertWorkbookSaveCloud_xltm_OutResultConvertWorkbookxltm()
     {
         $remoteFolder = "TestData/In";
@@ -1883,31 +1637,6 @@ class ConversionTest extends \PHPUnit_Framework_TestCase
 
         $format = "xltm";
         $outPath = "outResult/ConvertWorkbook.xltm";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-        $this->instance->putConvertWorkbook($request);
-    }
-
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_xltx_OutResultConvertWorkbookxltx()
-    {
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "xltx";
-        $outPath = "outResult/ConvertWorkbook.xltx";
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);

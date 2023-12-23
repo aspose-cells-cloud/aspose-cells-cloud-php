@@ -45,7 +45,7 @@ class PostUnlockRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : The password needed to open an Excel file.
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostUnlockRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 

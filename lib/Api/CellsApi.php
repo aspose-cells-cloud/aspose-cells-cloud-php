@@ -524,8 +524,6 @@ use Aspose\Cells\Cloud\Model\AutoFilterResponse;
 use Aspose\Cells\Cloud\Model\AutoShapeResponse;
 use Aspose\Cells\Cloud\Model\AutoShapesResponse;
 use Aspose\Cells\Cloud\Model\AxisResponse;
-use Aspose\Cells\Cloud\Model\BarcodeResponse;
-use Aspose\Cells\Cloud\Model\BarcodeResponseList;
 use Aspose\Cells\Cloud\Model\BorderResponse;
 use Aspose\Cells\Cloud\Model\ButtonResponse;
 use Aspose\Cells\Cloud\Model\CalculateFormulaResponse;
@@ -815,7 +813,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Get auto filters description in worksheet.
+    /// Retrieve the description of auto filters from a worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetAutoFilterRequest" /></param>
     public function getWorksheetAutoFilter( $request)
@@ -828,7 +826,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Adds date filter in worksheet.
+    /// Apply a date filter in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetDateFilterRequest" /></param>
     public function putWorksheetDateFilter( $request)
@@ -841,8 +839,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Adds a filter for a filter column in worksheet.
-    ///             
+    /// Add a filter for a column in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetFilterRequest" /></param>
     public function putWorksheetFilter( $request)
@@ -855,7 +852,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Adds an icon filter in worksheet.
+    /// Add an icon filter in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetIconFilterRequest" /></param>
     public function putWorksheetIconFilter( $request)
@@ -868,8 +865,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Filters a list with a custom criteria in worksheet.
-    ///             
+    /// Filter a list with custom criteria in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetCustomFilterRequest" /></param>
     public function putWorksheetCustomFilter( $request)
@@ -882,7 +878,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Adds a dynamic filter in worksheet.
+    /// Add a dynamic filter in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetDynamicFilterRequest" /></param>
     public function putWorksheetDynamicFilter( $request)
@@ -895,7 +891,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Filters the top 10 item in the list in worksheet
+    /// Filter the top 10 items in the list in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetFilterTop10Request" /></param>
     public function putWorksheetFilterTop10( $request)
@@ -908,7 +904,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Adds a color filter in worksheet.
+    /// Add a color filter in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetColorFilterRequest" /></param>
     public function putWorksheetColorFilter( $request)
@@ -921,7 +917,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Match all blank cell in the list.
+    /// Match all blank cells in the list.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetMatchBlanksRequest" /></param>
     public function postWorksheetMatchBlanks( $request)
@@ -934,8 +930,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Match all not blank cell in the list.
-    ///             
+    /// Match all not blank cells in the list.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetMatchNonBlanksRequest" /></param>
     public function postWorksheetMatchNonBlanks( $request)
@@ -948,7 +943,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Refresh auto filters in worksheet.
+    /// Refresh auto filters in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetAutoFilterRefreshRequest" /></param>
     public function postWorksheetAutoFilterRefresh( $request)
@@ -961,8 +956,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Removes a date filter in worksheet.
-    ///             
+    /// Remove a date filter in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteWorksheetDateFilterRequest" /></param>
     public function deleteWorksheetDateFilter( $request)
@@ -975,8 +969,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Deletes a filter for a filter column in worksheet.
-    ///             
+    /// Delete a filter for a column in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteWorksheetFilterRequest" /></param>
     public function deleteWorksheetFilter( $request)
@@ -1015,6 +1008,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Batch converting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchConvertRequest" /></param>
     public function postBatchConvert( $request)
@@ -1027,6 +1021,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Batch protecting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchProtectRequest" /></param>
     public function postBatchProtect( $request)
@@ -1039,6 +1034,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Batch locking files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchLockRequest" /></param>
     public function postBatchLock( $request)
@@ -1051,6 +1047,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Batch unlocking files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchUnlockRequest" /></param>
     public function postBatchUnlock( $request)
@@ -1063,6 +1060,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Batch splitting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchSplitRequest" /></param>
     public function postBatchSplit( $request)
@@ -1075,7 +1073,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Clear cells contents in worksheet.
+    /// Clear cell area contents in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostClearContentsRequest" /></param>
     public function postClearContents( $request)
@@ -1088,7 +1086,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Clear cells formats in worksheet.
+    /// Clear cell formats in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostClearFormatsRequest" /></param>
     public function postClearFormats( $request)
@@ -1101,7 +1099,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Updates cell's range style in worksheet.
+    /// Update cell range styles in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostUpdateWorksheetRangeStyleRequest" /></param>
     public function postUpdateWorksheetRangeStyle( $request)
@@ -1114,7 +1112,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Merge cells in worksheet.
+    /// Merge cells in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetMergeRequest" /></param>
     public function postWorksheetMerge( $request)
@@ -1127,7 +1125,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Unmerge cells in worksheet.
+    /// Unmerge cells in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetUnmergeRequest" /></param>
     public function postWorksheetUnmerge( $request)
@@ -1140,7 +1138,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets cells description in some format.
+    /// Retrieve cell descriptions in a specified format.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetCellsRequest" /></param>
     public function getWorksheetCells( $request)
@@ -1153,7 +1151,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets cell data by cell or method name in worksheet.
+    /// Retrieve cell data using either cell reference or method name in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetCellRequest" /></param>
     public function getWorksheetCell( $request)
@@ -1166,7 +1164,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets cell's style description in worksheet.
+    /// Retrieve cell style descriptions in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetCellStyleRequest" /></param>
     public function getWorksheetCellStyle( $request)
@@ -1179,7 +1177,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Sets cell value by cell name in worksheet.
+    /// Set cell value using cell name in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellSetValueRequest" /></param>
     public function postWorksheetCellSetValue( $request)
@@ -1192,7 +1190,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Sets cell's style by cell name in worksheet.
+    /// Set cell style using cell name in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostUpdateWorksheetCellStyleRequest" /></param>
     public function postUpdateWorksheetCellStyle( $request)
@@ -1205,7 +1203,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Sets the value of the range in worksheet.
+    /// Set the value of the range in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostSetCellRangeValueRequest" /></param>
     public function postSetCellRangeValue( $request)
@@ -1218,7 +1216,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Copies data to destination cell from a source cell in worksheet.
+    /// Copy data from a source cell to a destination cell in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostCopyCellIntoCellRequest" /></param>
     public function postCopyCellIntoCell( $request)
@@ -1231,7 +1229,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets the html string which contains data and some formats in this cell.
+    /// Retrieve the HTML string containing data and specific formats in this cell.
     /// </summary>
     /// <param name="request">Request. <see cref="GetCellHtmlStringRequest" /></param>
     public function getCellHtmlString( $request)
@@ -1244,7 +1242,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Sets the html string which contains data and some formats in this cell.
+    /// Set the HTML string containing data and specific formats in this cell.
     /// </summary>
     /// <param name="request">Request. <see cref="PostSetCellHtmlStringRequest" /></param>
     public function postSetCellHtmlString( $request)
@@ -1257,7 +1255,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Calculates cell formula in worksheet.
+    /// Calculate cell formula in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostCellCalculateRequest" /></param>
     public function postCellCalculate( $request)
@@ -1270,7 +1268,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Sets cell characters in worksheet.
+    /// Set cell characters in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostCellCharactersRequest" /></param>
     public function postCellCharacters( $request)
@@ -1583,7 +1581,6 @@ class CellsApi
 
     /// <summary>
     /// Applies formats for a whole row in worksheet.
-    ///             
     /// </summary>
     /// <param name="request">Request. <see cref="PostRowStyleRequest" /></param>
     public function postRowStyle( $request)
@@ -1596,7 +1593,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets cells description in some format.
+    /// Retrieve cell descriptions in a specified format.
     /// </summary>
     /// <param name="request">Request. <see cref="GetCellsCloudServicesHealthCheckRequest" /></param>
     public function getCellsCloudServicesHealthCheck( $request)
@@ -1609,7 +1606,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Aspose.Cells Cloud service health status check(old). 
+    /// Aspose.Cells Cloud service health status check.
     /// </summary>
     /// <param name="request">Request. <see cref="GetCellsCloudServiceStatusRequest" /></param>
     public function getCellsCloudServiceStatus( $request)
@@ -1622,7 +1619,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets chart area description in worksheet.
+    /// Retrieve chart area description in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetChartAreaRequest" /></param>
     public function getChartArea( $request)
@@ -1635,7 +1632,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets chart area fill format description in worksheet.
+    /// Retrieve chart area fill format description in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetChartAreaFillFormatRequest" /></param>
     public function getChartAreaFillFormat( $request)
@@ -1648,7 +1645,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets chart area border description.
+    /// Retrieve chart area border description.
     /// </summary>
     /// <param name="request">Request. <see cref="GetChartAreaBorderRequest" /></param>
     public function getChartAreaBorder( $request)
@@ -1661,7 +1658,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Get worksheet charts description.
+    /// Retrieve descriptions of charts in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetChartsRequest" /></param>
     public function getWorksheetCharts( $request)
@@ -1674,7 +1671,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets chart in some format.
+    /// Retrieve the chart in a specified format.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetChartRequest" /></param>
     public function getWorksheetChart( $request)
@@ -1687,7 +1684,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Adds new chart in worksheet.
+    /// Add a new chart in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetAddChartRequest" /></param>
     public function putWorksheetAddChart( $request)
@@ -1700,7 +1697,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Deletes a chart by index in worksheet.
+    /// Delete a chart by index in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteWorksheetDeleteChartRequest" /></param>
     public function deleteWorksheetDeleteChart( $request)
@@ -1713,7 +1710,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Update chart propreties in worksheet.
+    /// Update chart properties in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetChartRequest" /></param>
     public function postWorksheetChart( $request)
@@ -1726,7 +1723,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Gets chart legend description in worksheet.
+    /// Retrieve chart legend description in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetChartLegendRequest" /></param>
     public function getWorksheetChartLegend( $request)
@@ -1739,7 +1736,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Updates chart legend in worksheet.
+    /// Update chart legend in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetChartLegendRequest" /></param>
     public function postWorksheetChartLegend( $request)
@@ -2080,7 +2077,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Exports workbook to some format.
+    /// Retrieve workbooks in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorkbookRequest" /></param>
     public function getWorkbook( $request)
@@ -2093,7 +2090,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Converts workbook from request content to some format.
+    /// Convert the workbook from the requested content into files in different formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PutConvertWorkbookRequest" /></param>
     public function putConvertWorkbook( $request)
@@ -2106,7 +2103,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Converts document and saves result to storage.
+    /// Save an Excel file in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookSaveAsRequest" /></param>
     public function postWorkbookSaveAs( $request)
@@ -2119,6 +2116,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to PDF files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToPDFRequest" /></param>
     public function postConvertWorkbookToPDF( $request)
@@ -2131,6 +2129,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to PNG files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToPNGRequest" /></param>
     public function postConvertWorkbookToPNG( $request)
@@ -2143,6 +2142,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to Docx files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToDocxRequest" /></param>
     public function postConvertWorkbookToDocx( $request)
@@ -2155,6 +2155,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to Pptx files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToPptxRequest" /></param>
     public function postConvertWorkbookToPptx( $request)
@@ -2167,6 +2168,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to HTML files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToHtmlRequest" /></param>
     public function postConvertWorkbookToHtml( $request)
@@ -2179,6 +2181,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to Markdown files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToMarkdownRequest" /></param>
     public function postConvertWorkbookToMarkdown( $request)
@@ -2191,6 +2194,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to Json files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToJsonRequest" /></param>
     public function postConvertWorkbookToJson( $request)
@@ -2203,6 +2207,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to SQL Script files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToSQLRequest" /></param>
     public function postConvertWorkbookToSQL( $request)
@@ -2215,6 +2220,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Convert Excel file to Csv files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToCSVRequest" /></param>
     public function postConvertWorkbookToCSV( $request)
@@ -2227,7 +2233,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Export excel internal elements or itself to kinds of format files.
+    /// Export Excel internal elements or the workbook itself to various format files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostExportRequest" /></param>
     public function postExport( $request)
@@ -2240,9 +2246,8 @@ class CellsApi
     }
 
     /// <summary>
-    /// Export XML data from Excel file. 
-    /// When there are Xml Maps in Excel file, export xml data. 
-    /// When there is not xml map in Excel file, convert Excel file to xml file. 
+    /// Export XML data from an Excel file.
+    /// When there are XML Maps in an Excel file, export XML data. When there is no XML map in the Excel file, convert the Excel file to an XML file.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookExportXMLRequest" /></param>
     public function postWorkbookExportXML( $request)
@@ -2255,8 +2260,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Imports/Updates an XML data file into the workbook.
-    /// The XML data file can be a cloud file or HTTP URI data.
+    /// Import a JSON data file into the workbook. The JSON data file can either be a cloud file or data from an HTTP URI.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookImportJsonRequest" /></param>
     public function postWorkbookImportJson( $request)
@@ -2269,8 +2273,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Imports/Updates an XML data file into the workbook.
-    /// The XML data file can be a cloud file or HTTP URI data.
+    /// Import an XML data file into an Excel file. The XML data file can either be a cloud file or data from an HTTP URI.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookImportXMLRequest" /></param>
     public function postWorkbookImportXML( $request)
@@ -2283,7 +2286,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Imports data into workbook.
+    /// Import data into the Excel file.
     /// </summary>
     /// <param name="request">Request. <see cref="PostImportDataRequest" /></param>
     public function postImportData( $request)
@@ -2374,7 +2377,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Combine data files and template files to kinds of format files. 
+    /// Assemble data files with template files to generate files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostAssembleRequest" /></param>
     public function postAssemble( $request)
@@ -2387,7 +2390,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Compress XLS, XLSX, XLSM, XLSB, ODS and more
+    /// Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more.
     /// </summary>
     /// <param name="request">Request. <see cref="PostCompressRequest" /></param>
     public function postCompress( $request)
@@ -2400,7 +2403,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Merge cells in worksheet.
+    /// Merge cells in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostMergeRequest" /></param>
     public function postMerge( $request)
@@ -2413,7 +2416,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Split Excel spreadsheet files by worksheet, save as kinds of format files.
+    /// Split Excel spreadsheet files based on worksheets and create output files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostSplitRequest" /></param>
     public function postSplit( $request)
@@ -2426,7 +2429,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Search specify the text from excel files.
+    /// Search for specified text within Excel files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostSearchRequest" /></param>
     public function postSearch( $request)
@@ -2439,7 +2442,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Use new text to replace specify the text from excel files.
+    /// Replace specified text with new text in Excel files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostReplaceRequest" /></param>
     public function postReplace( $request)
@@ -2452,7 +2455,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Import data into excel file.
+    /// Import data into an Excel file and generate output files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostImportRequest" /></param>
     public function postImport( $request)
@@ -2465,7 +2468,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Add Text Watermark to Excel files.
+    /// Add Text Watermark to Excel files and generate output files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWatermarkRequest" /></param>
     public function postWatermark( $request)
@@ -2478,7 +2481,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Clear excel internal elements for excel files
+    /// Clear internal elements in Excel files and generate output files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostClearObjectsRequest" /></param>
     public function postClearObjects( $request)
@@ -2491,7 +2494,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Reverse rows or columns of Excel files, save as kinds of format files.
+    /// Reverse rows or columns in Excel files and create output files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostReverseRequest" /></param>
     public function postReverse( $request)
@@ -2504,6 +2507,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Repair abnormal files and generate files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostRepairRequest" /></param>
     public function postRepair( $request)
@@ -2516,7 +2520,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Reverse rows or columns of Excel files, save as kinds of format files.
+    /// Rotate rows, columns, or other objects in Excel files and save them in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostRotateRequest" /></param>
     public function postRotate( $request)
@@ -2529,6 +2533,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Update document properties in Excel file, and save them is various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostMetadataRequest" /></param>
     public function postMetadata( $request)
@@ -2541,6 +2546,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Get cells document properties.
     /// </summary>
     /// <param name="request">Request. <see cref="GetMetadataRequest" /></param>
     public function getMetadata( $request)
@@ -2553,6 +2559,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Delete cells document properties in Excel file, and save them is various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteMetadataRequest" /></param>
     public function deleteMetadata( $request)
@@ -2994,7 +3001,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Updates page header in worksheet. 
+    /// Updates page header in worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostHeaderRequest" /></param>
     public function postHeader( $request)
@@ -3020,7 +3027,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Update  page footer description in worksheet. 
+    /// Update  page footer description in worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostFooterRequest" /></param>
     public function postFooter( $request)
@@ -3447,7 +3454,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Digital Signature.
+    /// Excel file digital signature.
     /// </summary>
     /// <param name="request">Request. <see cref="PostDigitalSignatureRequest" /></param>
     public function postDigitalSignature( $request)
@@ -3460,7 +3467,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Encripts workbook.
+    /// Excel Encryption.
     /// </summary>
     /// <param name="request">Request. <see cref="PostEncryptWorkbookRequest" /></param>
     public function postEncryptWorkbook( $request)
@@ -3473,7 +3480,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Decrypts workbook.
+    /// Excel files decryption.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteDecryptWorkbookRequest" /></param>
     public function deleteDecryptWorkbook( $request)
@@ -3486,7 +3493,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Protects workbook.
+    /// Excel protection.
     /// </summary>
     /// <param name="request">Request. <see cref="PostProtectWorkbookRequest" /></param>
     public function postProtectWorkbook( $request)
@@ -3499,7 +3506,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Unprotects workbook.
+    /// Excel unprotection.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteUnProtectWorkbookRequest" /></param>
     public function deleteUnProtectWorkbook( $request)
@@ -3512,7 +3519,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Protects document from changes.
+    /// Excel file write protection.
     /// </summary>
     /// <param name="request">Request. <see cref="PutDocumentProtectFromChangesRequest" /></param>
     public function putDocumentProtectFromChanges( $request)
@@ -3525,7 +3532,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Unprotects document from changes.
+    /// Excel file cancel write protection.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteDocumentUnProtectFromChangesRequest" /></param>
     public function deleteDocumentUnProtectFromChanges( $request)
@@ -3538,7 +3545,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Unprotect password protected Excel file.
+    /// Unlock Excel files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostUnlockRequest" /></param>
     public function postUnlock( $request)
@@ -3551,7 +3558,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Setting access password.
+    /// Lock Excel files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostLockRequest" /></param>
     public function postLock( $request)
@@ -3564,7 +3571,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Protect MS Excel and OpenDocument Spreadsheet by making them password protected.
+    /// Excel files encryption.
     /// </summary>
     /// <param name="request">Request. <see cref="PostProtectRequest" /></param>
     public function postProtect( $request)
@@ -3590,7 +3597,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Combines a range of cells into a single cell. 
+    /// Combines a range of cells into a single cell.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellsRangeMergeRequest" /></param>
     public function postWorksheetCellsRangeMerge( $request)
@@ -3643,7 +3650,6 @@ class CellsApi
 
     /// <summary>
     /// Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset.
-    ///             
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellsRangeValueRequest" /></param>
     public function postWorksheetCellsRangeValue( $request)
@@ -3657,7 +3663,6 @@ class CellsApi
 
     /// <summary>
     /// Moves the current range to the dest range.
-    ///             
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellsRangeMoveToRequest" /></param>
     public function postWorksheetCellsRangeMoveTo( $request)
@@ -3670,7 +3675,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Sets outline border around a range of cells.
+    /// Sets data sort around a range of cells.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellsRangeSortRequest" /></param>
     public function postWorksheetCellsRangeSort( $request)
@@ -3723,7 +3728,6 @@ class CellsApi
 
     /// <summary>
     /// Inserts a range of cells and shift cells according to the shift option.
-    ///             
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetCellsRangeRequest" /></param>
     public function putWorksheetCellsRange( $request)
@@ -4007,7 +4011,7 @@ class CellsApi
     }
 
     /// <summary>
-    /// Update workbook's name. 
+    /// Update workbook's name.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookNameRequest" /></param>
     public function postWorkbookName( $request)

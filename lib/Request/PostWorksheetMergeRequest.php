@@ -45,7 +45,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : The start row.
+    * startRow : The start row index.
     */ 
     public $start_row;
 
@@ -90,7 +90,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : The start column.
+    * startColumn : The start column index.
     */ 
     public $start_column;
 
@@ -105,7 +105,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
     }
 
     /*
-    * totalRows : The total rows
+    * totalRows : The total rows number.
     */ 
     public $total_rows;
 
@@ -120,7 +120,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
     }
 
     /*
-    * totalColumns : The total columns.
+    * totalColumns : The total columns number.
     */ 
     public $total_columns;
 
@@ -135,7 +135,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostWorksheetMergeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

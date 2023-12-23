@@ -90,7 +90,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -117,6 +117,21 @@ class PostAssembleRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -160,6 +175,10 @@ class PostAssembleRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         if ($this->file !== null) {
             $multipart = true;

@@ -45,7 +45,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -90,7 +90,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftRow : New chart upper left row.
+    * upperLeftRow : Upper-left row for the new chart.
     */ 
     public $upper_left_row;
 
@@ -105,7 +105,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * upperLeftColumn : New chart upperleft column.
+    * upperLeftColumn : Upper-left column for the new chart.
     */ 
     public $upper_left_column;
 
@@ -120,7 +120,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * lowerRightRow : New chart lower right row.
+    * lowerRightRow : Lower-left row for the new chart.
     */ 
     public $lower_right_row;
 
@@ -135,7 +135,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * lowerRightColumn : New chart lower right column.
+    * lowerRightColumn : Lower-left column for the new chart.
     */ 
     public $lower_right_column;
 
@@ -150,7 +150,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * area : Specifies values from which to plot the data series. 
+    * area : Specify the values from which to plot the data series.
     */ 
     public $area;
 
@@ -165,7 +165,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * isVertical : Specifies whether to plot the series from a range of cell values by row or by column. 
+    * isVertical : Specify whether to plot the series from a range of cell values by row or by column. 
     */ 
     public $is_vertical;
 
@@ -180,7 +180,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * categoryData : Gets or sets the range of category Axis values. It can be a range of cells (such as, "d1:e10"). 
+    * categoryData : Get or set the range of category axis values. It can be a range of cells (e.g., "D1:E10").
     */ 
     public $category_data;
 
@@ -195,7 +195,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * isAutoGetSerialName : Specifies whether auto update serial name. 
+    * isAutoGetSerialName : Specify whether to auto-update the serial name.
     */ 
     public $is_auto_get_serial_name;
 
@@ -210,7 +210,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * title : Specifies chart title name.
+    * title : Specify the chart title name.
     */ 
     public $title;
 
@@ -225,7 +225,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -240,7 +240,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * dataLabels : Represents a specified chart's data label values display behavior. True displays the values. False to hide.
+    * dataLabels : Represents the specified chart's data label values display behavior. True to display the values, False to hide them.
     */ 
     public $data_labels;
 
@@ -255,7 +255,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * dataLabelsPosition : Represents data label position(Center/InsideBase/InsideEnd/OutsideEnd/Above/Below/Left/Right/BestFit/Moved).
+    * dataLabelsPosition : Represents data label position (Center/InsideBase/InsideEnd/OutsideEnd/Above/Below/Left/Right/BestFit/Moved).
     */ 
     public $data_labels_position;
 
@@ -270,7 +270,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableSheet : The source is the data of the pivotTable. If PivotSource is not empty ,the chart is PivotChart.
+    * pivotTableSheet : The source is the data of the pivotTable. If PivotSource is not empty, the chart is a PivotChart.
     */ 
     public $pivot_table_sheet;
 
@@ -285,7 +285,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableName : The source is the data of the pivotTable.
+    * pivotTableName : The pivot table name.
     */ 
     public $pivot_table_name;
 
@@ -300,7 +300,7 @@ class PutWorksheetAddChartRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

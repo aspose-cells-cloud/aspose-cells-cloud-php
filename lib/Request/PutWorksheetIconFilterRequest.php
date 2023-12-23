@@ -45,7 +45,7 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -135,7 +135,7 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
     }
 
     /*
-    * matchBlanks : Match all blank or  not blank cell in the list.(true/false)
+    * matchBlanks : Match all blank cell in the list.
     */ 
     public $match_blanks;
 
@@ -150,7 +150,7 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
     }
 
     /*
-    * refresh : If true, hide the filtered rows.
+    * refresh : Refresh auto filters to hide or unhide the rows.
     */ 
     public $refresh;
 
@@ -165,7 +165,7 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

@@ -54,6 +54,7 @@ class BatchSplitRequest implements  ArrayAccess
         'to_index' => 'int',
         'out_folder' => 'string',
         'out_storage' => 'string',
+        'region' => 'string',
         'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions'
     ];
 
@@ -71,6 +72,7 @@ class BatchSplitRequest implements  ArrayAccess
         'to_index' => null  ,
         'out_folder' => null  ,
         'out_storage' => null  ,
+        'region' => null  ,
         'save_options' => null  
     ];
 
@@ -109,6 +111,7 @@ class BatchSplitRequest implements  ArrayAccess
          'to_index' => 'ToIndex' ,
          'out_folder' => 'OutFolder' ,
          'out_storage' => 'OutStorage' ,
+         'region' => 'Region' ,
          'save_options' => 'SaveOptions' 
     ];
 
@@ -126,6 +129,7 @@ class BatchSplitRequest implements  ArrayAccess
         'to_index' => 'setToIndex' ,
         'out_folder' => 'setOutFolder' ,
         'out_storage' => 'setOutStorage' ,
+        'region' => 'setRegion' ,
         'save_options' => 'setSaveOptions' 
     ];
 
@@ -143,6 +147,7 @@ class BatchSplitRequest implements  ArrayAccess
         'to_index' => 'getToIndex' ,
         'out_folder' => 'getOutFolder' ,
         'out_storage' => 'getOutStorage' ,
+        'region' => 'getRegion' ,
         'save_options' => 'getSaveOptions' 
     ];
 
@@ -210,6 +215,7 @@ class BatchSplitRequest implements  ArrayAccess
         $this->container['to_index'] = isset($data['to_index']) ? $data['to_index'] : null;
         $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
         $this->container['out_storage'] = isset($data['out_storage']) ? $data['out_storage'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
     }
 
@@ -244,6 +250,9 @@ class BatchSplitRequest implements  ArrayAccess
         }
         if ($this->container['out_storage'] === null) {
             $invalidProperties[] = "'out_storage' can't be null";
+        }
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
         }
         if ($this->container['save_options'] === null) {
             $invalidProperties[] = "'save_options' can't be null";
@@ -281,6 +290,9 @@ class BatchSplitRequest implements  ArrayAccess
                     return false;
                 }
         if ($this->container['out_storage'] === null) {
+                    return false;
+                }
+        if ($this->container['region'] === null) {
                     return false;
                 }
         if ($this->container['save_options'] === null) {
@@ -469,6 +481,29 @@ class BatchSplitRequest implements  ArrayAccess
     public function setOutStorage($out_storage)
     {
         $this->container['out_storage'] = $out_storage;
+
+        return $this;
+    }
+   /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     *  The regional settings for workbook.
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
 
         return $this;
     }

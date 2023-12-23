@@ -45,7 +45,7 @@ class PostBatchSplitRequest extends BaseApiRequest
 {
 
     /*
-    * batchSplitRequest : 
+    * batchSplitRequest : BatchSplitRequest Batch splitting file request.  
     */ 
     public $batch_split_request;
 

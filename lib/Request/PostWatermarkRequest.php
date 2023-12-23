@@ -90,7 +90,22 @@ class PostWatermarkRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    */ 
+    public $out_format;
+
+    public function getOutFormat()
+    {
+        return $this->out_format;
+    }
+
+    public function setOutFormat($value)
+    {
+        $this->out_format = $value;
+    }
+
+    /*
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +120,7 @@ class PostWatermarkRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -117,6 +132,21 @@ class PostWatermarkRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -160,6 +190,10 @@ class PostWatermarkRequest extends BaseApiRequest
         if ($this->color !== null) {
             $queryParams['color'] = ObjectSerializer::toQueryValue($this->color);
         }
+        // query params : out_format
+        if ($this->out_format !== null) {
+            $queryParams['outFormat'] = ObjectSerializer::toQueryValue($this->out_format);
+        }
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
@@ -167,6 +201,10 @@ class PostWatermarkRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         if ($this->file !== null) {
             $multipart = true;

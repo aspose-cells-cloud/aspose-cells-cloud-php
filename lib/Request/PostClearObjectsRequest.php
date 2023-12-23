@@ -75,7 +75,7 @@ class PostClearObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetname : 
+    * sheetname : The worksheet name, specify the scope of the deletion.
     */ 
     public $sheetname;
 
@@ -90,7 +90,7 @@ class PostClearObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * outFormat : 
+    * outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $out_format;
 
@@ -105,7 +105,7 @@ class PostClearObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -120,7 +120,7 @@ class PostClearObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -132,6 +132,21 @@ class PostClearObjectsRequest extends BaseApiRequest
     public function setCheckExcelRestriction($value)
     {
         $this->check_excel_restriction = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -179,6 +194,10 @@ class PostClearObjectsRequest extends BaseApiRequest
         // query params : check_excel_restriction
         if ($this->check_excel_restriction !== null) {
             $queryParams['checkExcelRestriction'] = ObjectSerializer::toQueryValue($this->check_excel_restriction);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         if ($this->file !== null) {
             $multipart = true;

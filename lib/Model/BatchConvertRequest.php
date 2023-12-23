@@ -52,6 +52,7 @@ class BatchConvertRequest implements  ArrayAccess
         'format' => 'string',
         'out_folder' => 'string',
         'out_storage' => 'string',
+        'region' => 'string',
         'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions'
     ];
 
@@ -67,6 +68,7 @@ class BatchConvertRequest implements  ArrayAccess
         'format' => null  ,
         'out_folder' => null  ,
         'out_storage' => null  ,
+        'region' => null  ,
         'save_options' => null  
     ];
 
@@ -103,6 +105,7 @@ class BatchConvertRequest implements  ArrayAccess
          'format' => 'Format' ,
          'out_folder' => 'OutFolder' ,
          'out_storage' => 'OutStorage' ,
+         'region' => 'Region' ,
          'save_options' => 'SaveOptions' 
     ];
 
@@ -118,6 +121,7 @@ class BatchConvertRequest implements  ArrayAccess
         'format' => 'setFormat' ,
         'out_folder' => 'setOutFolder' ,
         'out_storage' => 'setOutStorage' ,
+        'region' => 'setRegion' ,
         'save_options' => 'setSaveOptions' 
     ];
 
@@ -133,6 +137,7 @@ class BatchConvertRequest implements  ArrayAccess
         'format' => 'getFormat' ,
         'out_folder' => 'getOutFolder' ,
         'out_storage' => 'getOutStorage' ,
+        'region' => 'getRegion' ,
         'save_options' => 'getSaveOptions' 
     ];
 
@@ -198,6 +203,7 @@ class BatchConvertRequest implements  ArrayAccess
         $this->container['format'] = isset($data['format']) ? $data['format'] : null;
         $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
         $this->container['out_storage'] = isset($data['out_storage']) ? $data['out_storage'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
     }
 
@@ -226,6 +232,9 @@ class BatchConvertRequest implements  ArrayAccess
         }
         if ($this->container['out_storage'] === null) {
             $invalidProperties[] = "'out_storage' can't be null";
+        }
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
         }
         if ($this->container['save_options'] === null) {
             $invalidProperties[] = "'save_options' can't be null";
@@ -257,6 +266,9 @@ class BatchConvertRequest implements  ArrayAccess
                     return false;
                 }
         if ($this->container['out_storage'] === null) {
+                    return false;
+                }
+        if ($this->container['region'] === null) {
                     return false;
                 }
         if ($this->container['save_options'] === null) {
@@ -399,6 +411,29 @@ class BatchConvertRequest implements  ArrayAccess
     public function setOutStorage($out_storage)
     {
         $this->container['out_storage'] = $out_storage;
+
+        return $this;
+    }
+   /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     *  The regional settings for workbook.
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
 
         return $this;
     }

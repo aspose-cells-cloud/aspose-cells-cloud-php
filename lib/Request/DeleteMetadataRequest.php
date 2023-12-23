@@ -45,7 +45,7 @@ class DeleteMetadataRequest extends BaseApiRequest
 {
 
     /*
-    * File : File to upload
+    * File : Cells document property name.
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class DeleteMetadataRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : Cells document property name.
     */ 
     public $type;
 
@@ -75,7 +75,22 @@ class DeleteMetadataRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    */ 
+    public $out_format;
+
+    public function getOutFormat()
+    {
+        return $this->out_format;
+    }
+
+    public function setOutFormat($value)
+    {
+        $this->out_format = $value;
+    }
+
+    /*
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +105,7 @@ class DeleteMetadataRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -126,6 +141,10 @@ class DeleteMetadataRequest extends BaseApiRequest
         // query params : type
         if ($this->type !== null) {
             $queryParams['type'] = ObjectSerializer::toQueryValue($this->type);
+        }
+        // query params : out_format
+        if ($this->out_format !== null) {
+            $queryParams['outFormat'] = ObjectSerializer::toQueryValue($this->out_format);
         }
         // query params : password
         if ($this->password !== null) {

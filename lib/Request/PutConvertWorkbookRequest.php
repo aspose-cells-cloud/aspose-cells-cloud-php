@@ -75,7 +75,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * password : The workbook password.
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : Path to save result
+    * outPath : Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder.
     */ 
     public $out_path;
 
@@ -105,7 +105,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 
@@ -120,7 +120,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -135,7 +135,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * streamFormat : 
+    * streamFormat : The format of the input file stream. 
     */ 
     public $stream_format;
 
@@ -147,6 +147,21 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     public function setStreamFormat($value)
     {
         $this->stream_format = $value;
+    }
+
+    /*
+    * region : The regional settings for workbook.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     public function __construct()
@@ -191,6 +206,10 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         // query params : stream_format
         if ($this->stream_format !== null) {
             $queryParams['streamFormat'] = ObjectSerializer::toQueryValue($this->stream_format);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         if ($this->file !== null) {
             $multipart = true;

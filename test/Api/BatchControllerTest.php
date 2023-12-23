@@ -91,7 +91,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchConvertRequest = new \Aspose\Cells\Cloud\Model\BatchConvertRequest();
         $batchConvertRequest->setSourceFolder($remoteFolder ); 
         $batchConvertRequest->setFormat("pdf" ); 
-        $batchConvertRequest->setOutFolder("TestResult" ); 
+        $batchConvertRequest->setOutFolder("OutResult" ); 
         $batchConvertRequest->setMatchCondition($batchConvertRequestMatchCondition ); 
         CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
         CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
@@ -120,7 +120,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchProtectRequest->setSourceFolder($remoteFolder ); 
         $batchProtectRequest->setProtectionType("All" ); 
         $batchProtectRequest->setPassword("123456" ); 
-        $batchProtectRequest->setOutFolder("TestResult" ); 
+        $batchProtectRequest->setOutFolder("OutResult" ); 
         $batchProtectRequest->setMatchCondition($batchProtectRequestMatchCondition ); 
         CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
         CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
@@ -148,7 +148,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchLockRequest = new \Aspose\Cells\Cloud\Model\BatchLockRequest();
         $batchLockRequest->setSourceFolder($remoteFolder ); 
         $batchLockRequest->setPassword("123456" ); 
-        $batchLockRequest->setOutFolder("TestResult" ); 
+        $batchLockRequest->setOutFolder("OutResult" ); 
         $batchLockRequest->setMatchCondition($batchLockRequestMatchCondition ); 
         CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
         CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
@@ -176,7 +176,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchLockRequest = new \Aspose\Cells\Cloud\Model\BatchLockRequest();
         $batchLockRequest->setSourceFolder($remoteFolder ); 
         $batchLockRequest->setPassword("123456" ); 
-        $batchLockRequest->setOutFolder("TestResult" ); 
+        $batchLockRequest->setOutFolder("OutResult" ); 
         $batchLockRequest->setMatchCondition($batchLockRequestMatchCondition ); 
         CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
         CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
