@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="LightCellsTests.php.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -544,7 +544,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -566,7 +566,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -588,7 +588,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -610,7 +610,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -632,7 +632,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -654,7 +654,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -676,7 +676,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -698,7 +698,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -720,7 +720,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -742,7 +742,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -764,7 +764,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -786,7 +786,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -808,7 +808,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -830,7 +830,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -852,7 +852,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -874,7 +874,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -896,7 +896,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -918,7 +918,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -940,7 +940,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -962,7 +962,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -984,7 +984,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1006,7 +1006,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1028,7 +1028,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1050,7 +1050,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1072,7 +1072,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1094,7 +1094,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1116,7 +1116,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 
@@ -1138,7 +1138,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostAssembleRequest();
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
-        $request->setFormat( $format);
+        $request->setOutFormat( $format);
         $this->instance->postAssemble($request);
     }
 

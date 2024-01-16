@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostAutofitWorkbookColumnsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,7 +60,7 @@ class PostAutofitWorkbookColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : 
+    * startColumn : The start column index.
     */ 
     public $start_column;
 
@@ -75,7 +75,7 @@ class PostAutofitWorkbookColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * endColumn : 
+    * endColumn : The end column index.
     */ 
     public $end_column;
 
@@ -90,7 +90,7 @@ class PostAutofitWorkbookColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostAutofitWorkbookColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

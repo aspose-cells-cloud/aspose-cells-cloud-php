@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/23.12)
+![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/24.1.1)
 
 # PHP SDK for Spreadsheet Processing in Cloud
 
@@ -24,20 +24,14 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 - Fetch the required shape from worksheet.
 - Leverage the power of [Pivot Tables](https://docs.aspose.cloud/cells/working-with-pivot-tables/) & Ranges.
 
-## Feature & Enhancements in Version 23.12
+## Feature & Enhancements in Version 24.1.1
 
 Full list of issues covering all changes in this release:
 
-- Conversion APIs add region parameter.
-- Protection APIs add region parameter.
-- Assemble data API adds region parameter.
-- Merge files API adds region parameter.
-- Split files API adds region parameter.
-- Import data API adds region parameter.
-- Watermark API adds region parameter.
-- Clear object API adds region parameter.
-- Reverse data API adds region parameter.
-- Rotate data API adds region parameter.
+- Fixed spelling mistakes for several functions.
+- Add the PostFitTallToPages method for page setup controller.
+- Add the PostFitWideToPages method for page setup controller.
+- Optimize save options about paginated.
 
 ## Read Other Formats
 

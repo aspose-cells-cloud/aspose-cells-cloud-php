@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorksheetListObjectSummarizeWithPivotTableRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * listObjectIndex : List object index.
+    * listObjectIndex : The list object index.
     */ 
     public $list_object_index;
 
@@ -90,7 +90,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * destsheetName : Target work sheet name.
+    * destsheetName : The target worksheet name.
     */ 
     public $destsheet_name;
 
@@ -120,7 +120,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteHorizontalPageBreakRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -75,7 +75,7 @@ class DeleteHorizontalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * index : Removes the HPageBreak element at a specified name. Element index, zero based.
+    * index : Removes the horizontal page break element at a specified name. Element index, zero based.
     */ 
     public $index;
 
@@ -90,7 +90,7 @@ class DeleteHorizontalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class DeleteHorizontalPageBreakRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

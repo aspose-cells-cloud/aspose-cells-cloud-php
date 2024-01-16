@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ChartsControllerTests.php.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,9 +35,9 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\DeleteWorksheetChartLegendRequest; 
+use \Aspose\Cells\Cloud\Request\DeleteWorksheetChartRequest; 
+use \Aspose\Cells\Cloud\Request\DeleteWorksheetChartsRequest; 
 use \Aspose\Cells\Cloud\Request\DeleteWorksheetChartTitleRequest; 
-use \Aspose\Cells\Cloud\Request\DeleteWorksheetClearChartsRequest; 
-use \Aspose\Cells\Cloud\Request\DeleteWorksheetDeleteChartRequest; 
 use \Aspose\Cells\Cloud\Request\GetWorksheetChartLegendRequest; 
 use \Aspose\Cells\Cloud\Request\GetWorksheetChartRequest; 
 use \Aspose\Cells\Cloud\Request\GetWorksheetChartsRequest; 
@@ -45,8 +45,8 @@ use \Aspose\Cells\Cloud\Request\GetWorksheetChartTitleRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetChartLegendRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetChartRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetChartTitleRequest; 
-use \Aspose\Cells\Cloud\Request\PutWorksheetAddChartRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetChartLegendRequest; 
+use \Aspose\Cells\Cloud\Request\PutWorksheetChartRequest; 
 use \Aspose\Cells\Cloud\Request\PutWorksheetChartTitleRequest; 
 
 use PHPUnit\Framework\TestCase;
@@ -128,10 +128,10 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /// <summary>
-    /// Test for PutWorksheetAddChart of ChartsController.
+    /// Test for PutWorksheetChart of ChartsController.
     /// </summary>
 
-    public function testPutWorksheetAddChart()
+    public function testPutWorksheetChart()
     {
         $remoteFolder = "TestData/In";
 
@@ -140,7 +140,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PutWorksheetAddChartRequest();
+        $request = new PutWorksheetChartRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setChartType( "Pie");
@@ -153,14 +153,14 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTitle( "Aspose Chart");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetAddChart($request);
+        $this->instance->putWorksheetChart($request);
     }
 
     /// <summary>
-    /// Test for DeleteWorksheetDeleteChart of ChartsController.
+    /// Test for DeleteWorksheetChart of ChartsController.
     /// </summary>
 
-    public function testDeleteWorksheetDeleteChart()
+    public function testDeleteWorksheetChart()
     {
         $remoteFolder = "TestData/In";
 
@@ -169,13 +169,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new DeleteWorksheetDeleteChartRequest();
+        $request = new DeleteWorksheetChartRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetDeleteChart($request);
+        $this->instance->deleteWorksheetChart($request);
     }
 
     /// <summary>
@@ -296,10 +296,10 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /// <summary>
-    /// Test for DeleteWorksheetClearCharts of ChartsController.
+    /// Test for DeleteWorksheetCharts of ChartsController.
     /// </summary>
 
-    public function testDeleteWorksheetClearCharts()
+    public function testDeleteWorksheetCharts()
     {
         $remoteFolder = "TestData/In";
 
@@ -308,12 +308,12 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new DeleteWorksheetClearChartsRequest();
+        $request = new DeleteWorksheetChartsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetClearCharts($request);
+        $this->instance->deleteWorksheetCharts($request);
     }
 
     /// <summary>

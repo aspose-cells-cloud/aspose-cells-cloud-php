@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorkbookSaveAsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -194,6 +194,36 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
         $this->region = $value;
     }
 
+    /*
+    * pageWideFitOnPerSheet : The page wide fit on worksheet.
+    */ 
+    public $page_wide_fit_on_per_sheet;
+
+    public function getPageWideFitOnPerSheet()
+    {
+        return $this->page_wide_fit_on_per_sheet;
+    }
+
+    public function setPageWideFitOnPerSheet($value)
+    {
+        $this->page_wide_fit_on_per_sheet = $value;
+    }
+
+    /*
+    * pageTallFitOnPerSheet : The page tall fit on worksheet.
+    */ 
+    public $page_tall_fit_on_per_sheet;
+
+    public function getPageTallFitOnPerSheet()
+    {
+        return $this->page_tall_fit_on_per_sheet;
+    }
+
+    public function setPageTallFitOnPerSheet($value)
+    {
+        $this->page_tall_fit_on_per_sheet = $value;
+    }
+
     public function __construct()
     {        
     }
@@ -259,6 +289,14 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
         // query params : region
         if ($this->region !== null) {
             $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
+        }
+        // query params : page_wide_fit_on_per_sheet
+        if ($this->page_wide_fit_on_per_sheet !== null) {
+            $queryParams['pageWideFitOnPerSheet'] = ObjectSerializer::toQueryValue($this->page_wide_fit_on_per_sheet);
+        }
+        // query params : page_tall_fit_on_per_sheet
+        if ($this->page_tall_fit_on_per_sheet !== null) {
+            $queryParams['pageTallFitOnPerSheet'] = ObjectSerializer::toQueryValue($this->page_tall_fit_on_per_sheet);
         }
     // body params
         $_tempBody = null;

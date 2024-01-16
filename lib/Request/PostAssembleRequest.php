@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostAssembleRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -75,18 +75,18 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * format : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    * outFormat : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
-    public $format;
+    public $out_format;
 
-    public function getFormat()
+    public function getOutFormat()
     {
-        return $this->format;
+        return $this->out_format;
     }
 
-    public function setFormat($value)
+    public function setOutFormat($value)
     {
-        $this->format = $value;
+        $this->out_format = $value;
     }
 
     /*
@@ -164,9 +164,9 @@ class PostAssembleRequest extends BaseApiRequest
         if ($this->datasource !== null) {
             $queryParams['datasource'] = ObjectSerializer::toQueryValue($this->datasource);
         }
-        // query params : format
-        if ($this->format !== null) {
-            $queryParams['format'] = ObjectSerializer::toQueryValue($this->format);
+        // query params : out_format
+        if ($this->out_format !== null) {
+            $queryParams['outFormat'] = ObjectSerializer::toQueryValue($this->out_format);
         }
         // query params : password
         if ($this->password !== null) {

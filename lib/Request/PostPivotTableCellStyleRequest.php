@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostPivotTableCellStyleRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : Gets the PivotTable report by index.
+    * pivotTableIndex : The PivotTable index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * column : Column index of the cell.
+    * column : The column index of the cell.
     */ 
     public $column;
 
@@ -105,7 +105,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * row : RowIndex of the cell.
+    * row : The row index of the cell.
     */ 
     public $row;
 
@@ -120,7 +120,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * style : Style description in request body.
+    * style : Style Style description in request body.
     */ 
     public $style;
 
@@ -135,7 +135,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : Whether the specific pivot table calculate(true/false).
+    * needReCalculate : Whether the specific PivotTable calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -150,7 +150,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

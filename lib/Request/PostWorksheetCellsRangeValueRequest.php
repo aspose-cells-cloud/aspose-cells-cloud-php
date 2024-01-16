@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorksheetCellsRangeValueRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * range : range in worksheet 
+    * range : The range in worksheet. 
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * Value : Input value
+    * Value : Input value.
     */ 
     public $value;
 
@@ -120,7 +120,7 @@ class PostWorksheetCellsRangeValueRequest extends BaseApiRequest
     }
 
     /*
-    * setStyle : True: set the number format to cell's style when converting to other data type
+    * setStyle : True: set the number format to cell's style when converting to other data type.
     */ 
     public $set_style;
 

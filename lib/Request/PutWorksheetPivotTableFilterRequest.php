@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutWorksheetPivotTableFilterRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -90,7 +90,7 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * filter : Pivot filter description.
+    * filter : PivotFilter Pivot filter description.
     */ 
     public $filter;
 
@@ -105,7 +105,7 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : Whether the specific pivot table calculate(true/false).
+    * needReCalculate : Whether the specific PivotTable calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -120,7 +120,7 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

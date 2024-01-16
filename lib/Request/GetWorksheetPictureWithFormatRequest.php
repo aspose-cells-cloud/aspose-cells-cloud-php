@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorksheetPictureWithFormatRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * pictureNumber : The picture number.
+    * pictureNumber : The picture index.
     */ 
     public $picture_number;
 
@@ -105,7 +105,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

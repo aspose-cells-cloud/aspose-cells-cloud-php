@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorksheetColumnsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * offset : Original workbook folder.
+    * offset : The folder where the file is situated.
     */ 
     public $offset;
 
@@ -90,7 +90,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * count : Storage name.
+    * count : The storage name where the file is situated.
     */ 
     public $count;
 

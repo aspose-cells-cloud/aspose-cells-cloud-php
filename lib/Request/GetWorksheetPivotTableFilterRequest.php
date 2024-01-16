@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorksheetPivotTableFilterRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorksheetPivotTableFilterRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class GetWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : Gets the PivotTable report by index.
+    * pivotTableIndex : The PivotTable index in the worksheet.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class GetWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * filterIndex : Gets the pivotfilter object at the specific index.
+    * filterIndex : The pivot filter index of PivotTable.
     */ 
     public $filter_index;
 
@@ -105,7 +105,7 @@ class GetWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetPivotTableFilterRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

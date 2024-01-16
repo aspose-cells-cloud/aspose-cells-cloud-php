@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageSetupControllerTests.php.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,6 +38,8 @@ use \Aspose\Cells\Cloud\Request\DeleteHeaderFooterRequest;
 use \Aspose\Cells\Cloud\Request\GetFooterRequest; 
 use \Aspose\Cells\Cloud\Request\GetHeaderRequest; 
 use \Aspose\Cells\Cloud\Request\GetPageSetupRequest; 
+use \Aspose\Cells\Cloud\Request\PostFitTallToPagesRequest; 
+use \Aspose\Cells\Cloud\Request\PostFitWideToPagesRequest; 
 use \Aspose\Cells\Cloud\Request\PostFooterRequest; 
 use \Aspose\Cells\Cloud\Request\PostHeaderRequest; 
 use \Aspose\Cells\Cloud\Request\PostPageSetupRequest; 
@@ -232,5 +234,47 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
         $this->instance->postFooter($request);
+    }
+
+    /// <summary>
+    /// Test for PostFitWideToPages of PageSetupController.
+    /// </summary>
+
+    public function testPostFitWideToPages()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "Book1.xlsx";
+        $remoteName = "Book1.xlsx";
+
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
+        $request = new PostFitWideToPagesRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "Sheet1");
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postFitWideToPages($request);
+    }
+
+    /// <summary>
+    /// Test for PostFitTallToPages of PageSetupController.
+    /// </summary>
+
+    public function testPostFitTallToPages()
+    {
+        $remoteFolder = "TestData/In";
+
+        $localName = "Book1.xlsx";
+        $remoteName = "Book1.xlsx";
+
+        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
+        $request = new PostFitTallToPagesRequest();
+        $request->setName( $remoteName);
+        $request->setSheetName( "Sheet1");
+        $request->setFolder( $remoteFolder);
+        $request->setStorageName( "");
+        $this->instance->postFitTallToPages($request);
     }
 }

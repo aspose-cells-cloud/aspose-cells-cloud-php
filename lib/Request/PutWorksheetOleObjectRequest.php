@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutWorksheetOleObjectRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -135,7 +135,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * oleFile : OLE filename(full file name).
+    * oleFile : OLE filename path(full file name).
     */ 
     public $ole_file;
 
@@ -150,7 +150,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * imageFile : Image filename(full file name).
+    * imageFile : Image filename path(full file name).
     */ 
     public $image_file;
 
@@ -165,7 +165,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -180,7 +180,7 @@ class PutWorksheetOleObjectRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

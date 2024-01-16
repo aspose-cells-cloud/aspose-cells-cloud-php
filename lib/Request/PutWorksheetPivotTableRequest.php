@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutWorksheetPivotTableRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * destCellName : The cell in the upper-left corner of the PivotTable report's destination range.
+    * destCellName : The cell in the upper-left corner of the destination range for the PivotTable report.
     */ 
     public $dest_cell_name;
 
@@ -120,7 +120,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * tableName : The name of the new PivotTable report.
+    * tableName : The name of the new PivotTable.
     */ 
     public $table_name;
 
@@ -135,7 +135,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * useSameSource : Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory.
+    * useSameSource : Indicates whether using same data source when another existing PivotTable has used this data source. If the property is true, it will save memory.
     */ 
     public $use_same_source;
 
@@ -150,7 +150,7 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

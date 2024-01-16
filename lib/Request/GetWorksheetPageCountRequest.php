@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorksheetPageCountRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorksheetPageCountRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetPageCountRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetPageCountRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetWorksheetPageCountRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

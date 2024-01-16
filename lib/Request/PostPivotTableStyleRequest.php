@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostPivotTableStyleRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostPivotTableStyleRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostPivotTableStyleRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : Gets the PivotTable report by index.
+    * pivotTableIndex : The PivotTable index.
     */ 
     public $pivot_table_index;
 
@@ -90,7 +90,7 @@ class PostPivotTableStyleRequest extends BaseApiRequest
     }
 
     /*
-    * style : Style description in request body.
+    * style : StyleStyle description in request body.
     */ 
     public $style;
 
@@ -105,7 +105,7 @@ class PostPivotTableStyleRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : Whether the specific pivot table calculate(true/false).
+    * needReCalculate : Whether the specific PivotTable calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -120,7 +120,7 @@ class PostPivotTableStyleRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostPivotTableStyleRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

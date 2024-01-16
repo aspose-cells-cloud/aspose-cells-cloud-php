@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutDocumentPropertyRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,7 +60,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * property : Gets or sets the value of the property.
+    * property : Get or set the value of the property.
     */ 
     public $property;
 
@@ -75,7 +75,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

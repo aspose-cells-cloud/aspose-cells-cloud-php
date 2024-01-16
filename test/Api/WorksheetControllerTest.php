@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WorksheetControllerTests.php.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -63,8 +63,8 @@ use \Aspose\Cells\Cloud\Request\PostUpdateWorksheetZoomRequest;
 use \Aspose\Cells\Cloud\Request\PostWorksheetCalculateFormulaRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetCommentRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetRangeSortRequest; 
+use \Aspose\Cells\Cloud\Request\PostWorksheetTextReplaceRequest; 
 use \Aspose\Cells\Cloud\Request\PostWorksheetTextSearchRequest; 
-use \Aspose\Cells\Cloud\Request\PostWorsheetTextReplaceRequest; 
 use \Aspose\Cells\Cloud\Request\PutActiveWorksheetRequest; 
 use \Aspose\Cells\Cloud\Request\PutAddNewWorksheetRequest; 
 use \Aspose\Cells\Cloud\Request\PutChangeVisibilityWorksheetRequest; 
@@ -629,10 +629,10 @@ class WorksheetControllerTest extends \PHPUnit_Framework_TestCase
     }
 
     /// <summary>
-    /// Test for PostWorsheetTextReplace of WorksheetController.
+    /// Test for PostWorksheetTextReplace of WorksheetController.
     /// </summary>
 
-    public function testPostWorsheetTextReplace()
+    public function testPostWorksheetTextReplace()
     {
         $remoteFolder = "TestData/In";
 
@@ -641,14 +641,14 @@ class WorksheetControllerTest extends \PHPUnit_Framework_TestCase
 
         CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
-        $request = new PostWorsheetTextReplaceRequest();
+        $request = new PostWorksheetTextReplaceRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setOldValue( "123");
         $request->setNewValue( "456");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorsheetTextReplace($request);
+        $this->instance->postWorksheetTextReplace($request);
     }
 
     /// <summary>

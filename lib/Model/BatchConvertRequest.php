@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BatchConvertRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -53,6 +53,8 @@ class BatchConvertRequest implements  ArrayAccess
         'out_folder' => 'string',
         'out_storage' => 'string',
         'region' => 'string',
+        'page_wide_fit_on_per_sheet' => 'bool',
+        'page_tall_fit_on_per_sheet' => 'bool',
         'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions'
     ];
 
@@ -69,6 +71,8 @@ class BatchConvertRequest implements  ArrayAccess
         'out_folder' => null  ,
         'out_storage' => null  ,
         'region' => null  ,
+        'page_wide_fit_on_per_sheet' => null  ,
+        'page_tall_fit_on_per_sheet' => null  ,
         'save_options' => null  
     ];
 
@@ -106,6 +110,8 @@ class BatchConvertRequest implements  ArrayAccess
          'out_folder' => 'OutFolder' ,
          'out_storage' => 'OutStorage' ,
          'region' => 'Region' ,
+         'page_wide_fit_on_per_sheet' => 'PageWideFitOnPerSheet' ,
+         'page_tall_fit_on_per_sheet' => 'PageTallFitOnPerSheet' ,
          'save_options' => 'SaveOptions' 
     ];
 
@@ -122,6 +128,8 @@ class BatchConvertRequest implements  ArrayAccess
         'out_folder' => 'setOutFolder' ,
         'out_storage' => 'setOutStorage' ,
         'region' => 'setRegion' ,
+        'page_wide_fit_on_per_sheet' => 'setPageWideFitOnPerSheet' ,
+        'page_tall_fit_on_per_sheet' => 'setPageTallFitOnPerSheet' ,
         'save_options' => 'setSaveOptions' 
     ];
 
@@ -138,6 +146,8 @@ class BatchConvertRequest implements  ArrayAccess
         'out_folder' => 'getOutFolder' ,
         'out_storage' => 'getOutStorage' ,
         'region' => 'getRegion' ,
+        'page_wide_fit_on_per_sheet' => 'getPageWideFitOnPerSheet' ,
+        'page_tall_fit_on_per_sheet' => 'getPageTallFitOnPerSheet' ,
         'save_options' => 'getSaveOptions' 
     ];
 
@@ -204,6 +214,8 @@ class BatchConvertRequest implements  ArrayAccess
         $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
         $this->container['out_storage'] = isset($data['out_storage']) ? $data['out_storage'] : null;
         $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['page_wide_fit_on_per_sheet'] = isset($data['page_wide_fit_on_per_sheet']) ? $data['page_wide_fit_on_per_sheet'] : null;
+        $this->container['page_tall_fit_on_per_sheet'] = isset($data['page_tall_fit_on_per_sheet']) ? $data['page_tall_fit_on_per_sheet'] : null;
         $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
     }
 
@@ -235,6 +247,12 @@ class BatchConvertRequest implements  ArrayAccess
         }
         if ($this->container['region'] === null) {
             $invalidProperties[] = "'region' can't be null";
+        }
+        if ($this->container['page_wide_fit_on_per_sheet'] === null) {
+            $invalidProperties[] = "'page_wide_fit_on_per_sheet' can't be null";
+        }
+        if ($this->container['page_tall_fit_on_per_sheet'] === null) {
+            $invalidProperties[] = "'page_tall_fit_on_per_sheet' can't be null";
         }
         if ($this->container['save_options'] === null) {
             $invalidProperties[] = "'save_options' can't be null";
@@ -269,6 +287,12 @@ class BatchConvertRequest implements  ArrayAccess
                     return false;
                 }
         if ($this->container['region'] === null) {
+                    return false;
+                }
+        if ($this->container['page_wide_fit_on_per_sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['page_tall_fit_on_per_sheet'] === null) {
                     return false;
                 }
         if ($this->container['save_options'] === null) {
@@ -434,6 +458,52 @@ class BatchConvertRequest implements  ArrayAccess
     public function setRegion($region)
     {
         $this->container['region'] = $region;
+
+        return $this;
+    }
+   /**
+     * Gets page_wide_fit_on_per_sheet
+     *
+     * @return bool
+     */
+    public function getPageWideFitOnPerSheet()
+    {
+        return $this->container['page_wide_fit_on_per_sheet'];
+    }
+
+    /**
+     * Sets page_wide_fit_on_per_sheet
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPageWideFitOnPerSheet($page_wide_fit_on_per_sheet)
+    {
+        $this->container['page_wide_fit_on_per_sheet'] = $page_wide_fit_on_per_sheet;
+
+        return $this;
+    }
+   /**
+     * Gets page_tall_fit_on_per_sheet
+     *
+     * @return bool
+     */
+    public function getPageTallFitOnPerSheet()
+    {
+        return $this->container['page_tall_fit_on_per_sheet'];
+    }
+
+    /**
+     * Sets page_tall_fit_on_per_sheet
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPageTallFitOnPerSheet($page_tall_fit_on_per_sheet)
+    {
+        $this->container['page_tall_fit_on_per_sheet'] = $page_tall_fit_on_per_sheet;
 
         return $this;
     }

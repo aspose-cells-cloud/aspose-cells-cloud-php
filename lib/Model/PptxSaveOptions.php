@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PptxSaveOptions.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,6 +46,27 @@ class PptxSaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'ignore_hidden_rows' => 'bool',
+        'adjust_font_size_for_row_type' => 'string',
+        'export_view_type' => 'string',
+        'default_font' => 'string',
+        'check_workbook_default_font' => 'bool',
+        'check_font_compatibility' => 'bool',
+        'is_font_substitution_char_granularity' => 'bool',
+        'one_page_per_sheet' => 'bool',
+        'all_columns_in_one_page_per_sheet' => 'bool',
+        'ignore_error' => 'bool',
+        'output_blank_page_when_nothing_to_print' => 'bool',
+        'page_index' => 'int',
+        'page_count' => 'int',
+        'printing_page_type' => 'string',
+        'gridline_type' => 'string',
+        'text_cross_type' => 'string',
+        'default_edit_language' => 'string',
+        'emf_render_setting' => 'string',
+        'merge_areas' => 'bool',
+        'sort_external_names' => 'bool',
+        'update_smart_art' => 'bool',
         'save_format' => 'string',
         'cached_file_folder' => 'string',
         'clear_data' => 'bool',
@@ -62,6 +83,27 @@ class PptxSaveOptions implements  ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'ignore_hidden_rows' => null  ,
+        'adjust_font_size_for_row_type' => null  ,
+        'export_view_type' => null  ,
+        'default_font' => null  ,
+        'check_workbook_default_font' => null  ,
+        'check_font_compatibility' => null  ,
+        'is_font_substitution_char_granularity' => null  ,
+        'one_page_per_sheet' => null  ,
+        'all_columns_in_one_page_per_sheet' => null  ,
+        'ignore_error' => null  ,
+        'output_blank_page_when_nothing_to_print' => null  ,
+        'page_index' => null  ,
+        'page_count' => null  ,
+        'printing_page_type' => null  ,
+        'gridline_type' => null  ,
+        'text_cross_type' => null  ,
+        'default_edit_language' => null  ,
+        'emf_render_setting' => null  ,
+        'merge_areas' => null  ,
+        'sort_external_names' => null  ,
+        'update_smart_art' => null  ,
         'save_format' => null  ,
         'cached_file_folder' => null  ,
         'clear_data' => null  ,
@@ -99,6 +141,27 @@ class PptxSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+         'ignore_hidden_rows' => 'IgnoreHiddenRows' ,
+         'adjust_font_size_for_row_type' => 'AdjustFontSizeForRowType' ,
+         'export_view_type' => 'ExportViewType' ,
+         'default_font' => 'DefaultFont' ,
+         'check_workbook_default_font' => 'CheckWorkbookDefaultFont' ,
+         'check_font_compatibility' => 'CheckFontCompatibility' ,
+         'is_font_substitution_char_granularity' => 'IsFontSubstitutionCharGranularity' ,
+         'one_page_per_sheet' => 'OnePagePerSheet' ,
+         'all_columns_in_one_page_per_sheet' => 'AllColumnsInOnePagePerSheet' ,
+         'ignore_error' => 'IgnoreError' ,
+         'output_blank_page_when_nothing_to_print' => 'OutputBlankPageWhenNothingToPrint' ,
+         'page_index' => 'PageIndex' ,
+         'page_count' => 'PageCount' ,
+         'printing_page_type' => 'PrintingPageType' ,
+         'gridline_type' => 'GridlineType' ,
+         'text_cross_type' => 'TextCrossType' ,
+         'default_edit_language' => 'DefaultEditLanguage' ,
+         'emf_render_setting' => 'EmfRenderSetting' ,
+         'merge_areas' => 'MergeAreas' ,
+         'sort_external_names' => 'SortExternalNames' ,
+         'update_smart_art' => 'UpdateSmartArt' ,
          'save_format' => 'SaveFormat' ,
          'cached_file_folder' => 'CachedFileFolder' ,
          'clear_data' => 'ClearData' ,
@@ -115,6 +178,27 @@ class PptxSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'ignore_hidden_rows' => 'setIgnoreHiddenRows' ,
+        'adjust_font_size_for_row_type' => 'setAdjustFontSizeForRowType' ,
+        'export_view_type' => 'setExportViewType' ,
+        'default_font' => 'setDefaultFont' ,
+        'check_workbook_default_font' => 'setCheckWorkbookDefaultFont' ,
+        'check_font_compatibility' => 'setCheckFontCompatibility' ,
+        'is_font_substitution_char_granularity' => 'setIsFontSubstitutionCharGranularity' ,
+        'one_page_per_sheet' => 'setOnePagePerSheet' ,
+        'all_columns_in_one_page_per_sheet' => 'setAllColumnsInOnePagePerSheet' ,
+        'ignore_error' => 'setIgnoreError' ,
+        'output_blank_page_when_nothing_to_print' => 'setOutputBlankPageWhenNothingToPrint' ,
+        'page_index' => 'setPageIndex' ,
+        'page_count' => 'setPageCount' ,
+        'printing_page_type' => 'setPrintingPageType' ,
+        'gridline_type' => 'setGridlineType' ,
+        'text_cross_type' => 'setTextCrossType' ,
+        'default_edit_language' => 'setDefaultEditLanguage' ,
+        'emf_render_setting' => 'setEmfRenderSetting' ,
+        'merge_areas' => 'setMergeAreas' ,
+        'sort_external_names' => 'setSortExternalNames' ,
+        'update_smart_art' => 'setUpdateSmartArt' ,
         'save_format' => 'setSaveFormat' ,
         'cached_file_folder' => 'setCachedFileFolder' ,
         'clear_data' => 'setClearData' ,
@@ -131,6 +215,27 @@ class PptxSaveOptions implements  ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'ignore_hidden_rows' => 'getIgnoreHiddenRows' ,
+        'adjust_font_size_for_row_type' => 'getAdjustFontSizeForRowType' ,
+        'export_view_type' => 'getExportViewType' ,
+        'default_font' => 'getDefaultFont' ,
+        'check_workbook_default_font' => 'getCheckWorkbookDefaultFont' ,
+        'check_font_compatibility' => 'getCheckFontCompatibility' ,
+        'is_font_substitution_char_granularity' => 'getIsFontSubstitutionCharGranularity' ,
+        'one_page_per_sheet' => 'getOnePagePerSheet' ,
+        'all_columns_in_one_page_per_sheet' => 'getAllColumnsInOnePagePerSheet' ,
+        'ignore_error' => 'getIgnoreError' ,
+        'output_blank_page_when_nothing_to_print' => 'getOutputBlankPageWhenNothingToPrint' ,
+        'page_index' => 'getPageIndex' ,
+        'page_count' => 'getPageCount' ,
+        'printing_page_type' => 'getPrintingPageType' ,
+        'gridline_type' => 'getGridlineType' ,
+        'text_cross_type' => 'getTextCrossType' ,
+        'default_edit_language' => 'getDefaultEditLanguage' ,
+        'emf_render_setting' => 'getEmfRenderSetting' ,
+        'merge_areas' => 'getMergeAreas' ,
+        'sort_external_names' => 'getSortExternalNames' ,
+        'update_smart_art' => 'getUpdateSmartArt' ,
         'save_format' => 'getSaveFormat' ,
         'cached_file_folder' => 'getCachedFileFolder' ,
         'clear_data' => 'getClearData' ,
@@ -197,6 +302,27 @@ class PptxSaveOptions implements  ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['ignore_hidden_rows'] = isset($data['ignore_hidden_rows']) ? $data['ignore_hidden_rows'] : null;
+        $this->container['adjust_font_size_for_row_type'] = isset($data['adjust_font_size_for_row_type']) ? $data['adjust_font_size_for_row_type'] : null;
+        $this->container['export_view_type'] = isset($data['export_view_type']) ? $data['export_view_type'] : null;
+        $this->container['default_font'] = isset($data['default_font']) ? $data['default_font'] : null;
+        $this->container['check_workbook_default_font'] = isset($data['check_workbook_default_font']) ? $data['check_workbook_default_font'] : null;
+        $this->container['check_font_compatibility'] = isset($data['check_font_compatibility']) ? $data['check_font_compatibility'] : null;
+        $this->container['is_font_substitution_char_granularity'] = isset($data['is_font_substitution_char_granularity']) ? $data['is_font_substitution_char_granularity'] : null;
+        $this->container['one_page_per_sheet'] = isset($data['one_page_per_sheet']) ? $data['one_page_per_sheet'] : null;
+        $this->container['all_columns_in_one_page_per_sheet'] = isset($data['all_columns_in_one_page_per_sheet']) ? $data['all_columns_in_one_page_per_sheet'] : null;
+        $this->container['ignore_error'] = isset($data['ignore_error']) ? $data['ignore_error'] : null;
+        $this->container['output_blank_page_when_nothing_to_print'] = isset($data['output_blank_page_when_nothing_to_print']) ? $data['output_blank_page_when_nothing_to_print'] : null;
+        $this->container['page_index'] = isset($data['page_index']) ? $data['page_index'] : null;
+        $this->container['page_count'] = isset($data['page_count']) ? $data['page_count'] : null;
+        $this->container['printing_page_type'] = isset($data['printing_page_type']) ? $data['printing_page_type'] : null;
+        $this->container['gridline_type'] = isset($data['gridline_type']) ? $data['gridline_type'] : null;
+        $this->container['text_cross_type'] = isset($data['text_cross_type']) ? $data['text_cross_type'] : null;
+        $this->container['default_edit_language'] = isset($data['default_edit_language']) ? $data['default_edit_language'] : null;
+        $this->container['emf_render_setting'] = isset($data['emf_render_setting']) ? $data['emf_render_setting'] : null;
+        $this->container['merge_areas'] = isset($data['merge_areas']) ? $data['merge_areas'] : null;
+        $this->container['sort_external_names'] = isset($data['sort_external_names']) ? $data['sort_external_names'] : null;
+        $this->container['update_smart_art'] = isset($data['update_smart_art']) ? $data['update_smart_art'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
@@ -215,6 +341,69 @@ class PptxSaveOptions implements  ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['ignore_hidden_rows'] === null) {
+            $invalidProperties[] = "'ignore_hidden_rows' can't be null";
+        }
+        if ($this->container['adjust_font_size_for_row_type'] === null) {
+            $invalidProperties[] = "'adjust_font_size_for_row_type' can't be null";
+        }
+        if ($this->container['export_view_type'] === null) {
+            $invalidProperties[] = "'export_view_type' can't be null";
+        }
+        if ($this->container['default_font'] === null) {
+            $invalidProperties[] = "'default_font' can't be null";
+        }
+        if ($this->container['check_workbook_default_font'] === null) {
+            $invalidProperties[] = "'check_workbook_default_font' can't be null";
+        }
+        if ($this->container['check_font_compatibility'] === null) {
+            $invalidProperties[] = "'check_font_compatibility' can't be null";
+        }
+        if ($this->container['is_font_substitution_char_granularity'] === null) {
+            $invalidProperties[] = "'is_font_substitution_char_granularity' can't be null";
+        }
+        if ($this->container['one_page_per_sheet'] === null) {
+            $invalidProperties[] = "'one_page_per_sheet' can't be null";
+        }
+        if ($this->container['all_columns_in_one_page_per_sheet'] === null) {
+            $invalidProperties[] = "'all_columns_in_one_page_per_sheet' can't be null";
+        }
+        if ($this->container['ignore_error'] === null) {
+            $invalidProperties[] = "'ignore_error' can't be null";
+        }
+        if ($this->container['output_blank_page_when_nothing_to_print'] === null) {
+            $invalidProperties[] = "'output_blank_page_when_nothing_to_print' can't be null";
+        }
+        if ($this->container['page_index'] === null) {
+            $invalidProperties[] = "'page_index' can't be null";
+        }
+        if ($this->container['page_count'] === null) {
+            $invalidProperties[] = "'page_count' can't be null";
+        }
+        if ($this->container['printing_page_type'] === null) {
+            $invalidProperties[] = "'printing_page_type' can't be null";
+        }
+        if ($this->container['gridline_type'] === null) {
+            $invalidProperties[] = "'gridline_type' can't be null";
+        }
+        if ($this->container['text_cross_type'] === null) {
+            $invalidProperties[] = "'text_cross_type' can't be null";
+        }
+        if ($this->container['default_edit_language'] === null) {
+            $invalidProperties[] = "'default_edit_language' can't be null";
+        }
+        if ($this->container['emf_render_setting'] === null) {
+            $invalidProperties[] = "'emf_render_setting' can't be null";
+        }
+        if ($this->container['merge_areas'] === null) {
+            $invalidProperties[] = "'merge_areas' can't be null";
+        }
+        if ($this->container['sort_external_names'] === null) {
+            $invalidProperties[] = "'sort_external_names' can't be null";
+        }
+        if ($this->container['update_smart_art'] === null) {
+            $invalidProperties[] = "'update_smart_art' can't be null";
+        }
         if ($this->container['save_format'] === null) {
             $invalidProperties[] = "'save_format' can't be null";
         }
@@ -250,6 +439,69 @@ class PptxSaveOptions implements  ArrayAccess
      */
     public function valid()
     {
+        if ($this->container['ignore_hidden_rows'] === null) {
+                    return false;
+                }
+        if ($this->container['adjust_font_size_for_row_type'] === null) {
+                    return false;
+                }
+        if ($this->container['export_view_type'] === null) {
+                    return false;
+                }
+        if ($this->container['default_font'] === null) {
+                    return false;
+                }
+        if ($this->container['check_workbook_default_font'] === null) {
+                    return false;
+                }
+        if ($this->container['check_font_compatibility'] === null) {
+                    return false;
+                }
+        if ($this->container['is_font_substitution_char_granularity'] === null) {
+                    return false;
+                }
+        if ($this->container['one_page_per_sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['all_columns_in_one_page_per_sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['ignore_error'] === null) {
+                    return false;
+                }
+        if ($this->container['output_blank_page_when_nothing_to_print'] === null) {
+                    return false;
+                }
+        if ($this->container['page_index'] === null) {
+                    return false;
+                }
+        if ($this->container['page_count'] === null) {
+                    return false;
+                }
+        if ($this->container['printing_page_type'] === null) {
+                    return false;
+                }
+        if ($this->container['gridline_type'] === null) {
+                    return false;
+                }
+        if ($this->container['text_cross_type'] === null) {
+                    return false;
+                }
+        if ($this->container['default_edit_language'] === null) {
+                    return false;
+                }
+        if ($this->container['emf_render_setting'] === null) {
+                    return false;
+                }
+        if ($this->container['merge_areas'] === null) {
+                    return false;
+                }
+        if ($this->container['sort_external_names'] === null) {
+                    return false;
+                }
+        if ($this->container['update_smart_art'] === null) {
+                    return false;
+                }
         if ($this->container['save_format'] === null) {
                     return false;
                 }
@@ -275,6 +527,489 @@ class PptxSaveOptions implements  ArrayAccess
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets ignore_hidden_rows
+     *
+     * @return bool
+     */
+    public function getIgnoreHiddenRows()
+    {
+        return $this->container['ignore_hidden_rows'];
+    }
+
+    /**
+     * Sets ignore_hidden_rows
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setIgnoreHiddenRows($ignore_hidden_rows)
+    {
+        $this->container['ignore_hidden_rows'] = $ignore_hidden_rows;
+
+        return $this;
+    }
+   /**
+     * Gets adjust_font_size_for_row_type
+     *
+     * @return string
+     */
+    public function getAdjustFontSizeForRowType()
+    {
+        return $this->container['adjust_font_size_for_row_type'];
+    }
+
+    /**
+     * Sets adjust_font_size_for_row_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAdjustFontSizeForRowType($adjust_font_size_for_row_type)
+    {
+        $this->container['adjust_font_size_for_row_type'] = $adjust_font_size_for_row_type;
+
+        return $this;
+    }
+   /**
+     * Gets export_view_type
+     *
+     * @return string
+     */
+    public function getExportViewType()
+    {
+        return $this->container['export_view_type'];
+    }
+
+    /**
+     * Sets export_view_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setExportViewType($export_view_type)
+    {
+        $this->container['export_view_type'] = $export_view_type;
+
+        return $this;
+    }
+   /**
+     * Gets default_font
+     *
+     * @return string
+     */
+    public function getDefaultFont()
+    {
+        return $this->container['default_font'];
+    }
+
+    /**
+     * Sets default_font
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDefaultFont($default_font)
+    {
+        $this->container['default_font'] = $default_font;
+
+        return $this;
+    }
+   /**
+     * Gets check_workbook_default_font
+     *
+     * @return bool
+     */
+    public function getCheckWorkbookDefaultFont()
+    {
+        return $this->container['check_workbook_default_font'];
+    }
+
+    /**
+     * Sets check_workbook_default_font
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckWorkbookDefaultFont($check_workbook_default_font)
+    {
+        $this->container['check_workbook_default_font'] = $check_workbook_default_font;
+
+        return $this;
+    }
+   /**
+     * Gets check_font_compatibility
+     *
+     * @return bool
+     */
+    public function getCheckFontCompatibility()
+    {
+        return $this->container['check_font_compatibility'];
+    }
+
+    /**
+     * Sets check_font_compatibility
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckFontCompatibility($check_font_compatibility)
+    {
+        $this->container['check_font_compatibility'] = $check_font_compatibility;
+
+        return $this;
+    }
+   /**
+     * Gets is_font_substitution_char_granularity
+     *
+     * @return bool
+     */
+    public function getIsFontSubstitutionCharGranularity()
+    {
+        return $this->container['is_font_substitution_char_granularity'];
+    }
+
+    /**
+     * Sets is_font_substitution_char_granularity
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setIsFontSubstitutionCharGranularity($is_font_substitution_char_granularity)
+    {
+        $this->container['is_font_substitution_char_granularity'] = $is_font_substitution_char_granularity;
+
+        return $this;
+    }
+   /**
+     * Gets one_page_per_sheet
+     *
+     * @return bool
+     */
+    public function getOnePagePerSheet()
+    {
+        return $this->container['one_page_per_sheet'];
+    }
+
+    /**
+     * Sets one_page_per_sheet
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setOnePagePerSheet($one_page_per_sheet)
+    {
+        $this->container['one_page_per_sheet'] = $one_page_per_sheet;
+
+        return $this;
+    }
+   /**
+     * Gets all_columns_in_one_page_per_sheet
+     *
+     * @return bool
+     */
+    public function getAllColumnsInOnePagePerSheet()
+    {
+        return $this->container['all_columns_in_one_page_per_sheet'];
+    }
+
+    /**
+     * Sets all_columns_in_one_page_per_sheet
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAllColumnsInOnePagePerSheet($all_columns_in_one_page_per_sheet)
+    {
+        $this->container['all_columns_in_one_page_per_sheet'] = $all_columns_in_one_page_per_sheet;
+
+        return $this;
+    }
+   /**
+     * Gets ignore_error
+     *
+     * @return bool
+     */
+    public function getIgnoreError()
+    {
+        return $this->container['ignore_error'];
+    }
+
+    /**
+     * Sets ignore_error
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setIgnoreError($ignore_error)
+    {
+        $this->container['ignore_error'] = $ignore_error;
+
+        return $this;
+    }
+   /**
+     * Gets output_blank_page_when_nothing_to_print
+     *
+     * @return bool
+     */
+    public function getOutputBlankPageWhenNothingToPrint()
+    {
+        return $this->container['output_blank_page_when_nothing_to_print'];
+    }
+
+    /**
+     * Sets output_blank_page_when_nothing_to_print
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setOutputBlankPageWhenNothingToPrint($output_blank_page_when_nothing_to_print)
+    {
+        $this->container['output_blank_page_when_nothing_to_print'] = $output_blank_page_when_nothing_to_print;
+
+        return $this;
+    }
+   /**
+     * Gets page_index
+     *
+     * @return int
+     */
+    public function getPageIndex()
+    {
+        return $this->container['page_index'];
+    }
+
+    /**
+     * Sets page_index
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPageIndex($page_index)
+    {
+        $this->container['page_index'] = $page_index;
+
+        return $this;
+    }
+   /**
+     * Gets page_count
+     *
+     * @return int
+     */
+    public function getPageCount()
+    {
+        return $this->container['page_count'];
+    }
+
+    /**
+     * Sets page_count
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPageCount($page_count)
+    {
+        $this->container['page_count'] = $page_count;
+
+        return $this;
+    }
+   /**
+     * Gets printing_page_type
+     *
+     * @return string
+     */
+    public function getPrintingPageType()
+    {
+        return $this->container['printing_page_type'];
+    }
+
+    /**
+     * Sets printing_page_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPrintingPageType($printing_page_type)
+    {
+        $this->container['printing_page_type'] = $printing_page_type;
+
+        return $this;
+    }
+   /**
+     * Gets gridline_type
+     *
+     * @return string
+     */
+    public function getGridlineType()
+    {
+        return $this->container['gridline_type'];
+    }
+
+    /**
+     * Sets gridline_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setGridlineType($gridline_type)
+    {
+        $this->container['gridline_type'] = $gridline_type;
+
+        return $this;
+    }
+   /**
+     * Gets text_cross_type
+     *
+     * @return string
+     */
+    public function getTextCrossType()
+    {
+        return $this->container['text_cross_type'];
+    }
+
+    /**
+     * Sets text_cross_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTextCrossType($text_cross_type)
+    {
+        $this->container['text_cross_type'] = $text_cross_type;
+
+        return $this;
+    }
+   /**
+     * Gets default_edit_language
+     *
+     * @return string
+     */
+    public function getDefaultEditLanguage()
+    {
+        return $this->container['default_edit_language'];
+    }
+
+    /**
+     * Sets default_edit_language
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDefaultEditLanguage($default_edit_language)
+    {
+        $this->container['default_edit_language'] = $default_edit_language;
+
+        return $this;
+    }
+   /**
+     * Gets emf_render_setting
+     *
+     * @return string
+     */
+    public function getEmfRenderSetting()
+    {
+        return $this->container['emf_render_setting'];
+    }
+
+    /**
+     * Sets emf_render_setting
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEmfRenderSetting($emf_render_setting)
+    {
+        $this->container['emf_render_setting'] = $emf_render_setting;
+
+        return $this;
+    }
+   /**
+     * Gets merge_areas
+     *
+     * @return bool
+     */
+    public function getMergeAreas()
+    {
+        return $this->container['merge_areas'];
+    }
+
+    /**
+     * Sets merge_areas
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMergeAreas($merge_areas)
+    {
+        $this->container['merge_areas'] = $merge_areas;
+
+        return $this;
+    }
+   /**
+     * Gets sort_external_names
+     *
+     * @return bool
+     */
+    public function getSortExternalNames()
+    {
+        return $this->container['sort_external_names'];
+    }
+
+    /**
+     * Sets sort_external_names
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setSortExternalNames($sort_external_names)
+    {
+        $this->container['sort_external_names'] = $sort_external_names;
+
+        return $this;
+    }
+   /**
+     * Gets update_smart_art
+     *
+     * @return bool
+     */
+    public function getUpdateSmartArt()
+    {
+        return $this->container['update_smart_art'];
+    }
+
+    /**
+     * Sets update_smart_art
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setUpdateSmartArt($update_smart_art)
+    {
+        $this->container['update_smart_art'] = $update_smart_art;
+
+        return $this;
     }
    /**
      * Gets save_format

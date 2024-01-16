@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorksheetUngroupShapeRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostWorksheetUngroupShapeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetUngroupShapeRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -90,7 +90,7 @@ class PostWorksheetUngroupShapeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorksheetUngroupShapeRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

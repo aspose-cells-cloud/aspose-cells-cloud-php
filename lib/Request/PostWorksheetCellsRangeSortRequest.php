@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorksheetCellsRangeSortRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostWorksheetCellsRangeSortRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeSortRequest extends BaseApiRequest
     }
 
     /*
-    * rangeSortRequest : Range Sort Request 
+    * rangeSortRequest : RangeSortRequest Range Sort Request 
     */ 
     public $range_sort_request;
 

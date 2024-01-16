@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteWorksheetsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -75,7 +75,7 @@ class DeleteWorksheetsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class DeleteWorksheetsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

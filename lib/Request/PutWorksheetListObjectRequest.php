@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PutWorksheetListObjectRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -90,7 +90,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : The start row of the list range.
+    * startColumn : The start column of the list range.
     */ 
     public $start_column;
 
@@ -120,7 +120,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * endColumn : The start row of the list range.
+    * endColumn : The start column of the list range.
     */ 
     public $end_column;
 
@@ -135,7 +135,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * hasHeaders : Whether the range has headers.
+    * hasHeaders : Indicate whether the range has headers.
     */ 
     public $has_headers;
 
@@ -165,7 +165,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * displayName : 
+    * displayName : Indicate whether display name.
     */ 
     public $display_name;
 
@@ -180,7 +180,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * showTotals : 
+    * showTotals : Indicate whether show totals.
     */ 
     public $show_totals;
 
@@ -195,7 +195,7 @@ class PutWorksheetListObjectRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

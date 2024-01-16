@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostAutofitWorksheetRowsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : Start row index.
+    * startRow : The start row index.
     */ 
     public $start_row;
 
@@ -90,7 +90,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : End row index.
+    * endRow : The end row index.
     */ 
     public $end_row;
 
@@ -120,7 +120,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class PostAutofitWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

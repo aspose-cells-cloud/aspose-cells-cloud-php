@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostPivotTableUpdatePivotFieldsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * pivotTableIndex : Gets the PivotTable report by index.
+    * pivotTableIndex : The PivotTable index.
     */ 
     public $pivot_table_index;
 
@@ -105,7 +105,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * pivotField : Represents pivot field.
+    * pivotField : PivotFieldRepresents pivot field.
     */ 
     public $pivot_field;
 
@@ -120,7 +120,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * needReCalculate : Whether the specific pivot table calculate(true/false).
+    * needReCalculate : Whether the specific PivotTable calculate(true/false).
     */ 
     public $need_re_calculate;
 
@@ -135,7 +135,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -150,7 +150,7 @@ class PostPivotTableUpdatePivotFieldsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

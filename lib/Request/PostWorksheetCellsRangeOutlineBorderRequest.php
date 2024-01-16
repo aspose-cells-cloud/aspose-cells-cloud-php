@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorksheetCellsRangeOutlineBorderRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostWorksheetCellsRangeOutlineBorderRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangeOutlineBorderRequest extends BaseApiRequest
     }
 
     /*
-    * rangeOperate : Range Set OutlineBorder Request.
+    * rangeOperate : RangeSetOutlineBorderRequest Range Set OutlineBorder Request.
     */ 
     public $range_operate;
 

@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorksheetRowsRequest.cs">
- *   Copyright (c) 2023 Aspose.Cells Cloud
+ *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
 {
 
     /*
-    * name : The workbook name.
+    * name : The file name.
     */ 
     public $name;
 
@@ -75,7 +75,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * offset : Original workbook folder.
+    * offset : Row offset.
     */ 
     public $offset;
 
@@ -90,7 +90,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * count : Storage name.
+    * count : Display rows number.
     */ 
     public $count;
 
@@ -105,7 +105,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetRowsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 
