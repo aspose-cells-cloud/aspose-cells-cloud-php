@@ -29,7 +29,8 @@ This Cloud SDK enhances your PHP-based Cloud apps to [process & manipulate Micro
 Full list of issues covering all changes in this release:
 
 - Add the analyze excel api for analyze controller.
-
+- Update aspose/cells-sdk-php to PHP 8+.
+- 
 ## Read Other Formats
 
 SXC, FODS
