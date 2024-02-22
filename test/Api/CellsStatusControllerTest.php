@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CellsStatusControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -38,54 +38,26 @@ use \Aspose\Cells\Cloud\Request\GetCellsCloudServicesHealthCheckRequest;
 use \Aspose\Cells\Cloud\Request\GetCellsCloudServiceStatusRequest; 
 
 use PHPUnit\Framework\TestCase;
-class CellsStatusControllerTest extends \PHPUnit_Framework_TestCase
+final class CellsStatusControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetCellsCloudServicesHealthCheck of CellsStatusController.
     /// </summary>
 
     public function testGetCellsCloudServicesHealthCheck()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetCellsCloudServicesHealthCheckRequest();
-        $this->instance->getCellsCloudServicesHealthCheck($request);
+
+        $resposne = $instance->getCellsCloudServicesHealthCheck($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -94,14 +66,17 @@ class CellsStatusControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetCellsCloudServiceStatus()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetCellsCloudServiceStatusRequest();
-        $this->instance->getCellsCloudServiceStatus($request);
+
+        $resposne = $instance->getCellsCloudServiceStatus($request);
+        $this->assertTrue($resposne !==null );
     }
 }

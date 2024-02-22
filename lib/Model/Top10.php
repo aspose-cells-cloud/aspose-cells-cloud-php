@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Top10 implements  ArrayAccess
+class Top10
 {
      const DISCRIMINATOR = null;
     /**

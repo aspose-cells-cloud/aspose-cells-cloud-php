@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Color implements  ArrayAccess
+class Color
 {
      const DISCRIMINATOR = null;
     /**
@@ -241,7 +241,7 @@ class Color implements  ArrayAccess
     /**
      * Sets a
      *
-     *  
+     *  Gets the alpha component value of this System.Drawing.Color structure.            
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class Color implements  ArrayAccess
     /**
      * Sets r
      *
-     *  
+     *  Gets the red component value of this System.Drawing.Color structure.            
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class Color implements  ArrayAccess
     /**
      * Sets g
      *
-     *  
+     *  Gets the green component value of this System.Drawing.Color structure.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class Color implements  ArrayAccess
     /**
      * Sets b
      *
-     *  
+     *  Gets the blue component value of this System.Drawing.Color structure.            
      *
      * @return $this
      */

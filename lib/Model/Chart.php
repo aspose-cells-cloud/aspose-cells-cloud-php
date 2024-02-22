@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Chart implements  ArrayAccess
+class Chart
 {
      const DISCRIMINATOR = null;
     /**
@@ -1595,7 +1595,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets title
      *
-     *  Gets the chart's title.
+     *  
      *
      * @return $this
      */
@@ -1618,7 +1618,7 @@ class Chart implements  ArrayAccess
     /**
      * Sets type
      *
-     *  Gets or sets a chart's type.
+     *  
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -40,55 +40,27 @@ use \Aspose\Cells\Cloud\Request\ObjectExistsRequest;
 use \Aspose\Cells\Cloud\Request\StorageExistsRequest; 
 
 use PHPUnit\Framework\TestCase;
-class StorageControllerTest extends \PHPUnit_Framework_TestCase
+final class StorageControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for StorageExists of StorageController.
     /// </summary>
 
     public function testStorageExists()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new StorageExistsRequest();
         $request->setStorageName( "Default");
-        $this->instance->storageExists($request);
+
+        $resposne = $instance->storageExists($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -97,18 +69,21 @@ class StorageControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testObjectExists()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new ObjectExistsRequest();
         $request->setPath( "TestData/In/Book1.xlsx");
         $request->setStorageName( "");
         $request->setVersionId( "");
-        $this->instance->objectExists($request);
+
+        $resposne = $instance->objectExists($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -117,16 +92,19 @@ class StorageControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetDiscUsage()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetDiscUsageRequest();
         $request->setStorageName( "");
-        $this->instance->getDiscUsage($request);
+
+        $resposne = $instance->getDiscUsage($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -135,16 +113,19 @@ class StorageControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFileVersions()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetFileVersionsRequest();
         $request->setPath( "TestData/In/Book1.xlsx");
         $request->setStorageName( "");
-        $this->instance->getFileVersions($request);
+
+        $resposne = $instance->getFileVersions($request);
+        $this->assertTrue($resposne !==null );
     }
 }

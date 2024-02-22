@@ -45,7 +45,7 @@ class PostRotateRequest extends BaseApiRequest
 {
 
     /*
-    * File : 270/90/row/col/row2col
+    * File : File to upload
     */ 
     public $file;
 
@@ -184,10 +184,10 @@ class PostRotateRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

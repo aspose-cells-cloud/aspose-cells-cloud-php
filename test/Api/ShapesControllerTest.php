@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ShapesControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -44,58 +44,30 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetUngroupShapeRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetShapeRequest; 
 
 use PHPUnit\Framework\TestCase;
-class ShapesControllerTest extends \PHPUnit_Framework_TestCase
+final class ShapesControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetShapes of ShapesController.
     /// </summary>
 
     public function testGetWorksheetShapes()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetShapesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetShapes($request);
+
+        $resposne = $instance->getWorksheetShapes($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -104,12 +76,13 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetShape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetShapeRequest();
         $request->setName( $remoteName);
@@ -117,7 +90,9 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setShapeindex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetShape($request);
+
+        $resposne = $instance->getWorksheetShape($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -126,6 +101,7 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetShape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -133,7 +109,7 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
         $shapeDTO = new \Aspose\Cells\Cloud\Model\Shape();
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetShapeRequest();
         $request->setName( $remoteName);
@@ -148,7 +124,9 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setHeight( 100);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetShape($request);
+
+        $resposne = $instance->putWorksheetShape($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -157,19 +135,22 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetShapes()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetShapesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetShapes($request);
+
+        $resposne = $instance->deleteWorksheetShapes($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -178,12 +159,13 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetShape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetShapeRequest();
         $request->setName( $remoteName);
@@ -191,7 +173,9 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setShapeindex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetShape($request);
+
+        $resposne = $instance->deleteWorksheetShape($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -200,6 +184,7 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetShape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -207,7 +192,7 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
         $dto = new \Aspose\Cells\Cloud\Model\Shape();
         $dto->setLowerRightColumn(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetShapeRequest();
         $request->setName( $remoteName);
@@ -216,7 +201,9 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setDto( $dto);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetShape($request);
+
+        $resposne = $instance->postWorksheetShape($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -225,6 +212,7 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetGroupShape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -234,7 +222,7 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
             0,
             1
         );
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetGroupShapeRequest();
         $request->setName( $remoteName);
@@ -242,7 +230,9 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setListShape( $listShape);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetGroupShape($request);
+
+        $resposne = $instance->postWorksheetGroupShape($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -251,12 +241,13 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetUngroupShape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetUngroupShapeRequest();
         $request->setName( $remoteName);
@@ -264,6 +255,8 @@ class ShapesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setShapeindex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetUngroupShape($request);
+
+        $resposne = $instance->postWorksheetUngroupShape($request);
+        $this->assertTrue($resposne !==null );
     }
 }

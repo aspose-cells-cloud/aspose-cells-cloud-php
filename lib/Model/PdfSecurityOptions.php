@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class PdfSecurityOptions implements  ArrayAccess
+class PdfSecurityOptions
 {
      const DISCRIMINATOR = null;
     /**
@@ -49,7 +49,6 @@ class PdfSecurityOptions implements  ArrayAccess
         'annotations_permission' => 'bool',
         'assemble_document_permission' => 'bool',
         'extract_content_permission' => 'bool',
-        'extract_content_permission_obsolete' => 'bool',
         'fill_forms_permission' => 'bool',
         'full_quality_print_permission' => 'bool',
         'modify_document_permission' => 'bool',
@@ -67,7 +66,6 @@ class PdfSecurityOptions implements  ArrayAccess
         'annotations_permission' => null  ,
         'assemble_document_permission' => null  ,
         'extract_content_permission' => null  ,
-        'extract_content_permission_obsolete' => null  ,
         'fill_forms_permission' => null  ,
         'full_quality_print_permission' => null  ,
         'modify_document_permission' => null  ,
@@ -106,7 +104,6 @@ class PdfSecurityOptions implements  ArrayAccess
          'annotations_permission' => 'AnnotationsPermission' ,
          'assemble_document_permission' => 'AssembleDocumentPermission' ,
          'extract_content_permission' => 'ExtractContentPermission' ,
-         'extract_content_permission_obsolete' => 'ExtractContentPermissionObsolete' ,
          'fill_forms_permission' => 'FillFormsPermission' ,
          'full_quality_print_permission' => 'FullQualityPrintPermission' ,
          'modify_document_permission' => 'ModifyDocumentPermission' ,
@@ -124,7 +121,6 @@ class PdfSecurityOptions implements  ArrayAccess
         'annotations_permission' => 'setAnnotationsPermission' ,
         'assemble_document_permission' => 'setAssembleDocumentPermission' ,
         'extract_content_permission' => 'setExtractContentPermission' ,
-        'extract_content_permission_obsolete' => 'setExtractContentPermissionObsolete' ,
         'fill_forms_permission' => 'setFillFormsPermission' ,
         'full_quality_print_permission' => 'setFullQualityPrintPermission' ,
         'modify_document_permission' => 'setModifyDocumentPermission' ,
@@ -142,7 +138,6 @@ class PdfSecurityOptions implements  ArrayAccess
         'annotations_permission' => 'getAnnotationsPermission' ,
         'assemble_document_permission' => 'getAssembleDocumentPermission' ,
         'extract_content_permission' => 'getExtractContentPermission' ,
-        'extract_content_permission_obsolete' => 'getExtractContentPermissionObsolete' ,
         'fill_forms_permission' => 'getFillFormsPermission' ,
         'full_quality_print_permission' => 'getFullQualityPrintPermission' ,
         'modify_document_permission' => 'getModifyDocumentPermission' ,
@@ -210,7 +205,6 @@ class PdfSecurityOptions implements  ArrayAccess
         $this->container['annotations_permission'] = isset($data['annotations_permission']) ? $data['annotations_permission'] : null;
         $this->container['assemble_document_permission'] = isset($data['assemble_document_permission']) ? $data['assemble_document_permission'] : null;
         $this->container['extract_content_permission'] = isset($data['extract_content_permission']) ? $data['extract_content_permission'] : null;
-        $this->container['extract_content_permission_obsolete'] = isset($data['extract_content_permission_obsolete']) ? $data['extract_content_permission_obsolete'] : null;
         $this->container['fill_forms_permission'] = isset($data['fill_forms_permission']) ? $data['fill_forms_permission'] : null;
         $this->container['full_quality_print_permission'] = isset($data['full_quality_print_permission']) ? $data['full_quality_print_permission'] : null;
         $this->container['modify_document_permission'] = isset($data['modify_document_permission']) ? $data['modify_document_permission'] : null;
@@ -235,9 +229,6 @@ class PdfSecurityOptions implements  ArrayAccess
         }
         if ($this->container['extract_content_permission'] === null) {
             $invalidProperties[] = "'extract_content_permission' can't be null";
-        }
-        if ($this->container['extract_content_permission_obsolete'] === null) {
-            $invalidProperties[] = "'extract_content_permission_obsolete' can't be null";
         }
         if ($this->container['fill_forms_permission'] === null) {
             $invalidProperties[] = "'fill_forms_permission' can't be null";
@@ -275,9 +266,6 @@ class PdfSecurityOptions implements  ArrayAccess
                     return false;
                 }
         if ($this->container['extract_content_permission'] === null) {
-                    return false;
-                }
-        if ($this->container['extract_content_permission_obsolete'] === null) {
                     return false;
                 }
         if ($this->container['fill_forms_permission'] === null) {
@@ -366,29 +354,6 @@ class PdfSecurityOptions implements  ArrayAccess
     public function setExtractContentPermission($extract_content_permission)
     {
         $this->container['extract_content_permission'] = $extract_content_permission;
-
-        return $this;
-    }
-   /**
-     * Gets extract_content_permission_obsolete
-     *
-     * @return bool
-     */
-    public function getExtractContentPermissionObsolete()
-    {
-        return $this->container['extract_content_permission_obsolete'];
-    }
-
-    /**
-     * Sets extract_content_permission_obsolete
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setExtractContentPermissionObsolete($extract_content_permission_obsolete)
-    {
-        $this->container['extract_content_permission_obsolete'] = $extract_content_permission_obsolete;
 
         return $this;
     }

@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Import2DimensionDoubleArrayOption implements  ArrayAccess
+class Import2DimensionDoubleArrayOption
 {
      const DISCRIMINATOR = null;
     /**

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageSetupControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -45,58 +45,30 @@ use \Aspose\Cells\Cloud\Request\PostHeaderRequest;
 use \Aspose\Cells\Cloud\Request\PostPageSetupRequest; 
 
 use PHPUnit\Framework\TestCase;
-class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
+final class PageSetupControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetPageSetup of PageSetupController.
     /// </summary>
 
     public function testGetPageSetup()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetPageSetupRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getPageSetup($request);
+
+        $resposne = $instance->getPageSetup($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -105,6 +77,7 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPageSetup()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -114,7 +87,7 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
         $pageSetup->setBlackAndWhite('true' ); 
         $pageSetup->setCenterHorizontally('true' ); 
         $pageSetup->setCenterVertically('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPageSetupRequest();
         $request->setName( $remoteName);
@@ -122,7 +95,9 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPageSetup( $pageSetup);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPageSetup($request);
+
+        $resposne = $instance->postPageSetup($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -131,19 +106,22 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteHeaderFooter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteHeaderFooterRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteHeaderFooter($request);
+
+        $resposne = $instance->deleteHeaderFooter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -152,19 +130,22 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetHeader()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetHeaderRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getHeader($request);
+
+        $resposne = $instance->getHeader($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -173,12 +154,13 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostHeader()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostHeaderRequest();
         $request->setName( $remoteName);
@@ -188,7 +170,9 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIsFirstPage( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postHeader($request);
+
+        $resposne = $instance->postHeader($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -197,19 +181,22 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFooter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetFooterRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getFooter($request);
+
+        $resposne = $instance->getFooter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -218,12 +205,13 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostFooter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostFooterRequest();
         $request->setName( $remoteName);
@@ -233,7 +221,9 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIsFirstPage( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postFooter($request);
+
+        $resposne = $instance->postFooter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -242,19 +232,22 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostFitWideToPages()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostFitWideToPagesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postFitWideToPages($request);
+
+        $resposne = $instance->postFitWideToPages($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -263,18 +256,21 @@ class PageSetupControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostFitTallToPages()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostFitTallToPagesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postFitTallToPages($request);
+
+        $resposne = $instance->postFitTallToPages($request);
+        $this->assertTrue($resposne !==null );
     }
 }

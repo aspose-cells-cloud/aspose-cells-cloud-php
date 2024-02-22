@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class SaveFilesToCloudResult implements  ArrayAccess
+class SaveFilesToCloudResult
 {
      const DISCRIMINATOR = null;
     /**

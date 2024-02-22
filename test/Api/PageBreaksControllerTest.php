@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PageBreaksControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -46,58 +46,30 @@ use \Aspose\Cells\Cloud\Request\PutHorizontalPageBreakRequest;
 use \Aspose\Cells\Cloud\Request\PutVerticalPageBreakRequest; 
 
 use PHPUnit\Framework\TestCase;
-class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
+final class PageBreaksControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetVerticalPageBreaks of PageBreaksController.
     /// </summary>
 
     public function testGetVerticalPageBreaks()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetVerticalPageBreaksRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getVerticalPageBreaks($request);
+
+        $resposne = $instance->getVerticalPageBreaks($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -106,19 +78,22 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetHorizontalPageBreaks()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetHorizontalPageBreaksRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getHorizontalPageBreaks($request);
+
+        $resposne = $instance->getHorizontalPageBreaks($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -127,12 +102,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetVerticalPageBreak()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetVerticalPageBreakRequest();
         $request->setName( $remoteName);
@@ -140,7 +116,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getVerticalPageBreak($request);
+
+        $resposne = $instance->getVerticalPageBreak($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -149,12 +127,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetHorizontalPageBreak()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetHorizontalPageBreakRequest();
         $request->setName( $remoteName);
@@ -162,7 +141,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getHorizontalPageBreak($request);
+
+        $resposne = $instance->getHorizontalPageBreak($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -171,12 +152,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutVerticalPageBreak()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutVerticalPageBreakRequest();
         $request->setName( $remoteName);
@@ -188,7 +170,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setEndRow( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putVerticalPageBreak($request);
+
+        $resposne = $instance->putVerticalPageBreak($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -197,12 +181,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutHorizontalPageBreak()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutHorizontalPageBreakRequest();
         $request->setName( $remoteName);
@@ -214,7 +199,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setEndColumn( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putHorizontalPageBreak($request);
+
+        $resposne = $instance->putHorizontalPageBreak($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -223,12 +210,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteVerticalPageBreaks()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteVerticalPageBreaksRequest();
         $request->setName( $remoteName);
@@ -236,7 +224,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setColumn( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteVerticalPageBreaks($request);
+
+        $resposne = $instance->deleteVerticalPageBreaks($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -245,12 +235,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteHorizontalPageBreaks()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteHorizontalPageBreaksRequest();
         $request->setName( $remoteName);
@@ -258,7 +249,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRow( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteHorizontalPageBreaks($request);
+
+        $resposne = $instance->deleteHorizontalPageBreaks($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -267,12 +260,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteVerticalPageBreak()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteVerticalPageBreakRequest();
         $request->setName( $remoteName);
@@ -280,7 +274,9 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteVerticalPageBreak($request);
+
+        $resposne = $instance->deleteVerticalPageBreak($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -289,12 +285,13 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteHorizontalPageBreak()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteHorizontalPageBreakRequest();
         $request->setName( $remoteName);
@@ -302,6 +299,8 @@ class PageBreaksControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteHorizontalPageBreak($request);
+
+        $resposne = $instance->deleteHorizontalPageBreak($request);
+        $this->assertTrue($resposne !==null );
     }
 }

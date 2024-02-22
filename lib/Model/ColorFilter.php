@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ColorFilter implements  ArrayAccess
+class ColorFilter
 {
      const DISCRIMINATOR = null;
     /**
@@ -253,7 +253,7 @@ class ColorFilter implements  ArrayAccess
     /**
      * Sets filter_by_fill_color
      *
-     *  Flag indicating whether filter by the cell's fill color. 
+     *  Whether filter by the cell's fill color.            
      *
      * @return $this
      */

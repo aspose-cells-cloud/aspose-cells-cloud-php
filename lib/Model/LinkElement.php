@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class LinkElement implements  ArrayAccess
+class LinkElement
 {
      const DISCRIMINATOR = null;
     /**

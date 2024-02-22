@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class MultipleFilter implements  ArrayAccess
+class MultipleFilter
 {
      const DISCRIMINATOR = null;
     /**

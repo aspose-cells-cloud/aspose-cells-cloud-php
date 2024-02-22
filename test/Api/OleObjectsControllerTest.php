@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="OleObjectsControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -42,58 +42,30 @@ use \Aspose\Cells\Cloud\Request\PostUpdateWorksheetOleObjectRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetOleObjectRequest; 
 
 use PHPUnit\Framework\TestCase;
-class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
+final class OleObjectsControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetOleObjects of OleObjectsController.
     /// </summary>
 
     public function testGetWorksheetOleObjects()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetOleObjectsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet6");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetOleObjects($request);
+
+        $resposne = $instance->getWorksheetOleObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -102,12 +74,13 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetOleObject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetOleObjectRequest();
         $request->setName( $remoteName);
@@ -116,7 +89,9 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFormat( "png");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetOleObject($request);
+
+        $resposne = $instance->getWorksheetOleObject($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -125,19 +100,22 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetOleObjects()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetOleObjectsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet6");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetOleObjects($request);
+
+        $resposne = $instance->deleteWorksheetOleObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -146,12 +124,13 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetOleObject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetOleObjectRequest();
         $request->setName( $remoteName);
@@ -159,7 +138,9 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setOleObjectIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetOleObject($request);
+
+        $resposne = $instance->deleteWorksheetOleObject($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -168,6 +149,7 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUpdateWorksheetOleObject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -178,7 +160,7 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $ole->setRight(10 ); 
         $ole->setHeight(90 ); 
         $ole->setWidth(78 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUpdateWorksheetOleObjectRequest();
         $request->setName( $remoteName);
@@ -187,7 +169,9 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setOle( $ole);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUpdateWorksheetOleObject($request);
+
+        $resposne = $instance->postUpdateWorksheetOleObject($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -196,6 +180,7 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetOleObject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -203,9 +188,9 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $wordJPG = "word.jpg";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-        CellsApiTestBase::ready(  $this->instance,$oLEDoc ,"OLEDoc.docx" ,  "");
-        CellsApiTestBase::ready(  $this->instance,$wordJPG ,"word.jpg" ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$oLEDoc ,"OLEDoc.docx" ,  "");
+        CellsApiTestBase::ready(  $instance,$wordJPG ,"word.jpg" ,  "");
      
         $request = new PutWorksheetOleObjectRequest();
         $request->setName( $remoteName);
@@ -218,6 +203,8 @@ class OleObjectsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setImageFile( "word.jpg");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetOleObject($request);
+
+        $resposne = $instance->putWorksheetOleObject($request);
+        $this->assertTrue($resposne !==null );
     }
 }

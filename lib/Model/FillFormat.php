@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FillFormat implements  ArrayAccess
+class FillFormat
 {
      const DISCRIMINATOR = null;
     /**

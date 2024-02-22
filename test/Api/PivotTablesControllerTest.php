@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PivotTablesControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -57,58 +57,30 @@ use \Aspose\Cells\Cloud\Request\PutWorksheetPivotTableFilterRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetPivotTableRequest; 
 
 use PHPUnit\Framework\TestCase;
-class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
+final class PivotTablesControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetPivotTables of PivotTablesController.
     /// </summary>
 
     public function testGetWorksheetPivotTables()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetPivotTablesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetPivotTables($request);
+
+        $resposne = $instance->getWorksheetPivotTables($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -117,12 +89,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetPivotTable()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetPivotTableRequest();
         $request->setName( $remoteName);
@@ -130,7 +103,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPivottableIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetPivotTable($request);
+
+        $resposne = $instance->getWorksheetPivotTable($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -139,12 +114,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetPivotTableField()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetPivotTableFieldRequest();
         $request->setName( $remoteName);
@@ -154,7 +130,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPivotFieldType( "Row");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getPivotTableField($request);
+
+        $resposne = $instance->getPivotTableField($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -163,12 +141,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetPivotTableFilters()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetPivotTableFiltersRequest();
         $request->setName( $remoteName);
@@ -176,7 +155,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPivotTableIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetPivotTableFilters($request);
+
+        $resposne = $instance->getWorksheetPivotTableFilters($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -185,12 +166,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetPivotTableFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetPivotTableFilterRequest();
         $request->setName( $remoteName);
@@ -199,7 +181,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFilterIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetPivotTableFilter($request);
+
+        $resposne = $instance->getWorksheetPivotTableFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -208,12 +192,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetPivotTable()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetPivotTableRequest();
         $request->setName( $remoteName);
@@ -224,7 +209,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTableName( "TestPivot");
         $request->setUseSameSource( 'true');
         $request->setStorageName( "");
-        $this->instance->putWorksheetPivotTable($request);
+
+        $resposne = $instance->putWorksheetPivotTable($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -233,6 +220,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutPivotTableField()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -243,7 +231,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         );
         $pivotTableFieldRequest = new \Aspose\Cells\Cloud\Model\PivotTableFieldRequest();
         $pivotTableFieldRequest->setData($pivotTableFieldRequestData ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutPivotTableFieldRequest();
         $request->setName( $remoteName);
@@ -254,7 +242,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putPivotTableField($request);
+
+        $resposne = $instance->putPivotTableField($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -263,6 +253,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetPivotTableFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -271,7 +262,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $filter = new \Aspose\Cells\Cloud\Model\PivotFilter();
         $filter->setFieldIndex(1 ); 
         $filter->setFilterType("Count" ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetPivotTableFilterRequest();
         $request->setName( $remoteName);
@@ -281,7 +272,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetPivotTableFilter($request);
+
+        $resposne = $instance->putWorksheetPivotTableFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -290,12 +283,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPivotTableFieldHideItem()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPivotTableFieldHideItemRequest();
         $request->setName( $remoteName);
@@ -308,7 +302,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPivotTableFieldHideItem($request);
+
+        $resposne = $instance->postPivotTableFieldHideItem($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -317,12 +313,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPivotTableFieldMoveTo()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPivotTableFieldMoveToRequest();
         $request->setName( $remoteName);
@@ -333,7 +330,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTo( "Column");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPivotTableFieldMoveTo($request);
+
+        $resposne = $instance->postPivotTableFieldMoveTo($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -342,6 +341,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPivotTableCellStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -351,7 +351,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $styleFont->setSize(16 ); 
         $style = new \Aspose\Cells\Cloud\Model\Style();
         $style->setFont($styleFont ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPivotTableCellStyleRequest();
         $request->setName( $remoteName);
@@ -363,7 +363,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPivotTableCellStyle($request);
+
+        $resposne = $instance->postPivotTableCellStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -372,6 +374,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPivotTableStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -381,7 +384,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $styleFont->setSize(16 ); 
         $style = new \Aspose\Cells\Cloud\Model\Style();
         $style->setFont($styleFont ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPivotTableStyleRequest();
         $request->setName( $remoteName);
@@ -391,7 +394,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPivotTableStyle($request);
+
+        $resposne = $instance->postPivotTableStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -400,6 +405,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPivotTableUpdatePivotFields()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -407,7 +413,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
         $pivotField = new \Aspose\Cells\Cloud\Model\PivotField();
         $pivotField->setShowCompact('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPivotTableUpdatePivotFieldsRequest();
         $request->setName( $remoteName);
@@ -418,7 +424,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPivotTableUpdatePivotFields($request);
+
+        $resposne = $instance->postPivotTableUpdatePivotFields($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -427,6 +435,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostPivotTableUpdatePivotField()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -434,7 +443,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
         $pivotField = new \Aspose\Cells\Cloud\Model\PivotField();
         $pivotField->setShowCompact('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostPivotTableUpdatePivotFieldRequest();
         $request->setName( $remoteName);
@@ -446,7 +455,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postPivotTableUpdatePivotField($request);
+
+        $resposne = $instance->postPivotTableUpdatePivotField($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -455,12 +466,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetPivotTableCalculate()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetPivotTableCalculateRequest();
         $request->setName( $remoteName);
@@ -468,7 +480,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPivotTableIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetPivotTableCalculate($request);
+
+        $resposne = $instance->postWorksheetPivotTableCalculate($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -477,12 +491,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetPivotTableMove()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetPivotTableMoveRequest();
         $request->setName( $remoteName);
@@ -493,7 +508,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setDestCellName( "C10");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetPivotTableMove($request);
+
+        $resposne = $instance->postWorksheetPivotTableMove($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -502,19 +519,22 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetPivotTables()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetPivotTablesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetPivotTables($request);
+
+        $resposne = $instance->deleteWorksheetPivotTables($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -523,12 +543,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetPivotTable()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetPivotTableRequest();
         $request->setName( $remoteName);
@@ -536,7 +557,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPivotTableIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetPivotTable($request);
+
+        $resposne = $instance->deleteWorksheetPivotTable($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -545,6 +568,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeletePivotTableField()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -555,7 +579,7 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         );
         $pivotTableFieldRequest = new \Aspose\Cells\Cloud\Model\PivotTableFieldRequest();
         $pivotTableFieldRequest->setData($pivotTableFieldRequestData ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeletePivotTableFieldRequest();
         $request->setName( $remoteName);
@@ -565,7 +589,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPivotTableFieldRequest( $pivotTableFieldRequest);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deletePivotTableField($request);
+
+        $resposne = $instance->deletePivotTableField($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -574,12 +600,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetPivotTableFilters()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetPivotTableFiltersRequest();
         $request->setName( $remoteName);
@@ -588,7 +615,9 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetPivotTableFilters($request);
+
+        $resposne = $instance->deleteWorksheetPivotTableFilters($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -597,12 +626,13 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetPivotTableFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetPivotTableFilterRequest();
         $request->setName( $remoteName);
@@ -612,6 +642,8 @@ class PivotTablesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setNeedReCalculate( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetPivotTableFilter($request);
+
+        $resposne = $instance->deleteWorksheetPivotTableFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 }

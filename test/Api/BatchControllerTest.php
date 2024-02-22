@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="BatchControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -40,45 +40,15 @@ use \Aspose\Cells\Cloud\Request\PostBatchProtectRequest;
 use \Aspose\Cells\Cloud\Request\PostBatchUnlockRequest; 
 
 use PHPUnit\Framework\TestCase;
-class BatchControllerTest extends \PHPUnit_Framework_TestCase
+final class BatchControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for PostBatchConvert of BatchController.
     /// </summary>
 
     public function testPostBatchConvert()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -93,12 +63,14 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchConvertRequest->setFormat("pdf" ); 
         $batchConvertRequest->setOutFolder("OutResult" ); 
         $batchConvertRequest->setMatchCondition($batchConvertRequestMatchCondition ); 
-        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
-        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+        CellsApiTestBase::ready(  $instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
      
         $request = new PostBatchConvertRequest();
         $request->setBatchConvertRequest( $batchConvertRequest);
-        $this->instance->postBatchConvert($request);
+
+        $resposne = $instance->postBatchConvert($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -107,6 +79,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostBatchProtect()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -122,12 +95,14 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchProtectRequest->setPassword("123456" ); 
         $batchProtectRequest->setOutFolder("OutResult" ); 
         $batchProtectRequest->setMatchCondition($batchProtectRequestMatchCondition ); 
-        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
-        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+        CellsApiTestBase::ready(  $instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
      
         $request = new PostBatchProtectRequest();
         $request->setBatchProtectRequest( $batchProtectRequest);
-        $this->instance->postBatchProtect($request);
+
+        $resposne = $instance->postBatchProtect($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -136,6 +111,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostBatchLock()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -150,12 +126,14 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchLockRequest->setPassword("123456" ); 
         $batchLockRequest->setOutFolder("OutResult" ); 
         $batchLockRequest->setMatchCondition($batchLockRequestMatchCondition ); 
-        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
-        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+        CellsApiTestBase::ready(  $instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
      
         $request = new PostBatchLockRequest();
         $request->setBatchLockRequest( $batchLockRequest);
-        $this->instance->postBatchLock($request);
+
+        $resposne = $instance->postBatchLock($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -164,6 +142,7 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostBatchUnlock()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -178,11 +157,13 @@ class BatchControllerTest extends \PHPUnit_Framework_TestCase
         $batchLockRequest->setPassword("123456" ); 
         $batchLockRequest->setOutFolder("OutResult" ); 
         $batchLockRequest->setMatchCondition($batchLockRequestMatchCondition ); 
-        CellsApiTestBase::ready(  $this->instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
-        CellsApiTestBase::ready(  $this->instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+        CellsApiTestBase::ready(  $instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
      
         $request = new PostBatchUnlockRequest();
         $request->setBatchLockRequest( $batchLockRequest);
-        $this->instance->postBatchUnlock($request);
+
+        $resposne = $instance->postBatchUnlock($request);
+        $this->assertTrue($resposne !==null );
     }
 }

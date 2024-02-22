@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="RangesControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -49,45 +49,15 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeValueRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetCellsRangeRequest; 
 
 use PHPUnit\Framework\TestCase;
-class RangesControllerTest extends \PHPUnit_Framework_TestCase
+final class RangesControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for PostWorksheetCellsRanges of RangesController.
     /// </summary>
 
     public function testPostWorksheetCellsRangesCopy()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -107,7 +77,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $rangeOperate->setOperate("copydata" ); 
         $rangeOperate->setSource($rangeOperateSource ); 
         $rangeOperate->setTarget($rangeOperateTarget ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangesCopyRequest();
         $request->setName( $remoteName);
@@ -115,7 +85,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRangeOperate( $rangeOperate);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangesCopy($request);
+
+        $resposne = $instance->postWorksheetCellsRangesCopy($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -124,6 +96,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeMerge()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -134,7 +107,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $range->setColumnWidth(10.0 ); 
         $range->setFirstRow(1 ); 
         $range->setRowCount(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeMergeRequest();
         $request->setName( $remoteName);
@@ -142,7 +115,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRange( $range);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeMerge($request);
+
+        $resposne = $instance->postWorksheetCellsRangeMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -151,6 +126,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeUnMerge()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -161,7 +137,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $range->setColumnWidth(10.0 ); 
         $range->setFirstRow(1 ); 
         $range->setRowCount(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeUnMergeRequest();
         $request->setName( $remoteName);
@@ -169,7 +145,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRange( $range);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeUnMerge($request);
+
+        $resposne = $instance->postWorksheetCellsRangeUnMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -178,6 +156,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -195,7 +174,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $rangeOperate = new \Aspose\Cells\Cloud\Model\RangeSetStyleRequest();
         $rangeOperate->setStyle($rangeOperateStyle ); 
         $rangeOperate->setRange($rangeOperateRange ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeStyleRequest();
         $request->setName( $remoteName);
@@ -203,7 +182,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRangeOperate( $rangeOperate);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeStyle($request);
+
+        $resposne = $instance->postWorksheetCellsRangeStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -212,12 +193,13 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetCellsRangeValue()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetCellsRangeValueRequest();
         $request->setName( $remoteName);
@@ -229,7 +211,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setColumnCount( 2);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetCellsRangeValue($request);
+
+        $resposne = $instance->getWorksheetCellsRangeValue($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -238,6 +222,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeValue()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -248,7 +233,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $range->setColumnWidth(10.0 ); 
         $range->setFirstRow(1 ); 
         $range->setRowCount(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeValueRequest();
         $request->setName( $remoteName);
@@ -259,7 +244,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setSetStyle( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeValue($request);
+
+        $resposne = $instance->postWorksheetCellsRangeValue($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -268,6 +255,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeMoveTo()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -278,7 +266,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $range->setColumnWidth(10.0 ); 
         $range->setFirstRow(1 ); 
         $range->setRowCount(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeMoveToRequest();
         $request->setName( $remoteName);
@@ -288,7 +276,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setDestColumn( 10);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeMoveTo($request);
+
+        $resposne = $instance->postWorksheetCellsRangeMoveTo($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -297,6 +287,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeOutlineBorder()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -316,7 +307,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $rangeOperate->setborderStyle("Dotted" ); 
         $rangeOperate->setborderColor($rangeOperateborderColor ); 
         $rangeOperate->setRange($rangeOperateRange ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeOutlineBorderRequest();
         $request->setName( $remoteName);
@@ -324,7 +315,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRangeOperate( $rangeOperate);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeOutlineBorder($request);
+
+        $resposne = $instance->postWorksheetCellsRangeOutlineBorder($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -333,6 +326,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeColumnWidth()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -343,7 +337,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $range->setColumnWidth(10.0 ); 
         $range->setFirstRow(1 ); 
         $range->setRowCount(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeColumnWidthRequest();
         $request->setName( $remoteName);
@@ -352,7 +346,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setValue( 10.7);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeColumnWidth($request);
+
+        $resposne = $instance->postWorksheetCellsRangeColumnWidth($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -361,6 +357,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeRowHeight()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -371,7 +368,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $range->setColumnWidth(10.0 ); 
         $range->setFirstRow(1 ); 
         $range->setRowCount(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeRowHeightRequest();
         $request->setName( $remoteName);
@@ -380,7 +377,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setValue( 10.9);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeRowHeight($request);
+
+        $resposne = $instance->postWorksheetCellsRangeRowHeight($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -389,12 +388,13 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetCellsRange()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetCellsRangeRequest();
         $request->setName( $remoteName);
@@ -403,7 +403,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setShift( "Down");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetCellsRange($request);
+
+        $resposne = $instance->putWorksheetCellsRange($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -412,12 +414,13 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetCellsRange()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetCellsRangeRequest();
         $request->setName( $remoteName);
@@ -426,7 +429,9 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setShift( "Up");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetCellsRange($request);
+
+        $resposne = $instance->deleteWorksheetCellsRange($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -435,6 +440,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellsRangeSort()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Group.xlsx";
@@ -450,7 +456,7 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $rangeSortRequest = new \Aspose\Cells\Cloud\Model\RangeSortRequest();
         $rangeSortRequest->setDataSorter($rangeSortRequestDataSorter ); 
         $rangeSortRequest->setCellArea($rangeSortRequestCellArea ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellsRangeSortRequest();
         $request->setName( $remoteName);
@@ -458,6 +464,8 @@ class RangesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRangeSortRequest( $rangeSortRequest);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellsRangeSort($request);
+
+        $resposne = $instance->postWorksheetCellsRangeSort($request);
+        $this->assertTrue($resposne !==null );
     }
 }

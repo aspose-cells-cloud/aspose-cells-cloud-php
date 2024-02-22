@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ChartsControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -50,58 +50,30 @@ use \Aspose\Cells\Cloud\Request\PutWorksheetChartRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetChartTitleRequest; 
 
 use PHPUnit\Framework\TestCase;
-class ChartsControllerTest extends \PHPUnit_Framework_TestCase
+final class ChartsControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetCharts of ChartsController.
     /// </summary>
 
     public function testGetWorksheetCharts()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetChartsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetCharts($request);
+
+        $resposne = $instance->getWorksheetCharts($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -110,12 +82,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetChart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetChartRequest();
         $request->setName( $remoteName);
@@ -124,7 +97,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFormat( "png");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetChart($request);
+
+        $resposne = $instance->getWorksheetChart($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -133,12 +108,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetChart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetChartRequest();
         $request->setName( $remoteName);
@@ -153,7 +129,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTitle( "Aspose Chart");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetChart($request);
+
+        $resposne = $instance->putWorksheetChart($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -162,12 +140,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetChart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetChartRequest();
         $request->setName( $remoteName);
@@ -175,7 +154,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetChart($request);
+
+        $resposne = $instance->deleteWorksheetChart($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -184,6 +165,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetChart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -192,7 +174,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $chart = new \Aspose\Cells\Cloud\Model\Chart();
         $chart->setShowLegend('true' ); 
         $chart->setShowDataTable('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetChartRequest();
         $request->setName( $remoteName);
@@ -201,7 +183,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChart( $chart);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetChart($request);
+
+        $resposne = $instance->postWorksheetChart($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -210,12 +194,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetChartLegend()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetChartLegendRequest();
         $request->setName( $remoteName);
@@ -223,7 +208,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetChartLegend($request);
+
+        $resposne = $instance->getWorksheetChartLegend($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -232,6 +219,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetChartLegend()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -239,7 +227,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
         $legend = new \Aspose\Cells\Cloud\Model\Legend();
         $legend->setPosition("Top" ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetChartLegendRequest();
         $request->setName( $remoteName);
@@ -248,7 +236,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setLegend( $legend);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetChartLegend($request);
+
+        $resposne = $instance->postWorksheetChartLegend($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -257,12 +247,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetChartLegend()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetChartLegendRequest();
         $request->setName( $remoteName);
@@ -270,7 +261,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetChartLegend($request);
+
+        $resposne = $instance->putWorksheetChartLegend($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -279,12 +272,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetChartLegend()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetChartLegendRequest();
         $request->setName( $remoteName);
@@ -292,7 +286,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetChartLegend($request);
+
+        $resposne = $instance->deleteWorksheetChartLegend($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -301,19 +297,22 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetCharts()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetChartsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetCharts($request);
+
+        $resposne = $instance->deleteWorksheetCharts($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -322,12 +321,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetChartTitle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetChartTitleRequest();
         $request->setName( $remoteName);
@@ -335,7 +335,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetChartTitle($request);
+
+        $resposne = $instance->getWorksheetChartTitle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -344,6 +346,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetChartTitle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -351,7 +354,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
         $title = new \Aspose\Cells\Cloud\Model\Title();
         $title->setIsVisible('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetChartTitleRequest();
         $request->setName( $remoteName);
@@ -360,7 +363,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTitle( $title);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetChartTitle($request);
+
+        $resposne = $instance->postWorksheetChartTitle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -369,6 +374,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetChartTitle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -376,7 +382,7 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
         $title = new \Aspose\Cells\Cloud\Model\Title();
         $title->setIsVisible('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetChartTitleRequest();
         $request->setName( $remoteName);
@@ -385,7 +391,9 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTitle( $title);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetChartTitle($request);
+
+        $resposne = $instance->putWorksheetChartTitle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -394,12 +402,13 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetChartTitle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetChartTitleRequest();
         $request->setName( $remoteName);
@@ -407,6 +416,8 @@ class ChartsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetChartTitle($request);
+
+        $resposne = $instance->deleteWorksheetChartTitle($request);
+        $this->assertTrue($resposne !==null );
     }
 }

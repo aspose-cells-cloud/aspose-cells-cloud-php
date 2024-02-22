@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ChartAreaControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -39,51 +39,21 @@ use \Aspose\Cells\Cloud\Request\GetChartAreaFillFormatRequest;
 use \Aspose\Cells\Cloud\Request\GetChartAreaRequest; 
 
 use PHPUnit\Framework\TestCase;
-class ChartAreaControllerTest extends \PHPUnit_Framework_TestCase
+final class ChartAreaControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetChartArea of ChartAreaController.
     /// </summary>
 
     public function testGetChartArea()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetChartAreaRequest();
         $request->setName( $remoteName);
@@ -91,7 +61,9 @@ class ChartAreaControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getChartArea($request);
+
+        $resposne = $instance->getChartArea($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -100,12 +72,13 @@ class ChartAreaControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetChartAreaFillFormat()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetChartAreaFillFormatRequest();
         $request->setName( $remoteName);
@@ -113,7 +86,9 @@ class ChartAreaControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getChartAreaFillFormat($request);
+
+        $resposne = $instance->getChartAreaFillFormat($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -122,12 +97,13 @@ class ChartAreaControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetChartAreaBorder()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetChartAreaBorderRequest();
         $request->setName( $remoteName);
@@ -135,6 +111,8 @@ class ChartAreaControllerTest extends \PHPUnit_Framework_TestCase
         $request->setChartIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getChartAreaBorder($request);
+
+        $resposne = $instance->getChartAreaBorder($request);
+        $this->assertTrue($resposne !==null );
     }
 }

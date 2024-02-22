@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class CellsDocumentProperties implements  ArrayAccess
+class CellsDocumentProperties
 {
      const DISCRIMINATOR = null;
     /**
@@ -205,7 +205,7 @@ class CellsDocumentProperties implements  ArrayAccess
     /**
      * Sets document_property_list
      *
-     *  
+     *  Document property list.
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="WorksheetValidationsControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -42,58 +42,30 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetValidationRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetValidationRequest; 
 
 use PHPUnit\Framework\TestCase;
-class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
+final class WorksheetValidationsControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetValidations of WorksheetValidationsController.
     /// </summary>
 
     public function testGetWorksheetValidations()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetValidationsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetValidations($request);
+
+        $resposne = $instance->getWorksheetValidations($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -102,12 +74,13 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetValidation()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetValidationRequest();
         $request->setName( $remoteName);
@@ -115,7 +88,9 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setValidationIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetValidation($request);
+
+        $resposne = $instance->getWorksheetValidation($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -124,12 +99,13 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetValidation()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetValidationRequest();
         $request->setName( $remoteName);
@@ -137,7 +113,9 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRange( "A1:C10");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetValidation($request);
+
+        $resposne = $instance->putWorksheetValidation($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -146,6 +124,7 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetValidation()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -154,7 +133,7 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
         $validation = new \Aspose\Cells\Cloud\Model\Validation();
         $validation->setFormula1("=A1" ); 
         $validation->setType("Custom" ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetValidationRequest();
         $request->setName( $remoteName);
@@ -163,7 +142,9 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setValidation( $validation);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetValidation($request);
+
+        $resposne = $instance->postWorksheetValidation($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -172,12 +153,13 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetValidation()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetValidationRequest();
         $request->setName( $remoteName);
@@ -185,7 +167,9 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setValidationIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetValidation($request);
+
+        $resposne = $instance->deleteWorksheetValidation($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -194,18 +178,21 @@ class WorksheetValidationsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetValidations()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetValidationsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetValidations($request);
+
+        $resposne = $instance->deleteWorksheetValidations($request);
+        $this->assertTrue($resposne !==null );
     }
 }

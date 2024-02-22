@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AutoFilterControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -49,58 +49,30 @@ use \Aspose\Cells\Cloud\Request\PutWorksheetFilterTop10Request;
 use \Aspose\Cells\Cloud\Request\PutWorksheetIconFilterRequest; 
 
 use PHPUnit\Framework\TestCase;
-class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
+final class AutoFilterControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetAutoFilter of AutoFilterController.
     /// </summary>
 
     public function testGetWorksheetAutoFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetAutoFilterRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetAutoFilter($request);
+
+        $resposne = $instance->getWorksheetAutoFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -109,12 +81,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetDateFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetDateFilterRequest();
         $request->setName( $remoteName);
@@ -127,7 +100,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetDateFilter($request);
+
+        $resposne = $instance->putWorksheetDateFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -136,12 +111,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetFilterRequest();
         $request->setName( $remoteName);
@@ -153,7 +129,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetFilter($request);
+
+        $resposne = $instance->putWorksheetFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -162,12 +140,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetIconFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetIconFilterRequest();
         $request->setName( $remoteName);
@@ -180,7 +159,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetIconFilter($request);
+
+        $resposne = $instance->putWorksheetIconFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -189,12 +170,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetCustomFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetCustomFilterRequest();
         $request->setName( $remoteName);
@@ -207,7 +189,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetCustomFilter($request);
+
+        $resposne = $instance->putWorksheetCustomFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -216,12 +200,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetDynamicFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetDynamicFilterRequest();
         $request->setName( $remoteName);
@@ -233,7 +218,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetDynamicFilter($request);
+
+        $resposne = $instance->putWorksheetDynamicFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -242,12 +229,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetFilterTop10()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetFilterTop10Request();
         $request->setName( $remoteName);
@@ -261,7 +249,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetFilterTop10($request);
+
+        $resposne = $instance->putWorksheetFilterTop10($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -270,6 +260,7 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetColorFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -285,7 +276,7 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $colorFilter = new \Aspose\Cells\Cloud\Model\ColorFilterRequest();
         $colorFilter->setPattern("Solid" ); 
         $colorFilter->setForegroundColor($colorFilterForegroundColor ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetColorFilterRequest();
         $request->setName( $remoteName);
@@ -297,7 +288,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRefresh( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetColorFilter($request);
+
+        $resposne = $instance->putWorksheetColorFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -306,12 +299,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetMatchBlanks()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetMatchBlanksRequest();
         $request->setName( $remoteName);
@@ -319,7 +313,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFieldIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetMatchBlanks($request);
+
+        $resposne = $instance->postWorksheetMatchBlanks($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -328,12 +324,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetMatchNonBlanks()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetMatchNonBlanksRequest();
         $request->setName( $remoteName);
@@ -341,7 +338,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFieldIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetMatchNonBlanks($request);
+
+        $resposne = $instance->postWorksheetMatchNonBlanks($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -350,19 +349,22 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetAutoFilterRefresh()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetAutoFilterRefreshRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetAutoFilterRefresh($request);
+
+        $resposne = $instance->postWorksheetAutoFilterRefresh($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -371,12 +373,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetDateFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetDateFilterRequest();
         $request->setName( $remoteName);
@@ -386,7 +389,9 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setYear( 1920);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetDateFilter($request);
+
+        $resposne = $instance->deleteWorksheetDateFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -395,12 +400,13 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetFilter()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetFilterRequest();
         $request->setName( $remoteName);
@@ -409,6 +415,8 @@ class AutoFilterControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCriteria( "year");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetFilter($request);
+
+        $resposne = $instance->deleteWorksheetFilter($request);
+        $this->assertTrue($resposne !==null );
     }
 }

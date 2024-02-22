@@ -45,7 +45,7 @@ class PostRepairRequest extends BaseApiRequest
 {
 
     /*
-    * File : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    * File : File to upload
     */ 
     public $file;
 
@@ -101,10 +101,10 @@ class PostRepairRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

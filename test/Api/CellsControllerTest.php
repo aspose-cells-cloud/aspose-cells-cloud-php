@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CellsControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -76,51 +76,21 @@ use \Aspose\Cells\Cloud\Request\PutInsertWorksheetRowRequest;
 use \Aspose\Cells\Cloud\Request\PutInsertWorksheetRowsRequest; 
 
 use PHPUnit\Framework\TestCase;
-class CellsControllerTest extends \PHPUnit_Framework_TestCase
+final class CellsControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for PostClearContents of CellsController.
     /// </summary>
 
     public function testPostClearContents()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostClearContentsRequest();
         $request->setName( $remoteName);
@@ -132,7 +102,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setEndColumn( 3);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postClearContents($request);
+
+        $resposne = $instance->postClearContents($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -141,12 +113,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearFormats()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostClearFormatsRequest();
         $request->setName( $remoteName);
@@ -158,7 +131,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setEndColumn( 3);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postClearFormats($request);
+
+        $resposne = $instance->postClearFormats($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -167,6 +142,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUpdateWorksheetRangeStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -176,7 +152,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $styleFont->setSize(16 ); 
         $style = new \Aspose\Cells\Cloud\Model\Style();
         $style->setFont($styleFont ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUpdateWorksheetRangeStyleRequest();
         $request->setName( $remoteName);
@@ -185,7 +161,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setStyle( $style);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUpdateWorksheetRangeStyle($request);
+
+        $resposne = $instance->postUpdateWorksheetRangeStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -194,12 +172,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetMerge()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetMergeRequest();
         $request->setName( $remoteName);
@@ -210,7 +189,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTotalColumns( 4);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetMerge($request);
+
+        $resposne = $instance->postWorksheetMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -219,12 +200,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetUnmerge()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetUnmergeRequest();
         $request->setName( $remoteName);
@@ -235,7 +217,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTotalColumns( 4);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetUnmerge($request);
+
+        $resposne = $instance->postWorksheetUnmerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -244,12 +228,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetCells()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetCellsRequest();
         $request->setName( $remoteName);
@@ -258,7 +243,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCount( 10);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetCells($request);
+
+        $resposne = $instance->getWorksheetCells($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -267,12 +254,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetCell()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetCellRequest();
         $request->setName( $remoteName);
@@ -280,7 +268,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCellOrMethodName( "A1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetCell($request);
+
+        $resposne = $instance->getWorksheetCell($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -289,12 +279,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetCellStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetCellStyleRequest();
         $request->setName( $remoteName);
@@ -302,7 +293,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCellName( "A1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetCellStyle($request);
+
+        $resposne = $instance->getWorksheetCellStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -311,12 +304,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetCellSetValue()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetCellSetValueRequest();
         $request->setName( $remoteName);
@@ -326,7 +320,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setType( "int");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetCellSetValue($request);
+
+        $resposne = $instance->postWorksheetCellSetValue($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -335,6 +331,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUpdateWorksheetCellStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -344,7 +341,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $styleFont->setSize(16 ); 
         $style = new \Aspose\Cells\Cloud\Model\Style();
         $style->setFont($styleFont ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUpdateWorksheetCellStyleRequest();
         $request->setName( $remoteName);
@@ -353,7 +350,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setStyle( $style);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUpdateWorksheetCellStyle($request);
+
+        $resposne = $instance->postUpdateWorksheetCellStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -362,12 +361,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSetCellRangeValue()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostSetCellRangeValueRequest();
         $request->setName( $remoteName);
@@ -377,7 +377,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setType( "string");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postSetCellRangeValue($request);
+
+        $resposne = $instance->postSetCellRangeValue($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -386,12 +388,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCopyCellIntoCell()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostCopyCellIntoCellRequest();
         $request->setName( $remoteName);
@@ -403,7 +406,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setColumn( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postCopyCellIntoCell($request);
+
+        $resposne = $instance->postCopyCellIntoCell($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -412,12 +417,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetCellHtmlString()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetCellHtmlStringRequest();
         $request->setName( $remoteName);
@@ -425,7 +431,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCellName( "A1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getCellHtmlString($request);
+
+        $resposne = $instance->getCellHtmlString($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -434,12 +442,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSetCellHtmlString()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostSetCellHtmlStringRequest();
         $request->setName( $remoteName);
@@ -447,7 +456,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCellName( "A1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postSetCellHtmlString($request);
+
+        $resposne = $instance->postSetCellHtmlString($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -456,6 +467,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCellCalculate()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -464,7 +476,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $options = new \Aspose\Cells\Cloud\Model\CalculationOptions();
         $options->setRecursive('true' ); 
         $options->setIgnoreError('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostCellCalculateRequest();
         $request->setName( $remoteName);
@@ -473,7 +485,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setOptions( $options);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postCellCalculate($request);
+
+        $resposne = $instance->postCellCalculate($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -482,6 +496,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCellCharacters()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -497,7 +512,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $options = array (
             $optionsvalue0
         );
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostCellCharactersRequest();
         $request->setName( $remoteName);
@@ -506,7 +521,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setOptions( $options);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postCellCharacters($request);
+
+        $resposne = $instance->postCellCharacters($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -515,12 +532,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -529,7 +547,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCount( 10);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetColumns($request);
+
+        $resposne = $instance->getWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -538,12 +558,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSetWorksheetColumnWidth()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostSetWorksheetColumnWidthRequest();
         $request->setName( $remoteName);
@@ -553,7 +574,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCount( 10);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postSetWorksheetColumnWidth($request);
+
+        $resposne = $instance->postSetWorksheetColumnWidth($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -562,12 +585,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetColumn()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetColumnRequest();
         $request->setName( $remoteName);
@@ -575,7 +599,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setColumnIndex( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetColumn($request);
+
+        $resposne = $instance->getWorksheetColumn($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -584,12 +610,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutInsertWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutInsertWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -599,7 +626,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setUpdateReference( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putInsertWorksheetColumns($request);
+
+        $resposne = $instance->putInsertWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -608,12 +637,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -623,7 +653,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setUpdateReference( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetColumns($request);
+
+        $resposne = $instance->deleteWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -632,12 +664,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostHideWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostHideWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -646,7 +679,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTotalColumns( 10);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postHideWorksheetColumns($request);
+
+        $resposne = $instance->postHideWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -655,12 +690,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUnhideWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUnhideWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -670,7 +706,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setWidth( 10.9);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUnhideWorksheetColumns($request);
+
+        $resposne = $instance->postUnhideWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -679,12 +717,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostGroupWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostGroupWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -694,7 +733,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setHide( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postGroupWorksheetColumns($request);
+
+        $resposne = $instance->postGroupWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -703,12 +744,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUngroupWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUngroupWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -717,7 +759,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setLastIndex( 9);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUngroupWorksheetColumns($request);
+
+        $resposne = $instance->postUngroupWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -726,12 +770,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCopyWorksheetColumns()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostCopyWorksheetColumnsRequest();
         $request->setName( $remoteName);
@@ -742,7 +787,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setWorksheet( "Sheet2");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postCopyWorksheetColumns($request);
+
+        $resposne = $instance->postCopyWorksheetColumns($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -751,6 +798,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostColumnStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -760,7 +808,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $styleFont->setSize(16 ); 
         $style = new \Aspose\Cells\Cloud\Model\Style();
         $style->setFont($styleFont ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostColumnStyleRequest();
         $request->setName( $remoteName);
@@ -769,7 +817,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setStyle( $style);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postColumnStyle($request);
+
+        $resposne = $instance->postColumnStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -778,12 +828,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -792,7 +843,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCount( 10);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetRows($request);
+
+        $resposne = $instance->getWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -801,12 +854,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetRow()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetRowRequest();
         $request->setName( $remoteName);
@@ -814,7 +868,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRowIndex( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetRow($request);
+
+        $resposne = $instance->getWorksheetRow($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -823,12 +879,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetRow()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetRowRequest();
         $request->setName( $remoteName);
@@ -836,7 +893,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRowIndex( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetRow($request);
+
+        $resposne = $instance->deleteWorksheetRow($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -845,12 +904,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -860,7 +920,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setUpdateReference( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetRows($request);
+
+        $resposne = $instance->deleteWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -869,12 +931,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutInsertWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutInsertWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -884,7 +947,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setUpdateReference( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putInsertWorksheetRows($request);
+
+        $resposne = $instance->putInsertWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -893,12 +958,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutInsertWorksheetRow()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutInsertWorksheetRowRequest();
         $request->setName( $remoteName);
@@ -906,7 +972,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setRowIndex( 1);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putInsertWorksheetRow($request);
+
+        $resposne = $instance->putInsertWorksheetRow($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -915,12 +983,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUpdateWorksheetRow()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUpdateWorksheetRowRequest();
         $request->setName( $remoteName);
@@ -930,7 +999,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCount( 9);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUpdateWorksheetRow($request);
+
+        $resposne = $instance->postUpdateWorksheetRow($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -939,12 +1010,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostHideWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostHideWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -953,7 +1025,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTotalRows( 6);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postHideWorksheetRows($request);
+
+        $resposne = $instance->postHideWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -962,12 +1036,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUnhideWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUnhideWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -977,7 +1052,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setHeight( 10.9);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUnhideWorksheetRows($request);
+
+        $resposne = $instance->postUnhideWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -986,12 +1063,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostGroupWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostGroupWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -1001,7 +1079,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setHide( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postGroupWorksheetRows($request);
+
+        $resposne = $instance->postGroupWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1010,12 +1090,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUngroupWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostUngroupWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -1025,7 +1106,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIsAll( 'true');
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postUngroupWorksheetRows($request);
+
+        $resposne = $instance->postUngroupWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1034,12 +1117,13 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCopyWorksheetRows()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostCopyWorksheetRowsRequest();
         $request->setName( $remoteName);
@@ -1050,7 +1134,9 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setWorksheet( "Sheet2");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postCopyWorksheetRows($request);
+
+        $resposne = $instance->postCopyWorksheetRows($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1059,6 +1145,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostRowStyle()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1068,7 +1155,7 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $styleFont->setSize(16 ); 
         $style = new \Aspose\Cells\Cloud\Model\Style();
         $style->setFont($styleFont ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostRowStyleRequest();
         $request->setName( $remoteName);
@@ -1077,6 +1164,8 @@ class CellsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setStyle( $style);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postRowStyle($request);
+
+        $resposne = $instance->postRowStyle($request);
+        $this->assertTrue($resposne !==null );
     }
 }

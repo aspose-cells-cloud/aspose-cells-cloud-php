@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ConversionJsonTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -37,45 +37,15 @@ use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\PutConvertWorkbookRequest; 
 
 use PHPUnit\Framework\TestCase;
-class ConversionJsonTest extends \PHPUnit_Framework_TestCase
+final class ConversionJsonTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
     public function testConvertWorkbook_csv()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -85,12 +55,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -99,6 +71,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_xls()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -108,12 +81,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -122,6 +97,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_html()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -131,12 +107,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -145,6 +123,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_mhtml()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -154,12 +133,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -168,6 +149,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_ods()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -177,12 +159,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -191,6 +175,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -200,12 +185,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -214,6 +201,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_xml()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -223,12 +211,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -237,6 +227,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_txt()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -246,12 +237,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -260,6 +253,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_xlsb()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -269,12 +263,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -283,6 +279,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_xps()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -292,12 +289,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -306,6 +305,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_md()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -315,12 +315,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -329,6 +331,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_numbers()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -338,12 +341,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -352,6 +357,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_svg()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -361,12 +367,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -375,6 +383,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_docx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -384,12 +393,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -398,6 +409,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_pptx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -407,12 +419,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -421,6 +435,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_json()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -430,12 +445,14 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -444,6 +461,7 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
     public function testConvertWorkbook_sql()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -453,11 +471,13 @@ class ConversionJsonTest extends \PHPUnit_Framework_TestCase
 
         $mapFiles = array ();
         $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutConvertWorkbookRequest();
         $request->setFile( $mapFiles);
         $request->setFormat( $format);
-        $this->instance->putConvertWorkbook($request);
+
+        $resposne = $instance->putConvertWorkbook($request);
+        $this->assertTrue($resposne !==null );
     }
 }

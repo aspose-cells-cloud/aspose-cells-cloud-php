@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class CellArea implements  ArrayAccess
+class CellArea
 {
      const DISCRIMINATOR = null;
     /**
@@ -241,7 +241,7 @@ class CellArea implements  ArrayAccess
     /**
      * Sets end_column
      *
-     *  
+     *  The end column index.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class CellArea implements  ArrayAccess
     /**
      * Sets end_row
      *
-     *  
+     *  The end row index.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class CellArea implements  ArrayAccess
     /**
      * Sets start_column
      *
-     *  
+     *  The start column index.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class CellArea implements  ArrayAccess
     /**
      * Sets start_row
      *
-     *  
+     *  The start row index.
      *
      * @return $this
      */

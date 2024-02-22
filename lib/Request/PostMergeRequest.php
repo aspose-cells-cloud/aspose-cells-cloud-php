@@ -45,7 +45,7 @@ class PostMergeRequest extends BaseApiRequest
 {
 
     /*
-    * File : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
+    * File : File to upload
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostMergeRequest extends BaseApiRequest
     }
 
     /*
-    * outFormat : The password needed to open an Excel file.
+    * outFormat : The output data file format.(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $out_format;
 
@@ -75,7 +75,7 @@ class PostMergeRequest extends BaseApiRequest
     }
 
     /*
-    * mergeToOneSheet : Whether check restriction of excel file when user modify cells related objects.
+    * mergeToOneSheet : Merge all workbooks into a sheet.
     */ 
     public $merge_to_one_sheet;
 
@@ -90,7 +90,7 @@ class PostMergeRequest extends BaseApiRequest
     }
 
     /*
-    * password : The regional settings for workbook.
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostMergeRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : Upload files.
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -120,7 +120,7 @@ class PostMergeRequest extends BaseApiRequest
     }
 
     /*
-    * region : 
+    * region : The regional settings for workbook.
     */ 
     public $region;
 
@@ -177,10 +177,10 @@ class PostMergeRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

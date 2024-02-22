@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class CellsCloudFileInfo implements  ArrayAccess
+class CellsCloudFileInfo
 {
      const DISCRIMINATOR = null;
     /**
@@ -241,7 +241,7 @@ class CellsCloudFileInfo implements  ArrayAccess
     /**
      * Sets name
      *
-     *  
+     *  The file name.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class CellsCloudFileInfo implements  ArrayAccess
     /**
      * Sets size
      *
-     *  
+     *  The file size.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class CellsCloudFileInfo implements  ArrayAccess
     /**
      * Sets folder
      *
-     *  
+     *  The file position.
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class CellsCloudFileInfo implements  ArrayAccess
     /**
      * Sets storage
      *
-     *  
+     *  The storage name.
      *
      * @return $this
      */

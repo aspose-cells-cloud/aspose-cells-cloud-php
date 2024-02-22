@@ -75,7 +75,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * offset : The folder where the file is situated.
+    * offset : The workdook folder.
     */ 
     public $offset;
 
@@ -90,7 +90,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * count : The storage name where the file is situated.
+    * count : 
     */ 
     public $count;
 
@@ -105,7 +105,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : The workdook folder.
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -120,7 +120,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

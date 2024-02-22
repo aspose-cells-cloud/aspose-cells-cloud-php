@@ -131,10 +131,10 @@ class UploadFileRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->upload_files)){
                 foreach($this->upload_files as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['UploadFiles'] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($this->upload_files), 'rb');
+                $formParams['UploadFiles'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->upload_files), 'rb');
             }
         }
 

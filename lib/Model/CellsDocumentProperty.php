@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class CellsDocumentProperty implements  ArrayAccess
+class CellsDocumentProperty
 {
      const DISCRIMINATOR = null;
     /**

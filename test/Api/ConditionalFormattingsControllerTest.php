@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ConditionalFormattingsControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -45,58 +45,30 @@ use \Aspose\Cells\Cloud\Request\PutWorksheetFormatConditionConditionRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetFormatConditionRequest; 
 
 use PHPUnit\Framework\TestCase;
-class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
+final class ConditionalFormattingsControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetConditionalFormattings of ConditionalFormattingsController.
     /// </summary>
 
     public function testGetWorksheetConditionalFormattings()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetConditionalFormattingsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetConditionalFormattings($request);
+
+        $resposne = $instance->getWorksheetConditionalFormattings($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -105,12 +77,13 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetConditionalFormatting()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetConditionalFormattingRequest();
         $request->setName( $remoteName);
@@ -118,7 +91,9 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetConditionalFormatting($request);
+
+        $resposne = $instance->getWorksheetConditionalFormatting($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -127,6 +102,7 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetConditionalFormatting()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -137,7 +113,7 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $formatcondition->setOperator("Between" ); 
         $formatcondition->setFormula1("v1" ); 
         $formatcondition->setFormula2("v2" ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetConditionalFormattingRequest();
         $request->setName( $remoteName);
@@ -146,7 +122,9 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCellArea( "A1:C10");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetConditionalFormatting($request);
+
+        $resposne = $instance->putWorksheetConditionalFormatting($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -155,12 +133,13 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetFormatCondition()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetFormatConditionRequest();
         $request->setName( $remoteName);
@@ -173,7 +152,9 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFormula2( "v2");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetFormatCondition($request);
+
+        $resposne = $instance->putWorksheetFormatCondition($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -182,12 +163,13 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetFormatConditionArea()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetFormatConditionAreaRequest();
         $request->setName( $remoteName);
@@ -196,7 +178,9 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setCellArea( "A1:C10");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetFormatConditionArea($request);
+
+        $resposne = $instance->putWorksheetFormatConditionArea($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -205,12 +189,13 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetFormatConditionCondition()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetFormatConditionConditionRequest();
         $request->setName( $remoteName);
@@ -222,7 +207,9 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFormula2( "v2");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetFormatConditionCondition($request);
+
+        $resposne = $instance->putWorksheetFormatConditionCondition($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -231,19 +218,22 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetConditionalFormattings()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetConditionalFormattingsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetConditionalFormattings($request);
+
+        $resposne = $instance->deleteWorksheetConditionalFormattings($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -252,12 +242,13 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetConditionalFormatting()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetConditionalFormattingRequest();
         $request->setName( $remoteName);
@@ -265,7 +256,9 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetConditionalFormatting($request);
+
+        $resposne = $instance->deleteWorksheetConditionalFormatting($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -274,12 +267,13 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetConditionalFormattingArea()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetConditionalFormattingAreaRequest();
         $request->setName( $remoteName);
@@ -290,6 +284,8 @@ class ConditionalFormattingsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setTotalColumns( 6);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetConditionalFormattingArea($request);
+
+        $resposne = $instance->deleteWorksheetConditionalFormattingArea($request);
+        $this->assertTrue($resposne !==null );
     }
 }

@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class PivotGlobalizationSettings implements  ArrayAccess
+class PivotGlobalizationSettings
 {
      const DISCRIMINATOR = null;
     /**

@@ -37,6 +37,7 @@ use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
+use Aspose\Cells\Cloud\Request\PostAnalyzeExcelRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetAutoFilterRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetDateFilterRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetFilterRequest;
@@ -522,6 +523,7 @@ use Aspose\Cells\Cloud\Model\TxtSaveOptions;
 use Aspose\Cells\Cloud\Model\XlsbSaveOptions;
 use Aspose\Cells\Cloud\Model\XlsSaveOptions;
 use Aspose\Cells\Cloud\Model\XpsSaveOptions;
+use Aspose\Cells\Cloud\Model\AnalyzeExcelResponse;
 use Aspose\Cells\Cloud\Model\ArcShapeResponse;
 use Aspose\Cells\Cloud\Model\AutoFilterResponse;
 use Aspose\Cells\Cloud\Model\AutoShapeResponse;
@@ -632,6 +634,7 @@ use Aspose\Cells\Cloud\Model\WorkbooksResponse;
 use Aspose\Cells\Cloud\Model\WorksheetReplaceResponse;
 use Aspose\Cells\Cloud\Model\WorksheetResponse;
 use Aspose\Cells\Cloud\Model\WorksheetsResponse;
+use Aspose\Cells\Cloud\Model\AnalyzeExcelRequest;
 use Aspose\Cells\Cloud\Model\BatchConvertRequest;
 use Aspose\Cells\Cloud\Model\BatchLockRequest;
 use Aspose\Cells\Cloud\Model\BatchProtectRequest;
@@ -745,6 +748,14 @@ use Aspose\Cells\Cloud\Model\Title;
 use Aspose\Cells\Cloud\Model\Trendline;
 use Aspose\Cells\Cloud\Model\Trendlines;
 use Aspose\Cells\Cloud\Model\Walls;
+use Aspose\Cells\Cloud\Model\AnalyzedColumnDescription;
+use Aspose\Cells\Cloud\Model\AnalyzedResult;
+use Aspose\Cells\Cloud\Model\AnalyzedTableDescription;
+use Aspose\Cells\Cloud\Model\AnalyzeSuggestion;
+use Aspose\Cells\Cloud\Model\DiscoverChart;
+use Aspose\Cells\Cloud\Model\DiscoverPivotTable;
+use Aspose\Cells\Cloud\Model\ExcelDataStatistics;
+use Aspose\Cells\Cloud\Model\WorksheetDataStatistics;
 use Aspose\Cells\Cloud\Model\Error;
 use Aspose\Cells\Cloud\Model\ErrorDetails;
 
@@ -813,6 +824,19 @@ class CellsApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /// <summary>
+    /// Perform business analysis of data in Excel files.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAnalyzeExcelRequest" /></param>
+    public function postAnalyzeExcel( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AnalyzedResult[]';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
     }
 
     /// <summary>

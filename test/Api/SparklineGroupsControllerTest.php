@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SparklineGroupsControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -42,58 +42,30 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetSparklineGroupRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetSparklineGroupRequest; 
 
 use PHPUnit\Framework\TestCase;
-class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
+final class SparklineGroupsControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetSparklineGroups of SparklineGroupsController.
     /// </summary>
 
     public function testGetWorksheetSparklineGroups()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetSparklineGroupsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetSparklineGroups($request);
+
+        $resposne = $instance->getWorksheetSparklineGroups($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -102,12 +74,13 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetSparklineGroup()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetSparklineGroupRequest();
         $request->setName( $remoteName);
@@ -115,7 +88,9 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setSparklineIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetSparklineGroup($request);
+
+        $resposne = $instance->getWorksheetSparklineGroup($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -124,19 +99,22 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetSparklineGroups()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetSparklineGroupsRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet1");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetSparklineGroups($request);
+
+        $resposne = $instance->deleteWorksheetSparklineGroups($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -145,12 +123,13 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetSparklineGroup()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetSparklineGroupRequest();
         $request->setName( $remoteName);
@@ -158,7 +137,9 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setSparklineIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetSparklineGroup($request);
+
+        $resposne = $instance->deleteWorksheetSparklineGroup($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -167,12 +148,13 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetSparklineGroup()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutWorksheetSparklineGroupRequest();
         $request->setName( $remoteName);
@@ -183,7 +165,9 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setLocationRange( "G6:G13");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetSparklineGroup($request);
+
+        $resposne = $instance->putWorksheetSparklineGroup($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -192,6 +176,7 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetSparklineGroup()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -200,7 +185,7 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
         $sparklineGroup = new \Aspose\Cells\Cloud\Model\SparklineGroup();
         $sparklineGroup->setDisplayHidden('true' ); 
         $sparklineGroup->setPlotRightToLeft('true' ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetSparklineGroupRequest();
         $request->setName( $remoteName);
@@ -209,6 +194,8 @@ class SparklineGroupsControllerTest extends \PHPUnit_Framework_TestCase
         $request->setSparklineGroup( $sparklineGroup);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetSparklineGroup($request);
+
+        $resposne = $instance->postWorksheetSparklineGroup($request);
+        $this->assertTrue($resposne !==null );
     }
 }

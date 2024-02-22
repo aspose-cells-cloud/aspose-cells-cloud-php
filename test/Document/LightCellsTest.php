@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="LightCellsTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -52,45 +52,15 @@ use \Aspose\Cells\Cloud\Request\PostUnlockRequest;
 use \Aspose\Cells\Cloud\Request\PostWatermarkRequest; 
 
 use PHPUnit\Framework\TestCase;
-class LightCellsTest extends \PHPUnit_Framework_TestCase
+final class LightCellsTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
     public function testPostSplit_csv()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -103,7 +73,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -112,6 +84,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_xls()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -124,7 +97,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -133,6 +108,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_html()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -145,7 +121,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -154,6 +132,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_mhtml()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -166,7 +145,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -175,6 +156,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_ods()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -187,7 +169,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -196,6 +180,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -208,7 +193,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -217,6 +204,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_xml()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -229,7 +217,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -238,6 +228,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_txt()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -250,7 +241,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -259,6 +252,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_tif()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -271,7 +265,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -280,6 +276,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_xlsb()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -292,7 +289,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -301,6 +300,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_xlsx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -313,7 +313,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -322,6 +324,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_xps()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -334,7 +337,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -343,6 +348,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_png()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -355,7 +361,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -364,6 +372,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_jpg()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -376,7 +385,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -385,6 +396,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_md()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -397,7 +409,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -406,6 +420,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_numbers()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -418,7 +433,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -427,6 +444,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_svg()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -439,7 +457,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -448,6 +468,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_docx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -460,7 +481,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -469,6 +492,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_pptx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -481,7 +505,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -490,6 +516,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_json()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -502,7 +529,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -511,6 +540,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSplit_sql()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -523,7 +553,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSplitRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $outFormat);
-        $this->instance->postSplit($request);
+
+        $resposne = $instance->postSplit($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -532,6 +564,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_csv()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -545,7 +578,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -554,6 +589,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xls()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -567,7 +603,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -576,6 +614,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_html()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -589,7 +628,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -598,6 +639,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_mhtml()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -611,7 +653,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -620,6 +664,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_ods()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -633,7 +678,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -642,6 +689,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -655,7 +703,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -664,6 +714,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xml()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -677,7 +728,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -686,6 +739,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_txt()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -699,7 +753,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -708,6 +764,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_tif()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -721,7 +778,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -730,6 +789,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xlsb()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -743,7 +803,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -752,6 +814,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xlsm()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -765,7 +828,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -774,6 +839,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xlsx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -787,7 +853,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -796,6 +864,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xltm()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -809,7 +878,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -818,6 +889,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xltx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -831,7 +903,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -840,6 +914,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_xps()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -853,7 +928,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -862,6 +939,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_png()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -875,7 +953,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -884,6 +964,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_jpg()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -897,7 +978,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -906,6 +989,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_gif()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -919,7 +1003,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -928,6 +1014,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_emf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -941,7 +1028,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -950,6 +1039,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_bmp()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -963,7 +1053,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -972,6 +1064,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_md()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -985,7 +1078,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -994,6 +1089,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_numbers()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1007,7 +1103,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1016,6 +1114,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_wmf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1029,7 +1128,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1038,6 +1139,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_svg()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1051,7 +1153,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1060,6 +1164,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_docx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1073,7 +1178,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1082,6 +1189,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_pptx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1095,7 +1203,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1104,6 +1214,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_json()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1117,7 +1228,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1126,6 +1239,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostAssemble_sql()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -1139,7 +1253,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setDatasource( "ds");
         $request->setOutFormat( $format);
-        $this->instance->postAssemble($request);
+
+        $resposne = $instance->postAssemble($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1148,6 +1264,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_csv_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1162,7 +1279,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1171,6 +1290,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xls_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1185,7 +1305,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1194,6 +1316,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_html_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1208,7 +1331,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1217,6 +1342,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_mhtml_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1231,7 +1357,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1240,6 +1368,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_ods_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1254,7 +1383,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1263,6 +1394,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pdf_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1277,7 +1409,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1286,6 +1420,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xml_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1300,7 +1435,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1309,6 +1446,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_txt_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1323,7 +1461,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1332,6 +1472,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_tif_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1346,7 +1487,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1355,6 +1498,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsb_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1369,7 +1513,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1378,6 +1524,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsm_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1392,7 +1539,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1401,6 +1550,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsx_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1415,7 +1565,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1424,6 +1576,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xltm_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1438,7 +1591,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1447,6 +1602,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xltx_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1461,7 +1617,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1470,6 +1628,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xps_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1484,7 +1643,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1493,6 +1654,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_png_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1507,7 +1669,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1516,6 +1680,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_jpg_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1530,7 +1695,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1539,6 +1706,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_gif_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1553,7 +1721,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1562,6 +1732,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_emf_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1576,7 +1747,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1585,6 +1758,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_bmp_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1599,7 +1773,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1608,6 +1784,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_md_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1622,7 +1799,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1631,6 +1810,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_numbers_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1645,7 +1825,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1654,6 +1836,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_wmf_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1668,7 +1851,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1677,6 +1862,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_svg_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1691,7 +1877,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1700,6 +1888,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_docx_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1714,7 +1903,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1723,6 +1914,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pptx_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1737,7 +1929,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1746,6 +1940,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_json_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1760,7 +1955,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1769,6 +1966,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_sql_workbook()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1783,7 +1981,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1792,6 +1992,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_csv_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1806,7 +2007,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1815,6 +2018,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xls_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1829,7 +2033,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1838,6 +2044,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_html_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1852,7 +2059,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1861,6 +2070,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_mhtml_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1875,7 +2085,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1884,6 +2096,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_ods_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1898,7 +2111,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1907,6 +2122,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pdf_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1921,7 +2137,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1930,6 +2148,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xml_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1944,7 +2163,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1953,6 +2174,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_txt_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1967,7 +2189,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1976,6 +2200,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_tif_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -1990,7 +2215,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -1999,6 +2226,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsb_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2013,7 +2241,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2022,6 +2252,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsm_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2036,7 +2267,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2045,6 +2278,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsx_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2059,7 +2293,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2068,6 +2304,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xltm_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2082,7 +2319,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2091,6 +2330,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xltx_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2105,7 +2345,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2114,6 +2356,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xps_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2128,7 +2371,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2137,6 +2382,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_png_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2151,7 +2397,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2160,6 +2408,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_jpg_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2174,7 +2423,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2183,6 +2434,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_gif_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2197,7 +2449,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2206,6 +2460,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_emf_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2220,7 +2475,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2229,6 +2486,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_bmp_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2243,7 +2501,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2252,6 +2512,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_md_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2266,7 +2527,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2275,6 +2538,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_numbers_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2289,7 +2553,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2298,6 +2564,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_wmf_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2312,7 +2579,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2321,6 +2590,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_svg_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2335,7 +2605,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2344,6 +2616,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_docx_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2358,7 +2631,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2367,6 +2642,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pptx_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2381,7 +2657,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2390,6 +2668,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_json_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2404,7 +2683,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2413,6 +2694,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_sql_worksheet()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2427,7 +2709,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2436,6 +2720,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pdf_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2450,7 +2735,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2459,6 +2746,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_tif_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2473,7 +2761,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2482,6 +2772,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_png_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2496,7 +2787,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2505,6 +2798,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_jpg_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2519,7 +2813,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2528,6 +2824,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_gif_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2542,7 +2839,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2551,6 +2850,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_emf_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2565,7 +2865,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2574,6 +2876,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_bmp_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2588,7 +2891,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2597,6 +2902,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_png_picture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2611,7 +2917,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2620,6 +2928,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_jpg_picture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2634,7 +2943,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2643,6 +2954,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_gif_picture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2657,7 +2969,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2666,6 +2980,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_emf_picture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2680,7 +2995,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2689,6 +3006,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_bmp_picture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2703,7 +3021,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2712,6 +3032,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_csv_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2726,7 +3047,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2735,6 +3058,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xls_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2749,7 +3073,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2758,6 +3084,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_html_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2772,7 +3099,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2781,6 +3110,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_mhtml_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2795,7 +3125,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2804,6 +3136,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_ods_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2818,7 +3151,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2827,6 +3162,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pdf_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2841,7 +3177,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2850,6 +3188,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xml_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2864,7 +3203,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2873,6 +3214,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_txt_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2887,7 +3229,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2896,6 +3240,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_tif_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2910,7 +3255,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2919,6 +3266,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsb_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2933,7 +3281,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2942,6 +3292,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsm_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2956,7 +3307,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2965,6 +3318,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xlsx_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -2979,7 +3333,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -2988,6 +3344,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xltm_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3002,7 +3359,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3011,6 +3370,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xltx_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3025,7 +3385,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3034,6 +3396,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_xps_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3048,7 +3411,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3057,6 +3422,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_png_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3071,7 +3437,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3080,6 +3448,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_jpg_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3094,7 +3463,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3103,6 +3474,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_gif_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3117,7 +3489,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3126,6 +3500,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_emf_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3140,7 +3515,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3149,6 +3526,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_bmp_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3163,7 +3541,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3172,6 +3552,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_md_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3186,7 +3567,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3195,6 +3578,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_numbers_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3209,7 +3593,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3218,6 +3604,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_wmf_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3232,7 +3619,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3241,6 +3630,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_svg_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3255,7 +3645,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3264,6 +3656,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_docx_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3278,7 +3671,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3287,6 +3682,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_pptx_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3301,7 +3697,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3310,6 +3708,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_json_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3324,7 +3723,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3333,6 +3734,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_sql_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3347,7 +3749,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3356,6 +3760,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_png_oleobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3370,7 +3775,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3379,6 +3786,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_jpg_oleobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3393,7 +3801,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3402,6 +3812,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_gif_oleobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3416,7 +3827,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3425,6 +3838,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_emf_oleobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3439,7 +3853,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3448,6 +3864,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostExport_bmp_oleobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $book1Xlsx = "Book1.xlsx";
 
@@ -3462,7 +3879,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setObjectType( $objectType);
         $request->setFormat( $format);
-        $this->instance->postExport($request);
+
+        $resposne = $instance->postExport($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3471,6 +3890,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCompress_50()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3483,7 +3903,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostCompressRequest();
         $request->setFile( $mapFiles);
         $request->setCompressLevel( $compressLevel);
-        $this->instance->postCompress($request);
+
+        $resposne = $instance->postCompress($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3492,6 +3914,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostCompress_90()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3504,7 +3927,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostCompressRequest();
         $request->setFile( $mapFiles);
         $request->setCompressLevel( $compressLevel);
-        $this->instance->postCompress($request);
+
+        $resposne = $instance->postCompress($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3513,6 +3938,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_csv_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3527,7 +3953,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3536,6 +3964,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xls_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3550,7 +3979,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3559,6 +3990,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_html_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3573,7 +4005,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3582,6 +4016,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_mhtml_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3596,7 +4031,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3605,6 +4042,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_ods_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3619,7 +4057,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3628,6 +4068,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_pdf_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3642,7 +4083,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3651,6 +4094,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xml_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3665,7 +4109,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3674,6 +4120,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_txt_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3688,7 +4135,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3697,6 +4146,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_tif_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3711,7 +4161,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3720,6 +4172,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xlsb_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3734,7 +4187,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3743,6 +4198,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xlsm_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3757,7 +4213,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3766,6 +4224,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xlsx_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3780,7 +4239,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3789,6 +4250,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xltm_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3803,7 +4265,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3812,6 +4276,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xltx_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3826,7 +4291,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3835,6 +4302,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_xps_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3849,7 +4317,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3858,6 +4328,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_png_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3872,7 +4343,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3881,6 +4354,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_jpg_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3895,7 +4369,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3904,6 +4380,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_gif_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3918,7 +4395,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3927,6 +4406,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_emf_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3941,7 +4421,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3950,6 +4432,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_bmp_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3964,7 +4447,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3973,6 +4458,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_md_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -3987,7 +4473,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -3996,6 +4484,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_numbers_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4010,7 +4499,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4019,6 +4510,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_wmf_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4033,7 +4525,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4042,6 +4536,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_svg_true()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4056,7 +4551,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4065,6 +4562,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_docx_false()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4079,7 +4577,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4088,6 +4588,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_pptx_false()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4102,7 +4603,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4111,6 +4614,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_json_false()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4125,7 +4629,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4134,6 +4640,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMerge_sql_false()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4148,7 +4655,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
         $request->setMergeToOneSheet( $mergeToOneSheet);
-        $this->instance->postMerge($request);
+
+        $resposne = $instance->postMerge($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4157,6 +4666,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostUnlock()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $needUnlockXlsx = "needUnlock.xlsx";
 
         $mapFiles = array ();
@@ -4165,7 +4675,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostUnlockRequest();
         $request->setFile( $mapFiles);
         $request->setPassword( "123456");
-        $this->instance->postUnlock($request);
+
+        $resposne = $instance->postUnlock($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4174,6 +4686,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostProtect()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4188,7 +4701,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setProtectWorkbookRequest( $protectWorkbookRequest);
         $request->setPassword( "123456");
-        $this->instance->postProtect($request);
+
+        $resposne = $instance->postProtect($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4197,6 +4712,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostProtect_ProtectWorkbookRequest()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4210,7 +4726,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostProtectRequest();
         $request->setFile( $mapFiles);
         $request->setProtectWorkbookRequest( $protectWorkbookRequest);
-        $this->instance->postProtect($request);
+
+        $resposne = $instance->postProtect($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4219,6 +4737,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostSearch()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4229,7 +4748,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostSearchRequest();
         $request->setFile( $mapFiles);
         $request->setText( "12");
-        $this->instance->postSearch($request);
+
+        $resposne = $instance->postSearch($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4238,6 +4759,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReplace()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4249,7 +4771,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setText( "12");
         $request->setNewtext( "newtext");
-        $this->instance->postReplace($request);
+
+        $resposne = $instance->postReplace($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4258,6 +4782,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReplaceOnlySheetname()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4270,7 +4795,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setText( "12");
         $request->setNewtext( "newtext");
         $request->setSheetname( "Sheet1");
-        $this->instance->postReplace($request);
+
+        $resposne = $instance->postReplace($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4279,6 +4806,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWatermark()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $assemblyTestXlsx = "assemblytest.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4290,7 +4818,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setText( "aspose.cells cloud sdk");
         $request->setColor( "#773322");
-        $this->instance->postWatermark($request);
+
+        $resposne = $instance->postWatermark($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4299,6 +4829,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_chart()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4311,7 +4842,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4320,6 +4853,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_comment()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4332,7 +4866,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4341,6 +4877,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_picture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4353,7 +4890,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4362,6 +4901,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_shape()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4374,7 +4914,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4383,6 +4925,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_listobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4395,7 +4938,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4404,6 +4949,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_hyperlink()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4416,7 +4962,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4425,6 +4973,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_oleobject()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4437,7 +4986,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4446,6 +4997,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_pivottable()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4458,7 +5010,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4467,6 +5021,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_validation()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4479,7 +5034,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4488,6 +5045,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostClearObjects_Background()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
         $dataSourceXlsx = "datasource.xlsx";
 
@@ -4500,7 +5058,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostClearObjectsRequest();
         $request->setFile( $mapFiles);
         $request->setObjecttype( $objecttype);
-        $this->instance->postClearObjects($request);
+
+        $resposne = $instance->postClearObjects($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4509,6 +5069,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostRepair_xlsx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $format = "xlsx";
@@ -4519,7 +5080,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
-        $this->instance->postRepair($request);
+
+        $resposne = $instance->postRepair($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4528,6 +5091,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostRepair_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $format = "pdf";
@@ -4538,7 +5102,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
-        $this->instance->postRepair($request);
+
+        $resposne = $instance->postRepair($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4547,6 +5113,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostRepair_csv()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $format = "csv";
@@ -4557,7 +5124,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
-        $this->instance->postRepair($request);
+
+        $resposne = $instance->postRepair($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4566,6 +5135,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostRepair_png()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $format = "png";
@@ -4576,7 +5146,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostRepairRequest();
         $request->setFile( $mapFiles);
         $request->setOutFormat( $format);
-        $this->instance->postRepair($request);
+
+        $resposne = $instance->postRepair($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4585,6 +5157,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReverse_rows_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $rotateType = "rows";
@@ -4597,7 +5170,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
         $request->setOutFormat( $format);
-        $this->instance->postReverse($request);
+
+        $resposne = $instance->postReverse($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4606,6 +5181,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReverse_cols_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $rotateType = "cols";
@@ -4618,7 +5194,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
         $request->setOutFormat( $format);
-        $this->instance->postReverse($request);
+
+        $resposne = $instance->postReverse($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4627,6 +5205,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReverse_both_pdf()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $rotateType = "both";
@@ -4639,7 +5218,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
         $request->setOutFormat( $format);
-        $this->instance->postReverse($request);
+
+        $resposne = $instance->postReverse($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4648,6 +5229,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReverse_rows_csv()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $rotateType = "rows";
@@ -4660,7 +5242,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
         $request->setOutFormat( $format);
-        $this->instance->postReverse($request);
+
+        $resposne = $instance->postReverse($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4669,6 +5253,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReverse_cols_png()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $rotateType = "cols";
@@ -4681,7 +5266,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
         $request->setOutFormat( $format);
-        $this->instance->postReverse($request);
+
+        $resposne = $instance->postReverse($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4690,6 +5277,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostReverse_both_xlsx()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $rotateType = "both";
@@ -4702,7 +5290,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request->setFile( $mapFiles);
         $request->setRotateType( $rotateType);
         $request->setOutFormat( $format);
-        $this->instance->postReverse($request);
+
+        $resposne = $instance->postReverse($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4711,6 +5301,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testGetMetadata()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $mapFiles = array ();
@@ -4719,7 +5310,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new GetMetadataRequest();
         $request->setFile( $mapFiles);
         $request->setType( "all");
-        $this->instance->getMetadata($request);
+
+        $resposne = $instance->getMetadata($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4728,6 +5321,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteMetadata()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $mapFiles = array ();
@@ -4736,7 +5330,9 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new DeleteMetadataRequest();
         $request->setFile( $mapFiles);
         $request->setType( "all");
-        $this->instance->deleteMetadata($request);
+
+        $resposne = $instance->deleteMetadata($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -4745,6 +5341,7 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
 
     public function testPostMetadata()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $book1Xlsx = "Book1.xlsx";
 
         $mapFiles = array ();
@@ -4759,6 +5356,8 @@ class LightCellsTest extends \PHPUnit_Framework_TestCase
         $request = new PostMetadataRequest();
         $request->setFile( $mapFiles);
         $request->setCellsDocuments( $cellsDocuments);
-        $this->instance->postMetadata($request);
+
+        $resposne = $instance->postMetadata($request);
+        $this->assertTrue($resposne !==null );
     }
 }

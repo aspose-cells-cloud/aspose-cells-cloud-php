@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PropertiesControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -41,58 +41,30 @@ use \Aspose\Cells\Cloud\Request\GetDocumentPropertyRequest;
 use \Aspose\Cells\Cloud\Request\PutDocumentPropertyRequest; 
 
 use PHPUnit\Framework\TestCase;
-class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
+final class PropertiesControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetDocumentProperties of PropertiesController.
     /// </summary>
 
     public function testGetDocumentProperties()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetDocumentPropertiesRequest();
         $request->setName( $remoteName);
         $request->setType( "All");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getDocumentProperties($request);
+
+        $resposne = $instance->getDocumentProperties($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -101,19 +73,22 @@ class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetDocumentProperty()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetDocumentPropertyRequest();
         $request->setName( $remoteName);
         $request->setPropertyName( "Author");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getDocumentProperty($request);
+
+        $resposne = $instance->getDocumentProperty($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -122,6 +97,7 @@ class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutDocumentProperty()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -130,14 +106,16 @@ class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
         $property = new \Aspose\Cells\Cloud\Model\CellsDocumentProperty();
         $property->setName("Author" ); 
         $property->setValue("cells developer" ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PutDocumentPropertyRequest();
         $request->setName( $remoteName);
         $request->setProperty( $property);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putDocumentProperty($request);
+
+        $resposne = $instance->putDocumentProperty($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -146,12 +124,13 @@ class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteDocumentProperty()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteDocumentPropertyRequest();
         $request->setName( $remoteName);
@@ -159,7 +138,9 @@ class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setType( "All");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteDocumentProperty($request);
+
+        $resposne = $instance->deleteDocumentProperty($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -168,17 +149,20 @@ class PropertiesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteDocumentProperties()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteDocumentPropertiesRequest();
         $request->setName( $remoteName);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteDocumentProperties($request);
+
+        $resposne = $instance->deleteDocumentProperties($request);
+        $this->assertTrue($resposne !==null );
     }
 }

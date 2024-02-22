@@ -45,7 +45,7 @@ class PostWatermarkRequest extends BaseApiRequest
 {
 
     /*
-    * File : e.g. #1032ff
+    * File : File to upload
     */ 
     public $file;
 
@@ -60,7 +60,7 @@ class PostWatermarkRequest extends BaseApiRequest
     }
 
     /*
-    * text : 
+    * text : background text.
     */ 
     public $text;
 
@@ -210,10 +210,10 @@ class PostWatermarkRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\ Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

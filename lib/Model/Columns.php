@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Columns implements  ArrayAccess
+class Columns
 {
      const DISCRIMINATOR = null;
     /**
@@ -241,7 +241,7 @@ class Columns implements  ArrayAccess
     /**
      * Sets max_column
      *
-     *  
+     *  The max column index.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class Columns implements  ArrayAccess
     /**
      * Sets columns_count
      *
-     *  
+     *  Column count.
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class Columns implements  ArrayAccess
     /**
      * Sets columns_list
      *
-     *  
+     *  Columns list.
      *
      * @return $this
      */

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="XmlControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -38,57 +38,29 @@ use \Aspose\Cells\Cloud\Request\PostWorkbookExportXMLRequest;
 use \Aspose\Cells\Cloud\Request\PostWorkbookImportXMLRequest; 
 
 use PHPUnit\Framework\TestCase;
-class XmlControllerTest extends \PHPUnit_Framework_TestCase
+final class XmlControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for PostWorkbookExportXML of XmlController.
     /// </summary>
 
     public function testPostWorkbookExportXML()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Template.xlsx";
         $remoteName = "Template.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorkbookExportXMLRequest();
         $request->setName( $remoteName);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorkbookExportXML($request);
+
+        $resposne = $instance->postWorkbookExportXML($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -97,6 +69,7 @@ class XmlControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorkbookImportXML()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Template.xlsx";
@@ -113,14 +86,16 @@ class XmlControllerTest extends \PHPUnit_Framework_TestCase
         $importXMLRequest = new \Aspose\Cells\Cloud\Model\ImportXMLRequest();
         $importXMLRequest->setXMLFileSource($importXMLRequestXMLFileSource ); 
         $importXMLRequest->setImportPosition($importXMLRequestImportPosition ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-        CellsApiTestBase::ready(  $this->instance,$dataXML ,$remoteFolder . "/data.xml" ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$dataXML ,$remoteFolder . "/data.xml" ,  "");
      
         $request = new PostWorkbookImportXMLRequest();
         $request->setName( $remoteName);
         $request->setImportXMLRequest( $importXMLRequest);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorkbookImportXML($request);
+
+        $resposne = $instance->postWorkbookImportXML($request);
+        $this->assertTrue($resposne !==null );
     }
 }

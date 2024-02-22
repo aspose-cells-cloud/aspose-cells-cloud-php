@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ConvertParameter implements  ArrayAccess
+class ConvertParameter
 {
      const DISCRIMINATOR = null;
     /**

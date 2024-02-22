@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PicturesControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -42,58 +42,30 @@ use \Aspose\Cells\Cloud\Request\PostWorksheetPictureRequest;
 use \Aspose\Cells\Cloud\Request\PutWorksheetAddPictureRequest; 
 
 use PHPUnit\Framework\TestCase;
-class PicturesControllerTest extends \PHPUnit_Framework_TestCase
+final class PicturesControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetWorksheetPictures of PicturesController.
     /// </summary>
 
     public function testGetWorksheetPictures()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetPicturesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet6");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetPictures($request);
+
+        $resposne = $instance->getWorksheetPictures($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -102,12 +74,13 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetWorksheetPictureWithFormat()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetWorksheetPictureWithFormatRequest();
         $request->setName( $remoteName);
@@ -116,7 +89,9 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setFormat( "png");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getWorksheetPictureWithFormat($request);
+
+        $resposne = $instance->getWorksheetPictureWithFormat($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -125,14 +100,15 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPutWorksheetAddPicture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $waterMarkPNG = "WaterMark.png";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-        CellsApiTestBase::ready(  $this->instance,$waterMarkPNG ,$remoteFolder . "/WaterMark.png" ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$waterMarkPNG ,$remoteFolder . "/WaterMark.png" ,  "");
      
         $request = new PutWorksheetAddPictureRequest();
         $request->setName( $remoteName);
@@ -144,7 +120,9 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPicturePath( $remoteFolder . "/WaterMark.png");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->putWorksheetAddPicture($request);
+
+        $resposne = $instance->putWorksheetAddPicture($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -153,6 +131,7 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testPostWorksheetPicture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -161,7 +140,7 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
         $picture = new \Aspose\Cells\Cloud\Model\Picture();
         $picture->setLeft(10 ); 
         $picture->setBottom(10 ); 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorksheetPictureRequest();
         $request->setName( $remoteName);
@@ -170,7 +149,9 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPicture( $picture);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->postWorksheetPicture($request);
+
+        $resposne = $instance->postWorksheetPicture($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -179,12 +160,13 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetPicture()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetPictureRequest();
         $request->setName( $remoteName);
@@ -192,7 +174,9 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
         $request->setPictureIndex( 0);
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetPicture($request);
+
+        $resposne = $instance->deleteWorksheetPicture($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -201,18 +185,21 @@ class PicturesControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteWorksheetPictures()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteWorksheetPicturesRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet6");
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->deleteWorksheetPictures($request);
+
+        $resposne = $instance->deleteWorksheetPictures($request);
+        $this->assertTrue($resposne !==null );
     }
 }

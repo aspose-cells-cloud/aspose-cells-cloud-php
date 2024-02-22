@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class AutoFitterOptions implements  ArrayAccess
+class AutoFitterOptions
 {
      const DISCRIMINATOR = null;
     /**
@@ -47,7 +47,6 @@ class AutoFitterOptions implements  ArrayAccess
       */
     protected static $swaggerTypes = [
         'auto_fit_merged_cells_type' => 'string',
-        'auto_fit_merged_cells' => 'bool',
         'ignore_hidden' => 'bool',
         'only_auto' => 'bool',
         'default_edit_language' => 'string',
@@ -64,7 +63,6 @@ class AutoFitterOptions implements  ArrayAccess
       */
     protected static $swaggerFormats = [
         'auto_fit_merged_cells_type' => null  ,
-        'auto_fit_merged_cells' => null  ,
         'ignore_hidden' => null  ,
         'only_auto' => null  ,
         'default_edit_language' => null  ,
@@ -102,7 +100,6 @@ class AutoFitterOptions implements  ArrayAccess
      */
     protected static $attributeMap = [
          'auto_fit_merged_cells_type' => 'AutoFitMergedCellsType' ,
-         'auto_fit_merged_cells' => 'AutoFitMergedCells' ,
          'ignore_hidden' => 'IgnoreHidden' ,
          'only_auto' => 'OnlyAuto' ,
          'default_edit_language' => 'DefaultEditLanguage' ,
@@ -119,7 +116,6 @@ class AutoFitterOptions implements  ArrayAccess
      */
     protected static $setters = [
         'auto_fit_merged_cells_type' => 'setAutoFitMergedCellsType' ,
-        'auto_fit_merged_cells' => 'setAutoFitMergedCells' ,
         'ignore_hidden' => 'setIgnoreHidden' ,
         'only_auto' => 'setOnlyAuto' ,
         'default_edit_language' => 'setDefaultEditLanguage' ,
@@ -136,7 +132,6 @@ class AutoFitterOptions implements  ArrayAccess
      */
     protected static $getters = [
         'auto_fit_merged_cells_type' => 'getAutoFitMergedCellsType' ,
-        'auto_fit_merged_cells' => 'getAutoFitMergedCells' ,
         'ignore_hidden' => 'getIgnoreHidden' ,
         'only_auto' => 'getOnlyAuto' ,
         'default_edit_language' => 'getDefaultEditLanguage' ,
@@ -203,7 +198,6 @@ class AutoFitterOptions implements  ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['auto_fit_merged_cells_type'] = isset($data['auto_fit_merged_cells_type']) ? $data['auto_fit_merged_cells_type'] : null;
-        $this->container['auto_fit_merged_cells'] = isset($data['auto_fit_merged_cells']) ? $data['auto_fit_merged_cells'] : null;
         $this->container['ignore_hidden'] = isset($data['ignore_hidden']) ? $data['ignore_hidden'] : null;
         $this->container['only_auto'] = isset($data['only_auto']) ? $data['only_auto'] : null;
         $this->container['default_edit_language'] = isset($data['default_edit_language']) ? $data['default_edit_language'] : null;
@@ -223,9 +217,6 @@ class AutoFitterOptions implements  ArrayAccess
         $invalidProperties = [];
         if ($this->container['auto_fit_merged_cells_type'] === null) {
             $invalidProperties[] = "'auto_fit_merged_cells_type' can't be null";
-        }
-        if ($this->container['auto_fit_merged_cells'] === null) {
-            $invalidProperties[] = "'auto_fit_merged_cells' can't be null";
         }
         if ($this->container['ignore_hidden'] === null) {
             $invalidProperties[] = "'ignore_hidden' can't be null";
@@ -260,9 +251,6 @@ class AutoFitterOptions implements  ArrayAccess
     public function valid()
     {
         if ($this->container['auto_fit_merged_cells_type'] === null) {
-                    return false;
-                }
-        if ($this->container['auto_fit_merged_cells'] === null) {
                     return false;
                 }
         if ($this->container['ignore_hidden'] === null) {
@@ -308,29 +296,6 @@ class AutoFitterOptions implements  ArrayAccess
     public function setAutoFitMergedCellsType($auto_fit_merged_cells_type)
     {
         $this->container['auto_fit_merged_cells_type'] = $auto_fit_merged_cells_type;
-
-        return $this;
-    }
-   /**
-     * Gets auto_fit_merged_cells
-     *
-     * @return bool
-     */
-    public function getAutoFitMergedCells()
-    {
-        return $this->container['auto_fit_merged_cells'];
-    }
-
-    /**
-     * Sets auto_fit_merged_cells
-     *
-     *  Indicates whether auto fit row height when the cells is merged in a row.                        The default value is false.
-     *
-     * @return $this
-     */
-    public function setAutoFitMergedCells($auto_fit_merged_cells)
-    {
-        $this->container['auto_fit_merged_cells'] = $auto_fit_merged_cells;
 
         return $this;
     }

@@ -27,10 +27,10 @@
 
 namespace Aspose\Cells\Cloud\Model;
 
-use \ArrayAccess;
+
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class LegendEntries implements  ArrayAccess
+class LegendEntries
 {
      const DISCRIMINATOR = null;
     /**

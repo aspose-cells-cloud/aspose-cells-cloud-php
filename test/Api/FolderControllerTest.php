@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FolderControllerTests.php.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
@@ -41,56 +41,28 @@ use \Aspose\Cells\Cloud\Request\GetFilesListRequest;
 use \Aspose\Cells\Cloud\Request\MoveFolderRequest; 
 
 use PHPUnit\Framework\TestCase;
-class FolderControllerTest extends \PHPUnit_Framework_TestCase
+final class FolderControllerTest extends TestCase
 {
-
-	protected  $instance;
-    /**
-     * Setup before running any test cases
-     */
-    public static function setUpBeforeClass()
-    {
-    }
-
-    /**
-     * Setup before running each test case
-     */
-    public function setUp()
-    {
-        $this->instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-    }
-
-    /**
-     * Clean up after running each test case
-     */
-    public function tearDown()
-    {
-    }
-
-    /**ve
-     * Clean up after running all test cases
-     */
-    public static function tearDownAfterClass()
-    {
-    }
-
     /// <summary>
     /// Test for GetFilesList of FolderController.
     /// </summary>
 
     public function testGetFilesList()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new GetFilesListRequest();
         $request->setPath( $remoteFolder);
         $request->setStorageName( "");
-        $this->instance->getFilesList($request);
+
+        $resposne = $instance->getFilesList($request);
+        $this->assertTrue($resposne !==null );
     }
 
     /// <summary>
@@ -99,17 +71,20 @@ class FolderControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testCreateFolder()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new CreateFolderRequest();
         $request->setPath( "OutResult/NewFolder");
         $request->setStorageName( "");
-        $this->instance->createFolder($request);
+
+        $resposne = $instance->createFolder($request);
+        $this->assertTrue(True);
     }
 
     /// <summary>
@@ -118,19 +93,22 @@ class FolderControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testCopyFolder()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new CopyFolderRequest();
         $request->setSrcPath( $remoteFolder);
         $request->setDestPath( "OutResult/Create");
         $request->setSrcStorageName( "");
         $request->setDestStorageName( "");
-        $this->instance->copyFolder($request);
+
+        $resposne = $instance->copyFolder($request);
+        $this->assertTrue(True);
     }
 
     /// <summary>
@@ -139,19 +117,22 @@ class FolderControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testMoveFolder()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new MoveFolderRequest();
         $request->setSrcPath( "OutResult/Create");
         $request->setDestPath( "OutResult/Move");
         $request->setSrcStorageName( "");
         $request->setDestStorageName( "");
-        $this->instance->moveFolder($request);
+
+        $resposne = $instance->moveFolder($request);
+        $this->assertTrue(True);
     }
 
     /// <summary>
@@ -160,17 +141,20 @@ class FolderControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteFolder()
     {
+        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
-        CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new DeleteFolderRequest();
         $request->setPath( "OutResult/Create");
         $request->setStorageName( "");
         $request->setRecursive( 'true');
-        $this->instance->deleteFolder($request);
+
+        $resposne = $instance->deleteFolder($request);
+        $this->assertTrue(True);
     }
 }
