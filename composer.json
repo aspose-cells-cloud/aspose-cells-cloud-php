@@ -1,7 +1,7 @@
 {
 	"name" : "aspose/cells-sdk-php",
 	"type" : "library",
-	"description" : "A PHP library for communicating with the Aspose.Cells Cloud API",
+	"description" : "Effortlessly handle Excel and other spreadsheet documents with features like opening, generating, editing, splitting, merging, comparing, and converting. Seamlessly integrate Cloud API into your solutions to efficiently manipulate documents. Convert Excel or other spreadsheets to CSV, PDF, JSON, XML, HTML, images, and more.",
 	"keywords" : [
 		"aspose",
 		"php",
