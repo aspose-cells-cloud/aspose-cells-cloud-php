@@ -82,7 +82,7 @@ To begin with Aspose.Cells Cloud SDK, here's what you need to do:
    ```json
    {
        "require": {
-           "aspose/cells-cloud": "^21.9"
+           "aspose/cells-cloud": "^24.3"
        }
    }
    ```
