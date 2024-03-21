@@ -77,7 +77,7 @@ To begin with Aspose.Cells Cloud SDK, here's what you need to do:
     
     **To install Aspose.Cells Cloud SDK via Composer, follow these steps:**
 
-    2.1. Add Aspose.Cells Cloud SDK as a dependency to your `composer.json` file:
+    - Add Aspose.Cells Cloud SDK as a dependency to your `composer.json` file:
    
    ```json
    {
@@ -87,19 +87,20 @@ To begin with Aspose.Cells Cloud SDK, here's what you need to do:
    }
    ```
 
-    2.2. Run Composer update to install the SDK:
+    - Run Composer update to install the SDK:
 
    ```bash
    composer update
    ```
 
-    2.3. Include Composer's autoloader in your PHP code:
+    - Include Composer's autoloader in your PHP code:
 
    ```php
    require 'vendor/autoload.php';
    ```
 
-    2.4. You're now ready to use Aspose.Cells Cloud SDK in your PHP project.
+    - You're now ready to use Aspose.Cells Cloud SDK in your PHP project.
+    
 3. Use the conversion code provided below as a reference to add or modify your application.
 
 
