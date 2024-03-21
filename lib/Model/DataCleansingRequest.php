@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="FileInfo.cs">
+ * <copyright company="Aspose" file="DataCleansingRequest.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FileInfo
+class DataCleansingRequest
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class FileInfo
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FileInfo';     
+    protected static $swaggerModelName = 'DataCleansingRequest';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,11 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'file_size' => 'int',
-        'file_content' => 'string'
+        'file' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'check_excel_restriction' => 'bool',
+        'region' => 'string',
+        'out_file_format' => 'string',
+        'data_cleansing' => '\Aspose\Cells\Cloud\Model\DataCleansing'
     ];
 
     /**
@@ -57,9 +59,11 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null  ,
-        'file_size' => null  ,
-        'file_content' => null  
+        'file' => null  ,
+        'check_excel_restriction' => null  ,
+        'region' => null  ,
+        'out_file_format' => null  ,
+        'data_cleansing' => null  
     ];
 
     /**
@@ -89,9 +93,11 @@ class FileInfo
      * @var string[]
      */
     protected static $attributeMap = [
-         'filename' => 'Filename' ,
-         'file_size' => 'FileSize' ,
-         'file_content' => 'FileContent' 
+         'file' => 'File' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' ,
+         'region' => 'Region' ,
+         'out_file_format' => 'OutFileFormat' ,
+         'data_cleansing' => 'DataCleansing' 
     ];
 
     /**
@@ -100,9 +106,11 @@ class FileInfo
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename' ,
-        'file_size' => 'setFileSize' ,
-        'file_content' => 'setFileContent' 
+        'file' => 'setFile' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' ,
+        'region' => 'setRegion' ,
+        'out_file_format' => 'setOutFileFormat' ,
+        'data_cleansing' => 'setDataCleansing' 
     ];
 
     /**
@@ -111,9 +119,11 @@ class FileInfo
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename' ,
-        'file_size' => 'getFileSize' ,
-        'file_content' => 'getFileContent' 
+        'file' => 'getFile' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' ,
+        'region' => 'getRegion' ,
+        'out_file_format' => 'getOutFileFormat' ,
+        'data_cleansing' => 'getDataCleansing' 
     ];
 
     /**
@@ -172,9 +182,11 @@ class FileInfo
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $data['file_content'] : null;
+        $this->container['file'] = isset($data['file']) ? $data['file'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['out_file_format'] = isset($data['out_file_format']) ? $data['out_file_format'] : null;
+        $this->container['data_cleansing'] = isset($data['data_cleansing']) ? $data['data_cleansing'] : null;
     }
 
     /**
@@ -185,14 +197,20 @@ class FileInfo
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['filename'] === null) {
-            $invalidProperties[] = "'filename' can't be null";
+        if ($this->container['file'] === null) {
+            $invalidProperties[] = "'file' can't be null";
         }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
         }
-        if ($this->container['file_content'] === null) {
-            $invalidProperties[] = "'file_content' can't be null";
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
+        }
+        if ($this->container['out_file_format'] === null) {
+            $invalidProperties[] = "'out_file_format' can't be null";
+        }
+        if ($this->container['data_cleansing'] === null) {
+            $invalidProperties[] = "'data_cleansing' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +223,135 @@ class FileInfo
      */
     public function valid()
     {
-        if ($this->container['filename'] === null) {
+        if ($this->container['file'] === null) {
                     return false;
                 }
-        if ($this->container['file_size'] === null) {
+        if ($this->container['check_excel_restriction'] === null) {
                     return false;
                 }
-        if ($this->container['file_content'] === null) {
+        if ($this->container['region'] === null) {
+                    return false;
+                }
+        if ($this->container['out_file_format'] === null) {
+                    return false;
+                }
+        if ($this->container['data_cleansing'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets filename
+     * Gets file
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function getFilename()
+    public function getFile()
     {
-        return $this->container['filename'];
+        return $this->container['file'];
     }
 
     /**
-     * Sets filename
+     * Sets file
      *
-     *  Filename. 
+     *  Spreadsheet files that require data cleaning. 
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setFile($file)
     {
-        $this->container['filename'] = $filename;
+        $this->container['file'] = $file;
 
         return $this;
     }
    /**
-     * Gets file_size
+     * Gets check_excel_restriction
      *
-     * @return int
+     * @return bool
      */
-    public function getFileSize()
+    public function getCheckExcelRestriction()
     {
-        return $this->container['file_size'];
+        return $this->container['check_excel_restriction'];
     }
 
     /**
-     * Sets file_size
+     * Sets check_excel_restriction
      *
-     *  File size.
+     *  Whether check restriction of Spreadsheet file when user modify cells related objects.
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setCheckExcelRestriction($check_excel_restriction)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
 
         return $this;
     }
    /**
-     * Gets file_content
+     * Gets region
      *
      * @return string
      */
-    public function getFileContent()
+    public function getRegion()
     {
-        return $this->container['file_content'];
+        return $this->container['region'];
     }
 
     /**
-     * Sets file_content
+     * Sets region
      *
-     *  File content,  byte to base64 string.
+     *  The regional settings for workbook.
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setRegion($region)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['region'] = $region;
+
+        return $this;
+    }
+   /**
+     * Gets out_file_format
+     *
+     * @return string
+     */
+    public function getOutFileFormat()
+    {
+        return $this->container['out_file_format'];
+    }
+
+    /**
+     * Sets out_file_format
+     *
+     *  finish to data cleansing, outfile`s file format.
+     *
+     * @return $this
+     */
+    public function setOutFileFormat($out_file_format)
+    {
+        $this->container['out_file_format'] = $out_file_format;
+
+        return $this;
+    }
+   /**
+     * Gets data_cleansing
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataCleansing
+     */
+    public function getDataCleansing()
+    {
+        return $this->container['data_cleansing'];
+    }
+
+    /**
+     * Sets data_cleansing
+     *
+     *  Data cleansing content
+     *
+     * @return $this
+     */
+    public function setDataCleansing($data_cleansing)
+    {
+        $this->container['data_cleansing'] = $data_cleansing;
 
         return $this;
     }

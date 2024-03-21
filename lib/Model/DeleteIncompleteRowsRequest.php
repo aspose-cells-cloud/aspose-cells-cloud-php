@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="FileInfo.cs">
+ * <copyright company="Aspose" file="DeleteIncompleteRowsRequest.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FileInfo
+class DeleteIncompleteRowsRequest
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class FileInfo
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FileInfo';     
+    protected static $swaggerModelName = 'DeleteIncompleteRowsRequest';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,11 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'file_size' => 'int',
-        'file_content' => 'string'
+        'file' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'out_file_format' => 'string',
+        'check_excel_restriction' => 'bool',
+        'region' => 'string',
+        'ranges' => '\Aspose\Cells\Cloud\Model\Range[]'
     ];
 
     /**
@@ -57,9 +59,11 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null  ,
-        'file_size' => null  ,
-        'file_content' => null  
+        'file' => null  ,
+        'out_file_format' => null  ,
+        'check_excel_restriction' => null  ,
+        'region' => null  ,
+        'ranges' => null  
     ];
 
     /**
@@ -89,9 +93,11 @@ class FileInfo
      * @var string[]
      */
     protected static $attributeMap = [
-         'filename' => 'Filename' ,
-         'file_size' => 'FileSize' ,
-         'file_content' => 'FileContent' 
+         'file' => 'File' ,
+         'out_file_format' => 'OutFileFormat' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' ,
+         'region' => 'Region' ,
+         'ranges' => 'Ranges' 
     ];
 
     /**
@@ -100,9 +106,11 @@ class FileInfo
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename' ,
-        'file_size' => 'setFileSize' ,
-        'file_content' => 'setFileContent' 
+        'file' => 'setFile' ,
+        'out_file_format' => 'setOutFileFormat' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' ,
+        'region' => 'setRegion' ,
+        'ranges' => 'setRanges' 
     ];
 
     /**
@@ -111,9 +119,11 @@ class FileInfo
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename' ,
-        'file_size' => 'getFileSize' ,
-        'file_content' => 'getFileContent' 
+        'file' => 'getFile' ,
+        'out_file_format' => 'getOutFileFormat' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' ,
+        'region' => 'getRegion' ,
+        'ranges' => 'getRanges' 
     ];
 
     /**
@@ -172,9 +182,11 @@ class FileInfo
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $data['file_content'] : null;
+        $this->container['file'] = isset($data['file']) ? $data['file'] : null;
+        $this->container['out_file_format'] = isset($data['out_file_format']) ? $data['out_file_format'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['ranges'] = isset($data['ranges']) ? $data['ranges'] : null;
     }
 
     /**
@@ -185,14 +197,20 @@ class FileInfo
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['filename'] === null) {
-            $invalidProperties[] = "'filename' can't be null";
+        if ($this->container['file'] === null) {
+            $invalidProperties[] = "'file' can't be null";
         }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
+        if ($this->container['out_file_format'] === null) {
+            $invalidProperties[] = "'out_file_format' can't be null";
         }
-        if ($this->container['file_content'] === null) {
-            $invalidProperties[] = "'file_content' can't be null";
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
+        }
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
+        }
+        if ($this->container['ranges'] === null) {
+            $invalidProperties[] = "'ranges' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +223,135 @@ class FileInfo
      */
     public function valid()
     {
-        if ($this->container['filename'] === null) {
+        if ($this->container['file'] === null) {
                     return false;
                 }
-        if ($this->container['file_size'] === null) {
+        if ($this->container['out_file_format'] === null) {
                     return false;
                 }
-        if ($this->container['file_content'] === null) {
+        if ($this->container['check_excel_restriction'] === null) {
+                    return false;
+                }
+        if ($this->container['region'] === null) {
+                    return false;
+                }
+        if ($this->container['ranges'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets filename
+     * Gets file
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function getFilename()
+    public function getFile()
     {
-        return $this->container['filename'];
+        return $this->container['file'];
     }
 
     /**
-     * Sets filename
+     * Sets file
      *
-     *  Filename. 
+     *  Spreadsheet files that require data fulling. 
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setFile($file)
     {
-        $this->container['filename'] = $filename;
+        $this->container['file'] = $file;
 
         return $this;
     }
    /**
-     * Gets file_size
+     * Gets out_file_format
      *
-     * @return int
+     * @return string
      */
-    public function getFileSize()
+    public function getOutFileFormat()
     {
-        return $this->container['file_size'];
+        return $this->container['out_file_format'];
     }
 
     /**
-     * Sets file_size
+     * Sets out_file_format
      *
-     *  File size.
+     *  finish to data cleansing, outfile`s file format.
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setOutFileFormat($out_file_format)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['out_file_format'] = $out_file_format;
 
         return $this;
     }
    /**
-     * Gets file_content
+     * Gets check_excel_restriction
      *
-     * @return string
+     * @return bool
      */
-    public function getFileContent()
+    public function getCheckExcelRestriction()
     {
-        return $this->container['file_content'];
+        return $this->container['check_excel_restriction'];
     }
 
     /**
-     * Sets file_content
+     * Sets check_excel_restriction
      *
-     *  File content,  byte to base64 string.
+     *  Whether check restriction of Spreadsheet file when user modify cells related objects.
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setCheckExcelRestriction($check_excel_restriction)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
+
+        return $this;
+    }
+   /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     *  The regional settings for workbook.
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
+
+        return $this;
+    }
+   /**
+     * Gets ranges
+     *
+     * @return \Aspose\Cells\Cloud\Model\Range[]
+     */
+    public function getRanges()
+    {
+        return $this->container['ranges'];
+    }
+
+    /**
+     * Sets ranges
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setRanges($ranges)
+    {
+        $this->container['ranges'] = $ranges;
 
         return $this;
     }

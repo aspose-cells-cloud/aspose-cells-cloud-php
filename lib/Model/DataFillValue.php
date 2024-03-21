@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="FileInfo.cs">
+ * <copyright company="Aspose" file="DataFillValue.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FileInfo
+class DataFillValue
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class FileInfo
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FileInfo';     
+    protected static $swaggerModelName = 'DataFillValue';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,11 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'file_size' => 'int',
-        'file_content' => 'string'
+        'default_boolean' => 'bool',
+        'default_string' => 'string',
+        'default_number' => 'int',
+        'default_double' => 'double',
+        'default_date' => 'string'
     ];
 
     /**
@@ -57,9 +59,11 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null  ,
-        'file_size' => null  ,
-        'file_content' => null  
+        'default_boolean' => null  ,
+        'default_string' => null  ,
+        'default_number' => null  ,
+        'default_double' => null  ,
+        'default_date' => null  
     ];
 
     /**
@@ -89,9 +93,11 @@ class FileInfo
      * @var string[]
      */
     protected static $attributeMap = [
-         'filename' => 'Filename' ,
-         'file_size' => 'FileSize' ,
-         'file_content' => 'FileContent' 
+         'default_boolean' => 'DefaultBoolean' ,
+         'default_string' => 'DefaultString' ,
+         'default_number' => 'DefaultNumber' ,
+         'default_double' => 'DefaultDouble' ,
+         'default_date' => 'DefaultDate' 
     ];
 
     /**
@@ -100,9 +106,11 @@ class FileInfo
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename' ,
-        'file_size' => 'setFileSize' ,
-        'file_content' => 'setFileContent' 
+        'default_boolean' => 'setDefaultBoolean' ,
+        'default_string' => 'setDefaultString' ,
+        'default_number' => 'setDefaultNumber' ,
+        'default_double' => 'setDefaultDouble' ,
+        'default_date' => 'setDefaultDate' 
     ];
 
     /**
@@ -111,9 +119,11 @@ class FileInfo
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename' ,
-        'file_size' => 'getFileSize' ,
-        'file_content' => 'getFileContent' 
+        'default_boolean' => 'getDefaultBoolean' ,
+        'default_string' => 'getDefaultString' ,
+        'default_number' => 'getDefaultNumber' ,
+        'default_double' => 'getDefaultDouble' ,
+        'default_date' => 'getDefaultDate' 
     ];
 
     /**
@@ -172,9 +182,11 @@ class FileInfo
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $data['file_content'] : null;
+        $this->container['default_boolean'] = isset($data['default_boolean']) ? $data['default_boolean'] : null;
+        $this->container['default_string'] = isset($data['default_string']) ? $data['default_string'] : null;
+        $this->container['default_number'] = isset($data['default_number']) ? $data['default_number'] : null;
+        $this->container['default_double'] = isset($data['default_double']) ? $data['default_double'] : null;
+        $this->container['default_date'] = isset($data['default_date']) ? $data['default_date'] : null;
     }
 
     /**
@@ -185,14 +197,20 @@ class FileInfo
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['filename'] === null) {
-            $invalidProperties[] = "'filename' can't be null";
+        if ($this->container['default_boolean'] === null) {
+            $invalidProperties[] = "'default_boolean' can't be null";
         }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
+        if ($this->container['default_string'] === null) {
+            $invalidProperties[] = "'default_string' can't be null";
         }
-        if ($this->container['file_content'] === null) {
-            $invalidProperties[] = "'file_content' can't be null";
+        if ($this->container['default_number'] === null) {
+            $invalidProperties[] = "'default_number' can't be null";
+        }
+        if ($this->container['default_double'] === null) {
+            $invalidProperties[] = "'default_double' can't be null";
+        }
+        if ($this->container['default_date'] === null) {
+            $invalidProperties[] = "'default_date' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +223,135 @@ class FileInfo
      */
     public function valid()
     {
-        if ($this->container['filename'] === null) {
+        if ($this->container['default_boolean'] === null) {
                     return false;
                 }
-        if ($this->container['file_size'] === null) {
+        if ($this->container['default_string'] === null) {
                     return false;
                 }
-        if ($this->container['file_content'] === null) {
+        if ($this->container['default_number'] === null) {
+                    return false;
+                }
+        if ($this->container['default_double'] === null) {
+                    return false;
+                }
+        if ($this->container['default_date'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets filename
+     * Gets default_boolean
      *
-     * @return string
+     * @return bool
      */
-    public function getFilename()
+    public function getDefaultBoolean()
     {
-        return $this->container['filename'];
+        return $this->container['default_boolean'];
     }
 
     /**
-     * Sets filename
+     * Sets default_boolean
      *
-     *  Filename. 
+     *  
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setDefaultBoolean($default_boolean)
     {
-        $this->container['filename'] = $filename;
+        $this->container['default_boolean'] = $default_boolean;
 
         return $this;
     }
    /**
-     * Gets file_size
+     * Gets default_string
+     *
+     * @return string
+     */
+    public function getDefaultString()
+    {
+        return $this->container['default_string'];
+    }
+
+    /**
+     * Sets default_string
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDefaultString($default_string)
+    {
+        $this->container['default_string'] = $default_string;
+
+        return $this;
+    }
+   /**
+     * Gets default_number
      *
      * @return int
      */
-    public function getFileSize()
+    public function getDefaultNumber()
     {
-        return $this->container['file_size'];
+        return $this->container['default_number'];
     }
 
     /**
-     * Sets file_size
+     * Sets default_number
      *
-     *  File size.
+     *  
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setDefaultNumber($default_number)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['default_number'] = $default_number;
 
         return $this;
     }
    /**
-     * Gets file_content
+     * Gets default_double
      *
-     * @return string
+     * @return double
      */
-    public function getFileContent()
+    public function getDefaultDouble()
     {
-        return $this->container['file_content'];
+        return $this->container['default_double'];
     }
 
     /**
-     * Sets file_content
+     * Sets default_double
      *
-     *  File content,  byte to base64 string.
+     *  
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setDefaultDouble($default_double)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['default_double'] = $default_double;
+
+        return $this;
+    }
+   /**
+     * Gets default_date
+     *
+     * @return string
+     */
+    public function getDefaultDate()
+    {
+        return $this->container['default_date'];
+    }
+
+    /**
+     * Sets default_date
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDefaultDate($default_date)
+    {
+        $this->container['default_date'] = $default_date;
 
         return $this;
     }

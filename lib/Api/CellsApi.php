@@ -153,6 +153,13 @@ use Aspose\Cells\Cloud\Request\PostWorkbookExportXMLRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookImportJsonRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookImportXMLRequest;
 use Aspose\Cells\Cloud\Request\PostImportDataRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookDataCleansingRequest;
+use Aspose\Cells\Cloud\Request\PostDataCleansingRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookDataDeduplicationRequest;
+use Aspose\Cells\Cloud\Request\PostDataDeduplicationRequest;
+use Aspose\Cells\Cloud\Request\PostWorkbookDataFillRequest;
+use Aspose\Cells\Cloud\Request\PostDataFillRequest;
+use Aspose\Cells\Cloud\Request\PostDeleteIncompleteRowsRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetHyperlinksRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinkRequest;
@@ -405,9 +412,14 @@ use Aspose\Cells\Cloud\Model\CriteriaMultipleFilter;
 use Aspose\Cells\Cloud\Model\CustomFilter;
 use Aspose\Cells\Cloud\Model\DataBar;
 use Aspose\Cells\Cloud\Model\DataBarBorder;
+use Aspose\Cells\Cloud\Model\DataCleansing;
+use Aspose\Cells\Cloud\Model\DataColumnFillValue;
+use Aspose\Cells\Cloud\Model\DataFill;
+use Aspose\Cells\Cloud\Model\DataFillValue;
 use Aspose\Cells\Cloud\Model\DataSorter;
 use Aspose\Cells\Cloud\Model\DataSorterKey;
 use Aspose\Cells\Cloud\Model\DateTimeGroupItem;
+use Aspose\Cells\Cloud\Model\DeduplicationRegion;
 use Aspose\Cells\Cloud\Model\DynamicFilter;
 use Aspose\Cells\Cloud\Model\FileInfo;
 use Aspose\Cells\Cloud\Model\FilesResult;
@@ -642,6 +654,10 @@ use Aspose\Cells\Cloud\Model\BatchSplitRequest;
 use Aspose\Cells\Cloud\Model\ColorFilterRequest;
 use Aspose\Cells\Cloud\Model\ConvertParameter;
 use Aspose\Cells\Cloud\Model\CreatePivotTableRequest;
+use Aspose\Cells\Cloud\Model\DataCleansingRequest;
+use Aspose\Cells\Cloud\Model\DataDeduplicationRequest;
+use Aspose\Cells\Cloud\Model\DataFillRequest;
+use Aspose\Cells\Cloud\Model\DeleteIncompleteRowsRequest;
 use Aspose\Cells\Cloud\Model\ImportJsonRequest;
 use Aspose\Cells\Cloud\Model\ImportXMLRequest;
 use Aspose\Cells\Cloud\Model\MatchConditionRequest;
@@ -2330,6 +2346,97 @@ class CellsApi
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Data cleaning of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookDataCleansingRequest" /></param>
+    public function postWorkbookDataCleansing( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Data cleansing of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostDataCleansingRequest" /></param>
+    public function postDataCleansing( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookDataDeduplicationRequest" /></param>
+    public function postWorkbookDataDeduplication( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostDataDeduplicationRequest" /></param>
+    public function postDataDeduplication( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorkbookDataFillRequest" /></param>
+    public function postWorkbookDataFill( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostDataFillRequest" /></param>
+    public function postDataFill( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Deleting incomplete rows of spreadsheet files is mainly used to eliminate incomplete rows in tables and ranges.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostDeleteIncompleteRowsRequest" /></param>
+    public function postDeleteIncompleteRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
