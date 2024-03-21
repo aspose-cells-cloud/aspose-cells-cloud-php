@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="FileInfo.cs">
+ * <copyright company="Aspose" file="DataFill.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FileInfo
+class DataFill
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class FileInfo
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FileInfo';     
+    protected static $swaggerModelName = 'DataFill';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,9 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'file_size' => 'int',
-        'file_content' => 'string'
+        'ranges' => '\Aspose\Cells\Cloud\Model\Range[]',
+        'data_fill_default_value' => '\Aspose\Cells\Cloud\Model\DataFillValue',
+        'data_column_fill_value_list' => '\Aspose\Cells\Cloud\Model\DataColumnFillValue[]'
     ];
 
     /**
@@ -57,9 +57,9 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null  ,
-        'file_size' => null  ,
-        'file_content' => null  
+        'ranges' => null  ,
+        'data_fill_default_value' => null  ,
+        'data_column_fill_value_list' => null  
     ];
 
     /**
@@ -89,9 +89,9 @@ class FileInfo
      * @var string[]
      */
     protected static $attributeMap = [
-         'filename' => 'Filename' ,
-         'file_size' => 'FileSize' ,
-         'file_content' => 'FileContent' 
+         'ranges' => 'Ranges' ,
+         'data_fill_default_value' => 'DataFillDefaultValue' ,
+         'data_column_fill_value_list' => 'DataColumnFillValueList' 
     ];
 
     /**
@@ -100,9 +100,9 @@ class FileInfo
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename' ,
-        'file_size' => 'setFileSize' ,
-        'file_content' => 'setFileContent' 
+        'ranges' => 'setRanges' ,
+        'data_fill_default_value' => 'setDataFillDefaultValue' ,
+        'data_column_fill_value_list' => 'setDataColumnFillValueList' 
     ];
 
     /**
@@ -111,9 +111,9 @@ class FileInfo
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename' ,
-        'file_size' => 'getFileSize' ,
-        'file_content' => 'getFileContent' 
+        'ranges' => 'getRanges' ,
+        'data_fill_default_value' => 'getDataFillDefaultValue' ,
+        'data_column_fill_value_list' => 'getDataColumnFillValueList' 
     ];
 
     /**
@@ -172,9 +172,9 @@ class FileInfo
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $data['file_content'] : null;
+        $this->container['ranges'] = isset($data['ranges']) ? $data['ranges'] : null;
+        $this->container['data_fill_default_value'] = isset($data['data_fill_default_value']) ? $data['data_fill_default_value'] : null;
+        $this->container['data_column_fill_value_list'] = isset($data['data_column_fill_value_list']) ? $data['data_column_fill_value_list'] : null;
     }
 
     /**
@@ -185,14 +185,14 @@ class FileInfo
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['filename'] === null) {
-            $invalidProperties[] = "'filename' can't be null";
+        if ($this->container['ranges'] === null) {
+            $invalidProperties[] = "'ranges' can't be null";
         }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
+        if ($this->container['data_fill_default_value'] === null) {
+            $invalidProperties[] = "'data_fill_default_value' can't be null";
         }
-        if ($this->container['file_content'] === null) {
-            $invalidProperties[] = "'file_content' can't be null";
+        if ($this->container['data_column_fill_value_list'] === null) {
+            $invalidProperties[] = "'data_column_fill_value_list' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +205,83 @@ class FileInfo
      */
     public function valid()
     {
-        if ($this->container['filename'] === null) {
+        if ($this->container['ranges'] === null) {
                     return false;
                 }
-        if ($this->container['file_size'] === null) {
+        if ($this->container['data_fill_default_value'] === null) {
                     return false;
                 }
-        if ($this->container['file_content'] === null) {
+        if ($this->container['data_column_fill_value_list'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets filename
+     * Gets ranges
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\Range[]
      */
-    public function getFilename()
+    public function getRanges()
     {
-        return $this->container['filename'];
+        return $this->container['ranges'];
     }
 
     /**
-     * Sets filename
+     * Sets ranges
      *
-     *  Filename. 
+     *  
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setRanges($ranges)
     {
-        $this->container['filename'] = $filename;
+        $this->container['ranges'] = $ranges;
 
         return $this;
     }
    /**
-     * Gets file_size
+     * Gets data_fill_default_value
      *
-     * @return int
+     * @return \Aspose\Cells\Cloud\Model\DataFillValue
      */
-    public function getFileSize()
+    public function getDataFillDefaultValue()
     {
-        return $this->container['file_size'];
+        return $this->container['data_fill_default_value'];
     }
 
     /**
-     * Sets file_size
+     * Sets data_fill_default_value
      *
-     *  File size.
+     *  
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setDataFillDefaultValue($data_fill_default_value)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['data_fill_default_value'] = $data_fill_default_value;
 
         return $this;
     }
    /**
-     * Gets file_content
+     * Gets data_column_fill_value_list
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\DataColumnFillValue[]
      */
-    public function getFileContent()
+    public function getDataColumnFillValueList()
     {
-        return $this->container['file_content'];
+        return $this->container['data_column_fill_value_list'];
     }
 
     /**
-     * Sets file_content
+     * Sets data_column_fill_value_list
      *
-     *  File content,  byte to base64 string.
+     *  
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setDataColumnFillValueList($data_column_fill_value_list)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['data_column_fill_value_list'] = $data_column_fill_value_list;
 
         return $this;
     }

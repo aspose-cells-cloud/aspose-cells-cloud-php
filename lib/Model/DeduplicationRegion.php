@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="FileInfo.cs">
+ * <copyright company="Aspose" file="DeduplicationRegion.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FileInfo
+class DeduplicationRegion
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class FileInfo
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FileInfo';     
+    protected static $swaggerModelName = 'DeduplicationRegion';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,8 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'file_size' => 'int',
-        'file_content' => 'string'
+        'ranges' => '\Aspose\Cells\Cloud\Model\Range[]',
+        'worksheet_name_list' => 'string[]'
     ];
 
     /**
@@ -57,9 +56,8 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null  ,
-        'file_size' => null  ,
-        'file_content' => null  
+        'ranges' => null  ,
+        'worksheet_name_list' => null  
     ];
 
     /**
@@ -89,9 +87,8 @@ class FileInfo
      * @var string[]
      */
     protected static $attributeMap = [
-         'filename' => 'Filename' ,
-         'file_size' => 'FileSize' ,
-         'file_content' => 'FileContent' 
+         'ranges' => 'Ranges' ,
+         'worksheet_name_list' => 'WorksheetNameList' 
     ];
 
     /**
@@ -100,9 +97,8 @@ class FileInfo
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename' ,
-        'file_size' => 'setFileSize' ,
-        'file_content' => 'setFileContent' 
+        'ranges' => 'setRanges' ,
+        'worksheet_name_list' => 'setWorksheetNameList' 
     ];
 
     /**
@@ -111,9 +107,8 @@ class FileInfo
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename' ,
-        'file_size' => 'getFileSize' ,
-        'file_content' => 'getFileContent' 
+        'ranges' => 'getRanges' ,
+        'worksheet_name_list' => 'getWorksheetNameList' 
     ];
 
     /**
@@ -172,9 +167,8 @@ class FileInfo
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $data['file_content'] : null;
+        $this->container['ranges'] = isset($data['ranges']) ? $data['ranges'] : null;
+        $this->container['worksheet_name_list'] = isset($data['worksheet_name_list']) ? $data['worksheet_name_list'] : null;
     }
 
     /**
@@ -185,14 +179,11 @@ class FileInfo
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['filename'] === null) {
-            $invalidProperties[] = "'filename' can't be null";
+        if ($this->container['ranges'] === null) {
+            $invalidProperties[] = "'ranges' can't be null";
         }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
-        }
-        if ($this->container['file_content'] === null) {
-            $invalidProperties[] = "'file_content' can't be null";
+        if ($this->container['worksheet_name_list'] === null) {
+            $invalidProperties[] = "'worksheet_name_list' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +196,57 @@ class FileInfo
      */
     public function valid()
     {
-        if ($this->container['filename'] === null) {
+        if ($this->container['ranges'] === null) {
                     return false;
                 }
-        if ($this->container['file_size'] === null) {
-                    return false;
-                }
-        if ($this->container['file_content'] === null) {
+        if ($this->container['worksheet_name_list'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets filename
+     * Gets ranges
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\Range[]
      */
-    public function getFilename()
+    public function getRanges()
     {
-        return $this->container['filename'];
+        return $this->container['ranges'];
     }
 
     /**
-     * Sets filename
+     * Sets ranges
      *
-     *  Filename. 
+     *  
      *
      * @return $this
      */
-    public function setFilename($filename)
+    public function setRanges($ranges)
     {
-        $this->container['filename'] = $filename;
+        $this->container['ranges'] = $ranges;
 
         return $this;
     }
    /**
-     * Gets file_size
+     * Gets worksheet_name_list
      *
-     * @return int
+     * @return string[]
      */
-    public function getFileSize()
+    public function getWorksheetNameList()
     {
-        return $this->container['file_size'];
+        return $this->container['worksheet_name_list'];
     }
 
     /**
-     * Sets file_size
+     * Sets worksheet_name_list
      *
-     *  File size.
-     *
-     * @return $this
-     */
-    public function setFileSize($file_size)
-    {
-        $this->container['file_size'] = $file_size;
-
-        return $this;
-    }
-   /**
-     * Gets file_content
-     *
-     * @return string
-     */
-    public function getFileContent()
-    {
-        return $this->container['file_content'];
-    }
-
-    /**
-     * Sets file_content
-     *
-     *  File content,  byte to base64 string.
+     *  
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setWorksheetNameList($worksheet_name_list)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['worksheet_name_list'] = $worksheet_name_list;
 
         return $this;
     }

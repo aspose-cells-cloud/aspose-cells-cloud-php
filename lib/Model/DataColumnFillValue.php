@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="FileInfo.cs">
+ * <copyright company="Aspose" file="DataColumnFillValue.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class FileInfo
+class DataColumnFillValue
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class FileInfo
       *
       * @var string
       */
-    protected static $swaggerModelName = 'FileInfo';     
+    protected static $swaggerModelName = 'DataColumnFillValue';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,8 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'filename' => 'string',
-        'file_size' => 'int',
-        'file_content' => 'string'
+        'column_index' => 'int',
+        'data_fill_value' => '\Aspose\Cells\Cloud\Model\DataFillValue'
     ];
 
     /**
@@ -57,9 +56,8 @@ class FileInfo
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'filename' => null  ,
-        'file_size' => null  ,
-        'file_content' => null  
+        'column_index' => null  ,
+        'data_fill_value' => null  
     ];
 
     /**
@@ -89,9 +87,8 @@ class FileInfo
      * @var string[]
      */
     protected static $attributeMap = [
-         'filename' => 'Filename' ,
-         'file_size' => 'FileSize' ,
-         'file_content' => 'FileContent' 
+         'column_index' => 'ColumnIndex' ,
+         'data_fill_value' => 'DataFillValue' 
     ];
 
     /**
@@ -100,9 +97,8 @@ class FileInfo
      * @var string[]
      */
     protected static $setters = [
-        'filename' => 'setFilename' ,
-        'file_size' => 'setFileSize' ,
-        'file_content' => 'setFileContent' 
+        'column_index' => 'setColumnIndex' ,
+        'data_fill_value' => 'setDataFillValue' 
     ];
 
     /**
@@ -111,9 +107,8 @@ class FileInfo
      * @var string[]
      */
     protected static $getters = [
-        'filename' => 'getFilename' ,
-        'file_size' => 'getFileSize' ,
-        'file_content' => 'getFileContent' 
+        'column_index' => 'getColumnIndex' ,
+        'data_fill_value' => 'getDataFillValue' 
     ];
 
     /**
@@ -172,9 +167,8 @@ class FileInfo
      */
     public function __construct(array $data = null)
     {
-        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
-        $this->container['file_size'] = isset($data['file_size']) ? $data['file_size'] : null;
-        $this->container['file_content'] = isset($data['file_content']) ? $data['file_content'] : null;
+        $this->container['column_index'] = isset($data['column_index']) ? $data['column_index'] : null;
+        $this->container['data_fill_value'] = isset($data['data_fill_value']) ? $data['data_fill_value'] : null;
     }
 
     /**
@@ -185,14 +179,11 @@ class FileInfo
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['filename'] === null) {
-            $invalidProperties[] = "'filename' can't be null";
+        if ($this->container['column_index'] === null) {
+            $invalidProperties[] = "'column_index' can't be null";
         }
-        if ($this->container['file_size'] === null) {
-            $invalidProperties[] = "'file_size' can't be null";
-        }
-        if ($this->container['file_content'] === null) {
-            $invalidProperties[] = "'file_content' can't be null";
+        if ($this->container['data_fill_value'] === null) {
+            $invalidProperties[] = "'data_fill_value' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +196,57 @@ class FileInfo
      */
     public function valid()
     {
-        if ($this->container['filename'] === null) {
+        if ($this->container['column_index'] === null) {
                     return false;
                 }
-        if ($this->container['file_size'] === null) {
-                    return false;
-                }
-        if ($this->container['file_content'] === null) {
+        if ($this->container['data_fill_value'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets filename
-     *
-     * @return string
-     */
-    public function getFilename()
-    {
-        return $this->container['filename'];
-    }
-
-    /**
-     * Sets filename
-     *
-     *  Filename. 
-     *
-     * @return $this
-     */
-    public function setFilename($filename)
-    {
-        $this->container['filename'] = $filename;
-
-        return $this;
-    }
-   /**
-     * Gets file_size
+     * Gets column_index
      *
      * @return int
      */
-    public function getFileSize()
+    public function getColumnIndex()
     {
-        return $this->container['file_size'];
+        return $this->container['column_index'];
     }
 
     /**
-     * Sets file_size
+     * Sets column_index
      *
-     *  File size.
+     *  
      *
      * @return $this
      */
-    public function setFileSize($file_size)
+    public function setColumnIndex($column_index)
     {
-        $this->container['file_size'] = $file_size;
+        $this->container['column_index'] = $column_index;
 
         return $this;
     }
    /**
-     * Gets file_content
+     * Gets data_fill_value
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\DataFillValue
      */
-    public function getFileContent()
+    public function getDataFillValue()
     {
-        return $this->container['file_content'];
+        return $this->container['data_fill_value'];
     }
 
     /**
-     * Sets file_content
+     * Sets data_fill_value
      *
-     *  File content,  byte to base64 string.
+     *  
      *
      * @return $this
      */
-    public function setFileContent($file_content)
+    public function setDataFillValue($data_fill_value)
     {
-        $this->container['file_content'] = $file_content;
+        $this->container['data_fill_value'] = $data_fill_value;
 
         return $this;
     }

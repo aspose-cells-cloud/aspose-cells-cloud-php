@@ -1112,7 +1112,7 @@ class Chart
     /**
      * Sets name
      *
-     *  Gets and sets the name of the chart.
+     *  
      *
      * @return $this
      */

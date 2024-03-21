@@ -50,7 +50,6 @@ class WorkbookSettings
         'auto_recover' => 'bool',
         'build_version' => 'string',
         'calc_mode' => 'string',
-        'calc_stack_size' => 'int',
         'calculation_id' => 'string',
         'check_comptiliblity' => 'bool',
         'check_excel_restriction' => 'bool',
@@ -121,7 +120,6 @@ class WorkbookSettings
         'auto_recover' => null  ,
         'build_version' => null  ,
         'calc_mode' => null  ,
-        'calc_stack_size' => null  ,
         'calculation_id' => null  ,
         'check_comptiliblity' => null  ,
         'check_excel_restriction' => null  ,
@@ -213,7 +211,6 @@ class WorkbookSettings
          'auto_recover' => 'AutoRecover' ,
          'build_version' => 'BuildVersion' ,
          'calc_mode' => 'CalcMode' ,
-         'calc_stack_size' => 'CalcStackSize' ,
          'calculation_id' => 'CalculationId' ,
          'check_comptiliblity' => 'CheckComptiliblity' ,
          'check_excel_restriction' => 'CheckExcelRestriction' ,
@@ -284,7 +281,6 @@ class WorkbookSettings
         'auto_recover' => 'setAutoRecover' ,
         'build_version' => 'setBuildVersion' ,
         'calc_mode' => 'setCalcMode' ,
-        'calc_stack_size' => 'setCalcStackSize' ,
         'calculation_id' => 'setCalculationId' ,
         'check_comptiliblity' => 'setCheckComptiliblity' ,
         'check_excel_restriction' => 'setCheckExcelRestriction' ,
@@ -355,7 +351,6 @@ class WorkbookSettings
         'auto_recover' => 'getAutoRecover' ,
         'build_version' => 'getBuildVersion' ,
         'calc_mode' => 'getCalcMode' ,
-        'calc_stack_size' => 'getCalcStackSize' ,
         'calculation_id' => 'getCalculationId' ,
         'check_comptiliblity' => 'getCheckComptiliblity' ,
         'check_excel_restriction' => 'getCheckExcelRestriction' ,
@@ -476,7 +471,6 @@ class WorkbookSettings
         $this->container['auto_recover'] = isset($data['auto_recover']) ? $data['auto_recover'] : null;
         $this->container['build_version'] = isset($data['build_version']) ? $data['build_version'] : null;
         $this->container['calc_mode'] = isset($data['calc_mode']) ? $data['calc_mode'] : null;
-        $this->container['calc_stack_size'] = isset($data['calc_stack_size']) ? $data['calc_stack_size'] : null;
         $this->container['calculation_id'] = isset($data['calculation_id']) ? $data['calculation_id'] : null;
         $this->container['check_comptiliblity'] = isset($data['check_comptiliblity']) ? $data['check_comptiliblity'] : null;
         $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
@@ -556,9 +550,6 @@ class WorkbookSettings
         }
         if ($this->container['calc_mode'] === null) {
             $invalidProperties[] = "'calc_mode' can't be null";
-        }
-        if ($this->container['calc_stack_size'] === null) {
-            $invalidProperties[] = "'calc_stack_size' can't be null";
         }
         if ($this->container['calculation_id'] === null) {
             $invalidProperties[] = "'calculation_id' can't be null";
@@ -755,9 +746,6 @@ class WorkbookSettings
                     return false;
                 }
         if ($this->container['calc_mode'] === null) {
-                    return false;
-                }
-        if ($this->container['calc_stack_size'] === null) {
                     return false;
                 }
         if ($this->container['calculation_id'] === null) {
@@ -1025,29 +1013,6 @@ class WorkbookSettings
     public function setCalcMode($calc_mode)
     {
         $this->container['calc_mode'] = $calc_mode;
-
-        return $this;
-    }
-   /**
-     * Gets calc_stack_size
-     *
-     * @return int
-     */
-    public function getCalcStackSize()
-    {
-        return $this->container['calc_stack_size'];
-    }
-
-    /**
-     * Sets calc_stack_size
-     *
-     *  Specifies the stack size for calculating cells recursively.            The large value for this size will give better performance when there are lots of cells need to be calculated recursively.            On the other hand, larger value will raise the risk of StackOverflowException.            If user gets StackOverflowException when calculating formulas, this value should be decreased. 
-     *
-     * @return $this
-     */
-    public function setCalcStackSize($calc_stack_size)
-    {
-        $this->container['calc_stack_size'] = $calc_stack_size;
 
         return $this;
     }
