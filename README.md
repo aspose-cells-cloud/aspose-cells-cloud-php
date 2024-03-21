@@ -3,7 +3,7 @@
 
 # PHP package for Aspose.Cells Cloud
 
-Enhance your PHP applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
+Enhance your PHP applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine.
 
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
