@@ -74,6 +74,7 @@ To begin with Aspose.Cells Cloud SDK, here's what you need to do:
 
 1. Sign up for an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) to obtain your application details.
 2. Install the Aspose.Cells Cloud PHP Package from [Packagist](https://packagist.org/packages/aspose/cells-sdk-php).
+    
     **To install Aspose.Cells Cloud SDK via Composer, follow these steps:**
 
     2.1. Add Aspose.Cells Cloud SDK as a dependency to your `composer.json` file:
