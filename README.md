@@ -1,9 +1,9 @@
 ![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/24.3)
 
 
-# PHP package for Aspose.Cells Cloud SDK
+# PHP package for Aspose.Cells Cloud
 
-Enhance your PHP applications with the [Aspose.Cells Cloud SDK](https://products.aspose.cloud/cells/php) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
+Enhance your PHP applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine
 
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
@@ -70,14 +70,14 @@ Full list of issues covering all changes in this release:
 
 ## Quick Start Guide
 
-To begin with Aspose.Cells Cloud SDK, here's what you need to do:
+To begin with Aspose.Cells Cloud, here's what you need to do:
 
 1. Sign up for an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) to obtain your application details.
 2. Install the Aspose.Cells Cloud PHP Package from [Packagist](https://packagist.org/packages/aspose/cells-sdk-php).
     
-    **To install Aspose.Cells Cloud SDK via Composer, follow these steps:**
+    **To install Aspose.Cells Cloud via Composer, follow these steps:**
 
-    - Add Aspose.Cells Cloud SDK as a dependency to your `composer.json` file:
+    - Add Aspose.Cells Cloud as a dependency to your `composer.json` file:
    
    ```json
    {
@@ -99,7 +99,7 @@ To begin with Aspose.Cells Cloud SDK, here's what you need to do:
    require 'vendor/autoload.php';
    ```
 
-    - You're now ready to use Aspose.Cells Cloud SDK in your PHP project.
+    - You're now ready to use Aspose.Cells Cloud in your PHP project.
     
 3. Use the conversion code provided below as a reference to add or modify your application.
 
@@ -132,7 +132,7 @@ $$cellsApi->putConvertWorkbook($request);
 ?>
 ```
 
-## Aspose.Cells Cloud SDKs in Popular Languages
+## Aspose.Cells Cloud in Popular Languages
 
 | .NET | Java | Python | Ruby | Node.js | Android | Swift | Perl | GO |
 |---|---|---|---|---|---|---|---|---|
