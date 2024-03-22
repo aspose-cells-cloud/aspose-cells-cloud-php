@@ -1,5 +1,6 @@
 ![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/24.3)
 
+Aspose.Cells Cloud for PHP enables you to handle various aspects of Excel files, including cell data, styles, formulas, charts, pivot tables, data validation, comments, drawing objects, images, hyperlinks, and so on. Additionally, it supports operations such as splitting, merging, repairing, and converting to other compatible file formats.
 
 # PHP package for Aspose.Cells Cloud
 

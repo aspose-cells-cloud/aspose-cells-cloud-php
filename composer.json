@@ -3,9 +3,14 @@
 	"type" : "library",
 	"description" : "Effortlessly handle Excel and other spreadsheet documents with features like opening, generating, editing, splitting, merging, comparing, and converting. Seamlessly integrate Cloud API into your solutions to efficiently manipulate documents. Convert Excel or other spreadsheets to CSV, PDF, JSON, XML, HTML, images, and more.",
 	"keywords" : [
-		"aspose",
-		"php",
-		"aspose cloud"
+		"excel",
+		"spreadsheet",
+		"convert",
+		"xlsx",
+		"chart",
+		"pivot table",
+		"aspose cells",
+		"cloud"
 	],
 	"homepage" : "https://github.com/aspose-cells-cloud/aspose-cells-cloud-php",
 	"license" : "MIT",
