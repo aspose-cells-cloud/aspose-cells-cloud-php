@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ImportOption.cs">
+ * <copyright company="Aspose" file="UnpivotColumn.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ImportOption
+class UnpivotColumn
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ImportOption
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImportOption';     
+    protected static $swaggerModelName = 'UnpivotColumn';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,9 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_worksheet' => 'string',
-        'is_insert' => 'bool',
-        'import_data_type' => 'string',
-        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'source' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'unpivot_column_names' => 'string[]',
+        'column_map_name' => 'string',
+        'value_map_name' => 'string'
     ];
 
     /**
@@ -59,11 +57,9 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_worksheet' => null  ,
-        'is_insert' => null  ,
-        'import_data_type' => null  ,
-        'data_source' => null  ,
-        'source' => null  
+        'unpivot_column_names' => null  ,
+        'column_map_name' => null  ,
+        'value_map_name' => null  
     ];
 
     /**
@@ -93,11 +89,9 @@ class ImportOption
      * @var string[]
      */
     protected static $attributeMap = [
-         'destination_worksheet' => 'DestinationWorksheet' ,
-         'is_insert' => 'IsInsert' ,
-         'import_data_type' => 'ImportDataType' ,
-         'data_source' => 'DataSource' ,
-         'source' => 'Source' 
+         'unpivot_column_names' => 'UnpivotColumnNames' ,
+         'column_map_name' => 'ColumnMapName' ,
+         'value_map_name' => 'ValueMapName' 
     ];
 
     /**
@@ -106,11 +100,9 @@ class ImportOption
      * @var string[]
      */
     protected static $setters = [
-        'destination_worksheet' => 'setDestinationWorksheet' ,
-        'is_insert' => 'setIsInsert' ,
-        'import_data_type' => 'setImportDataType' ,
-        'data_source' => 'setDataSource' ,
-        'source' => 'setSource' 
+        'unpivot_column_names' => 'setUnpivotColumnNames' ,
+        'column_map_name' => 'setColumnMapName' ,
+        'value_map_name' => 'setValueMapName' 
     ];
 
     /**
@@ -119,11 +111,9 @@ class ImportOption
      * @var string[]
      */
     protected static $getters = [
-        'destination_worksheet' => 'getDestinationWorksheet' ,
-        'is_insert' => 'getIsInsert' ,
-        'import_data_type' => 'getImportDataType' ,
-        'data_source' => 'getDataSource' ,
-        'source' => 'getSource' 
+        'unpivot_column_names' => 'getUnpivotColumnNames' ,
+        'column_map_name' => 'getColumnMapName' ,
+        'value_map_name' => 'getValueMapName' 
     ];
 
     /**
@@ -182,11 +172,9 @@ class ImportOption
      */
     public function __construct(array $data = null)
     {
-        $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
-        $this->container['is_insert'] = isset($data['is_insert']) ? $data['is_insert'] : null;
-        $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
-        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['unpivot_column_names'] = isset($data['unpivot_column_names']) ? $data['unpivot_column_names'] : null;
+        $this->container['column_map_name'] = isset($data['column_map_name']) ? $data['column_map_name'] : null;
+        $this->container['value_map_name'] = isset($data['value_map_name']) ? $data['value_map_name'] : null;
     }
 
     /**
@@ -197,20 +185,14 @@ class ImportOption
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['destination_worksheet'] === null) {
-            $invalidProperties[] = "'destination_worksheet' can't be null";
+        if ($this->container['unpivot_column_names'] === null) {
+            $invalidProperties[] = "'unpivot_column_names' can't be null";
         }
-        if ($this->container['is_insert'] === null) {
-            $invalidProperties[] = "'is_insert' can't be null";
+        if ($this->container['column_map_name'] === null) {
+            $invalidProperties[] = "'column_map_name' can't be null";
         }
-        if ($this->container['import_data_type'] === null) {
-            $invalidProperties[] = "'import_data_type' can't be null";
-        }
-        if ($this->container['data_source'] === null) {
-            $invalidProperties[] = "'data_source' can't be null";
-        }
-        if ($this->container['source'] === null) {
-            $invalidProperties[] = "'source' can't be null";
+        if ($this->container['value_map_name'] === null) {
+            $invalidProperties[] = "'value_map_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +205,83 @@ class ImportOption
      */
     public function valid()
     {
-        if ($this->container['destination_worksheet'] === null) {
+        if ($this->container['unpivot_column_names'] === null) {
                     return false;
                 }
-        if ($this->container['is_insert'] === null) {
+        if ($this->container['column_map_name'] === null) {
                     return false;
                 }
-        if ($this->container['import_data_type'] === null) {
-                    return false;
-                }
-        if ($this->container['data_source'] === null) {
-                    return false;
-                }
-        if ($this->container['source'] === null) {
+        if ($this->container['value_map_name'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets destination_worksheet
+     * Gets unpivot_column_names
+     *
+     * @return string[]
+     */
+    public function getUnpivotColumnNames()
+    {
+        return $this->container['unpivot_column_names'];
+    }
+
+    /**
+     * Sets unpivot_column_names
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setUnpivotColumnNames($unpivot_column_names)
+    {
+        $this->container['unpivot_column_names'] = $unpivot_column_names;
+
+        return $this;
+    }
+   /**
+     * Gets column_map_name
      *
      * @return string
      */
-    public function getDestinationWorksheet()
+    public function getColumnMapName()
     {
-        return $this->container['destination_worksheet'];
+        return $this->container['column_map_name'];
     }
 
     /**
-     * Sets destination_worksheet
-     *
-     *  Destination worksheet name.  
-     *
-     * @return $this
-     */
-    public function setDestinationWorksheet($destination_worksheet)
-    {
-        $this->container['destination_worksheet'] = $destination_worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets is_insert
-     *
-     * @return bool
-     */
-    public function getIsInsert()
-    {
-        return $this->container['is_insert'];
-    }
-
-    /**
-     * Sets is_insert
+     * Sets column_map_name
      *
      *  
      *
      * @return $this
      */
-    public function setIsInsert($is_insert)
+    public function setColumnMapName($column_map_name)
     {
-        $this->container['is_insert'] = $is_insert;
+        $this->container['column_map_name'] = $column_map_name;
 
         return $this;
     }
    /**
-     * Gets import_data_type
+     * Gets value_map_name
      *
      * @return string
      */
-    public function getImportDataType()
+    public function getValueMapName()
     {
-        return $this->container['import_data_type'];
+        return $this->container['value_map_name'];
     }
 
     /**
-     * Sets import_data_type
+     * Sets value_map_name
      *
      *  
      *
      * @return $this
      */
-    public function setImportDataType($import_data_type)
+    public function setValueMapName($value_map_name)
     {
-        $this->container['import_data_type'] = $import_data_type;
-
-        return $this;
-    }
-   /**
-     * Gets data_source
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
-     */
-    public function getDataSource()
-    {
-        return $this->container['data_source'];
-    }
-
-    /**
-     * Sets data_source
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setDataSource($data_source)
-    {
-        $this->container['data_source'] = $data_source;
-
-        return $this;
-    }
-   /**
-     * Gets source
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
+        $this->container['value_map_name'] = $value_map_name;
 
         return $this;
     }

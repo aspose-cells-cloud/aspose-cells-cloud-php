@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ImportOption.cs">
+ * <copyright company="Aspose" file="QueryDataSource.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ImportOption
+class QueryDataSource
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ImportOption
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImportOption';     
+    protected static $swaggerModelName = 'QueryDataSource';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,9 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_worksheet' => 'string',
-        'is_insert' => 'bool',
-        'import_data_type' => 'string',
-        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'source' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'data_source_data_type' => 'string',
+        'data_file' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'data_source' => 'string'
     ];
 
     /**
@@ -59,11 +57,9 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_worksheet' => null  ,
-        'is_insert' => null  ,
-        'import_data_type' => null  ,
-        'data_source' => null  ,
-        'source' => null  
+        'data_source_data_type' => null  ,
+        'data_file' => null  ,
+        'data_source' => null  
     ];
 
     /**
@@ -93,11 +89,9 @@ class ImportOption
      * @var string[]
      */
     protected static $attributeMap = [
-         'destination_worksheet' => 'DestinationWorksheet' ,
-         'is_insert' => 'IsInsert' ,
-         'import_data_type' => 'ImportDataType' ,
-         'data_source' => 'DataSource' ,
-         'source' => 'Source' 
+         'data_source_data_type' => 'DataSourceDataType' ,
+         'data_file' => 'DataFile' ,
+         'data_source' => 'DataSource' 
     ];
 
     /**
@@ -106,11 +100,9 @@ class ImportOption
      * @var string[]
      */
     protected static $setters = [
-        'destination_worksheet' => 'setDestinationWorksheet' ,
-        'is_insert' => 'setIsInsert' ,
-        'import_data_type' => 'setImportDataType' ,
-        'data_source' => 'setDataSource' ,
-        'source' => 'setSource' 
+        'data_source_data_type' => 'setDataSourceDataType' ,
+        'data_file' => 'setDataFile' ,
+        'data_source' => 'setDataSource' 
     ];
 
     /**
@@ -119,11 +111,9 @@ class ImportOption
      * @var string[]
      */
     protected static $getters = [
-        'destination_worksheet' => 'getDestinationWorksheet' ,
-        'is_insert' => 'getIsInsert' ,
-        'import_data_type' => 'getImportDataType' ,
-        'data_source' => 'getDataSource' ,
-        'source' => 'getSource' 
+        'data_source_data_type' => 'getDataSourceDataType' ,
+        'data_file' => 'getDataFile' ,
+        'data_source' => 'getDataSource' 
     ];
 
     /**
@@ -182,11 +172,9 @@ class ImportOption
      */
     public function __construct(array $data = null)
     {
-        $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
-        $this->container['is_insert'] = isset($data['is_insert']) ? $data['is_insert'] : null;
-        $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
+        $this->container['data_source_data_type'] = isset($data['data_source_data_type']) ? $data['data_source_data_type'] : null;
+        $this->container['data_file'] = isset($data['data_file']) ? $data['data_file'] : null;
         $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
     }
 
     /**
@@ -197,20 +185,14 @@ class ImportOption
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['destination_worksheet'] === null) {
-            $invalidProperties[] = "'destination_worksheet' can't be null";
+        if ($this->container['data_source_data_type'] === null) {
+            $invalidProperties[] = "'data_source_data_type' can't be null";
         }
-        if ($this->container['is_insert'] === null) {
-            $invalidProperties[] = "'is_insert' can't be null";
-        }
-        if ($this->container['import_data_type'] === null) {
-            $invalidProperties[] = "'import_data_type' can't be null";
+        if ($this->container['data_file'] === null) {
+            $invalidProperties[] = "'data_file' can't be null";
         }
         if ($this->container['data_source'] === null) {
             $invalidProperties[] = "'data_source' can't be null";
-        }
-        if ($this->container['source'] === null) {
-            $invalidProperties[] = "'source' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,96 +205,67 @@ class ImportOption
      */
     public function valid()
     {
-        if ($this->container['destination_worksheet'] === null) {
+        if ($this->container['data_source_data_type'] === null) {
                     return false;
                 }
-        if ($this->container['is_insert'] === null) {
-                    return false;
-                }
-        if ($this->container['import_data_type'] === null) {
+        if ($this->container['data_file'] === null) {
                     return false;
                 }
         if ($this->container['data_source'] === null) {
                     return false;
                 }
-        if ($this->container['source'] === null) {
-                    return false;
-                }
         return true;
     }
    /**
-     * Gets destination_worksheet
+     * Gets data_source_data_type
      *
      * @return string
      */
-    public function getDestinationWorksheet()
+    public function getDataSourceDataType()
     {
-        return $this->container['destination_worksheet'];
+        return $this->container['data_source_data_type'];
     }
 
     /**
-     * Sets destination_worksheet
-     *
-     *  Destination worksheet name.  
-     *
-     * @return $this
-     */
-    public function setDestinationWorksheet($destination_worksheet)
-    {
-        $this->container['destination_worksheet'] = $destination_worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets is_insert
-     *
-     * @return bool
-     */
-    public function getIsInsert()
-    {
-        return $this->container['is_insert'];
-    }
-
-    /**
-     * Sets is_insert
+     * Sets data_source_data_type
      *
      *  
      *
      * @return $this
      */
-    public function setIsInsert($is_insert)
+    public function setDataSourceDataType($data_source_data_type)
     {
-        $this->container['is_insert'] = $is_insert;
+        $this->container['data_source_data_type'] = $data_source_data_type;
 
         return $this;
     }
    /**
-     * Gets import_data_type
+     * Gets data_file
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
-    public function getImportDataType()
+    public function getDataFile()
     {
-        return $this->container['import_data_type'];
+        return $this->container['data_file'];
     }
 
     /**
-     * Sets import_data_type
+     * Sets data_file
      *
      *  
      *
      * @return $this
      */
-    public function setImportDataType($import_data_type)
+    public function setDataFile($data_file)
     {
-        $this->container['import_data_type'] = $import_data_type;
+        $this->container['data_file'] = $data_file;
 
         return $this;
     }
    /**
      * Gets data_source
      *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
+     * @return string
      */
     public function getDataSource()
     {
@@ -329,29 +282,6 @@ class ImportOption
     public function setDataSource($data_source)
     {
         $this->container['data_source'] = $data_source;
-
-        return $this;
-    }
-   /**
-     * Gets source
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
 
         return $this;
     }

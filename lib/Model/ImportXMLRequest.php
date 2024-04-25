@@ -46,7 +46,7 @@ class ImportXMLRequest
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'xml_file_source' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'xml_file_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'import_position' => '\Aspose\Cells\Cloud\Model\ImportPosition',
         'xml_content' => 'string'
     ];
@@ -219,7 +219,7 @@ class ImportXMLRequest
    /**
      * Gets xml_file_source
      *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
     public function getXMLFileSource()
     {

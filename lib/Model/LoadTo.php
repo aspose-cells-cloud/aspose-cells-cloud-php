@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ImportOption.cs">
+ * <copyright company="Aspose" file="LoadTo.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ImportOption
+class LoadTo
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ImportOption
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImportOption';     
+    protected static $swaggerModelName = 'LoadTo';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,9 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_worksheet' => 'string',
-        'is_insert' => 'bool',
-        'import_data_type' => 'string',
-        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'source' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'worksheet' => 'string',
+        'begin_row_index' => 'int',
+        'begin_column_index' => 'int'
     ];
 
     /**
@@ -59,11 +57,9 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_worksheet' => null  ,
-        'is_insert' => null  ,
-        'import_data_type' => null  ,
-        'data_source' => null  ,
-        'source' => null  
+        'worksheet' => null  ,
+        'begin_row_index' => null  ,
+        'begin_column_index' => null  
     ];
 
     /**
@@ -93,11 +89,9 @@ class ImportOption
      * @var string[]
      */
     protected static $attributeMap = [
-         'destination_worksheet' => 'DestinationWorksheet' ,
-         'is_insert' => 'IsInsert' ,
-         'import_data_type' => 'ImportDataType' ,
-         'data_source' => 'DataSource' ,
-         'source' => 'Source' 
+         'worksheet' => 'Worksheet' ,
+         'begin_row_index' => 'beginRowIndex' ,
+         'begin_column_index' => 'beginColumnIndex' 
     ];
 
     /**
@@ -106,11 +100,9 @@ class ImportOption
      * @var string[]
      */
     protected static $setters = [
-        'destination_worksheet' => 'setDestinationWorksheet' ,
-        'is_insert' => 'setIsInsert' ,
-        'import_data_type' => 'setImportDataType' ,
-        'data_source' => 'setDataSource' ,
-        'source' => 'setSource' 
+        'worksheet' => 'setWorksheet' ,
+        'begin_row_index' => 'setbeginRowIndex' ,
+        'begin_column_index' => 'setbeginColumnIndex' 
     ];
 
     /**
@@ -119,11 +111,9 @@ class ImportOption
      * @var string[]
      */
     protected static $getters = [
-        'destination_worksheet' => 'getDestinationWorksheet' ,
-        'is_insert' => 'getIsInsert' ,
-        'import_data_type' => 'getImportDataType' ,
-        'data_source' => 'getDataSource' ,
-        'source' => 'getSource' 
+        'worksheet' => 'getWorksheet' ,
+        'begin_row_index' => 'getbeginRowIndex' ,
+        'begin_column_index' => 'getbeginColumnIndex' 
     ];
 
     /**
@@ -182,11 +172,9 @@ class ImportOption
      */
     public function __construct(array $data = null)
     {
-        $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
-        $this->container['is_insert'] = isset($data['is_insert']) ? $data['is_insert'] : null;
-        $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
-        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
+        $this->container['begin_row_index'] = isset($data['begin_row_index']) ? $data['begin_row_index'] : null;
+        $this->container['begin_column_index'] = isset($data['begin_column_index']) ? $data['begin_column_index'] : null;
     }
 
     /**
@@ -197,20 +185,14 @@ class ImportOption
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['destination_worksheet'] === null) {
-            $invalidProperties[] = "'destination_worksheet' can't be null";
+        if ($this->container['worksheet'] === null) {
+            $invalidProperties[] = "'worksheet' can't be null";
         }
-        if ($this->container['is_insert'] === null) {
-            $invalidProperties[] = "'is_insert' can't be null";
+        if ($this->container['begin_row_index'] === null) {
+            $invalidProperties[] = "'begin_row_index' can't be null";
         }
-        if ($this->container['import_data_type'] === null) {
-            $invalidProperties[] = "'import_data_type' can't be null";
-        }
-        if ($this->container['data_source'] === null) {
-            $invalidProperties[] = "'data_source' can't be null";
-        }
-        if ($this->container['source'] === null) {
-            $invalidProperties[] = "'source' can't be null";
+        if ($this->container['begin_column_index'] === null) {
+            $invalidProperties[] = "'begin_column_index' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +205,83 @@ class ImportOption
      */
     public function valid()
     {
-        if ($this->container['destination_worksheet'] === null) {
+        if ($this->container['worksheet'] === null) {
                     return false;
                 }
-        if ($this->container['is_insert'] === null) {
+        if ($this->container['begin_row_index'] === null) {
                     return false;
                 }
-        if ($this->container['import_data_type'] === null) {
-                    return false;
-                }
-        if ($this->container['data_source'] === null) {
-                    return false;
-                }
-        if ($this->container['source'] === null) {
+        if ($this->container['begin_column_index'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets destination_worksheet
+     * Gets worksheet
      *
      * @return string
      */
-    public function getDestinationWorksheet()
+    public function getWorksheet()
     {
-        return $this->container['destination_worksheet'];
+        return $this->container['worksheet'];
     }
 
     /**
-     * Sets destination_worksheet
-     *
-     *  Destination worksheet name.  
-     *
-     * @return $this
-     */
-    public function setDestinationWorksheet($destination_worksheet)
-    {
-        $this->container['destination_worksheet'] = $destination_worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets is_insert
-     *
-     * @return bool
-     */
-    public function getIsInsert()
-    {
-        return $this->container['is_insert'];
-    }
-
-    /**
-     * Sets is_insert
+     * Sets worksheet
      *
      *  
      *
      * @return $this
      */
-    public function setIsInsert($is_insert)
+    public function setWorksheet($worksheet)
     {
-        $this->container['is_insert'] = $is_insert;
+        $this->container['worksheet'] = $worksheet;
 
         return $this;
     }
    /**
-     * Gets import_data_type
+     * Gets begin_row_index
      *
-     * @return string
+     * @return int
      */
-    public function getImportDataType()
+    public function getbeginRowIndex()
     {
-        return $this->container['import_data_type'];
+        return $this->container['begin_row_index'];
     }
 
     /**
-     * Sets import_data_type
+     * Sets begin_row_index
      *
      *  
      *
      * @return $this
      */
-    public function setImportDataType($import_data_type)
+    public function setbeginRowIndex($begin_row_index)
     {
-        $this->container['import_data_type'] = $import_data_type;
+        $this->container['begin_row_index'] = $begin_row_index;
 
         return $this;
     }
    /**
-     * Gets data_source
+     * Gets begin_column_index
      *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
+     * @return int
      */
-    public function getDataSource()
+    public function getbeginColumnIndex()
     {
-        return $this->container['data_source'];
+        return $this->container['begin_column_index'];
     }
 
     /**
-     * Sets data_source
+     * Sets begin_column_index
      *
      *  
      *
      * @return $this
      */
-    public function setDataSource($data_source)
+    public function setbeginColumnIndex($begin_column_index)
     {
-        $this->container['data_source'] = $data_source;
-
-        return $this;
-    }
-   /**
-     * Gets source
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
+        $this->container['begin_column_index'] = $begin_column_index;
 
         return $this;
     }

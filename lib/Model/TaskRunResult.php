@@ -47,7 +47,7 @@ class TaskRunResult
       */
     protected static $swaggerTypes = [
         'description' => 'string',
-        'out_file_list' => '\Aspose\Cells\Cloud\Model\FileSource[]'
+        'out_file_list' => '\Aspose\Cells\Cloud\Model\DataSource[]'
     ];
 
     /**
@@ -230,7 +230,7 @@ class TaskRunResult
    /**
      * Gets out_file_list
      *
-     * @return \Aspose\Cells\Cloud\Model\FileSource[]
+     * @return \Aspose\Cells\Cloud\Model\DataSource[]
      */
     public function getOutFileList()
     {

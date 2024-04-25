@@ -46,8 +46,10 @@ class ConvertWorksheetTaskParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'sheet' => 'string',
+        'target_data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'target' => '\Aspose\Cells\Cloud\Model\FileSource',
         'format' => 'string',
         'area' => 'string',
@@ -62,8 +64,10 @@ class ConvertWorksheetTaskParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'data_source' => null  ,
         'workbook' => null  ,
         'sheet' => null  ,
+        'target_data_source' => null  ,
         'target' => null  ,
         'format' => null  ,
         'area' => null  ,
@@ -99,8 +103,10 @@ class ConvertWorksheetTaskParameter
      * @var string[]
      */
     protected static $attributeMap = [
+         'data_source' => 'DataSource' ,
          'workbook' => 'Workbook' ,
          'sheet' => 'Sheet' ,
+         'target_data_source' => 'TargetDataSource' ,
          'target' => 'Target' ,
          'format' => 'Format' ,
          'area' => 'Area' ,
@@ -115,8 +121,10 @@ class ConvertWorksheetTaskParameter
      * @var string[]
      */
     protected static $setters = [
+        'data_source' => 'setDataSource' ,
         'workbook' => 'setWorkbook' ,
         'sheet' => 'setSheet' ,
+        'target_data_source' => 'setTargetDataSource' ,
         'target' => 'setTarget' ,
         'format' => 'setFormat' ,
         'area' => 'setArea' ,
@@ -131,8 +139,10 @@ class ConvertWorksheetTaskParameter
      * @var string[]
      */
     protected static $getters = [
+        'data_source' => 'getDataSource' ,
         'workbook' => 'getWorkbook' ,
         'sheet' => 'getSheet' ,
+        'target_data_source' => 'getTargetDataSource' ,
         'target' => 'getTarget' ,
         'format' => 'getFormat' ,
         'area' => 'getArea' ,
@@ -197,8 +207,10 @@ class ConvertWorksheetTaskParameter
      */
     public function __construct(array $data = null)
     {
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
         $this->container['sheet'] = isset($data['sheet']) ? $data['sheet'] : null;
+        $this->container['target_data_source'] = isset($data['target_data_source']) ? $data['target_data_source'] : null;
         $this->container['target'] = isset($data['target']) ? $data['target'] : null;
         $this->container['format'] = isset($data['format']) ? $data['format'] : null;
         $this->container['area'] = isset($data['area']) ? $data['area'] : null;
@@ -215,11 +227,17 @@ class ConvertWorksheetTaskParameter
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
+        }
         if ($this->container['workbook'] === null) {
             $invalidProperties[] = "'workbook' can't be null";
         }
         if ($this->container['sheet'] === null) {
             $invalidProperties[] = "'sheet' can't be null";
+        }
+        if ($this->container['target_data_source'] === null) {
+            $invalidProperties[] = "'target_data_source' can't be null";
         }
         if ($this->container['target'] === null) {
             $invalidProperties[] = "'target' can't be null";
@@ -250,10 +268,16 @@ class ConvertWorksheetTaskParameter
      */
     public function valid()
     {
+        if ($this->container['data_source'] === null) {
+                    return false;
+                }
         if ($this->container['workbook'] === null) {
                     return false;
                 }
         if ($this->container['sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['target_data_source'] === null) {
                     return false;
                 }
         if ($this->container['target'] === null) {
@@ -275,6 +299,29 @@ class ConvertWorksheetTaskParameter
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
     }
    /**
      * Gets workbook
@@ -319,6 +366,29 @@ class ConvertWorksheetTaskParameter
     public function setSheet($sheet)
     {
         $this->container['sheet'] = $sheet;
+
+        return $this;
+    }
+   /**
+     * Gets target_data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getTargetDataSource()
+    {
+        return $this->container['target_data_source'];
+    }
+
+    /**
+     * Sets target_data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTargetDataSource($target_data_source)
+    {
+        $this->container['target_data_source'] = $target_data_source;
 
         return $this;
     }

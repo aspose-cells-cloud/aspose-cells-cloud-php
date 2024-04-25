@@ -46,6 +46,7 @@ class OperateObjectPosition
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'sheet_name' => 'string',
         'chart_index' => 'int',
@@ -60,6 +61,7 @@ class OperateObjectPosition
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'data_source' => null  ,
         'workbook' => null  ,
         'sheet_name' => null  ,
         'chart_index' => null  ,
@@ -95,6 +97,7 @@ class OperateObjectPosition
      * @var string[]
      */
     protected static $attributeMap = [
+         'data_source' => 'DataSource' ,
          'workbook' => 'Workbook' ,
          'sheet_name' => 'SheetName' ,
          'chart_index' => 'ChartIndex' ,
@@ -109,6 +112,7 @@ class OperateObjectPosition
      * @var string[]
      */
     protected static $setters = [
+        'data_source' => 'setDataSource' ,
         'workbook' => 'setWorkbook' ,
         'sheet_name' => 'setSheetName' ,
         'chart_index' => 'setChartIndex' ,
@@ -123,6 +127,7 @@ class OperateObjectPosition
      * @var string[]
      */
     protected static $getters = [
+        'data_source' => 'getDataSource' ,
         'workbook' => 'getWorkbook' ,
         'sheet_name' => 'getSheetName' ,
         'chart_index' => 'getChartIndex' ,
@@ -187,6 +192,7 @@ class OperateObjectPosition
      */
     public function __construct(array $data = null)
     {
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
         $this->container['sheet_name'] = isset($data['sheet_name']) ? $data['sheet_name'] : null;
         $this->container['chart_index'] = isset($data['chart_index']) ? $data['chart_index'] : null;
@@ -203,6 +209,9 @@ class OperateObjectPosition
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
+        }
         if ($this->container['workbook'] === null) {
             $invalidProperties[] = "'workbook' can't be null";
         }
@@ -232,6 +241,9 @@ class OperateObjectPosition
      */
     public function valid()
     {
+        if ($this->container['data_source'] === null) {
+                    return false;
+                }
         if ($this->container['workbook'] === null) {
                     return false;
                 }
@@ -251,6 +263,29 @@ class OperateObjectPosition
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
     }
    /**
      * Gets workbook

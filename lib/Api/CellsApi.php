@@ -160,6 +160,7 @@ use Aspose\Cells\Cloud\Request\PostDataDeduplicationRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookDataFillRequest;
 use Aspose\Cells\Cloud\Request\PostDataFillRequest;
 use Aspose\Cells\Cloud\Request\PostDeleteIncompleteRowsRequest;
+use Aspose\Cells\Cloud\Request\PostDataTransformationRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetHyperlinksRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinkRequest;
@@ -416,12 +417,15 @@ use Aspose\Cells\Cloud\Model\DataCleansing;
 use Aspose\Cells\Cloud\Model\DataColumnFillValue;
 use Aspose\Cells\Cloud\Model\DataFill;
 use Aspose\Cells\Cloud\Model\DataFillValue;
+use Aspose\Cells\Cloud\Model\DataItem;
 use Aspose\Cells\Cloud\Model\DataSorter;
 use Aspose\Cells\Cloud\Model\DataSorterKey;
+use Aspose\Cells\Cloud\Model\DataSource;
 use Aspose\Cells\Cloud\Model\DateTimeGroupItem;
 use Aspose\Cells\Cloud\Model\DeduplicationRegion;
 use Aspose\Cells\Cloud\Model\DynamicFilter;
 use Aspose\Cells\Cloud\Model\FileInfo;
+use Aspose\Cells\Cloud\Model\FileSource;
 use Aspose\Cells\Cloud\Model\FilesResult;
 use Aspose\Cells\Cloud\Model\FilterColumn;
 use Aspose\Cells\Cloud\Model\Font;
@@ -452,7 +456,6 @@ use Aspose\Cells\Cloud\Model\PasteOptions;
 use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
 use Aspose\Cells\Cloud\Model\Protection;
 use Aspose\Cells\Cloud\Model\ProtectSheetParameter;
-use Aspose\Cells\Cloud\Model\QueryTable;
 use Aspose\Cells\Cloud\Model\Range;
 use Aspose\Cells\Cloud\Model\Ranges;
 use Aspose\Cells\Cloud\Model\Row;
@@ -488,7 +491,6 @@ use Aspose\Cells\Cloud\Model\XmlMap;
 use Aspose\Cells\Cloud\Model\CellsObjectOperateTaskParameter;
 use Aspose\Cells\Cloud\Model\ConvertTaskParameter;
 use Aspose\Cells\Cloud\Model\ConvertWorksheetTaskParameter;
-use Aspose\Cells\Cloud\Model\FileSource;
 use Aspose\Cells\Cloud\Model\ImportDataTaskParameter;
 use Aspose\Cells\Cloud\Model\ResultDestination;
 use Aspose\Cells\Cloud\Model\SaveFilesToCloudResult;
@@ -657,6 +659,7 @@ use Aspose\Cells\Cloud\Model\CreatePivotTableRequest;
 use Aspose\Cells\Cloud\Model\DataCleansingRequest;
 use Aspose\Cells\Cloud\Model\DataDeduplicationRequest;
 use Aspose\Cells\Cloud\Model\DataFillRequest;
+use Aspose\Cells\Cloud\Model\DataTransformationRequest;
 use Aspose\Cells\Cloud\Model\DeleteIncompleteRowsRequest;
 use Aspose\Cells\Cloud\Model\ImportJsonRequest;
 use Aspose\Cells\Cloud\Model\ImportXMLRequest;
@@ -676,6 +679,13 @@ use Aspose\Cells\Cloud\Model\WorksheetMovingRequest;
 use Aspose\Cells\Cloud\Model\ImageOrPrintOptions;
 use Aspose\Cells\Cloud\Model\RenderingFont;
 use Aspose\Cells\Cloud\Model\RenderingWatermark;
+use Aspose\Cells\Cloud\Model\LoadData;
+use Aspose\Cells\Cloud\Model\LoadTo;
+use Aspose\Cells\Cloud\Model\PivotColumn;
+use Aspose\Cells\Cloud\Model\QueryDataSource;
+use Aspose\Cells\Cloud\Model\QueryTable;
+use Aspose\Cells\Cloud\Model\Transformation;
+use Aspose\Cells\Cloud\Model\UnpivotColumn;
 use Aspose\Cells\Cloud\Model\PivotField;
 use Aspose\Cells\Cloud\Model\PivotFilter;
 use Aspose\Cells\Cloud\Model\PivotItem;
@@ -2434,6 +2444,19 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="PostDeleteIncompleteRowsRequest" /></param>
     public function postDeleteIncompleteRows( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Transform spreadsheet data is mainly used to pivot columns, unpivot columns.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostDataTransformationRequest" /></param>
+    public function postDataTransformation( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';

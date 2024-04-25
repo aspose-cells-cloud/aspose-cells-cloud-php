@@ -48,6 +48,7 @@ class CellsObjectOperateTaskParameter
     protected static $swaggerTypes = [
         'operate_object' => '\Aspose\Cells\Cloud\Model\OperateObject',
         'operate_parameter' => '\Aspose\Cells\Cloud\Model\OperateParameter',
+        'destinatio_data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource'
     ];
 
@@ -59,6 +60,7 @@ class CellsObjectOperateTaskParameter
     protected static $swaggerFormats = [
         'operate_object' => null  ,
         'operate_parameter' => null  ,
+        'destinatio_data_source' => null  ,
         'destination_workbook' => null  
     ];
 
@@ -91,6 +93,7 @@ class CellsObjectOperateTaskParameter
     protected static $attributeMap = [
          'operate_object' => 'OperateObject' ,
          'operate_parameter' => 'OperateParameter' ,
+         'destinatio_data_source' => 'DestinatioDataSource' ,
          'destination_workbook' => 'DestinationWorkbook' 
     ];
 
@@ -102,6 +105,7 @@ class CellsObjectOperateTaskParameter
     protected static $setters = [
         'operate_object' => 'setOperateObject' ,
         'operate_parameter' => 'setOperateParameter' ,
+        'destinatio_data_source' => 'setDestinatioDataSource' ,
         'destination_workbook' => 'setDestinationWorkbook' 
     ];
 
@@ -113,6 +117,7 @@ class CellsObjectOperateTaskParameter
     protected static $getters = [
         'operate_object' => 'getOperateObject' ,
         'operate_parameter' => 'getOperateParameter' ,
+        'destinatio_data_source' => 'getDestinatioDataSource' ,
         'destination_workbook' => 'getDestinationWorkbook' 
     ];
 
@@ -174,6 +179,7 @@ class CellsObjectOperateTaskParameter
     {
         $this->container['operate_object'] = isset($data['operate_object']) ? $data['operate_object'] : null;
         $this->container['operate_parameter'] = isset($data['operate_parameter']) ? $data['operate_parameter'] : null;
+        $this->container['destinatio_data_source'] = isset($data['destinatio_data_source']) ? $data['destinatio_data_source'] : null;
         $this->container['destination_workbook'] = isset($data['destination_workbook']) ? $data['destination_workbook'] : null;
     }
 
@@ -190,6 +196,9 @@ class CellsObjectOperateTaskParameter
         }
         if ($this->container['operate_parameter'] === null) {
             $invalidProperties[] = "'operate_parameter' can't be null";
+        }
+        if ($this->container['destinatio_data_source'] === null) {
+            $invalidProperties[] = "'destinatio_data_source' can't be null";
         }
         if ($this->container['destination_workbook'] === null) {
             $invalidProperties[] = "'destination_workbook' can't be null";
@@ -209,6 +218,9 @@ class CellsObjectOperateTaskParameter
                     return false;
                 }
         if ($this->container['operate_parameter'] === null) {
+                    return false;
+                }
+        if ($this->container['destinatio_data_source'] === null) {
                     return false;
                 }
         if ($this->container['destination_workbook'] === null) {
@@ -259,6 +271,29 @@ class CellsObjectOperateTaskParameter
     public function setOperateParameter($operate_parameter)
     {
         $this->container['operate_parameter'] = $operate_parameter;
+
+        return $this;
+    }
+   /**
+     * Gets destinatio_data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDestinatioDataSource()
+    {
+        return $this->container['destinatio_data_source'];
+    }
+
+    /**
+     * Sets destinatio_data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDestinatioDataSource($destinatio_data_source)
+    {
+        $this->container['destinatio_data_source'] = $destinatio_data_source;
 
         return $this;
     }

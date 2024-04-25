@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ImportOption.cs">
+ * <copyright company="Aspose" file="DataTransformationRequest.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ImportOption
+class DataTransformationRequest
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ImportOption
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ImportOption';     
+    protected static $swaggerModelName = 'DataTransformationRequest';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,11 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'destination_worksheet' => 'string',
-        'is_insert' => 'bool',
-        'import_data_type' => 'string',
-        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'source' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'transformation' => '\Aspose\Cells\Cloud\Model\Transformation',
+        'load_data' => '\Aspose\Cells\Cloud\Model\LoadData',
+        'region' => 'string',
+        'out_format' => 'string'
     ];
 
     /**
@@ -59,11 +59,11 @@ class ImportOption
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'destination_worksheet' => null  ,
-        'is_insert' => null  ,
-        'import_data_type' => null  ,
-        'data_source' => null  ,
-        'source' => null  
+        'file_info' => null  ,
+        'transformation' => null  ,
+        'load_data' => null  ,
+        'region' => null  ,
+        'out_format' => null  
     ];
 
     /**
@@ -93,11 +93,11 @@ class ImportOption
      * @var string[]
      */
     protected static $attributeMap = [
-         'destination_worksheet' => 'DestinationWorksheet' ,
-         'is_insert' => 'IsInsert' ,
-         'import_data_type' => 'ImportDataType' ,
-         'data_source' => 'DataSource' ,
-         'source' => 'Source' 
+         'file_info' => 'FileInfo' ,
+         'transformation' => 'Transformation' ,
+         'load_data' => 'LoadData' ,
+         'region' => 'Region' ,
+         'out_format' => 'OutFormat' 
     ];
 
     /**
@@ -106,11 +106,11 @@ class ImportOption
      * @var string[]
      */
     protected static $setters = [
-        'destination_worksheet' => 'setDestinationWorksheet' ,
-        'is_insert' => 'setIsInsert' ,
-        'import_data_type' => 'setImportDataType' ,
-        'data_source' => 'setDataSource' ,
-        'source' => 'setSource' 
+        'file_info' => 'setFileInfo' ,
+        'transformation' => 'setTransformation' ,
+        'load_data' => 'setLoadData' ,
+        'region' => 'setRegion' ,
+        'out_format' => 'setOutFormat' 
     ];
 
     /**
@@ -119,11 +119,11 @@ class ImportOption
      * @var string[]
      */
     protected static $getters = [
-        'destination_worksheet' => 'getDestinationWorksheet' ,
-        'is_insert' => 'getIsInsert' ,
-        'import_data_type' => 'getImportDataType' ,
-        'data_source' => 'getDataSource' ,
-        'source' => 'getSource' 
+        'file_info' => 'getFileInfo' ,
+        'transformation' => 'getTransformation' ,
+        'load_data' => 'getLoadData' ,
+        'region' => 'getRegion' ,
+        'out_format' => 'getOutFormat' 
     ];
 
     /**
@@ -182,11 +182,11 @@ class ImportOption
      */
     public function __construct(array $data = null)
     {
-        $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
-        $this->container['is_insert'] = isset($data['is_insert']) ? $data['is_insert'] : null;
-        $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
-        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
+        $this->container['transformation'] = isset($data['transformation']) ? $data['transformation'] : null;
+        $this->container['load_data'] = isset($data['load_data']) ? $data['load_data'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['out_format'] = isset($data['out_format']) ? $data['out_format'] : null;
     }
 
     /**
@@ -197,20 +197,20 @@ class ImportOption
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['destination_worksheet'] === null) {
-            $invalidProperties[] = "'destination_worksheet' can't be null";
+        if ($this->container['file_info'] === null) {
+            $invalidProperties[] = "'file_info' can't be null";
         }
-        if ($this->container['is_insert'] === null) {
-            $invalidProperties[] = "'is_insert' can't be null";
+        if ($this->container['transformation'] === null) {
+            $invalidProperties[] = "'transformation' can't be null";
         }
-        if ($this->container['import_data_type'] === null) {
-            $invalidProperties[] = "'import_data_type' can't be null";
+        if ($this->container['load_data'] === null) {
+            $invalidProperties[] = "'load_data' can't be null";
         }
-        if ($this->container['data_source'] === null) {
-            $invalidProperties[] = "'data_source' can't be null";
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
         }
-        if ($this->container['source'] === null) {
-            $invalidProperties[] = "'source' can't be null";
+        if ($this->container['out_format'] === null) {
+            $invalidProperties[] = "'out_format' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +223,135 @@ class ImportOption
      */
     public function valid()
     {
-        if ($this->container['destination_worksheet'] === null) {
+        if ($this->container['file_info'] === null) {
                     return false;
                 }
-        if ($this->container['is_insert'] === null) {
+        if ($this->container['transformation'] === null) {
                     return false;
                 }
-        if ($this->container['import_data_type'] === null) {
+        if ($this->container['load_data'] === null) {
                     return false;
                 }
-        if ($this->container['data_source'] === null) {
+        if ($this->container['region'] === null) {
                     return false;
                 }
-        if ($this->container['source'] === null) {
+        if ($this->container['out_format'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets destination_worksheet
+     * Gets file_info
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function getFileInfo()
+    {
+        return $this->container['file_info'];
+    }
+
+    /**
+     * Sets file_info
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setFileInfo($file_info)
+    {
+        $this->container['file_info'] = $file_info;
+
+        return $this;
+    }
+   /**
+     * Gets transformation
+     *
+     * @return \Aspose\Cells\Cloud\Model\Transformation
+     */
+    public function getTransformation()
+    {
+        return $this->container['transformation'];
+    }
+
+    /**
+     * Sets transformation
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTransformation($transformation)
+    {
+        $this->container['transformation'] = $transformation;
+
+        return $this;
+    }
+   /**
+     * Gets load_data
+     *
+     * @return \Aspose\Cells\Cloud\Model\LoadData
+     */
+    public function getLoadData()
+    {
+        return $this->container['load_data'];
+    }
+
+    /**
+     * Sets load_data
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setLoadData($load_data)
+    {
+        $this->container['load_data'] = $load_data;
+
+        return $this;
+    }
+   /**
+     * Gets region
      *
      * @return string
      */
-    public function getDestinationWorksheet()
+    public function getRegion()
     {
-        return $this->container['destination_worksheet'];
+        return $this->container['region'];
     }
 
     /**
-     * Sets destination_worksheet
-     *
-     *  Destination worksheet name.  
-     *
-     * @return $this
-     */
-    public function setDestinationWorksheet($destination_worksheet)
-    {
-        $this->container['destination_worksheet'] = $destination_worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets is_insert
-     *
-     * @return bool
-     */
-    public function getIsInsert()
-    {
-        return $this->container['is_insert'];
-    }
-
-    /**
-     * Sets is_insert
+     * Sets region
      *
      *  
      *
      * @return $this
      */
-    public function setIsInsert($is_insert)
+    public function setRegion($region)
     {
-        $this->container['is_insert'] = $is_insert;
+        $this->container['region'] = $region;
 
         return $this;
     }
    /**
-     * Gets import_data_type
+     * Gets out_format
      *
      * @return string
      */
-    public function getImportDataType()
+    public function getOutFormat()
     {
-        return $this->container['import_data_type'];
+        return $this->container['out_format'];
     }
 
     /**
-     * Sets import_data_type
+     * Sets out_format
      *
      *  
      *
      * @return $this
      */
-    public function setImportDataType($import_data_type)
+    public function setOutFormat($out_format)
     {
-        $this->container['import_data_type'] = $import_data_type;
-
-        return $this;
-    }
-   /**
-     * Gets data_source
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
-     */
-    public function getDataSource()
-    {
-        return $this->container['data_source'];
-    }
-
-    /**
-     * Sets data_source
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setDataSource($data_source)
-    {
-        $this->container['data_source'] = $data_source;
-
-        return $this;
-    }
-   /**
-     * Gets source
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
+        $this->container['out_format'] = $out_format;
 
         return $this;
     }

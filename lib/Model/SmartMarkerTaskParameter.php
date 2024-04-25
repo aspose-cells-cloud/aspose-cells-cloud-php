@@ -48,7 +48,10 @@ class SmartMarkerTaskParameter
     protected static $swaggerTypes = [
         'source_workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
-        'xml_file' => '\Aspose\Cells\Cloud\Model\FileSource'
+        'xml_file' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'target_data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'xml_file_data_source' => '\Aspose\Cells\Cloud\Model\DataSource'
     ];
 
     /**
@@ -59,7 +62,10 @@ class SmartMarkerTaskParameter
     protected static $swaggerFormats = [
         'source_workbook' => null  ,
         'destination_workbook' => null  ,
-        'xml_file' => null  
+        'xml_file' => null  ,
+        'data_source' => null  ,
+        'target_data_source' => null  ,
+        'xml_file_data_source' => null  
     ];
 
     /**
@@ -91,7 +97,10 @@ class SmartMarkerTaskParameter
     protected static $attributeMap = [
          'source_workbook' => 'SourceWorkbook' ,
          'destination_workbook' => 'DestinationWorkbook' ,
-         'xml_file' => 'xmlFile' 
+         'xml_file' => 'xmlFile' ,
+         'data_source' => 'DataSource' ,
+         'target_data_source' => 'TargetDataSource' ,
+         'xml_file_data_source' => 'XMLFileDataSource' 
     ];
 
     /**
@@ -102,7 +111,10 @@ class SmartMarkerTaskParameter
     protected static $setters = [
         'source_workbook' => 'setSourceWorkbook' ,
         'destination_workbook' => 'setDestinationWorkbook' ,
-        'xml_file' => 'setxmlFile' 
+        'xml_file' => 'setxmlFile' ,
+        'data_source' => 'setDataSource' ,
+        'target_data_source' => 'setTargetDataSource' ,
+        'xml_file_data_source' => 'setXMLFileDataSource' 
     ];
 
     /**
@@ -113,7 +125,10 @@ class SmartMarkerTaskParameter
     protected static $getters = [
         'source_workbook' => 'getSourceWorkbook' ,
         'destination_workbook' => 'getDestinationWorkbook' ,
-        'xml_file' => 'getxmlFile' 
+        'xml_file' => 'getxmlFile' ,
+        'data_source' => 'getDataSource' ,
+        'target_data_source' => 'getTargetDataSource' ,
+        'xml_file_data_source' => 'getXMLFileDataSource' 
     ];
 
     /**
@@ -175,6 +190,9 @@ class SmartMarkerTaskParameter
         $this->container['source_workbook'] = isset($data['source_workbook']) ? $data['source_workbook'] : null;
         $this->container['destination_workbook'] = isset($data['destination_workbook']) ? $data['destination_workbook'] : null;
         $this->container['xml_file'] = isset($data['xml_file']) ? $data['xml_file'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
+        $this->container['target_data_source'] = isset($data['target_data_source']) ? $data['target_data_source'] : null;
+        $this->container['xml_file_data_source'] = isset($data['xml_file_data_source']) ? $data['xml_file_data_source'] : null;
     }
 
     /**
@@ -194,6 +212,15 @@ class SmartMarkerTaskParameter
         if ($this->container['xml_file'] === null) {
             $invalidProperties[] = "'xml_file' can't be null";
         }
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
+        }
+        if ($this->container['target_data_source'] === null) {
+            $invalidProperties[] = "'target_data_source' can't be null";
+        }
+        if ($this->container['xml_file_data_source'] === null) {
+            $invalidProperties[] = "'xml_file_data_source' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -212,6 +239,15 @@ class SmartMarkerTaskParameter
                     return false;
                 }
         if ($this->container['xml_file'] === null) {
+                    return false;
+                }
+        if ($this->container['data_source'] === null) {
+                    return false;
+                }
+        if ($this->container['target_data_source'] === null) {
+                    return false;
+                }
+        if ($this->container['xml_file_data_source'] === null) {
                     return false;
                 }
         return true;
@@ -282,6 +318,75 @@ class SmartMarkerTaskParameter
     public function setxmlFile($xml_file)
     {
         $this->container['xml_file'] = $xml_file;
+
+        return $this;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
+    }
+   /**
+     * Gets target_data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getTargetDataSource()
+    {
+        return $this->container['target_data_source'];
+    }
+
+    /**
+     * Sets target_data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTargetDataSource($target_data_source)
+    {
+        $this->container['target_data_source'] = $target_data_source;
+
+        return $this;
+    }
+   /**
+     * Gets xml_file_data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getXMLFileDataSource()
+    {
+        return $this->container['xml_file_data_source'];
+    }
+
+    /**
+     * Sets xml_file_data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setXMLFileDataSource($xml_file_data_source)
+    {
+        $this->container['xml_file_data_source'] = $xml_file_data_source;
 
         return $this;
     }

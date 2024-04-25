@@ -76,9 +76,9 @@ final class XmlControllerTest extends TestCase
         $dataXML = "data.xml";
         $remoteName = "Template.xlsx";
 
-        $importXMLRequestXMLFileSource = new \Aspose\Cells\Cloud\Model\FileSource();
-        $importXMLRequestXMLFileSource->setFileSourceType("CloudFileSystem" ); 
-        $importXMLRequestXMLFileSource->setFilePath($remoteFolder . "/data.xml" ); 
+        $importXMLRequestXMLFileSource = new \Aspose\Cells\Cloud\Model\DataSource();
+        $importXMLRequestXMLFileSource->setDataSourceType("CloudFileSystem" ); 
+        $importXMLRequestXMLFileSource->setDataPath($remoteFolder . "/data.xml" ); 
         $importXMLRequestImportPosition = new \Aspose\Cells\Cloud\Model\ImportPosition();
         $importXMLRequestImportPosition->setSheetName("Sheet1" ); 
         $importXMLRequestImportPosition->setRowIndex(3 ); 

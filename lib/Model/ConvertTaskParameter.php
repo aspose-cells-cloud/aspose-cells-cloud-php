@@ -46,6 +46,7 @@ class ConvertTaskParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'destination_file' => 'string',
         'region' => 'string',
@@ -58,6 +59,7 @@ class ConvertTaskParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'data_source' => null  ,
         'workbook' => null  ,
         'destination_file' => null  ,
         'region' => null  ,
@@ -91,6 +93,7 @@ class ConvertTaskParameter
      * @var string[]
      */
     protected static $attributeMap = [
+         'data_source' => 'DataSource' ,
          'workbook' => 'Workbook' ,
          'destination_file' => 'DestinationFile' ,
          'region' => 'Region' ,
@@ -103,6 +106,7 @@ class ConvertTaskParameter
      * @var string[]
      */
     protected static $setters = [
+        'data_source' => 'setDataSource' ,
         'workbook' => 'setWorkbook' ,
         'destination_file' => 'setDestinationFile' ,
         'region' => 'setRegion' ,
@@ -115,6 +119,7 @@ class ConvertTaskParameter
      * @var string[]
      */
     protected static $getters = [
+        'data_source' => 'getDataSource' ,
         'workbook' => 'getWorkbook' ,
         'destination_file' => 'getDestinationFile' ,
         'region' => 'getRegion' ,
@@ -177,6 +182,7 @@ class ConvertTaskParameter
      */
     public function __construct(array $data = null)
     {
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
         $this->container['destination_file'] = isset($data['destination_file']) ? $data['destination_file'] : null;
         $this->container['region'] = isset($data['region']) ? $data['region'] : null;
@@ -191,6 +197,9 @@ class ConvertTaskParameter
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
+        }
         if ($this->container['workbook'] === null) {
             $invalidProperties[] = "'workbook' can't be null";
         }
@@ -214,6 +223,9 @@ class ConvertTaskParameter
      */
     public function valid()
     {
+        if ($this->container['data_source'] === null) {
+                    return false;
+                }
         if ($this->container['workbook'] === null) {
                     return false;
                 }
@@ -227,6 +239,29 @@ class ConvertTaskParameter
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
     }
    /**
      * Gets workbook

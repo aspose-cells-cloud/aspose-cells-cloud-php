@@ -53,6 +53,7 @@ class ImportDoubleArrayOption
         'destination_worksheet' => 'string',
         'is_insert' => 'bool',
         'import_data_type' => 'string',
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'source' => '\Aspose\Cells\Cloud\Model\FileSource'
     ];
 
@@ -69,6 +70,7 @@ class ImportDoubleArrayOption
         'destination_worksheet' => null  ,
         'is_insert' => null  ,
         'import_data_type' => null  ,
+        'data_source' => null  ,
         'source' => null  
     ];
 
@@ -106,6 +108,7 @@ class ImportDoubleArrayOption
          'destination_worksheet' => 'DestinationWorksheet' ,
          'is_insert' => 'IsInsert' ,
          'import_data_type' => 'ImportDataType' ,
+         'data_source' => 'DataSource' ,
          'source' => 'Source' 
     ];
 
@@ -122,6 +125,7 @@ class ImportDoubleArrayOption
         'destination_worksheet' => 'setDestinationWorksheet' ,
         'is_insert' => 'setIsInsert' ,
         'import_data_type' => 'setImportDataType' ,
+        'data_source' => 'setDataSource' ,
         'source' => 'setSource' 
     ];
 
@@ -138,6 +142,7 @@ class ImportDoubleArrayOption
         'destination_worksheet' => 'getDestinationWorksheet' ,
         'is_insert' => 'getIsInsert' ,
         'import_data_type' => 'getImportDataType' ,
+        'data_source' => 'getDataSource' ,
         'source' => 'getSource' 
     ];
 
@@ -204,6 +209,7 @@ class ImportDoubleArrayOption
         $this->container['destination_worksheet'] = isset($data['destination_worksheet']) ? $data['destination_worksheet'] : null;
         $this->container['is_insert'] = isset($data['is_insert']) ? $data['is_insert'] : null;
         $this->container['import_data_type'] = isset($data['import_data_type']) ? $data['import_data_type'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
     }
 
@@ -235,6 +241,9 @@ class ImportDoubleArrayOption
         }
         if ($this->container['import_data_type'] === null) {
             $invalidProperties[] = "'import_data_type' can't be null";
+        }
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
         }
         if ($this->container['source'] === null) {
             $invalidProperties[] = "'source' can't be null";
@@ -269,6 +278,9 @@ class ImportDoubleArrayOption
                     return false;
                 }
         if ($this->container['import_data_type'] === null) {
+                    return false;
+                }
+        if ($this->container['data_source'] === null) {
                     return false;
                 }
         if ($this->container['source'] === null) {
@@ -434,6 +446,29 @@ class ImportDoubleArrayOption
     public function setImportDataType($import_data_type)
     {
         $this->container['import_data_type'] = $import_data_type;
+
+        return $this;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
 
         return $this;
     }

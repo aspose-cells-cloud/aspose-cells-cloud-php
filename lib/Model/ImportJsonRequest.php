@@ -46,7 +46,7 @@ class ImportJsonRequest
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'json_file_source' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'json_file_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'import_position' => '\Aspose\Cells\Cloud\Model\ImportPosition',
         'json_content' => 'string'
     ];
@@ -219,7 +219,7 @@ class ImportJsonRequest
    /**
      * Gets json_file_source
      *
-     * @return \Aspose\Cells\Cloud\Model\FileSource
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
     public function getJsonFileSource()
     {

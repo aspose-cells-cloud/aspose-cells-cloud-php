@@ -48,6 +48,8 @@ class SplitWorkbookTaskParameter
     protected static $swaggerTypes = [
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'destination_file_position' => '\Aspose\Cells\Cloud\Model\FileSource',
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'target_data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'destination_file_format' => 'string',
         'split_name_rule' => 'string',
         'vertical_resolution' => 'int',
@@ -62,6 +64,8 @@ class SplitWorkbookTaskParameter
     protected static $swaggerFormats = [
         'workbook' => null  ,
         'destination_file_position' => null  ,
+        'data_source' => null  ,
+        'target_data_source' => null  ,
         'destination_file_format' => null  ,
         'split_name_rule' => null  ,
         'vertical_resolution' => null  ,
@@ -97,6 +101,8 @@ class SplitWorkbookTaskParameter
     protected static $attributeMap = [
          'workbook' => 'Workbook' ,
          'destination_file_position' => 'DestinationFilePosition' ,
+         'data_source' => 'DataSource' ,
+         'target_data_source' => 'TargetDataSource' ,
          'destination_file_format' => 'DestinationFileFormat' ,
          'split_name_rule' => 'SplitNameRule' ,
          'vertical_resolution' => 'VerticalResolution' ,
@@ -111,6 +117,8 @@ class SplitWorkbookTaskParameter
     protected static $setters = [
         'workbook' => 'setWorkbook' ,
         'destination_file_position' => 'setDestinationFilePosition' ,
+        'data_source' => 'setDataSource' ,
+        'target_data_source' => 'setTargetDataSource' ,
         'destination_file_format' => 'setDestinationFileFormat' ,
         'split_name_rule' => 'setSplitNameRule' ,
         'vertical_resolution' => 'setVerticalResolution' ,
@@ -125,6 +133,8 @@ class SplitWorkbookTaskParameter
     protected static $getters = [
         'workbook' => 'getWorkbook' ,
         'destination_file_position' => 'getDestinationFilePosition' ,
+        'data_source' => 'getDataSource' ,
+        'target_data_source' => 'getTargetDataSource' ,
         'destination_file_format' => 'getDestinationFileFormat' ,
         'split_name_rule' => 'getSplitNameRule' ,
         'vertical_resolution' => 'getVerticalResolution' ,
@@ -189,6 +199,8 @@ class SplitWorkbookTaskParameter
     {
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
         $this->container['destination_file_position'] = isset($data['destination_file_position']) ? $data['destination_file_position'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
+        $this->container['target_data_source'] = isset($data['target_data_source']) ? $data['target_data_source'] : null;
         $this->container['destination_file_format'] = isset($data['destination_file_format']) ? $data['destination_file_format'] : null;
         $this->container['split_name_rule'] = isset($data['split_name_rule']) ? $data['split_name_rule'] : null;
         $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
@@ -208,6 +220,12 @@ class SplitWorkbookTaskParameter
         }
         if ($this->container['destination_file_position'] === null) {
             $invalidProperties[] = "'destination_file_position' can't be null";
+        }
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
+        }
+        if ($this->container['target_data_source'] === null) {
+            $invalidProperties[] = "'target_data_source' can't be null";
         }
         if ($this->container['destination_file_format'] === null) {
             $invalidProperties[] = "'destination_file_format' can't be null";
@@ -236,6 +254,12 @@ class SplitWorkbookTaskParameter
                     return false;
                 }
         if ($this->container['destination_file_position'] === null) {
+                    return false;
+                }
+        if ($this->container['data_source'] === null) {
+                    return false;
+                }
+        if ($this->container['target_data_source'] === null) {
                     return false;
                 }
         if ($this->container['destination_file_format'] === null) {
@@ -295,6 +319,52 @@ class SplitWorkbookTaskParameter
     public function setDestinationFilePosition($destination_file_position)
     {
         $this->container['destination_file_position'] = $destination_file_position;
+
+        return $this;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
+    }
+   /**
+     * Gets target_data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getTargetDataSource()
+    {
+        return $this->container['target_data_source'];
+    }
+
+    /**
+     * Sets target_data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTargetDataSource($target_data_source)
+    {
+        $this->container['target_data_source'] = $target_data_source;
 
         return $this;
     }

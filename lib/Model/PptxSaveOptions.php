@@ -541,7 +541,7 @@ class PptxSaveOptions
     /**
      * Sets ignore_hidden_rows
      *
-     *  
+     *  Ignore hidden rows
      *
      * @return $this
      */
@@ -564,7 +564,7 @@ class PptxSaveOptions
     /**
      * Sets adjust_font_size_for_row_type
      *
-     *  
+     *  Adjust font size for row type
      *
      * @return $this
      */
@@ -587,7 +587,7 @@ class PptxSaveOptions
     /**
      * Sets export_view_type
      *
-     *  
+     *  Gets and sets the display type when exporting to PowerPoint. The default exporting type is working as printing.
      *
      * @return $this
      */

@@ -48,7 +48,7 @@ class SaveFilesToCloudResult
     protected static $swaggerTypes = [
         'saved_files' => '\Aspose\Cells\Cloud\Model\Link[]',
         'description' => 'string',
-        'out_file_list' => '\Aspose\Cells\Cloud\Model\FileSource[]'
+        'out_file_list' => '\Aspose\Cells\Cloud\Model\DataSource[]'
     ];
 
     /**
@@ -265,7 +265,7 @@ class SaveFilesToCloudResult
    /**
      * Gets out_file_list
      *
-     * @return \Aspose\Cells\Cloud\Model\FileSource[]
+     * @return \Aspose\Cells\Cloud\Model\DataSource[]
      */
     public function getOutFileList()
     {

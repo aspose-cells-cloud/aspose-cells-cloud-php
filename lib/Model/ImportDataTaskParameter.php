@@ -46,8 +46,10 @@ class ImportDataTaskParameter
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'workbook' => '\Aspose\Cells\Cloud\Model\FileSource',
         'import_option' => '\Aspose\Cells\Cloud\Model\ImportOption',
+        'target_data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'destination_workbook' => '\Aspose\Cells\Cloud\Model\FileSource'
     ];
 
@@ -57,8 +59,10 @@ class ImportDataTaskParameter
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'data_source' => null  ,
         'workbook' => null  ,
         'import_option' => null  ,
+        'target_data_source' => null  ,
         'destination_workbook' => null  
     ];
 
@@ -89,8 +93,10 @@ class ImportDataTaskParameter
      * @var string[]
      */
     protected static $attributeMap = [
+         'data_source' => 'DataSource' ,
          'workbook' => 'Workbook' ,
          'import_option' => 'ImportOption' ,
+         'target_data_source' => 'TargetDataSource' ,
          'destination_workbook' => 'DestinationWorkbook' 
     ];
 
@@ -100,8 +106,10 @@ class ImportDataTaskParameter
      * @var string[]
      */
     protected static $setters = [
+        'data_source' => 'setDataSource' ,
         'workbook' => 'setWorkbook' ,
         'import_option' => 'setImportOption' ,
+        'target_data_source' => 'setTargetDataSource' ,
         'destination_workbook' => 'setDestinationWorkbook' 
     ];
 
@@ -111,8 +119,10 @@ class ImportDataTaskParameter
      * @var string[]
      */
     protected static $getters = [
+        'data_source' => 'getDataSource' ,
         'workbook' => 'getWorkbook' ,
         'import_option' => 'getImportOption' ,
+        'target_data_source' => 'getTargetDataSource' ,
         'destination_workbook' => 'getDestinationWorkbook' 
     ];
 
@@ -172,8 +182,10 @@ class ImportDataTaskParameter
      */
     public function __construct(array $data = null)
     {
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['workbook'] = isset($data['workbook']) ? $data['workbook'] : null;
         $this->container['import_option'] = isset($data['import_option']) ? $data['import_option'] : null;
+        $this->container['target_data_source'] = isset($data['target_data_source']) ? $data['target_data_source'] : null;
         $this->container['destination_workbook'] = isset($data['destination_workbook']) ? $data['destination_workbook'] : null;
     }
 
@@ -185,11 +197,17 @@ class ImportDataTaskParameter
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
+        }
         if ($this->container['workbook'] === null) {
             $invalidProperties[] = "'workbook' can't be null";
         }
         if ($this->container['import_option'] === null) {
             $invalidProperties[] = "'import_option' can't be null";
+        }
+        if ($this->container['target_data_source'] === null) {
+            $invalidProperties[] = "'target_data_source' can't be null";
         }
         if ($this->container['destination_workbook'] === null) {
             $invalidProperties[] = "'destination_workbook' can't be null";
@@ -205,16 +223,45 @@ class ImportDataTaskParameter
      */
     public function valid()
     {
+        if ($this->container['data_source'] === null) {
+                    return false;
+                }
         if ($this->container['workbook'] === null) {
                     return false;
                 }
         if ($this->container['import_option'] === null) {
                     return false;
                 }
+        if ($this->container['target_data_source'] === null) {
+                    return false;
+                }
         if ($this->container['destination_workbook'] === null) {
                     return false;
                 }
         return true;
+    }
+   /**
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
     }
    /**
      * Gets workbook
@@ -259,6 +306,29 @@ class ImportDataTaskParameter
     public function setImportOption($import_option)
     {
         $this->container['import_option'] = $import_option;
+
+        return $this;
+    }
+   /**
+     * Gets target_data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getTargetDataSource()
+    {
+        return $this->container['target_data_source'];
+    }
+
+    /**
+     * Sets target_data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTargetDataSource($target_data_source)
+    {
+        $this->container['target_data_source'] = $target_data_source;
 
         return $this;
     }
