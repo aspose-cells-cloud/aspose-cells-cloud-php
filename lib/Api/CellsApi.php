@@ -5400,7 +5400,8 @@ class CellsApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         $request =  new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            // $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            'https://id.aspose.cloud' . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );
