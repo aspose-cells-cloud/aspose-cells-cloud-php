@@ -301,7 +301,7 @@ class PivotTableOperateParameter
     /**
      * Sets source_data
      *
-     *  
+     *  Represents source data of pivot table.
      *
      * @return $this
      */
@@ -324,7 +324,7 @@ class PivotTableOperateParameter
     /**
      * Sets dest_cell_name
      *
-     *  
+     *  Represents start cell name of the pivot table.
      *
      * @return $this
      */
@@ -347,7 +347,7 @@ class PivotTableOperateParameter
     /**
      * Sets table_name
      *
-     *  
+     *  Represents table name of pivot table.
      *
      * @return $this
      */
@@ -370,7 +370,7 @@ class PivotTableOperateParameter
     /**
      * Sets use_same_source
      *
-     *  
+     *  Represents whether the same source is used.
      *
      * @return $this
      */
@@ -393,7 +393,7 @@ class PivotTableOperateParameter
     /**
      * Sets pivot_table_index
      *
-     *  
+     *  Represents pivot table index.
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class PivotTableOperateParameter
     /**
      * Sets pivot_field_rows
      *
-     *  
+     *  Represents pivot row fields.
      *
      * @return $this
      */
@@ -439,7 +439,7 @@ class PivotTableOperateParameter
     /**
      * Sets pivot_field_columns
      *
-     *  
+     *  Represents pivot column fields.
      *
      * @return $this
      */
@@ -462,7 +462,7 @@ class PivotTableOperateParameter
     /**
      * Sets pivot_field_data
      *
-     *  
+     *  Represents pivot data field.
      *
      * @return $this
      */

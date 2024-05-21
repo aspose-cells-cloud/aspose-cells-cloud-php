@@ -217,7 +217,7 @@ class SaveResultTaskParameter
     /**
      * Sets result_source
      *
-     *  
+     *  Represents result data source.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class SaveResultTaskParameter
     /**
      * Sets result_destination
      *
-     *  
+     *  Represents result destination data.
      *
      * @return $this
      */

@@ -205,7 +205,7 @@ class SplitResult
     /**
      * Sets documents
      *
-     *  
+     *  Represents cells cloud file information.
      *
      * @return $this
      */

@@ -277,7 +277,7 @@ class PageBreakOperateParameter
     /**
      * Sets page_break_type
      *
-     *  
+     *  Represents page break type.
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class PageBreakOperateParameter
     /**
      * Sets index
      *
-     *  
+     *  Represents page break index.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class PageBreakOperateParameter
     /**
      * Sets row
      *
-     *  
+     *  Represents row index of page break.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class PageBreakOperateParameter
     /**
      * Sets column
      *
-     *  
+     *  Represents column index of page break.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class PageBreakOperateParameter
     /**
      * Sets start_index
      *
-     *  
+     *  Represents start row index of page break.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class PageBreakOperateParameter
     /**
      * Sets end_index
      *
-     *  
+     *  Represents end row index of page break.
      *
      * @return $this
      */

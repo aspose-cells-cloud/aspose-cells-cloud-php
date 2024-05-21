@@ -253,7 +253,7 @@ class WorksheetOperateParameter
     /**
      * Sets name
      *
-     *  
+     *  Represents worksheet name.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class WorksheetOperateParameter
     /**
      * Sets sheet_type
      *
-     *  
+     *  Represents worksheet type.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class WorksheetOperateParameter
     /**
      * Sets moving_request
      *
-     *  
+     *  Represents move position.
      *
      * @return $this
      */

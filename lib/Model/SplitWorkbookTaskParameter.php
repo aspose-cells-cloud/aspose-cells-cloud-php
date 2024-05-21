@@ -289,7 +289,7 @@ class SplitWorkbookTaskParameter
     /**
      * Sets workbook
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -312,7 +312,7 @@ class SplitWorkbookTaskParameter
     /**
      * Sets destination_file_position
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -335,7 +335,7 @@ class SplitWorkbookTaskParameter
     /**
      * Sets data_source
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -358,7 +358,7 @@ class SplitWorkbookTaskParameter
     /**
      * Sets target_data_source
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -381,7 +381,7 @@ class SplitWorkbookTaskParameter
     /**
      * Sets destination_file_format
      *
-     *  
+     *  Represents destination data file format.
      *
      * @return $this
      */

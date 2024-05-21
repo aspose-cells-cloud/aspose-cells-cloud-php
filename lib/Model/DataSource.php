@@ -217,7 +217,7 @@ class DataSource
     /**
      * Sets data_source_type
      *
-     *  
+     *  Represents data source type.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class DataSource
     /**
      * Sets data_path
      *
-     *  
+     *  Represents data path.
      *
      * @return $this
      */

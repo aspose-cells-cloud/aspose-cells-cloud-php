@@ -217,7 +217,7 @@ class PageSetupOperateParameter
     /**
      * Sets page_setup
      *
-     *  
+     *  Represents worksheet page setup.
      *
      * @return $this
      */

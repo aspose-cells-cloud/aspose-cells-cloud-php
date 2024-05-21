@@ -47,29 +47,29 @@ class Chart
       */
     protected static $swaggerTypes = [
         'auto_scaling' => 'bool',
-        'back_wall' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'category_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'chart_area' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'chart_data_table' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'back_wall' => '\Aspose\Cells\Cloud\Model\Walls',
+        'category_axis' => '\Aspose\Cells\Cloud\Model\Axis',
+        'chart_area' => '\Aspose\Cells\Cloud\Model\ChartArea',
+        'chart_data_table' => '\Aspose\Cells\Cloud\Model\ChartDataTable',
         'chart_object' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'depth_percent' => 'int',
         'elevation' => 'int',
         'first_slice_angle' => 'int',
-        'floor' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'floor' => '\Aspose\Cells\Cloud\Model\Floor',
         'gap_depth' => 'int',
         'gap_width' => 'int',
         'height_percent' => 'int',
         'hide_pivot_field_buttons' => 'bool',
         'is3_d' => 'bool',
         'is_rectangular_cornered' => 'bool',
-        'legend' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'legend' => '\Aspose\Cells\Cloud\Model\Legend',
         'name' => 'string',
-        'n_series' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'n_series' => '\Aspose\Cells\Cloud\Model\SeriesItems',
         'page_setup' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'perspective' => 'int',
         'pivot_source' => 'string',
         'placement' => 'string',
-        'plot_area' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'plot_area' => '\Aspose\Cells\Cloud\Model\PlotArea',
         'plot_empty_cells_type' => 'string',
         'plot_visible_cells' => 'bool',
         'print_size' => 'string',
@@ -86,7 +86,7 @@ class Chart
         'style' => 'int',
         'title' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'type' => 'string',
-        'value_axis' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'value_axis' => '\Aspose\Cells\Cloud\Model\Axis',
         'walls' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'walls_and_gridlines2_d' => 'bool',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
@@ -734,7 +734,7 @@ class Chart
    /**
      * Gets back_wall
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Walls
      */
     public function getBackWall()
     {
@@ -757,7 +757,7 @@ class Chart
    /**
      * Gets category_axis
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Axis
      */
     public function getCategoryAxis()
     {
@@ -780,7 +780,7 @@ class Chart
    /**
      * Gets chart_area
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\ChartArea
      */
     public function getChartArea()
     {
@@ -803,7 +803,7 @@ class Chart
    /**
      * Gets chart_data_table
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\ChartDataTable
      */
     public function getChartDataTable()
     {
@@ -918,7 +918,7 @@ class Chart
    /**
      * Gets floor
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Floor
      */
     public function getFloor()
     {
@@ -1079,7 +1079,7 @@ class Chart
    /**
      * Gets legend
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Legend
      */
     public function getLegend()
     {
@@ -1112,7 +1112,7 @@ class Chart
     /**
      * Sets name
      *
-     *  
+     *  Represents chart name.
      *
      * @return $this
      */
@@ -1125,7 +1125,7 @@ class Chart
    /**
      * Gets n_series
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\SeriesItems
      */
     public function getNSeries()
     {
@@ -1240,7 +1240,7 @@ class Chart
    /**
      * Gets plot_area
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\PlotArea
      */
     public function getPlotArea()
     {
@@ -1595,7 +1595,7 @@ class Chart
     /**
      * Sets title
      *
-     *  
+     *  Represents chart title.
      *
      * @return $this
      */
@@ -1618,7 +1618,7 @@ class Chart
     /**
      * Sets type
      *
-     *  
+     *  Represents chart type.
      *
      * @return $this
      */
@@ -1631,7 +1631,7 @@ class Chart
    /**
      * Gets value_axis
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Axis
      */
     public function getValueAxis()
     {

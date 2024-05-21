@@ -217,7 +217,7 @@ class OperateObject
     /**
      * Sets operate_object_type
      *
-     *  
+     *  Represents operate object type.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class OperateObject
     /**
      * Sets position
      *
-     *  
+     *  Represents position of operate object.
      *
      * @return $this
      */

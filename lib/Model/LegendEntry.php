@@ -46,10 +46,10 @@ class LegendEntry
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'auto_scale_font' => 'string',
+        'auto_scale_font' => 'bool',
         'background_mode' => 'string',
         'font' => '\Aspose\Cells\Cloud\Model\Font',
-        'is_deleted' => 'string',
+        'is_deleted' => 'bool',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -243,7 +243,7 @@ class LegendEntry
    /**
      * Gets auto_scale_font
      *
-     * @return string
+     * @return bool
      */
     public function getAutoScaleFont()
     {
@@ -312,7 +312,7 @@ class LegendEntry
    /**
      * Gets is_deleted
      *
-     * @return string
+     * @return bool
      */
     public function getIsDeleted()
     {

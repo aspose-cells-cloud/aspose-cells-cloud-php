@@ -54,6 +54,7 @@ class ChartPoint
         'shadow' => 'bool',
         'x_value' => 'string',
         'y_value' => 'string',
+        'is_in_secondary_plot' => 'bool',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -71,6 +72,7 @@ class ChartPoint
         'shadow' => null  ,
         'x_value' => null  ,
         'y_value' => null  ,
+        'is_in_secondary_plot' => null  ,
         'link' => null  
     ];
 
@@ -109,6 +111,7 @@ class ChartPoint
          'shadow' => 'Shadow' ,
          'x_value' => 'XValue' ,
          'y_value' => 'YValue' ,
+         'is_in_secondary_plot' => 'IsInSecondaryPlot' ,
          'link' => 'link' 
     ];
 
@@ -126,6 +129,7 @@ class ChartPoint
         'shadow' => 'setShadow' ,
         'x_value' => 'setXValue' ,
         'y_value' => 'setYValue' ,
+        'is_in_secondary_plot' => 'setIsInSecondaryPlot' ,
         'link' => 'setlink' 
     ];
 
@@ -143,6 +147,7 @@ class ChartPoint
         'shadow' => 'getShadow' ,
         'x_value' => 'getXValue' ,
         'y_value' => 'getYValue' ,
+        'is_in_secondary_plot' => 'getIsInSecondaryPlot' ,
         'link' => 'getlink' 
     ];
 
@@ -210,6 +215,7 @@ class ChartPoint
         $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
         $this->container['x_value'] = isset($data['x_value']) ? $data['x_value'] : null;
         $this->container['y_value'] = isset($data['y_value']) ? $data['y_value'] : null;
+        $this->container['is_in_secondary_plot'] = isset($data['is_in_secondary_plot']) ? $data['is_in_secondary_plot'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
     }
 
@@ -244,6 +250,9 @@ class ChartPoint
         }
         if ($this->container['y_value'] === null) {
             $invalidProperties[] = "'y_value' can't be null";
+        }
+        if ($this->container['is_in_secondary_plot'] === null) {
+            $invalidProperties[] = "'is_in_secondary_plot' can't be null";
         }
         if ($this->container['link'] === null) {
             $invalidProperties[] = "'link' can't be null";
@@ -281,6 +290,9 @@ class ChartPoint
                     return false;
                 }
         if ($this->container['y_value'] === null) {
+                    return false;
+                }
+        if ($this->container['is_in_secondary_plot'] === null) {
                     return false;
                 }
         if ($this->container['link'] === null) {
@@ -469,6 +481,29 @@ class ChartPoint
     public function setYValue($y_value)
     {
         $this->container['y_value'] = $y_value;
+
+        return $this;
+    }
+   /**
+     * Gets is_in_secondary_plot
+     *
+     * @return bool
+     */
+    public function getIsInSecondaryPlot()
+    {
+        return $this->container['is_in_secondary_plot'];
+    }
+
+    /**
+     * Sets is_in_secondary_plot
+     *
+     *  Gets or sets a value indicates whether this data points is in the second pie or bar on a pie of pie or bar of pie chart.
+     *
+     * @return $this
+     */
+    public function setIsInSecondaryPlot($is_in_secondary_plot)
+    {
+        $this->container['is_in_secondary_plot'] = $is_in_secondary_plot;
 
         return $this;
     }

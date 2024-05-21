@@ -229,7 +229,7 @@ class DataFill
     /**
      * Sets ranges
      *
-     *  
+     *  Represents range of data filling.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class DataFill
     /**
      * Sets data_fill_default_value
      *
-     *  
+     *  Represents that the data column is populated with the default value.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DataFill
     /**
      * Sets data_column_fill_value_list
      *
-     *  
+     *  Represents that the data column is populated with the specified value.
      *
      * @return $this
      */

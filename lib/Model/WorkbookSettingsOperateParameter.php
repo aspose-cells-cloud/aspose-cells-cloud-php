@@ -217,7 +217,7 @@ class WorkbookSettingsOperateParameter
     /**
      * Sets workbook_settings
      *
-     *  
+     *  Represents workbook setting.
      *
      * @return $this
      */

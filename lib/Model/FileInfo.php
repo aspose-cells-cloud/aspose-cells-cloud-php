@@ -229,7 +229,7 @@ class FileInfo
     /**
      * Sets filename
      *
-     *  Filename. 
+     *  Represents filename. 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class FileInfo
     /**
      * Sets file_size
      *
-     *  File size.
+     *  Represents file size.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class FileInfo
     /**
      * Sets file_content
      *
-     *  File content,  byte to base64 string.
+     *  Represents file content,  byte to base64 string.
      *
      * @return $this
      */

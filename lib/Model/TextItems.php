@@ -217,7 +217,7 @@ class TextItems
     /**
      * Sets text_item_list
      *
-     *  
+     *  Represents text item collection
      *
      * @return $this
      */

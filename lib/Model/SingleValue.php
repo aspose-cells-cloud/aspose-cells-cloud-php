@@ -217,7 +217,7 @@ class SingleValue
     /**
      * Sets value
      *
-     *  
+     *  Represents value.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class SingleValue
     /**
      * Sets value_type
      *
-     *  
+     *  Represents value type.
      *
      * @return $this
      */

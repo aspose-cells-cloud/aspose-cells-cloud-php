@@ -217,7 +217,7 @@ class DataItem
     /**
      * Sets data_item_type
      *
-     *  
+     *  Represents data item type.            
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class DataItem
     /**
      * Sets value
      *
-     *  
+     *  Represents data item value.            
      *
      * @return $this
      */

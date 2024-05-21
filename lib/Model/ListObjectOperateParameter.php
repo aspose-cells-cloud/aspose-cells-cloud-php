@@ -217,7 +217,7 @@ class ListObjectOperateParameter
     /**
      * Sets list_object
      *
-     *  
+     *  Represents list object of operate object.
      *
      * @return $this
      */

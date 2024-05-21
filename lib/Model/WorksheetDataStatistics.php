@@ -313,7 +313,7 @@ class WorksheetDataStatistics
     /**
      * Sets name
      *
-     *  
+     *  Represents worksheet name.
      *
      * @return $this
      */
@@ -336,7 +336,7 @@ class WorksheetDataStatistics
     /**
      * Sets charts_count
      *
-     *  
+     *  Represents chart number.
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class WorksheetDataStatistics
     /**
      * Sets tables_count
      *
-     *  
+     *  Represents list object number.
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class WorksheetDataStatistics
     /**
      * Sets pivot_tables_count
      *
-     *  
+     *  Represents pivot table number.
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class WorksheetDataStatistics
     /**
      * Sets shapes_count
      *
-     *  
+     *  Represents shape number.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class WorksheetDataStatistics
     /**
      * Sets hyperlinks_count
      *
-     *  
+     *  Represents shape number.
      *
      * @return $this
      */
@@ -451,7 +451,7 @@ class WorksheetDataStatistics
     /**
      * Sets query_tables_count
      *
-     *  
+     *  Represents hyperlink number.
      *
      * @return $this
      */
@@ -474,7 +474,7 @@ class WorksheetDataStatistics
     /**
      * Sets cells_count
      *
-     *  
+     *  Represents query table number.
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class WorksheetDataStatistics
     /**
      * Sets cells_count_in_table
      *
-     *  
+     *  Represents cell number.
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class WorksheetDataStatistics
     /**
      * Sets cells_count_is_formula
      *
-     *  
+     *  Represents formula number.
      *
      * @return $this
      */

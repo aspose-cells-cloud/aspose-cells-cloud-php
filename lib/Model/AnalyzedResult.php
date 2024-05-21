@@ -253,7 +253,7 @@ class AnalyzedResult
     /**
      * Sets filename
      *
-     *  
+     *  Represents the file name of data file.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class AnalyzedResult
     /**
      * Sets description
      *
-     *  
+     *  Represents summary about results of analyzed data.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class AnalyzedResult
     /**
      * Sets basic_statistics
      *
-     *  
+     *  Represents Excel data statistics.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class AnalyzedResult
     /**
      * Sets results
      *
-     *  
+     *  Represents analyzed table description.
      *
      * @return $this
      */

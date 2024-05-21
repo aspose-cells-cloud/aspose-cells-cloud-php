@@ -205,7 +205,7 @@ class TaskData
     /**
      * Sets tasks
      *
-     *  
+     *  Represents task description list.
      *
      * @return $this
      */

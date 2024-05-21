@@ -52,10 +52,10 @@ class Series
         'bubble_scale' => 'int',
         'bubble_sizes' => 'string',
         'count_of_data_values' => 'int',
-        'data_labels' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'data_labels' => '\Aspose\Cells\Cloud\Model\DataLabels',
         'display_name' => 'string',
         'doughnut_hole_size' => 'int',
-        'down_bars' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'down_bars' => '\Aspose\Cells\Cloud\Model\DropBars',
         'drop_lines' => '\Aspose\Cells\Cloud\Model\Line',
         'explosion' => 'int',
         'first_slice_angle' => 'int',
@@ -71,8 +71,7 @@ class Series
         'is_auto_split' => 'bool',
         'is_color_varied' => 'bool',
         'leader_lines' => '\Aspose\Cells\Cloud\Model\Line',
-        'legend_entry' => '\Aspose\Cells\Cloud\Model\LinkElement',
-        'line' => '\Aspose\Cells\Cloud\Model\Line',
+        'legend_entry' => '\Aspose\Cells\Cloud\Model\LegendEntry',
         'marker' => '\Aspose\Cells\Cloud\Model\Marker',
         'name' => 'string',
         'overlap' => 'int',
@@ -81,19 +80,18 @@ class Series
         'second_plot_size' => 'int',
         'series_lines' => '\Aspose\Cells\Cloud\Model\Line',
         'shadow' => 'bool',
-        'shape_properties' => '\Aspose\Cells\Cloud\Model\LinkElement',
         'show_negative_bubbles' => 'bool',
         'size_represents' => 'string',
         'smooth' => 'bool',
         'split_type' => 'string',
         'split_value' => 'double',
-        'trend_lines' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'trend_lines' => '\Aspose\Cells\Cloud\Model\Trendlines',
         'type' => 'string',
-        'up_bars' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'up_bars' => '\Aspose\Cells\Cloud\Model\DropBars',
         'values' => 'string',
-        'x_error_bar' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'x_error_bar' => '\Aspose\Cells\Cloud\Model\ErrorBar',
         'x_values' => 'string',
-        'y_error_bar' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'y_error_bar' => '\Aspose\Cells\Cloud\Model\ErrorBar',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -129,7 +127,6 @@ class Series
         'is_color_varied' => null  ,
         'leader_lines' => null  ,
         'legend_entry' => null  ,
-        'line' => null  ,
         'marker' => null  ,
         'name' => null  ,
         'overlap' => null  ,
@@ -138,7 +135,6 @@ class Series
         'second_plot_size' => null  ,
         'series_lines' => null  ,
         'shadow' => null  ,
-        'shape_properties' => null  ,
         'show_negative_bubbles' => null  ,
         'size_represents' => null  ,
         'smooth' => null  ,
@@ -207,7 +203,6 @@ class Series
          'is_color_varied' => 'IsColorVaried' ,
          'leader_lines' => 'LeaderLines' ,
          'legend_entry' => 'LegendEntry' ,
-         'line' => 'Line' ,
          'marker' => 'Marker' ,
          'name' => 'Name' ,
          'overlap' => 'Overlap' ,
@@ -216,7 +211,6 @@ class Series
          'second_plot_size' => 'SecondPlotSize' ,
          'series_lines' => 'SeriesLines' ,
          'shadow' => 'Shadow' ,
-         'shape_properties' => 'ShapeProperties' ,
          'show_negative_bubbles' => 'ShowNegativeBubbles' ,
          'size_represents' => 'SizeRepresents' ,
          'smooth' => 'Smooth' ,
@@ -264,7 +258,6 @@ class Series
         'is_color_varied' => 'setIsColorVaried' ,
         'leader_lines' => 'setLeaderLines' ,
         'legend_entry' => 'setLegendEntry' ,
-        'line' => 'setLine' ,
         'marker' => 'setMarker' ,
         'name' => 'setName' ,
         'overlap' => 'setOverlap' ,
@@ -273,7 +266,6 @@ class Series
         'second_plot_size' => 'setSecondPlotSize' ,
         'series_lines' => 'setSeriesLines' ,
         'shadow' => 'setShadow' ,
-        'shape_properties' => 'setShapeProperties' ,
         'show_negative_bubbles' => 'setShowNegativeBubbles' ,
         'size_represents' => 'setSizeRepresents' ,
         'smooth' => 'setSmooth' ,
@@ -321,7 +313,6 @@ class Series
         'is_color_varied' => 'getIsColorVaried' ,
         'leader_lines' => 'getLeaderLines' ,
         'legend_entry' => 'getLegendEntry' ,
-        'line' => 'getLine' ,
         'marker' => 'getMarker' ,
         'name' => 'getName' ,
         'overlap' => 'getOverlap' ,
@@ -330,7 +321,6 @@ class Series
         'second_plot_size' => 'getSecondPlotSize' ,
         'series_lines' => 'getSeriesLines' ,
         'shadow' => 'getShadow' ,
-        'shape_properties' => 'getShapeProperties' ,
         'show_negative_bubbles' => 'getShowNegativeBubbles' ,
         'size_represents' => 'getSizeRepresents' ,
         'smooth' => 'getSmooth' ,
@@ -428,7 +418,6 @@ class Series
         $this->container['is_color_varied'] = isset($data['is_color_varied']) ? $data['is_color_varied'] : null;
         $this->container['leader_lines'] = isset($data['leader_lines']) ? $data['leader_lines'] : null;
         $this->container['legend_entry'] = isset($data['legend_entry']) ? $data['legend_entry'] : null;
-        $this->container['line'] = isset($data['line']) ? $data['line'] : null;
         $this->container['marker'] = isset($data['marker']) ? $data['marker'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['overlap'] = isset($data['overlap']) ? $data['overlap'] : null;
@@ -437,7 +426,6 @@ class Series
         $this->container['second_plot_size'] = isset($data['second_plot_size']) ? $data['second_plot_size'] : null;
         $this->container['series_lines'] = isset($data['series_lines']) ? $data['series_lines'] : null;
         $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
-        $this->container['shape_properties'] = isset($data['shape_properties']) ? $data['shape_properties'] : null;
         $this->container['show_negative_bubbles'] = isset($data['show_negative_bubbles']) ? $data['show_negative_bubbles'] : null;
         $this->container['size_represents'] = isset($data['size_represents']) ? $data['size_represents'] : null;
         $this->container['smooth'] = isset($data['smooth']) ? $data['smooth'] : null;
@@ -539,9 +527,6 @@ class Series
         if ($this->container['legend_entry'] === null) {
             $invalidProperties[] = "'legend_entry' can't be null";
         }
-        if ($this->container['line'] === null) {
-            $invalidProperties[] = "'line' can't be null";
-        }
         if ($this->container['marker'] === null) {
             $invalidProperties[] = "'marker' can't be null";
         }
@@ -565,9 +550,6 @@ class Series
         }
         if ($this->container['shadow'] === null) {
             $invalidProperties[] = "'shadow' can't be null";
-        }
-        if ($this->container['shape_properties'] === null) {
-            $invalidProperties[] = "'shape_properties' can't be null";
         }
         if ($this->container['show_negative_bubbles'] === null) {
             $invalidProperties[] = "'show_negative_bubbles' can't be null";
@@ -697,9 +679,6 @@ class Series
         if ($this->container['legend_entry'] === null) {
                     return false;
                 }
-        if ($this->container['line'] === null) {
-                    return false;
-                }
         if ($this->container['marker'] === null) {
                     return false;
                 }
@@ -722,9 +701,6 @@ class Series
                     return false;
                 }
         if ($this->container['shadow'] === null) {
-                    return false;
-                }
-        if ($this->container['shape_properties'] === null) {
                     return false;
                 }
         if ($this->container['show_negative_bubbles'] === null) {
@@ -909,7 +885,7 @@ class Series
    /**
      * Gets data_labels
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\DataLabels
      */
     public function getDataLabels()
     {
@@ -978,7 +954,7 @@ class Series
    /**
      * Gets down_bars
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\DropBars
      */
     public function getDownBars()
     {
@@ -1346,7 +1322,7 @@ class Series
    /**
      * Gets legend_entry
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\LegendEntry
      */
     public function getLegendEntry()
     {
@@ -1363,29 +1339,6 @@ class Series
     public function setLegendEntry($legend_entry)
     {
         $this->container['legend_entry'] = $legend_entry;
-
-        return $this;
-    }
-   /**
-     * Gets line
-     *
-     * @return \Aspose\Cells\Cloud\Model\Line
-     */
-    public function getLine()
-    {
-        return $this->container['line'];
-    }
-
-    /**
-     * Sets line
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setLine($line)
-    {
-        $this->container['line'] = $line;
 
         return $this;
     }
@@ -1574,29 +1527,6 @@ class Series
         return $this;
     }
    /**
-     * Gets shape_properties
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
-     */
-    public function getShapeProperties()
-    {
-        return $this->container['shape_properties'];
-    }
-
-    /**
-     * Sets shape_properties
-     *
-     *  Gets the  object that holds the visual shape properties of the Series.
-     *
-     * @return $this
-     */
-    public function setShapeProperties($shape_properties)
-    {
-        $this->container['shape_properties'] = $shape_properties;
-
-        return $this;
-    }
-   /**
      * Gets show_negative_bubbles
      *
      * @return bool
@@ -1714,7 +1644,7 @@ class Series
    /**
      * Gets trend_lines
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\Trendlines
      */
     public function getTrendLines()
     {
@@ -1760,7 +1690,7 @@ class Series
    /**
      * Gets up_bars
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\DropBars
      */
     public function getUpBars()
     {
@@ -1806,7 +1736,7 @@ class Series
    /**
      * Gets x_error_bar
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\ErrorBar
      */
     public function getXErrorBar()
     {
@@ -1852,7 +1782,7 @@ class Series
    /**
      * Gets y_error_bar
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\ErrorBar
      */
     public function getYErrorBar()
     {

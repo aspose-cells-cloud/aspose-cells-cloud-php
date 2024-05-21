@@ -229,7 +229,7 @@ class ResultDestination
     /**
      * Sets destination_type
      *
-     *  
+     *  Represents destination data type.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class ResultDestination
     /**
      * Sets input_file
      *
-     *  
+     *  Represents input file.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class ResultDestination
     /**
      * Sets output_file
      *
-     *  
+     *  Represents output file.
      *
      * @return $this
      */

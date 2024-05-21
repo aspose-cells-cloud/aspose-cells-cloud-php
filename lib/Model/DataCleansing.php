@@ -252,7 +252,7 @@ class DataCleansing
     /**
      * Sets need_fill_data
      *
-     *  
+     *  Represents whether the data needs to be populated.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class DataCleansing
     /**
      * Sets data_fill
      *
-     *  
+     *  Represents data fill.
      *
      * @return $this
      */

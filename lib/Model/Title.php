@@ -61,7 +61,6 @@ class Title
         'is_automatic_size' => 'bool',
         'is_inner_mode' => 'bool',
         'shadow' => 'bool',
-        'shape_properties' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
         'width' => 'int',
         'height' => 'int',
         'x' => 'int',
@@ -89,7 +88,6 @@ class Title
         'is_automatic_size' => null  ,
         'is_inner_mode' => null  ,
         'shadow' => null  ,
-        'shape_properties' => null  ,
         'width' => null  ,
         'height' => null  ,
         'x' => null  ,
@@ -138,7 +136,6 @@ class Title
          'is_automatic_size' => 'IsAutomaticSize' ,
          'is_inner_mode' => 'IsInnerMode' ,
          'shadow' => 'Shadow' ,
-         'shape_properties' => 'ShapeProperties' ,
          'width' => 'Width' ,
          'height' => 'Height' ,
          'x' => 'X' ,
@@ -166,7 +163,6 @@ class Title
         'is_automatic_size' => 'setIsAutomaticSize' ,
         'is_inner_mode' => 'setIsInnerMode' ,
         'shadow' => 'setShadow' ,
-        'shape_properties' => 'setShapeProperties' ,
         'width' => 'setWidth' ,
         'height' => 'setHeight' ,
         'x' => 'setX' ,
@@ -194,7 +190,6 @@ class Title
         'is_automatic_size' => 'getIsAutomaticSize' ,
         'is_inner_mode' => 'getIsInnerMode' ,
         'shadow' => 'getShadow' ,
-        'shape_properties' => 'getShapeProperties' ,
         'width' => 'getWidth' ,
         'height' => 'getHeight' ,
         'x' => 'getX' ,
@@ -272,7 +267,6 @@ class Title
         $this->container['is_automatic_size'] = isset($data['is_automatic_size']) ? $data['is_automatic_size'] : null;
         $this->container['is_inner_mode'] = isset($data['is_inner_mode']) ? $data['is_inner_mode'] : null;
         $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
-        $this->container['shape_properties'] = isset($data['shape_properties']) ? $data['shape_properties'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['x'] = isset($data['x']) ? $data['x'] : null;
@@ -331,9 +325,6 @@ class Title
         }
         if ($this->container['shadow'] === null) {
             $invalidProperties[] = "'shadow' can't be null";
-        }
-        if ($this->container['shape_properties'] === null) {
-            $invalidProperties[] = "'shape_properties' can't be null";
         }
         if ($this->container['width'] === null) {
             $invalidProperties[] = "'width' can't be null";
@@ -401,9 +392,6 @@ class Title
                     return false;
                 }
         if ($this->container['shadow'] === null) {
-                    return false;
-                }
-        if ($this->container['shape_properties'] === null) {
                     return false;
                 }
         if ($this->container['width'] === null) {
@@ -762,29 +750,6 @@ class Title
     public function setShadow($shadow)
     {
         $this->container['shadow'] = $shadow;
-
-        return $this;
-    }
-   /**
-     * Gets shape_properties
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement[]
-     */
-    public function getShapeProperties()
-    {
-        return $this->container['shape_properties'];
-    }
-
-    /**
-     * Sets shape_properties
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setShapeProperties($shape_properties)
-    {
-        $this->container['shape_properties'] = $shape_properties;
 
         return $this;
     }

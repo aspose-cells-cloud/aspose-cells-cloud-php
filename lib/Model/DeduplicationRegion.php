@@ -217,7 +217,7 @@ class DeduplicationRegion
     /**
      * Sets ranges
      *
-     *  
+     *  Represents data range.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class DeduplicationRegion
     /**
      * Sets worksheet_name_list
      *
-     *  
+     *  Represents worksheet name list.
      *
      * @return $this
      */

@@ -253,7 +253,7 @@ class ImportDataTaskParameter
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class ImportDataTaskParameter
     /**
      * Sets workbook
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class ImportDataTaskParameter
     /**
      * Sets import_option
      *
-     *  
+     *  Represents import option.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class ImportDataTaskParameter
     /**
      * Sets target_data_source
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class ImportDataTaskParameter
     /**
      * Sets destination_workbook
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */

@@ -217,7 +217,7 @@ class TaskRunResult
     /**
      * Sets description
      *
-     *  
+     *  Represents task run result description.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class TaskRunResult
     /**
      * Sets out_file_list
      *
-     *  
+     *  Represents out data file list.
      *
      * @return $this
      */

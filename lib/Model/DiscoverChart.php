@@ -265,7 +265,7 @@ class DiscoverChart
     /**
      * Sets name
      *
-     *  
+     *  Represents chart name.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class DiscoverChart
     /**
      * Sets sheet_name
      *
-     *  
+     *  Represents worksheet name which is where the chart is located.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class DiscoverChart
     /**
      * Sets title
      *
-     *  
+     *  Represents chart title.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class DiscoverChart
     /**
      * Sets type
      *
-     *  
+     *  Represents chart type.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class DiscoverChart
     /**
      * Sets data_range
      *
-     *  
+     *  Represents chart data range.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class DiscoverChart
     /**
      * Sets thumbnail
      *
-     *  Base64String
+     *  Represents chart thumbnail. Base64String
      *
      * @return $this
      */

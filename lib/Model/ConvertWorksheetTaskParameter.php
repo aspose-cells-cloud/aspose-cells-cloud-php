@@ -313,7 +313,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -336,7 +336,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets workbook
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets sheet
      *
-     *  
+     *  Represents worksheet.
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets target_data_source
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets target
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets format
      *
-     *  
+     *  Represents destination data format.
      *
      * @return $this
      */
@@ -451,7 +451,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets area
      *
-     *  
+     *  Represents converted data area.
      *
      * @return $this
      */
@@ -474,7 +474,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets page_index
      *
-     *  
+     *  Represents converted page index.
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets vertical_resolution
      *
-     *  
+     *  Represents vertical resolution.
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class ConvertWorksheetTaskParameter
     /**
      * Sets horizontal_resolution
      *
-     *  
+     *  Represents horizontal resolution.
      *
      * @return $this
      */

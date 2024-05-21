@@ -217,7 +217,7 @@ class ShapeOperateParameter
     /**
      * Sets shape
      *
-     *  
+     *  Represents shape object.
      *
      * @return $this
      */

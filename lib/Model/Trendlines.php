@@ -46,7 +46,7 @@ class Trendlines
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'trendline_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
+        'trendline_list' => '\Aspose\Cells\Cloud\Model\Trendline[]',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -207,7 +207,7 @@ class Trendlines
    /**
      * Gets trendline_list
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement[]
+     * @return \Aspose\Cells\Cloud\Model\Trendline[]
      */
     public function getTrendlineList()
     {

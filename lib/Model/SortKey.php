@@ -265,7 +265,7 @@ class SortKey
     /**
      * Sets key
      *
-     *  
+     *  Represents the key of sorting.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class SortKey
     /**
      * Sets sort_order
      *
-     *  
+     *  Represents the order of sorting.
      *
      * @return $this
      */

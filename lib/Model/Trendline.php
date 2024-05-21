@@ -48,13 +48,13 @@ class Trendline
     protected static $swaggerTypes = [
         'link' => '\Aspose\Cells\Cloud\Model\Link',
         'backward' => 'double',
-        'data_labels' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'data_labels' => '\Aspose\Cells\Cloud\Model\DataLabels',
         'display_equation' => 'bool',
         'display_r_squared' => 'bool',
         'forward' => 'double',
         'intercept' => 'double',
         'is_name_auto' => 'bool',
-        'legend_entry' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'legend_entry' => '\Aspose\Cells\Cloud\Model\LegendEntry',
         'name' => 'string',
         'order' => 'int',
         'period' => 'int',
@@ -613,7 +613,7 @@ class Trendline
    /**
      * Gets data_labels
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\DataLabels
      */
     public function getDataLabels()
     {
@@ -751,7 +751,7 @@ class Trendline
    /**
      * Gets legend_entry
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\LegendEntry
      */
     public function getLegendEntry()
     {

@@ -265,7 +265,7 @@ class SmartMarkerTaskParameter
     /**
      * Sets source_workbook
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -288,7 +288,7 @@ class SmartMarkerTaskParameter
     /**
      * Sets destination_workbook
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -311,7 +311,7 @@ class SmartMarkerTaskParameter
     /**
      * Sets xml_file
      *
-     *  
+     *  Represents xml file.
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class SmartMarkerTaskParameter
     /**
      * Sets data_source
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -357,7 +357,7 @@ class SmartMarkerTaskParameter
     /**
      * Sets target_data_source
      *
-     *  
+     *  Represents destination data source.
      *
      * @return $this
      */
@@ -380,7 +380,7 @@ class SmartMarkerTaskParameter
     /**
      * Sets xml_file_data_source
      *
-     *  
+     *  Represents xml file.
      *
      * @return $this
      */

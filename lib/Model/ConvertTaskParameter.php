@@ -253,7 +253,7 @@ class ConvertTaskParameter
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class ConvertTaskParameter
     /**
      * Sets workbook
      *
-     *  
+     *  Represents data source of task object.
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class ConvertTaskParameter
     /**
      * Sets destination_file
      *
-     *  
+     *  Represents destination file.
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class ConvertTaskParameter
     /**
      * Sets region
      *
-     *  
+     *  Represents Excel data region.
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class ConvertTaskParameter
     /**
      * Sets save_options
      *
-     *  
+     *  Represents save options.
      *
      * @return $this
      */

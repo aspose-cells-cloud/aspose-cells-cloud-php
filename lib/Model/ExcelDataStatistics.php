@@ -46,8 +46,7 @@ class ExcelDataStatistics
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'worksheet_data_statistics' => '\Aspose\Cells\Cloud\Model\WorksheetDataStatistics[]',
-        'names_count' => 'int'
+        'worksheet_data_statistics' => '\Aspose\Cells\Cloud\Model\WorksheetDataStatistics[]'
     ];
 
     /**
@@ -56,8 +55,7 @@ class ExcelDataStatistics
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'worksheet_data_statistics' => null  ,
-        'names_count' => null  
+        'worksheet_data_statistics' => null  
     ];
 
     /**
@@ -87,8 +85,7 @@ class ExcelDataStatistics
      * @var string[]
      */
     protected static $attributeMap = [
-         'worksheet_data_statistics' => 'WorksheetDataStatistics' ,
-         'names_count' => 'NamesCount' 
+         'worksheet_data_statistics' => 'WorksheetDataStatistics' 
     ];
 
     /**
@@ -97,8 +94,7 @@ class ExcelDataStatistics
      * @var string[]
      */
     protected static $setters = [
-        'worksheet_data_statistics' => 'setWorksheetDataStatistics' ,
-        'names_count' => 'setNamesCount' 
+        'worksheet_data_statistics' => 'setWorksheetDataStatistics' 
     ];
 
     /**
@@ -107,8 +103,7 @@ class ExcelDataStatistics
      * @var string[]
      */
     protected static $getters = [
-        'worksheet_data_statistics' => 'getWorksheetDataStatistics' ,
-        'names_count' => 'getNamesCount' 
+        'worksheet_data_statistics' => 'getWorksheetDataStatistics' 
     ];
 
     /**
@@ -168,7 +163,6 @@ class ExcelDataStatistics
     public function __construct(array $data = null)
     {
         $this->container['worksheet_data_statistics'] = isset($data['worksheet_data_statistics']) ? $data['worksheet_data_statistics'] : null;
-        $this->container['names_count'] = isset($data['names_count']) ? $data['names_count'] : null;
     }
 
     /**
@@ -182,9 +176,6 @@ class ExcelDataStatistics
         if ($this->container['worksheet_data_statistics'] === null) {
             $invalidProperties[] = "'worksheet_data_statistics' can't be null";
         }
-        if ($this->container['names_count'] === null) {
-            $invalidProperties[] = "'names_count' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -197,9 +188,6 @@ class ExcelDataStatistics
     public function valid()
     {
         if ($this->container['worksheet_data_statistics'] === null) {
-                    return false;
-                }
-        if ($this->container['names_count'] === null) {
                     return false;
                 }
         return true;
@@ -217,36 +205,13 @@ class ExcelDataStatistics
     /**
      * Sets worksheet_data_statistics
      *
-     *  
+     *  Represents worksheet data statistics list.
      *
      * @return $this
      */
     public function setWorksheetDataStatistics($worksheet_data_statistics)
     {
         $this->container['worksheet_data_statistics'] = $worksheet_data_statistics;
-
-        return $this;
-    }
-   /**
-     * Gets names_count
-     *
-     * @return int
-     */
-    public function getNamesCount()
-    {
-        return $this->container['names_count'];
-    }
-
-    /**
-     * Sets names_count
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setNamesCount($names_count)
-    {
-        $this->container['names_count'] = $names_count;
 
         return $this;
     }

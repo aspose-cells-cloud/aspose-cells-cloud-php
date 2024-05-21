@@ -217,7 +217,7 @@ class DataColumnFillValue
     /**
      * Sets column_index
      *
-     *  
+     *  Represents specified column index.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class DataColumnFillValue
     /**
      * Sets data_fill_value
      *
-     *  
+     *  Represents specified data fill value.
      *
      * @return $this
      */

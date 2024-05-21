@@ -46,7 +46,7 @@ class ChartPoints
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'chart_point_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
+        'chart_point_list' => '\Aspose\Cells\Cloud\Model\ChartPoint[]',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -207,7 +207,7 @@ class ChartPoints
    /**
      * Gets chart_point_list
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement[]
+     * @return \Aspose\Cells\Cloud\Model\ChartPoint[]
      */
     public function getChartPointList()
     {

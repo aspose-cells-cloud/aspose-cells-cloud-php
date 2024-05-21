@@ -253,7 +253,7 @@ class DataFillValue
     /**
      * Sets default_boolean
      *
-     *  
+     *  Represents default bool value. 
      *
      * @return $this
      */
@@ -276,7 +276,7 @@ class DataFillValue
     /**
      * Sets default_string
      *
-     *  
+     *  Represents default string value.             
      *
      * @return $this
      */
@@ -299,7 +299,7 @@ class DataFillValue
     /**
      * Sets default_number
      *
-     *  
+     *  Represents default number value.             
      *
      * @return $this
      */
@@ -322,7 +322,7 @@ class DataFillValue
     /**
      * Sets default_double
      *
-     *  
+     *  Represents default double value.             
      *
      * @return $this
      */
@@ -345,7 +345,7 @@ class DataFillValue
     /**
      * Sets default_date
      *
-     *  
+     *  Represents default date value.             
      *
      * @return $this
      */

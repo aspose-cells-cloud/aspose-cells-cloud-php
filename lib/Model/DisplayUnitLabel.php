@@ -49,7 +49,6 @@ class DisplayUnitLabel
         'linked_source' => 'string',
         'rotation_angle' => 'int',
         'text' => 'string',
-        'text_direction' => 'string',
         'text_horizontal_alignment' => 'string',
         'text_vertical_alignment' => 'string',
         'area' => '\Aspose\Cells\Cloud\Model\Area',
@@ -60,7 +59,6 @@ class DisplayUnitLabel
         'is_automatic_size' => 'bool',
         'is_inner_mode' => 'bool',
         'shadow' => 'bool',
-        'shape_properties' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
         'width' => 'int',
         'height' => 'int',
         'x' => 'int',
@@ -76,7 +74,6 @@ class DisplayUnitLabel
         'linked_source' => null  ,
         'rotation_angle' => null  ,
         'text' => null  ,
-        'text_direction' => null  ,
         'text_horizontal_alignment' => null  ,
         'text_vertical_alignment' => null  ,
         'area' => null  ,
@@ -87,7 +84,6 @@ class DisplayUnitLabel
         'is_automatic_size' => null  ,
         'is_inner_mode' => null  ,
         'shadow' => null  ,
-        'shape_properties' => null  ,
         'width' => null  ,
         'height' => null  ,
         'x' => null  ,
@@ -124,7 +120,6 @@ class DisplayUnitLabel
          'linked_source' => 'LinkedSource' ,
          'rotation_angle' => 'RotationAngle' ,
          'text' => 'Text' ,
-         'text_direction' => 'TextDirection' ,
          'text_horizontal_alignment' => 'TextHorizontalAlignment' ,
          'text_vertical_alignment' => 'TextVerticalAlignment' ,
          'area' => 'Area' ,
@@ -135,7 +130,6 @@ class DisplayUnitLabel
          'is_automatic_size' => 'IsAutomaticSize' ,
          'is_inner_mode' => 'IsInnerMode' ,
          'shadow' => 'Shadow' ,
-         'shape_properties' => 'ShapeProperties' ,
          'width' => 'Width' ,
          'height' => 'Height' ,
          'x' => 'X' ,
@@ -151,7 +145,6 @@ class DisplayUnitLabel
         'linked_source' => 'setLinkedSource' ,
         'rotation_angle' => 'setRotationAngle' ,
         'text' => 'setText' ,
-        'text_direction' => 'setTextDirection' ,
         'text_horizontal_alignment' => 'setTextHorizontalAlignment' ,
         'text_vertical_alignment' => 'setTextVerticalAlignment' ,
         'area' => 'setArea' ,
@@ -162,7 +155,6 @@ class DisplayUnitLabel
         'is_automatic_size' => 'setIsAutomaticSize' ,
         'is_inner_mode' => 'setIsInnerMode' ,
         'shadow' => 'setShadow' ,
-        'shape_properties' => 'setShapeProperties' ,
         'width' => 'setWidth' ,
         'height' => 'setHeight' ,
         'x' => 'setX' ,
@@ -178,7 +170,6 @@ class DisplayUnitLabel
         'linked_source' => 'getLinkedSource' ,
         'rotation_angle' => 'getRotationAngle' ,
         'text' => 'getText' ,
-        'text_direction' => 'getTextDirection' ,
         'text_horizontal_alignment' => 'getTextHorizontalAlignment' ,
         'text_vertical_alignment' => 'getTextVerticalAlignment' ,
         'area' => 'getArea' ,
@@ -189,7 +180,6 @@ class DisplayUnitLabel
         'is_automatic_size' => 'getIsAutomaticSize' ,
         'is_inner_mode' => 'getIsInnerMode' ,
         'shadow' => 'getShadow' ,
-        'shape_properties' => 'getShapeProperties' ,
         'width' => 'getWidth' ,
         'height' => 'getHeight' ,
         'x' => 'getX' ,
@@ -255,7 +245,6 @@ class DisplayUnitLabel
         $this->container['linked_source'] = isset($data['linked_source']) ? $data['linked_source'] : null;
         $this->container['rotation_angle'] = isset($data['rotation_angle']) ? $data['rotation_angle'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['text_direction'] = isset($data['text_direction']) ? $data['text_direction'] : null;
         $this->container['text_horizontal_alignment'] = isset($data['text_horizontal_alignment']) ? $data['text_horizontal_alignment'] : null;
         $this->container['text_vertical_alignment'] = isset($data['text_vertical_alignment']) ? $data['text_vertical_alignment'] : null;
         $this->container['area'] = isset($data['area']) ? $data['area'] : null;
@@ -266,7 +255,6 @@ class DisplayUnitLabel
         $this->container['is_automatic_size'] = isset($data['is_automatic_size']) ? $data['is_automatic_size'] : null;
         $this->container['is_inner_mode'] = isset($data['is_inner_mode']) ? $data['is_inner_mode'] : null;
         $this->container['shadow'] = isset($data['shadow']) ? $data['shadow'] : null;
-        $this->container['shape_properties'] = isset($data['shape_properties']) ? $data['shape_properties'] : null;
         $this->container['width'] = isset($data['width']) ? $data['width'] : null;
         $this->container['height'] = isset($data['height']) ? $data['height'] : null;
         $this->container['x'] = isset($data['x']) ? $data['x'] : null;
@@ -289,9 +277,6 @@ class DisplayUnitLabel
         }
         if ($this->container['text'] === null) {
             $invalidProperties[] = "'text' can't be null";
-        }
-        if ($this->container['text_direction'] === null) {
-            $invalidProperties[] = "'text_direction' can't be null";
         }
         if ($this->container['text_horizontal_alignment'] === null) {
             $invalidProperties[] = "'text_horizontal_alignment' can't be null";
@@ -322,9 +307,6 @@ class DisplayUnitLabel
         }
         if ($this->container['shadow'] === null) {
             $invalidProperties[] = "'shadow' can't be null";
-        }
-        if ($this->container['shape_properties'] === null) {
-            $invalidProperties[] = "'shape_properties' can't be null";
         }
         if ($this->container['width'] === null) {
             $invalidProperties[] = "'width' can't be null";
@@ -358,9 +340,6 @@ class DisplayUnitLabel
         if ($this->container['text'] === null) {
                     return false;
                 }
-        if ($this->container['text_direction'] === null) {
-                    return false;
-                }
         if ($this->container['text_horizontal_alignment'] === null) {
                     return false;
                 }
@@ -389,9 +368,6 @@ class DisplayUnitLabel
                     return false;
                 }
         if ($this->container['shadow'] === null) {
-                    return false;
-                }
-        if ($this->container['shape_properties'] === null) {
                     return false;
                 }
         if ($this->container['width'] === null) {
@@ -474,29 +450,6 @@ class DisplayUnitLabel
     public function setText($text)
     {
         $this->container['text'] = $text;
-
-        return $this;
-    }
-   /**
-     * Gets text_direction
-     *
-     * @return string
-     */
-    public function getTextDirection()
-    {
-        return $this->container['text_direction'];
-    }
-
-    /**
-     * Sets text_direction
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setTextDirection($text_direction)
-    {
-        $this->container['text_direction'] = $text_direction;
 
         return $this;
     }
@@ -727,29 +680,6 @@ class DisplayUnitLabel
     public function setShadow($shadow)
     {
         $this->container['shadow'] = $shadow;
-
-        return $this;
-    }
-   /**
-     * Gets shape_properties
-     *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement[]
-     */
-    public function getShapeProperties()
-    {
-        return $this->container['shape_properties'];
-    }
-
-    /**
-     * Sets shape_properties
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setShapeProperties($shape_properties)
-    {
-        $this->container['shape_properties'] = $shape_properties;
 
         return $this;
     }

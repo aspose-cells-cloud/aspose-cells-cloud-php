@@ -337,7 +337,7 @@ class ChartOperateParameter
     /**
      * Sets chart_index
      *
-     *  
+     *  Represents chart index.
      *
      * @return $this
      */
@@ -360,7 +360,7 @@ class ChartOperateParameter
     /**
      * Sets chart_type
      *
-     *  
+     *  Represents chart type.
      *
      * @return $this
      */
@@ -383,7 +383,7 @@ class ChartOperateParameter
     /**
      * Sets upper_left_row
      *
-     *  
+     *  Represents upper left row index of chart.
      *
      * @return $this
      */
@@ -406,7 +406,7 @@ class ChartOperateParameter
     /**
      * Sets upper_left_column
      *
-     *  
+     *  Represents upper left column index of chart.
      *
      * @return $this
      */
@@ -429,7 +429,7 @@ class ChartOperateParameter
     /**
      * Sets lower_right_row
      *
-     *  
+     *  Represents lower right row index of chart.
      *
      * @return $this
      */
@@ -452,7 +452,7 @@ class ChartOperateParameter
     /**
      * Sets lower_right_column
      *
-     *  
+     *  Represents lower right column index of chart.
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class ChartOperateParameter
     /**
      * Sets area
      *
-     *  
+     *  Represents chart area.
      *
      * @return $this
      */
@@ -498,7 +498,7 @@ class ChartOperateParameter
     /**
      * Sets is_vertical
      *
-     *  
+     *  Represents whether to plot the series from a range of cell values by row or by column.
      *
      * @return $this
      */
@@ -521,7 +521,7 @@ class ChartOperateParameter
     /**
      * Sets category_data
      *
-     *  
+     *  Represents chart category data.
      *
      * @return $this
      */
@@ -544,7 +544,7 @@ class ChartOperateParameter
     /**
      * Sets is_auto_get_serial_name
      *
-     *  
+     *  Represents whether auto get serial name.
      *
      * @return $this
      */
@@ -567,7 +567,7 @@ class ChartOperateParameter
     /**
      * Sets title
      *
-     *  
+     *  Represents chart title.
      *
      * @return $this
      */

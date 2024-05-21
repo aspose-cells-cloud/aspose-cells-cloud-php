@@ -385,7 +385,7 @@ class TextOptions
     /**
      * Sets fill
      *
-     *  
+     *  Represents fill format.
      *
      * @return $this
      */
@@ -408,7 +408,7 @@ class TextOptions
     /**
      * Sets kerning
      *
-     *  
+     *  Represents kerning.
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class TextOptions
     /**
      * Sets outline
      *
-     *  
+     *  Represents outline format.
      *
      * @return $this
      */
@@ -454,7 +454,7 @@ class TextOptions
     /**
      * Sets shadow
      *
-     *  
+     *  Represents shadow effect.
      *
      * @return $this
      */
@@ -477,7 +477,7 @@ class TextOptions
     /**
      * Sets spacing
      *
-     *  
+     *  Represents spacing.
      *
      * @return $this
      */
@@ -500,7 +500,7 @@ class TextOptions
     /**
      * Sets underline_color
      *
-     *  
+     *  Represents under line color.
      *
      * @return $this
      */

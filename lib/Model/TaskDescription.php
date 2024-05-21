@@ -217,7 +217,7 @@ class TaskDescription
     /**
      * Sets task_type
      *
-     *  
+     *  Represents task type.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class TaskDescription
     /**
      * Sets task_parameter
      *
-     *  
+     *  Represents task parameter.
      *
      * @return $this
      */

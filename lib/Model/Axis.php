@@ -54,7 +54,7 @@ class Axis
         'cross_at' => 'double',
         'cross_type' => 'string',
         'display_unit' => 'string',
-        'display_unit_label' => '\Aspose\Cells\Cloud\Model\LinkElement',
+        'display_unit_label' => '\Aspose\Cells\Cloud\Model\DisplayUnitLabel',
         'has_multi_level_labels' => 'bool',
         'is_automatic_major_unit' => 'bool',
         'is_automatic_max_value' => 'bool',
@@ -787,7 +787,7 @@ class Axis
    /**
      * Gets display_unit_label
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement
+     * @return \Aspose\Cells\Cloud\Model\DisplayUnitLabel
      */
     public function getDisplayUnitLabel()
     {

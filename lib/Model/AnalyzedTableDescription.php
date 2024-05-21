@@ -385,7 +385,7 @@ class AnalyzedTableDescription
     /**
      * Sets name
      *
-     *  
+     *  Represents table name.
      *
      * @return $this
      */
@@ -408,7 +408,7 @@ class AnalyzedTableDescription
     /**
      * Sets sheet_name
      *
-     *  
+     *  Represents worksheet name which is where the table is located.
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class AnalyzedTableDescription
     /**
      * Sets columns
      *
-     *  
+     *  Represents analyzed description about table columns.
      *
      * @return $this
      */
@@ -454,7 +454,7 @@ class AnalyzedTableDescription
     /**
      * Sets date_columns
      *
-     *  
+     *  Represents date columns list.
      *
      * @return $this
      */
@@ -477,7 +477,7 @@ class AnalyzedTableDescription
     /**
      * Sets number_columns
      *
-     *  
+     *  Represents number columns list.
      *
      * @return $this
      */
@@ -500,7 +500,7 @@ class AnalyzedTableDescription
     /**
      * Sets text_columns
      *
-     *  
+     *  Represents string columns list.
      *
      * @return $this
      */
@@ -523,7 +523,7 @@ class AnalyzedTableDescription
     /**
      * Sets exception_columns
      *
-     *  
+     *  Represents exception columns list.
      *
      * @return $this
      */
@@ -546,7 +546,7 @@ class AnalyzedTableDescription
     /**
      * Sets has_table_header_row
      *
-     *  
+     *  Represents there is a table header in the table.
      *
      * @return $this
      */
@@ -569,7 +569,7 @@ class AnalyzedTableDescription
     /**
      * Sets has_table_total_row
      *
-     *  
+     *  Represents there is a total row in the table.
      *
      * @return $this
      */
@@ -592,7 +592,7 @@ class AnalyzedTableDescription
     /**
      * Sets start_data_column_index
      *
-     *  
+     *  Represents the column index as the start data column.
      *
      * @return $this
      */
@@ -615,7 +615,7 @@ class AnalyzedTableDescription
     /**
      * Sets end_data_column_index
      *
-     *  
+     *  Represents the column index as the end data column.
      *
      * @return $this
      */
@@ -638,7 +638,7 @@ class AnalyzedTableDescription
     /**
      * Sets start_data_row_index
      *
-     *  
+     *  Represents the row index as the start data row.
      *
      * @return $this
      */
@@ -661,7 +661,7 @@ class AnalyzedTableDescription
     /**
      * Sets end_data_row_index
      *
-     *  
+     *  Represents the row index as the end data row.
      *
      * @return $this
      */
@@ -684,7 +684,7 @@ class AnalyzedTableDescription
     /**
      * Sets thumbnail
      *
-     *  Base64String
+     *  Represents table thumbnail. Base64String
      *
      * @return $this
      */
@@ -707,7 +707,7 @@ class AnalyzedTableDescription
     /**
      * Sets discover_charts
      *
-     *  
+     *  Represents a collection of charts, which is a collection of charts created based on data analysis of a table.
      *
      * @return $this
      */
@@ -730,7 +730,7 @@ class AnalyzedTableDescription
     /**
      * Sets discover_pivot_tables
      *
-     *  
+     *  Represents a collection of pivot tables, which is a collection of pivot tables created based on data analysis of a table.
      *
      * @return $this
      */

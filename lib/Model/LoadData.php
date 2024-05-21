@@ -49,7 +49,8 @@ class LoadData
         'load_to' => '\Aspose\Cells\Cloud\Model\LoadTo',
         'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'data_item' => '\Aspose\Cells\Cloud\Model\DataItem'
+        'data_item' => '\Aspose\Cells\Cloud\Model\DataItem',
+        'merge_queries' => '\Aspose\Cells\Cloud\Model\MergeQueries'
     ];
 
     /**
@@ -61,7 +62,8 @@ class LoadData
         'load_to' => null  ,
         'data_source' => null  ,
         'file_info' => null  ,
-        'data_item' => null  
+        'data_item' => null  ,
+        'merge_queries' => null  
     ];
 
     /**
@@ -94,7 +96,8 @@ class LoadData
          'load_to' => 'LoadTo' ,
          'data_source' => 'DataSource' ,
          'file_info' => 'FileInfo' ,
-         'data_item' => 'DataItem' 
+         'data_item' => 'DataItem' ,
+         'merge_queries' => 'MergeQueries' 
     ];
 
     /**
@@ -106,7 +109,8 @@ class LoadData
         'load_to' => 'setLoadTo' ,
         'data_source' => 'setDataSource' ,
         'file_info' => 'setFileInfo' ,
-        'data_item' => 'setDataItem' 
+        'data_item' => 'setDataItem' ,
+        'merge_queries' => 'setMergeQueries' 
     ];
 
     /**
@@ -118,7 +122,8 @@ class LoadData
         'load_to' => 'getLoadTo' ,
         'data_source' => 'getDataSource' ,
         'file_info' => 'getFileInfo' ,
-        'data_item' => 'getDataItem' 
+        'data_item' => 'getDataItem' ,
+        'merge_queries' => 'getMergeQueries' 
     ];
 
     /**
@@ -181,6 +186,7 @@ class LoadData
         $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
         $this->container['data_item'] = isset($data['data_item']) ? $data['data_item'] : null;
+        $this->container['merge_queries'] = isset($data['merge_queries']) ? $data['merge_queries'] : null;
     }
 
     /**
@@ -203,6 +209,9 @@ class LoadData
         if ($this->container['data_item'] === null) {
             $invalidProperties[] = "'data_item' can't be null";
         }
+        if ($this->container['merge_queries'] === null) {
+            $invalidProperties[] = "'merge_queries' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -224,6 +233,9 @@ class LoadData
                     return false;
                 }
         if ($this->container['data_item'] === null) {
+                    return false;
+                }
+        if ($this->container['merge_queries'] === null) {
                     return false;
                 }
         return true;
@@ -317,6 +329,29 @@ class LoadData
     public function setDataItem($data_item)
     {
         $this->container['data_item'] = $data_item;
+
+        return $this;
+    }
+   /**
+     * Gets merge_queries
+     *
+     * @return \Aspose\Cells\Cloud\Model\MergeQueries
+     */
+    public function getMergeQueries()
+    {
+        return $this->container['merge_queries'];
+    }
+
+    /**
+     * Sets merge_queries
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMergeQueries($merge_queries)
+    {
+        $this->container['merge_queries'] = $merge_queries;
 
         return $this;
     }

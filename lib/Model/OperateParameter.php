@@ -205,7 +205,7 @@ class OperateParameter
     /**
      * Sets operate_type
      *
-     *  
+     *  Represents task operate type.
      *
      * @return $this
      */

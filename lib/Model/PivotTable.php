@@ -1803,7 +1803,7 @@ class PivotTable
     /**
      * Sets name
      *
-     *  
+     *  Represents pivot table name.
      *
      * @return $this
      */

@@ -277,7 +277,7 @@ class OperateObjectPosition
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source of operate object.
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class OperateObjectPosition
     /**
      * Sets workbook
      *
-     *  
+     *  Represents data source of operate object.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class OperateObjectPosition
     /**
      * Sets sheet_name
      *
-     *  
+     *  Represents worksheet name of operate object.
      *
      * @return $this
      */
@@ -346,7 +346,7 @@ class OperateObjectPosition
     /**
      * Sets chart_index
      *
-     *  
+     *  Represents chart index of operate object.
      *
      * @return $this
      */
@@ -369,7 +369,7 @@ class OperateObjectPosition
     /**
      * Sets shape_index
      *
-     *  
+     *  Represents shape index of operate object.
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class OperateObjectPosition
     /**
      * Sets cell_name
      *
-     *  
+     *  Represents cell name of operate object.
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class OperateObjectPosition
     /**
      * Sets list_object_index
      *
-     *  
+     *  Represents list object index of operate object.
      *
      * @return $this
      */

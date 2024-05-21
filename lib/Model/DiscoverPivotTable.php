@@ -277,7 +277,7 @@ class DiscoverPivotTable
     /**
      * Sets name
      *
-     *  
+     *  Represents pivot table name.
      *
      * @return $this
      */
@@ -300,7 +300,7 @@ class DiscoverPivotTable
     /**
      * Sets title
      *
-     *  
+     *  Represents pivot table title.
      *
      * @return $this
      */
@@ -323,7 +323,7 @@ class DiscoverPivotTable
     /**
      * Sets data_range
      *
-     *  
+     *  Represents pivot table data range.
      *
      * @return $this
      */
@@ -415,7 +415,7 @@ class DiscoverPivotTable
     /**
      * Sets thumbnail
      *
-     *  Base64String
+     *  Represents pivot table thumbnail. Base64String
      *
      * @return $this
      */

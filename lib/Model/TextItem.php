@@ -217,7 +217,7 @@ class TextItem
     /**
      * Sets text
      *
-     *  
+     *  Represents text content.
      *
      * @return $this
      */

@@ -49,7 +49,7 @@ class SeriesItems
         'category_data' => 'string',
         'is_color_varied' => 'bool',
         'second_catergory_data' => 'string',
-        'series_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
+        'series_list' => '\Aspose\Cells\Cloud\Model\Series[]',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -312,7 +312,7 @@ class SeriesItems
    /**
      * Gets series_list
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement[]
+     * @return \Aspose\Cells\Cloud\Model\Series[]
      */
     public function getSeriesList()
     {
