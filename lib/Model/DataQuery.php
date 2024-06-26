@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="QueryDataSource.cs">
+ * <copyright company="Aspose" file="DataQuery.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class QueryDataSource
+class DataQuery
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class QueryDataSource
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QueryDataSource';     
+    protected static $swaggerModelName = 'DataQuery';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,11 @@ class QueryDataSource
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'name' => 'string',
         'data_source_data_type' => 'string',
-        'data_file' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'data_source' => 'string'
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'data_item' => '\Aspose\Cells\Cloud\Model\DataItem'
     ];
 
     /**
@@ -57,9 +59,11 @@ class QueryDataSource
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'name' => null  ,
         'data_source_data_type' => null  ,
-        'data_file' => null  ,
-        'data_source' => null  
+        'data_source' => null  ,
+        'file_info' => null  ,
+        'data_item' => null  
     ];
 
     /**
@@ -89,9 +93,11 @@ class QueryDataSource
      * @var string[]
      */
     protected static $attributeMap = [
+         'name' => 'Name' ,
          'data_source_data_type' => 'DataSourceDataType' ,
-         'data_file' => 'DataFile' ,
-         'data_source' => 'DataSource' 
+         'data_source' => 'DataSource' ,
+         'file_info' => 'FileInfo' ,
+         'data_item' => 'DataItem' 
     ];
 
     /**
@@ -100,9 +106,11 @@ class QueryDataSource
      * @var string[]
      */
     protected static $setters = [
+        'name' => 'setName' ,
         'data_source_data_type' => 'setDataSourceDataType' ,
-        'data_file' => 'setDataFile' ,
-        'data_source' => 'setDataSource' 
+        'data_source' => 'setDataSource' ,
+        'file_info' => 'setFileInfo' ,
+        'data_item' => 'setDataItem' 
     ];
 
     /**
@@ -111,9 +119,11 @@ class QueryDataSource
      * @var string[]
      */
     protected static $getters = [
+        'name' => 'getName' ,
         'data_source_data_type' => 'getDataSourceDataType' ,
-        'data_file' => 'getDataFile' ,
-        'data_source' => 'getDataSource' 
+        'data_source' => 'getDataSource' ,
+        'file_info' => 'getFileInfo' ,
+        'data_item' => 'getDataItem' 
     ];
 
     /**
@@ -172,9 +182,11 @@ class QueryDataSource
      */
     public function __construct(array $data = null)
     {
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['data_source_data_type'] = isset($data['data_source_data_type']) ? $data['data_source_data_type'] : null;
-        $this->container['data_file'] = isset($data['data_file']) ? $data['data_file'] : null;
         $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
+        $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
+        $this->container['data_item'] = isset($data['data_item']) ? $data['data_item'] : null;
     }
 
     /**
@@ -185,14 +197,20 @@ class QueryDataSource
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
         if ($this->container['data_source_data_type'] === null) {
             $invalidProperties[] = "'data_source_data_type' can't be null";
         }
-        if ($this->container['data_file'] === null) {
-            $invalidProperties[] = "'data_file' can't be null";
-        }
         if ($this->container['data_source'] === null) {
             $invalidProperties[] = "'data_source' can't be null";
+        }
+        if ($this->container['file_info'] === null) {
+            $invalidProperties[] = "'file_info' can't be null";
+        }
+        if ($this->container['data_item'] === null) {
+            $invalidProperties[] = "'data_item' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,16 +223,45 @@ class QueryDataSource
      */
     public function valid()
     {
-        if ($this->container['data_source_data_type'] === null) {
+        if ($this->container['name'] === null) {
                     return false;
                 }
-        if ($this->container['data_file'] === null) {
+        if ($this->container['data_source_data_type'] === null) {
                     return false;
                 }
         if ($this->container['data_source'] === null) {
                     return false;
                 }
+        if ($this->container['file_info'] === null) {
+                    return false;
+                }
+        if ($this->container['data_item'] === null) {
+                    return false;
+                }
         return true;
+    }
+   /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     *  Define a name for data query. Unique identification.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
     }
    /**
      * Gets data_source_data_type
@@ -229,7 +276,7 @@ class QueryDataSource
     /**
      * Sets data_source_data_type
      *
-     *  
+     *  The specific data object type. When the value is File, DataItem is invalid.
      *
      * @return $this
      */
@@ -240,32 +287,9 @@ class QueryDataSource
         return $this;
     }
    /**
-     * Gets data_file
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
-     */
-    public function getDataFile()
-    {
-        return $this->container['data_file'];
-    }
-
-    /**
-     * Sets data_file
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setDataFile($data_file)
-    {
-        $this->container['data_file'] = $data_file;
-
-        return $this;
-    }
-   /**
      * Gets data_source
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
     public function getDataSource()
     {
@@ -275,13 +299,59 @@ class QueryDataSource
     /**
      * Sets data_source
      *
-     *  
+     *  Indicates the source of the mount data.
      *
      * @return $this
      */
     public function setDataSource($data_source)
     {
         $this->container['data_source'] = $data_source;
+
+        return $this;
+    }
+   /**
+     * Gets file_info
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function getFileInfo()
+    {
+        return $this->container['file_info'];
+    }
+
+    /**
+     * Sets file_info
+     *
+     *  When data souce is request files, FileInfo store the contents of the file.
+     *
+     * @return $this
+     */
+    public function setFileInfo($file_info)
+    {
+        $this->container['file_info'] = $file_info;
+
+        return $this;
+    }
+   /**
+     * Gets data_item
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataItem
+     */
+    public function getDataItem()
+    {
+        return $this->container['data_item'];
+    }
+
+    /**
+     * Sets data_item
+     *
+     *  The specific data object type and name.
+     *
+     * @return $this
+     */
+    public function setDataItem($data_item)
+    {
+        $this->container['data_item'] = $data_item;
 
         return $this;
     }

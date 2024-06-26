@@ -229,7 +229,7 @@ class LoadTo
     /**
      * Sets worksheet
      *
-     *  
+     *  The worksheet name.
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class LoadTo
     /**
      * Sets begin_row_index
      *
-     *  
+     *  The begin row index of worksheet.
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class LoadTo
     /**
      * Sets begin_column_index
      *
-     *  
+     *  The begin column index of worksheet.
      *
      * @return $this
      */

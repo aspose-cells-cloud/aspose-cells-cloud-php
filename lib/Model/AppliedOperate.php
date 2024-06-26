@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="Transformation.cs">
+ * <copyright company="Aspose" file="AppliedOperate.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Transformation
+class AppliedOperate
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class Transformation
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Transformation';     
+    protected static $swaggerModelName = 'AppliedOperate';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,7 @@ class Transformation
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'pivot_column' => '\Aspose\Cells\Cloud\Model\PivotColumn',
-        'unpivot_column' => '\Aspose\Cells\Cloud\Model\UnpivotColumn'
+        'applied_operate_type' => 'string'
     ];
 
     /**
@@ -56,8 +55,7 @@ class Transformation
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'pivot_column' => null  ,
-        'unpivot_column' => null  
+        'applied_operate_type' => null  
     ];
 
     /**
@@ -87,8 +85,7 @@ class Transformation
      * @var string[]
      */
     protected static $attributeMap = [
-         'pivot_column' => 'PivotColumn' ,
-         'unpivot_column' => 'UnpivotColumn' 
+         'applied_operate_type' => 'AppliedOperateType' 
     ];
 
     /**
@@ -97,8 +94,7 @@ class Transformation
      * @var string[]
      */
     protected static $setters = [
-        'pivot_column' => 'setPivotColumn' ,
-        'unpivot_column' => 'setUnpivotColumn' 
+        'applied_operate_type' => 'setAppliedOperateType' 
     ];
 
     /**
@@ -107,8 +103,7 @@ class Transformation
      * @var string[]
      */
     protected static $getters = [
-        'pivot_column' => 'getPivotColumn' ,
-        'unpivot_column' => 'getUnpivotColumn' 
+        'applied_operate_type' => 'getAppliedOperateType' 
     ];
 
     /**
@@ -167,8 +162,7 @@ class Transformation
      */
     public function __construct(array $data = null)
     {
-        $this->container['pivot_column'] = isset($data['pivot_column']) ? $data['pivot_column'] : null;
-        $this->container['unpivot_column'] = isset($data['unpivot_column']) ? $data['unpivot_column'] : null;
+        $this->container['applied_operate_type'] = isset($data['applied_operate_type']) ? $data['applied_operate_type'] : null;
     }
 
     /**
@@ -179,11 +173,8 @@ class Transformation
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['pivot_column'] === null) {
-            $invalidProperties[] = "'pivot_column' can't be null";
-        }
-        if ($this->container['unpivot_column'] === null) {
-            $invalidProperties[] = "'unpivot_column' can't be null";
+        if ($this->container['applied_operate_type'] === null) {
+            $invalidProperties[] = "'applied_operate_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -196,57 +187,31 @@ class Transformation
      */
     public function valid()
     {
-        if ($this->container['pivot_column'] === null) {
-                    return false;
-                }
-        if ($this->container['unpivot_column'] === null) {
+        if ($this->container['applied_operate_type'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets pivot_column
+     * Gets applied_operate_type
      *
-     * @return \Aspose\Cells\Cloud\Model\PivotColumn
+     * @return string
      */
-    public function getPivotColumn()
+    public function getAppliedOperateType()
     {
-        return $this->container['pivot_column'];
+        return $this->container['applied_operate_type'];
     }
 
     /**
-     * Sets pivot_column
+     * Sets applied_operate_type
      *
-     *  long table to a wide table.
-     *
-     * @return $this
-     */
-    public function setPivotColumn($pivot_column)
-    {
-        $this->container['pivot_column'] = $pivot_column;
-
-        return $this;
-    }
-   /**
-     * Gets unpivot_column
-     *
-     * @return \Aspose\Cells\Cloud\Model\UnpivotColumn
-     */
-    public function getUnpivotColumn()
-    {
-        return $this->container['unpivot_column'];
-    }
-
-    /**
-     * Sets unpivot_column
-     *
-     *  wide table to a long table
+     *  
      *
      * @return $this
      */
-    public function setUnpivotColumn($unpivot_column)
+    public function setAppliedOperateType($applied_operate_type)
     {
-        $this->container['unpivot_column'] = $unpivot_column;
+        $this->container['applied_operate_type'] = $applied_operate_type;
 
         return $this;
     }

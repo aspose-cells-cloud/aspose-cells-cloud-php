@@ -48,7 +48,8 @@ class UnpivotColumn
     protected static $swaggerTypes = [
         'unpivot_column_names' => 'string[]',
         'column_map_name' => 'string',
-        'value_map_name' => 'string'
+        'value_map_name' => 'string',
+        'applied_operate_type' => 'string'
     ];
 
     /**
@@ -59,7 +60,8 @@ class UnpivotColumn
     protected static $swaggerFormats = [
         'unpivot_column_names' => null  ,
         'column_map_name' => null  ,
-        'value_map_name' => null  
+        'value_map_name' => null  ,
+        'applied_operate_type' => null  
     ];
 
     /**
@@ -91,7 +93,8 @@ class UnpivotColumn
     protected static $attributeMap = [
          'unpivot_column_names' => 'UnpivotColumnNames' ,
          'column_map_name' => 'ColumnMapName' ,
-         'value_map_name' => 'ValueMapName' 
+         'value_map_name' => 'ValueMapName' ,
+         'applied_operate_type' => 'AppliedOperateType' 
     ];
 
     /**
@@ -102,7 +105,8 @@ class UnpivotColumn
     protected static $setters = [
         'unpivot_column_names' => 'setUnpivotColumnNames' ,
         'column_map_name' => 'setColumnMapName' ,
-        'value_map_name' => 'setValueMapName' 
+        'value_map_name' => 'setValueMapName' ,
+        'applied_operate_type' => 'setAppliedOperateType' 
     ];
 
     /**
@@ -113,7 +117,8 @@ class UnpivotColumn
     protected static $getters = [
         'unpivot_column_names' => 'getUnpivotColumnNames' ,
         'column_map_name' => 'getColumnMapName' ,
-        'value_map_name' => 'getValueMapName' 
+        'value_map_name' => 'getValueMapName' ,
+        'applied_operate_type' => 'getAppliedOperateType' 
     ];
 
     /**
@@ -175,6 +180,7 @@ class UnpivotColumn
         $this->container['unpivot_column_names'] = isset($data['unpivot_column_names']) ? $data['unpivot_column_names'] : null;
         $this->container['column_map_name'] = isset($data['column_map_name']) ? $data['column_map_name'] : null;
         $this->container['value_map_name'] = isset($data['value_map_name']) ? $data['value_map_name'] : null;
+        $this->container['applied_operate_type'] = isset($data['applied_operate_type']) ? $data['applied_operate_type'] : null;
     }
 
     /**
@@ -193,6 +199,9 @@ class UnpivotColumn
         }
         if ($this->container['value_map_name'] === null) {
             $invalidProperties[] = "'value_map_name' can't be null";
+        }
+        if ($this->container['applied_operate_type'] === null) {
+            $invalidProperties[] = "'applied_operate_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -214,6 +223,9 @@ class UnpivotColumn
         if ($this->container['value_map_name'] === null) {
                     return false;
                 }
+        if ($this->container['applied_operate_type'] === null) {
+                    return false;
+                }
         return true;
     }
    /**
@@ -229,7 +241,7 @@ class UnpivotColumn
     /**
      * Sets unpivot_column_names
      *
-     *  
+     *  Indicates unpivot column names.
      *
      * @return $this
      */
@@ -252,7 +264,7 @@ class UnpivotColumn
     /**
      * Sets column_map_name
      *
-     *  
+     *  Indicates the column is used to store the name of unpivot columns.
      *
      * @return $this
      */
@@ -275,13 +287,36 @@ class UnpivotColumn
     /**
      * Sets value_map_name
      *
-     *  
+     *  Indicates the column is used to store the value of unpivot columns.
      *
      * @return $this
      */
     public function setValueMapName($value_map_name)
     {
         $this->container['value_map_name'] = $value_map_name;
+
+        return $this;
+    }
+   /**
+     * Gets applied_operate_type
+     *
+     * @return string
+     */
+    public function getAppliedOperateType()
+    {
+        return $this->container['applied_operate_type'];
+    }
+
+    /**
+     * Sets applied_operate_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAppliedOperateType($applied_operate_type)
+    {
+        $this->container['applied_operate_type'] = $applied_operate_type;
 
         return $this;
     }

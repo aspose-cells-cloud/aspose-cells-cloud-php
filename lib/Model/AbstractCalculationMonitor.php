@@ -229,7 +229,7 @@ class AbstractCalculationMonitor
     /**
      * Sets original_value
      *
-     *  Gets the old value of the calculated cell.            Should be used only in  and . 
+     *  Gets the old value of the calculated cell. Should be used only in  and . 
      *
      * @return $this
      */
@@ -252,7 +252,7 @@ class AbstractCalculationMonitor
     /**
      * Sets value_changed
      *
-     *  Whether the cell's value has been changed after the calculation.            Should be used only in . 
+     *  Whether the cell's value has been changed after the calculation.  Should be used only in .        
      *
      * @return $this
      */
@@ -275,7 +275,7 @@ class AbstractCalculationMonitor
     /**
      * Sets calculated_value
      *
-     *  Gets the newly calculated value of the cell.            Should be used only in . 
+     *  Gets the newly calculated value of the cell. Should be used only in .        
      *
      * @return $this
      */

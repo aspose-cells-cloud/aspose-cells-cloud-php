@@ -47,10 +47,7 @@ class LoadData
       */
     protected static $swaggerTypes = [
         'load_to' => '\Aspose\Cells\Cloud\Model\LoadTo',
-        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'data_item' => '\Aspose\Cells\Cloud\Model\DataItem',
-        'merge_queries' => '\Aspose\Cells\Cloud\Model\MergeQueries'
+        'data_query' => '\Aspose\Cells\Cloud\Model\DataQuery'
     ];
 
     /**
@@ -60,10 +57,7 @@ class LoadData
       */
     protected static $swaggerFormats = [
         'load_to' => null  ,
-        'data_source' => null  ,
-        'file_info' => null  ,
-        'data_item' => null  ,
-        'merge_queries' => null  
+        'data_query' => null  
     ];
 
     /**
@@ -94,10 +88,7 @@ class LoadData
      */
     protected static $attributeMap = [
          'load_to' => 'LoadTo' ,
-         'data_source' => 'DataSource' ,
-         'file_info' => 'FileInfo' ,
-         'data_item' => 'DataItem' ,
-         'merge_queries' => 'MergeQueries' 
+         'data_query' => 'DataQuery' 
     ];
 
     /**
@@ -107,10 +98,7 @@ class LoadData
      */
     protected static $setters = [
         'load_to' => 'setLoadTo' ,
-        'data_source' => 'setDataSource' ,
-        'file_info' => 'setFileInfo' ,
-        'data_item' => 'setDataItem' ,
-        'merge_queries' => 'setMergeQueries' 
+        'data_query' => 'setDataQuery' 
     ];
 
     /**
@@ -120,10 +108,7 @@ class LoadData
      */
     protected static $getters = [
         'load_to' => 'getLoadTo' ,
-        'data_source' => 'getDataSource' ,
-        'file_info' => 'getFileInfo' ,
-        'data_item' => 'getDataItem' ,
-        'merge_queries' => 'getMergeQueries' 
+        'data_query' => 'getDataQuery' 
     ];
 
     /**
@@ -183,10 +168,7 @@ class LoadData
     public function __construct(array $data = null)
     {
         $this->container['load_to'] = isset($data['load_to']) ? $data['load_to'] : null;
-        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
-        $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
-        $this->container['data_item'] = isset($data['data_item']) ? $data['data_item'] : null;
-        $this->container['merge_queries'] = isset($data['merge_queries']) ? $data['merge_queries'] : null;
+        $this->container['data_query'] = isset($data['data_query']) ? $data['data_query'] : null;
     }
 
     /**
@@ -200,17 +182,8 @@ class LoadData
         if ($this->container['load_to'] === null) {
             $invalidProperties[] = "'load_to' can't be null";
         }
-        if ($this->container['data_source'] === null) {
-            $invalidProperties[] = "'data_source' can't be null";
-        }
-        if ($this->container['file_info'] === null) {
-            $invalidProperties[] = "'file_info' can't be null";
-        }
-        if ($this->container['data_item'] === null) {
-            $invalidProperties[] = "'data_item' can't be null";
-        }
-        if ($this->container['merge_queries'] === null) {
-            $invalidProperties[] = "'merge_queries' can't be null";
+        if ($this->container['data_query'] === null) {
+            $invalidProperties[] = "'data_query' can't be null";
         }
         return $invalidProperties;
     }
@@ -226,16 +199,7 @@ class LoadData
         if ($this->container['load_to'] === null) {
                     return false;
                 }
-        if ($this->container['data_source'] === null) {
-                    return false;
-                }
-        if ($this->container['file_info'] === null) {
-                    return false;
-                }
-        if ($this->container['data_item'] === null) {
-                    return false;
-                }
-        if ($this->container['merge_queries'] === null) {
+        if ($this->container['data_query'] === null) {
                     return false;
                 }
         return true;
@@ -264,94 +228,25 @@ class LoadData
         return $this;
     }
    /**
-     * Gets data_source
+     * Gets data_query
      *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
+     * @return \Aspose\Cells\Cloud\Model\DataQuery
      */
-    public function getDataSource()
+    public function getDataQuery()
     {
-        return $this->container['data_source'];
+        return $this->container['data_query'];
     }
 
     /**
-     * Sets data_source
+     * Sets data_query
      *
-     *  Indicates the source of the mount data.
-     *
-     * @return $this
-     */
-    public function setDataSource($data_source)
-    {
-        $this->container['data_source'] = $data_source;
-
-        return $this;
-    }
-   /**
-     * Gets file_info
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileInfo
-     */
-    public function getFileInfo()
-    {
-        return $this->container['file_info'];
-    }
-
-    /**
-     * Sets file_info
-     *
-     *  When data souce is request files, FileInfo store the contents of the file.
+     *  Indicates data query for data loading. 
      *
      * @return $this
      */
-    public function setFileInfo($file_info)
+    public function setDataQuery($data_query)
     {
-        $this->container['file_info'] = $file_info;
-
-        return $this;
-    }
-   /**
-     * Gets data_item
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataItem
-     */
-    public function getDataItem()
-    {
-        return $this->container['data_item'];
-    }
-
-    /**
-     * Sets data_item
-     *
-     *  The specific data object type and name.
-     *
-     * @return $this
-     */
-    public function setDataItem($data_item)
-    {
-        $this->container['data_item'] = $data_item;
-
-        return $this;
-    }
-   /**
-     * Gets merge_queries
-     *
-     * @return \Aspose\Cells\Cloud\Model\MergeQueries
-     */
-    public function getMergeQueries()
-    {
-        return $this->container['merge_queries'];
-    }
-
-    /**
-     * Sets merge_queries
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setMergeQueries($merge_queries)
-    {
-        $this->container['merge_queries'] = $merge_queries;
+        $this->container['data_query'] = $data_query;
 
         return $this;
     }

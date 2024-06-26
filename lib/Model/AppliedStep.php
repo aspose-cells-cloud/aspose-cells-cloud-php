@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="QueryTable.cs">
+ * <copyright company="Aspose" file="AppliedStep.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class QueryTable
+class AppliedStep
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class QueryTable
       *
       * @var string
       */
-    protected static $swaggerModelName = 'QueryTable';     
+    protected static $swaggerModelName = 'AppliedStep';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,8 @@ class QueryTable
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'connection_id' => 'int',
-        'name' => 'string',
-        'result_range' => '\Aspose\Cells\Cloud\Model\Range',
-        'preserve_formatting' => 'bool',
-        'adjust_column_width' => 'bool'
+        'step_name' => 'string',
+        'applied_operate' => '\Aspose\Cells\Cloud\Model\AppliedOperate'
     ];
 
     /**
@@ -59,11 +56,8 @@ class QueryTable
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'connection_id' => null  ,
-        'name' => null  ,
-        'result_range' => null  ,
-        'preserve_formatting' => null  ,
-        'adjust_column_width' => null  
+        'step_name' => null  ,
+        'applied_operate' => null  
     ];
 
     /**
@@ -93,11 +87,8 @@ class QueryTable
      * @var string[]
      */
     protected static $attributeMap = [
-         'connection_id' => 'ConnectionId' ,
-         'name' => 'Name' ,
-         'result_range' => 'ResultRange' ,
-         'preserve_formatting' => 'PreserveFormatting' ,
-         'adjust_column_width' => 'AdjustColumnWidth' 
+         'step_name' => 'StepName' ,
+         'applied_operate' => 'AppliedOperate' 
     ];
 
     /**
@@ -106,11 +97,8 @@ class QueryTable
      * @var string[]
      */
     protected static $setters = [
-        'connection_id' => 'setConnectionId' ,
-        'name' => 'setName' ,
-        'result_range' => 'setResultRange' ,
-        'preserve_formatting' => 'setPreserveFormatting' ,
-        'adjust_column_width' => 'setAdjustColumnWidth' 
+        'step_name' => 'setStepName' ,
+        'applied_operate' => 'setAppliedOperate' 
     ];
 
     /**
@@ -119,11 +107,8 @@ class QueryTable
      * @var string[]
      */
     protected static $getters = [
-        'connection_id' => 'getConnectionId' ,
-        'name' => 'getName' ,
-        'result_range' => 'getResultRange' ,
-        'preserve_formatting' => 'getPreserveFormatting' ,
-        'adjust_column_width' => 'getAdjustColumnWidth' 
+        'step_name' => 'getStepName' ,
+        'applied_operate' => 'getAppliedOperate' 
     ];
 
     /**
@@ -182,11 +167,8 @@ class QueryTable
      */
     public function __construct(array $data = null)
     {
-        $this->container['connection_id'] = isset($data['connection_id']) ? $data['connection_id'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['result_range'] = isset($data['result_range']) ? $data['result_range'] : null;
-        $this->container['preserve_formatting'] = isset($data['preserve_formatting']) ? $data['preserve_formatting'] : null;
-        $this->container['adjust_column_width'] = isset($data['adjust_column_width']) ? $data['adjust_column_width'] : null;
+        $this->container['step_name'] = isset($data['step_name']) ? $data['step_name'] : null;
+        $this->container['applied_operate'] = isset($data['applied_operate']) ? $data['applied_operate'] : null;
     }
 
     /**
@@ -197,20 +179,11 @@ class QueryTable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['connection_id'] === null) {
-            $invalidProperties[] = "'connection_id' can't be null";
+        if ($this->container['step_name'] === null) {
+            $invalidProperties[] = "'step_name' can't be null";
         }
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['result_range'] === null) {
-            $invalidProperties[] = "'result_range' can't be null";
-        }
-        if ($this->container['preserve_formatting'] === null) {
-            $invalidProperties[] = "'preserve_formatting' can't be null";
-        }
-        if ($this->container['adjust_column_width'] === null) {
-            $invalidProperties[] = "'adjust_column_width' can't be null";
+        if ($this->container['applied_operate'] === null) {
+            $invalidProperties[] = "'applied_operate' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +196,57 @@ class QueryTable
      */
     public function valid()
     {
-        if ($this->container['connection_id'] === null) {
+        if ($this->container['step_name'] === null) {
                     return false;
                 }
-        if ($this->container['name'] === null) {
-                    return false;
-                }
-        if ($this->container['result_range'] === null) {
-                    return false;
-                }
-        if ($this->container['preserve_formatting'] === null) {
-                    return false;
-                }
-        if ($this->container['adjust_column_width'] === null) {
+        if ($this->container['applied_operate'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets connection_id
-     *
-     * @return int
-     */
-    public function getConnectionId()
-    {
-        return $this->container['connection_id'];
-    }
-
-    /**
-     * Sets connection_id
-     *
-     *  Gets the connection id of the query table.
-     *
-     * @return $this
-     */
-    public function setConnectionId($connection_id)
-    {
-        $this->container['connection_id'] = $connection_id;
-
-        return $this;
-    }
-   /**
-     * Gets name
+     * Gets step_name
      *
      * @return string
      */
-    public function getName()
+    public function getStepName()
     {
-        return $this->container['name'];
+        return $this->container['step_name'];
     }
 
     /**
-     * Sets name
+     * Sets step_name
      *
-     *  Gets the name of querytable.
+     *  Data manipulation step name.
      *
      * @return $this
      */
-    public function setName($name)
+    public function setStepName($step_name)
     {
-        $this->container['name'] = $name;
+        $this->container['step_name'] = $step_name;
 
         return $this;
     }
    /**
-     * Gets result_range
+     * Gets applied_operate
      *
-     * @return \Aspose\Cells\Cloud\Model\Range
+     * @return \Aspose\Cells\Cloud\Model\AppliedOperate
      */
-    public function getResultRange()
+    public function getAppliedOperate()
     {
-        return $this->container['result_range'];
+        return $this->container['applied_operate'];
     }
 
     /**
-     * Sets result_range
+     * Sets applied_operate
      *
-     *  Gets the range of the result.
-     *
-     * @return $this
-     */
-    public function setResultRange($result_range)
-    {
-        $this->container['result_range'] = $result_range;
-
-        return $this;
-    }
-   /**
-     * Gets preserve_formatting
-     *
-     * @return bool
-     */
-    public function getPreserveFormatting()
-    {
-        return $this->container['preserve_formatting'];
-    }
-
-    /**
-     * Sets preserve_formatting
-     *
-     *  Returns or sets the PreserveFormatting of the object.
+     *  Data manipulation name.
      *
      * @return $this
      */
-    public function setPreserveFormatting($preserve_formatting)
+    public function setAppliedOperate($applied_operate)
     {
-        $this->container['preserve_formatting'] = $preserve_formatting;
-
-        return $this;
-    }
-   /**
-     * Gets adjust_column_width
-     *
-     * @return bool
-     */
-    public function getAdjustColumnWidth()
-    {
-        return $this->container['adjust_column_width'];
-    }
-
-    /**
-     * Sets adjust_column_width
-     *
-     *  Returns or sets the AdjustColumnWidth of the object.
-     *
-     * @return $this
-     */
-    public function setAdjustColumnWidth($adjust_column_width)
-    {
-        $this->container['adjust_column_width'] = $adjust_column_width;
+        $this->container['applied_operate'] = $applied_operate;
 
         return $this;
     }

@@ -46,15 +46,12 @@ class MergeQueries
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data_source_a' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'file_info_a' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'data_item_a' => '\Aspose\Cells\Cloud\Model\DataItem',
+        'data_query_name_a' => 'string',
         'data_a_index_field' => 'string',
-        'data_source_b' => '\Aspose\Cells\Cloud\Model\DataSource',
-        'file_info_b' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'data_item_b' => '\Aspose\Cells\Cloud\Model\DataItem',
+        'data_query_name_b' => 'string',
         'data_b_index_field' => 'string',
-        'join_type' => 'string'
+        'join_type' => 'string',
+        'applied_operate_type' => 'string'
     ];
 
     /**
@@ -63,15 +60,12 @@ class MergeQueries
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'data_source_a' => null  ,
-        'file_info_a' => null  ,
-        'data_item_a' => null  ,
+        'data_query_name_a' => null  ,
         'data_a_index_field' => null  ,
-        'data_source_b' => null  ,
-        'file_info_b' => null  ,
-        'data_item_b' => null  ,
+        'data_query_name_b' => null  ,
         'data_b_index_field' => null  ,
-        'join_type' => null  
+        'join_type' => null  ,
+        'applied_operate_type' => null  
     ];
 
     /**
@@ -101,15 +95,12 @@ class MergeQueries
      * @var string[]
      */
     protected static $attributeMap = [
-         'data_source_a' => 'DataSourceA' ,
-         'file_info_a' => 'FileInfoA' ,
-         'data_item_a' => 'DataItemA' ,
+         'data_query_name_a' => 'DataQueryNameA' ,
          'data_a_index_field' => 'DataAIndexField' ,
-         'data_source_b' => 'DataSourceB' ,
-         'file_info_b' => 'FileInfoB' ,
-         'data_item_b' => 'DataItemB' ,
+         'data_query_name_b' => 'DataQueryNameB' ,
          'data_b_index_field' => 'DataBIndexField' ,
-         'join_type' => 'JoinType' 
+         'join_type' => 'JoinType' ,
+         'applied_operate_type' => 'AppliedOperateType' 
     ];
 
     /**
@@ -118,15 +109,12 @@ class MergeQueries
      * @var string[]
      */
     protected static $setters = [
-        'data_source_a' => 'setDataSourceA' ,
-        'file_info_a' => 'setFileInfoA' ,
-        'data_item_a' => 'setDataItemA' ,
+        'data_query_name_a' => 'setDataQueryNameA' ,
         'data_a_index_field' => 'setDataAIndexField' ,
-        'data_source_b' => 'setDataSourceB' ,
-        'file_info_b' => 'setFileInfoB' ,
-        'data_item_b' => 'setDataItemB' ,
+        'data_query_name_b' => 'setDataQueryNameB' ,
         'data_b_index_field' => 'setDataBIndexField' ,
-        'join_type' => 'setJoinType' 
+        'join_type' => 'setJoinType' ,
+        'applied_operate_type' => 'setAppliedOperateType' 
     ];
 
     /**
@@ -135,15 +123,12 @@ class MergeQueries
      * @var string[]
      */
     protected static $getters = [
-        'data_source_a' => 'getDataSourceA' ,
-        'file_info_a' => 'getFileInfoA' ,
-        'data_item_a' => 'getDataItemA' ,
+        'data_query_name_a' => 'getDataQueryNameA' ,
         'data_a_index_field' => 'getDataAIndexField' ,
-        'data_source_b' => 'getDataSourceB' ,
-        'file_info_b' => 'getFileInfoB' ,
-        'data_item_b' => 'getDataItemB' ,
+        'data_query_name_b' => 'getDataQueryNameB' ,
         'data_b_index_field' => 'getDataBIndexField' ,
-        'join_type' => 'getJoinType' 
+        'join_type' => 'getJoinType' ,
+        'applied_operate_type' => 'getAppliedOperateType' 
     ];
 
     /**
@@ -202,15 +187,12 @@ class MergeQueries
      */
     public function __construct(array $data = null)
     {
-        $this->container['data_source_a'] = isset($data['data_source_a']) ? $data['data_source_a'] : null;
-        $this->container['file_info_a'] = isset($data['file_info_a']) ? $data['file_info_a'] : null;
-        $this->container['data_item_a'] = isset($data['data_item_a']) ? $data['data_item_a'] : null;
+        $this->container['data_query_name_a'] = isset($data['data_query_name_a']) ? $data['data_query_name_a'] : null;
         $this->container['data_a_index_field'] = isset($data['data_a_index_field']) ? $data['data_a_index_field'] : null;
-        $this->container['data_source_b'] = isset($data['data_source_b']) ? $data['data_source_b'] : null;
-        $this->container['file_info_b'] = isset($data['file_info_b']) ? $data['file_info_b'] : null;
-        $this->container['data_item_b'] = isset($data['data_item_b']) ? $data['data_item_b'] : null;
+        $this->container['data_query_name_b'] = isset($data['data_query_name_b']) ? $data['data_query_name_b'] : null;
         $this->container['data_b_index_field'] = isset($data['data_b_index_field']) ? $data['data_b_index_field'] : null;
         $this->container['join_type'] = isset($data['join_type']) ? $data['join_type'] : null;
+        $this->container['applied_operate_type'] = isset($data['applied_operate_type']) ? $data['applied_operate_type'] : null;
     }
 
     /**
@@ -221,32 +203,23 @@ class MergeQueries
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['data_source_a'] === null) {
-            $invalidProperties[] = "'data_source_a' can't be null";
-        }
-        if ($this->container['file_info_a'] === null) {
-            $invalidProperties[] = "'file_info_a' can't be null";
-        }
-        if ($this->container['data_item_a'] === null) {
-            $invalidProperties[] = "'data_item_a' can't be null";
+        if ($this->container['data_query_name_a'] === null) {
+            $invalidProperties[] = "'data_query_name_a' can't be null";
         }
         if ($this->container['data_a_index_field'] === null) {
             $invalidProperties[] = "'data_a_index_field' can't be null";
         }
-        if ($this->container['data_source_b'] === null) {
-            $invalidProperties[] = "'data_source_b' can't be null";
-        }
-        if ($this->container['file_info_b'] === null) {
-            $invalidProperties[] = "'file_info_b' can't be null";
-        }
-        if ($this->container['data_item_b'] === null) {
-            $invalidProperties[] = "'data_item_b' can't be null";
+        if ($this->container['data_query_name_b'] === null) {
+            $invalidProperties[] = "'data_query_name_b' can't be null";
         }
         if ($this->container['data_b_index_field'] === null) {
             $invalidProperties[] = "'data_b_index_field' can't be null";
         }
         if ($this->container['join_type'] === null) {
             $invalidProperties[] = "'join_type' can't be null";
+        }
+        if ($this->container['applied_operate_type'] === null) {
+            $invalidProperties[] = "'applied_operate_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -259,25 +232,13 @@ class MergeQueries
      */
     public function valid()
     {
-        if ($this->container['data_source_a'] === null) {
-                    return false;
-                }
-        if ($this->container['file_info_a'] === null) {
-                    return false;
-                }
-        if ($this->container['data_item_a'] === null) {
+        if ($this->container['data_query_name_a'] === null) {
                     return false;
                 }
         if ($this->container['data_a_index_field'] === null) {
                     return false;
                 }
-        if ($this->container['data_source_b'] === null) {
-                    return false;
-                }
-        if ($this->container['file_info_b'] === null) {
-                    return false;
-                }
-        if ($this->container['data_item_b'] === null) {
+        if ($this->container['data_query_name_b'] === null) {
                     return false;
                 }
         if ($this->container['data_b_index_field'] === null) {
@@ -286,74 +247,31 @@ class MergeQueries
         if ($this->container['join_type'] === null) {
                     return false;
                 }
+        if ($this->container['applied_operate_type'] === null) {
+                    return false;
+                }
         return true;
     }
    /**
-     * Gets data_source_a
+     * Gets data_query_name_a
      *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
+     * @return string
      */
-    public function getDataSourceA()
+    public function getDataQueryNameA()
     {
-        return $this->container['data_source_a'];
+        return $this->container['data_query_name_a'];
     }
 
     /**
-     * Sets data_source_a
+     * Sets data_query_name_a
      *
-     *  Indicates the source of the mount data.
-     *
-     * @return $this
-     */
-    public function setDataSourceA($data_source_a)
-    {
-        $this->container['data_source_a'] = $data_source_a;
-
-        return $this;
-    }
-   /**
-     * Gets file_info_a
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileInfo
-     */
-    public function getFileInfoA()
-    {
-        return $this->container['file_info_a'];
-    }
-
-    /**
-     * Sets file_info_a
-     *
-     *  
+     *  Indicates the name of the data query , it is matched in the data query set.
      *
      * @return $this
      */
-    public function setFileInfoA($file_info_a)
+    public function setDataQueryNameA($data_query_name_a)
     {
-        $this->container['file_info_a'] = $file_info_a;
-
-        return $this;
-    }
-   /**
-     * Gets data_item_a
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataItem
-     */
-    public function getDataItemA()
-    {
-        return $this->container['data_item_a'];
-    }
-
-    /**
-     * Sets data_item_a
-     *
-     *  Represents data item.
-     *
-     * @return $this
-     */
-    public function setDataItemA($data_item_a)
-    {
-        $this->container['data_item_a'] = $data_item_a;
+        $this->container['data_query_name_a'] = $data_query_name_a;
 
         return $this;
     }
@@ -370,7 +288,7 @@ class MergeQueries
     /**
      * Sets data_a_index_field
      *
-     *  Represents index field  of DataA
+     *  Represents index field  of DataA.
      *
      * @return $this
      */
@@ -381,71 +299,25 @@ class MergeQueries
         return $this;
     }
    /**
-     * Gets data_source_b
+     * Gets data_query_name_b
      *
-     * @return \Aspose\Cells\Cloud\Model\DataSource
+     * @return string
      */
-    public function getDataSourceB()
+    public function getDataQueryNameB()
     {
-        return $this->container['data_source_b'];
+        return $this->container['data_query_name_b'];
     }
 
     /**
-     * Sets data_source_b
+     * Sets data_query_name_b
      *
-     *  Indicates the source of the mount data.
-     *
-     * @return $this
-     */
-    public function setDataSourceB($data_source_b)
-    {
-        $this->container['data_source_b'] = $data_source_b;
-
-        return $this;
-    }
-   /**
-     * Gets file_info_b
-     *
-     * @return \Aspose\Cells\Cloud\Model\FileInfo
-     */
-    public function getFileInfoB()
-    {
-        return $this->container['file_info_b'];
-    }
-
-    /**
-     * Sets file_info_b
-     *
-     *  
+     *  Indicates the name of the data query , it is matched in the data query set.
      *
      * @return $this
      */
-    public function setFileInfoB($file_info_b)
+    public function setDataQueryNameB($data_query_name_b)
     {
-        $this->container['file_info_b'] = $file_info_b;
-
-        return $this;
-    }
-   /**
-     * Gets data_item_b
-     *
-     * @return \Aspose\Cells\Cloud\Model\DataItem
-     */
-    public function getDataItemB()
-    {
-        return $this->container['data_item_b'];
-    }
-
-    /**
-     * Sets data_item_b
-     *
-     *  Represents data item.
-     *
-     * @return $this
-     */
-    public function setDataItemB($data_item_b)
-    {
-        $this->container['data_item_b'] = $data_item_b;
+        $this->container['data_query_name_b'] = $data_query_name_b;
 
         return $this;
     }
@@ -462,7 +334,7 @@ class MergeQueries
     /**
      * Sets data_b_index_field
      *
-     *  Represents index field  of DataB
+     *  Represents index field  of DataB.
      *
      * @return $this
      */
@@ -485,13 +357,36 @@ class MergeQueries
     /**
      * Sets join_type
      *
-     *  
+     *  Represents ethods of data consolidation.
      *
      * @return $this
      */
     public function setJoinType($join_type)
     {
         $this->container['join_type'] = $join_type;
+
+        return $this;
+    }
+   /**
+     * Gets applied_operate_type
+     *
+     * @return string
+     */
+    public function getAppliedOperateType()
+    {
+        return $this->container['applied_operate_type'];
+    }
+
+    /**
+     * Sets applied_operate_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAppliedOperateType($applied_operate_type)
+    {
+        $this->container['applied_operate_type'] = $applied_operate_type;
 
         return $this;
     }

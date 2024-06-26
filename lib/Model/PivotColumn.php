@@ -47,7 +47,8 @@ class PivotColumn
       */
     protected static $swaggerTypes = [
         'pivot_column_name' => 'string',
-        'value_column_names' => 'string[]'
+        'value_column_names' => 'string[]',
+        'applied_operate_type' => 'string'
     ];
 
     /**
@@ -57,7 +58,8 @@ class PivotColumn
       */
     protected static $swaggerFormats = [
         'pivot_column_name' => null  ,
-        'value_column_names' => null  
+        'value_column_names' => null  ,
+        'applied_operate_type' => null  
     ];
 
     /**
@@ -88,7 +90,8 @@ class PivotColumn
      */
     protected static $attributeMap = [
          'pivot_column_name' => 'PivotColumnName' ,
-         'value_column_names' => 'ValueColumnNames' 
+         'value_column_names' => 'ValueColumnNames' ,
+         'applied_operate_type' => 'AppliedOperateType' 
     ];
 
     /**
@@ -98,7 +101,8 @@ class PivotColumn
      */
     protected static $setters = [
         'pivot_column_name' => 'setPivotColumnName' ,
-        'value_column_names' => 'setValueColumnNames' 
+        'value_column_names' => 'setValueColumnNames' ,
+        'applied_operate_type' => 'setAppliedOperateType' 
     ];
 
     /**
@@ -108,7 +112,8 @@ class PivotColumn
      */
     protected static $getters = [
         'pivot_column_name' => 'getPivotColumnName' ,
-        'value_column_names' => 'getValueColumnNames' 
+        'value_column_names' => 'getValueColumnNames' ,
+        'applied_operate_type' => 'getAppliedOperateType' 
     ];
 
     /**
@@ -169,6 +174,7 @@ class PivotColumn
     {
         $this->container['pivot_column_name'] = isset($data['pivot_column_name']) ? $data['pivot_column_name'] : null;
         $this->container['value_column_names'] = isset($data['value_column_names']) ? $data['value_column_names'] : null;
+        $this->container['applied_operate_type'] = isset($data['applied_operate_type']) ? $data['applied_operate_type'] : null;
     }
 
     /**
@@ -184,6 +190,9 @@ class PivotColumn
         }
         if ($this->container['value_column_names'] === null) {
             $invalidProperties[] = "'value_column_names' can't be null";
+        }
+        if ($this->container['applied_operate_type'] === null) {
+            $invalidProperties[] = "'applied_operate_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -202,6 +211,9 @@ class PivotColumn
         if ($this->container['value_column_names'] === null) {
                     return false;
                 }
+        if ($this->container['applied_operate_type'] === null) {
+                    return false;
+                }
         return true;
     }
    /**
@@ -217,7 +229,7 @@ class PivotColumn
     /**
      * Sets pivot_column_name
      *
-     *  
+     *  Represents pivot column name.
      *
      * @return $this
      */
@@ -240,13 +252,36 @@ class PivotColumn
     /**
      * Sets value_column_names
      *
-     *  
+     *  Represents column name that sets the column's value to the value of the pivot column.
      *
      * @return $this
      */
     public function setValueColumnNames($value_column_names)
     {
         $this->container['value_column_names'] = $value_column_names;
+
+        return $this;
+    }
+   /**
+     * Gets applied_operate_type
+     *
+     * @return string
+     */
+    public function getAppliedOperateType()
+    {
+        return $this->container['applied_operate_type'];
+    }
+
+    /**
+     * Sets applied_operate_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setAppliedOperateType($applied_operate_type)
+    {
+        $this->container['applied_operate_type'] = $applied_operate_type;
 
         return $this;
     }

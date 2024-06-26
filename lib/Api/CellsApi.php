@@ -677,13 +677,13 @@ use Aspose\Cells\Cloud\Model\WorksheetMovingRequest;
 use Aspose\Cells\Cloud\Model\ImageOrPrintOptions;
 use Aspose\Cells\Cloud\Model\RenderingFont;
 use Aspose\Cells\Cloud\Model\RenderingWatermark;
+use Aspose\Cells\Cloud\Model\AppliedOperate;
+use Aspose\Cells\Cloud\Model\AppliedStep;
+use Aspose\Cells\Cloud\Model\DataQuery;
 use Aspose\Cells\Cloud\Model\LoadData;
 use Aspose\Cells\Cloud\Model\LoadTo;
 use Aspose\Cells\Cloud\Model\MergeQueries;
 use Aspose\Cells\Cloud\Model\PivotColumn;
-use Aspose\Cells\Cloud\Model\QueryDataSource;
-use Aspose\Cells\Cloud\Model\QueryTable;
-use Aspose\Cells\Cloud\Model\Transformation;
 use Aspose\Cells\Cloud\Model\UnpivotColumn;
 use Aspose\Cells\Cloud\Model\PivotField;
 use Aspose\Cells\Cloud\Model\PivotFilter;
@@ -5401,7 +5401,6 @@ class CellsApi
         $request =  new Request(
             'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            // 'https://id.aspose.cloud' . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
         );

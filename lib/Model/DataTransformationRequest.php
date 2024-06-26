@@ -47,8 +47,9 @@ class DataTransformationRequest
       */
     protected static $swaggerTypes = [
         'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'transformation' => '\Aspose\Cells\Cloud\Model\Transformation',
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'load_data' => '\Aspose\Cells\Cloud\Model\LoadData',
+        'applied_steps' => '\Aspose\Cells\Cloud\Model\AppliedStep[]',
         'region' => 'string',
         'out_format' => 'string'
     ];
@@ -60,8 +61,9 @@ class DataTransformationRequest
       */
     protected static $swaggerFormats = [
         'file_info' => null  ,
-        'transformation' => null  ,
+        'data_source' => null  ,
         'load_data' => null  ,
+        'applied_steps' => null  ,
         'region' => null  ,
         'out_format' => null  
     ];
@@ -94,8 +96,9 @@ class DataTransformationRequest
      */
     protected static $attributeMap = [
          'file_info' => 'FileInfo' ,
-         'transformation' => 'Transformation' ,
+         'data_source' => 'DataSource' ,
          'load_data' => 'LoadData' ,
+         'applied_steps' => 'AppliedSteps' ,
          'region' => 'Region' ,
          'out_format' => 'OutFormat' 
     ];
@@ -107,8 +110,9 @@ class DataTransformationRequest
      */
     protected static $setters = [
         'file_info' => 'setFileInfo' ,
-        'transformation' => 'setTransformation' ,
+        'data_source' => 'setDataSource' ,
         'load_data' => 'setLoadData' ,
+        'applied_steps' => 'setAppliedSteps' ,
         'region' => 'setRegion' ,
         'out_format' => 'setOutFormat' 
     ];
@@ -120,8 +124,9 @@ class DataTransformationRequest
      */
     protected static $getters = [
         'file_info' => 'getFileInfo' ,
-        'transformation' => 'getTransformation' ,
+        'data_source' => 'getDataSource' ,
         'load_data' => 'getLoadData' ,
+        'applied_steps' => 'getAppliedSteps' ,
         'region' => 'getRegion' ,
         'out_format' => 'getOutFormat' 
     ];
@@ -183,8 +188,9 @@ class DataTransformationRequest
     public function __construct(array $data = null)
     {
         $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
-        $this->container['transformation'] = isset($data['transformation']) ? $data['transformation'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['load_data'] = isset($data['load_data']) ? $data['load_data'] : null;
+        $this->container['applied_steps'] = isset($data['applied_steps']) ? $data['applied_steps'] : null;
         $this->container['region'] = isset($data['region']) ? $data['region'] : null;
         $this->container['out_format'] = isset($data['out_format']) ? $data['out_format'] : null;
     }
@@ -200,11 +206,14 @@ class DataTransformationRequest
         if ($this->container['file_info'] === null) {
             $invalidProperties[] = "'file_info' can't be null";
         }
-        if ($this->container['transformation'] === null) {
-            $invalidProperties[] = "'transformation' can't be null";
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
         }
         if ($this->container['load_data'] === null) {
             $invalidProperties[] = "'load_data' can't be null";
+        }
+        if ($this->container['applied_steps'] === null) {
+            $invalidProperties[] = "'applied_steps' can't be null";
         }
         if ($this->container['region'] === null) {
             $invalidProperties[] = "'region' can't be null";
@@ -226,10 +235,13 @@ class DataTransformationRequest
         if ($this->container['file_info'] === null) {
                     return false;
                 }
-        if ($this->container['transformation'] === null) {
+        if ($this->container['data_source'] === null) {
                     return false;
                 }
         if ($this->container['load_data'] === null) {
+                    return false;
+                }
+        if ($this->container['applied_steps'] === null) {
                     return false;
                 }
         if ($this->container['region'] === null) {
@@ -253,7 +265,7 @@ class DataTransformationRequest
     /**
      * Sets file_info
      *
-     *  
+     *  Indicates the source of the mount data.
      *
      * @return $this
      */
@@ -264,25 +276,25 @@ class DataTransformationRequest
         return $this;
     }
    /**
-     * Gets transformation
+     * Gets data_source
      *
-     * @return \Aspose\Cells\Cloud\Model\Transformation
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
-    public function getTransformation()
+    public function getDataSource()
     {
-        return $this->container['transformation'];
+        return $this->container['data_source'];
     }
 
     /**
-     * Sets transformation
+     * Sets data_source
      *
-     *  
+     *  Indicates the source of the mount data.
      *
      * @return $this
      */
-    public function setTransformation($transformation)
+    public function setDataSource($data_source)
     {
-        $this->container['transformation'] = $transformation;
+        $this->container['data_source'] = $data_source;
 
         return $this;
     }
@@ -299,13 +311,36 @@ class DataTransformationRequest
     /**
      * Sets load_data
      *
-     *  
+     *  Indicates load data.
      *
      * @return $this
      */
     public function setLoadData($load_data)
     {
         $this->container['load_data'] = $load_data;
+
+        return $this;
+    }
+   /**
+     * Gets applied_steps
+     *
+     * @return \Aspose\Cells\Cloud\Model\AppliedStep[]
+     */
+    public function getAppliedSteps()
+    {
+        return $this->container['applied_steps'];
+    }
+
+    /**
+     * Sets applied_steps
+     *
+     *  Indicates applied step list. 
+     *
+     * @return $this
+     */
+    public function setAppliedSteps($applied_steps)
+    {
+        $this->container['applied_steps'] = $applied_steps;
 
         return $this;
     }
@@ -345,7 +380,7 @@ class DataTransformationRequest
     /**
      * Sets out_format
      *
-     *  
+     *  Indicates output format 
      *
      * @return $this
      */
