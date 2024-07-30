@@ -58,6 +58,7 @@ use Aspose\Cells\Cloud\Request\PostBatchProtectRequest;
 use Aspose\Cells\Cloud\Request\PostBatchLockRequest;
 use Aspose\Cells\Cloud\Request\PostBatchUnlockRequest;
 use Aspose\Cells\Cloud\Request\PostBatchSplitRequest;
+use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
 use Aspose\Cells\Cloud\Request\PostClearContentsRequest;
 use Aspose\Cells\Cloud\Request\PostClearFormatsRequest;
 use Aspose\Cells\Cloud\Request\PostUpdateWorksheetRangeStyleRequest;
@@ -290,6 +291,7 @@ use Aspose\Cells\Cloud\Request\DeleteWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PostRunTaskRequest;
+use Aspose\Cells\Cloud\Request\PostAddTextContentRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookDefaultStyleRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookTextItemsRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookNamesRequest;
@@ -690,6 +692,8 @@ use Aspose\Cells\Cloud\Model\PivotFilter;
 use Aspose\Cells\Cloud\Model\PivotItem;
 use Aspose\Cells\Cloud\Model\PivotTable;
 use Aspose\Cells\Cloud\Model\PivotTables;
+use Aspose\Cells\Cloud\Model\AddTextOptions;
+use Aspose\Cells\Cloud\Model\BaseOperateOptions;
 use Aspose\Cells\Cloud\Model\CellValue;
 use Aspose\Cells\Cloud\Model\CustomParserConfig;
 use Aspose\Cells\Cloud\Model\Import2DimensionDoubleArrayOption;
@@ -1118,6 +1122,19 @@ class CellsApi
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Get Access Token Result
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAccessTokenRequest" /></param>
+    public function postAccessToken( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
@@ -4141,7 +4158,19 @@ class CellsApi
     }
 
     /// <summary>
-    /// Retrieve the description of the default style for the workbook.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAddTextContentRequest" /></param>
+    public function postAddTextContent( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Retrieve the description of the default style for the workbook .
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorkbookDefaultStyleRequest" /></param>
     public function getWorkbookDefaultStyle( $request)
