@@ -292,6 +292,7 @@ use Aspose\Cells\Cloud\Request\PutWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PostRunTaskRequest;
 use Aspose\Cells\Cloud\Request\PostAddTextContentRequest;
+use Aspose\Cells\Cloud\Request\PostTrimContentRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookDefaultStyleRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookTextItemsRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookNamesRequest;
@@ -694,6 +695,9 @@ use Aspose\Cells\Cloud\Model\PivotTable;
 use Aspose\Cells\Cloud\Model\PivotTables;
 use Aspose\Cells\Cloud\Model\AddTextOptions;
 use Aspose\Cells\Cloud\Model\BaseOperateOptions;
+use Aspose\Cells\Cloud\Model\ScopeItem;
+use Aspose\Cells\Cloud\Model\ScopeOptions;
+use Aspose\Cells\Cloud\Model\TrimContentOptions;
 use Aspose\Cells\Cloud\Model\CellValue;
 use Aspose\Cells\Cloud\Model\CustomParserConfig;
 use Aspose\Cells\Cloud\Model\Import2DimensionDoubleArrayOption;
@@ -4170,6 +4174,18 @@ class CellsApi
     }
 
     /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostTrimContentRequest" /></param>
+    public function postTrimContent( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
     /// Retrieve the description of the default style for the workbook .
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorkbookDefaultStyleRequest" /></param>
@@ -5342,7 +5358,7 @@ class CellsApi
             );
         }
 
-        $resourcePath = '/connect/token';
+        $resourcePath = '/v3.0/cells/connect/token';
         if($version === 'v1.1'){
             $resourcePath = '/oauth2/token';
         }
