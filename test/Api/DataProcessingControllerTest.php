@@ -87,8 +87,10 @@ final class DataProcessingControllerTest extends TestCase
         $localName = "BookCsvDuplicateData.csv";
         $remoteName = "BookCsvDuplicateData.csv";
 
+        $deduplicationRegionRanges = array (
+        );
         $deduplicationRegion = new \Aspose\Cells\Cloud\Model\DeduplicationRegion();
-
+        $deduplicationRegion->setRanges($deduplicationRegionRanges ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
         $request = new PostWorkbookDataDeduplicationRequest();

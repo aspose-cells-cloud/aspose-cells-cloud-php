@@ -49,6 +49,7 @@ class ProtectWorkbookRequest
         'aways_open_read_only' => 'bool',
         'encrypt_with_password' => 'string',
         'protect_current_sheet' => '\Aspose\Cells\Cloud\Model\Protection',
+        'protect_all_sheets' => '\Aspose\Cells\Cloud\Model\Protection',
         'protect_workbook_structure' => 'string',
         'digital_signature' => '\Aspose\Cells\Cloud\Model\DigitalSignature',
         'mark_as_final' => 'bool'
@@ -63,6 +64,7 @@ class ProtectWorkbookRequest
         'aways_open_read_only' => null  ,
         'encrypt_with_password' => null  ,
         'protect_current_sheet' => null  ,
+        'protect_all_sheets' => null  ,
         'protect_workbook_structure' => null  ,
         'digital_signature' => null  ,
         'mark_as_final' => null  
@@ -98,6 +100,7 @@ class ProtectWorkbookRequest
          'aways_open_read_only' => 'AwaysOpenReadOnly' ,
          'encrypt_with_password' => 'EncryptWithPassword' ,
          'protect_current_sheet' => 'ProtectCurrentSheet' ,
+         'protect_all_sheets' => 'ProtectAllSheets' ,
          'protect_workbook_structure' => 'ProtectWorkbookStructure' ,
          'digital_signature' => 'DigitalSignature' ,
          'mark_as_final' => 'MarkAsFinal' 
@@ -112,6 +115,7 @@ class ProtectWorkbookRequest
         'aways_open_read_only' => 'setAwaysOpenReadOnly' ,
         'encrypt_with_password' => 'setEncryptWithPassword' ,
         'protect_current_sheet' => 'setProtectCurrentSheet' ,
+        'protect_all_sheets' => 'setProtectAllSheets' ,
         'protect_workbook_structure' => 'setProtectWorkbookStructure' ,
         'digital_signature' => 'setDigitalSignature' ,
         'mark_as_final' => 'setMarkAsFinal' 
@@ -126,6 +130,7 @@ class ProtectWorkbookRequest
         'aways_open_read_only' => 'getAwaysOpenReadOnly' ,
         'encrypt_with_password' => 'getEncryptWithPassword' ,
         'protect_current_sheet' => 'getProtectCurrentSheet' ,
+        'protect_all_sheets' => 'getProtectAllSheets' ,
         'protect_workbook_structure' => 'getProtectWorkbookStructure' ,
         'digital_signature' => 'getDigitalSignature' ,
         'mark_as_final' => 'getMarkAsFinal' 
@@ -190,6 +195,7 @@ class ProtectWorkbookRequest
         $this->container['aways_open_read_only'] = isset($data['aways_open_read_only']) ? $data['aways_open_read_only'] : null;
         $this->container['encrypt_with_password'] = isset($data['encrypt_with_password']) ? $data['encrypt_with_password'] : null;
         $this->container['protect_current_sheet'] = isset($data['protect_current_sheet']) ? $data['protect_current_sheet'] : null;
+        $this->container['protect_all_sheets'] = isset($data['protect_all_sheets']) ? $data['protect_all_sheets'] : null;
         $this->container['protect_workbook_structure'] = isset($data['protect_workbook_structure']) ? $data['protect_workbook_structure'] : null;
         $this->container['digital_signature'] = isset($data['digital_signature']) ? $data['digital_signature'] : null;
         $this->container['mark_as_final'] = isset($data['mark_as_final']) ? $data['mark_as_final'] : null;
@@ -211,6 +217,9 @@ class ProtectWorkbookRequest
         }
         if ($this->container['protect_current_sheet'] === null) {
             $invalidProperties[] = "'protect_current_sheet' can't be null";
+        }
+        if ($this->container['protect_all_sheets'] === null) {
+            $invalidProperties[] = "'protect_all_sheets' can't be null";
         }
         if ($this->container['protect_workbook_structure'] === null) {
             $invalidProperties[] = "'protect_workbook_structure' can't be null";
@@ -239,6 +248,9 @@ class ProtectWorkbookRequest
                     return false;
                 }
         if ($this->container['protect_current_sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['protect_all_sheets'] === null) {
                     return false;
                 }
         if ($this->container['protect_workbook_structure'] === null) {
@@ -318,6 +330,29 @@ class ProtectWorkbookRequest
     public function setProtectCurrentSheet($protect_current_sheet)
     {
         $this->container['protect_current_sheet'] = $protect_current_sheet;
+
+        return $this;
+    }
+   /**
+     * Gets protect_all_sheets
+     *
+     * @return \Aspose\Cells\Cloud\Model\Protection
+     */
+    public function getProtectAllSheets()
+    {
+        return $this->container['protect_all_sheets'];
+    }
+
+    /**
+     * Sets protect_all_sheets
+     *
+     *  Represents the various types of protection options available for all worksheets.            
+     *
+     * @return $this
+     */
+    public function setProtectAllSheets($protect_all_sheets)
+    {
+        $this->container['protect_all_sheets'] = $protect_all_sheets;
 
         return $this;
     }

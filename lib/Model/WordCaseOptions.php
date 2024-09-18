@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TextWaterMarkerRequest.cs">
+ * <copyright company="Aspose" file="WordCaseOptions.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class TextWaterMarkerRequest
+class WordCaseOptions
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class TextWaterMarkerRequest
       *
       * @var string
       */
-    protected static $swaggerModelName = 'TextWaterMarkerRequest';     
+    protected static $swaggerModelName = 'WordCaseOptions';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,12 +46,10 @@ class TextWaterMarkerRequest
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'text' => 'string',
-        'font_name' => 'string',
-        'font_size' => 'int',
-        'height' => 'int',
-        'width' => 'int',
-        'image_adapt_option' => 'string'
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'word_case_type' => 'string',
+        'scope_options' => '\Aspose\Cells\Cloud\Model\ScopeOptions'
     ];
 
     /**
@@ -60,12 +58,10 @@ class TextWaterMarkerRequest
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'text' => null  ,
-        'font_name' => null  ,
-        'font_size' => null  ,
-        'height' => null  ,
-        'width' => null  ,
-        'image_adapt_option' => null  
+        'data_source' => null  ,
+        'file_info' => null  ,
+        'word_case_type' => null  ,
+        'scope_options' => null  
     ];
 
     /**
@@ -95,12 +91,10 @@ class TextWaterMarkerRequest
      * @var string[]
      */
     protected static $attributeMap = [
-         'text' => 'Text' ,
-         'font_name' => 'FontName' ,
-         'font_size' => 'FontSize' ,
-         'height' => 'Height' ,
-         'width' => 'Width' ,
-         'image_adapt_option' => 'ImageAdaptOption' 
+         'data_source' => 'DataSource' ,
+         'file_info' => 'FileInfo' ,
+         'word_case_type' => 'WordCaseType' ,
+         'scope_options' => 'ScopeOptions' 
     ];
 
     /**
@@ -109,12 +103,10 @@ class TextWaterMarkerRequest
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText' ,
-        'font_name' => 'setFontName' ,
-        'font_size' => 'setFontSize' ,
-        'height' => 'setHeight' ,
-        'width' => 'setWidth' ,
-        'image_adapt_option' => 'setImageAdaptOption' 
+        'data_source' => 'setDataSource' ,
+        'file_info' => 'setFileInfo' ,
+        'word_case_type' => 'setWordCaseType' ,
+        'scope_options' => 'setScopeOptions' 
     ];
 
     /**
@@ -123,12 +115,10 @@ class TextWaterMarkerRequest
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText' ,
-        'font_name' => 'getFontName' ,
-        'font_size' => 'getFontSize' ,
-        'height' => 'getHeight' ,
-        'width' => 'getWidth' ,
-        'image_adapt_option' => 'getImageAdaptOption' 
+        'data_source' => 'getDataSource' ,
+        'file_info' => 'getFileInfo' ,
+        'word_case_type' => 'getWordCaseType' ,
+        'scope_options' => 'getScopeOptions' 
     ];
 
     /**
@@ -187,12 +177,10 @@ class TextWaterMarkerRequest
      */
     public function __construct(array $data = null)
     {
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['font_name'] = isset($data['font_name']) ? $data['font_name'] : null;
-        $this->container['font_size'] = isset($data['font_size']) ? $data['font_size'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['image_adapt_option'] = isset($data['image_adapt_option']) ? $data['image_adapt_option'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
+        $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
+        $this->container['word_case_type'] = isset($data['word_case_type']) ? $data['word_case_type'] : null;
+        $this->container['scope_options'] = isset($data['scope_options']) ? $data['scope_options'] : null;
     }
 
     /**
@@ -203,23 +191,17 @@ class TextWaterMarkerRequest
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
         }
-        if ($this->container['font_name'] === null) {
-            $invalidProperties[] = "'font_name' can't be null";
+        if ($this->container['file_info'] === null) {
+            $invalidProperties[] = "'file_info' can't be null";
         }
-        if ($this->container['font_size'] === null) {
-            $invalidProperties[] = "'font_size' can't be null";
+        if ($this->container['word_case_type'] === null) {
+            $invalidProperties[] = "'word_case_type' can't be null";
         }
-        if ($this->container['height'] === null) {
-            $invalidProperties[] = "'height' can't be null";
-        }
-        if ($this->container['width'] === null) {
-            $invalidProperties[] = "'width' can't be null";
-        }
-        if ($this->container['image_adapt_option'] === null) {
-            $invalidProperties[] = "'image_adapt_option' can't be null";
+        if ($this->container['scope_options'] === null) {
+            $invalidProperties[] = "'scope_options' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,161 +214,109 @@ class TextWaterMarkerRequest
      */
     public function valid()
     {
-        if ($this->container['text'] === null) {
+        if ($this->container['data_source'] === null) {
                     return false;
                 }
-        if ($this->container['font_name'] === null) {
+        if ($this->container['file_info'] === null) {
                     return false;
                 }
-        if ($this->container['font_size'] === null) {
+        if ($this->container['word_case_type'] === null) {
                     return false;
                 }
-        if ($this->container['height'] === null) {
-                    return false;
-                }
-        if ($this->container['width'] === null) {
-                    return false;
-                }
-        if ($this->container['image_adapt_option'] === null) {
+        if ($this->container['scope_options'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets text
+     * Gets data_source
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
-    public function getText()
+    public function getDataSource()
     {
-        return $this->container['text'];
+        return $this->container['data_source'];
     }
 
     /**
-     * Sets text
+     * Sets data_source
      *
      *  
      *
      * @return $this
      */
-    public function setText($text)
+    public function setDataSource($data_source)
     {
-        $this->container['text'] = $text;
+        $this->container['data_source'] = $data_source;
 
         return $this;
     }
    /**
-     * Gets font_name
+     * Gets file_info
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
      */
-    public function getFontName()
+    public function getFileInfo()
     {
-        return $this->container['font_name'];
+        return $this->container['file_info'];
     }
 
     /**
-     * Sets font_name
-     *
-     *  Indicates font name.
-     *
-     * @return $this
-     */
-    public function setFontName($font_name)
-    {
-        $this->container['font_name'] = $font_name;
-
-        return $this;
-    }
-   /**
-     * Gets font_size
-     *
-     * @return int
-     */
-    public function getFontSize()
-    {
-        return $this->container['font_size'];
-    }
-
-    /**
-     * Sets font_size
-     *
-     *  Indicates font size.
-     *
-     * @return $this
-     */
-    public function setFontSize($font_size)
-    {
-        $this->container['font_size'] = $font_size;
-
-        return $this;
-    }
-   /**
-     * Gets height
-     *
-     * @return int
-     */
-    public function getHeight()
-    {
-        return $this->container['height'];
-    }
-
-    /**
-     * Sets height
-     *
-     *  Indicates image height.
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->container['height'] = $height;
-
-        return $this;
-    }
-   /**
-     * Gets width
-     *
-     * @return int
-     */
-    public function getWidth()
-    {
-        return $this->container['width'];
-    }
-
-    /**
-     * Sets width
-     *
-     *  Indicates image width.
-     *
-     * @return $this
-     */
-    public function setWidth($width)
-    {
-        $this->container['width'] = $width;
-
-        return $this;
-    }
-   /**
-     * Gets image_adapt_option
-     *
-     * @return string
-     */
-    public function getImageAdaptOption()
-    {
-        return $this->container['image_adapt_option'];
-    }
-
-    /**
-     * Sets image_adapt_option
+     * Sets file_info
      *
      *  
      *
      * @return $this
      */
-    public function setImageAdaptOption($image_adapt_option)
+    public function setFileInfo($file_info)
     {
-        $this->container['image_adapt_option'] = $image_adapt_option;
+        $this->container['file_info'] = $file_info;
+
+        return $this;
+    }
+   /**
+     * Gets word_case_type
+     *
+     * @return string
+     */
+    public function getWordCaseType()
+    {
+        return $this->container['word_case_type'];
+    }
+
+    /**
+     * Sets word_case_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setWordCaseType($word_case_type)
+    {
+        $this->container['word_case_type'] = $word_case_type;
+
+        return $this;
+    }
+   /**
+     * Gets scope_options
+     *
+     * @return \Aspose\Cells\Cloud\Model\ScopeOptions
+     */
+    public function getScopeOptions()
+    {
+        return $this->container['scope_options'];
+    }
+
+    /**
+     * Sets scope_options
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setScopeOptions($scope_options)
+    {
+        $this->container['scope_options'] = $scope_options;
 
         return $this;
     }

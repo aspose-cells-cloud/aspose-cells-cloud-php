@@ -10,8 +10,10 @@ $remoteFolder = "TestData/In";
 $localName = "BookCsvDuplicateData.csv";
 $remoteName = "BookCsvDuplicateData.csv";
 
+$deduplicationRegionRanges = array (
+);
 $deduplicationRegion = new \Aspose\Cells\Cloud\Model\DeduplicationRegion();
-
+$deduplicationRegion->setRanges($deduplicationRegionRanges ); 
 CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
  
 $request = new PostWorkbookDataDeduplicationRequest();

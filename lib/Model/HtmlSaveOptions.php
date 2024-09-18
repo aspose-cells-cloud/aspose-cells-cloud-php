@@ -84,6 +84,7 @@ class HtmlSaveOptions
         'is_exp_image_to_temp_dir' => 'bool',
         'page_title' => 'string',
         'parse_html_tag_in_cell' => 'bool',
+        'cell_name_attribute' => 'string',
         'save_format' => 'string',
         'cached_file_folder' => 'string',
         'clear_data' => 'bool',
@@ -138,6 +139,7 @@ class HtmlSaveOptions
         'is_exp_image_to_temp_dir' => null  ,
         'page_title' => null  ,
         'parse_html_tag_in_cell' => null  ,
+        'cell_name_attribute' => null  ,
         'save_format' => null  ,
         'cached_file_folder' => null  ,
         'clear_data' => null  ,
@@ -213,6 +215,7 @@ class HtmlSaveOptions
          'is_exp_image_to_temp_dir' => 'IsExpImageToTempDir' ,
          'page_title' => 'PageTitle' ,
          'parse_html_tag_in_cell' => 'ParseHtmlTagInCell' ,
+         'cell_name_attribute' => 'CellNameAttribute' ,
          'save_format' => 'SaveFormat' ,
          'cached_file_folder' => 'CachedFileFolder' ,
          'clear_data' => 'ClearData' ,
@@ -267,6 +270,7 @@ class HtmlSaveOptions
         'is_exp_image_to_temp_dir' => 'setIsExpImageToTempDir' ,
         'page_title' => 'setPageTitle' ,
         'parse_html_tag_in_cell' => 'setParseHtmlTagInCell' ,
+        'cell_name_attribute' => 'setCellNameAttribute' ,
         'save_format' => 'setSaveFormat' ,
         'cached_file_folder' => 'setCachedFileFolder' ,
         'clear_data' => 'setClearData' ,
@@ -321,6 +325,7 @@ class HtmlSaveOptions
         'is_exp_image_to_temp_dir' => 'getIsExpImageToTempDir' ,
         'page_title' => 'getPageTitle' ,
         'parse_html_tag_in_cell' => 'getParseHtmlTagInCell' ,
+        'cell_name_attribute' => 'getCellNameAttribute' ,
         'save_format' => 'getSaveFormat' ,
         'cached_file_folder' => 'getCachedFileFolder' ,
         'clear_data' => 'getClearData' ,
@@ -425,6 +430,7 @@ class HtmlSaveOptions
         $this->container['is_exp_image_to_temp_dir'] = isset($data['is_exp_image_to_temp_dir']) ? $data['is_exp_image_to_temp_dir'] : null;
         $this->container['page_title'] = isset($data['page_title']) ? $data['page_title'] : null;
         $this->container['parse_html_tag_in_cell'] = isset($data['parse_html_tag_in_cell']) ? $data['parse_html_tag_in_cell'] : null;
+        $this->container['cell_name_attribute'] = isset($data['cell_name_attribute']) ? $data['cell_name_attribute'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
@@ -556,6 +562,9 @@ class HtmlSaveOptions
         }
         if ($this->container['parse_html_tag_in_cell'] === null) {
             $invalidProperties[] = "'parse_html_tag_in_cell' can't be null";
+        }
+        if ($this->container['cell_name_attribute'] === null) {
+            $invalidProperties[] = "'cell_name_attribute' can't be null";
         }
         if ($this->container['save_format'] === null) {
             $invalidProperties[] = "'save_format' can't be null";
@@ -704,6 +713,9 @@ class HtmlSaveOptions
                     return false;
                 }
         if ($this->container['parse_html_tag_in_cell'] === null) {
+                    return false;
+                }
+        if ($this->container['cell_name_attribute'] === null) {
                     return false;
                 }
         if ($this->container['save_format'] === null) {
@@ -1481,7 +1493,7 @@ class HtmlSaveOptions
     /**
      * Sets hidden_col_display_type
      *
-     *  Hidden column(the width of this column is 0) in excel,before save this into                html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden"
+     *  Hidden column(the width of this column is 0) in excel,before save this into               html format, if HtmlHiddenColDisplayType is "Remove",the hidden column would               ont been output, if the value is "Hidden", the column would been output,but was hidden,the default value is "Hidden"
      *
      * @return $this
      */
@@ -1504,7 +1516,7 @@ class HtmlSaveOptions
     /**
      * Sets hidden_row_display_type
      *
-     *  Hidden row(the height of this row is 0) in excel,before save this into html                format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden"
+     *  Hidden row(the height of this row is 0) in excel,before save this into html               format, if HtmlHiddenRowDisplayType is "Remove",the hidden row would ont               been output, if the value is "Hidden", the row would been output,but was               hidden,the default value is "Hidden"
      *
      * @return $this
      */
@@ -1603,6 +1615,29 @@ class HtmlSaveOptions
     public function setParseHtmlTagInCell($parse_html_tag_in_cell)
     {
         $this->container['parse_html_tag_in_cell'] = $parse_html_tag_in_cell;
+
+        return $this;
+    }
+   /**
+     * Gets cell_name_attribute
+     *
+     * @return string
+     */
+    public function getCellNameAttribute()
+    {
+        return $this->container['cell_name_attribute'];
+    }
+
+    /**
+     * Sets cell_name_attribute
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCellNameAttribute($cell_name_attribute)
+    {
+        $this->container['cell_name_attribute'] = $cell_name_attribute;
 
         return $this;
     }

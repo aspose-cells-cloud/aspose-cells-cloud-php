@@ -194,6 +194,36 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         $this->page_tall_fit_on_per_sheet = $value;
     }
 
+    /*
+    * sheetName : 
+    */ 
+    public $sheet_name;
+
+    public function getSheetName()
+    {
+        return $this->sheet_name;
+    }
+
+    public function setSheetName($value)
+    {
+        $this->sheet_name = $value;
+    }
+
+    /*
+    * pageIndex : 
+    */ 
+    public $page_index;
+
+    public function getPageIndex()
+    {
+        return $this->page_index;
+    }
+
+    public function setPageIndex($value)
+    {
+        $this->page_index = $value;
+    }
+
     public function __construct()
     {        
     }
@@ -248,6 +278,14 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         // query params : page_tall_fit_on_per_sheet
         if ($this->page_tall_fit_on_per_sheet !== null) {
             $queryParams['pageTallFitOnPerSheet'] = ObjectSerializer::toQueryValue($this->page_tall_fit_on_per_sheet);
+        }
+        // query params : sheet_name
+        if ($this->sheet_name !== null) {
+            $queryParams['sheetName'] = ObjectSerializer::toQueryValue($this->sheet_name);
+        }
+        // query params : page_index
+        if ($this->page_index !== null) {
+            $queryParams['pageIndex'] = ObjectSerializer::toQueryValue($this->page_index);
         }
         if ($this->file !== null) {
             $multipart = true;

@@ -90,6 +90,21 @@ class PutWorksheetBackgroundRequest extends BaseApiRequest
     }
 
     /*
+    * imageAdaptOption : 
+    */ 
+    public $image_adapt_option;
+
+    public function getImageAdaptOption()
+    {
+        return $this->image_adapt_option;
+    }
+
+    public function setImageAdaptOption($value)
+    {
+        $this->image_adapt_option = $value;
+    }
+
+    /*
     * folder : The folder where the file is situated.
     */ 
     public $folder;
@@ -179,6 +194,10 @@ class PutWorksheetBackgroundRequest extends BaseApiRequest
         // query params : pic_path
         if ($this->pic_path !== null) {
             $queryParams['picPath'] = ObjectSerializer::toQueryValue($this->pic_path);
+        }
+        // query params : image_adapt_option
+        if ($this->image_adapt_option !== null) {
+            $queryParams['imageAdaptOption'] = ObjectSerializer::toQueryValue($this->image_adapt_option);
         }
         // query params : folder
         if ($this->folder !== null) {

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PutWorkbookBackgroundRequest.cs">
+ * <copyright company="Aspose" file="PostUpdateWordCaseRequest.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,100 +38,25 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PutWorkbookBackground operation.
+ * Request model for  PostUpdateWordCase operation.
  */
 
-class PutWorkbookBackgroundRequest extends BaseApiRequest
+class PostUpdateWordCaseRequest extends BaseApiRequest
 {
 
     /*
-    * name : The file name.
+    * wordCaseOptions : 
     */ 
-    public $name;
+    public $word_case_options;
 
-    public function getName()
+    public function getWordCaseOptions()
     {
-        return $this->name;
+        return $this->word_case_options;
     }
 
-    public function setName($value)
+    public function setWordCaseOptions($value)
     {
-        $this->name = $value;
-    }
-
-    /*
-    * picPath : The picture full path.
-    */ 
-    public $pic_path;
-
-    public function getPicPath()
-    {
-        return $this->pic_path;
-    }
-
-    public function setPicPath($value)
-    {
-        $this->pic_path = $value;
-    }
-
-    /*
-    * imageAdaptOption : 
-    */ 
-    public $image_adapt_option;
-
-    public function getImageAdaptOption()
-    {
-        return $this->image_adapt_option;
-    }
-
-    public function setImageAdaptOption($value)
-    {
-        $this->image_adapt_option = $value;
-    }
-
-    /*
-    * folder : The folder where the file is situated.
-    */ 
-    public $folder;
-
-    public function getFolder()
-    {
-        return $this->folder;
-    }
-
-    public function setFolder($value)
-    {
-        $this->folder = $value;
-    }
-
-    /*
-    * storageName : The storage name where the file is situated.
-    */ 
-    public $storage_name;
-
-    public function getStorageName()
-    {
-        return $this->storage_name;
-    }
-
-    public function setStorageName($value)
-    {
-        $this->storage_name = $value;
-    }
-
-    /*
-    * File : File to upload
-    */ 
-    public $file;
-
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    public function setFile($value)
-    {
-        $this->file = $value;
+        $this->word_case_options = $value;
     }
 
     public function __construct()
@@ -140,57 +65,26 @@ class PutWorkbookBackgroundRequest extends BaseApiRequest
 
     public function createHttpRequest($headerSelector,$config)
     {
-        // verify the required parameter 'name' is set
-        if ($this->name === null) {
+        // verify the required parameter 'word_case_options' is set
+        if ($this->word_case_options === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling PutWorkbookBackground'
+                'Missing the required parameter $word_case_options when calling PostUpdateWordCase'
             );
         } 
 
-        $resourcePath = '/cells/{name}/background';
+        $resourcePath = '/cells/updatewordcase';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // name params
-        if ($this->name !== null) {
-            $resourcePath = str_replace(
-                '{' . 'name' . '}',
-                ObjectSerializer::toPathValue($this->name),
-                $resourcePath
-            );
-        }
-        // query params : pic_path
-        if ($this->pic_path !== null) {
-            $queryParams['picPath'] = ObjectSerializer::toQueryValue($this->pic_path);
-        }
-        // query params : image_adapt_option
-        if ($this->image_adapt_option !== null) {
-            $queryParams['imageAdaptOption'] = ObjectSerializer::toQueryValue($this->image_adapt_option);
-        }
-        // query params : folder
-        if ($this->folder !== null) {
-            $queryParams['folder'] = ObjectSerializer::toQueryValue($this->folder);
-        }
-        // query params : storage_name
-        if ($this->storage_name !== null) {
-            $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
-        }
-        if ($this->file !== null) {
-            $multipart = true;
-            if( is_array($this->file)){
-                foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
-                }
-            }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
-            }
-        }
-
     // body params
         $_tempBody = null;
         $_tempBodyName ;
+        if (isset($this->word_case_options)) {
+            $_tempBody = $this->word_case_options;
+            $_tempBodyName =str_replace('_','', 'word_case_options');
+        }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -257,7 +151,7 @@ class PutWorkbookBackgroundRequest extends BaseApiRequest
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
-            'PUT',
+            'POST',
             $config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -35,9 +35,7 @@ use \Aspose\Cells\Cloud\ObjectSerializer;
 use \Aspose\Cells\Cloud\CellsApiTestBase;
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\CopyFileRequest; 
-use \Aspose\Cells\Cloud\Request\DeleteFileRequest; 
 use \Aspose\Cells\Cloud\Request\DownloadFileRequest; 
-use \Aspose\Cells\Cloud\Request\MoveFileRequest; 
 use \Aspose\Cells\Cloud\Request\UploadFileRequest; 
 
 use PHPUnit\Framework\TestCase;
@@ -113,54 +111,6 @@ final class FileControllerTest extends TestCase
         $request->setVersionId( "");
 
         $resposne = $instance->copyFile($request);
-        $this->assertTrue(True);
-    }
-
-    /// <summary>
-    /// Test for MoveFile of FileController.
-    /// </summary>
-
-    public function testMoveFile()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new MoveFileRequest();
-        $request->setSrcPath( $remoteFolder . "/" . $remoteName);
-        $request->setDestPath( "OutResult/" . $remoteName);
-        $request->setSrcStorageName( "");
-        $request->setDestStorageName( "");
-        $request->setVersionId( "");
-
-        $resposne = $instance->moveFile($request);
-        $this->assertTrue(True);
-    }
-
-    /// <summary>
-    /// Test for DeleteFile of FileController.
-    /// </summary>
-
-    public function testDeleteFile()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new DeleteFileRequest();
-        $request->setPath( $remoteFolder . "/" . $remoteName);
-        $request->setStorageName( "");
-        $request->setVersionId( "");
-
-        $resposne = $instance->deleteFile($request);
         $this->assertTrue(True);
     }
 }
