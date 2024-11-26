@@ -295,6 +295,7 @@ use Aspose\Cells\Cloud\Request\PostAddTextContentRequest;
 use Aspose\Cells\Cloud\Request\PostTrimContentRequest;
 use Aspose\Cells\Cloud\Request\PostUpdateWordCaseRequest;
 use Aspose\Cells\Cloud\Request\PostRemoveCharactersRequest;
+use Aspose\Cells\Cloud\Request\PostConvertTextRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookDefaultStyleRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookTextItemsRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookNamesRequest;
@@ -697,6 +698,7 @@ use Aspose\Cells\Cloud\Model\PivotTable;
 use Aspose\Cells\Cloud\Model\PivotTables;
 use Aspose\Cells\Cloud\Model\AddTextOptions;
 use Aspose\Cells\Cloud\Model\BaseOperateOptions;
+use Aspose\Cells\Cloud\Model\ConvertTextOptions;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByCharacter;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByPosition;
 use Aspose\Cells\Cloud\Model\RemoveCharactersOptions;
@@ -4207,6 +4209,18 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="PostRemoveCharactersRequest" /></param>
     public function postRemoveCharacters( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertTextRequest" /></param>
+    public function postConvertText( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
