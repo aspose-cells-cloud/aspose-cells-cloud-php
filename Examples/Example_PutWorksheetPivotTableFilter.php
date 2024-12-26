@@ -11,7 +11,7 @@ $localName = "TestCase.xlsx";
 $remoteName = "TestCase.xlsx";
 
 $filter = new \Aspose\Cells\Cloud\Model\PivotFilter();
-$filter->setFieldIndex(1 ); 
+$filter->setFieldIndex(0 ); 
 $filter->setFilterType("Count" ); 
 CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
  

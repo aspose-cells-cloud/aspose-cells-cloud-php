@@ -35,7 +35,7 @@ use \Exception;
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
- * @author   Swagger Codegen team
+ * @author   Swagger CodeGen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class HeaderSelector

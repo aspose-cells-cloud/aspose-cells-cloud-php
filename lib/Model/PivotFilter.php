@@ -50,11 +50,12 @@ class PivotFilter
         'evaluation_order' => 'int',
         'field_index' => 'int',
         'filter_type' => 'string',
-        'measure_fld_index' => 'int',
+        'value_field_index' => 'int',
         'member_property_field_index' => 'int',
         'name' => 'string',
         'value1' => 'string',
-        'value2' => 'string'
+        'value2' => 'string',
+        'top10_filter' => '\Aspose\Cells\Cloud\Model\Top10Filter'
     ];
 
     /**
@@ -67,11 +68,12 @@ class PivotFilter
         'evaluation_order' => null  ,
         'field_index' => null  ,
         'filter_type' => null  ,
-        'measure_fld_index' => null  ,
+        'value_field_index' => null  ,
         'member_property_field_index' => null  ,
         'name' => null  ,
         'value1' => null  ,
-        'value2' => null  
+        'value2' => null  ,
+        'top10_filter' => null  
     ];
 
     /**
@@ -105,11 +107,12 @@ class PivotFilter
          'evaluation_order' => 'EvaluationOrder' ,
          'field_index' => 'FieldIndex' ,
          'filter_type' => 'FilterType' ,
-         'measure_fld_index' => 'MeasureFldIndex' ,
+         'value_field_index' => 'ValueFieldIndex' ,
          'member_property_field_index' => 'MemberPropertyFieldIndex' ,
          'name' => 'Name' ,
          'value1' => 'Value1' ,
-         'value2' => 'Value2' 
+         'value2' => 'Value2' ,
+         'top10_filter' => 'Top10Filter' 
     ];
 
     /**
@@ -122,11 +125,12 @@ class PivotFilter
         'evaluation_order' => 'setEvaluationOrder' ,
         'field_index' => 'setFieldIndex' ,
         'filter_type' => 'setFilterType' ,
-        'measure_fld_index' => 'setMeasureFldIndex' ,
+        'value_field_index' => 'setValueFieldIndex' ,
         'member_property_field_index' => 'setMemberPropertyFieldIndex' ,
         'name' => 'setName' ,
         'value1' => 'setValue1' ,
-        'value2' => 'setValue2' 
+        'value2' => 'setValue2' ,
+        'top10_filter' => 'setTop10Filter' 
     ];
 
     /**
@@ -139,11 +143,12 @@ class PivotFilter
         'evaluation_order' => 'getEvaluationOrder' ,
         'field_index' => 'getFieldIndex' ,
         'filter_type' => 'getFilterType' ,
-        'measure_fld_index' => 'getMeasureFldIndex' ,
+        'value_field_index' => 'getValueFieldIndex' ,
         'member_property_field_index' => 'getMemberPropertyFieldIndex' ,
         'name' => 'getName' ,
         'value1' => 'getValue1' ,
-        'value2' => 'getValue2' 
+        'value2' => 'getValue2' ,
+        'top10_filter' => 'getTop10Filter' 
     ];
 
     /**
@@ -206,11 +211,12 @@ class PivotFilter
         $this->container['evaluation_order'] = isset($data['evaluation_order']) ? $data['evaluation_order'] : null;
         $this->container['field_index'] = isset($data['field_index']) ? $data['field_index'] : null;
         $this->container['filter_type'] = isset($data['filter_type']) ? $data['filter_type'] : null;
-        $this->container['measure_fld_index'] = isset($data['measure_fld_index']) ? $data['measure_fld_index'] : null;
+        $this->container['value_field_index'] = isset($data['value_field_index']) ? $data['value_field_index'] : null;
         $this->container['member_property_field_index'] = isset($data['member_property_field_index']) ? $data['member_property_field_index'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['value1'] = isset($data['value1']) ? $data['value1'] : null;
         $this->container['value2'] = isset($data['value2']) ? $data['value2'] : null;
+        $this->container['top10_filter'] = isset($data['top10_filter']) ? $data['top10_filter'] : null;
     }
 
     /**
@@ -233,8 +239,8 @@ class PivotFilter
         if ($this->container['filter_type'] === null) {
             $invalidProperties[] = "'filter_type' can't be null";
         }
-        if ($this->container['measure_fld_index'] === null) {
-            $invalidProperties[] = "'measure_fld_index' can't be null";
+        if ($this->container['value_field_index'] === null) {
+            $invalidProperties[] = "'value_field_index' can't be null";
         }
         if ($this->container['member_property_field_index'] === null) {
             $invalidProperties[] = "'member_property_field_index' can't be null";
@@ -247,6 +253,9 @@ class PivotFilter
         }
         if ($this->container['value2'] === null) {
             $invalidProperties[] = "'value2' can't be null";
+        }
+        if ($this->container['top10_filter'] === null) {
+            $invalidProperties[] = "'top10_filter' can't be null";
         }
         return $invalidProperties;
     }
@@ -271,7 +280,7 @@ class PivotFilter
         if ($this->container['filter_type'] === null) {
                     return false;
                 }
-        if ($this->container['measure_fld_index'] === null) {
+        if ($this->container['value_field_index'] === null) {
                     return false;
                 }
         if ($this->container['member_property_field_index'] === null) {
@@ -284,6 +293,9 @@ class PivotFilter
                     return false;
                 }
         if ($this->container['value2'] === null) {
+                    return false;
+                }
+        if ($this->container['top10_filter'] === null) {
                     return false;
                 }
         return true;
@@ -381,25 +393,25 @@ class PivotFilter
         return $this;
     }
    /**
-     * Gets measure_fld_index
+     * Gets value_field_index
      *
      * @return int
      */
-    public function getMeasureFldIndex()
+    public function getValueFieldIndex()
     {
-        return $this->container['measure_fld_index'];
+        return $this->container['value_field_index'];
     }
 
     /**
-     * Sets measure_fld_index
+     * Sets value_field_index
      *
      *  Gets the measure field index of the pivot filter.            
      *
      * @return $this
      */
-    public function setMeasureFldIndex($measure_fld_index)
+    public function setValueFieldIndex($value_field_index)
     {
-        $this->container['measure_fld_index'] = $measure_fld_index;
+        $this->container['value_field_index'] = $value_field_index;
 
         return $this;
     }
@@ -492,6 +504,29 @@ class PivotFilter
     public function setValue2($value2)
     {
         $this->container['value2'] = $value2;
+
+        return $this;
+    }
+   /**
+     * Gets top10_filter
+     *
+     * @return \Aspose\Cells\Cloud\Model\Top10Filter
+     */
+    public function getTop10Filter()
+    {
+        return $this->container['top10_filter'];
+    }
+
+    /**
+     * Sets top10_filter
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTop10Filter($top10_filter)
+    {
+        $this->container['top10_filter'] = $top10_filter;
 
         return $this;
     }

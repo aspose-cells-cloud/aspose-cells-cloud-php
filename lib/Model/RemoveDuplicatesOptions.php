@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="Top10Filter.cs">
+ * <copyright company="Aspose" file="RemoveDuplicatesOptions.cs">
  *   Copyright (c) 2024 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class Top10Filter
+class RemoveDuplicatesOptions
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class Top10Filter
       *
       * @var string
       */
-    protected static $swaggerModelName = 'Top10Filter';     
+    protected static $swaggerModelName = 'RemoveDuplicatesOptions';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,11 +46,12 @@ class Top10Filter
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'field_index' => 'int',
-        'criteria' => 'string',
-        'is_percent' => 'bool',
-        'is_top' => 'bool',
-        'items' => 'int'
+        'name' => 'string',
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'worksheet' => 'string',
+        'remove_duplicates_area' => 'string',
+        'remove_duplicates_area_value' => 'string'
     ];
 
     /**
@@ -59,11 +60,12 @@ class Top10Filter
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'field_index' => null  ,
-        'criteria' => null  ,
-        'is_percent' => null  ,
-        'is_top' => null  ,
-        'items' => null  
+        'name' => null  ,
+        'data_source' => null  ,
+        'file_info' => null  ,
+        'worksheet' => null  ,
+        'remove_duplicates_area' => null  ,
+        'remove_duplicates_area_value' => null  
     ];
 
     /**
@@ -93,11 +95,12 @@ class Top10Filter
      * @var string[]
      */
     protected static $attributeMap = [
-         'field_index' => 'FieldIndex' ,
-         'criteria' => 'Criteria' ,
-         'is_percent' => 'IsPercent' ,
-         'is_top' => 'IsTop' ,
-         'items' => 'Items' 
+         'name' => 'Name' ,
+         'data_source' => 'DataSource' ,
+         'file_info' => 'FileInfo' ,
+         'worksheet' => 'Worksheet' ,
+         'remove_duplicates_area' => 'RemoveDuplicatesArea' ,
+         'remove_duplicates_area_value' => 'RemoveDuplicatesAreaValue' 
     ];
 
     /**
@@ -106,11 +109,12 @@ class Top10Filter
      * @var string[]
      */
     protected static $setters = [
-        'field_index' => 'setFieldIndex' ,
-        'criteria' => 'setCriteria' ,
-        'is_percent' => 'setIsPercent' ,
-        'is_top' => 'setIsTop' ,
-        'items' => 'setItems' 
+        'name' => 'setName' ,
+        'data_source' => 'setDataSource' ,
+        'file_info' => 'setFileInfo' ,
+        'worksheet' => 'setWorksheet' ,
+        'remove_duplicates_area' => 'setRemoveDuplicatesArea' ,
+        'remove_duplicates_area_value' => 'setRemoveDuplicatesAreaValue' 
     ];
 
     /**
@@ -119,11 +123,12 @@ class Top10Filter
      * @var string[]
      */
     protected static $getters = [
-        'field_index' => 'getFieldIndex' ,
-        'criteria' => 'getCriteria' ,
-        'is_percent' => 'getIsPercent' ,
-        'is_top' => 'getIsTop' ,
-        'items' => 'getItems' 
+        'name' => 'getName' ,
+        'data_source' => 'getDataSource' ,
+        'file_info' => 'getFileInfo' ,
+        'worksheet' => 'getWorksheet' ,
+        'remove_duplicates_area' => 'getRemoveDuplicatesArea' ,
+        'remove_duplicates_area_value' => 'getRemoveDuplicatesAreaValue' 
     ];
 
     /**
@@ -182,11 +187,12 @@ class Top10Filter
      */
     public function __construct(array $data = null)
     {
-        $this->container['field_index'] = isset($data['field_index']) ? $data['field_index'] : null;
-        $this->container['criteria'] = isset($data['criteria']) ? $data['criteria'] : null;
-        $this->container['is_percent'] = isset($data['is_percent']) ? $data['is_percent'] : null;
-        $this->container['is_top'] = isset($data['is_top']) ? $data['is_top'] : null;
-        $this->container['items'] = isset($data['items']) ? $data['items'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
+        $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
+        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
+        $this->container['remove_duplicates_area'] = isset($data['remove_duplicates_area']) ? $data['remove_duplicates_area'] : null;
+        $this->container['remove_duplicates_area_value'] = isset($data['remove_duplicates_area_value']) ? $data['remove_duplicates_area_value'] : null;
     }
 
     /**
@@ -197,20 +203,23 @@ class Top10Filter
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['field_index'] === null) {
-            $invalidProperties[] = "'field_index' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['criteria'] === null) {
-            $invalidProperties[] = "'criteria' can't be null";
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
         }
-        if ($this->container['is_percent'] === null) {
-            $invalidProperties[] = "'is_percent' can't be null";
+        if ($this->container['file_info'] === null) {
+            $invalidProperties[] = "'file_info' can't be null";
         }
-        if ($this->container['is_top'] === null) {
-            $invalidProperties[] = "'is_top' can't be null";
+        if ($this->container['worksheet'] === null) {
+            $invalidProperties[] = "'worksheet' can't be null";
         }
-        if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
+        if ($this->container['remove_duplicates_area'] === null) {
+            $invalidProperties[] = "'remove_duplicates_area' can't be null";
+        }
+        if ($this->container['remove_duplicates_area_value'] === null) {
+            $invalidProperties[] = "'remove_duplicates_area_value' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,135 +232,161 @@ class Top10Filter
      */
     public function valid()
     {
-        if ($this->container['field_index'] === null) {
+        if ($this->container['name'] === null) {
                     return false;
                 }
-        if ($this->container['criteria'] === null) {
+        if ($this->container['data_source'] === null) {
                     return false;
                 }
-        if ($this->container['is_percent'] === null) {
+        if ($this->container['file_info'] === null) {
                     return false;
                 }
-        if ($this->container['is_top'] === null) {
+        if ($this->container['worksheet'] === null) {
                     return false;
                 }
-        if ($this->container['items'] === null) {
+        if ($this->container['remove_duplicates_area'] === null) {
+                    return false;
+                }
+        if ($this->container['remove_duplicates_area_value'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets field_index
+     * Gets name
      *
-     * @return int
+     * @return string
      */
-    public function getFieldIndex()
+    public function getName()
     {
-        return $this->container['field_index'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets field_index
+     * Sets name
      *
      *  
      *
      * @return $this
      */
-    public function setFieldIndex($field_index)
+    public function setName($name)
     {
-        $this->container['field_index'] = $field_index;
+        $this->container['name'] = $name;
 
         return $this;
     }
    /**
-     * Gets criteria
+     * Gets data_source
+     *
+     * @return \Aspose\Cells\Cloud\Model\DataSource
+     */
+    public function getDataSource()
+    {
+        return $this->container['data_source'];
+    }
+
+    /**
+     * Sets data_source
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setDataSource($data_source)
+    {
+        $this->container['data_source'] = $data_source;
+
+        return $this;
+    }
+   /**
+     * Gets file_info
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function getFileInfo()
+    {
+        return $this->container['file_info'];
+    }
+
+    /**
+     * Sets file_info
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setFileInfo($file_info)
+    {
+        $this->container['file_info'] = $file_info;
+
+        return $this;
+    }
+   /**
+     * Gets worksheet
      *
      * @return string
      */
-    public function getCriteria()
+    public function getWorksheet()
     {
-        return $this->container['criteria'];
+        return $this->container['worksheet'];
     }
 
     /**
-     * Sets criteria
+     * Sets worksheet
      *
-     *   
+     *  
      *
      * @return $this
      */
-    public function setCriteria($criteria)
+    public function setWorksheet($worksheet)
     {
-        $this->container['criteria'] = $criteria;
+        $this->container['worksheet'] = $worksheet;
 
         return $this;
     }
    /**
-     * Gets is_percent
+     * Gets remove_duplicates_area
      *
-     * @return bool
+     * @return string
      */
-    public function getIsPercent()
+    public function getRemoveDuplicatesArea()
     {
-        return $this->container['is_percent'];
+        return $this->container['remove_duplicates_area'];
     }
 
     /**
-     * Sets is_percent
+     * Sets remove_duplicates_area
      *
-     *  Indicates whether the items is percent. 
+     *  
      *
      * @return $this
      */
-    public function setIsPercent($is_percent)
+    public function setRemoveDuplicatesArea($remove_duplicates_area)
     {
-        $this->container['is_percent'] = $is_percent;
+        $this->container['remove_duplicates_area'] = $remove_duplicates_area;
 
         return $this;
     }
    /**
-     * Gets is_top
+     * Gets remove_duplicates_area_value
      *
-     * @return bool
+     * @return string
      */
-    public function getIsTop()
+    public function getRemoveDuplicatesAreaValue()
     {
-        return $this->container['is_top'];
+        return $this->container['remove_duplicates_area_value'];
     }
 
     /**
-     * Sets is_top
+     * Sets remove_duplicates_area_value
      *
-     *  Indicates whether it's top filter. 
-     *
-     * @return $this
-     */
-    public function setIsTop($is_top)
-    {
-        $this->container['is_top'] = $is_top;
-
-        return $this;
-    }
-   /**
-     * Gets items
-     *
-     * @return int
-     */
-    public function getItems()
-    {
-        return $this->container['items'];
-    }
-
-    /**
-     * Sets items
-     *
-     *  Gets and sets the items of the filter. 
+     *  
      *
      * @return $this
      */
-    public function setItems($items)
+    public function setRemoveDuplicatesAreaValue($remove_duplicates_area_value)
     {
-        $this->container['items'] = $items;
+        $this->container['remove_duplicates_area_value'] = $remove_duplicates_area_value;
 
         return $this;
     }

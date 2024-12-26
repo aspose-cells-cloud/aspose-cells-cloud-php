@@ -33,7 +33,7 @@ namespace Aspose\Cells\Cloud;
  *
  * @category Class
  * @package  Aspose\Cells\Cloud
- * @author   Swagger Codegen team
+ * @author   Swagger CodeGen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 class Configuration
@@ -87,7 +87,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Aspose-Cells-Cloud/24.11/php';
+    protected $userAgent = 'Aspose-Cells-Cloud/24.12/php';
 
     /**
      * Debug switch (default set to false)
@@ -396,7 +396,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 3.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 24.11' . PHP_EOL;
+        $report .= '    SDK Package Version: 24.12' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

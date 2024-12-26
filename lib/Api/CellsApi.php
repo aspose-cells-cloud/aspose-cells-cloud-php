@@ -296,6 +296,8 @@ use Aspose\Cells\Cloud\Request\PostTrimContentRequest;
 use Aspose\Cells\Cloud\Request\PostUpdateWordCaseRequest;
 use Aspose\Cells\Cloud\Request\PostRemoveCharactersRequest;
 use Aspose\Cells\Cloud\Request\PostConvertTextRequest;
+use Aspose\Cells\Cloud\Request\PostRemoveDuplicatesRequest;
+use Aspose\Cells\Cloud\Request\PostExtractTextRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookDefaultStyleRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookTextItemsRequest;
 use Aspose\Cells\Cloud\Request\GetWorkbookNamesRequest;
@@ -699,9 +701,11 @@ use Aspose\Cells\Cloud\Model\PivotTables;
 use Aspose\Cells\Cloud\Model\AddTextOptions;
 use Aspose\Cells\Cloud\Model\BaseOperateOptions;
 use Aspose\Cells\Cloud\Model\ConvertTextOptions;
+use Aspose\Cells\Cloud\Model\ExtractTextOptions;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByCharacter;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByPosition;
 use Aspose\Cells\Cloud\Model\RemoveCharactersOptions;
+use Aspose\Cells\Cloud\Model\RemoveDuplicatesOptions;
 use Aspose\Cells\Cloud\Model\ScopeItem;
 use Aspose\Cells\Cloud\Model\ScopeOptions;
 use Aspose\Cells\Cloud\Model\TrimContentOptions;
@@ -4221,6 +4225,30 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertTextRequest" /></param>
     public function postConvertText( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostRemoveDuplicatesRequest" /></param>
+    public function postRemoveDuplicates( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostExtractTextRequest" /></param>
+    public function postExtractText( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
