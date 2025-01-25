@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorksheetListObjectsRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorksheetListObjectsRequest extends BaseApiRequest
 {
 
     /*
-    * name : The file name.
+    * name : 
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorksheetListObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : The worksheet name.
+    * sheetName : 
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class GetWorksheetListObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : The folder where the file is situated.
+    * folder : 
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetWorksheetListObjectsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : The storage name where the file is situated.
+    * storageName : 
     */ 
     public $storage_name;
 

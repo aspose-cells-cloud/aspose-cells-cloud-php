@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="GetWorkbookRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class GetWorkbookRequest extends BaseApiRequest
 {
 
     /*
-    * name : The file name.
+    * name : 
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * format : The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
+    * format : 
     */ 
     public $format;
 
@@ -75,7 +75,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * password : The password needed to open an Excel file.
+    * password : 
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * isAutoFit : Specifies whether set workbook rows to be autofit.
+    * isAutoFit : 
     */ 
     public $is_auto_fit;
 
@@ -105,7 +105,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * onlySaveTable : Specifies whether only save table data.Only use pdf to excel.
+    * onlySaveTable : 
     */ 
     public $only_save_table;
 
@@ -120,7 +120,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * folder : The folder where the file is situated.
+    * folder : 
     */ 
     public $folder;
 
@@ -135,7 +135,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * outPath : Path to save the result. If it's a single file, the `outPath` should encompass both the filename and extension. In the case of multiple files, the `outPath` should only include the folder.
+    * outPath : 
     */ 
     public $out_path;
 
@@ -150,7 +150,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : The storage name where the file is situated.
+    * storageName : 
     */ 
     public $storage_name;
 
@@ -165,7 +165,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * outStorageName : The storage name where the output file is situated.
+    * outStorageName : 
     */ 
     public $out_storage_name;
 
@@ -180,7 +180,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
+    * checkExcelRestriction : 
     */ 
     public $check_excel_restriction;
 
@@ -195,7 +195,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * region : The regional settings for workbook.
+    * region : 
     */ 
     public $region;
 
@@ -210,7 +210,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * pageWideFitOnPerSheet : The page wide fit on worksheet.
+    * pageWideFitOnPerSheet : 
     */ 
     public $page_wide_fit_on_per_sheet;
 
@@ -225,7 +225,7 @@ class GetWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * pageTallFitOnPerSheet : The page tall fit on worksheet.
+    * pageTallFitOnPerSheet : 
     */ 
     public $page_tall_fit_on_per_sheet;
 

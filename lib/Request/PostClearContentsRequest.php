@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostClearContentsRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostClearContentsRequest extends BaseApiRequest
 {
 
     /*
-    * name : The file name.
+    * name : 
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : The worksheet name.
+    * sheetName : 
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * range : Represents the range to which the specified cells applies.
+    * range : 
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : The start row index.
+    * startRow : 
     */ 
     public $start_row;
 
@@ -105,7 +105,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : The start column index.
+    * startColumn : 
     */ 
     public $start_column;
 
@@ -120,7 +120,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : The end row index.
+    * endRow : 
     */ 
     public $end_row;
 
@@ -135,7 +135,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * endColumn : The end column index.
+    * endColumn : 
     */ 
     public $end_column;
 
@@ -150,7 +150,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : The folder where the file is situated.
+    * folder : 
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : The storage name where the file is situated.
+    * storageName : 
     */ 
     public $storage_name;
 

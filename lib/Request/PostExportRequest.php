@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostExportRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,7 +60,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * objectType : Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject.
+    * objectType : 
     */ 
     public $object_type;
 
@@ -75,7 +75,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * format : The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
+    * format : 
     */ 
     public $format;
 
@@ -90,7 +90,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * password : The password needed to open an Excel file.
+    * password : 
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
+    * checkExcelRestriction : 
     */ 
     public $check_excel_restriction;
 
@@ -120,7 +120,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * region : The regional settings for workbook.
+    * region : 
     */ 
     public $region;
 

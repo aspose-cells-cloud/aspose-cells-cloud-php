@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostAnalyzeExcelRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostAnalyzeExcelRequest extends BaseApiRequest
 {
 
     /*
-    * analyzeExcelRequest : Excel files and analysis output requirements
+    * analyzeExcelRequest : 
     */ 
     public $analyze_excel_request;
 

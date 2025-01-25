@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PivotTablesControllerTests.php.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -253,18 +253,29 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPutWorksheetPivotTableFilter()
     {
-        $this->markTestSkipped('This testPutWorksheetPivotTableFilter is skipped.');
+        // $this->markTestSkipped('This testPutWorksheetPivotTableFilter is skipped.');
         $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
+        $top20Filter = new \Aspose\Cells\Cloud\Model\Top10Filter();
+        $top20Filter->setItems(1 );
+        $top20Filter->setFieldIndex(0 );
+        $top20Filter->setIsPercent(true );
+        $filter_column = new \Aspose\Cells\Cloud\Model\FilterColumn();
+        $filter_column->setFilterType("Top10Filter" );  
+        $filter_column->setTop10Filter($top20Filter );
+        
+        $auto_filter = new \Aspose\Cells\Cloud\Model\AutoFilter();
+        $auto_filter->setFilterColumns(array($filter_column ));
+
         $filter = new \Aspose\Cells\Cloud\Model\PivotFilter();
-        $filter->setFieldIndex(0 ); 
+        $filter->setFieldIndex(1 ); 
         $filter->setFilterType("Count" ); 
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
+        $filter->setAutoFilter($auto_filter );
+        
         $request = new PutWorksheetPivotTableFilterRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
@@ -274,6 +285,7 @@ final class PivotTablesControllerTest extends TestCase
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
 
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
         $resposne = $instance->putWorksheetPivotTableFilter($request);
         $this->assertTrue($resposne !==null );
     }

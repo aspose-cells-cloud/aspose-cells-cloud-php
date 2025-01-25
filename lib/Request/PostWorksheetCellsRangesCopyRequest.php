@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostWorksheetCellsRangesCopyRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
 {
 
     /*
-    * name : The file name.
+    * name : 
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : The worksheet name.
+    * sheetName : 
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
     }
 
     /*
-    * rangeOperate : RangeCopyRequestcopydata,copystyle,copyto,copyvalue
+    * rangeOperate : 
     */ 
     public $range_operate;
 
@@ -90,7 +90,7 @@ class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
     }
 
     /*
-    * folder : Original workbook folder.
+    * folder : 
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : Storage name.
+    * storageName : 
     */ 
     public $storage_name;
 

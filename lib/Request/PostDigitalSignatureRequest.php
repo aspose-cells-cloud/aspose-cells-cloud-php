@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="PostDigitalSignatureRequest.cs">
- *   Copyright (c) 2024 Aspose.Cells Cloud
+ *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -45,7 +45,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
 {
 
     /*
-    * name : The file name.
+    * name : 
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * digitalsignaturefile : The digital signature file path should include both the folder and the file name, along with the extension.
+    * digitalsignaturefile : 
     */ 
     public $digitalsignaturefile;
 
@@ -75,7 +75,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * password : The password needed to open an Excel file.
+    * password : 
     */ 
     public $password;
 
@@ -90,7 +90,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * folder : The folder where the file is situated.
+    * folder : 
     */ 
     public $folder;
 
@@ -105,7 +105,7 @@ class PostDigitalSignatureRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : The storage name where the file is situated.
+    * storageName : 
     */ 
     public $storage_name;
 
