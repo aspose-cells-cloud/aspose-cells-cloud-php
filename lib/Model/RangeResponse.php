@@ -229,7 +229,7 @@ class RangeResponse
     /**
      * Sets range
      *
-     *  
+     *  This class has a property named "Range" of type Range with both getter and setter methods.
      *
      * @return $this
      */

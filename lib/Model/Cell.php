@@ -719,7 +719,7 @@ class Cell
     /**
      * Sets style
      *
-     *  
+     *  This class property represents a style element with the specified XML element name.
      *
      * @return $this
      */

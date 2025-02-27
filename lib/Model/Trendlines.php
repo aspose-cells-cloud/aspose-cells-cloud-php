@@ -217,7 +217,7 @@ class Trendlines
     /**
      * Sets trendline_list
      *
-     *  
+     *  This property allows for a list of Trendline objects to be stored under the XmlElement "TrendLine".
      *
      * @return $this
      */

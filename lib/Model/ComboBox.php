@@ -732,7 +732,7 @@ class ComboBox
     /**
      * Sets input_range
      *
-     *  
+     *  Property Summary: Contains a public string property named "InputRange" with both get and set accessors.
      *
      * @return $this
      */

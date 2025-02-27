@@ -229,7 +229,7 @@ class VerticalPageBreaksResponse
     /**
      * Sets vertical_page_breaks
      *
-     *  
+     *  This class has a property named VerticalPageBreaks of type VerticalPageBreaks that can be both read from and written to.
      *
      * @return $this
      */

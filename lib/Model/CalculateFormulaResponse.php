@@ -229,7 +229,7 @@ class CalculateFormulaResponse
     /**
      * Sets result
      *
-     *  
+     *  A public property "Result" that can be accessed and modified with a string data type.
      *
      * @return $this
      */

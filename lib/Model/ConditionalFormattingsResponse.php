@@ -229,7 +229,7 @@ class ConditionalFormattingsResponse
     /**
      * Sets conditional_formattings
      *
-     *  
+     *  A property named ConditionalFormattings of type ConditionalFormattings is defined with both getter and setter methods in the class.
      *
      * @return $this
      */

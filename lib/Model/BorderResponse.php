@@ -229,7 +229,7 @@ class BorderResponse
     /**
      * Sets border
      *
-     *  
+     *  This class has a public property named Border of type Border that can be both read from and written to.
      *
      * @return $this
      */

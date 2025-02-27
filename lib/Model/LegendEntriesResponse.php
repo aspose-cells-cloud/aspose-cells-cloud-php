@@ -229,7 +229,7 @@ class LegendEntriesResponse
     /**
      * Sets legend_entries
      *
-     *  
+     *  Property Summary: The class includes a property for managing legend entries.
      *
      * @return $this
      */

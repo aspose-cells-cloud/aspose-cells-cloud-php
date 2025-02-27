@@ -253,7 +253,7 @@ class SeriesItems
     /**
      * Sets category_data
      *
-     *  
+     *  This property allows setting and getting data for the category.
      *
      * @return $this
      */

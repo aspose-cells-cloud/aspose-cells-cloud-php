@@ -229,7 +229,7 @@ class RowResponse
     /**
      * Sets row
      *
-     *  
+     *  This class has a public property named "Row" of type "Row" with both get and set accessors.
      *
      * @return $this
      */

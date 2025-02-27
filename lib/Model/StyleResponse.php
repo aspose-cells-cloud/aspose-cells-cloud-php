@@ -229,7 +229,7 @@ class StyleResponse
     /**
      * Sets style
      *
-     *  
+     *  A property named "Style" of type "Style" is defined with both getter and setter methods.
      *
      * @return $this
      */

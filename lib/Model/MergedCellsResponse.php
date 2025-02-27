@@ -229,7 +229,7 @@ class MergedCellsResponse
     /**
      * Sets merged_cells
      *
-     *  
+     *  Property Summary: Contains information about merged cells within a spreadsheet.
      *
      * @return $this
      */

@@ -301,7 +301,7 @@ class ImportStringArrayOption
     /**
      * Sets first_row
      *
-     *  
+     *  A property named "FirstRow" of type integer with both a getter and a setter is defined in the class.
      *
      * @return $this
      */

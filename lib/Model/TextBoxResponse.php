@@ -229,7 +229,7 @@ class TextBoxResponse
     /**
      * Sets shape
      *
-     *  
+     *  A public property named "Shape" of type TextBox is defined with both get and set accessors.
      *
      * @return $this
      */

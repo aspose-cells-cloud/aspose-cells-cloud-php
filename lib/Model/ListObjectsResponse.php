@@ -229,7 +229,7 @@ class ListObjectsResponse
     /**
      * Sets list_objects
      *
-     *  
+     *  A property named "ListObjects" of type "Tables.ListObjects" that can be both accessed and modified.
      *
      * @return $this
      */

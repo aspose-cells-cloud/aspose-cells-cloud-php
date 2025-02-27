@@ -229,7 +229,7 @@ class TaskRunResultResponse
     /**
      * Sets task_run_result
      *
-     *  
+     *  This class has a property named "TaskRunResult" of type "TaskRunResult" that can be both accessed and modified.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class TrendlinesResponse
     /**
      * Sets trendlines
      *
-     *  
+     *  This property allows access to the Trendlines feature and set new values for it.
      *
      * @return $this
      */

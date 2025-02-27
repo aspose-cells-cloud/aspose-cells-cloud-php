@@ -311,7 +311,7 @@ class SortKey
     /**
      * Sets custom_list
      *
-     *  
+     *  This class includes a property named CustomList that is an array of strings with both getter and setter methods.
      *
      * @return $this
      */

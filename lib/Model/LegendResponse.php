@@ -229,7 +229,7 @@ class LegendResponse
     /**
      * Sets legend
      *
-     *  
+     *  This class has a public property called "Legend" of type "Legend" which has both a getter and a setter.
      *
      * @return $this
      */

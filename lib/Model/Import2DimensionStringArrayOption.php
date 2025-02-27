@@ -289,7 +289,7 @@ class Import2DimensionStringArrayOption
     /**
      * Sets first_row
      *
-     *  
+     *  This class has a property called FirstRow of type integer with a public getter and setter.
      *
      * @return $this
      */

@@ -301,7 +301,7 @@ class PdfSecurityOptions
     /**
      * Sets annotations_permission
      *
-     *  
+     *  Indicates whether to allow to add or modify text annotations, fill in interactive form fields.
      *
      * @return $this
      */

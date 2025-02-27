@@ -49,6 +49,7 @@ class RangeCopyRequest
         'operate' => 'string',
         'source' => '\Aspose\Cells\Cloud\Model\Range',
         'target' => '\Aspose\Cells\Cloud\Model\Range',
+        'target_workbook' => 'string',
         'paste_options' => '\Aspose\Cells\Cloud\Model\PasteOptions'
     ];
 
@@ -61,6 +62,7 @@ class RangeCopyRequest
         'operate' => null  ,
         'source' => null  ,
         'target' => null  ,
+        'target_workbook' => null  ,
         'paste_options' => null  
     ];
 
@@ -94,6 +96,7 @@ class RangeCopyRequest
          'operate' => 'Operate' ,
          'source' => 'Source' ,
          'target' => 'Target' ,
+         'target_workbook' => 'TargetWorkbook' ,
          'paste_options' => 'PasteOptions' 
     ];
 
@@ -106,6 +109,7 @@ class RangeCopyRequest
         'operate' => 'setOperate' ,
         'source' => 'setSource' ,
         'target' => 'setTarget' ,
+        'target_workbook' => 'setTargetWorkbook' ,
         'paste_options' => 'setPasteOptions' 
     ];
 
@@ -118,6 +122,7 @@ class RangeCopyRequest
         'operate' => 'getOperate' ,
         'source' => 'getSource' ,
         'target' => 'getTarget' ,
+        'target_workbook' => 'getTargetWorkbook' ,
         'paste_options' => 'getPasteOptions' 
     ];
 
@@ -180,6 +185,7 @@ class RangeCopyRequest
         $this->container['operate'] = isset($data['operate']) ? $data['operate'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['target'] = isset($data['target']) ? $data['target'] : null;
+        $this->container['target_workbook'] = isset($data['target_workbook']) ? $data['target_workbook'] : null;
         $this->container['paste_options'] = isset($data['paste_options']) ? $data['paste_options'] : null;
     }
 
@@ -199,6 +205,9 @@ class RangeCopyRequest
         }
         if ($this->container['target'] === null) {
             $invalidProperties[] = "'target' can't be null";
+        }
+        if ($this->container['target_workbook'] === null) {
+            $invalidProperties[] = "'target_workbook' can't be null";
         }
         if ($this->container['paste_options'] === null) {
             $invalidProperties[] = "'paste_options' can't be null";
@@ -221,6 +230,9 @@ class RangeCopyRequest
                     return false;
                 }
         if ($this->container['target'] === null) {
+                    return false;
+                }
+        if ($this->container['target_workbook'] === null) {
                     return false;
                 }
         if ($this->container['paste_options'] === null) {
@@ -294,6 +306,29 @@ class RangeCopyRequest
     public function setTarget($target)
     {
         $this->container['target'] = $target;
+
+        return $this;
+    }
+   /**
+     * Gets target_workbook
+     *
+     * @return string
+     */
+    public function getTargetWorkbook()
+    {
+        return $this->container['target_workbook'];
+    }
+
+    /**
+     * Sets target_workbook
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setTargetWorkbook($target_workbook)
+    {
+        $this->container['target_workbook'] = $target_workbook;
 
         return $this;
     }

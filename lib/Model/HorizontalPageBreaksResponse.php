@@ -229,7 +229,7 @@ class HorizontalPageBreaksResponse
     /**
      * Sets horizontal_page_breaks
      *
-     *  
+     *  The property "HorizontalPageBreaks" allows getting and setting horizontal page breaks for the class.
      *
      * @return $this
      */

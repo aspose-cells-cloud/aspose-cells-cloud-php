@@ -229,7 +229,7 @@ class RemoveCharactersByCharacter
     /**
      * Sets remove_text_method
      *
-     *  
+     *  Property: "RemoveTextMethod" is serialized using a string representation of the enum value.
      *
      * @return $this
      */

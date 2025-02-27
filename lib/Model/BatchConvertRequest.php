@@ -474,7 +474,7 @@ class BatchConvertRequest
     /**
      * Sets page_wide_fit_on_per_sheet
      *
-     *  
+     *  A nullable Boolean property that determines whether the content should be fit to the entire page width on each sheet.
      *
      * @return $this
      */

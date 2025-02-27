@@ -217,7 +217,7 @@ class ScopeOptions
     /**
      * Sets scope
      *
-     *  
+     *  Property Summary: The Scope property in the class is decorated with a JsonConverter attribute using StringEnumConverter.            
      *
      * @return $this
      */

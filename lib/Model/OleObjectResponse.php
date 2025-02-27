@@ -229,7 +229,7 @@ class OleObjectResponse
     /**
      * Sets ole_object
      *
-     *  
+     *  This class has a property named OleObject of type OleObject with both read and write capabilities.
      *
      * @return $this
      */

@@ -397,7 +397,7 @@ class DisplayUnitLabel
     /**
      * Sets linked_source
      *
-     *  
+     *  A public property named "LinkedSource" with a string data type can be set and accessed.
      *
      * @return $this
      */

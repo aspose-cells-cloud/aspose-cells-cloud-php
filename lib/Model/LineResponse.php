@@ -229,7 +229,7 @@ class LineResponse
     /**
      * Sets line
      *
-     *  
+     *  A public property named "Line" of type Line with both getter and setter methods.
      *
      * @return $this
      */

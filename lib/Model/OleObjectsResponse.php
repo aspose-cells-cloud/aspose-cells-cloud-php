@@ -229,7 +229,7 @@ class OleObjectsResponse
     /**
      * Sets ole_objects
      *
-     *  
+     *  Property `OleObjects` of type `OleObjects` that can be accessed and modified publicly within the class.
      *
      * @return $this
      */

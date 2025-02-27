@@ -229,7 +229,7 @@ class AutoShapeResponse
     /**
      * Sets auto_shape
      *
-     *  
+     *  A public property named "AutoShape" of type "AutoShape" with both getter and setter methods.
      *
      * @return $this
      */

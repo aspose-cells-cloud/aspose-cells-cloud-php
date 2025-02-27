@@ -229,7 +229,7 @@ class ValidationResponse
     /**
      * Sets validation
      *
-     *  
+     *  The class has a public property for Validation.
      *
      * @return $this
      */

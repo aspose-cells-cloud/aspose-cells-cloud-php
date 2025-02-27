@@ -229,7 +229,7 @@ class SingleValueResponse
     /**
      * Sets value
      *
-     *  
+     *  A property named "Value" of type "SingleValue" that can be accessed and modified is declared in the class.
      *
      * @return $this
      */

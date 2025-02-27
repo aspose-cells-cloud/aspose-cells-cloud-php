@@ -347,7 +347,7 @@ class FilterColumn
     /**
      * Sets multiple_filters
      *
-     *  
+     *  This class contains a property named "MultipleFilters" of type "MultipleFilters" that can be both read and written.
      *
      * @return $this
      */

@@ -853,7 +853,7 @@ class Form
     /**
      * Sets form_type
      *
-     *  
+     *  A property named "FormType" of type string which can be both accessed and modified.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class ImportPosition
     /**
      * Sets sheet_name
      *
-     *  
+     *  "Property SheetName of type string with a public get and set accessor."
      *
      * @return $this
      */

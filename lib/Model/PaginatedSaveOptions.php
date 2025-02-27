@@ -827,7 +827,7 @@ class PaginatedSaveOptions
     /**
      * Sets emf_render_setting
      *
-     *  
+     *  Setting for rendering Emf metafile.
      *
      * @return $this
      */

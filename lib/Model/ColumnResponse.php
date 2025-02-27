@@ -229,7 +229,7 @@ class ColumnResponse
     /**
      * Sets column
      *
-     *  
+     *  This class has a public property called "Column" of type "Column" with both getter and setter methods.
      *
      * @return $this
      */

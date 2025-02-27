@@ -577,7 +577,7 @@ class Trendline
     /**
      * Sets link
      *
-     *  
+     *  The class has a property named "link" of type "Link" that can be accessed and modified.
      *
      * @return $this
      */

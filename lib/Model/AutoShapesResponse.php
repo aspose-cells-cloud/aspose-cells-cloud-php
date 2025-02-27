@@ -229,7 +229,7 @@ class AutoShapesResponse
     /**
      * Sets auto_shapes
      *
-     *  
+     *  The class has a property named "AutoShapes" decorated with the XmlElement attribute "shapes".
      *
      * @return $this
      */

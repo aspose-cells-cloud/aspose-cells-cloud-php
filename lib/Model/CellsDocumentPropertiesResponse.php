@@ -229,7 +229,7 @@ class CellsDocumentPropertiesResponse
     /**
      * Sets document_properties
      *
-     *  
+     *  The class has a property that represents the document properties of cells.
      *
      * @return $this
      */

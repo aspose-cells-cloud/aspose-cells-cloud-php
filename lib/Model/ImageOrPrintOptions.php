@@ -539,7 +539,7 @@ class ImageOrPrintOptions
     /**
      * Sets output_blank_page_when_nothing_to_print
      *
-     *  
+     *  Indicates whether to output a blank page when there is nothing to print.
      *
      * @return $this
      */

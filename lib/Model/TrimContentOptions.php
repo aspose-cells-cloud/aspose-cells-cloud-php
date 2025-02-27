@@ -313,7 +313,7 @@ class TrimContentOptions
     /**
      * Sets data_source
      *
-     *  
+     *  This class has a public property named DataSource of type DataSource that has both a getter and a setter method.            
      *
      * @return $this
      */

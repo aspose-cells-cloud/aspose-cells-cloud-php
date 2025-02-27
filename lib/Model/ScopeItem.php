@@ -217,7 +217,7 @@ class ScopeItem
     /**
      * Sets worksheet_name
      *
-     *  
+     *  A property "WorksheetName" of type string with an initial value of an empty string.            
      *
      * @return $this
      */

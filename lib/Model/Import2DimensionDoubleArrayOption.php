@@ -289,7 +289,7 @@ class Import2DimensionDoubleArrayOption
     /**
      * Sets first_row
      *
-     *  
+     *  The class has a property named "FirstRow" of type integer with get and set accessors.
      *
      * @return $this
      */

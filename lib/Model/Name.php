@@ -312,7 +312,7 @@ class Name
     /**
      * Sets worksheet_index
      *
-     *  
+     *  Property Summary: WorksheetIndex is an optional integer property marked with the XmlElement attribute "worksheetindex".
      *
      * @return $this
      */

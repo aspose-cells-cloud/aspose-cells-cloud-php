@@ -229,7 +229,7 @@ class DropBarsResponse
     /**
      * Sets drop_bars
      *
-     *  
+     *  The class has a property named `DropBars` of type `DropBars` with both getter and setter methods.
      *
      * @return $this
      */

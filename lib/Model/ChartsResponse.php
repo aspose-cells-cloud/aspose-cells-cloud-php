@@ -229,7 +229,7 @@ class ChartsResponse
     /**
      * Sets charts
      *
-     *  
+     *  Property Summary: Includes an XML element named "charts" that contains a property of type Charts.Charts.
      *
      * @return $this
      */

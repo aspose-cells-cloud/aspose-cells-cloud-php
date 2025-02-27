@@ -229,7 +229,7 @@ class TrendlineResponse
     /**
      * Sets trendline
      *
-     *  
+     *  The class has a public property called "Trendline" of type "Trendline" that can be accessed and modified.
      *
      * @return $this
      */

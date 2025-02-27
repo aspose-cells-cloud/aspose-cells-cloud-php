@@ -229,7 +229,7 @@ class ConditionalFormattings
     /**
      * Sets count
      *
-     *  
+     *  The property "Count" is decorated with [XmlElement("count")] attribute for XML serialization.
      *
      * @return $this
      */

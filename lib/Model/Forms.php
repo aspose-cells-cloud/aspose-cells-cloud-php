@@ -217,7 +217,7 @@ class Forms
     /**
      * Sets form_list
      *
-     *  
+     *  Property: FormList is a list of LinkElements that are serialized as "form" XML elements.
      *
      * @return $this
      */

@@ -205,7 +205,7 @@ class Ranges
     /**
      * Sets range_list
      *
-     *  
+     *  Property Summary: Contains a list of ranges specified by the XmlElement "Range".
      *
      * @return $this
      */

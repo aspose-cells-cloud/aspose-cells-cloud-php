@@ -346,7 +346,7 @@ class BatchProtectRequest
     /**
      * Sets protection_type
      *
-     *  
+     *  This property defines the protection type of an object.
      *
      * @return $this
      */

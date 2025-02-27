@@ -229,7 +229,7 @@ class ArcShapeResponse
     /**
      * Sets shape
      *
-     *  
+     *  A public property Shape of type ArcShape that can be accessed and modified.
      *
      * @return $this
      */

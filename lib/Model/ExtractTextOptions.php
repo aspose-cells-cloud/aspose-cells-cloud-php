@@ -325,7 +325,7 @@ class ExtractTextOptions
     /**
      * Sets name
      *
-     *  
+     *  This class has a public property for storing and retrieving a name value.
      *
      * @return $this
      */

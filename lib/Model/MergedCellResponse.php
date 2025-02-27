@@ -229,7 +229,7 @@ class MergedCellResponse
     /**
      * Sets merged_cell
      *
-     *  
+     *  A property named "MergedCell" of type "MergedCell" which allows getting and setting its value.
      *
      * @return $this
      */

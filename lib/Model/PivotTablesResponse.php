@@ -229,7 +229,7 @@ class PivotTablesResponse
     /**
      * Sets pivot_tables
      *
-     *  
+     *  This class has a property named PivotTables of type PivotTables that can be both accessed and modified.
      *
      * @return $this
      */

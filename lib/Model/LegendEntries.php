@@ -217,7 +217,7 @@ class LegendEntries
     /**
      * Sets legend_entry_list
      *
-     *  
+     *  Property: Utilizes XML element "LengendEntry" to represent a list of LinkElement items in the class.
      *
      * @return $this
      */

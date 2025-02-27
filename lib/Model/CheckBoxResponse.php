@@ -229,7 +229,7 @@ class CheckBoxResponse
     /**
      * Sets shape
      *
-     *  
+     *  A public property named Shape of type CheckBox is defined with both get and set accessors.
      *
      * @return $this
      */

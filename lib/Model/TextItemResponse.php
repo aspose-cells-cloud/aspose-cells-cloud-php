@@ -229,7 +229,7 @@ class TextItemResponse
     /**
      * Sets text_item
      *
-     *  
+     *  The class has a property that allows getting and setting a TextItem object.
      *
      * @return $this
      */

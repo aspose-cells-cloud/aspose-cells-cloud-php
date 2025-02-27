@@ -253,7 +253,7 @@ class RenderingFont
     /**
      * Sets name
      *
-     *  
+     *  Gets name of the font.
      *
      * @return $this
      */

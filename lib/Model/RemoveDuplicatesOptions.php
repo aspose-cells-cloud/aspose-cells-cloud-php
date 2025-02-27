@@ -265,7 +265,7 @@ class RemoveDuplicatesOptions
     /**
      * Sets name
      *
-     *  
+     *  The class has a public property "Name" of type string that can be both read and written.
      *
      * @return $this
      */

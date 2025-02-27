@@ -217,7 +217,7 @@ class PivotTables
     /**
      * Sets pivot_table_list
      *
-     *  
+     *  Xml property "PivotTableList" of the class contains a list of "LinkElement" objects with the element name "PivotTable".
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class Hyperlinks
     /**
      * Sets count
      *
-     *  
+     *  Property Summary: An integer property named Count with an XML element name "count."
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class ColumnsResponse
     /**
      * Sets columns
      *
-     *  
+     *  This property allows access to the columns within the class.
      *
      * @return $this
      */

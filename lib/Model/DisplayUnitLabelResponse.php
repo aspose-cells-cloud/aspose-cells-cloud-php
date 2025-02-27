@@ -229,7 +229,7 @@ class DisplayUnitLabelResponse
     /**
      * Sets display_unit_label
      *
-     *  
+     *  This property allows access to the display unit label for the class.
      *
      * @return $this
      */

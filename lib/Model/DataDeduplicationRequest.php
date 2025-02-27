@@ -276,7 +276,7 @@ class DataDeduplicationRequest
     /**
      * Sets deduplication_region
      *
-     *  
+     *  This class has a property named "DeduplicationRegion" of type "DeduplicationRegion" with a default value of a new instance of the "DeduplicationRegion" class.
      *
      * @return $this
      */

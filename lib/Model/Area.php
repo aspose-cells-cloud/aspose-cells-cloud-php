@@ -334,7 +334,7 @@ class Area
     /**
      * Sets format
      *
-     *  
+     *  This class has a property named "Format" of type string with both getter and setter methods.
      *
      * @return $this
      */

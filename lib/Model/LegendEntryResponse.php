@@ -229,7 +229,7 @@ class LegendEntryResponse
     /**
      * Sets legend_entry
      *
-     *  
+     *  A public property called LegendEntry of type LegendEntry with both getter and setter methods.
      *
      * @return $this
      */

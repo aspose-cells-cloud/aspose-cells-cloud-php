@@ -217,7 +217,7 @@ class ListObjects
     /**
      * Sets list_object_list
      *
-     *  
+     *  A property named ListObjectList that is a list of LinkElement objects.
      *
      * @return $this
      */

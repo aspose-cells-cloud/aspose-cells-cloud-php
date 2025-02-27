@@ -229,7 +229,7 @@ class WorksheetsResponse
     /**
      * Sets worksheets
      *
-     *  
+     *  Property `Worksheets` of type `Worksheets` with the XML element name "worksheets" is defined in the class.
      *
      * @return $this
      */

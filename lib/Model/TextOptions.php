@@ -684,7 +684,7 @@ class TextOptions
     /**
      * Sets name
      *
-     *  
+     *  The class has a public property named "Name" with a getter and setter method.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class ConditionalFormattingResponse
     /**
      * Sets conditional_formatting
      *
-     *  
+     *  This class has a property named ConditionalFormatting of type ConditionalFormatting that can be accessed and modified.
      *
      * @return $this
      */

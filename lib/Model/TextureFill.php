@@ -380,7 +380,7 @@ class TextureFill
     /**
      * Sets image
      *
-     *  
+     *  The class has a public property named "Image" of type LinkElement that can be accessed and set.
      *
      * @return $this
      */

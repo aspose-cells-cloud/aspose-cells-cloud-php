@@ -301,7 +301,7 @@ class ImportIntArrayOption
     /**
      * Sets first_row
      *
-     *  
+     *  This class has a public property named "FirstRow" of type integer with both get and set accessors.
      *
      * @return $this
      */

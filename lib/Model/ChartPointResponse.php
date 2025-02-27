@@ -229,7 +229,7 @@ class ChartPointResponse
     /**
      * Sets chart_point
      *
-     *  
+     *  A public property "ChartPoint" that can store and retrieve instances of the "ChartPoint" data type.
      *
      * @return $this
      */

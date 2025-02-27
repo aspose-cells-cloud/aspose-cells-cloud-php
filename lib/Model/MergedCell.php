@@ -253,7 +253,7 @@ class MergedCell
     /**
      * Sets end_column
      *
-     *  
+     *  An integer property named "EndColumn" with the XML element name "endcolumn".
      *
      * @return $this
      */

@@ -205,7 +205,7 @@ class LinkElement
     /**
      * Sets link
      *
-     *  
+     *  The class has a property named "link" of type Link, which has a public get and set accessors.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class WorkbooksResponse
     /**
      * Sets workbooks
      *
-     *  
+     *  Property Summary: Contains a list of "Workbook" elements under the "Workbooks" array in XML format.
      *
      * @return $this
      */

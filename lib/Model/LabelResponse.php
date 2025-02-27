@@ -229,7 +229,7 @@ class LabelResponse
     /**
      * Sets shape
      *
-     *  
+     *  The property "Shape" is of type Label and has both a getter and a setter.
      *
      * @return $this
      */

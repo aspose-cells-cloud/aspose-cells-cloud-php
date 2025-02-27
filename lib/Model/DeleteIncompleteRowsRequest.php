@@ -345,7 +345,7 @@ class DeleteIncompleteRowsRequest
     /**
      * Sets ranges
      *
-     *  
+     *  A property named "Ranges" of type IList of Range, with a default value of an empty List of Range.
      *
      * @return $this
      */

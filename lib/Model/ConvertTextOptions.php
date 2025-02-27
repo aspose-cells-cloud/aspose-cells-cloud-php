@@ -289,7 +289,7 @@ class ConvertTextOptions
     /**
      * Sets name
      *
-     *  
+     *  The class has a public property called "Name" of type string that can be accessed and modified.
      *
      * @return $this
      */

@@ -276,7 +276,7 @@ class ColorFilter
     /**
      * Sets pattern
      *
-     *  
+     *  A property "Pattern" of type string with a getter and setter is defined.
      *
      * @return $this
      */

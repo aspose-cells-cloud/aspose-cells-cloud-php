@@ -265,7 +265,7 @@ class ImportBatchDataOption
     /**
      * Sets batch_data
      *
-     *  
+     *  The class has a property named BatchData which is a list of CellValue objects and can be both read and written.
      *
      * @return $this
      */

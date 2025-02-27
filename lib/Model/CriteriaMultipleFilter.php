@@ -205,7 +205,7 @@ class CriteriaMultipleFilter
     /**
      * Sets criteria
      *
-     *  
+     *  A property named "Criteria" of type string, allowing both getting and setting its value.
      *
      * @return $this
      */

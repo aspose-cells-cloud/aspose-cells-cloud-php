@@ -205,7 +205,7 @@ class BaseOperateOptions
     /**
      * Sets name
      *
-     *  
+     *  The property "Name" is a virtual string type with a public access modifier and a default value of an empty string.
      *
      * @return $this
      */

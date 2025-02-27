@@ -205,7 +205,7 @@ class AppliedOperate
     /**
      * Sets applied_operate_type
      *
-     *  
+     *  Property summary: Utilizes a custom JSON converter to serialize and deserialize an enum property.
      *
      * @return $this
      */

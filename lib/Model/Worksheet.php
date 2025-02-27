@@ -577,7 +577,7 @@ class Worksheet
     /**
      * Sets links
      *
-     *  
+     *  Property Summary: Contains a list of links represented by the class link.
      *
      * @return $this
      */

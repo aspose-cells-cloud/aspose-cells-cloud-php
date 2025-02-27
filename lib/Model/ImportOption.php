@@ -276,7 +276,7 @@ class ImportOption
     /**
      * Sets is_insert
      *
-     *  
+     *  A boolean property `IsInsert` that can be both read and written.
      *
      * @return $this
      */

@@ -217,7 +217,7 @@ class Worksheets
     /**
      * Sets worksheet_list
      *
-     *  
+     *  A property named "WorksheetList" that contains a list of elements with the XML element name "worksheet".
      *
      * @return $this
      */

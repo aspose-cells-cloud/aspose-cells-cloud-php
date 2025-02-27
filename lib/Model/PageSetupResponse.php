@@ -229,7 +229,7 @@ class PageSetupResponse
     /**
      * Sets page_setup
      *
-     *  
+     *  Property Summary: The class has a public property named PageSetup of type PageSetup that can be accessed and modified.
      *
      * @return $this
      */

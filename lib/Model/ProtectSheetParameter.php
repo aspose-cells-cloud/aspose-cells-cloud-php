@@ -385,7 +385,7 @@ class ProtectSheetParameter
     /**
      * Sets protection_type
      *
-     *  
+     *  Property Summary: Defines a public string property for the ProtectionType.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class RowsResponse
     /**
      * Sets rows
      *
-     *  
+     *  A property named "Rows" of type "Rows" which has both getter and setter methods.
      *
      * @return $this
      */

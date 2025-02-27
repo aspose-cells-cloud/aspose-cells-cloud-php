@@ -929,7 +929,7 @@ class Style
     /**
      * Sets border_collection
      *
-     *  
+     *  A public property named `BorderCollection` that is a list of `Border` objects.
      *
      * @return $this
      */

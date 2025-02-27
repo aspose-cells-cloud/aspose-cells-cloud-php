@@ -229,7 +229,7 @@ class WorksheetResponse
     /**
      * Sets worksheet
      *
-     *  
+     *  The class has a property called "Worksheet" of type "Worksheet" that can be accessed and modified.
      *
      * @return $this
      */

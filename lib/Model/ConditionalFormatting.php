@@ -229,7 +229,7 @@ class ConditionalFormatting
     /**
      * Sets sqref
      *
-     *  
+     *  A public property called "sqref" of type string with a getter and a setter is defined in the class.
      *
      * @return $this
      */

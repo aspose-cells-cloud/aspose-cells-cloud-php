@@ -229,7 +229,7 @@ class SpinnerResponse
     /**
      * Sets shape
      *
-     *  
+     *  A property named Shape of type Spinner, with both get and set accessors.
      *
      * @return $this
      */

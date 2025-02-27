@@ -757,7 +757,7 @@ class HtmlSaveOptions
     /**
      * Sets export_page_headers
      *
-     *  
+     *  Indicates whether exporting page headers.
      *
      * @return $this
      */

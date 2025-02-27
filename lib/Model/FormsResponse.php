@@ -229,7 +229,7 @@ class FormsResponse
     /**
      * Sets forms
      *
-     *  
+     *  This class has a property named Forms of type Forms that has both a getter and setter.
      *
      * @return $this
      */

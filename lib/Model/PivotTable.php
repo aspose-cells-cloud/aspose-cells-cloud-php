@@ -1021,7 +1021,7 @@ class PivotTable
     /**
      * Sets alt_text_description
      *
-     *  
+     *  Gets the description of the alt text
      *
      * @return $this
      */

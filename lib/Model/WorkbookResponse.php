@@ -229,7 +229,7 @@ class WorkbookResponse
     /**
      * Sets workbook
      *
-     *  
+     *  Workbook property of the class allows access to and modification of a Workbook object.
      *
      * @return $this
      */

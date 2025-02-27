@@ -229,7 +229,7 @@ class LineShapeResponse
     /**
      * Sets shape
      *
-     *  
+     *  The class has a public property called Shape of type LineShape that can be both accessed and modified.
      *
      * @return $this
      */

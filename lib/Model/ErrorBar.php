@@ -505,7 +505,7 @@ class ErrorBar
     /**
      * Sets link
      *
-     *  
+     *  A property named "Link" of type "Link" that can be accessed and modified.
      *
      * @return $this
      */

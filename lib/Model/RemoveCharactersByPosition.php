@@ -241,7 +241,7 @@ class RemoveCharactersByPosition
     /**
      * Sets the_first_n_characters
      *
-     *  
+     *  This property allows access to a public integer named "TheFirstNCharacters" for getting and setting its value.
      *
      * @return $this
      */

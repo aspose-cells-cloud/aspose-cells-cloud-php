@@ -229,7 +229,7 @@ class PivotFieldResponse
     /**
      * Sets pivot_field
      *
-     *  
+     *  This class has a property named "PivotField" of type PivotField which can be accessed and modified.
      *
      * @return $this
      */

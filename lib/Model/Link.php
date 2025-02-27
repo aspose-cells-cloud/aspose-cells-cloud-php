@@ -241,7 +241,7 @@ class Link
     /**
      * Sets href
      *
-     *  
+     *  Has a property named Href with the attribute ElementName set to "href".
      *
      * @return $this
      */

@@ -801,7 +801,7 @@ class Picture
     /**
      * Sets image_format
      *
-     *  
+     *  This class has a property called "ImageFormat" that allows getting and setting a string value.
      *
      * @return $this
      */

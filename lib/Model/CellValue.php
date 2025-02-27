@@ -265,7 +265,7 @@ class CellValue
     /**
      * Sets row_index
      *
-     *  
+     *  A public integer property called "rowIndex" with both getter and setter.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class WorkbookSettingsResponse
     /**
      * Sets settings
      *
-     *  
+     *  The class has a public property called "settings" of type WorkbookSettings that can be accessed and modified.
      *
      * @return $this
      */

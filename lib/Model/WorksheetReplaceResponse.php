@@ -241,7 +241,7 @@ class WorksheetReplaceResponse
     /**
      * Sets matches
      *
-     *  
+     *  "An integer property named Matches decorated with the XmlElement attribute."
      *
      * @return $this
      */

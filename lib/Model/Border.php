@@ -299,7 +299,7 @@ class Border
     /**
      * Sets border_type
      *
-     *  
+     *  This class has a property called "BorderType" of type string that can be both get and set.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class PivotTableResponse
     /**
      * Sets pivot_table
      *
-     *  
+     *  PivotTable property of type PivotTable that can be both read and written.
      *
      * @return $this
      */

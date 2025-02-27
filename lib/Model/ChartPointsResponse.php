@@ -229,7 +229,7 @@ class ChartPointsResponse
     /**
      * Sets chart_points
      *
-     *  
+     *  This class has a property named `ChartPoints` of type `ChartPoints` that can be accessed and modified.
      *
      * @return $this
      */

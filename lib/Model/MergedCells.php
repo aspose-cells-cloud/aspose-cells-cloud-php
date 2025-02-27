@@ -229,7 +229,7 @@ class MergedCells
     /**
      * Sets count
      *
-     *  
+     *  An integer property labeled as "count" and marked as an XML element in the class.
      *
      * @return $this
      */

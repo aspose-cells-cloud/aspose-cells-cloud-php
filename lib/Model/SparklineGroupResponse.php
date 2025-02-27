@@ -229,7 +229,7 @@ class SparklineGroupResponse
     /**
      * Sets sparkline_group
      *
-     *  
+     *  A property that allows access to a Sparkline group containing multiple Sparkline objects.
      *
      * @return $this
      */

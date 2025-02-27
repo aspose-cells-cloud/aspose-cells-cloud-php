@@ -217,7 +217,7 @@ class Styles
     /**
      * Sets style_list
      *
-     *  
+     *  This property contains a list of elements with the tag "style".
      *
      * @return $this
      */

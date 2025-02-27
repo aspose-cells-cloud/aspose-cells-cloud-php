@@ -217,7 +217,7 @@ class MultipleFilters
     /**
      * Sets match_blank
      *
-     *  
+     *  A nullable boolean property that determines if a blank space should be matched.
      *
      * @return $this
      */

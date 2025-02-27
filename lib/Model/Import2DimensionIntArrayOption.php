@@ -289,7 +289,7 @@ class Import2DimensionIntArrayOption
     /**
      * Sets first_row
      *
-     *  
+     *  This property allows getting and setting the value of the first row in a class.
      *
      * @return $this
      */

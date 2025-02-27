@@ -588,7 +588,7 @@ class DataLabels
     /**
      * Sets is_deleted
      *
-     *  
+     *  A nullable boolean property "IsDeleted" indicating whether an object has been deleted.
      *
      * @return $this
      */

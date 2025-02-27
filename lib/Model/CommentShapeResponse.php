@@ -229,7 +229,7 @@ class CommentShapeResponse
     /**
      * Sets comment
      *
-     *  
+     *  The class has a public property named Comment of type CommentShape that can be accessed and modified.
      *
      * @return $this
      */

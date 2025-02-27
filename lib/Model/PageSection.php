@@ -299,7 +299,7 @@ class PageSection
     /**
      * Sets picture
      *
-     *  
+     *  A property named "Picture" with both getter and setter methods of type string is defined.
      *
      * @return $this
      */

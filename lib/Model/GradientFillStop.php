@@ -229,7 +229,7 @@ class GradientFillStop
     /**
      * Sets color
      *
-     *  
+     *  Color property of type DTO.Color that has a getter and a setter.
      *
      * @return $this
      */

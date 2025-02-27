@@ -229,7 +229,7 @@ class TextItemsResponse
     /**
      * Sets text_items
      *
-     *  
+     *  This property allows access to a collection of TextItems.
      *
      * @return $this
      */

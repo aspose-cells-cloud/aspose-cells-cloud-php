@@ -275,7 +275,7 @@ class CustomParserConfig
     /**
      * Sets custom_style
      *
-     *  
+     *  A property that allows storing and retrieving custom styling information for an object.
      *
      * @return $this
      */

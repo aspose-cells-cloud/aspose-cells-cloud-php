@@ -229,7 +229,7 @@ class GroupBoxResponse
     /**
      * Sets shape
      *
-     *  
+     *  The class has a property named "Shape" of type GroupBox that can be accessed and modified.
      *
      * @return $this
      */

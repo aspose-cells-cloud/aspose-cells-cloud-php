@@ -229,7 +229,7 @@ class ListObjectResponse
     /**
      * Sets list_object
      *
-     *  
+     *  A property that represents a list object within the Tables class.
      *
      * @return $this
      */

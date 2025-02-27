@@ -241,7 +241,7 @@ class FindResponse
     /**
      * Sets count
      *
-     *  
+     *  Property Summary: This property is annotated with the XML element name "count" and represents an integer value.
      *
      * @return $this
      */

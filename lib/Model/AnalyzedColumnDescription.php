@@ -347,7 +347,7 @@ class AnalyzedColumnDescription
     /**
      * Sets title
      *
-     *  
+     *  This class has a public property "Title" of type string with a default value of an empty string.
      *
      * @return $this
      */

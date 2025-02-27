@@ -229,7 +229,7 @@ class ChartDataTableResponse
     /**
      * Sets chart_data_table
      *
-     *  
+     *  This property allows access to a ChartDataTable object for storing and manipulating data related to a chart.
      *
      * @return $this
      */

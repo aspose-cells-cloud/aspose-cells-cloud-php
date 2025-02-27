@@ -229,7 +229,7 @@ class SeriesesResponse
     /**
      * Sets serieses
      *
-     *  
+     *  A property named "Serieses" of type "SeriesItems" is defined in the class with both getter and setter access.
      *
      * @return $this
      */

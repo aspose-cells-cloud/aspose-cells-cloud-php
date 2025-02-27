@@ -149,6 +149,7 @@ use Aspose\Cells\Cloud\Request\PostConvertWorkbookToMarkdownRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToJsonRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToSQLRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToCSVRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorksheetToImageRequest;
 use Aspose\Cells\Cloud\Request\PostExportRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookExportXMLRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookImportJsonRequest;
@@ -274,6 +275,7 @@ use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeSortRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeOutlineBorderRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeColumnWidthRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeRowHeightRequest;
+use Aspose\Cells\Cloud\Request\PostWorksheetCellsRangeToImageRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetCellsRangeRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetCellsRangeRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetShapesRequest;
@@ -290,6 +292,9 @@ use Aspose\Cells\Cloud\Request\DeleteWorksheetSparklineGroupsRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetSparklineGroupRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetSparklineGroupRequest;
+use Aspose\Cells\Cloud\Request\PostCharacterCountRequest;
+use Aspose\Cells\Cloud\Request\PostWordsCountRequest;
+use Aspose\Cells\Cloud\Request\PostSpecifyWordsCountRequest;
 use Aspose\Cells\Cloud\Request\PostRunTaskRequest;
 use Aspose\Cells\Cloud\Request\PostAddTextContentRequest;
 use Aspose\Cells\Cloud\Request\PostTrimContentRequest;
@@ -674,6 +679,7 @@ use Aspose\Cells\Cloud\Model\MatchConditionRequest;
 use Aspose\Cells\Cloud\Model\PasswordRequest;
 use Aspose\Cells\Cloud\Model\PivotTableFieldRequest;
 use Aspose\Cells\Cloud\Model\ProtectWorkbookRequest;
+use Aspose\Cells\Cloud\Model\RangeConvertRequest;
 use Aspose\Cells\Cloud\Model\RangeCopyRequest;
 use Aspose\Cells\Cloud\Model\RangeSetOutlineBorderRequest;
 use Aspose\Cells\Cloud\Model\RangeSetStyleRequest;
@@ -701,17 +707,25 @@ use Aspose\Cells\Cloud\Model\PivotTable;
 use Aspose\Cells\Cloud\Model\PivotTables;
 use Aspose\Cells\Cloud\Model\AddTextOptions;
 use Aspose\Cells\Cloud\Model\BaseOperateOptions;
+use Aspose\Cells\Cloud\Model\CharacterCountOptions;
+use Aspose\Cells\Cloud\Model\CombinationSourceData;
 use Aspose\Cells\Cloud\Model\ConvertTextOptions;
+use Aspose\Cells\Cloud\Model\ConvertWorksheetOptions;
+use Aspose\Cells\Cloud\Model\DataOutputLocation;
 use Aspose\Cells\Cloud\Model\ExtractTextOptions;
+use Aspose\Cells\Cloud\Model\MergeTableOptions;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByCharacter;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByPosition;
 use Aspose\Cells\Cloud\Model\RemoveCharactersOptions;
 use Aspose\Cells\Cloud\Model\RemoveDuplicatesOptions;
 use Aspose\Cells\Cloud\Model\ScopeItem;
 use Aspose\Cells\Cloud\Model\ScopeOptions;
+use Aspose\Cells\Cloud\Model\SpecifyWordsCountOptions;
 use Aspose\Cells\Cloud\Model\SplitTextOptions;
+use Aspose\Cells\Cloud\Model\TablePositionInfo;
 use Aspose\Cells\Cloud\Model\TrimContentOptions;
 use Aspose\Cells\Cloud\Model\WordCaseOptions;
+use Aspose\Cells\Cloud\Model\WordsCountOptions;
 use Aspose\Cells\Cloud\Model\CellValue;
 use Aspose\Cells\Cloud\Model\CustomParserConfig;
 use Aspose\Cells\Cloud\Model\Import2DimensionDoubleArrayOption;
@@ -2309,6 +2323,18 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertWorkbookToCSVRequest" /></param>
     public function postConvertWorkbookToCSV( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorksheetToImageRequest" /></param>
+    public function postConvertWorksheetToImage( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
@@ -3932,6 +3958,18 @@ class CellsApi
     }
 
     /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWorksheetCellsRangeToImageRequest" /></param>
+    public function postWorksheetCellsRangeToImage( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
     /// Insert a range of cells and shift existing cells based on the specified shift option.
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetCellsRangeRequest" /></param>
@@ -4138,6 +4176,42 @@ class CellsApi
     }
 
     /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostCharacterCountRequest" /></param>
+    public function postCharacterCount( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostWordsCountRequest" /></param>
+    public function postWordsCount( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostSpecifyWordsCountRequest" /></param>
+    public function postSpecifyWordsCount( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
     /// Run tasks.
     /// </summary>
     /// <param name="request">Request. <see cref="PostRunTaskRequest" /></param>
@@ -4151,6 +4225,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Adds text content to a workbook at specified positions within cells based on provided options using ASP.NET Core Web API.
     /// </summary>
     /// <param name="request">Request. <see cref="PostAddTextContentRequest" /></param>
     public function postAddTextContent( $request)

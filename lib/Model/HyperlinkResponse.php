@@ -229,7 +229,7 @@ class HyperlinkResponse
     /**
      * Sets hyperlink
      *
-     *  
+     *  A public property named "Hyperlink" of type Hyperlink with both getter and setter methods.
      *
      * @return $this
      */

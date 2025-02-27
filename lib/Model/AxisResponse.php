@@ -229,7 +229,7 @@ class AxisResponse
     /**
      * Sets axis
      *
-     *  
+     *  A property named "Axis" of type "Axis" with both getter and setter methods is present in the class.
      *
      * @return $this
      */

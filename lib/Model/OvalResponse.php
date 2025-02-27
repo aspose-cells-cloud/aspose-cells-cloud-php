@@ -229,7 +229,7 @@ class OvalResponse
     /**
      * Sets shape
      *
-     *  
+     *  The class has a public property called "Shape" of type "Oval" with both get and set accessors.
      *
      * @return $this
      */

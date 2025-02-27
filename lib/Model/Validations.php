@@ -229,7 +229,7 @@ class Validations
     /**
      * Sets count
      *
-     *  
+     *  Property summary: The property "Count" with an XML element name "count" returns the number of items in the "ValidationList".
      *
      * @return $this
      */

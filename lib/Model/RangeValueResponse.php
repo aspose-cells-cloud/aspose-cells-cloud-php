@@ -229,7 +229,7 @@ class RangeValueResponse
     /**
      * Sets cells_list
      *
-     *  
+     *  Property Summary: Contains a list of elements labeled as "Cell".
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class FillFormatResponse
     /**
      * Sets fill_format
      *
-     *  
+     *  Property Summary: Allows access to the FillFormat property to get or set fill formatting properties for an object.
      *
      * @return $this
      */

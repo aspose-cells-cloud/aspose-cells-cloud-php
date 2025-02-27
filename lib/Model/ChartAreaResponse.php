@@ -229,7 +229,7 @@ class ChartAreaResponse
     /**
      * Sets chart_area
      *
-     *  
+     *  This class has a property named "ChartArea" of type ChartArea with a getter and setter.
      *
      * @return $this
      */

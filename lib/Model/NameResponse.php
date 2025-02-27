@@ -229,7 +229,7 @@ class NameResponse
     /**
      * Sets name
      *
-     *  
+     *  A public property that allows getting and setting a value of type "Name".
      *
      * @return $this
      */

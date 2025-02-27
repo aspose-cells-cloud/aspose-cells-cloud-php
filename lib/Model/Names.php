@@ -229,7 +229,7 @@ class Names
     /**
      * Sets count
      *
-     *  
+     *  This class property is tagged as an XML element named "count" and stores an integer value.
      *
      * @return $this
      */

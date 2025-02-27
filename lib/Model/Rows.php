@@ -241,7 +241,7 @@ class Rows
     /**
      * Sets max_row
      *
-     *  
+     *  This property allows access to set and retrieve the maximum row value in the class.
      *
      * @return $this
      */

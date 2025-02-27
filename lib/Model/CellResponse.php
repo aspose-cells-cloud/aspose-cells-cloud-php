@@ -229,7 +229,7 @@ class CellResponse
     /**
      * Sets cell
      *
-     *  
+     *  A property named "Cell" of type "Cell" that has both a getter and a setter.
      *
      * @return $this
      */

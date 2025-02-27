@@ -253,7 +253,7 @@ class Top10Filter
     /**
      * Sets field_index
      *
-     *  
+     *  An integer property named FieldIndex that can be accessed and modified.            
      *
      * @return $this
      */

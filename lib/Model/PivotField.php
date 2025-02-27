@@ -661,7 +661,7 @@ class PivotField
     /**
      * Sets auto_show_count
      *
-     *  
+     *  Represent the number of top or bottom items            that are automatically shown in the specified PivotTable field.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class DataLabelsResponse
     /**
      * Sets data_labels
      *
-     *  
+     *  This class has a property named DataLabels of type DataLabels that can be accessed and modified.
      *
      * @return $this
      */

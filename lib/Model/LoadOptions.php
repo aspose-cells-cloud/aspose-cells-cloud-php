@@ -325,7 +325,7 @@ class LoadOptions
     /**
      * Sets convert_numeric_data
      *
-     *  
+     *  This class has a public property named "ConvertNumericData" of type string that can be read from and written to.
      *
      * @return $this
      */

@@ -325,7 +325,7 @@ class ImportPictureOption
     /**
      * Sets upper_left_row
      *
-     *  
+     *  A property "UpperLeftRow" of type integer with a public getter and setter is defined.
      *
      * @return $this
      */

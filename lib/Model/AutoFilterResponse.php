@@ -229,7 +229,7 @@ class AutoFilterResponse
     /**
      * Sets auto_filter
      *
-     *  
+     *  A property named "AutoFilter" with a type of "AutoFilter" that can be read from and written to.
      *
      * @return $this
      */

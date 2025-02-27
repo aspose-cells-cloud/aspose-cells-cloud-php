@@ -520,7 +520,7 @@ class PivotFilter
     /**
      * Sets top10_filter
      *
-     *  
+     *  A property that allows for setting and getting a Top10Filter object for filtering data.
      *
      * @return $this
      */

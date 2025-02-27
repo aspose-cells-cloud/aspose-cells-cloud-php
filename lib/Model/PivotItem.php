@@ -241,7 +241,7 @@ class PivotItem
     /**
      * Sets index
      *
-     *  
+     *  Gets the index of the pivot item in cache field.
      *
      * @return $this
      */

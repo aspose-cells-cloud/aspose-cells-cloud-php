@@ -721,7 +721,7 @@ class ListBox
     /**
      * Sets input_range
      *
-     *  
+     *  This property stores the input range for the class.
      *
      * @return $this
      */

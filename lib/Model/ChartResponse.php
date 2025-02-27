@@ -229,7 +229,7 @@ class ChartResponse
     /**
      * Sets chart
      *
-     *  
+     *  A property named "Chart" of type Chart is defined with a getter and setter in the class.
      *
      * @return $this
      */

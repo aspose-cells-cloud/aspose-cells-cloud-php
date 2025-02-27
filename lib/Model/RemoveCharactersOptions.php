@@ -277,7 +277,7 @@ class RemoveCharactersOptions
     /**
      * Sets name
      *
-     *  
+     *  Name property with a getter and setter override that returns a string.
      *
      * @return $this
      */

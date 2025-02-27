@@ -217,7 +217,7 @@ class AutoShapes
     /**
      * Sets auto_shape_list
      *
-     *  
+     *  Property Summary: Contains a list of LinkElement objects identified by the XML element "autoshape".
      *
      * @return $this
      */

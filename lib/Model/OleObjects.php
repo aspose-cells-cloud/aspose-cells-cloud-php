@@ -217,7 +217,7 @@ class OleObjects
     /**
      * Sets ole_object_list
      *
-     *  
+     *  Property Summary: Contains a list of elements identified as "oleobject" within XML data.
      *
      * @return $this
      */

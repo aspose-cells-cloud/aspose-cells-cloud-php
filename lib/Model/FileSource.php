@@ -217,7 +217,7 @@ class FileSource
     /**
      * Sets file_source_type
      *
-     *  
+     *  A property named FileSourceType of type FileSourceType that can be accessed and modified.
      *
      * @return $this
      */

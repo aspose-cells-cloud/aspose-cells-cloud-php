@@ -150,6 +150,36 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
     }
 
     /*
+    * onePagePerSheet : 
+    */ 
+    public $one_page_per_sheet;
+
+    public function getOnePagePerSheet()
+    {
+        return $this->one_page_per_sheet;
+    }
+
+    public function setOnePagePerSheet($value)
+    {
+        $this->one_page_per_sheet = $value;
+    }
+
+    /*
+    * printHeadings : 
+    */ 
+    public $print_headings;
+
+    public function getPrintHeadings()
+    {
+        return $this->print_headings;
+    }
+
+    public function setPrintHeadings($value)
+    {
+        $this->print_headings = $value;
+    }
+
+    /*
     * folder : The folder where the file is situated.
     */ 
     public $folder;
@@ -240,6 +270,14 @@ class GetWorksheetWithFormatRequest extends BaseApiRequest
         // query params : page_index
         if ($this->page_index !== null) {
             $queryParams['pageIndex'] = ObjectSerializer::toQueryValue($this->page_index);
+        }
+        // query params : one_page_per_sheet
+        if ($this->one_page_per_sheet !== null) {
+            $queryParams['onePagePerSheet'] = ObjectSerializer::toQueryValue($this->one_page_per_sheet);
+        }
+        // query params : print_headings
+        if ($this->print_headings !== null) {
+            $queryParams['printHeadings'] = ObjectSerializer::toQueryValue($this->print_headings);
         }
         // query params : folder
         if ($this->folder !== null) {

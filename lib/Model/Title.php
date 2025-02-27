@@ -444,7 +444,7 @@ class Title
     /**
      * Sets linked_source
      *
-     *  
+     *  A property named LinkedSource with both set and get accessors is defined.
      *
      * @return $this
      */

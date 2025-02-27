@@ -229,7 +229,7 @@ class ListBoxResponse
     /**
      * Sets shape
      *
-     *  
+     *  A property "Shape" of type ListBox with read and write access is available for the class.
      *
      * @return $this
      */

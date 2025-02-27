@@ -337,7 +337,7 @@ class Comment
     /**
      * Sets cell_name
      *
-     *  
+     *  Property: CellName attribute with XmlElement tag in the class.
      *
      * @return $this
      */

@@ -265,7 +265,7 @@ class TextWaterMarkerRequest
     /**
      * Sets text
      *
-     *  
+     *  A property named Text of type string that can be accessed and modified.
      *
      * @return $this
      */

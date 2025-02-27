@@ -229,7 +229,7 @@ class WallsResponse
     /**
      * Sets walls
      *
-     *  
+     *  The class has a public property named `Walls` of type `Walls`.
      *
      * @return $this
      */

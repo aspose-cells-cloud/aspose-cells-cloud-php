@@ -325,7 +325,7 @@ class ImportCSVDataOption
     /**
      * Sets separator_string
      *
-     *  
+     *  A property named SeparatorString of type string that can be accessed and modified publicly.
      *
      * @return $this
      */

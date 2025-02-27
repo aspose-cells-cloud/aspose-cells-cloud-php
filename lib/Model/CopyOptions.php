@@ -51,7 +51,8 @@ class CopyOptions
         'copy_names' => 'bool',
         'extend_to_adjacent_range' => 'bool',
         'refer_to_destination_sheet' => 'bool',
-        'refer_to_sheet_with_same_name' => 'bool'
+        'refer_to_sheet_with_same_name' => 'bool',
+        'copy_theme' => 'bool'
     ];
 
     /**
@@ -65,7 +66,8 @@ class CopyOptions
         'copy_names' => null  ,
         'extend_to_adjacent_range' => null  ,
         'refer_to_destination_sheet' => null  ,
-        'refer_to_sheet_with_same_name' => null  
+        'refer_to_sheet_with_same_name' => null  ,
+        'copy_theme' => null  
     ];
 
     /**
@@ -100,7 +102,8 @@ class CopyOptions
          'copy_names' => 'CopyNames' ,
          'extend_to_adjacent_range' => 'ExtendToAdjacentRange' ,
          'refer_to_destination_sheet' => 'ReferToDestinationSheet' ,
-         'refer_to_sheet_with_same_name' => 'ReferToSheetWithSameName' 
+         'refer_to_sheet_with_same_name' => 'ReferToSheetWithSameName' ,
+         'copy_theme' => 'CopyTheme' 
     ];
 
     /**
@@ -114,7 +117,8 @@ class CopyOptions
         'copy_names' => 'setCopyNames' ,
         'extend_to_adjacent_range' => 'setExtendToAdjacentRange' ,
         'refer_to_destination_sheet' => 'setReferToDestinationSheet' ,
-        'refer_to_sheet_with_same_name' => 'setReferToSheetWithSameName' 
+        'refer_to_sheet_with_same_name' => 'setReferToSheetWithSameName' ,
+        'copy_theme' => 'setCopyTheme' 
     ];
 
     /**
@@ -128,7 +132,8 @@ class CopyOptions
         'copy_names' => 'getCopyNames' ,
         'extend_to_adjacent_range' => 'getExtendToAdjacentRange' ,
         'refer_to_destination_sheet' => 'getReferToDestinationSheet' ,
-        'refer_to_sheet_with_same_name' => 'getReferToSheetWithSameName' 
+        'refer_to_sheet_with_same_name' => 'getReferToSheetWithSameName' ,
+        'copy_theme' => 'getCopyTheme' 
     ];
 
     /**
@@ -193,6 +198,7 @@ class CopyOptions
         $this->container['extend_to_adjacent_range'] = isset($data['extend_to_adjacent_range']) ? $data['extend_to_adjacent_range'] : null;
         $this->container['refer_to_destination_sheet'] = isset($data['refer_to_destination_sheet']) ? $data['refer_to_destination_sheet'] : null;
         $this->container['refer_to_sheet_with_same_name'] = isset($data['refer_to_sheet_with_same_name']) ? $data['refer_to_sheet_with_same_name'] : null;
+        $this->container['copy_theme'] = isset($data['copy_theme']) ? $data['copy_theme'] : null;
     }
 
     /**
@@ -221,6 +227,9 @@ class CopyOptions
         if ($this->container['refer_to_sheet_with_same_name'] === null) {
             $invalidProperties[] = "'refer_to_sheet_with_same_name' can't be null";
         }
+        if ($this->container['copy_theme'] === null) {
+            $invalidProperties[] = "'copy_theme' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -248,6 +257,9 @@ class CopyOptions
                     return false;
                 }
         if ($this->container['refer_to_sheet_with_same_name'] === null) {
+                    return false;
+                }
+        if ($this->container['copy_theme'] === null) {
                     return false;
                 }
         return true;
@@ -387,6 +399,29 @@ class CopyOptions
     public function setReferToSheetWithSameName($refer_to_sheet_with_same_name)
     {
         $this->container['refer_to_sheet_with_same_name'] = $refer_to_sheet_with_same_name;
+
+        return $this;
+    }
+   /**
+     * Gets copy_theme
+     *
+     * @return bool
+     */
+    public function getCopyTheme()
+    {
+        return $this->container['copy_theme'];
+    }
+
+    /**
+     * Sets copy_theme
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCopyTheme($copy_theme)
+    {
+        $this->container['copy_theme'] = $copy_theme;
 
         return $this;
     }

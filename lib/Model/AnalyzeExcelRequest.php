@@ -229,7 +229,7 @@ class AnalyzeExcelRequest
     /**
      * Sets files
      *
-     *  
+     *  The class has a property called "Files" that is a list of FileInfo objects with a default value of an empty list.
      *
      * @return $this
      */

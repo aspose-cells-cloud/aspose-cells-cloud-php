@@ -229,7 +229,7 @@ class PlotAreaResponse
     /**
      * Sets plot_area
      *
-     *  
+     *  A property that allows getting and setting the PlotArea for the class.
      *
      * @return $this
      */

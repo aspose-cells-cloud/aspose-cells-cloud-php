@@ -229,7 +229,7 @@ class SparklineGroupsResponse
     /**
      * Sets sparkline_groups
      *
-     *  
+     *  This class has a property named "SparklineGroups" of type "SparklineGroups" for managing sparkline groups.
      *
      * @return $this
      */

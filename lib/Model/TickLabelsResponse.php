@@ -229,7 +229,7 @@ class TickLabelsResponse
     /**
      * Sets tick_labels
      *
-     *  
+     *  Property that represents tick labels for a class.
      *
      * @return $this
      */

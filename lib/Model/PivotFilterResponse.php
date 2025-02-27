@@ -229,7 +229,7 @@ class PivotFilterResponse
     /**
      * Sets pivot_filter
      *
-     *  
+     *  Property Summary: Contains a pivot filter for data manipulation.
      *
      * @return $this
      */

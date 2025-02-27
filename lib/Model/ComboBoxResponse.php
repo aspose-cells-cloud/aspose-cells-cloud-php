@@ -229,7 +229,7 @@ class ComboBoxResponse
     /**
      * Sets shape
      *
-     *  
+     *  A public property of type ComboBox named Shape with get and set accessors.
      *
      * @return $this
      */

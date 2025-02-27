@@ -229,7 +229,7 @@ class ScrollBarResponse
     /**
      * Sets shape
      *
-     *  
+     *  The class has a public property named `Shape` of type `ScrollBar` that can be both read and written.
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class VerticalPageBreakResponse
     /**
      * Sets vertical_page_break
      *
-     *  
+     *  The class has a property that represents a vertical page break.
      *
      * @return $this
      */

@@ -323,7 +323,7 @@ class Cells
     /**
      * Sets cell_count
      *
-     *  
+     *  The class has a public property "CellCount" of type integer that can be read and modified.
      *
      * @return $this
      */

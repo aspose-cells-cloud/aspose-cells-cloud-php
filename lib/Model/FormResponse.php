@@ -229,7 +229,7 @@ class FormResponse
     /**
      * Sets form
      *
-     *  
+     *  Property summary: A public property named "Form" with both get and set accessors, allowing access to a Form object.
      *
      * @return $this
      */

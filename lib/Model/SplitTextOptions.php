@@ -313,7 +313,7 @@ class SplitTextOptions
     /**
      * Sets name
      *
-     *  
+     *  The property "Name" is a publicly accessible and overridable property of type string in the class.
      *
      * @return $this
      */

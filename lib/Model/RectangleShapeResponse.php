@@ -229,7 +229,7 @@ class RectangleShapeResponse
     /**
      * Sets shape
      *
-     *  
+     *  A public property named "Shape" that is of type RectangleShape and can be both accessed and modified.
      *
      * @return $this
      */

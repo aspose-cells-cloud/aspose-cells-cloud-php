@@ -229,7 +229,7 @@ class SaveFilesToCloudResultResponse
     /**
      * Sets save_files_to_cloud_result
      *
-     *  
+     *  Property: SaveFilesToCloudResult that allows getting and setting an object of type SaveFilesToCloudResult.
      *
      * @return $this
      */

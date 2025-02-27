@@ -229,7 +229,7 @@ class CellsDrawingResponse
     /**
      * Sets shape
      *
-     *  
+     *  This class has a public property named Shape of type CellsDrawing.
      *
      * @return $this
      */

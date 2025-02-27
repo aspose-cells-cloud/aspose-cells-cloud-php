@@ -229,7 +229,7 @@ class PicturesResponse
     /**
      * Sets pictures
      *
-     *  
+     *  This class has a property called "Pictures" with the feature of being serialized as "pictures" in XML elements.
      *
      * @return $this
      */
