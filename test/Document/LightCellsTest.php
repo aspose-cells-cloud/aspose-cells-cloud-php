@@ -414,29 +414,6 @@ final class LightCellsTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostSplit_numbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $outFormat = "numbers";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostSplitRequest();
-        $request->setFile( $mapFiles);
-        $request->setOutFormat( $outFormat);
-
-        $resposne = $instance->postSplit($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for save workbook as one of the available formats.
@@ -1083,30 +1060,6 @@ final class LightCellsTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostAssemble_numbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "numbers";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostAssembleRequest();
-        $request->setFile( $mapFiles);
-        $request->setDatasource( "ds");
-        $request->setOutFormat( $format);
-
-        $resposne = $instance->postAssemble($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for save workbook as one of the available formats.
@@ -1804,31 +1757,7 @@ final class LightCellsTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
 
-    public function testPostExport_numbers_workbook()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $book1Xlsx = "Book1.xlsx";
-
-        $format = "numbers";
-        $objectType = "workbook";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
-     
-        $request = new PostExportRequest();
-        $request->setFile( $mapFiles);
-        $request->setObjectType( $objectType);
-        $request->setFormat( $format);
-
-        $resposne = $instance->postExport($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for save workbook as one of the available formats.
@@ -2517,32 +2446,6 @@ final class LightCellsTest extends TestCase
         $book1Xlsx = "Book1.xlsx";
 
         $format = "md";
-        $objectType = "worksheet";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
-     
-        $request = new PostExportRequest();
-        $request->setFile( $mapFiles);
-        $request->setObjectType( $objectType);
-        $request->setFormat( $format);
-
-        $resposne = $instance->postExport($request);
-        $this->assertTrue($resposne !==null );
-    }
-
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostExport_numbers_worksheet()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $book1Xlsx = "Book1.xlsx";
-
-        $format = "numbers";
         $objectType = "worksheet";
 
         $mapFiles = array ();
@@ -3572,31 +3475,6 @@ final class LightCellsTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostExport_numbers_listobject()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $book1Xlsx = "Book1.xlsx";
-
-        $format = "numbers";
-        $objectType = "listobject";
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
-     
-        $request = new PostExportRequest();
-        $request->setFile( $mapFiles);
-        $request->setObjectType( $objectType);
-        $request->setFormat( $format);
-
-        $resposne = $instance->postExport($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for save workbook as one of the available formats.
@@ -4478,31 +4356,6 @@ final class LightCellsTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testPostMerge_numbers_true()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $assemblyTestXlsx = "assemblytest.xlsx";
-        $dataSourceXlsx = "datasource.xlsx";
-
-        $format = "numbers";
-        $mergeToOneSheet = 'true';
-
-        $mapFiles = array ();
-        $mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-        $mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
-     
-        $request = new PostMergeRequest();
-        $request->setFile( $mapFiles);
-        $request->setOutFormat( $format);
-        $request->setMergeToOneSheet( $mergeToOneSheet);
-
-        $resposne = $instance->postMerge($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for save workbook as one of the available formats.

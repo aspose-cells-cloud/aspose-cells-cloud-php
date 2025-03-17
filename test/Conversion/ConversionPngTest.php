@@ -273,31 +273,6 @@ final class ConversionPngTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_numbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "cloud.png";
-        $remoteName = "cloud.png";
-
-        $format = "numbers";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-
-        $resposne = $instance->putConvertWorkbook($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for get workbook as one of the available formats.

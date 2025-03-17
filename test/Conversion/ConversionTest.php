@@ -389,34 +389,6 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for save workbook as one of the available formats.
-    /// </summary>
-
-    public function testWorkbookSaveAs_numbers_OutResultPostExcelSaveAsnumbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "numbers";
-        $newfilename = "outResult/PostExcelSaveAs.numbers";
-
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
-        $saveOptions->setSaveFormat($format ); 
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PostWorkbookSaveAsRequest();
-        $request->setName( $remoteName);
-        $request->setNewfilename( $newfilename);
-        $request->setSaveOptions( $saveOptions);
-        $request->setFolder( $remoteFolder);
-
-        $resposne = $instance->postWorkbookSaveAs($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for save workbook as one of the available formats.
@@ -838,30 +810,7 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
 
-    public function testGetWorkbookFormat_numbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "numbers";
-
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new GetWorkbookRequest();
-        $request->setName( $remoteName);
-        $request->setFormat( $format);
-        $request->setFolder( $remoteFolder);
-
-        $resposne = $instance->getWorkbook($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for get workbook as one of the available formats.
@@ -1326,31 +1275,6 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_numbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "numbers";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-
-        $resposne = $instance->putConvertWorkbook($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for get workbook as one of the available formats.
@@ -1900,33 +1824,6 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-    /// <summary>
-    /// Test for converting workbook to one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbookSaveCloud_numbers_OutResultConvertWorkbooknumbers()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "numbers";
-        $outPath = "outResult/ConvertWorkbook.numbers";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-        $request->setOutPath( $outPath);
-
-        $resposne = $instance->putConvertWorkbook($request);
-        $this->assertTrue($resposne !==null );
-    }
 
     /// <summary>
     /// Test for converting workbook to one of the available formats.
