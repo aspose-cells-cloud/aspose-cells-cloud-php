@@ -46,6 +46,9 @@ class OdsSaveOptions
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'generator_type' => 'string',
+        'odf_strict_version' => 'string',
+        'ignore_pivot_tables' => 'bool',
         'save_format' => 'string',
         'cached_file_folder' => 'string',
         'clear_data' => 'bool',
@@ -53,7 +56,12 @@ class OdsSaveOptions
         'enable_http_compression' => 'bool',
         'refresh_chart_cache' => 'bool',
         'sort_names' => 'bool',
-        'validate_merged_areas' => 'bool'
+        'validate_merged_areas' => 'bool',
+        'merge_areas' => 'bool',
+        'sort_external_names' => 'bool',
+        'check_excel_restriction' => 'bool',
+        'update_smart_art' => 'bool',
+        'encrypt_document_properties' => 'bool'
     ];
 
     /**
@@ -62,6 +70,9 @@ class OdsSaveOptions
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'generator_type' => null  ,
+        'odf_strict_version' => null  ,
+        'ignore_pivot_tables' => null  ,
         'save_format' => null  ,
         'cached_file_folder' => null  ,
         'clear_data' => null  ,
@@ -69,7 +80,12 @@ class OdsSaveOptions
         'enable_http_compression' => null  ,
         'refresh_chart_cache' => null  ,
         'sort_names' => null  ,
-        'validate_merged_areas' => null  
+        'validate_merged_areas' => null  ,
+        'merge_areas' => null  ,
+        'sort_external_names' => null  ,
+        'check_excel_restriction' => null  ,
+        'update_smart_art' => null  ,
+        'encrypt_document_properties' => null  
     ];
 
     /**
@@ -99,6 +115,9 @@ class OdsSaveOptions
      * @var string[]
      */
     protected static $attributeMap = [
+         'generator_type' => 'GeneratorType' ,
+         'odf_strict_version' => 'OdfStrictVersion' ,
+         'ignore_pivot_tables' => 'IgnorePivotTables' ,
          'save_format' => 'SaveFormat' ,
          'cached_file_folder' => 'CachedFileFolder' ,
          'clear_data' => 'ClearData' ,
@@ -106,7 +125,12 @@ class OdsSaveOptions
          'enable_http_compression' => 'EnableHTTPCompression' ,
          'refresh_chart_cache' => 'RefreshChartCache' ,
          'sort_names' => 'SortNames' ,
-         'validate_merged_areas' => 'ValidateMergedAreas' 
+         'validate_merged_areas' => 'ValidateMergedAreas' ,
+         'merge_areas' => 'MergeAreas' ,
+         'sort_external_names' => 'SortExternalNames' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' ,
+         'update_smart_art' => 'UpdateSmartArt' ,
+         'encrypt_document_properties' => 'EncryptDocumentProperties' 
     ];
 
     /**
@@ -115,6 +139,9 @@ class OdsSaveOptions
      * @var string[]
      */
     protected static $setters = [
+        'generator_type' => 'setGeneratorType' ,
+        'odf_strict_version' => 'setOdfStrictVersion' ,
+        'ignore_pivot_tables' => 'setIgnorePivotTables' ,
         'save_format' => 'setSaveFormat' ,
         'cached_file_folder' => 'setCachedFileFolder' ,
         'clear_data' => 'setClearData' ,
@@ -122,7 +149,12 @@ class OdsSaveOptions
         'enable_http_compression' => 'setEnableHTTPCompression' ,
         'refresh_chart_cache' => 'setRefreshChartCache' ,
         'sort_names' => 'setSortNames' ,
-        'validate_merged_areas' => 'setValidateMergedAreas' 
+        'validate_merged_areas' => 'setValidateMergedAreas' ,
+        'merge_areas' => 'setMergeAreas' ,
+        'sort_external_names' => 'setSortExternalNames' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' ,
+        'update_smart_art' => 'setUpdateSmartArt' ,
+        'encrypt_document_properties' => 'setEncryptDocumentProperties' 
     ];
 
     /**
@@ -131,6 +163,9 @@ class OdsSaveOptions
      * @var string[]
      */
     protected static $getters = [
+        'generator_type' => 'getGeneratorType' ,
+        'odf_strict_version' => 'getOdfStrictVersion' ,
+        'ignore_pivot_tables' => 'getIgnorePivotTables' ,
         'save_format' => 'getSaveFormat' ,
         'cached_file_folder' => 'getCachedFileFolder' ,
         'clear_data' => 'getClearData' ,
@@ -138,7 +173,12 @@ class OdsSaveOptions
         'enable_http_compression' => 'getEnableHTTPCompression' ,
         'refresh_chart_cache' => 'getRefreshChartCache' ,
         'sort_names' => 'getSortNames' ,
-        'validate_merged_areas' => 'getValidateMergedAreas' 
+        'validate_merged_areas' => 'getValidateMergedAreas' ,
+        'merge_areas' => 'getMergeAreas' ,
+        'sort_external_names' => 'getSortExternalNames' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' ,
+        'update_smart_art' => 'getUpdateSmartArt' ,
+        'encrypt_document_properties' => 'getEncryptDocumentProperties' 
     ];
 
     /**
@@ -197,6 +237,9 @@ class OdsSaveOptions
      */
     public function __construct(array $data = null)
     {
+        $this->container['generator_type'] = isset($data['generator_type']) ? $data['generator_type'] : null;
+        $this->container['odf_strict_version'] = isset($data['odf_strict_version']) ? $data['odf_strict_version'] : null;
+        $this->container['ignore_pivot_tables'] = isset($data['ignore_pivot_tables']) ? $data['ignore_pivot_tables'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
@@ -205,6 +248,11 @@ class OdsSaveOptions
         $this->container['refresh_chart_cache'] = isset($data['refresh_chart_cache']) ? $data['refresh_chart_cache'] : null;
         $this->container['sort_names'] = isset($data['sort_names']) ? $data['sort_names'] : null;
         $this->container['validate_merged_areas'] = isset($data['validate_merged_areas']) ? $data['validate_merged_areas'] : null;
+        $this->container['merge_areas'] = isset($data['merge_areas']) ? $data['merge_areas'] : null;
+        $this->container['sort_external_names'] = isset($data['sort_external_names']) ? $data['sort_external_names'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['update_smart_art'] = isset($data['update_smart_art']) ? $data['update_smart_art'] : null;
+        $this->container['encrypt_document_properties'] = isset($data['encrypt_document_properties']) ? $data['encrypt_document_properties'] : null;
     }
 
     /**
@@ -215,6 +263,15 @@ class OdsSaveOptions
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['generator_type'] === null) {
+            $invalidProperties[] = "'generator_type' can't be null";
+        }
+        if ($this->container['odf_strict_version'] === null) {
+            $invalidProperties[] = "'odf_strict_version' can't be null";
+        }
+        if ($this->container['ignore_pivot_tables'] === null) {
+            $invalidProperties[] = "'ignore_pivot_tables' can't be null";
+        }
         if ($this->container['save_format'] === null) {
             $invalidProperties[] = "'save_format' can't be null";
         }
@@ -239,6 +296,21 @@ class OdsSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
             $invalidProperties[] = "'validate_merged_areas' can't be null";
         }
+        if ($this->container['merge_areas'] === null) {
+            $invalidProperties[] = "'merge_areas' can't be null";
+        }
+        if ($this->container['sort_external_names'] === null) {
+            $invalidProperties[] = "'sort_external_names' can't be null";
+        }
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
+        }
+        if ($this->container['update_smart_art'] === null) {
+            $invalidProperties[] = "'update_smart_art' can't be null";
+        }
+        if ($this->container['encrypt_document_properties'] === null) {
+            $invalidProperties[] = "'encrypt_document_properties' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -250,6 +322,15 @@ class OdsSaveOptions
      */
     public function valid()
     {
+        if ($this->container['generator_type'] === null) {
+                    return false;
+                }
+        if ($this->container['odf_strict_version'] === null) {
+                    return false;
+                }
+        if ($this->container['ignore_pivot_tables'] === null) {
+                    return false;
+                }
         if ($this->container['save_format'] === null) {
                     return false;
                 }
@@ -274,7 +355,91 @@ class OdsSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
                     return false;
                 }
+        if ($this->container['merge_areas'] === null) {
+                    return false;
+                }
+        if ($this->container['sort_external_names'] === null) {
+                    return false;
+                }
+        if ($this->container['check_excel_restriction'] === null) {
+                    return false;
+                }
+        if ($this->container['update_smart_art'] === null) {
+                    return false;
+                }
+        if ($this->container['encrypt_document_properties'] === null) {
+                    return false;
+                }
         return true;
+    }
+   /**
+     * Gets generator_type
+     *
+     * @return string
+     */
+    public function getGeneratorType()
+    {
+        return $this->container['generator_type'];
+    }
+
+    /**
+     * Sets generator_type
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setGeneratorType($generator_type)
+    {
+        $this->container['generator_type'] = $generator_type;
+
+        return $this;
+    }
+   /**
+     * Gets odf_strict_version
+     *
+     * @return string
+     */
+    public function getOdfStrictVersion()
+    {
+        return $this->container['odf_strict_version'];
+    }
+
+    /**
+     * Sets odf_strict_version
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setOdfStrictVersion($odf_strict_version)
+    {
+        $this->container['odf_strict_version'] = $odf_strict_version;
+
+        return $this;
+    }
+   /**
+     * Gets ignore_pivot_tables
+     *
+     * @return bool
+     */
+    public function getIgnorePivotTables()
+    {
+        return $this->container['ignore_pivot_tables'];
+    }
+
+    /**
+     * Sets ignore_pivot_tables
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setIgnorePivotTables($ignore_pivot_tables)
+    {
+        $this->container['ignore_pivot_tables'] = $ignore_pivot_tables;
+
+        return $this;
     }
    /**
      * Gets save_format
@@ -457,6 +622,121 @@ class OdsSaveOptions
     public function setValidateMergedAreas($validate_merged_areas)
     {
         $this->container['validate_merged_areas'] = $validate_merged_areas;
+
+        return $this;
+    }
+   /**
+     * Gets merge_areas
+     *
+     * @return bool
+     */
+    public function getMergeAreas()
+    {
+        return $this->container['merge_areas'];
+    }
+
+    /**
+     * Sets merge_areas
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMergeAreas($merge_areas)
+    {
+        $this->container['merge_areas'] = $merge_areas;
+
+        return $this;
+    }
+   /**
+     * Gets sort_external_names
+     *
+     * @return bool
+     */
+    public function getSortExternalNames()
+    {
+        return $this->container['sort_external_names'];
+    }
+
+    /**
+     * Sets sort_external_names
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setSortExternalNames($sort_external_names)
+    {
+        $this->container['sort_external_names'] = $sort_external_names;
+
+        return $this;
+    }
+   /**
+     * Gets check_excel_restriction
+     *
+     * @return bool
+     */
+    public function getCheckExcelRestriction()
+    {
+        return $this->container['check_excel_restriction'];
+    }
+
+    /**
+     * Sets check_excel_restriction
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckExcelRestriction($check_excel_restriction)
+    {
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
+
+        return $this;
+    }
+   /**
+     * Gets update_smart_art
+     *
+     * @return bool
+     */
+    public function getUpdateSmartArt()
+    {
+        return $this->container['update_smart_art'];
+    }
+
+    /**
+     * Sets update_smart_art
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setUpdateSmartArt($update_smart_art)
+    {
+        $this->container['update_smart_art'] = $update_smart_art;
+
+        return $this;
+    }
+   /**
+     * Gets encrypt_document_properties
+     *
+     * @return bool
+     */
+    public function getEncryptDocumentProperties()
+    {
+        return $this->container['encrypt_document_properties'];
+    }
+
+    /**
+     * Sets encrypt_document_properties
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEncryptDocumentProperties($encrypt_document_properties)
+    {
+        $this->container['encrypt_document_properties'] = $encrypt_document_properties;
 
         return $this;
     }

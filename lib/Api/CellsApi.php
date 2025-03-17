@@ -150,6 +150,7 @@ use Aspose\Cells\Cloud\Request\PostConvertWorkbookToJsonRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToSQLRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToCSVRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorksheetToImageRequest;
+use Aspose\Cells\Cloud\Request\PostConvertWorkbookRequest;
 use Aspose\Cells\Cloud\Request\PostExportRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookExportXMLRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookImportJsonRequest;
@@ -225,6 +226,7 @@ use Aspose\Cells\Cloud\Request\PostFitTallToPagesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetPicturesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetPictureWithFormatRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetAddPictureRequest;
+use Aspose\Cells\Cloud\Request\AddPictureInCellRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetPictureRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetPictureRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetPicturesRequest;
@@ -328,6 +330,7 @@ use Aspose\Cells\Cloud\Request\PutWorkbookBackgroundRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorkbookBackgroundRequest;
 use Aspose\Cells\Cloud\Request\PutWorkbookWaterMarkerRequest;
 use Aspose\Cells\Cloud\Request\GetPageCountRequest;
+use Aspose\Cells\Cloud\Request\GetAllStylesRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetsRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetWithFormatRequest;
 use Aspose\Cells\Cloud\Request\PutChangeVisibilityWorksheetRequest;
@@ -640,6 +643,7 @@ use Aspose\Cells\Cloud\Model\SparklineGroupsResponse;
 use Aspose\Cells\Cloud\Model\SpinnerResponse;
 use Aspose\Cells\Cloud\Model\SplitResultResponse;
 use Aspose\Cells\Cloud\Model\StyleResponse;
+use Aspose\Cells\Cloud\Model\StylesResponse;
 use Aspose\Cells\Cloud\Model\TaskRunResultResponse;
 use Aspose\Cells\Cloud\Model\TextBoxResponse;
 use Aspose\Cells\Cloud\Model\TextItemResponse;
@@ -710,6 +714,7 @@ use Aspose\Cells\Cloud\Model\BaseOperateOptions;
 use Aspose\Cells\Cloud\Model\CharacterCountOptions;
 use Aspose\Cells\Cloud\Model\CombinationSourceData;
 use Aspose\Cells\Cloud\Model\ConvertTextOptions;
+use Aspose\Cells\Cloud\Model\ConvertWorkbookOptions;
 use Aspose\Cells\Cloud\Model\ConvertWorksheetOptions;
 use Aspose\Cells\Cloud\Model\DataOutputLocation;
 use Aspose\Cells\Cloud\Model\ExtractTextOptions;
@@ -720,6 +725,7 @@ use Aspose\Cells\Cloud\Model\RemoveCharactersOptions;
 use Aspose\Cells\Cloud\Model\RemoveDuplicatesOptions;
 use Aspose\Cells\Cloud\Model\ScopeItem;
 use Aspose\Cells\Cloud\Model\ScopeOptions;
+use Aspose\Cells\Cloud\Model\SpecifyCellsObject;
 use Aspose\Cells\Cloud\Model\SpecifyWordsCountOptions;
 use Aspose\Cells\Cloud\Model\SplitTextOptions;
 use Aspose\Cells\Cloud\Model\TablePositionInfo;
@@ -887,6 +893,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Perform business analysis of data in Excel files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostAnalyzeExcelRequest" /></param>
     public function postAnalyzeExcel( $request)
@@ -899,6 +906,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve the description of auto filters from a worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetAutoFilterRequest" /></param>
     public function getWorksheetAutoFilter( $request)
@@ -1067,6 +1075,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Get autoshapes description in worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetAutoshapesRequest" /></param>
     public function getWorksheetAutoshapes( $request)
@@ -1092,6 +1101,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Batch converting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchConvertRequest" /></param>
     public function postBatchConvert( $request)
@@ -1169,6 +1179,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Clear cell area contents in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostClearContentsRequest" /></param>
     public function postClearContents( $request)
@@ -1376,6 +1387,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of worksheet columns.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetColumnsRequest" /></param>
     public function getWorksheetColumns( $request)
@@ -1518,6 +1530,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of rows in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetRowsRequest" /></param>
     public function getWorksheetRows( $request)
@@ -1712,6 +1725,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve chart area description in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetChartAreaRequest" /></param>
     public function getChartArea( $request)
@@ -1750,6 +1764,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of charts in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetChartsRequest" /></param>
     public function getWorksheetCharts( $request)
@@ -2061,6 +2076,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of conditional formattings in a worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetConditionalFormattingsRequest" /></param>
     public function getWorksheetConditionalFormattings( $request)
@@ -2177,6 +2193,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve workbooks in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorkbookRequest" /></param>
     public function getWorkbook( $request)
@@ -2344,6 +2361,19 @@ class CellsApi
     }
 
     /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostConvertWorkbookRequest" /></param>
+    public function postConvertWorkbook( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Export Excel internal elements or the workbook itself to various format files.
     /// </summary>
     /// <param name="request">Request. <see cref="PostExportRequest" /></param>
     public function postExport( $request)
@@ -2513,6 +2543,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of hyperlinks in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetHyperlinksRequest" /></param>
     public function getWorksheetHyperlinks( $request)
@@ -2590,6 +2621,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Assemble data files with template files to generate files in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PostAssembleRequest" /></param>
     public function postAssemble( $request)
@@ -2784,6 +2816,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of ListObjects in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetListObjectsRequest" /></param>
     public function getWorksheetListObjects( $request)
@@ -2952,6 +2985,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of OLE objects in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetOleObjectsRequest" /></param>
     public function getWorksheetOleObjects( $request)
@@ -3029,6 +3063,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of vertical page breaks in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetVerticalPageBreaksRequest" /></param>
     public function getVerticalPageBreaks( $request)
@@ -3158,6 +3193,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve page setup description in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetPageSetupRequest" /></param>
     public function getPageSetup( $request)
@@ -3274,6 +3310,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of pictures in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetPicturesRequest" /></param>
     public function getWorksheetPictures( $request)
@@ -3303,6 +3340,19 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="PutWorksheetAddPictureRequest" /></param>
     public function putWorksheetAddPicture( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// add new picture in the cells.
+    /// </summary>
+    /// <param name="request">Request. <see cref="AddPictureInCellRequest" /></param>
+    public function addPictureInCell( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -3351,6 +3401,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of pivottables  in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetPivotTablesRequest" /></param>
     public function getWorksheetPivotTables( $request)
@@ -3623,6 +3674,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of Excel file properties.
     /// </summary>
     /// <param name="request">Request. <see cref="GetDocumentPropertiesRequest" /></param>
     public function getDocumentProperties( $request)
@@ -3687,6 +3739,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Excel file digital signature.
     /// </summary>
     /// <param name="request">Request. <see cref="PostDigitalSignatureRequest" /></param>
     public function postDigitalSignature( $request)
@@ -3816,6 +3869,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Copy content from the source range to the destination range in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellsRangesCopyRequest" /></param>
     public function postWorksheetCellsRangesCopy( $request)
@@ -3963,7 +4017,7 @@ class CellsApi
     public function postWorksheetCellsRangeToImage( $request)
     {
         $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;
@@ -3996,6 +4050,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of shapes in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetShapesRequest" /></param>
     public function getWorksheetShapes( $request)
@@ -4099,6 +4154,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of sparkline groups in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetSparklineGroupsRequest" /></param>
     public function getWorksheetSparklineGroups( $request)
@@ -4322,6 +4378,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve the description of the default style for the workbook .
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorkbookDefaultStyleRequest" /></param>
     public function getWorkbookDefaultStyle( $request)
@@ -4633,6 +4690,20 @@ class CellsApi
     }
 
     /// <summary>
+    /// Get all style in the workbook.
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetAllStylesRequest" /></param>
+    public function getAllStyles( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\StylesResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Retrieve the description of worksheets from a workbook.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetsRequest" /></param>
     public function getWorksheets( $request)
@@ -5139,6 +5210,7 @@ class CellsApi
     }
 
     /// <summary>
+    /// Retrieve descriptions of validations in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetValidationsRequest" /></param>
     public function getWorksheetValidations( $request)

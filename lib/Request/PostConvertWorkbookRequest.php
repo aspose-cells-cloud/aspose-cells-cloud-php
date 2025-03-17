@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostBatchConvertRequest.cs">
+ * <copyright company="Aspose" file="PostConvertWorkbookRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,25 +38,25 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PostBatchConvert operation.
+ * Request model for  PostConvertWorkbook operation.
  */
 
-class PostBatchConvertRequest extends BaseApiRequest
+class PostConvertWorkbookRequest extends BaseApiRequest
 {
 
     /*
-    * batchConvertRequest : BatchConvertRequest Batch conversion file request. 
+    * convertWorkbookOptions : 
     */ 
-    public $batch_convert_request;
+    public $convert_workbook_options;
 
-    public function getBatchConvertRequest()
+    public function getConvertWorkbookOptions()
     {
-        return $this->batch_convert_request;
+        return $this->convert_workbook_options;
     }
 
-    public function setBatchConvertRequest($value)
+    public function setConvertWorkbookOptions($value)
     {
-        $this->batch_convert_request = $value;
+        $this->convert_workbook_options = $value;
     }
 
     public function __construct()
@@ -65,14 +65,14 @@ class PostBatchConvertRequest extends BaseApiRequest
 
     public function createHttpRequest($headerSelector,$config)
     {
-        // verify the required parameter 'batch_convert_request' is set
-        if ($this->batch_convert_request === null) {
+        // verify the required parameter 'convert_workbook_options' is set
+        if ($this->convert_workbook_options === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $batch_convert_request when calling PostBatchConvert'
+                'Missing the required parameter $convert_workbook_options when calling PostConvertWorkbook'
             );
         } 
 
-        $resourcePath = '/cells/batch/convert';
+        $resourcePath = '/cells/convertWorkbook';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -81,9 +81,9 @@ class PostBatchConvertRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->batch_convert_request)) {
-            $_tempBody = $this->batch_convert_request;
-            $_tempBodyName =str_replace('_','', 'batch_convert_request');
+        if (isset($this->convert_workbook_options)) {
+            $_tempBody = $this->convert_workbook_options;
+            $_tempBodyName =str_replace('_','', 'convert_workbook_options');
         }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(

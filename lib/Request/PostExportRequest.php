@@ -60,7 +60,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * objectType : 
+    * objectType : Exported object type:workbook/worksheet/chart/comment/picture/shape/listobject/oleobject.
     */ 
     public $object_type;
 
@@ -75,7 +75,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * format : 
+    * format : The conversion format(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers).
     */ 
     public $format;
 
@@ -90,7 +90,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -120,7 +120,7 @@ class PostExportRequest extends BaseApiRequest
     }
 
     /*
-    * region : 
+    * region : The regional settings for workbook.
     */ 
     public $region;
 

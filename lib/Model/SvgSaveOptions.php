@@ -47,6 +47,18 @@ class SvgSaveOptions
       */
     protected static $swaggerTypes = [
         'sheet_index' => 'int',
+        'chart_image_type' => 'string',
+        'embeded_image_name_in_svg' => 'string',
+        'horizontal_resolution' => 'int',
+        'image_format' => 'string',
+        'is_cell_auto_fit' => 'bool',
+        'one_page_per_sheet' => 'bool',
+        'only_area' => 'bool',
+        'printing_page' => 'string',
+        'print_with_status_dialog' => 'bool',
+        'quality' => 'int',
+        'tiff_compression' => 'string',
+        'vertical_resolution' => 'int',
         'save_format' => 'string',
         'cached_file_folder' => 'string',
         'clear_data' => 'bool',
@@ -54,7 +66,12 @@ class SvgSaveOptions
         'enable_http_compression' => 'bool',
         'refresh_chart_cache' => 'bool',
         'sort_names' => 'bool',
-        'validate_merged_areas' => 'bool'
+        'validate_merged_areas' => 'bool',
+        'merge_areas' => 'bool',
+        'sort_external_names' => 'bool',
+        'check_excel_restriction' => 'bool',
+        'update_smart_art' => 'bool',
+        'encrypt_document_properties' => 'bool'
     ];
 
     /**
@@ -64,6 +81,18 @@ class SvgSaveOptions
       */
     protected static $swaggerFormats = [
         'sheet_index' => null  ,
+        'chart_image_type' => null  ,
+        'embeded_image_name_in_svg' => null  ,
+        'horizontal_resolution' => null  ,
+        'image_format' => null  ,
+        'is_cell_auto_fit' => null  ,
+        'one_page_per_sheet' => null  ,
+        'only_area' => null  ,
+        'printing_page' => null  ,
+        'print_with_status_dialog' => null  ,
+        'quality' => null  ,
+        'tiff_compression' => null  ,
+        'vertical_resolution' => null  ,
         'save_format' => null  ,
         'cached_file_folder' => null  ,
         'clear_data' => null  ,
@@ -71,7 +100,12 @@ class SvgSaveOptions
         'enable_http_compression' => null  ,
         'refresh_chart_cache' => null  ,
         'sort_names' => null  ,
-        'validate_merged_areas' => null  
+        'validate_merged_areas' => null  ,
+        'merge_areas' => null  ,
+        'sort_external_names' => null  ,
+        'check_excel_restriction' => null  ,
+        'update_smart_art' => null  ,
+        'encrypt_document_properties' => null  
     ];
 
     /**
@@ -102,6 +136,18 @@ class SvgSaveOptions
      */
     protected static $attributeMap = [
          'sheet_index' => 'SheetIndex' ,
+         'chart_image_type' => 'ChartImageType' ,
+         'embeded_image_name_in_svg' => 'EmbededImageNameInSvg' ,
+         'horizontal_resolution' => 'HorizontalResolution' ,
+         'image_format' => 'ImageFormat' ,
+         'is_cell_auto_fit' => 'IsCellAutoFit' ,
+         'one_page_per_sheet' => 'OnePagePerSheet' ,
+         'only_area' => 'OnlyArea' ,
+         'printing_page' => 'PrintingPage' ,
+         'print_with_status_dialog' => 'PrintWithStatusDialog' ,
+         'quality' => 'Quality' ,
+         'tiff_compression' => 'TiffCompression' ,
+         'vertical_resolution' => 'VerticalResolution' ,
          'save_format' => 'SaveFormat' ,
          'cached_file_folder' => 'CachedFileFolder' ,
          'clear_data' => 'ClearData' ,
@@ -109,7 +155,12 @@ class SvgSaveOptions
          'enable_http_compression' => 'EnableHTTPCompression' ,
          'refresh_chart_cache' => 'RefreshChartCache' ,
          'sort_names' => 'SortNames' ,
-         'validate_merged_areas' => 'ValidateMergedAreas' 
+         'validate_merged_areas' => 'ValidateMergedAreas' ,
+         'merge_areas' => 'MergeAreas' ,
+         'sort_external_names' => 'SortExternalNames' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' ,
+         'update_smart_art' => 'UpdateSmartArt' ,
+         'encrypt_document_properties' => 'EncryptDocumentProperties' 
     ];
 
     /**
@@ -119,6 +170,18 @@ class SvgSaveOptions
      */
     protected static $setters = [
         'sheet_index' => 'setSheetIndex' ,
+        'chart_image_type' => 'setChartImageType' ,
+        'embeded_image_name_in_svg' => 'setEmbededImageNameInSvg' ,
+        'horizontal_resolution' => 'setHorizontalResolution' ,
+        'image_format' => 'setImageFormat' ,
+        'is_cell_auto_fit' => 'setIsCellAutoFit' ,
+        'one_page_per_sheet' => 'setOnePagePerSheet' ,
+        'only_area' => 'setOnlyArea' ,
+        'printing_page' => 'setPrintingPage' ,
+        'print_with_status_dialog' => 'setPrintWithStatusDialog' ,
+        'quality' => 'setQuality' ,
+        'tiff_compression' => 'setTiffCompression' ,
+        'vertical_resolution' => 'setVerticalResolution' ,
         'save_format' => 'setSaveFormat' ,
         'cached_file_folder' => 'setCachedFileFolder' ,
         'clear_data' => 'setClearData' ,
@@ -126,7 +189,12 @@ class SvgSaveOptions
         'enable_http_compression' => 'setEnableHTTPCompression' ,
         'refresh_chart_cache' => 'setRefreshChartCache' ,
         'sort_names' => 'setSortNames' ,
-        'validate_merged_areas' => 'setValidateMergedAreas' 
+        'validate_merged_areas' => 'setValidateMergedAreas' ,
+        'merge_areas' => 'setMergeAreas' ,
+        'sort_external_names' => 'setSortExternalNames' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' ,
+        'update_smart_art' => 'setUpdateSmartArt' ,
+        'encrypt_document_properties' => 'setEncryptDocumentProperties' 
     ];
 
     /**
@@ -136,6 +204,18 @@ class SvgSaveOptions
      */
     protected static $getters = [
         'sheet_index' => 'getSheetIndex' ,
+        'chart_image_type' => 'getChartImageType' ,
+        'embeded_image_name_in_svg' => 'getEmbededImageNameInSvg' ,
+        'horizontal_resolution' => 'getHorizontalResolution' ,
+        'image_format' => 'getImageFormat' ,
+        'is_cell_auto_fit' => 'getIsCellAutoFit' ,
+        'one_page_per_sheet' => 'getOnePagePerSheet' ,
+        'only_area' => 'getOnlyArea' ,
+        'printing_page' => 'getPrintingPage' ,
+        'print_with_status_dialog' => 'getPrintWithStatusDialog' ,
+        'quality' => 'getQuality' ,
+        'tiff_compression' => 'getTiffCompression' ,
+        'vertical_resolution' => 'getVerticalResolution' ,
         'save_format' => 'getSaveFormat' ,
         'cached_file_folder' => 'getCachedFileFolder' ,
         'clear_data' => 'getClearData' ,
@@ -143,7 +223,12 @@ class SvgSaveOptions
         'enable_http_compression' => 'getEnableHTTPCompression' ,
         'refresh_chart_cache' => 'getRefreshChartCache' ,
         'sort_names' => 'getSortNames' ,
-        'validate_merged_areas' => 'getValidateMergedAreas' 
+        'validate_merged_areas' => 'getValidateMergedAreas' ,
+        'merge_areas' => 'getMergeAreas' ,
+        'sort_external_names' => 'getSortExternalNames' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' ,
+        'update_smart_art' => 'getUpdateSmartArt' ,
+        'encrypt_document_properties' => 'getEncryptDocumentProperties' 
     ];
 
     /**
@@ -203,6 +288,18 @@ class SvgSaveOptions
     public function __construct(array $data = null)
     {
         $this->container['sheet_index'] = isset($data['sheet_index']) ? $data['sheet_index'] : null;
+        $this->container['chart_image_type'] = isset($data['chart_image_type']) ? $data['chart_image_type'] : null;
+        $this->container['embeded_image_name_in_svg'] = isset($data['embeded_image_name_in_svg']) ? $data['embeded_image_name_in_svg'] : null;
+        $this->container['horizontal_resolution'] = isset($data['horizontal_resolution']) ? $data['horizontal_resolution'] : null;
+        $this->container['image_format'] = isset($data['image_format']) ? $data['image_format'] : null;
+        $this->container['is_cell_auto_fit'] = isset($data['is_cell_auto_fit']) ? $data['is_cell_auto_fit'] : null;
+        $this->container['one_page_per_sheet'] = isset($data['one_page_per_sheet']) ? $data['one_page_per_sheet'] : null;
+        $this->container['only_area'] = isset($data['only_area']) ? $data['only_area'] : null;
+        $this->container['printing_page'] = isset($data['printing_page']) ? $data['printing_page'] : null;
+        $this->container['print_with_status_dialog'] = isset($data['print_with_status_dialog']) ? $data['print_with_status_dialog'] : null;
+        $this->container['quality'] = isset($data['quality']) ? $data['quality'] : null;
+        $this->container['tiff_compression'] = isset($data['tiff_compression']) ? $data['tiff_compression'] : null;
+        $this->container['vertical_resolution'] = isset($data['vertical_resolution']) ? $data['vertical_resolution'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
@@ -211,6 +308,11 @@ class SvgSaveOptions
         $this->container['refresh_chart_cache'] = isset($data['refresh_chart_cache']) ? $data['refresh_chart_cache'] : null;
         $this->container['sort_names'] = isset($data['sort_names']) ? $data['sort_names'] : null;
         $this->container['validate_merged_areas'] = isset($data['validate_merged_areas']) ? $data['validate_merged_areas'] : null;
+        $this->container['merge_areas'] = isset($data['merge_areas']) ? $data['merge_areas'] : null;
+        $this->container['sort_external_names'] = isset($data['sort_external_names']) ? $data['sort_external_names'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['update_smart_art'] = isset($data['update_smart_art']) ? $data['update_smart_art'] : null;
+        $this->container['encrypt_document_properties'] = isset($data['encrypt_document_properties']) ? $data['encrypt_document_properties'] : null;
     }
 
     /**
@@ -223,6 +325,42 @@ class SvgSaveOptions
         $invalidProperties = [];
         if ($this->container['sheet_index'] === null) {
             $invalidProperties[] = "'sheet_index' can't be null";
+        }
+        if ($this->container['chart_image_type'] === null) {
+            $invalidProperties[] = "'chart_image_type' can't be null";
+        }
+        if ($this->container['embeded_image_name_in_svg'] === null) {
+            $invalidProperties[] = "'embeded_image_name_in_svg' can't be null";
+        }
+        if ($this->container['horizontal_resolution'] === null) {
+            $invalidProperties[] = "'horizontal_resolution' can't be null";
+        }
+        if ($this->container['image_format'] === null) {
+            $invalidProperties[] = "'image_format' can't be null";
+        }
+        if ($this->container['is_cell_auto_fit'] === null) {
+            $invalidProperties[] = "'is_cell_auto_fit' can't be null";
+        }
+        if ($this->container['one_page_per_sheet'] === null) {
+            $invalidProperties[] = "'one_page_per_sheet' can't be null";
+        }
+        if ($this->container['only_area'] === null) {
+            $invalidProperties[] = "'only_area' can't be null";
+        }
+        if ($this->container['printing_page'] === null) {
+            $invalidProperties[] = "'printing_page' can't be null";
+        }
+        if ($this->container['print_with_status_dialog'] === null) {
+            $invalidProperties[] = "'print_with_status_dialog' can't be null";
+        }
+        if ($this->container['quality'] === null) {
+            $invalidProperties[] = "'quality' can't be null";
+        }
+        if ($this->container['tiff_compression'] === null) {
+            $invalidProperties[] = "'tiff_compression' can't be null";
+        }
+        if ($this->container['vertical_resolution'] === null) {
+            $invalidProperties[] = "'vertical_resolution' can't be null";
         }
         if ($this->container['save_format'] === null) {
             $invalidProperties[] = "'save_format' can't be null";
@@ -248,6 +386,21 @@ class SvgSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
             $invalidProperties[] = "'validate_merged_areas' can't be null";
         }
+        if ($this->container['merge_areas'] === null) {
+            $invalidProperties[] = "'merge_areas' can't be null";
+        }
+        if ($this->container['sort_external_names'] === null) {
+            $invalidProperties[] = "'sort_external_names' can't be null";
+        }
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
+        }
+        if ($this->container['update_smart_art'] === null) {
+            $invalidProperties[] = "'update_smart_art' can't be null";
+        }
+        if ($this->container['encrypt_document_properties'] === null) {
+            $invalidProperties[] = "'encrypt_document_properties' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -260,6 +413,42 @@ class SvgSaveOptions
     public function valid()
     {
         if ($this->container['sheet_index'] === null) {
+                    return false;
+                }
+        if ($this->container['chart_image_type'] === null) {
+                    return false;
+                }
+        if ($this->container['embeded_image_name_in_svg'] === null) {
+                    return false;
+                }
+        if ($this->container['horizontal_resolution'] === null) {
+                    return false;
+                }
+        if ($this->container['image_format'] === null) {
+                    return false;
+                }
+        if ($this->container['is_cell_auto_fit'] === null) {
+                    return false;
+                }
+        if ($this->container['one_page_per_sheet'] === null) {
+                    return false;
+                }
+        if ($this->container['only_area'] === null) {
+                    return false;
+                }
+        if ($this->container['printing_page'] === null) {
+                    return false;
+                }
+        if ($this->container['print_with_status_dialog'] === null) {
+                    return false;
+                }
+        if ($this->container['quality'] === null) {
+                    return false;
+                }
+        if ($this->container['tiff_compression'] === null) {
+                    return false;
+                }
+        if ($this->container['vertical_resolution'] === null) {
                     return false;
                 }
         if ($this->container['save_format'] === null) {
@@ -286,6 +475,21 @@ class SvgSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
                     return false;
                 }
+        if ($this->container['merge_areas'] === null) {
+                    return false;
+                }
+        if ($this->container['sort_external_names'] === null) {
+                    return false;
+                }
+        if ($this->container['check_excel_restriction'] === null) {
+                    return false;
+                }
+        if ($this->container['update_smart_art'] === null) {
+                    return false;
+                }
+        if ($this->container['encrypt_document_properties'] === null) {
+                    return false;
+                }
         return true;
     }
    /**
@@ -308,6 +512,282 @@ class SvgSaveOptions
     public function setSheetIndex($sheet_index)
     {
         $this->container['sheet_index'] = $sheet_index;
+
+        return $this;
+    }
+   /**
+     * Gets chart_image_type
+     *
+     * @return string
+     */
+    public function getChartImageType()
+    {
+        return $this->container['chart_image_type'];
+    }
+
+    /**
+     * Sets chart_image_type
+     *
+     *  Indicate the chart imagetype when converting.
+     *
+     * @return $this
+     */
+    public function setChartImageType($chart_image_type)
+    {
+        $this->container['chart_image_type'] = $chart_image_type;
+
+        return $this;
+    }
+   /**
+     * Gets embeded_image_name_in_svg
+     *
+     * @return string
+     */
+    public function getEmbededImageNameInSvg()
+    {
+        return $this->container['embeded_image_name_in_svg'];
+    }
+
+    /**
+     * Sets embeded_image_name_in_svg
+     *
+     *  Indicate the filename of embeded image in svg. This should be full path with directory like "c:\\xpsEmbeded"
+     *
+     * @return $this
+     */
+    public function setEmbededImageNameInSvg($embeded_image_name_in_svg)
+    {
+        $this->container['embeded_image_name_in_svg'] = $embeded_image_name_in_svg;
+
+        return $this;
+    }
+   /**
+     * Gets horizontal_resolution
+     *
+     * @return int
+     */
+    public function getHorizontalResolution()
+    {
+        return $this->container['horizontal_resolution'];
+    }
+
+    /**
+     * Sets horizontal_resolution
+     *
+     *  Gets or sets the horizontal resolution for generated images, in dots per inch.                 Applies generating image method except Emf format images.               The default value is 96.
+     *
+     * @return $this
+     */
+    public function setHorizontalResolution($horizontal_resolution)
+    {
+        $this->container['horizontal_resolution'] = $horizontal_resolution;
+
+        return $this;
+    }
+   /**
+     * Gets image_format
+     *
+     * @return string
+     */
+    public function getImageFormat()
+    {
+        return $this->container['image_format'];
+    }
+
+    /**
+     * Sets image_format
+     *
+     *  Gets or sets the format of the generated images.  Don't apply the method that returns a Bitmap object.             The default value is ImageFormat.Bmp.  Don't apply the method that returns a Bitmap object.
+     *
+     * @return $this
+     */
+    public function setImageFormat($image_format)
+    {
+        $this->container['image_format'] = $image_format;
+
+        return $this;
+    }
+   /**
+     * Gets is_cell_auto_fit
+     *
+     * @return bool
+     */
+    public function getIsCellAutoFit()
+    {
+        return $this->container['is_cell_auto_fit'];
+    }
+
+    /**
+     * Sets is_cell_auto_fit
+     *
+     *  Indicates whether the width and height of the cells is automatically fitted by cell value. The default value is false.
+     *
+     * @return $this
+     */
+    public function setIsCellAutoFit($is_cell_auto_fit)
+    {
+        $this->container['is_cell_auto_fit'] = $is_cell_auto_fit;
+
+        return $this;
+    }
+   /**
+     * Gets one_page_per_sheet
+     *
+     * @return bool
+     */
+    public function getOnePagePerSheet()
+    {
+        return $this->container['one_page_per_sheet'];
+    }
+
+    /**
+     * Sets one_page_per_sheet
+     *
+     *  If OnePagePerSheet is true , all content of one sheet will output to only                one page in result. The paper size of pagesetup will be invalid, and the                other settings of pagesetup will still take effect.
+     *
+     * @return $this
+     */
+    public function setOnePagePerSheet($one_page_per_sheet)
+    {
+        $this->container['one_page_per_sheet'] = $one_page_per_sheet;
+
+        return $this;
+    }
+   /**
+     * Gets only_area
+     *
+     * @return bool
+     */
+    public function getOnlyArea()
+    {
+        return $this->container['only_area'];
+    }
+
+    /**
+     * Sets only_area
+     *
+     *  If this property is true , onle Area will be output, and no scale will take effect.
+     *
+     * @return $this
+     */
+    public function setOnlyArea($only_area)
+    {
+        $this->container['only_area'] = $only_area;
+
+        return $this;
+    }
+   /**
+     * Gets printing_page
+     *
+     * @return string
+     */
+    public function getPrintingPage()
+    {
+        return $this->container['printing_page'];
+    }
+
+    /**
+     * Sets printing_page
+     *
+     *  Indicates which pages will not be printed.
+     *
+     * @return $this
+     */
+    public function setPrintingPage($printing_page)
+    {
+        $this->container['printing_page'] = $printing_page;
+
+        return $this;
+    }
+   /**
+     * Gets print_with_status_dialog
+     *
+     * @return bool
+     */
+    public function getPrintWithStatusDialog()
+    {
+        return $this->container['print_with_status_dialog'];
+    }
+
+    /**
+     * Sets print_with_status_dialog
+     *
+     *  If PrintWithStatusDialog = true , there will be a dialog that shows current print status.  else no such dialog will show.
+     *
+     * @return $this
+     */
+    public function setPrintWithStatusDialog($print_with_status_dialog)
+    {
+        $this->container['print_with_status_dialog'] = $print_with_status_dialog;
+
+        return $this;
+    }
+   /**
+     * Gets quality
+     *
+     * @return int
+     */
+    public function getQuality()
+    {
+        return $this->container['quality'];
+    }
+
+    /**
+     * Sets quality
+     *
+     *  Gets or sets a value determining the quality of the generated images to apply only when saving pages to the Jpeg format.            Has effect only when saving to JPEG.  The value must be between 0 and 100. The default value is 100.
+     *
+     * @return $this
+     */
+    public function setQuality($quality)
+    {
+        $this->container['quality'] = $quality;
+
+        return $this;
+    }
+   /**
+     * Gets tiff_compression
+     *
+     * @return string
+     */
+    public function getTiffCompression()
+    {
+        return $this->container['tiff_compression'];
+    }
+
+    /**
+     * Sets tiff_compression
+     *
+     *  Gets or sets the type of compression to apply only when saving pages to the Tiff format.            Has effect only when saving to TIFF.  The default value is Lzw.
+     *
+     * @return $this
+     */
+    public function setTiffCompression($tiff_compression)
+    {
+        $this->container['tiff_compression'] = $tiff_compression;
+
+        return $this;
+    }
+   /**
+     * Gets vertical_resolution
+     *
+     * @return int
+     */
+    public function getVerticalResolution()
+    {
+        return $this->container['vertical_resolution'];
+    }
+
+    /**
+     * Sets vertical_resolution
+     *
+     *  Gets or sets the vertical resolution for generated images, in dots per inch.            Applies generating image method except Emf format image.            The default value is 96.
+     *
+     * @return $this
+     */
+    public function setVerticalResolution($vertical_resolution)
+    {
+        $this->container['vertical_resolution'] = $vertical_resolution;
 
         return $this;
     }
@@ -492,6 +972,121 @@ class SvgSaveOptions
     public function setValidateMergedAreas($validate_merged_areas)
     {
         $this->container['validate_merged_areas'] = $validate_merged_areas;
+
+        return $this;
+    }
+   /**
+     * Gets merge_areas
+     *
+     * @return bool
+     */
+    public function getMergeAreas()
+    {
+        return $this->container['merge_areas'];
+    }
+
+    /**
+     * Sets merge_areas
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMergeAreas($merge_areas)
+    {
+        $this->container['merge_areas'] = $merge_areas;
+
+        return $this;
+    }
+   /**
+     * Gets sort_external_names
+     *
+     * @return bool
+     */
+    public function getSortExternalNames()
+    {
+        return $this->container['sort_external_names'];
+    }
+
+    /**
+     * Sets sort_external_names
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setSortExternalNames($sort_external_names)
+    {
+        $this->container['sort_external_names'] = $sort_external_names;
+
+        return $this;
+    }
+   /**
+     * Gets check_excel_restriction
+     *
+     * @return bool
+     */
+    public function getCheckExcelRestriction()
+    {
+        return $this->container['check_excel_restriction'];
+    }
+
+    /**
+     * Sets check_excel_restriction
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckExcelRestriction($check_excel_restriction)
+    {
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
+
+        return $this;
+    }
+   /**
+     * Gets update_smart_art
+     *
+     * @return bool
+     */
+    public function getUpdateSmartArt()
+    {
+        return $this->container['update_smart_art'];
+    }
+
+    /**
+     * Sets update_smart_art
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setUpdateSmartArt($update_smart_art)
+    {
+        $this->container['update_smart_art'] = $update_smart_art;
+
+        return $this;
+    }
+   /**
+     * Gets encrypt_document_properties
+     *
+     * @return bool
+     */
+    public function getEncryptDocumentProperties()
+    {
+        return $this->container['encrypt_document_properties'];
+    }
+
+    /**
+     * Sets encrypt_document_properties
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEncryptDocumentProperties($encrypt_document_properties)
+    {
+        $this->container['encrypt_document_properties'] = $encrypt_document_properties;
 
         return $this;
     }

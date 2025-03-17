@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ChartPoints.cs">
+ * <copyright company="Aspose" file="StylesResponse.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ChartPoints
+class StylesResponse
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ChartPoints
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ChartPoints';     
+    protected static $swaggerModelName = 'StylesResponse';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,9 @@ class ChartPoints
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'chart_point_list' => '\Aspose\Cells\Cloud\Model\ChartPoint[]',
-        'link' => '\Aspose\Cells\Cloud\Model\Link'
+        'styles' => '\Aspose\Cells\Cloud\Model\Styles',
+        'code' => 'int',
+        'status' => 'string'
     ];
 
     /**
@@ -56,8 +57,9 @@ class ChartPoints
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'chart_point_list' => null  ,
-        'link' => null  
+        'styles' => null  ,
+        'code' => null  ,
+        'status' => null  
     ];
 
     /**
@@ -87,8 +89,9 @@ class ChartPoints
      * @var string[]
      */
     protected static $attributeMap = [
-         'chart_point_list' => 'ChartPointList' ,
-         'link' => 'link' 
+         'styles' => 'Styles' ,
+         'code' => 'Code' ,
+         'status' => 'Status' 
     ];
 
     /**
@@ -97,8 +100,9 @@ class ChartPoints
      * @var string[]
      */
     protected static $setters = [
-        'chart_point_list' => 'setChartPointList' ,
-        'link' => 'setlink' 
+        'styles' => 'setStyles' ,
+        'code' => 'setCode' ,
+        'status' => 'setStatus' 
     ];
 
     /**
@@ -107,8 +111,9 @@ class ChartPoints
      * @var string[]
      */
     protected static $getters = [
-        'chart_point_list' => 'getChartPointList' ,
-        'link' => 'getlink' 
+        'styles' => 'getStyles' ,
+        'code' => 'getCode' ,
+        'status' => 'getStatus' 
     ];
 
     /**
@@ -167,8 +172,9 @@ class ChartPoints
      */
     public function __construct(array $data = null)
     {
-        $this->container['chart_point_list'] = isset($data['chart_point_list']) ? $data['chart_point_list'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['styles'] = isset($data['styles']) ? $data['styles'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
     }
 
     /**
@@ -179,11 +185,14 @@ class ChartPoints
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['chart_point_list'] === null) {
-            $invalidProperties[] = "'chart_point_list' can't be null";
+        if ($this->container['styles'] === null) {
+            $invalidProperties[] = "'styles' can't be null";
         }
-        if ($this->container['link'] === null) {
-            $invalidProperties[] = "'link' can't be null";
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
         }
         return $invalidProperties;
     }
@@ -196,57 +205,83 @@ class ChartPoints
      */
     public function valid()
     {
-        if ($this->container['chart_point_list'] === null) {
+        if ($this->container['styles'] === null) {
                     return false;
                 }
-        if ($this->container['link'] === null) {
+        if ($this->container['code'] === null) {
+                    return false;
+                }
+        if ($this->container['status'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets chart_point_list
+     * Gets styles
      *
-     * @return \Aspose\Cells\Cloud\Model\ChartPoint[]
+     * @return \Aspose\Cells\Cloud\Model\Styles
      */
-    public function getChartPointList()
+    public function getStyles()
     {
-        return $this->container['chart_point_list'];
+        return $this->container['styles'];
     }
 
     /**
-     * Sets chart_point_list
+     * Sets styles
      *
-     *  This class has a property named ChartPointList of type List ChartPoint  with an XmlElement attribute "ChartPoint".
+     *  collection of styles.
      *
      * @return $this
      */
-    public function setChartPointList($chart_point_list)
+    public function setStyles($styles)
     {
-        $this->container['chart_point_list'] = $chart_point_list;
+        $this->container['styles'] = $styles;
 
         return $this;
     }
    /**
-     * Gets link
+     * Gets code
      *
-     * @return \Aspose\Cells\Cloud\Model\Link
+     * @return int
      */
-    public function getlink()
+    public function getCode()
     {
-        return $this->container['link'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets link
+     * Sets code
      *
      *  
      *
      * @return $this
      */
-    public function setlink($link)
+    public function setCode($code)
     {
-        $this->container['link'] = $link;
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+   /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
 
         return $this;
     }

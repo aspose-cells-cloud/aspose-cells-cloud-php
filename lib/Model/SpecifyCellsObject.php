@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ChartPoints.cs">
+ * <copyright company="Aspose" file="SpecifyCellsObject.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class ChartPoints
+class SpecifyCellsObject
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class ChartPoints
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ChartPoints';     
+    protected static $swaggerModelName = 'SpecifyCellsObject';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,8 +46,9 @@ class ChartPoints
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'chart_point_list' => '\Aspose\Cells\Cloud\Model\ChartPoint[]',
-        'link' => '\Aspose\Cells\Cloud\Model\Link'
+        'worksheet_name' => 'string',
+        'page_index' => 'int',
+        'region' => 'string'
     ];
 
     /**
@@ -56,8 +57,9 @@ class ChartPoints
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'chart_point_list' => null  ,
-        'link' => null  
+        'worksheet_name' => null  ,
+        'page_index' => null  ,
+        'region' => null  
     ];
 
     /**
@@ -87,8 +89,9 @@ class ChartPoints
      * @var string[]
      */
     protected static $attributeMap = [
-         'chart_point_list' => 'ChartPointList' ,
-         'link' => 'link' 
+         'worksheet_name' => 'WorksheetName' ,
+         'page_index' => 'PageIndex' ,
+         'region' => 'Region' 
     ];
 
     /**
@@ -97,8 +100,9 @@ class ChartPoints
      * @var string[]
      */
     protected static $setters = [
-        'chart_point_list' => 'setChartPointList' ,
-        'link' => 'setlink' 
+        'worksheet_name' => 'setWorksheetName' ,
+        'page_index' => 'setPageIndex' ,
+        'region' => 'setRegion' 
     ];
 
     /**
@@ -107,8 +111,9 @@ class ChartPoints
      * @var string[]
      */
     protected static $getters = [
-        'chart_point_list' => 'getChartPointList' ,
-        'link' => 'getlink' 
+        'worksheet_name' => 'getWorksheetName' ,
+        'page_index' => 'getPageIndex' ,
+        'region' => 'getRegion' 
     ];
 
     /**
@@ -167,8 +172,9 @@ class ChartPoints
      */
     public function __construct(array $data = null)
     {
-        $this->container['chart_point_list'] = isset($data['chart_point_list']) ? $data['chart_point_list'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['worksheet_name'] = isset($data['worksheet_name']) ? $data['worksheet_name'] : null;
+        $this->container['page_index'] = isset($data['page_index']) ? $data['page_index'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
     }
 
     /**
@@ -179,11 +185,14 @@ class ChartPoints
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['chart_point_list'] === null) {
-            $invalidProperties[] = "'chart_point_list' can't be null";
+        if ($this->container['worksheet_name'] === null) {
+            $invalidProperties[] = "'worksheet_name' can't be null";
         }
-        if ($this->container['link'] === null) {
-            $invalidProperties[] = "'link' can't be null";
+        if ($this->container['page_index'] === null) {
+            $invalidProperties[] = "'page_index' can't be null";
+        }
+        if ($this->container['region'] === null) {
+            $invalidProperties[] = "'region' can't be null";
         }
         return $invalidProperties;
     }
@@ -196,57 +205,83 @@ class ChartPoints
      */
     public function valid()
     {
-        if ($this->container['chart_point_list'] === null) {
+        if ($this->container['worksheet_name'] === null) {
                     return false;
                 }
-        if ($this->container['link'] === null) {
+        if ($this->container['page_index'] === null) {
+                    return false;
+                }
+        if ($this->container['region'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets chart_point_list
+     * Gets worksheet_name
      *
-     * @return \Aspose\Cells\Cloud\Model\ChartPoint[]
+     * @return string
      */
-    public function getChartPointList()
+    public function getWorksheetName()
     {
-        return $this->container['chart_point_list'];
+        return $this->container['worksheet_name'];
     }
 
     /**
-     * Sets chart_point_list
-     *
-     *  This class has a property named ChartPointList of type List ChartPoint  with an XmlElement attribute "ChartPoint".
-     *
-     * @return $this
-     */
-    public function setChartPointList($chart_point_list)
-    {
-        $this->container['chart_point_list'] = $chart_point_list;
-
-        return $this;
-    }
-   /**
-     * Gets link
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link
-     */
-    public function getlink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
+     * Sets worksheet_name
      *
      *  
      *
      * @return $this
      */
-    public function setlink($link)
+    public function setWorksheetName($worksheet_name)
     {
-        $this->container['link'] = $link;
+        $this->container['worksheet_name'] = $worksheet_name;
+
+        return $this;
+    }
+   /**
+     * Gets page_index
+     *
+     * @return int
+     */
+    public function getPageIndex()
+    {
+        return $this->container['page_index'];
+    }
+
+    /**
+     * Sets page_index
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPageIndex($page_index)
+    {
+        $this->container['page_index'] = $page_index;
+
+        return $this;
+    }
+   /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
 
         return $this;
     }

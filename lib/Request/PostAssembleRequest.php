@@ -75,7 +75,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * outFormat : 
+    * outFormat : The format to convert(CSV/XLS/HTML/MHTML/ODS/PDF/XML/TXT/TIFF/XLSB/XLSM/XLSX/XLTM/XLTX/XPS/PNG/JPG/JPEG/GIF/EMF/BMP/MD[Markdown]/Numbers)
     */ 
     public $out_format;
 
@@ -90,7 +90,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * password : 
+    * password : The password needed to open an Excel file.
     */ 
     public $password;
 
@@ -105,7 +105,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * checkExcelRestriction : 
+    * checkExcelRestriction : Whether check restriction of excel file when user modify cells related objects.
     */ 
     public $check_excel_restriction;
 
@@ -120,7 +120,7 @@ class PostAssembleRequest extends BaseApiRequest
     }
 
     /*
-    * region : 
+    * region : The regional settings for workbook.
     */ 
     public $region;
 

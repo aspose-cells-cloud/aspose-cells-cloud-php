@@ -348,7 +348,7 @@ class Workbook
     /**
      * Sets links
      *
-     *  
+     *  A property of type List Link  named Links is specified to be serialized as an XmlElement with the tag "link".
      *
      * @return $this
      */

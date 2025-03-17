@@ -217,7 +217,7 @@ class Charts
     /**
      * Sets chart_list
      *
-     *  
+     *  A property named ChartList of type List LinkElement  that is publicly accessible with both read and write capabilities.
      *
      * @return $this
      */

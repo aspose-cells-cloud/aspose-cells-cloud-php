@@ -229,7 +229,7 @@ class PageSectionsResponse
     /**
      * Sets page_sections
      *
-     *  
+     *  A property named PageSections of type List PageSection  to store a collection of PageSection objects.
      *
      * @return $this
      */

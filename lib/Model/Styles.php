@@ -46,7 +46,7 @@ class Styles
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'style_list' => '\Aspose\Cells\Cloud\Model\LinkElement[]',
+        'style_list' => '\Aspose\Cells\Cloud\Model\Style[]',
         'link' => '\Aspose\Cells\Cloud\Model\Link'
     ];
 
@@ -207,7 +207,7 @@ class Styles
    /**
      * Gets style_list
      *
-     * @return \Aspose\Cells\Cloud\Model\LinkElement[]
+     * @return \Aspose\Cells\Cloud\Model\Style[]
      */
     public function getStyleList()
     {

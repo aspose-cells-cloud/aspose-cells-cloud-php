@@ -71,7 +71,9 @@ class DocxSaveOptions
         'enable_http_compression' => 'bool',
         'refresh_chart_cache' => 'bool',
         'sort_names' => 'bool',
-        'validate_merged_areas' => 'bool'
+        'validate_merged_areas' => 'bool',
+        'check_excel_restriction' => 'bool',
+        'encrypt_document_properties' => 'bool'
     ];
 
     /**
@@ -105,7 +107,9 @@ class DocxSaveOptions
         'enable_http_compression' => null  ,
         'refresh_chart_cache' => null  ,
         'sort_names' => null  ,
-        'validate_merged_areas' => null  
+        'validate_merged_areas' => null  ,
+        'check_excel_restriction' => null  ,
+        'encrypt_document_properties' => null  
     ];
 
     /**
@@ -160,7 +164,9 @@ class DocxSaveOptions
          'enable_http_compression' => 'EnableHTTPCompression' ,
          'refresh_chart_cache' => 'RefreshChartCache' ,
          'sort_names' => 'SortNames' ,
-         'validate_merged_areas' => 'ValidateMergedAreas' 
+         'validate_merged_areas' => 'ValidateMergedAreas' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' ,
+         'encrypt_document_properties' => 'EncryptDocumentProperties' 
     ];
 
     /**
@@ -194,7 +200,9 @@ class DocxSaveOptions
         'enable_http_compression' => 'setEnableHTTPCompression' ,
         'refresh_chart_cache' => 'setRefreshChartCache' ,
         'sort_names' => 'setSortNames' ,
-        'validate_merged_areas' => 'setValidateMergedAreas' 
+        'validate_merged_areas' => 'setValidateMergedAreas' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' ,
+        'encrypt_document_properties' => 'setEncryptDocumentProperties' 
     ];
 
     /**
@@ -228,7 +236,9 @@ class DocxSaveOptions
         'enable_http_compression' => 'getEnableHTTPCompression' ,
         'refresh_chart_cache' => 'getRefreshChartCache' ,
         'sort_names' => 'getSortNames' ,
-        'validate_merged_areas' => 'getValidateMergedAreas' 
+        'validate_merged_areas' => 'getValidateMergedAreas' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' ,
+        'encrypt_document_properties' => 'getEncryptDocumentProperties' 
     ];
 
     /**
@@ -313,6 +323,8 @@ class DocxSaveOptions
         $this->container['refresh_chart_cache'] = isset($data['refresh_chart_cache']) ? $data['refresh_chart_cache'] : null;
         $this->container['sort_names'] = isset($data['sort_names']) ? $data['sort_names'] : null;
         $this->container['validate_merged_areas'] = isset($data['validate_merged_areas']) ? $data['validate_merged_areas'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['encrypt_document_properties'] = isset($data['encrypt_document_properties']) ? $data['encrypt_document_properties'] : null;
     }
 
     /**
@@ -401,6 +413,12 @@ class DocxSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
             $invalidProperties[] = "'validate_merged_areas' can't be null";
         }
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
+        }
+        if ($this->container['encrypt_document_properties'] === null) {
+            $invalidProperties[] = "'encrypt_document_properties' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -488,6 +506,12 @@ class DocxSaveOptions
                     return false;
                 }
         if ($this->container['validate_merged_areas'] === null) {
+                    return false;
+                }
+        if ($this->container['check_excel_restriction'] === null) {
+                    return false;
+                }
+        if ($this->container['encrypt_document_properties'] === null) {
                     return false;
                 }
         return true;
@@ -1087,6 +1111,52 @@ class DocxSaveOptions
     public function setValidateMergedAreas($validate_merged_areas)
     {
         $this->container['validate_merged_areas'] = $validate_merged_areas;
+
+        return $this;
+    }
+   /**
+     * Gets check_excel_restriction
+     *
+     * @return bool
+     */
+    public function getCheckExcelRestriction()
+    {
+        return $this->container['check_excel_restriction'];
+    }
+
+    /**
+     * Sets check_excel_restriction
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckExcelRestriction($check_excel_restriction)
+    {
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
+
+        return $this;
+    }
+   /**
+     * Gets encrypt_document_properties
+     *
+     * @return bool
+     */
+    public function getEncryptDocumentProperties()
+    {
+        return $this->container['encrypt_document_properties'];
+    }
+
+    /**
+     * Sets encrypt_document_properties
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEncryptDocumentProperties($encrypt_document_properties)
+    {
+        $this->container['encrypt_document_properties'] = $encrypt_document_properties;
 
         return $this;
     }

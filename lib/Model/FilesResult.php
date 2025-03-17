@@ -205,7 +205,7 @@ class FilesResult
     /**
      * Sets files
      *
-     *  
+     *  A property named **Files** of type **IList FileInfo ** containing a collection of file information objects.
      *
      * @return $this
      */

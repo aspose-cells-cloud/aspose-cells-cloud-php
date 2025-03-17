@@ -45,7 +45,7 @@ class PostClearContentsRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : The worksheet name.
     */ 
     public $sheet_name;
 
@@ -75,7 +75,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Represents the range to which the specified cells applies.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * startRow : 
+    * startRow : The start row index.
     */ 
     public $start_row;
 
@@ -105,7 +105,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * startColumn : 
+    * startColumn : The start column index.
     */ 
     public $start_column;
 
@@ -120,7 +120,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * endRow : 
+    * endRow : The end row index.
     */ 
     public $end_row;
 
@@ -135,7 +135,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * endColumn : 
+    * endColumn : The end column index.
     */ 
     public $end_column;
 
@@ -150,7 +150,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -165,7 +165,7 @@ class PostClearContentsRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

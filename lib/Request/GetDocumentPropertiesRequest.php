@@ -45,7 +45,7 @@ class GetDocumentPropertiesRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : The workbook name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class GetDocumentPropertiesRequest extends BaseApiRequest
     }
 
     /*
-    * type : 
+    * type : Excel property type.
     */ 
     public $type;
 
@@ -75,7 +75,7 @@ class GetDocumentPropertiesRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder where the file is situated.
     */ 
     public $folder;
 
@@ -90,7 +90,7 @@ class GetDocumentPropertiesRequest extends BaseApiRequest
     }
 
     /*
-    * storageName : 
+    * storageName : The storage name where the file is situated.
     */ 
     public $storage_name;
 

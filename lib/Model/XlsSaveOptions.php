@@ -46,6 +46,8 @@ class XlsSaveOptions
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'match_color' => 'bool',
+        'wps_compatibility' => 'bool',
         'save_format' => 'string',
         'cached_file_folder' => 'string',
         'clear_data' => 'bool',
@@ -53,7 +55,12 @@ class XlsSaveOptions
         'enable_http_compression' => 'bool',
         'refresh_chart_cache' => 'bool',
         'sort_names' => 'bool',
-        'validate_merged_areas' => 'bool'
+        'validate_merged_areas' => 'bool',
+        'merge_areas' => 'bool',
+        'sort_external_names' => 'bool',
+        'check_excel_restriction' => 'bool',
+        'update_smart_art' => 'bool',
+        'encrypt_document_properties' => 'bool'
     ];
 
     /**
@@ -62,6 +69,8 @@ class XlsSaveOptions
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'match_color' => null  ,
+        'wps_compatibility' => null  ,
         'save_format' => null  ,
         'cached_file_folder' => null  ,
         'clear_data' => null  ,
@@ -69,7 +78,12 @@ class XlsSaveOptions
         'enable_http_compression' => null  ,
         'refresh_chart_cache' => null  ,
         'sort_names' => null  ,
-        'validate_merged_areas' => null  
+        'validate_merged_areas' => null  ,
+        'merge_areas' => null  ,
+        'sort_external_names' => null  ,
+        'check_excel_restriction' => null  ,
+        'update_smart_art' => null  ,
+        'encrypt_document_properties' => null  
     ];
 
     /**
@@ -99,6 +113,8 @@ class XlsSaveOptions
      * @var string[]
      */
     protected static $attributeMap = [
+         'match_color' => 'MatchColor' ,
+         'wps_compatibility' => 'WpsCompatibility' ,
          'save_format' => 'SaveFormat' ,
          'cached_file_folder' => 'CachedFileFolder' ,
          'clear_data' => 'ClearData' ,
@@ -106,7 +122,12 @@ class XlsSaveOptions
          'enable_http_compression' => 'EnableHTTPCompression' ,
          'refresh_chart_cache' => 'RefreshChartCache' ,
          'sort_names' => 'SortNames' ,
-         'validate_merged_areas' => 'ValidateMergedAreas' 
+         'validate_merged_areas' => 'ValidateMergedAreas' ,
+         'merge_areas' => 'MergeAreas' ,
+         'sort_external_names' => 'SortExternalNames' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' ,
+         'update_smart_art' => 'UpdateSmartArt' ,
+         'encrypt_document_properties' => 'EncryptDocumentProperties' 
     ];
 
     /**
@@ -115,6 +136,8 @@ class XlsSaveOptions
      * @var string[]
      */
     protected static $setters = [
+        'match_color' => 'setMatchColor' ,
+        'wps_compatibility' => 'setWpsCompatibility' ,
         'save_format' => 'setSaveFormat' ,
         'cached_file_folder' => 'setCachedFileFolder' ,
         'clear_data' => 'setClearData' ,
@@ -122,7 +145,12 @@ class XlsSaveOptions
         'enable_http_compression' => 'setEnableHTTPCompression' ,
         'refresh_chart_cache' => 'setRefreshChartCache' ,
         'sort_names' => 'setSortNames' ,
-        'validate_merged_areas' => 'setValidateMergedAreas' 
+        'validate_merged_areas' => 'setValidateMergedAreas' ,
+        'merge_areas' => 'setMergeAreas' ,
+        'sort_external_names' => 'setSortExternalNames' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' ,
+        'update_smart_art' => 'setUpdateSmartArt' ,
+        'encrypt_document_properties' => 'setEncryptDocumentProperties' 
     ];
 
     /**
@@ -131,6 +159,8 @@ class XlsSaveOptions
      * @var string[]
      */
     protected static $getters = [
+        'match_color' => 'getMatchColor' ,
+        'wps_compatibility' => 'getWpsCompatibility' ,
         'save_format' => 'getSaveFormat' ,
         'cached_file_folder' => 'getCachedFileFolder' ,
         'clear_data' => 'getClearData' ,
@@ -138,7 +168,12 @@ class XlsSaveOptions
         'enable_http_compression' => 'getEnableHTTPCompression' ,
         'refresh_chart_cache' => 'getRefreshChartCache' ,
         'sort_names' => 'getSortNames' ,
-        'validate_merged_areas' => 'getValidateMergedAreas' 
+        'validate_merged_areas' => 'getValidateMergedAreas' ,
+        'merge_areas' => 'getMergeAreas' ,
+        'sort_external_names' => 'getSortExternalNames' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' ,
+        'update_smart_art' => 'getUpdateSmartArt' ,
+        'encrypt_document_properties' => 'getEncryptDocumentProperties' 
     ];
 
     /**
@@ -197,6 +232,8 @@ class XlsSaveOptions
      */
     public function __construct(array $data = null)
     {
+        $this->container['match_color'] = isset($data['match_color']) ? $data['match_color'] : null;
+        $this->container['wps_compatibility'] = isset($data['wps_compatibility']) ? $data['wps_compatibility'] : null;
         $this->container['save_format'] = isset($data['save_format']) ? $data['save_format'] : null;
         $this->container['cached_file_folder'] = isset($data['cached_file_folder']) ? $data['cached_file_folder'] : null;
         $this->container['clear_data'] = isset($data['clear_data']) ? $data['clear_data'] : null;
@@ -205,6 +242,11 @@ class XlsSaveOptions
         $this->container['refresh_chart_cache'] = isset($data['refresh_chart_cache']) ? $data['refresh_chart_cache'] : null;
         $this->container['sort_names'] = isset($data['sort_names']) ? $data['sort_names'] : null;
         $this->container['validate_merged_areas'] = isset($data['validate_merged_areas']) ? $data['validate_merged_areas'] : null;
+        $this->container['merge_areas'] = isset($data['merge_areas']) ? $data['merge_areas'] : null;
+        $this->container['sort_external_names'] = isset($data['sort_external_names']) ? $data['sort_external_names'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
+        $this->container['update_smart_art'] = isset($data['update_smart_art']) ? $data['update_smart_art'] : null;
+        $this->container['encrypt_document_properties'] = isset($data['encrypt_document_properties']) ? $data['encrypt_document_properties'] : null;
     }
 
     /**
@@ -215,6 +257,12 @@ class XlsSaveOptions
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+        if ($this->container['match_color'] === null) {
+            $invalidProperties[] = "'match_color' can't be null";
+        }
+        if ($this->container['wps_compatibility'] === null) {
+            $invalidProperties[] = "'wps_compatibility' can't be null";
+        }
         if ($this->container['save_format'] === null) {
             $invalidProperties[] = "'save_format' can't be null";
         }
@@ -239,6 +287,21 @@ class XlsSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
             $invalidProperties[] = "'validate_merged_areas' can't be null";
         }
+        if ($this->container['merge_areas'] === null) {
+            $invalidProperties[] = "'merge_areas' can't be null";
+        }
+        if ($this->container['sort_external_names'] === null) {
+            $invalidProperties[] = "'sort_external_names' can't be null";
+        }
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
+        }
+        if ($this->container['update_smart_art'] === null) {
+            $invalidProperties[] = "'update_smart_art' can't be null";
+        }
+        if ($this->container['encrypt_document_properties'] === null) {
+            $invalidProperties[] = "'encrypt_document_properties' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -250,6 +313,12 @@ class XlsSaveOptions
      */
     public function valid()
     {
+        if ($this->container['match_color'] === null) {
+                    return false;
+                }
+        if ($this->container['wps_compatibility'] === null) {
+                    return false;
+                }
         if ($this->container['save_format'] === null) {
                     return false;
                 }
@@ -274,7 +343,68 @@ class XlsSaveOptions
         if ($this->container['validate_merged_areas'] === null) {
                     return false;
                 }
+        if ($this->container['merge_areas'] === null) {
+                    return false;
+                }
+        if ($this->container['sort_external_names'] === null) {
+                    return false;
+                }
+        if ($this->container['check_excel_restriction'] === null) {
+                    return false;
+                }
+        if ($this->container['update_smart_art'] === null) {
+                    return false;
+                }
+        if ($this->container['encrypt_document_properties'] === null) {
+                    return false;
+                }
         return true;
+    }
+   /**
+     * Gets match_color
+     *
+     * @return bool
+     */
+    public function getMatchColor()
+    {
+        return $this->container['match_color'];
+    }
+
+    /**
+     * Sets match_color
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMatchColor($match_color)
+    {
+        $this->container['match_color'] = $match_color;
+
+        return $this;
+    }
+   /**
+     * Gets wps_compatibility
+     *
+     * @return bool
+     */
+    public function getWpsCompatibility()
+    {
+        return $this->container['wps_compatibility'];
+    }
+
+    /**
+     * Sets wps_compatibility
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setWpsCompatibility($wps_compatibility)
+    {
+        $this->container['wps_compatibility'] = $wps_compatibility;
+
+        return $this;
     }
    /**
      * Gets save_format
@@ -457,6 +587,121 @@ class XlsSaveOptions
     public function setValidateMergedAreas($validate_merged_areas)
     {
         $this->container['validate_merged_areas'] = $validate_merged_areas;
+
+        return $this;
+    }
+   /**
+     * Gets merge_areas
+     *
+     * @return bool
+     */
+    public function getMergeAreas()
+    {
+        return $this->container['merge_areas'];
+    }
+
+    /**
+     * Sets merge_areas
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setMergeAreas($merge_areas)
+    {
+        $this->container['merge_areas'] = $merge_areas;
+
+        return $this;
+    }
+   /**
+     * Gets sort_external_names
+     *
+     * @return bool
+     */
+    public function getSortExternalNames()
+    {
+        return $this->container['sort_external_names'];
+    }
+
+    /**
+     * Sets sort_external_names
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setSortExternalNames($sort_external_names)
+    {
+        $this->container['sort_external_names'] = $sort_external_names;
+
+        return $this;
+    }
+   /**
+     * Gets check_excel_restriction
+     *
+     * @return bool
+     */
+    public function getCheckExcelRestriction()
+    {
+        return $this->container['check_excel_restriction'];
+    }
+
+    /**
+     * Sets check_excel_restriction
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckExcelRestriction($check_excel_restriction)
+    {
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
+
+        return $this;
+    }
+   /**
+     * Gets update_smart_art
+     *
+     * @return bool
+     */
+    public function getUpdateSmartArt()
+    {
+        return $this->container['update_smart_art'];
+    }
+
+    /**
+     * Sets update_smart_art
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setUpdateSmartArt($update_smart_art)
+    {
+        $this->container['update_smart_art'] = $update_smart_art;
+
+        return $this;
+    }
+   /**
+     * Gets encrypt_document_properties
+     *
+     * @return bool
+     */
+    public function getEncryptDocumentProperties()
+    {
+        return $this->container['encrypt_document_properties'];
+    }
+
+    /**
+     * Sets encrypt_document_properties
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setEncryptDocumentProperties($encrypt_document_properties)
+    {
+        $this->container['encrypt_document_properties'] = $encrypt_document_properties;
 
         return $this;
     }

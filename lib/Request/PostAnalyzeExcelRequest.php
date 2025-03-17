@@ -45,7 +45,7 @@ class PostAnalyzeExcelRequest extends BaseApiRequest
 {
 
     /*
-    * analyzeExcelRequest : 
+    * analyzeExcelRequest : Excel files and analysis output requirements
     */ 
     public $analyze_excel_request;
 

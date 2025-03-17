@@ -229,7 +229,7 @@ class DataCleansing
     /**
      * Sets ranges
      *
-     *  
+     *  A property named "Ranges" of type IList Range with a default value of an empty List of Range objects.
      *
      * @return $this
      */

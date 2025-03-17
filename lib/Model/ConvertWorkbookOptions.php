@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SaveFilesToCloudResult.cs">
+ * <copyright company="Aspose" file="ConvertWorkbookOptions.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class SaveFilesToCloudResult
+class ConvertWorkbookOptions
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class SaveFilesToCloudResult
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SaveFilesToCloudResult';     
+    protected static $swaggerModelName = 'ConvertWorkbookOptions';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -46,9 +46,13 @@ class SaveFilesToCloudResult
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'saved_files' => '\Aspose\Cells\Cloud\Model\Link[]',
-        'description' => 'string',
-        'out_file_list' => '\Aspose\Cells\Cloud\Model\DataSource[]'
+        'name' => 'string',
+        'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
+        'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'page_setup' => '\Aspose\Cells\Cloud\Model\PageSetup',
+        'save_options' => '\Aspose\Cells\Cloud\Model\SaveOptions',
+        'convert_format' => 'string',
+        'check_excel_restriction' => 'bool'
     ];
 
     /**
@@ -57,9 +61,13 @@ class SaveFilesToCloudResult
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'saved_files' => null  ,
-        'description' => null  ,
-        'out_file_list' => null  
+        'name' => null  ,
+        'data_source' => null  ,
+        'file_info' => null  ,
+        'page_setup' => null  ,
+        'save_options' => null  ,
+        'convert_format' => null  ,
+        'check_excel_restriction' => null  
     ];
 
     /**
@@ -89,9 +97,13 @@ class SaveFilesToCloudResult
      * @var string[]
      */
     protected static $attributeMap = [
-         'saved_files' => 'SavedFiles' ,
-         'description' => 'Description' ,
-         'out_file_list' => 'OutFileList' 
+         'name' => 'Name' ,
+         'data_source' => 'DataSource' ,
+         'file_info' => 'FileInfo' ,
+         'page_setup' => 'PageSetup' ,
+         'save_options' => 'SaveOptions' ,
+         'convert_format' => 'ConvertFormat' ,
+         'check_excel_restriction' => 'CheckExcelRestriction' 
     ];
 
     /**
@@ -100,9 +112,13 @@ class SaveFilesToCloudResult
      * @var string[]
      */
     protected static $setters = [
-        'saved_files' => 'setSavedFiles' ,
-        'description' => 'setDescription' ,
-        'out_file_list' => 'setOutFileList' 
+        'name' => 'setName' ,
+        'data_source' => 'setDataSource' ,
+        'file_info' => 'setFileInfo' ,
+        'page_setup' => 'setPageSetup' ,
+        'save_options' => 'setSaveOptions' ,
+        'convert_format' => 'setConvertFormat' ,
+        'check_excel_restriction' => 'setCheckExcelRestriction' 
     ];
 
     /**
@@ -111,9 +127,13 @@ class SaveFilesToCloudResult
      * @var string[]
      */
     protected static $getters = [
-        'saved_files' => 'getSavedFiles' ,
-        'description' => 'getDescription' ,
-        'out_file_list' => 'getOutFileList' 
+        'name' => 'getName' ,
+        'data_source' => 'getDataSource' ,
+        'file_info' => 'getFileInfo' ,
+        'page_setup' => 'getPageSetup' ,
+        'save_options' => 'getSaveOptions' ,
+        'convert_format' => 'getConvertFormat' ,
+        'check_excel_restriction' => 'getCheckExcelRestriction' 
     ];
 
     /**
@@ -172,9 +192,13 @@ class SaveFilesToCloudResult
      */
     public function __construct(array $data = null)
     {
-        $this->container['saved_files'] = isset($data['saved_files']) ? $data['saved_files'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['out_file_list'] = isset($data['out_file_list']) ? $data['out_file_list'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
+        $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
+        $this->container['page_setup'] = isset($data['page_setup']) ? $data['page_setup'] : null;
+        $this->container['save_options'] = isset($data['save_options']) ? $data['save_options'] : null;
+        $this->container['convert_format'] = isset($data['convert_format']) ? $data['convert_format'] : null;
+        $this->container['check_excel_restriction'] = isset($data['check_excel_restriction']) ? $data['check_excel_restriction'] : null;
     }
 
     /**
@@ -185,14 +209,26 @@ class SaveFilesToCloudResult
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['saved_files'] === null) {
-            $invalidProperties[] = "'saved_files' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
         }
-        if ($this->container['description'] === null) {
-            $invalidProperties[] = "'description' can't be null";
+        if ($this->container['data_source'] === null) {
+            $invalidProperties[] = "'data_source' can't be null";
         }
-        if ($this->container['out_file_list'] === null) {
-            $invalidProperties[] = "'out_file_list' can't be null";
+        if ($this->container['file_info'] === null) {
+            $invalidProperties[] = "'file_info' can't be null";
+        }
+        if ($this->container['page_setup'] === null) {
+            $invalidProperties[] = "'page_setup' can't be null";
+        }
+        if ($this->container['save_options'] === null) {
+            $invalidProperties[] = "'save_options' can't be null";
+        }
+        if ($this->container['convert_format'] === null) {
+            $invalidProperties[] = "'convert_format' can't be null";
+        }
+        if ($this->container['check_excel_restriction'] === null) {
+            $invalidProperties[] = "'check_excel_restriction' can't be null";
         }
         return $invalidProperties;
     }
@@ -205,83 +241,187 @@ class SaveFilesToCloudResult
      */
     public function valid()
     {
-        if ($this->container['saved_files'] === null) {
+        if ($this->container['name'] === null) {
                     return false;
                 }
-        if ($this->container['description'] === null) {
+        if ($this->container['data_source'] === null) {
                     return false;
                 }
-        if ($this->container['out_file_list'] === null) {
+        if ($this->container['file_info'] === null) {
+                    return false;
+                }
+        if ($this->container['page_setup'] === null) {
+                    return false;
+                }
+        if ($this->container['save_options'] === null) {
+                    return false;
+                }
+        if ($this->container['convert_format'] === null) {
+                    return false;
+                }
+        if ($this->container['check_excel_restriction'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets saved_files
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link[]
-     */
-    public function getSavedFiles()
-    {
-        return $this->container['saved_files'];
-    }
-
-    /**
-     * Sets saved_files
-     *
-     *  This class has a property named SavedFiles of type List Link.
-     *
-     * @return $this
-     */
-    public function setSavedFiles($saved_files)
-    {
-        $this->container['saved_files'] = $saved_files;
-
-        return $this;
-    }
-   /**
-     * Gets description
+     * Gets name
      *
      * @return string
      */
-    public function getDescription()
+    public function getName()
     {
-        return $this->container['description'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets description
+     * Sets name
      *
-     *  
+     *  The class has a public property named "Name" with a getter and setter method.
      *
      * @return $this
      */
-    public function setDescription($description)
+    public function setName($name)
     {
-        $this->container['description'] = $description;
+        $this->container['name'] = $name;
 
         return $this;
     }
    /**
-     * Gets out_file_list
+     * Gets data_source
      *
-     * @return \Aspose\Cells\Cloud\Model\DataSource[]
+     * @return \Aspose\Cells\Cloud\Model\DataSource
      */
-    public function getOutFileList()
+    public function getDataSource()
     {
-        return $this->container['out_file_list'];
+        return $this->container['data_source'];
     }
 
     /**
-     * Sets out_file_list
+     * Sets data_source
      *
      *  
      *
      * @return $this
      */
-    public function setOutFileList($out_file_list)
+    public function setDataSource($data_source)
     {
-        $this->container['out_file_list'] = $out_file_list;
+        $this->container['data_source'] = $data_source;
+
+        return $this;
+    }
+   /**
+     * Gets file_info
+     *
+     * @return \Aspose\Cells\Cloud\Model\FileInfo
+     */
+    public function getFileInfo()
+    {
+        return $this->container['file_info'];
+    }
+
+    /**
+     * Sets file_info
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setFileInfo($file_info)
+    {
+        $this->container['file_info'] = $file_info;
+
+        return $this;
+    }
+   /**
+     * Gets page_setup
+     *
+     * @return \Aspose\Cells\Cloud\Model\PageSetup
+     */
+    public function getPageSetup()
+    {
+        return $this->container['page_setup'];
+    }
+
+    /**
+     * Sets page_setup
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPageSetup($page_setup)
+    {
+        $this->container['page_setup'] = $page_setup;
+
+        return $this;
+    }
+   /**
+     * Gets save_options
+     *
+     * @return \Aspose\Cells\Cloud\Model\SaveOptions
+     */
+    public function getSaveOptions()
+    {
+        return $this->container['save_options'];
+    }
+
+    /**
+     * Sets save_options
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setSaveOptions($save_options)
+    {
+        $this->container['save_options'] = $save_options;
+
+        return $this;
+    }
+   /**
+     * Gets convert_format
+     *
+     * @return string
+     */
+    public function getConvertFormat()
+    {
+        return $this->container['convert_format'];
+    }
+
+    /**
+     * Sets convert_format
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setConvertFormat($convert_format)
+    {
+        $this->container['convert_format'] = $convert_format;
+
+        return $this;
+    }
+   /**
+     * Gets check_excel_restriction
+     *
+     * @return bool
+     */
+    public function getCheckExcelRestriction()
+    {
+        return $this->container['check_excel_restriction'];
+    }
+
+    /**
+     * Sets check_excel_restriction
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setCheckExcelRestriction($check_excel_restriction)
+    {
+        $this->container['check_excel_restriction'] = $check_excel_restriction;
 
         return $this;
     }

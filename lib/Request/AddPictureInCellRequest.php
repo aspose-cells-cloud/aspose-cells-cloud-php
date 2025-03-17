@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostBatchConvertRequest.cs">
+ * <copyright company="Aspose" file="AddPictureInCellRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,25 +38,100 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PostBatchConvert operation.
+ * Request model for  AddPictureInCell operation.
  */
 
-class PostBatchConvertRequest extends BaseApiRequest
+class AddPictureInCellRequest extends BaseApiRequest
 {
 
     /*
-    * batchConvertRequest : BatchConvertRequest Batch conversion file request. 
+    * name : 
     */ 
-    public $batch_convert_request;
+    public $name;
 
-    public function getBatchConvertRequest()
+    public function getName()
     {
-        return $this->batch_convert_request;
+        return $this->name;
     }
 
-    public function setBatchConvertRequest($value)
+    public function setName($value)
     {
-        $this->batch_convert_request = $value;
+        $this->name = $value;
+    }
+
+    /*
+    * sheetName : 
+    */ 
+    public $sheet_name;
+
+    public function getSheetName()
+    {
+        return $this->sheet_name;
+    }
+
+    public function setSheetName($value)
+    {
+        $this->sheet_name = $value;
+    }
+
+    /*
+    * cellName : 
+    */ 
+    public $cell_name;
+
+    public function getCellName()
+    {
+        return $this->cell_name;
+    }
+
+    public function setCellName($value)
+    {
+        $this->cell_name = $value;
+    }
+
+    /*
+    * picturePath : 
+    */ 
+    public $picture_path;
+
+    public function getPicturePath()
+    {
+        return $this->picture_path;
+    }
+
+    public function setPicturePath($value)
+    {
+        $this->picture_path = $value;
+    }
+
+    /*
+    * folder : 
+    */ 
+    public $folder;
+
+    public function getFolder()
+    {
+        return $this->folder;
+    }
+
+    public function setFolder($value)
+    {
+        $this->folder = $value;
+    }
+
+    /*
+    * storageName : 
+    */ 
+    public $storage_name;
+
+    public function getStorageName()
+    {
+        return $this->storage_name;
+    }
+
+    public function setStorageName($value)
+    {
+        $this->storage_name = $value;
     }
 
     public function __construct()
@@ -65,26 +140,75 @@ class PostBatchConvertRequest extends BaseApiRequest
 
     public function createHttpRequest($headerSelector,$config)
     {
-        // verify the required parameter 'batch_convert_request' is set
-        if ($this->batch_convert_request === null) {
+        // verify the required parameter 'name' is set
+        if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $batch_convert_request when calling PostBatchConvert'
+                'Missing the required parameter $name when calling AddPictureInCell'
             );
         } 
 
-        $resourcePath = '/cells/batch/convert';
+        // verify the required parameter 'sheet_name' is set
+        if ($this->sheet_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sheet_name when calling AddPictureInCell'
+            );
+        } 
+
+        // verify the required parameter 'cell_name' is set
+        if ($this->cell_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $cell_name when calling AddPictureInCell'
+            );
+        } 
+
+        // verify the required parameter 'picture_path' is set
+        if ($this->picture_path === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $picture_path when calling AddPictureInCell'
+            );
+        } 
+
+        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        // name params
+        if ($this->name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($this->name),
+                $resourcePath
+            );
+        }
+        // sheet_name params
+        if ($this->sheet_name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sheetName' . '}',
+                ObjectSerializer::toPathValue($this->sheet_name),
+                $resourcePath
+            );
+        }
+        // query params : cell_name
+        if ($this->cell_name !== null) {
+            $queryParams['cellName'] = ObjectSerializer::toQueryValue($this->cell_name);
+        }
+        // query params : picture_path
+        if ($this->picture_path !== null) {
+            $queryParams['picturePath'] = ObjectSerializer::toQueryValue($this->picture_path);
+        }
+        // query params : folder
+        if ($this->folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($this->folder);
+        }
+        // query params : storage_name
+        if ($this->storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
+        }
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->batch_convert_request)) {
-            $_tempBody = $this->batch_convert_request;
-            $_tempBodyName =str_replace('_','', 'batch_convert_request');
-        }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="PostBatchConvertRequest.cs">
+ * <copyright company="Aspose" file="GetAllStylesRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,25 +38,55 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  PostBatchConvert operation.
+ * Request model for  GetAllStyles operation.
  */
 
-class PostBatchConvertRequest extends BaseApiRequest
+class GetAllStylesRequest extends BaseApiRequest
 {
 
     /*
-    * batchConvertRequest : BatchConvertRequest Batch conversion file request. 
+    * name : 
     */ 
-    public $batch_convert_request;
+    public $name;
 
-    public function getBatchConvertRequest()
+    public function getName()
     {
-        return $this->batch_convert_request;
+        return $this->name;
     }
 
-    public function setBatchConvertRequest($value)
+    public function setName($value)
     {
-        $this->batch_convert_request = $value;
+        $this->name = $value;
+    }
+
+    /*
+    * folder : 
+    */ 
+    public $folder;
+
+    public function getFolder()
+    {
+        return $this->folder;
+    }
+
+    public function setFolder($value)
+    {
+        $this->folder = $value;
+    }
+
+    /*
+    * storageName : 
+    */ 
+    public $storage_name;
+
+    public function getStorageName()
+    {
+        return $this->storage_name;
+    }
+
+    public function setStorageName($value)
+    {
+        $this->storage_name = $value;
     }
 
     public function __construct()
@@ -65,26 +95,38 @@ class PostBatchConvertRequest extends BaseApiRequest
 
     public function createHttpRequest($headerSelector,$config)
     {
-        // verify the required parameter 'batch_convert_request' is set
-        if ($this->batch_convert_request === null) {
+        // verify the required parameter 'name' is set
+        if ($this->name === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $batch_convert_request when calling PostBatchConvert'
+                'Missing the required parameter $name when calling GetAllStyles'
             );
         } 
 
-        $resourcePath = '/cells/batch/convert';
+        $resourcePath = '/cells/{name}/allstyles';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        // name params
+        if ($this->name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($this->name),
+                $resourcePath
+            );
+        }
+        // query params : folder
+        if ($this->folder !== null) {
+            $queryParams['folder'] = ObjectSerializer::toQueryValue($this->folder);
+        }
+        // query params : storage_name
+        if ($this->storage_name !== null) {
+            $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
+        }
     // body params
         $_tempBody = null;
         $_tempBodyName ;
-        if (isset($this->batch_convert_request)) {
-            $_tempBody = $this->batch_convert_request;
-            $_tempBodyName =str_replace('_','', 'batch_convert_request');
-        }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -151,7 +193,7 @@ class PostBatchConvertRequest extends BaseApiRequest
 
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
