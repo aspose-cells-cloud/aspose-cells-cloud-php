@@ -134,8 +134,12 @@ class PostWorksheetTextReplaceRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$old_value = null,$new_value = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->old_value = $old_value; 
+        $this->new_value = $new_value; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetTextReplaceRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

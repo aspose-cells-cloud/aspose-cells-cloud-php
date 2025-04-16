@@ -59,8 +59,9 @@ class PostRemoveDuplicatesRequest extends BaseApiRequest
         $this->remove_duplicates_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $remove_duplicates_options = null )
     {        
+        $this->remove_duplicates_options = $remove_duplicates_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostRemoveDuplicatesRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->remove_duplicates_options)) {
             $_tempBody = $this->remove_duplicates_options;
             $_tempBodyName =str_replace('_','', 'remove_duplicates_options');

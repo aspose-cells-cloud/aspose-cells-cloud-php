@@ -164,8 +164,14 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$type = null,$data_range = null,$is_vertical = null,$location_range = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->type = $type; 
+        $this->data_range = $data_range; 
+        $this->is_vertical = $is_vertical; 
+        $this->location_range = $location_range; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -260,7 +266,7 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

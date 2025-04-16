@@ -134,8 +134,11 @@ class GetWorksheetOleObjectRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$object_number = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->object_number = $object_number; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -205,7 +208,7 @@ class GetWorksheetOleObjectRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

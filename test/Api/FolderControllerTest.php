@@ -49,7 +49,7 @@ final class FolderControllerTest extends TestCase
 
     public function testGetFilesList()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -71,7 +71,7 @@ final class FolderControllerTest extends TestCase
 
     public function testCreateFolder()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -93,7 +93,7 @@ final class FolderControllerTest extends TestCase
 
     public function testCopyFolder()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -117,7 +117,7 @@ final class FolderControllerTest extends TestCase
 
     public function testMoveFolder()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -141,7 +141,7 @@ final class FolderControllerTest extends TestCase
 
     public function testDeleteFolder()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";

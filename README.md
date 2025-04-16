@@ -1,6 +1,6 @@
-![](https://img.shields.io/badge/REST%20API-v3.0-lightgrey) ![Packagist Version](https://img.shields.io/packagist/v/aspose/cells-sdk-php) ![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![GitHub license](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/blob/master/LICENSE) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.3)
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK%20for%20PHP-25.4-blue?style=for-the-badge&logo=php)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/php/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/main/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7)![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/aspose/cells-sdk-php) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE)![CPAN](https://img.shields.io/cpan/v/AsposeCellsCloud-CellsApi?style=for-the-badge&logo=rocket&logoColor=white)![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.4)
 
-Aspose.Cells Cloud for PHP enables you to handle various aspects of Excel files, including cell data, styles, formulas, charts, pivot tables, data validation, comments, drawing objects, images, hyperlinks, and so on. Additionally, it supports operations such as splitting, merging, repairing, and converting to other compatible file formats.
+Aspose.Cells Cloud SDK for PHP empowers developers to programmatically manage Excel files with precision. This comprehensive Go library supports advanced Excel operations like cell data formatting, dynamic formulas, pivot tables, conditional styling, charts, hyperlinks, comments, and data validation. It also enables seamless Excel file conversion (XLSX, CSV, PDF, ODS), document splitting/merging, and file repair. Designed for cloud integration, this API-first solution accelerates spreadsheet automation while ensuring data integrity across platforms like AWS, Azure, and Google Cloud.
 
 # PHP package for Aspose.Cells Cloud
 
@@ -19,15 +19,14 @@ Enhance your PHP applications with the [Aspose.Cells Cloud](https://products.asp
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version 25.3
+## Feature & Enhancements in Version 25.4
 
 Full list of issues covering all changes in this release:
 
-- Optimized the properties of `SaveOptions` to enhance performance and flexibility.
-- Optimized the conversion method of `Workbook` for improved efficiency and reliability.
-- Developed a new API to retrieve a comprehensive list of all styles in a workbook.
-- Enhanced all save options to improve functionality and user experience.
-- Added a new API to insert images into cells.
+|**Summary**|**Category**|
+| :- | :- |
+| New API for Comprehensive Formula Error Checks in Excel Workbooks | New Feature |
+| New API for External Reference Checks in Excel Workbooks | New Feature |
 
 ## Support file format
 
@@ -81,15 +80,15 @@ To begin with Aspose.Cells Cloud, here's what you need to do:
    ```json
    {
        "require": {
-           "aspose/cells-cloud": "^24.3"
+           "aspose/cells-cloud": "^25.3"
        }
    }
    ```
 
-    - Run Composer update to install the SDK:
+    - Run Composer install Aspose.Cells Cloud SDK:
 
    ```bash
-   composer update
+   composer install
    ```
 
     - Include Composer's autoloader in your PHP code:
@@ -110,24 +109,13 @@ require_once('vendor\autoload.php');
 use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\PutConvertWorkbookRequest;
 
-$cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-
-$remoteFolder = "TestData/In";
-
-$localName = "Book1.xlsx";
-$remoteName = "Book1.xlsx";
-
-$format = "csv";
-
-$mapFiles = array ();
-$mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-
+$cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl")); 
 $request = new PutConvertWorkbookRequest();
-$request->setFile( $mapFiles);
-$request->setFormat( $format);
-$$cellsApi->putConvertWorkbook($request);
-?>
+$request->setFile(  ['Book1.xlsx' => 'TestData/Book1.xlsx']);
+$request->setFormat("pdf");
+$response = $cellsApi->putConvertWorkbook($request);
+copy($response->getPathname(),"Book1.pdf");
+
 ```
 
 ## Aspose.Cells Cloud in Popular Languages
@@ -139,4 +127,4 @@ $$cellsApi->putConvertWorkbook($request);
 
 [Product Page](https://products.aspose.cloud/cells/php) | [Documentation](https://docs.aspose.cloud/cells/) | [Live Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Code Samples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/test/Api) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
-## [Release history version](HistoryVersions.md)
+## [Release history version](HistoryVersion.md)

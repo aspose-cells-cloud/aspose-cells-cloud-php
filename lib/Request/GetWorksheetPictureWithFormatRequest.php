@@ -134,8 +134,12 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$picture_number = null,$format = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->picture_number = $picture_number; 
+        $this->format = $format; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -212,7 +216,7 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -45,7 +45,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_csv()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -71,7 +71,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_xls()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -97,7 +97,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_html()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -123,7 +123,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_mhtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -149,7 +149,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_ods()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -175,7 +175,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_pdf()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -201,7 +201,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_xml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -227,7 +227,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_txt()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -253,7 +253,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_xlsb()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -279,7 +279,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_xps()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -305,7 +305,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_md()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -325,14 +325,13 @@ final class ConversionJsonTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-
     /// <summary>
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
     public function testConvertWorkbook_svg()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -358,7 +357,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_docx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -384,7 +383,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_pptx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -410,7 +409,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_json()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";
@@ -436,7 +435,7 @@ final class ConversionJsonTest extends TestCase
 
     public function testConvertWorkbook_sql()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "codegen-spec.json";

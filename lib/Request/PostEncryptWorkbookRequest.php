@@ -104,8 +104,10 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$encryption = null )
     {        
+        $this->name = $name; 
+        $this->encryption = $encryption; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->encryption)) {
             $_tempBody = $this->encryption;
             $_tempBodyName =str_replace('_','', 'encryption');

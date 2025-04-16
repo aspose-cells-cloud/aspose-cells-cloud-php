@@ -119,8 +119,10 @@ class MoveFileRequest extends BaseApiRequest
         $this->version_id = $value;
     }
 
-    public function __construct()
+    public function __construct( $src_path = null,$dest_path = null )
     {        
+        $this->src_path = $src_path; 
+        $this->dest_path = $dest_path; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -171,7 +173,7 @@ class MoveFileRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

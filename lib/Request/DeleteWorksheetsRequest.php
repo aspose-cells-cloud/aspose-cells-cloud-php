@@ -104,8 +104,9 @@ class DeleteWorksheetsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null )
     {        
+        $this->name = $name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -141,7 +142,7 @@ class DeleteWorksheetsRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->match_condition)) {
             $_tempBody = $this->match_condition;
             $_tempBodyName =str_replace('_','', 'match_condition');

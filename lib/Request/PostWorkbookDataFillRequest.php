@@ -149,8 +149,10 @@ class PostWorkbookDataFillRequest extends BaseApiRequest
         $this->check_excel_restriction = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$data_fill = null )
     {        
+        $this->name = $name; 
+        $this->data_fill = $data_fill; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -205,7 +207,7 @@ class PostWorkbookDataFillRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->data_fill)) {
             $_tempBody = $this->data_fill;
             $_tempBodyName =str_replace('_','', 'data_fill');

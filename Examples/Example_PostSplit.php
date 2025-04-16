@@ -5,14 +5,12 @@ use \Aspose\Cells\Cloud\Request\PostSplitRequest;
 
 $cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
 
-$assemblyTestXlsx = "assemblytest.xlsx";
-$dataSourceXlsx = "datasource.xlsx";
+$book1Xlsx = "Book1.xlsx";
 
 $outFormat = "csv";
 
 $mapFiles = array ();
-$mapFiles[$assemblyTestXlsx] = CellsApiTestBase::getfullfilename($assemblyTestXlsx);
-$mapFiles[$dataSourceXlsx] = CellsApiTestBase::getfullfilename($dataSourceXlsx);
+$mapFiles[$book1Xlsx] = CellsApiTestBase::getfullfilename($book1Xlsx);
  
 $request = new PostSplitRequest();
 $request->setFile( $mapFiles);

@@ -134,8 +134,10 @@ class PostMetadataRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$cells_documents = null )
     {        
+        $this->file = $file; 
+        $this->cells_documents = $cells_documents; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -189,7 +191,7 @@ class PostMetadataRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->cells_documents)) {
             $_tempBody = $this->cells_documents;
             $_tempBodyName =str_replace('_','', 'cells_documents');

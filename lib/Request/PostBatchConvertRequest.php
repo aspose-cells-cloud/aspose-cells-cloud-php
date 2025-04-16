@@ -59,8 +59,9 @@ class PostBatchConvertRequest extends BaseApiRequest
         $this->batch_convert_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $batch_convert_request = null )
     {        
+        $this->batch_convert_request = $batch_convert_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostBatchConvertRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->batch_convert_request)) {
             $_tempBody = $this->batch_convert_request;
             $_tempBodyName =str_replace('_','', 'batch_convert_request');

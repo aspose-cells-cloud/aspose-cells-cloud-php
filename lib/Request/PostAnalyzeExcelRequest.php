@@ -59,8 +59,9 @@ class PostAnalyzeExcelRequest extends BaseApiRequest
         $this->analyze_excel_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $analyze_excel_request = null )
     {        
+        $this->analyze_excel_request = $analyze_excel_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostAnalyzeExcelRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->analyze_excel_request)) {
             $_tempBody = $this->analyze_excel_request;
             $_tempBodyName =str_replace('_','', 'analyze_excel_request');

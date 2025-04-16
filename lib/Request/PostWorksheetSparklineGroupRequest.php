@@ -134,8 +134,12 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$sparkline_group_index = null,$sparkline_group = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->sparkline_group_index = $sparkline_group_index; 
+        $this->sparkline_group = $sparkline_group; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetSparklineGroupRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->sparkline_group)) {
             $_tempBody = $this->sparkline_group;
             $_tempBodyName =str_replace('_','', 'sparkline_group');

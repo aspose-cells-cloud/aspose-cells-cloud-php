@@ -149,8 +149,10 @@ class PostWorkbookDataCleansingRequest extends BaseApiRequest
         $this->check_excel_restriction = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$data_cleansing = null )
     {        
+        $this->name = $name; 
+        $this->data_cleansing = $data_cleansing; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -205,7 +207,7 @@ class PostWorkbookDataCleansingRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->data_cleansing)) {
             $_tempBody = $this->data_cleansing;
             $_tempBodyName =str_replace('_','', 'data_cleansing');

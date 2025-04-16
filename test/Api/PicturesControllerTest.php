@@ -50,7 +50,7 @@ final class PicturesControllerTest extends TestCase
 
     public function testGetWorksheetPictures()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -74,7 +74,7 @@ final class PicturesControllerTest extends TestCase
 
     public function testGetWorksheetPictureWithFormat()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -100,7 +100,7 @@ final class PicturesControllerTest extends TestCase
 
     public function testPutWorksheetAddPicture()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -131,7 +131,7 @@ final class PicturesControllerTest extends TestCase
 
     public function testPostWorksheetPicture()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -160,7 +160,7 @@ final class PicturesControllerTest extends TestCase
 
     public function testDeleteWorksheetPicture()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -185,7 +185,7 @@ final class PicturesControllerTest extends TestCase
 
     public function testDeleteWorksheetPictures()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";

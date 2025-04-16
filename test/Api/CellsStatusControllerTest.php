@@ -46,7 +46,7 @@ final class CellsStatusControllerTest extends TestCase
 
     public function testGetCellsCloudServicesHealthCheck()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -66,7 +66,7 @@ final class CellsStatusControllerTest extends TestCase
 
     public function testGetCellsCloudServiceStatus()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";

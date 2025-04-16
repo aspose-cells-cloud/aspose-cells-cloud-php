@@ -134,8 +134,24 @@ class PostExportRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    /*
+    * FontsLocation : Use Custom fonts.
+    */ 
+    public $fonts_location;
+
+    public function getFontsLocation()
+    {
+        return $this->fonts_location;
+    }
+
+    public function setFontsLocation($value)
+    {
+        $this->fonts_location = $value;
+    }
+
+    public function __construct( $file = null )
     {        
+        $this->file = $file; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -173,6 +189,10 @@ class PostExportRequest extends BaseApiRequest
         if ($this->region !== null) {
             $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
+        // query params : fonts_location
+        if ($this->fonts_location !== null) {
+            $queryParams['FontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
+        }
         if ($this->file !== null) {
             $multipart = true;
             if( is_array($this->file)){
@@ -186,7 +206,7 @@ class PostExportRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

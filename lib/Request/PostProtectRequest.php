@@ -89,8 +89,10 @@ class PostProtectRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$protect_workbook_request = null )
     {        
+        $this->file = $file; 
+        $this->protect_workbook_request = $protect_workbook_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -132,7 +134,7 @@ class PostProtectRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->protect_workbook_request)) {
             $_tempBody = $this->protect_workbook_request;
             $_tempBodyName =str_replace('_','', 'protect_workbook_request');

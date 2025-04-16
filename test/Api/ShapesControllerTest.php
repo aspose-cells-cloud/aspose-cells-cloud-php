@@ -52,7 +52,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testGetWorksheetShapes()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -76,7 +76,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testGetWorksheetShape()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -101,7 +101,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testPutWorksheetShape()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -135,7 +135,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testDeleteWorksheetShapes()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -159,7 +159,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testDeleteWorksheetShape()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -184,7 +184,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testPostWorksheetShape()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -212,7 +212,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testPostWorksheetGroupShape()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -241,7 +241,7 @@ final class ShapesControllerTest extends TestCase
 
     public function testPostWorksheetUngroupShape()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";

@@ -149,8 +149,13 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$column_index = null,$columns = null,$update_reference = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->column_index = $column_index; 
+        $this->columns = $columns; 
+        $this->update_reference = $update_reference; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -238,7 +243,7 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

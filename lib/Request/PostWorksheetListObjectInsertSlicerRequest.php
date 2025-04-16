@@ -149,8 +149,13 @@ class PostWorksheetListObjectInsertSlicerRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$list_object_index = null,$column_index = null,$dest_cell_name = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->list_object_index = $list_object_index; 
+        $this->column_index = $column_index; 
+        $this->dest_cell_name = $dest_cell_name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -238,7 +243,7 @@ class PostWorksheetListObjectInsertSlicerRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

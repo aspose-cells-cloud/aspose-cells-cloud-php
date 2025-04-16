@@ -149,8 +149,13 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$range = null,$dest_row = null,$dest_column = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->range = $range; 
+        $this->dest_row = $dest_row; 
+        $this->dest_column = $dest_column; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -230,7 +235,7 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->range)) {
             $_tempBody = $this->range;
             $_tempBodyName =str_replace('_','', 'range');

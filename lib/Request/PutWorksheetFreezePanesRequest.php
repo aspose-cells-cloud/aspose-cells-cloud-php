@@ -164,8 +164,14 @@ class PutWorksheetFreezePanesRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$row = null,$column = null,$freezed_rows = null,$freezed_columns = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->row = $row; 
+        $this->column = $column; 
+        $this->freezed_rows = $freezed_rows; 
+        $this->freezed_columns = $freezed_columns; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -260,7 +266,7 @@ class PutWorksheetFreezePanesRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

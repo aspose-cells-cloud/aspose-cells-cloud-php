@@ -149,8 +149,13 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$list_object_index = null,$column_index = null,$list_column = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->list_object_index = $list_object_index; 
+        $this->column_index = $column_index; 
+        $this->list_column = $list_column; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -238,7 +243,7 @@ class PostWorksheetListColumnRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->list_column)) {
             $_tempBody = $this->list_column;
             $_tempBodyName =str_replace('_','', 'list_column');

@@ -74,8 +74,9 @@ class GetFileVersionsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $path = null )
     {        
+        $this->path = $path; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -107,7 +108,7 @@ class GetFileVersionsRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -149,8 +149,12 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$pivot_table_index = null,$filter = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->pivot_table_index = $pivot_table_index; 
+        $this->filter = $filter; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -227,7 +231,7 @@ class PutWorksheetPivotTableFilterRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->filter)) {
             $_tempBody = $this->filter;
             $_tempBodyName =str_replace('_','', 'filter');

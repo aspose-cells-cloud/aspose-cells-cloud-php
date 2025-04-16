@@ -104,8 +104,10 @@ class PutDocumentPropertyRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$property = null )
     {        
+        $this->name = $name; 
+        $this->property = $property; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PutDocumentPropertyRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->property)) {
             $_tempBody = $this->property;
             $_tempBodyName =str_replace('_','', 'property');

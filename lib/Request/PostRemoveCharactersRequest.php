@@ -59,8 +59,9 @@ class PostRemoveCharactersRequest extends BaseApiRequest
         $this->remove_characters_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $remove_characters_options = null )
     {        
+        $this->remove_characters_options = $remove_characters_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostRemoveCharactersRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->remove_characters_options)) {
             $_tempBody = $this->remove_characters_options;
             $_tempBodyName =str_replace('_','', 'remove_characters_options');

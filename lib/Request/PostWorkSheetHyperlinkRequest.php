@@ -134,8 +134,12 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$hyperlink_index = null,$hyperlink = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->hyperlink_index = $hyperlink_index; 
+        $this->hyperlink = $hyperlink; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->hyperlink)) {
             $_tempBody = $this->hyperlink;
             $_tempBodyName =str_replace('_','', 'hyperlink');

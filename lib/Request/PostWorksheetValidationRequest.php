@@ -134,8 +134,12 @@ class PostWorksheetValidationRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$validation_index = null,$validation = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->validation_index = $validation_index; 
+        $this->validation = $validation; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetValidationRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->validation)) {
             $_tempBody = $this->validation;
             $_tempBodyName =str_replace('_','', 'validation');

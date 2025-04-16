@@ -209,8 +209,15 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$range = null,$field_index = null,$is_top = null,$is_percent = null,$item_count = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->range = $range; 
+        $this->field_index = $field_index; 
+        $this->is_top = $is_top; 
+        $this->is_percent = $is_percent; 
+        $this->item_count = $item_count; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -324,7 +331,7 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

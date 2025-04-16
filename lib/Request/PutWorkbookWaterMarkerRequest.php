@@ -104,8 +104,10 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$text_water_marker_request = null )
     {        
+        $this->name = $name; 
+        $this->text_water_marker_request = $text_water_marker_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->text_water_marker_request)) {
             $_tempBody = $this->text_water_marker_request;
             $_tempBodyName =str_replace('_','', 'text_water_marker_request');

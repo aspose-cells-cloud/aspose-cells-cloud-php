@@ -164,8 +164,12 @@ class PostCopyWorksheetRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$source_sheet = null,$options = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->source_sheet = $source_sheet; 
+        $this->options = $options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -242,7 +246,7 @@ class PostCopyWorksheetRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->options)) {
             $_tempBody = $this->options;
             $_tempBodyName =str_replace('_','', 'options');

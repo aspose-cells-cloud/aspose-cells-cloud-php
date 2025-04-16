@@ -59,8 +59,9 @@ class PostTrimContentRequest extends BaseApiRequest
         $this->trim_content_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $trim_content_options = null )
     {        
+        $this->trim_content_options = $trim_content_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostTrimContentRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->trim_content_options)) {
             $_tempBody = $this->trim_content_options;
             $_tempBodyName =str_replace('_','', 'trim_content_options');

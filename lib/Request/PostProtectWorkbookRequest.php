@@ -104,8 +104,10 @@ class PostProtectWorkbookRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$protect_workbook_request = null )
     {        
+        $this->name = $name; 
+        $this->protect_workbook_request = $protect_workbook_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PostProtectWorkbookRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->protect_workbook_request)) {
             $_tempBody = $this->protect_workbook_request;
             $_tempBodyName =str_replace('_','', 'protect_workbook_request');

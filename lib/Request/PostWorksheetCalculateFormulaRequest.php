@@ -119,8 +119,11 @@ class PostWorksheetCalculateFormulaRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$formula = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->formula = $formula; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -182,7 +185,7 @@ class PostWorksheetCalculateFormulaRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

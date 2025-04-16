@@ -119,8 +119,9 @@ class DeleteMetadataRequest extends BaseApiRequest
         $this->check_excel_restriction = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null )
     {        
+        $this->file = $file; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -167,7 +168,7 @@ class DeleteMetadataRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

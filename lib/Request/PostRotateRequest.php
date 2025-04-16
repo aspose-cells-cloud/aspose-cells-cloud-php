@@ -134,8 +134,10 @@ class PostRotateRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$rotate_type = null )
     {        
+        $this->file = $file; 
+        $this->rotate_type = $rotate_type; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -193,7 +195,7 @@ class PostRotateRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

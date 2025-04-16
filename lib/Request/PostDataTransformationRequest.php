@@ -59,8 +59,9 @@ class PostDataTransformationRequest extends BaseApiRequest
         $this->data_transformation_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $data_transformation_request = null )
     {        
+        $this->data_transformation_request = $data_transformation_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostDataTransformationRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->data_transformation_request)) {
             $_tempBody = $this->data_transformation_request;
             $_tempBodyName =str_replace('_','', 'data_transformation_request');

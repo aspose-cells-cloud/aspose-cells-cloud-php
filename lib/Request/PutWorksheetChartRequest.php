@@ -314,8 +314,11 @@ class PutWorksheetChartRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$chart_type = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->chart_type = $chart_type; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -429,7 +432,7 @@ class PutWorksheetChartRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

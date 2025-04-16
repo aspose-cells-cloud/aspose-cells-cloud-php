@@ -13,7 +13,7 @@ $remoteName = "Book1.xlsx";
 $format = "csv";
 $newfilename = "outResult/PostExcelSaveAs.csv";
 
-$saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+$saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
 $saveOptions->setSaveFormat($format ); 
 CellsApiTestBase::ready(  $this->instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
  

@@ -134,8 +134,12 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$cell_area = null,$data_sorter = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->cell_area = $cell_area; 
+        $this->data_sorter = $data_sorter; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -204,7 +208,7 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->data_sorter)) {
             $_tempBody = $this->data_sorter;
             $_tempBodyName =str_replace('_','', 'data_sorter');

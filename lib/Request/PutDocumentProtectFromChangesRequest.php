@@ -104,8 +104,10 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$password = null )
     {        
+        $this->name = $name; 
+        $this->password = $password; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->password)) {
             $_tempBody = $this->password;
             $_tempBodyName =str_replace('_','', 'password');

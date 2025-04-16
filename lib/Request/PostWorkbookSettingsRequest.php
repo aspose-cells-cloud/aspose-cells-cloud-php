@@ -104,8 +104,10 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$settings = null )
     {        
+        $this->name = $name; 
+        $this->settings = $settings; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->settings)) {
             $_tempBody = $this->settings;
             $_tempBodyName =str_replace('_','', 'settings');

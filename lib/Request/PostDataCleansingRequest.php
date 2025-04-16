@@ -59,8 +59,9 @@ class PostDataCleansingRequest extends BaseApiRequest
         $this->data_cleansing_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $data_cleansing_request = null )
     {        
+        $this->data_cleansing_request = $data_cleansing_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostDataCleansingRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->data_cleansing_request)) {
             $_tempBody = $this->data_cleansing_request;
             $_tempBodyName =str_replace('_','', 'data_cleansing_request');

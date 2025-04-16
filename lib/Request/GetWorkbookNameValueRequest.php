@@ -104,8 +104,10 @@ class GetWorkbookNameValueRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$name_name = null )
     {        
+        $this->name = $name; 
+        $this->name_name = $name_name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -156,7 +158,7 @@ class GetWorkbookNameValueRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

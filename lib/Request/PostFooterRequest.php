@@ -149,8 +149,13 @@ class PostFooterRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$section = null,$script = null,$is_first_page = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->section = $section; 
+        $this->script = $script; 
+        $this->is_first_page = $is_first_page; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -234,7 +239,7 @@ class PostFooterRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

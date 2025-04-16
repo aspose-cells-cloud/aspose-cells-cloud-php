@@ -119,8 +119,11 @@ class PutProtectWorksheetRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$protect_parameter = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->protect_parameter = $protect_parameter; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -178,7 +181,7 @@ class PutProtectWorksheetRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->protect_parameter)) {
             $_tempBody = $this->protect_parameter;
             $_tempBodyName =str_replace('_','', 'protect_parameter');

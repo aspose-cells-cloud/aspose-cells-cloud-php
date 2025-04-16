@@ -194,8 +194,15 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$pivot_table_index = null,$pivot_field_type = null,$field_index = null,$item_index = null,$is_hide = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->pivot_table_index = $pivot_table_index; 
+        $this->pivot_field_type = $pivot_field_type; 
+        $this->field_index = $field_index; 
+        $this->item_index = $item_index; 
+        $this->is_hide = $is_hide; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -309,7 +316,7 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -59,8 +59,9 @@ class PostUpdateWordCaseRequest extends BaseApiRequest
         $this->word_case_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $word_case_options = null )
     {        
+        $this->word_case_options = $word_case_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostUpdateWordCaseRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->word_case_options)) {
             $_tempBody = $this->word_case_options;
             $_tempBodyName =str_replace('_','', 'word_case_options');

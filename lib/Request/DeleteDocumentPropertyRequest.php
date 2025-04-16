@@ -119,8 +119,10 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$property_name = null )
     {        
+        $this->name = $name; 
+        $this->property_name = $property_name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -175,7 +177,7 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

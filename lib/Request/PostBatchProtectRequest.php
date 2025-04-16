@@ -59,8 +59,9 @@ class PostBatchProtectRequest extends BaseApiRequest
         $this->batch_protect_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $batch_protect_request = null )
     {        
+        $this->batch_protect_request = $batch_protect_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostBatchProtectRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->batch_protect_request)) {
             $_tempBody = $this->batch_protect_request;
             $_tempBodyName =str_replace('_','', 'batch_protect_request');

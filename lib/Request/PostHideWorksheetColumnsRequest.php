@@ -134,8 +134,12 @@ class PostHideWorksheetColumnsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$start_column = null,$total_columns = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->start_column = $start_column; 
+        $this->total_columns = $total_columns; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostHideWorksheetColumnsRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

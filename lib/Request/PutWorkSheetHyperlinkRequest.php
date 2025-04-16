@@ -179,8 +179,15 @@ class PutWorksheetHyperlinkRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$first_row = null,$first_column = null,$total_rows = null,$total_columns = null,$address = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->first_row = $first_row; 
+        $this->first_column = $first_column; 
+        $this->total_rows = $total_rows; 
+        $this->total_columns = $total_columns; 
+        $this->address = $address; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -286,7 +293,7 @@ class PutWorksheetHyperlinkRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

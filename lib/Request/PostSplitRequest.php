@@ -149,8 +149,10 @@ class PostSplitRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$out_format = null )
     {        
+        $this->file = $file; 
+        $this->out_format = $out_format; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -212,7 +214,7 @@ class PostSplitRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

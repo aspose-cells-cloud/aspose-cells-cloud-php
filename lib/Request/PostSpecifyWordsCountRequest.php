@@ -59,8 +59,9 @@ class PostSpecifyWordsCountRequest extends BaseApiRequest
         $this->specify_words_count_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $specify_words_count_options = null )
     {        
+        $this->specify_words_count_options = $specify_words_count_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostSpecifyWordsCountRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->specify_words_count_options)) {
             $_tempBody = $this->specify_words_count_options;
             $_tempBodyName =str_replace('_','', 'specify_words_count_options');

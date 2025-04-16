@@ -59,8 +59,9 @@ class PostSplitTextRequest extends BaseApiRequest
         $this->split_text_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $split_text_options = null )
     {        
+        $this->split_text_options = $split_text_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostSplitTextRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->split_text_options)) {
             $_tempBody = $this->split_text_options;
             $_tempBodyName =str_replace('_','', 'split_text_options');

@@ -134,8 +134,12 @@ class PostChartSecondCategoryAxisRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$chart_index = null,$axis = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->chart_index = $chart_index; 
+        $this->axis = $axis; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostChartSecondCategoryAxisRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->axis)) {
             $_tempBody = $this->axis;
             $_tempBodyName =str_replace('_','', 'axis');

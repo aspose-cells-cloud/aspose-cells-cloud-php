@@ -134,8 +134,12 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$list_object_index = null,$table_total_requests = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->list_object_index = $list_object_index; 
+        $this->table_total_requests = $table_total_requests; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->table_total_requests)) {
             $_tempBody = $this->table_total_requests;
             $_tempBodyName =str_replace('_','', 'table_total_requests');

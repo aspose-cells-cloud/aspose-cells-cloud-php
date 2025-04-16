@@ -47,7 +47,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_csv_OutResultPostExcelSaveAscsv()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -56,7 +56,7 @@ final class ConversionTest extends TestCase
         $format = "csv";
         $newfilename = "outResult/PostExcelSaveAs.csv";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -76,7 +76,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_html_OutResultPostExcelSaveAshtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -85,7 +85,7 @@ final class ConversionTest extends TestCase
         $format = "html";
         $newfilename = "outResult/PostExcelSaveAs.html";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -105,7 +105,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_mhtml_OutResultPostExcelSaveAsmhtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -114,7 +114,7 @@ final class ConversionTest extends TestCase
         $format = "mhtml";
         $newfilename = "outResult/PostExcelSaveAs.mhtml";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -134,7 +134,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_ods_OutResultPostExcelSaveAsods()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -143,7 +143,7 @@ final class ConversionTest extends TestCase
         $format = "ods";
         $newfilename = "outResult/PostExcelSaveAs.ods";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -163,7 +163,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_pdf_OutResultPostExcelSaveAspdf()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -172,7 +172,7 @@ final class ConversionTest extends TestCase
         $format = "pdf";
         $newfilename = "outResult/PostExcelSaveAs.pdf";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -192,7 +192,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_xml_OutResultPostExcelSaveAsxml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -201,7 +201,7 @@ final class ConversionTest extends TestCase
         $format = "xml";
         $newfilename = "outResult/PostExcelSaveAs.xml";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -221,7 +221,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_txt_OutResultPostExcelSaveAstxt()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -230,7 +230,7 @@ final class ConversionTest extends TestCase
         $format = "txt";
         $newfilename = "outResult/PostExcelSaveAs.txt";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -250,7 +250,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_tif_OutResultPostExcelSaveAstif()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -259,7 +259,7 @@ final class ConversionTest extends TestCase
         $format = "tif";
         $newfilename = "outResult/PostExcelSaveAs.tif";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -279,7 +279,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_xlsb_OutResultPostExcelSaveAsxlsb()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -288,7 +288,7 @@ final class ConversionTest extends TestCase
         $format = "xlsb";
         $newfilename = "outResult/PostExcelSaveAs.xlsb";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -308,7 +308,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_xps_OutResultPostExcelSaveAsxps()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -317,7 +317,7 @@ final class ConversionTest extends TestCase
         $format = "xps";
         $newfilename = "outResult/PostExcelSaveAs.xps";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -337,7 +337,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_png_OutResultPostExcelSaveAspng()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -346,7 +346,7 @@ final class ConversionTest extends TestCase
         $format = "png";
         $newfilename = "outResult/PostExcelSaveAs.png";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -366,7 +366,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_md_OutResultPostExcelSaveAsmd()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -375,7 +375,7 @@ final class ConversionTest extends TestCase
         $format = "md";
         $newfilename = "outResult/PostExcelSaveAs.md";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -389,14 +389,13 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-
     /// <summary>
     /// Test for save workbook as one of the available formats.
     /// </summary>
 
     public function testWorkbookSaveAs_svg_OutResultPostExcelSaveAssvg()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -405,7 +404,7 @@ final class ConversionTest extends TestCase
         $format = "svg";
         $newfilename = "outResult/PostExcelSaveAs.svg";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -425,7 +424,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_docx_OutResultPostExcelSaveAsdocx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -434,7 +433,7 @@ final class ConversionTest extends TestCase
         $format = "docx";
         $newfilename = "outResult/PostExcelSaveAs.docx";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -454,7 +453,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_pptx_OutResultPostExcelSaveAspptx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -463,7 +462,7 @@ final class ConversionTest extends TestCase
         $format = "pptx";
         $newfilename = "outResult/PostExcelSaveAs.pptx";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -483,7 +482,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_json_OutResultPostExcelSaveAsjson()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -492,7 +491,7 @@ final class ConversionTest extends TestCase
         $format = "json";
         $newfilename = "outResult/PostExcelSaveAs.json";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -512,7 +511,7 @@ final class ConversionTest extends TestCase
 
     public function testWorkbookSaveAs_sql_OutResultPostExcelSaveAssql()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -521,7 +520,7 @@ final class ConversionTest extends TestCase
         $format = "sql";
         $newfilename = "outResult/PostExcelSaveAs.sql";
 
-        $saveOptions = new \Aspose\Cells\Cloud\Model\PdfSaveOptions();
+        $saveOptions = new \Aspose\Cells\Cloud\Model\SaveOptions();
         $saveOptions->setSaveFormat($format ); 
         CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
      
@@ -541,7 +540,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_csv()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -566,7 +565,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_html()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -591,7 +590,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_mhtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -616,7 +615,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_ods()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -641,7 +640,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_pdf()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -666,7 +665,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_xml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -691,7 +690,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_txt()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -716,7 +715,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_tif()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -741,7 +740,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_xps()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -766,7 +765,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_png()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -791,7 +790,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_md()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -810,15 +809,13 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-
-
     /// <summary>
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
     public function testGetWorkbookFormat_svg()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -843,7 +840,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_docx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -868,7 +865,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_pptx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -893,7 +890,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_json()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -918,7 +915,7 @@ final class ConversionTest extends TestCase
 
     public function testGetWorkbookFormat_sql()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -943,7 +940,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_csv()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -969,7 +966,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_xls()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -995,7 +992,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_html()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1021,7 +1018,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_mhtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1047,7 +1044,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_ods()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1073,7 +1070,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_pdf()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1099,7 +1096,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_xml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1125,7 +1122,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_txt()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1151,7 +1148,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_tif()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1177,7 +1174,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_xlsb()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1203,7 +1200,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_xps()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1229,7 +1226,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_png()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1255,7 +1252,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_md()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1275,40 +1272,13 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-
-    /// <summary>
-    /// Test for get workbook as one of the available formats.
-    /// </summary>
-
-    public function testConvertWorkbook_wmf()
-    {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
-        $remoteFolder = "TestData/In";
-
-        $localName = "Book1.xlsx";
-        $remoteName = "Book1.xlsx";
-
-        $format = "wmf";
-
-        $mapFiles = array ();
-        $mapFiles[$localName] = CellsApiTestBase::getfullfilename($localName);
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
-     
-        $request = new PutConvertWorkbookRequest();
-        $request->setFile( $mapFiles);
-        $request->setFormat( $format);
-
-        $resposne = $instance->putConvertWorkbook($request);
-        $this->assertTrue($resposne !==null );
-    }
-
     /// <summary>
     /// Test for get workbook as one of the available formats.
     /// </summary>
 
     public function testConvertWorkbook_svg()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1334,7 +1304,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_docx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1360,7 +1330,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_pptx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1386,7 +1356,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_json()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1412,7 +1382,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbook_sql()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1438,7 +1408,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_csv_OutResultConvertWorkbookcsv()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1466,7 +1436,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_xls_OutResultConvertWorkbookxls()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1494,7 +1464,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_html_OutResultConvertWorkbookhtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1522,7 +1492,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_mhtml_OutResultConvertWorkbookmhtml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1550,7 +1520,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_ods_OutResultConvertWorkbookods()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1578,7 +1548,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_pdf_OutResultConvertWorkbookpdf()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1606,7 +1576,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_xml_OutResultConvertWorkbookxml()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1634,7 +1604,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_txt_OutResultConvertWorkbooktxt()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1662,7 +1632,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_tif_OutResultConvertWorkbooktif()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1690,7 +1660,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_xlsb_OutResultConvertWorkbookxlsb()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1718,7 +1688,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_xltm_OutResultConvertWorkbookxltm()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1746,7 +1716,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_xps_OutResultConvertWorkbookxps()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1774,7 +1744,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_png_OutResultConvertWorkbookpng()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1802,7 +1772,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_md_OutResultConvertWorkbookmd()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1824,14 +1794,13 @@ final class ConversionTest extends TestCase
         $this->assertTrue($resposne !==null );
     }
 
-
     /// <summary>
     /// Test for converting workbook to one of the available formats.
     /// </summary>
 
     public function testConvertWorkbookSaveCloud_svg_OutResultConvertWorkbooksvg()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1859,7 +1828,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_docx_OutResultConvertWorkbookdocx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1887,7 +1856,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_pptx_OutResultConvertWorkbookpptx()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1915,7 +1884,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_json_OutResultConvertWorkbookjson()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -1943,7 +1912,7 @@ final class ConversionTest extends TestCase
 
     public function testConvertWorkbookSaveCloud_sql_OutResultConvertWorkbooksql()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";

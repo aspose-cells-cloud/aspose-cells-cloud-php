@@ -119,8 +119,11 @@ class PostWorkbookNameRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$name_name = null,$new_name = null )
     {        
+        $this->name = $name; 
+        $this->name_name = $name_name; 
+        $this->new_name = $new_name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -178,7 +181,7 @@ class PostWorkbookNameRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->new_name)) {
             $_tempBody = $this->new_name;
             $_tempBodyName =str_replace('_','', 'new_name');

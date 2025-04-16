@@ -59,8 +59,9 @@ class PostRunTaskRequest extends BaseApiRequest
         $this->task_data = $value;
     }
 
-    public function __construct()
+    public function __construct( $task_data = null )
     {        
+        $this->task_data = $task_data; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostRunTaskRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->task_data)) {
             $_tempBody = $this->task_data;
             $_tempBodyName =str_replace('_','', 'task_data');

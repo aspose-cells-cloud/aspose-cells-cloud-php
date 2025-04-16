@@ -194,8 +194,14 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$range = null,$field_index = null,$icon_set_type = null,$icon_id = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->range = $range; 
+        $this->field_index = $field_index; 
+        $this->icon_set_type = $icon_set_type; 
+        $this->icon_id = $icon_id; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -298,7 +304,7 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

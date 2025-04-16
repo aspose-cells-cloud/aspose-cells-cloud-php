@@ -134,8 +134,12 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$range = null,$style = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->range = $range; 
+        $this->style = $style; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -204,7 +208,7 @@ class PostUpdateWorksheetRangeStyleRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->style)) {
             $_tempBody = $this->style;
             $_tempBodyName =str_replace('_','', 'style');

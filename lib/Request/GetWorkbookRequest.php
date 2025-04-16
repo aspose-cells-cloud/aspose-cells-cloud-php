@@ -239,8 +239,24 @@ class GetWorkbookRequest extends BaseApiRequest
         $this->page_tall_fit_on_per_sheet = $value;
     }
 
-    public function __construct()
+    /*
+    * FontsLocation : Use Custom fonts.
+    */ 
+    public $fonts_location;
+
+    public function getFontsLocation()
+    {
+        return $this->fonts_location;
+    }
+
+    public function setFontsLocation($value)
+    {
+        $this->fonts_location = $value;
+    }
+
+    public function __construct( $name = null )
     {        
+        $this->name = $name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -314,9 +330,13 @@ class GetWorkbookRequest extends BaseApiRequest
         if ($this->page_tall_fit_on_per_sheet !== null) {
             $queryParams['pageTallFitOnPerSheet'] = ObjectSerializer::toQueryValue($this->page_tall_fit_on_per_sheet);
         }
+        // query params : fonts_location
+        if ($this->fonts_location !== null) {
+            $queryParams['FontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
+        }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -134,8 +134,10 @@ class PostAssembleRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$datasource = null )
     {        
+        $this->file = $file; 
+        $this->datasource = $datasource; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -193,7 +195,7 @@ class PostAssembleRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

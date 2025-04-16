@@ -149,8 +149,13 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$cellarea = null,$value = null,$type = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->cellarea = $cellarea; 
+        $this->value = $value; 
+        $this->type = $type; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -234,7 +239,7 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

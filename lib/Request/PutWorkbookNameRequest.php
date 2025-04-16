@@ -104,8 +104,10 @@ class PutWorkbookNameRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$new_name = null )
     {        
+        $this->name = $name; 
+        $this->new_name = $new_name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -148,7 +150,7 @@ class PutWorkbookNameRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->new_name)) {
             $_tempBody = $this->new_name;
             $_tempBodyName =str_replace('_','', 'new_name');

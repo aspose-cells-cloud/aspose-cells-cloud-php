@@ -179,8 +179,13 @@ class PutWorksheetColorFilterRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$range = null,$field_index = null,$color_filter = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->range = $range; 
+        $this->field_index = $field_index; 
+        $this->color_filter = $color_filter; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -268,7 +273,7 @@ class PutWorksheetColorFilterRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->color_filter)) {
             $_tempBody = $this->color_filter;
             $_tempBodyName =str_replace('_','', 'color_filter');

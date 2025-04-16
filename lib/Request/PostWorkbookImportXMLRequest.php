@@ -179,8 +179,10 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$import_xml_request = null )
     {        
+        $this->name = $name; 
+        $this->import_xml_request = $import_xml_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -243,7 +245,7 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->import_xml_request)) {
             $_tempBody = $this->import_xml_request;
             $_tempBodyName =str_replace('_','', 'import_xml_request');

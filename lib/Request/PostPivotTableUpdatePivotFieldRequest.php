@@ -179,8 +179,14 @@ class PostPivotTableUpdatePivotFieldRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$pivot_table_index = null,$pivot_field_index = null,$pivot_field_type = null,$pivot_field = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->pivot_table_index = $pivot_table_index; 
+        $this->pivot_field_index = $pivot_field_index; 
+        $this->pivot_field_type = $pivot_field_type; 
+        $this->pivot_field = $pivot_field; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -283,7 +289,7 @@ class PostPivotTableUpdatePivotFieldRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->pivot_field)) {
             $_tempBody = $this->pivot_field;
             $_tempBodyName =str_replace('_','', 'pivot_field');

@@ -89,8 +89,10 @@ class UploadFileRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $upload_files = null,$path = null )
     {        
+        $this->upload_files = $upload_files; 
+        $this->path = $path; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -140,7 +142,7 @@ class UploadFileRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

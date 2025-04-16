@@ -59,8 +59,9 @@ class PostDataDeduplicationRequest extends BaseApiRequest
         $this->data_deduplication_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $data_deduplication_request = null )
     {        
+        $this->data_deduplication_request = $data_deduplication_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostDataDeduplicationRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->data_deduplication_request)) {
             $_tempBody = $this->data_deduplication_request;
             $_tempBodyName =str_replace('_','', 'data_deduplication_request');

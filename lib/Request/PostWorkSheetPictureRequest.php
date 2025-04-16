@@ -134,8 +134,12 @@ class PostWorksheetPictureRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$picture_index = null,$picture = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->picture_index = $picture_index; 
+        $this->picture = $picture; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetPictureRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->picture)) {
             $_tempBody = $this->picture;
             $_tempBodyName =str_replace('_','', 'picture');

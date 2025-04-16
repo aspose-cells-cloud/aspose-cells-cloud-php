@@ -119,8 +119,11 @@ class PostWorksheetGroupShapeRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$list_shape = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->list_shape = $list_shape; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -178,7 +181,7 @@ class PostWorksheetGroupShapeRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->list_shape)) {
             $_tempBody = $this->list_shape;
             $_tempBodyName =str_replace('_','', 'list_shape');

@@ -164,8 +164,9 @@ class PostWorkbookExportXMLRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null )
     {        
+        $this->name = $name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -221,7 +222,7 @@ class PostWorkbookExportXMLRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

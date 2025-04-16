@@ -59,8 +59,24 @@ class PostConvertWorkbookRequest extends BaseApiRequest
         $this->convert_workbook_options = $value;
     }
 
-    public function __construct()
+    /*
+    * FontsLocation : Use Custom fonts.
+    */ 
+    public $fonts_location;
+
+    public function getFontsLocation()
+    {
+        return $this->fonts_location;
+    }
+
+    public function setFontsLocation($value)
+    {
+        $this->fonts_location = $value;
+    }
+
+    public function __construct( $convert_workbook_options = null )
     {        
+        $this->convert_workbook_options = $convert_workbook_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -78,9 +94,13 @@ class PostConvertWorkbookRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        // query params : fonts_location
+        if ($this->fonts_location !== null) {
+            $queryParams['FontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
+        }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->convert_workbook_options)) {
             $_tempBody = $this->convert_workbook_options;
             $_tempBodyName =str_replace('_','', 'convert_workbook_options');

@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **GridlineType** | **string** | Gets or sets gridline type. |
 **TextCrossType** | **string** | Gets or sets displaying text type when the text width is larger than cell width. |
 **DefaultEditLanguage** | **string** | Gets or sets default edit language. |
-**EmfRenderSetting** | **string** |  |
+**EmfRenderSetting** | **string** | Setting for rendering Emf metafile. |
 **MergeAreas** | **boolean** |  |
 **SortExternalNames** | **boolean** |  |
 **UpdateSmartArt** | **boolean** |  |
@@ -33,7 +33,9 @@ Name | Type | Description | Notes
 **EnableHTTPCompression** | **boolean** |  |
 **RefreshChartCache** | **boolean** |  |
 **SortNames** | **boolean** |  |
-**ValidateMergedAreas** | **boolean** |  |  
+**ValidateMergedAreas** | **boolean** |  |
+**CheckExcelRestriction** | **boolean** |  |
+**EncryptDocumentProperties** | **boolean** |  |  
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

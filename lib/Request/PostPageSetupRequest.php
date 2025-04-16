@@ -119,8 +119,11 @@ class PostPageSetupRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$page_setup = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->page_setup = $page_setup; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -178,7 +181,7 @@ class PostPageSetupRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->page_setup)) {
             $_tempBody = $this->page_setup;
             $_tempBodyName =str_replace('_','', 'page_setup');

@@ -194,8 +194,16 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$index = null,$cell_area = null,$type = null,$operator_type = null,$formula1 = null,$formula2 = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->index = $index; 
+        $this->cell_area = $cell_area; 
+        $this->type = $type; 
+        $this->operator_type = $operator_type; 
+        $this->formula1 = $formula1; 
+        $this->formula2 = $formula2; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -316,7 +324,7 @@ class PutWorksheetFormatConditionRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

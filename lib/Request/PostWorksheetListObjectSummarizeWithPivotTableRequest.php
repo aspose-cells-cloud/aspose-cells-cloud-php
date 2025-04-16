@@ -149,8 +149,13 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$list_object_index = null,$destsheet_name = null,$create_pivot_table_request = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->list_object_index = $list_object_index; 
+        $this->destsheet_name = $destsheet_name; 
+        $this->create_pivot_table_request = $create_pivot_table_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -234,7 +239,7 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->create_pivot_table_request)) {
             $_tempBody = $this->create_pivot_table_request;
             $_tempBodyName =str_replace('_','', 'create_pivot_table_request');

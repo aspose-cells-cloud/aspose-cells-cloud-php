@@ -74,8 +74,10 @@ class PostLockRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$password = null )
     {        
+        $this->file = $file; 
+        $this->password = $password; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -117,7 +119,7 @@ class PostLockRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

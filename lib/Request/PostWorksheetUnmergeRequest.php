@@ -164,8 +164,14 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$start_row = null,$start_column = null,$total_rows = null,$total_columns = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->start_row = $start_row; 
+        $this->start_column = $start_column; 
+        $this->total_rows = $total_rows; 
+        $this->total_columns = $total_columns; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -260,7 +266,7 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

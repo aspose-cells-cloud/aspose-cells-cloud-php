@@ -59,8 +59,9 @@ class PostCharacterCountRequest extends BaseApiRequest
         $this->character_count_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $character_count_options = null )
     {        
+        $this->character_count_options = $character_count_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostCharacterCountRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->character_count_options)) {
             $_tempBody = $this->character_count_options;
             $_tempBodyName =str_replace('_','', 'character_count_options');

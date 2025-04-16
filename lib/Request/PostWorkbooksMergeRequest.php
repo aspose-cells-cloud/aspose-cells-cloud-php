@@ -119,8 +119,10 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
         $this->merged_storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$merge_with = null )
     {        
+        $this->name = $name; 
+        $this->merge_with = $merge_with; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -171,7 +173,7 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -134,8 +134,11 @@ class PostCellCalculateRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$cell_name = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->cell_name = $cell_name; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -201,7 +204,7 @@ class PostCellCalculateRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->options)) {
             $_tempBody = $this->options;
             $_tempBodyName =str_replace('_','', 'options');

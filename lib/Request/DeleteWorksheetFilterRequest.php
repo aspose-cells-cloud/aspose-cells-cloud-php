@@ -134,8 +134,11 @@ class DeleteWorksheetFilterRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$field_index = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->field_index = $field_index; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -201,7 +204,7 @@ class DeleteWorksheetFilterRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

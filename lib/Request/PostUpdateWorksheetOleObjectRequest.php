@@ -134,8 +134,12 @@ class PostUpdateWorksheetOleObjectRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$ole_object_index = null,$ole = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->ole_object_index = $ole_object_index; 
+        $this->ole = $ole; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostUpdateWorksheetOleObjectRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->ole)) {
             $_tempBody = $this->ole;
             $_tempBodyName =str_replace('_','', 'ole');

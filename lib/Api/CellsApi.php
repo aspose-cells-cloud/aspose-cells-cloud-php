@@ -151,6 +151,8 @@ use Aspose\Cells\Cloud\Request\PostConvertWorkbookToSQLRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookToCSVRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorksheetToImageRequest;
 use Aspose\Cells\Cloud\Request\PostConvertWorkbookRequest;
+use Aspose\Cells\Cloud\Request\CheckWrokbookExternalReferenceRequest;
+use Aspose\Cells\Cloud\Request\CheckWorkbookFormulaErrorsRequest;
 use Aspose\Cells\Cloud\Request\PostExportRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookExportXMLRequest;
 use Aspose\Cells\Cloud\Request\PostWorkbookImportJsonRequest;
@@ -575,6 +577,8 @@ use Aspose\Cells\Cloud\Model\ChartPointsResponse;
 use Aspose\Cells\Cloud\Model\ChartResponse;
 use Aspose\Cells\Cloud\Model\ChartsResponse;
 use Aspose\Cells\Cloud\Model\CheckBoxResponse;
+use Aspose\Cells\Cloud\Model\CheckedExternalReferenceResponse;
+use Aspose\Cells\Cloud\Model\CheckedFormulaErrorsResponse;
 use Aspose\Cells\Cloud\Model\ColumnResponse;
 use Aspose\Cells\Cloud\Model\ColumnsResponse;
 use Aspose\Cells\Cloud\Model\ComboBoxResponse;
@@ -712,6 +716,8 @@ use Aspose\Cells\Cloud\Model\PivotTables;
 use Aspose\Cells\Cloud\Model\AddTextOptions;
 use Aspose\Cells\Cloud\Model\BaseOperateOptions;
 use Aspose\Cells\Cloud\Model\CharacterCountOptions;
+use Aspose\Cells\Cloud\Model\CheckExternalReferenceOptions;
+use Aspose\Cells\Cloud\Model\CheckFormulaErrorOptions;
 use Aspose\Cells\Cloud\Model\CombinationSourceData;
 use Aspose\Cells\Cloud\Model\ConvertTextOptions;
 use Aspose\Cells\Cloud\Model\ConvertWorkbookOptions;
@@ -2367,6 +2373,31 @@ class CellsApi
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// Export Excel internal elements or the workbook itself to various format files.
+    /// </summary>
+    /// <param name="request">Request. <see cref="CheckWrokbookExternalReferenceRequest" /></param>
+    public function checkWrokbookExternalReference( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CheckedExternalReferenceResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;
+    }
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CheckWorkbookFormulaErrorsRequest" /></param>
+    public function checkWorkbookFormulaErrors( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CheckedFormulaErrorsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;

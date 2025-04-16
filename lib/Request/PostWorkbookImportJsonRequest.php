@@ -179,8 +179,10 @@ class PostWorkbookImportJsonRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$import_json_request = null )
     {        
+        $this->name = $name; 
+        $this->import_json_request = $import_json_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -243,7 +245,7 @@ class PostWorkbookImportJsonRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->import_json_request)) {
             $_tempBody = $this->import_json_request;
             $_tempBodyName =str_replace('_','', 'import_json_request');

@@ -134,8 +134,12 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$formatcondition = null,$cell_area = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->formatcondition = $formatcondition; 
+        $this->cell_area = $cell_area; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -204,7 +208,7 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->formatcondition)) {
             $_tempBody = $this->formatcondition;
             $_tempBodyName =str_replace('_','', 'formatcondition');

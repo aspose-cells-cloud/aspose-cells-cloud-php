@@ -179,8 +179,12 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$dest_cell_name = null,$sheet_name = null,$worksheet = null )
     {        
+        $this->name = $name; 
+        $this->dest_cell_name = $dest_cell_name; 
+        $this->sheet_name = $sheet_name; 
+        $this->worksheet = $worksheet; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -269,7 +273,7 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -164,8 +164,13 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$source_column_index = null,$destination_column_index = null,$column_number = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->source_column_index = $source_column_index; 
+        $this->destination_column_index = $destination_column_index; 
+        $this->column_number = $column_number; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -253,7 +258,7 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

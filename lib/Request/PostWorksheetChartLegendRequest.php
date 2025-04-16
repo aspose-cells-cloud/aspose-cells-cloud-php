@@ -134,8 +134,12 @@ class PostWorksheetChartLegendRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$chart_index = null,$legend = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->chart_index = $chart_index; 
+        $this->legend = $legend; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetChartLegendRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->legend)) {
             $_tempBody = $this->legend;
             $_tempBodyName =str_replace('_','', 'legend');

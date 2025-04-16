@@ -134,8 +134,11 @@ class PostReplaceRequest extends BaseApiRequest
         $this->check_excel_restriction = $value;
     }
 
-    public function __construct()
+    public function __construct( $file = null,$text = null,$newtext = null )
     {        
+        $this->file = $file; 
+        $this->text = $text; 
+        $this->newtext = $newtext; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -200,7 +203,7 @@ class PostReplaceRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

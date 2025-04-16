@@ -57,22 +57,22 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangesCopy()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
         $remoteName = "Book1.xlsx";
 
         $rangeOperateSource = new \Aspose\Cells\Cloud\Model\Range();
-        $rangeOperateSource->setColumnCount(1 ); 
-        $rangeOperateSource->setColumnWidth(10.0 ); 
-        $rangeOperateSource->setFirstRow(1 ); 
-        $rangeOperateSource->setRowCount(10 ); 
+        $rangeOperateSource->setColumnCount(3 ); 
+        $rangeOperateSource->setFirstColumn(8 ); 
+        $rangeOperateSource->setFirstRow(3 ); 
+        $rangeOperateSource->setRowCount(2 ); 
         $rangeOperateTarget = new \Aspose\Cells\Cloud\Model\Range();
-        $rangeOperateTarget->setColumnCount(1 ); 
-        $rangeOperateTarget->setColumnWidth(10.0 ); 
-        $rangeOperateTarget->setFirstRow(10 ); 
-        $rangeOperateTarget->setRowCount(10 ); 
+        $rangeOperateTarget->setColumnCount(3 ); 
+        $rangeOperateTarget->setFirstColumn(8 ); 
+        $rangeOperateTarget->setFirstRow(13 ); 
+        $rangeOperateTarget->setRowCount(2 ); 
         $rangeOperate = new \Aspose\Cells\Cloud\Model\RangeCopyRequest();
         $rangeOperate->setOperate("copydata" ); 
         $rangeOperate->setSource($rangeOperateSource ); 
@@ -96,7 +96,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeMerge()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -126,7 +126,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeUnMerge()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -156,7 +156,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeStyle()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -193,7 +193,7 @@ final class RangesControllerTest extends TestCase
 
     public function testGetWorksheetCellsRangeValue()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -222,7 +222,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeValue()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -255,7 +255,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeMoveTo()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -287,7 +287,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeOutlineBorder()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -326,7 +326,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeColumnWidth()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -357,7 +357,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeRowHeight()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -388,7 +388,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPutWorksheetCellsRange()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -414,7 +414,7 @@ final class RangesControllerTest extends TestCase
 
     public function testDeleteWorksheetCellsRange()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Book1.xlsx";
@@ -440,7 +440,7 @@ final class RangesControllerTest extends TestCase
 
     public function testPostWorksheetCellsRangeSort()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "Group.xlsx";

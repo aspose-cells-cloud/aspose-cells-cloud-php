@@ -164,8 +164,13 @@ class PutPivotTableFieldRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$pivot_table_index = null,$pivot_field_type = null,$pivot_table_field_request = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->pivot_table_index = $pivot_table_index; 
+        $this->pivot_field_type = $pivot_field_type; 
+        $this->pivot_table_field_request = $pivot_table_field_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -253,7 +258,7 @@ class PutPivotTableFieldRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->pivot_table_field_request)) {
             $_tempBody = $this->pivot_table_field_request;
             $_tempBodyName =str_replace('_','', 'pivot_table_field_request');

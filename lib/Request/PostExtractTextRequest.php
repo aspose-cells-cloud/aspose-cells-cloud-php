@@ -59,8 +59,9 @@ class PostExtractTextRequest extends BaseApiRequest
         $this->extract_text_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $extract_text_options = null )
     {        
+        $this->extract_text_options = $extract_text_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostExtractTextRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->extract_text_options)) {
             $_tempBody = $this->extract_text_options;
             $_tempBodyName =str_replace('_','', 'extract_text_options');

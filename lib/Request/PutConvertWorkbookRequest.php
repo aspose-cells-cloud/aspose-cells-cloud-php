@@ -224,8 +224,25 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         $this->page_index = $value;
     }
 
-    public function __construct()
+    /*
+    * FontsLocation : Use Custom fonts.
+    */ 
+    public $fonts_location;
+
+    public function getFontsLocation()
+    {
+        return $this->fonts_location;
+    }
+
+    public function setFontsLocation($value)
+    {
+        $this->fonts_location = $value;
+    }
+
+    public function __construct( $file = null,$format = null )
     {        
+        $this->file = $file; 
+        $this->format = $format; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -234,6 +251,13 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         if ($this->file === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PutConvertWorkbook'
+            );
+        } 
+
+        // verify the required parameter 'format' is set
+        if ($this->format === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $format when calling PutConvertWorkbook'
             );
         } 
 
@@ -287,6 +311,10 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         if ($this->page_index !== null) {
             $queryParams['pageIndex'] = ObjectSerializer::toQueryValue($this->page_index);
         }
+        // query params : fonts_location
+        if ($this->fonts_location !== null) {
+            $queryParams['FontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
+        }
         if ($this->file !== null) {
             $multipart = true;
             if( is_array($this->file)){
@@ -300,7 +328,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
 
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

@@ -59,8 +59,9 @@ class PostAddTextContentRequest extends BaseApiRequest
         $this->add_text_options = $value;
     }
 
-    public function __construct()
+    public function __construct( $add_text_options = null )
     {        
+        $this->add_text_options = $add_text_options; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostAddTextContentRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->add_text_options)) {
             $_tempBody = $this->add_text_options;
             $_tempBodyName =str_replace('_','', 'add_text_options');

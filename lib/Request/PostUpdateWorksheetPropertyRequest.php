@@ -119,8 +119,11 @@ class PostUpdateWorksheetPropertyRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$sheet = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->sheet = $sheet; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -178,7 +181,7 @@ class PostUpdateWorksheetPropertyRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->sheet)) {
             $_tempBody = $this->sheet;
             $_tempBodyName =str_replace('_','', 'sheet');

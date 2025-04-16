@@ -37,6 +37,7 @@ use \Aspose\Cells\Cloud\Api\CellsApi;
 use \Aspose\Cells\Cloud\Request\PostBatchConvertRequest; 
 use \Aspose\Cells\Cloud\Request\PostBatchLockRequest; 
 use \Aspose\Cells\Cloud\Request\PostBatchProtectRequest; 
+use \Aspose\Cells\Cloud\Request\PostBatchSplitRequest; 
 use \Aspose\Cells\Cloud\Request\PostBatchUnlockRequest; 
 
 use PHPUnit\Framework\TestCase;
@@ -48,7 +49,7 @@ final class BatchControllerTest extends TestCase
 
     public function testPostBatchConvert()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -79,7 +80,7 @@ final class BatchControllerTest extends TestCase
 
     public function testPostBatchProtect()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -111,7 +112,7 @@ final class BatchControllerTest extends TestCase
 
     public function testPostBatchLock()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -142,7 +143,7 @@ final class BatchControllerTest extends TestCase
 
     public function testPostBatchUnlock()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localBook1 = "Book1.xlsx";
@@ -164,6 +165,37 @@ final class BatchControllerTest extends TestCase
         $request->setBatchLockRequest( $batchLockRequest);
 
         $resposne = $instance->postBatchUnlock($request);
+        $this->assertTrue($resposne !==null );
+    }
+
+    /// <summary>
+    /// Test for PostBatchSplit of BatchController.
+    /// </summary>
+
+    public function testPostBatchSplit()
+    {
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
+        $remoteFolder = "TestData/In";
+
+        $localBook1 = "Book1.xlsx";
+        $remoteBook1 = "Book1.xlsx";
+        $localMyDoc = "myDocument.xlsx";
+        $remoteMyDoc = "myDocument.xlsx";
+
+        $batchSplitRequestMatchCondition = new \Aspose\Cells\Cloud\Model\MatchConditionRequest();
+        $batchSplitRequestMatchCondition->setRegexPattern("(^Book)(.+)(xlsx$)" ); 
+        $batchSplitRequest = new \Aspose\Cells\Cloud\Model\BatchSplitRequest();
+        $batchSplitRequest->setSourceFolder($remoteFolder ); 
+        $batchSplitRequest->setFormat("Pdf" ); 
+        $batchSplitRequest->setOutFolder("OutResult" ); 
+        $batchSplitRequest->setMatchCondition($batchSplitRequestMatchCondition ); 
+        CellsApiTestBase::ready(  $instance,$localBook1 ,$remoteFolder . "/" . $remoteBook1 ,  "");
+        CellsApiTestBase::ready(  $instance,$localMyDoc ,$remoteFolder . "/" . $remoteMyDoc ,  "");
+     
+        $request = new PostBatchSplitRequest();
+        $request->setBatchSplitRequest( $batchSplitRequest);
+
+        $resposne = $instance->postBatchSplit($request);
         $this->assertTrue($resposne !==null );
     }
 }

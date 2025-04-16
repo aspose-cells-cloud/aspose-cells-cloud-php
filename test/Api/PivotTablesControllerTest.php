@@ -65,7 +65,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testGetWorksheetPivotTables()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -89,7 +89,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testGetWorksheetPivotTable()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -114,7 +114,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testGetPivotTableField()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -141,7 +141,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testGetWorksheetPivotTableFilters()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -166,7 +166,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testGetWorksheetPivotTableFilter()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -192,7 +192,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPutWorksheetPivotTable()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -220,7 +220,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPutPivotTableField()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -253,29 +253,17 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPutWorksheetPivotTableFilter()
     {
-        // $this->markTestSkipped('This testPutWorksheetPivotTableFilter is skipped.');
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
         $remoteName = "TestCase.xlsx";
 
-        $top20Filter = new \Aspose\Cells\Cloud\Model\Top10Filter();
-        $top20Filter->setItems(1 );
-        $top20Filter->setFieldIndex(0 );
-        $top20Filter->setIsPercent(true );
-        $filter_column = new \Aspose\Cells\Cloud\Model\FilterColumn();
-        $filter_column->setFilterType("Top10Filter" );  
-        $filter_column->setTop10Filter($top20Filter );
-        
-        $auto_filter = new \Aspose\Cells\Cloud\Model\AutoFilter();
-        $auto_filter->setFilterColumns(array($filter_column ));
-
         $filter = new \Aspose\Cells\Cloud\Model\PivotFilter();
-        $filter->setFieldIndex(1 ); 
+        $filter->setFieldIndex(0 ); 
         $filter->setFilterType("Count" ); 
-        $filter->setAutoFilter($auto_filter );
-        
+        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
+     
         $request = new PutWorksheetPivotTableFilterRequest();
         $request->setName( $remoteName);
         $request->setSheetName( "Sheet4");
@@ -285,7 +273,6 @@ final class PivotTablesControllerTest extends TestCase
         $request->setFolder( $remoteFolder);
         $request->setStorageName( "");
 
-        CellsApiTestBase::ready(  $instance,$localName ,$remoteFolder . "/" . $remoteName ,  "");
         $resposne = $instance->putWorksheetPivotTableFilter($request);
         $this->assertTrue($resposne !==null );
     }
@@ -296,7 +283,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostPivotTableFieldHideItem()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -326,7 +313,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostPivotTableFieldMoveTo()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -354,7 +341,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostPivotTableCellStyle()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -387,7 +374,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostPivotTableStyle()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -418,7 +405,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostPivotTableUpdatePivotFields()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -448,7 +435,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostPivotTableUpdatePivotField()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -479,7 +466,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostWorksheetPivotTableCalculate()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -504,7 +491,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testPostWorksheetPivotTableMove()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -532,7 +519,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testDeleteWorksheetPivotTables()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -556,7 +543,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testDeleteWorksheetPivotTable()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -581,7 +568,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testDeletePivotTableField()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -613,7 +600,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testDeleteWorksheetPivotTableFilters()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";
@@ -639,7 +626,7 @@ final class PivotTablesControllerTest extends TestCase
 
     public function testDeleteWorksheetPivotTableFilter()
     {
-        $instance = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl"));
+        $instance = new CellsApi(getenv("CellsCloudTestClientId"),getenv("CellsCloudTestClientSecret"),"v3.0",getenv("CellsCloudTestApiBaseUrl"));
         $remoteFolder = "TestData/In";
 
         $localName = "TestCase.xlsx";

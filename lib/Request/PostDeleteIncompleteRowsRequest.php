@@ -59,8 +59,9 @@ class PostDeleteIncompleteRowsRequest extends BaseApiRequest
         $this->delete_incomplete_rows_request = $value;
     }
 
-    public function __construct()
+    public function __construct( $delete_incomplete_rows_request = null )
     {        
+        $this->delete_incomplete_rows_request = $delete_incomplete_rows_request; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -80,7 +81,7 @@ class PostDeleteIncompleteRowsRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->delete_incomplete_rows_request)) {
             $_tempBody = $this->delete_incomplete_rows_request;
             $_tempBodyName =str_replace('_','', 'delete_incomplete_rows_request');

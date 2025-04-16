@@ -44,7 +44,7 @@ use Asapose\Cells\Cloud\Configuration;
 class GetCellsCloudServiceStatusRequest extends BaseApiRequest
 {
 
-    public function __construct()
+    public function __construct(  )
     {        
     }
 
@@ -59,7 +59,7 @@ class GetCellsCloudServiceStatusRequest extends BaseApiRequest
         $multipart = false;    
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']

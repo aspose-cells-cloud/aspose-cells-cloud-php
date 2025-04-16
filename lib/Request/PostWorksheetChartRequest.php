@@ -134,8 +134,12 @@ class PostWorksheetChartRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct()
+    public function __construct( $name = null,$sheet_name = null,$chart_index = null,$chart = null )
     {        
+        $this->name = $name; 
+        $this->sheet_name = $sheet_name; 
+        $this->chart_index = $chart_index; 
+        $this->chart = $chart; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -208,7 +212,7 @@ class PostWorksheetChartRequest extends BaseApiRequest
         }
     // body params
         $_tempBody = null;
-        $_tempBodyName ;
+        $_tempBodyName =null;
         if (isset($this->chart)) {
             $_tempBody = $this->chart;
             $_tempBodyName =str_replace('_','', 'chart');
