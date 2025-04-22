@@ -39,6 +39,6 @@ jobs:
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run Example Codes
-       run: |
+      run: |
         php .\examples\Example_QuickStart.php
  
