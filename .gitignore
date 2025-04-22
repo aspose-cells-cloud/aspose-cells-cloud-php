@@ -1,3 +1,12 @@
 /vendor/
 .idea
 .settings
+integrationtests/
+phpunit.xml.dist
+phpunit_api.xml.dist
+phpunit_convert.xml.dist
+phpunit_document.xml.dist
+phpunit_onecase.xml.dist
+integration_tests_result.xml
+.phpunit.result.cache
+composer.lock

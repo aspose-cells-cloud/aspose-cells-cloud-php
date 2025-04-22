@@ -35,6 +35,6 @@
         "psr-4": { "Aspose\\Cells\\Cloud\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Aspose\\Cells\\Cloud\\" : "test/" }
+        "psr-4": { "Aspose\\Cells\\Cloud\\" : "integrationtests/" }
   }
 }
