@@ -20,6 +20,18 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install CA Certificates
+      run: |
+        curl -o cacert.pem https://curl.se/ca/cacert.pem
+        echo "[curl]" > php.ini
+        echo "capath=$(pwd)" >> php.ini
+        echo "cafile=$(pwd)/cacert.pem" >> php.ini
+
+    - name: Configure PHP with CA Certificates
+      shell: pwsh
+      run: |
+        Add-Content -Path $env:PHP_INI_DIR/php.ini -Value "`n[curl]`ncapath=$(pwd)`ncafile=$(pwd)/cacert.pem"
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
