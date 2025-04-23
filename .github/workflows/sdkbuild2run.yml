@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Aspose Cells Cloud SDK for PHP
 
 on:
   push:
@@ -6,10 +6,8 @@ on:
   pull_request:
     branches: [ "master" ]
 
-permissions:
-  contents: read
-
 jobs:
+
   build:
     runs-on: windows-latest
     env:
