@@ -21,30 +21,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Install Chocolatey
-      shell: powershell
-      run: |
-        Set-ExecutionPolicy Bypass -Scope Process -Force
-        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-        iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
-    - name: Install Dependencies
-      shell: powershell
-      run: |
-        choco install openssl --version=3.1.4 -y  # 
-
-    - name: Setup OpenSSL
-      shell: cmd
-      run: |
-        set OPENSSL_ROOT=C:\Program Files\OpenSSL-Win64
-        set PATH=%OPENSSL_ROOT%\bin;%PATH%
-        echo "OPENSSL_ROOT=%OPENSSL_ROOT%" >> %GITHUB_ENV%
-        echo "PATH=%PATH%" >> %GITHUB_ENV%
-
-    - name: Configure PHP with CA Certificates
-      shell: pwsh
-      run: |
-        Add-Content -Path $env:PHP_INI_DIR/php.ini -Value "`n[curl]`ncapath=$(pwd)`ncafile=$(pwd)/cacert.pem"
+    - name: Set up PHP with OpenSSL on Windows
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'  # Adjust as needed
+        extensions: openssl
+        ini-values: openssl.cafile=C:\Program Files\Common Files\SSL\cert.pem
+        coverage: none
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
