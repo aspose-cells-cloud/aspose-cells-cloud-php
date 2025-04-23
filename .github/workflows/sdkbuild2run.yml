@@ -26,8 +26,11 @@ jobs:
       with:
         php-version: '8.2'  # Adjust as needed
         extensions: openssl
-        ini-values: openssl.cafile=C:\Program Files\Common Files\SSL\cert.pem
+        ini-values: curl.cainfo=${{ github.workspace }}/cacert.pem
         coverage: none
+
+    - name: Download cacert.pem
+      run: curl -o cacert.pem https://curl.se/ca/cacert.pem
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
