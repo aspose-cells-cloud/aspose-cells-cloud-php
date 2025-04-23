@@ -31,9 +31,7 @@ jobs:
     - name: Install Dependencies
       shell: powershell
       run: |
-        choco install openssl --version=3.1.4 -y  # 安装 OpenSSL
-        choco install cmake --version=3.25.1 -y  # 安装 CMake
-        choco install bison re2c -y  # PHP 编译依赖工具
+        choco install openssl --version=3.1.4 -y  # 
 
     - name: Setup OpenSSL
       shell: cmd
