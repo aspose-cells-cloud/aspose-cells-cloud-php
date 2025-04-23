@@ -15,13 +15,8 @@ jobs:
       CellsCloudClientId: ${{ secrets.PRODUCTCLIENTID }}
       CellsCloudClientSecret: ${{ secrets.PRODUCTCLIENTSECRET }}
       CellsCloudName: "Roy Cells"
-    steps:
-    - name: Set env using GITHUB_ENV (Windows)
-      shell: cmd
-      run: |
-        echo CellsCloudClientId=${{ secrets.PRODUCTCLIENTID }}>> %GITHUB_ENV%
-        echo CellsCloudClientSecret=${{ secrets.PRODUCTCLIENTSECRET }}>> %GITHUB_ENV%
 
+    steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
