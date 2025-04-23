@@ -18,14 +18,30 @@ jobs:
       CellsCloudClientSecret: ${{ secrets.CELLSCLOUDCLIENTSECRET }}
       
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - name: Install CA Certificates
+    - name: Install Chocolatey
+      shell: powershell
       run: |
-        curl -o cacert.pem https://curl.se/ca/cacert.pem
-        echo "[curl]" > php.ini
-        echo "capath=$(pwd)" >> php.ini
-        echo "cafile=$(pwd)/cacert.pem" >> php.ini
+        Set-ExecutionPolicy Bypass -Scope Process -Force
+        [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+        iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+    - name: Install Dependencies
+      shell: powershell
+      run: |
+        choco install openssl --version=3.1.4 -y  # 安装 OpenSSL
+        choco install cmake --version=3.25.1 -y  # 安装 CMake
+        choco install bison re2c -y  # PHP 编译依赖工具
+
+    - name: Setup OpenSSL
+      shell: cmd
+      run: |
+        set OPENSSL_ROOT=C:\Program Files\OpenSSL-Win64
+        set PATH=%OPENSSL_ROOT%\bin;%PATH%
+        echo "OPENSSL_ROOT=%OPENSSL_ROOT%" >> %GITHUB_ENV%
+        echo "PATH=%PATH%" >> %GITHUB_ENV%
 
     - name: Configure PHP with CA Certificates
       shell: pwsh
