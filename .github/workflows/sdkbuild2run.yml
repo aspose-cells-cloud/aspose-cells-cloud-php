@@ -11,12 +11,10 @@ permissions:
 
 jobs:
   build:
-
     runs-on: windows-latest
     env:
-      CellsCloudClientId: ${{ secrets.CELLSCLOUDTESTCLIENTID }}
-      CellsCloudClientSecret: ${{ secrets.CELLSCLOUDCLIENTSECRET }}
-      
+      CellsCloudClientId: ${{ secrets.PRODUCTCLIENTID }}
+      CellsCloudClientSecret: ${{ secrets.PRODUCTCLIENTSECRET }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -49,6 +47,6 @@ jobs:
 
     - name: Run Example Codes
       run: |
-        echo "API Key: ${{ secrets.CELLSCLOUDTESTCLIENTID }}"
+        echo "API Key: ${{ secrets.PRODUCTCLIENTID }}"
         echo "API Key: $CellsCloudClientId  \n"
         php .\examples\Example_QuickStart.php
