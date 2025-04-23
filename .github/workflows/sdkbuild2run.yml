@@ -14,7 +14,6 @@ jobs:
     env:
       CellsCloudClientId: ${{ secrets.PRODUCTCLIENTID }}
       CellsCloudClientSecret: ${{ secrets.PRODUCTCLIENTSECRET }}
-      CellsCloudName: "Roy Cells"
 
     steps:
     - name: Checkout code
@@ -50,6 +49,5 @@ jobs:
       shell: cmd
       run: |
         echo "API Key: ${{ secrets.PRODUCTCLIENTID }}"
-        echo "API Key: %CellsCloudClientId%  "
-        echo "API Key: $env:CellsCloudName  "
+        echo "API Key: $env:CellsCloudClientId  "
         php .\examples\Example_QuickStart.php
