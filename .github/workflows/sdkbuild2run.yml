@@ -47,10 +47,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
     - name: Run Example Codes
       run: |
+        echo "API Key: ${{ secrets.CELLSCLOUDTESTCLIENTID }}"
+        echo "API Key: $CellsCloudClientId  \n"
         php .\examples\Example_QuickStart.php
- 
