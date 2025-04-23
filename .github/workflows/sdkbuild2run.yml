@@ -48,5 +48,5 @@ jobs:
       - name: Run Example Codes
         run: |
           echo "API Key: ${{ secrets.PRODUCTCLIENTID }}"
-          echo "API Key: $CellsCloudClientId  \n"
+          echo "API Key: $env:CellsCloudClientId  "
           php .\examples\Example_QuickStart.php
