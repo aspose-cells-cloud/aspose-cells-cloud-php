@@ -6,6 +6,58 @@ Aspose.Cells Cloud SDK for PHP empowers developers to programmatically manage Ex
 
 Enhance your PHP applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine.
 
+
+## Quick Start Guide
+
+To begin with Aspose.Cells Cloud, here's what you need to do:
+
+1. Sign up for an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) to obtain your application details.
+2. Install the Aspose.Cells Cloud PHP Package from [Packagist](https://packagist.org/packages/aspose/cells-sdk-php).
+
+   **To install Aspose.Cells Cloud via Composer, follow these steps:**
+
+   - Add Aspose.Cells Cloud as a dependency to your `composer.json` file:
+
+   ```json
+   {
+       "require": {
+           "aspose/cells-cloud": "^25.3"
+       }
+   }
+   ```
+
+   - Run Composer install Aspose.Cells Cloud SDK:
+
+   ```bash
+   composer install
+   ```
+
+   - Include Composer's autoloader in your PHP code:
+
+   ```php
+   require 'vendor/autoload.php';
+   ```
+
+   - You're now ready to use Aspose.Cells Cloud in your PHP project.
+
+3. Use the conversion code provided below as a reference to add or modify your application.
+
+## Convert an Excel File Using PHP
+
+```php
+<?php
+require_once('vendor\autoload.php');
+use \Aspose\Cells\Cloud\Api\CellsApi;
+use \Aspose\Cells\Cloud\Request\PutConvertWorkbookRequest;
+
+#get CellsCloudClientId from https://dashboard.aspose.cloud/#/applications
+#get CellsCloudClientSecret from https://dashboard.aspose.cloud/#/applications
+$cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"));
+$response = $cellsApi->putConvertWorkbook(new PutConvertWorkbookRequest( 'EmployeeSalesSummary.xlsx', 'pdf'));
+copy($response->getPathname(),"EmployeeSalesSummary.pdf");
+
+```
+
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
 - File Manipulation: Users can upload, download, delete, and manage Excel files stored in the cloud.
@@ -65,58 +117,6 @@ Full list of issues covering all changes in this release:
 |[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|&radic;|&radic;|
 |[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
 |[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
-
-## Quick Start Guide
-
-To begin with Aspose.Cells Cloud, here's what you need to do:
-
-1. Sign up for an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) to obtain your application details.
-2. Install the Aspose.Cells Cloud PHP Package from [Packagist](https://packagist.org/packages/aspose/cells-sdk-php).
-
-    **To install Aspose.Cells Cloud via Composer, follow these steps:**
-
-    - Add Aspose.Cells Cloud as a dependency to your `composer.json` file:
-
-   ```json
-   {
-       "require": {
-           "aspose/cells-cloud": "^25.3"
-       }
-   }
-   ```
-
-    - Run Composer install Aspose.Cells Cloud SDK:
-
-   ```bash
-   composer install
-   ```
-
-    - Include Composer's autoloader in your PHP code:
-
-   ```php
-   require 'vendor/autoload.php';
-   ```
-
-    - You're now ready to use Aspose.Cells Cloud in your PHP project.
-
-3. Use the conversion code provided below as a reference to add or modify your application.
-
-## Convert an Excel File Using PHP
-
-```php
-<?php
-require_once('vendor\autoload.php');
-use \Aspose\Cells\Cloud\Api\CellsApi;
-use \Aspose\Cells\Cloud\Request\PutConvertWorkbookRequest;
-
-$cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"),"v3.0",getenv("CellsCloudApiBaseUrl")); 
-$request = new PutConvertWorkbookRequest();
-$request->setFile(  ['Book1.xlsx' => 'TestData/Book1.xlsx']);
-$request->setFormat("pdf");
-$response = $cellsApi->putConvertWorkbook($request);
-copy($response->getPathname(),"Book1.pdf");
-
-```
 
 ## Aspose.Cells Cloud in Popular Languages
 
