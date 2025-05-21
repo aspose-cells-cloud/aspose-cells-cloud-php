@@ -228,6 +228,8 @@ class DeleteMetadataRequest extends BaseApiRequest
         if($config->getAccessToken()!==''){
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
+        $defaultHeaders['x-aspose-client'] = 'php sdk';
+        $defaultHeaders['x-aspose-client-version'] = '25.5';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
