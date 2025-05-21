@@ -131,9 +131,10 @@ class PostAutofitWorkbookColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostAutofitWorkbookColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/autofitcolumns';
+
+        $resourcePath = 'v3.0/cells/{name}/autofitcolumns';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

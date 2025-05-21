@@ -71,9 +71,10 @@ class StorageExistsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $storage_name when calling StorageExists'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/storage/{storageName}/exist';
+
+        $resourcePath = 'v3.0/cells/storage/{storageName}/exist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

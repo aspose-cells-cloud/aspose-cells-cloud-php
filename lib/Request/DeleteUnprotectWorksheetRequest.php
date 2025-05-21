@@ -133,23 +133,26 @@ class DeleteUnprotectWorksheetRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteUnprotectWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteUnprotectWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'protect_parameter' is set
         if ($this->protect_parameter === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $protect_parameter when calling DeleteUnprotectWorksheet'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/protection';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/protection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

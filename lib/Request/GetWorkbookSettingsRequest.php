@@ -101,9 +101,10 @@ class GetWorkbookSettingsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorkbookSettings'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/settings';
+
+        $resourcePath = 'v3.0/cells/{name}/settings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

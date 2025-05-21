@@ -165,37 +165,42 @@ class PostFooterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostFooter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostFooter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'section' is set
         if ($this->section === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $section when calling PostFooter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'script' is set
         if ($this->script === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $script when calling PostFooter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_first_page' is set
         if ($this->is_first_page === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_first_page when calling PostFooter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pagesetup/footer';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pagesetup/footer';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

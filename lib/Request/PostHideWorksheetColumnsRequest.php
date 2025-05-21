@@ -149,30 +149,34 @@ class PostHideWorksheetColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostHideWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostHideWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'start_column' is set
         if ($this->start_column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $start_column when calling PostHideWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_columns' is set
         if ($this->total_columns === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_columns when calling PostHideWorksheetColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/columns/hide';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/hide';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

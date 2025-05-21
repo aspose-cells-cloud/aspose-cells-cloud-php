@@ -212,51 +212,58 @@ class PostPivotTableFieldHideItemRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_table_index' is set
         if ($this->pivot_table_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_table_index when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_field_type' is set
         if ($this->pivot_field_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_field_type when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
+
 
         // verify the required parameter 'item_index' is set
         if ($this->item_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $item_index when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_hide' is set
         if ($this->is_hide === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_hide when calling PostPivotTableFieldHideItem'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

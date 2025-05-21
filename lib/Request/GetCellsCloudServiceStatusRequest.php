@@ -51,7 +51,7 @@ class GetCellsCloudServiceStatusRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = '/cells/status/check';
+        $resourcePath = 'v3.0/cells/status/check';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

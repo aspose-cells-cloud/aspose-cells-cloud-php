@@ -71,9 +71,10 @@ class PostAddTextContentRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $add_text_options when calling PostAddTextContent'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/addtext';
+
+        $resourcePath = 'v3.0/cells/addtext';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

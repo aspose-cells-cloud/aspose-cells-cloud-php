@@ -165,37 +165,42 @@ class PostWorksheetCellsRangeMoveToRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PostWorksheetCellsRangeMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'dest_row' is set
         if ($this->dest_row === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $dest_row when calling PostWorksheetCellsRangeMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'dest_column' is set
         if ($this->dest_column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $dest_column when calling PostWorksheetCellsRangeMoveTo'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/moveto';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/moveto';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

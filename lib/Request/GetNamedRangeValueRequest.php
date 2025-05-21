@@ -117,16 +117,18 @@ class GetNamedRangeValueRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetNamedRangeValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'namerange' is set
         if ($this->namerange === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $namerange when calling GetNamedRangeValue'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/ranges/{namerange}/value';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/ranges/{namerange}/value';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

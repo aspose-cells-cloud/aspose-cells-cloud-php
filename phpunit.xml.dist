@@ -7,9 +7,8 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite>
-            <directory>./test/Api</directory>
-            <directory>./test/Conversion</directory>
-            <directory>./test/Document</directory>
+            <directory>./integrationtests/CellsCloud30</directory>
+            <directory>./integrationtests/Dynabic</directory>
         </testsuite>
     </testsuites>
 

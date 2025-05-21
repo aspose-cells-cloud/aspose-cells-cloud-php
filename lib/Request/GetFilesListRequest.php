@@ -81,7 +81,7 @@ class GetFilesListRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = '/cells/storage/folder/{path}';
+        $resourcePath = 'v3.0/cells/storage/folder/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

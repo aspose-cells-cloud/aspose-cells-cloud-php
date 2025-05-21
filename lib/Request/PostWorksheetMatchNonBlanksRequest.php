@@ -133,23 +133,26 @@ class PostWorksheetMatchNonBlanksRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetMatchNonBlanks'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetMatchNonBlanks'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling PostWorksheetMatchNonBlanks'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

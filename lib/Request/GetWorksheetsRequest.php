@@ -101,9 +101,10 @@ class GetWorksheetsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheets'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

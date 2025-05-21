@@ -181,44 +181,50 @@ class PostPivotTableFieldMoveToRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostPivotTableFieldMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostPivotTableFieldMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_table_index' is set
         if ($this->pivot_table_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_table_index when calling PostPivotTableFieldMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling PostPivotTableFieldMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'from' is set
         if ($this->from === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $from when calling PostPivotTableFieldMoveTo'
             );
-        } 
+        }
+
 
         // verify the required parameter 'to' is set
         if ($this->to === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $to when calling PostPivotTableFieldMoveTo'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

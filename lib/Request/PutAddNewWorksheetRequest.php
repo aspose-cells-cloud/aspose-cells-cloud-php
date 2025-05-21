@@ -147,16 +147,18 @@ class PutAddNewWorksheetRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutAddNewWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutAddNewWorksheet'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

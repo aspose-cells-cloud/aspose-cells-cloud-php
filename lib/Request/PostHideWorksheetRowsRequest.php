@@ -149,30 +149,34 @@ class PostHideWorksheetRowsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostHideWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostHideWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'startrow' is set
         if ($this->startrow === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $startrow when calling PostHideWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_rows' is set
         if ($this->total_rows === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_rows when calling PostHideWorksheetRows'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/rows/hide';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/hide';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

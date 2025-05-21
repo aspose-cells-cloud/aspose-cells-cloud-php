@@ -163,23 +163,26 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'startrow' is set
         if ($this->startrow === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $startrow when calling DeleteWorksheetRows'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/rows/';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

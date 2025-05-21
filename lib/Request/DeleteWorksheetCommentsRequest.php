@@ -117,16 +117,18 @@ class DeleteWorksheetCommentsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetComments'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetComments'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/comments';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/comments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -86,9 +86,10 @@ class PostConvertWorksheetToImageRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $convert_worksheet_options when calling PostConvertWorksheetToImage'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/convertWorksheetToImage';
+
+        $resourcePath = 'v3.0/cells/convertWorksheetToImage';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

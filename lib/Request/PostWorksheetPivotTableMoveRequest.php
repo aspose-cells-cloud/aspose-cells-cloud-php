@@ -178,23 +178,26 @@ class PostWorksheetPivotTableMoveRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetPivotTableMove'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetPivotTableMove'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_table_index' is set
         if ($this->pivot_table_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_table_index when calling PostWorksheetPivotTableMove'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

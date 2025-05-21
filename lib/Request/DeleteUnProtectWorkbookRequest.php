@@ -117,16 +117,18 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteUnProtectWorkbook'
             );
-        } 
+        }
+
 
         // verify the required parameter 'password' is set
         if ($this->password === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $password when calling DeleteUnProtectWorkbook'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/protection';
+
+        $resourcePath = 'v3.0/cells/{name}/protection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

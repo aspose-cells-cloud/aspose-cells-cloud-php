@@ -164,30 +164,34 @@ class PostUnhideWorksheetRowsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostUnhideWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostUnhideWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'startrow' is set
         if ($this->startrow === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $startrow when calling PostUnhideWorksheetRows'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_rows' is set
         if ($this->total_rows === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_rows when calling PostUnhideWorksheetRows'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/rows/unhide';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/unhide';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

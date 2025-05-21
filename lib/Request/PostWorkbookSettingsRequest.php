@@ -117,16 +117,18 @@ class PostWorkbookSettingsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookSettings'
             );
-        } 
+        }
+
 
         // verify the required parameter 'settings' is set
         if ($this->settings === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $settings when calling PostWorkbookSettings'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/settings';
+
+        $resourcePath = 'v3.0/cells/{name}/settings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

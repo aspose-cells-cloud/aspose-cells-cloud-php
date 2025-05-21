@@ -71,9 +71,10 @@ class CheckWrokbookExternalReferenceRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $check_external_reference_options when calling CheckWrokbookExternalReference'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/checkexternalreference';
+
+        $resourcePath = 'v3.0/cells/checkexternalreference';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

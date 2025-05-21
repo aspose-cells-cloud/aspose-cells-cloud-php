@@ -149,30 +149,34 @@ class AddPictureInCellRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling AddPictureInCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling AddPictureInCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cell_name' is set
         if ($this->cell_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cell_name when calling AddPictureInCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'picture_path' is set
         if ($this->picture_path === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $picture_path when calling AddPictureInCell'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pictures/addPictureInCell';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

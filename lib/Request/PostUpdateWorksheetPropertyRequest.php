@@ -133,23 +133,26 @@ class PostUpdateWorksheetPropertyRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostUpdateWorksheetProperty'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostUpdateWorksheetProperty'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet' is set
         if ($this->sheet === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet when calling PostUpdateWorksheetProperty'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

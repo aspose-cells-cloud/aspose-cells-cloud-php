@@ -162,16 +162,18 @@ class PostWorkbookDataFillRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookDataFill'
             );
-        } 
+        }
+
 
         // verify the required parameter 'data_fill' is set
         if ($this->data_fill === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_fill when calling PostWorkbookDataFill'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/datafill';
+
+        $resourcePath = 'v3.0/cells/{name}/datafill';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

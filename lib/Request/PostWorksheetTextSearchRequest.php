@@ -133,23 +133,26 @@ class PostWorksheetTextSearchRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetTextSearch'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetTextSearch'
             );
-        } 
+        }
+
 
         // verify the required parameter 'text' is set
         if ($this->text === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $text when calling PostWorksheetTextSearch'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/findText';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/findText';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -149,30 +149,34 @@ class PostChartValueAxisRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostChartValueAxis'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostChartValueAxis'
             );
-        } 
+        }
+
 
         // verify the required parameter 'chart_index' is set
         if ($this->chart_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $chart_index when calling PostChartValueAxis'
             );
-        } 
+        }
+
 
         // verify the required parameter 'axis' is set
         if ($this->axis === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $axis when calling PostChartValueAxis'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/valueaxis';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -162,16 +162,18 @@ class PostWorkbookDataCleansingRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookDataCleansing'
             );
-        } 
+        }
+
 
         // verify the required parameter 'data_cleansing' is set
         if ($this->data_cleansing === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_cleansing when calling PostWorkbookDataCleansing'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/datacleansing';
+
+        $resourcePath = 'v3.0/cells/{name}/datacleansing';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

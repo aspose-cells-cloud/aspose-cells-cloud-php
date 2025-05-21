@@ -196,44 +196,50 @@ class PostPivotTableUpdatePivotFieldRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostPivotTableUpdatePivotField'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostPivotTableUpdatePivotField'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_table_index' is set
         if ($this->pivot_table_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_table_index when calling PostPivotTableUpdatePivotField'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_field_index' is set
         if ($this->pivot_field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_field_index when calling PostPivotTableUpdatePivotField'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_field_type' is set
         if ($this->pivot_field_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_field_type when calling PostPivotTableUpdatePivotField'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_field' is set
         if ($this->pivot_field === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_field when calling PostPivotTableUpdatePivotField'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

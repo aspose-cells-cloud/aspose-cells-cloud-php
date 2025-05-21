@@ -132,16 +132,18 @@ class DeleteDocumentPropertyRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteDocumentProperty'
             );
-        } 
+        }
+
 
         // verify the required parameter 'property_name' is set
         if ($this->property_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $property_name when calling DeleteDocumentProperty'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/documentproperties/{propertyName}';
+
+        $resourcePath = 'v3.0/cells/{name}/documentproperties/{propertyName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

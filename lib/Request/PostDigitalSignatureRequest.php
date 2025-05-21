@@ -133,23 +133,26 @@ class PostDigitalSignatureRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostDigitalSignature'
             );
-        } 
+        }
+
 
         // verify the required parameter 'digitalsignaturefile' is set
         if ($this->digitalsignaturefile === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $digitalsignaturefile when calling PostDigitalSignature'
             );
-        } 
+        }
+
 
         // verify the required parameter 'password' is set
         if ($this->password === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $password when calling PostDigitalSignature'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/digitalsignature';
+
+        $resourcePath = 'v3.0/cells/{name}/digitalsignature';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

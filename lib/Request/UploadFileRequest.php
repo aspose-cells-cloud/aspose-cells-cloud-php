@@ -102,16 +102,18 @@ class UploadFileRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $upload_files when calling UploadFile'
             );
-        } 
+        }
+
 
         // verify the required parameter 'path' is set
         if ($this->path === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $path when calling UploadFile'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/storage/file/{path}';
+
+        $resourcePath = 'v3.0/cells/storage/file/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -133,10 +135,10 @@ class UploadFileRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->upload_files)){
                 foreach($this->upload_files as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['UploadFiles'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->upload_files), 'rb');
+                $formParams[basename($this->upload_files)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->upload_files), 'rb');
             }
         }
 

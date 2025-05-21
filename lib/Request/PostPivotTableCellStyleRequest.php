@@ -196,44 +196,50 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostPivotTableCellStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostPivotTableCellStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_table_index' is set
         if ($this->pivot_table_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_table_index when calling PostPivotTableCellStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'column' is set
         if ($this->column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $column when calling PostPivotTableCellStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'row' is set
         if ($this->row === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $row when calling PostPivotTableCellStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'style' is set
         if ($this->style === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $style when calling PostPivotTableCellStyle'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

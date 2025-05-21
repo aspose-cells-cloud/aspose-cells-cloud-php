@@ -162,16 +162,18 @@ class PostAutofitWorksheetColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostAutofitWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostAutofitWorksheetColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autofitcolumns';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autofitcolumns';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

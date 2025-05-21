@@ -117,16 +117,18 @@ class PutDocumentPropertyRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutDocumentProperty'
             );
-        } 
+        }
+
 
         // verify the required parameter 'property' is set
         if ($this->property === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $property when calling PutDocumentProperty'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/documentproperties';
+
+        $resourcePath = 'v3.0/cells/{name}/documentproperties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

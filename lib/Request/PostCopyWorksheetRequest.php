@@ -179,30 +179,34 @@ class PostCopyWorksheetRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostCopyWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostCopyWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'source_sheet' is set
         if ($this->source_sheet === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $source_sheet when calling PostCopyWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'options' is set
         if ($this->options === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $options when calling PostCopyWorksheet'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/copy';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/copy';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

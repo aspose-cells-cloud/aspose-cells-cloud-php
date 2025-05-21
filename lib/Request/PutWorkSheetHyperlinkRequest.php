@@ -197,51 +197,58 @@ class PutWorksheetHyperlinkRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'first_row' is set
         if ($this->first_row === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $first_row when calling PutWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'first_column' is set
         if ($this->first_column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $first_column when calling PutWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_rows' is set
         if ($this->total_rows === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_rows when calling PutWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_columns' is set
         if ($this->total_columns === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_columns when calling PutWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'address' is set
         if ($this->address === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $address when calling PutWorksheetHyperlink'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/hyperlinks';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/hyperlinks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -133,23 +133,26 @@ class PostUpdateWorksheetZoomRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostUpdateWorksheetZoom'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostUpdateWorksheetZoom'
             );
-        } 
+        }
+
 
         // verify the required parameter 'value' is set
         if ($this->value === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $value when calling PostUpdateWorksheetZoom'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/zoom';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/zoom';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

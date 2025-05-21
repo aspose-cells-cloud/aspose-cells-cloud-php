@@ -172,6 +172,7 @@ use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinksRequest;
+use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
 use Aspose\Cells\Cloud\Request\PostAssembleRequest;
 use Aspose\Cells\Cloud\Request\PostCompressRequest;
 use Aspose\Cells\Cloud\Request\PostMergeRequest;
@@ -413,6 +414,7 @@ use Aspose\Cells\Cloud\Model\Cell;
 use Aspose\Cells\Cloud\Model\CellArea;
 use Aspose\Cells\Cloud\Model\Cells;
 use Aspose\Cells\Cloud\Model\CellsCloudFileInfo;
+use Aspose\Cells\Cloud\Model\CellsCloudPublicKey;
 use Aspose\Cells\Cloud\Model\CellsColor;
 use Aspose\Cells\Cloud\Model\CellsDocumentProperties;
 use Aspose\Cells\Cloud\Model\CellsDocumentProperty;
@@ -536,6 +538,7 @@ use Aspose\Cells\Cloud\Model\ListColumn;
 use Aspose\Cells\Cloud\Model\ListObject;
 use Aspose\Cells\Cloud\Model\ListObjects;
 use Aspose\Cells\Cloud\Model\PivotGlobalizationSettings;
+use Aspose\Cells\Cloud\Model\DbfSaveOptions;
 use Aspose\Cells\Cloud\Model\DifSaveOptions;
 use Aspose\Cells\Cloud\Model\DocxSaveOptions;
 use Aspose\Cells\Cloud\Model\HtmlSaveOptions;
@@ -545,6 +548,7 @@ use Aspose\Cells\Cloud\Model\MarkdownSaveOptions;
 use Aspose\Cells\Cloud\Model\MHtmlSaveOptions;
 use Aspose\Cells\Cloud\Model\OdsSaveOptions;
 use Aspose\Cells\Cloud\Model\OoxmlSaveOptions;
+use Aspose\Cells\Cloud\Model\PclSaveOptions;
 use Aspose\Cells\Cloud\Model\PdfSaveOptions;
 use Aspose\Cells\Cloud\Model\PptxSaveOptions;
 use Aspose\Cells\Cloud\Model\SaveOptions;
@@ -554,6 +558,7 @@ use Aspose\Cells\Cloud\Model\SvgSaveOptions;
 use Aspose\Cells\Cloud\Model\TxtSaveOptions;
 use Aspose\Cells\Cloud\Model\XlsbSaveOptions;
 use Aspose\Cells\Cloud\Model\XlsSaveOptions;
+use Aspose\Cells\Cloud\Model\XmlSaveOptions;
 use Aspose\Cells\Cloud\Model\XpsSaveOptions;
 use Aspose\Cells\Cloud\Model\ArcShapeResponse;
 use Aspose\Cells\Cloud\Model\AutoFilterResponse;
@@ -565,6 +570,7 @@ use Aspose\Cells\Cloud\Model\ButtonResponse;
 use Aspose\Cells\Cloud\Model\CalculateFormulaResponse;
 use Aspose\Cells\Cloud\Model\CellResponse;
 use Aspose\Cells\Cloud\Model\CellsCloudFileInfoResponse;
+use Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse;
 use Aspose\Cells\Cloud\Model\CellsCloudResponse;
 use Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse;
 use Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse;
@@ -867,7 +873,7 @@ class CellsApi
         $this->config =  new Configuration();
         $this->headerSelector =  new HeaderSelector();
         $grantType = "client_credentials";
-        $this->config->setHost($this->_baseUrl."/".$this->_appVersion);
+        $this->config->setHost($this->_baseUrl."/");
         $defaultHost =  $this->config->getHost();
         $this->config->setHost($this->_baseUrl);
         if(  empty( $clientId)  || empty( $clientId) ) {
@@ -881,11 +887,8 @@ class CellsApi
 
     public function checkAccessToken(){
         if((strtotime(date('y-m-d h:i:s'))-strtotime($this->_getAccessTokenTime))>86400){
-            $defaultHost =  $this->config->getHost();
-            $this->config->setHost('https://api.aspose.cloud');
             $this->config ->setAccessToken ( $this->getAccessToken( "client_credentials",$this->_appSid, $this->_appKey, $this->_appVersion));
             $this->_getAccessTokenTime = date('y-m-d h:i:s');
-            $this->config->setHost( $defaultHost );
         }
     }
 
@@ -908,8 +911,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AnalyzedResult[]';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the description of auto filters from a worksheet.
@@ -921,8 +923,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AutoFilterResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Apply a date filter in the worksheet.
@@ -934,8 +935,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a filter for a column in the worksheet.
@@ -947,8 +947,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add an icon filter in the worksheet.
@@ -960,8 +959,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Filter a list with custom criteria in the worksheet.
@@ -973,8 +971,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a dynamic filter in the worksheet.
@@ -986,8 +983,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Filter the top 10 items in the list in the worksheet.
@@ -999,8 +995,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a color filter in the worksheet.
@@ -1012,8 +1007,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Match all blank cells in the list.
@@ -1025,8 +1019,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Match all not blank cells in the list.
@@ -1038,8 +1031,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Refresh auto filters in the worksheet.
@@ -1051,8 +1043,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Remove a date filter in the worksheet.
@@ -1064,8 +1055,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a filter for a column in the worksheet.
@@ -1077,8 +1067,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get autoshapes description in worksheet.
@@ -1090,86 +1079,109 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AutoShapesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get autoshape description in some format.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetAutoshapeWithFormatRequest" /></param>
-    public function getWorksheetAutoshapeWithFormat( $request)
+    public function getWorksheetAutoshapeWithFormat( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Batch converting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchConvertRequest" /></param>
-    public function postBatchConvert( $request)
+    public function postBatchConvert( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Batch protecting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchProtectRequest" /></param>
-    public function postBatchProtect( $request)
+    public function postBatchProtect( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Batch locking files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchLockRequest" /></param>
-    public function postBatchLock( $request)
+    public function postBatchLock( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Batch unlocking files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchUnlockRequest" /></param>
-    public function postBatchUnlock( $request)
+    public function postBatchUnlock( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Batch splitting files that meet specific matching conditions.
     /// </summary>
     /// <param name="request">Request. <see cref="PostBatchSplitRequest" /></param>
-    public function postBatchSplit( $request)
+    public function postBatchSplit( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Get Access Token Result
@@ -1181,8 +1193,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Clear cell area contents in the worksheet.
@@ -1194,8 +1205,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Clear cell formats in the worksheet.
@@ -1207,8 +1217,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update cell range styles in the worksheet.
@@ -1220,8 +1229,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Merge cells in the worksheet.
@@ -1233,8 +1241,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unmerge cells in the worksheet.
@@ -1246,8 +1253,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve cell descriptions in a specified format.
@@ -1259,8 +1265,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve cell data using either cell reference or method name in the worksheet.
@@ -1272,8 +1277,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve cell style descriptions in the worksheet.
@@ -1285,8 +1289,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set cell value using cell name in the worksheet.
@@ -1298,8 +1301,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set cell style using cell name in the worksheet.
@@ -1311,8 +1313,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set the value of the range in the worksheet.
@@ -1324,8 +1325,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Copy data from a source cell to a destination cell in the worksheet.
@@ -1337,8 +1337,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the HTML string containing data and specific formats in this cell.
@@ -1350,8 +1349,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set the HTML string containing data and specific formats in this cell.
@@ -1363,8 +1361,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Calculate cell formula in the worksheet.
@@ -1376,8 +1373,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set cell characters in the worksheet.
@@ -1389,8 +1385,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of worksheet columns.
@@ -1402,8 +1397,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set worksheet column width.
@@ -1415,8 +1409,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve worksheet column data by column index.
@@ -1428,8 +1421,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ColumnResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Insert worksheet columns in the worksheet.
@@ -1441,8 +1433,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete worksheet columns in the worksheet.
@@ -1454,8 +1445,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Hide worksheet columns in the worksheet.
@@ -1467,8 +1457,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unhide worksheet columns in the worksheet.
@@ -1480,8 +1469,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Group worksheet columns in the worksheet.
@@ -1493,8 +1481,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Ungroup worksheet columns.
@@ -1506,8 +1493,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Copy data from source columns to destination columns in the worksheet.
@@ -1519,8 +1505,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set column style in the worksheet.
@@ -1532,8 +1517,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of rows in the worksheet.
@@ -1545,8 +1529,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\RowsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve row data by the row's index in the worksheet.
@@ -1558,8 +1541,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\RowResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a row in the worksheet.
@@ -1571,8 +1553,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete several rows in the worksheet.
@@ -1584,8 +1565,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Insert several new rows in the worksheet.
@@ -1597,8 +1577,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Insert a new row in the worksheet.
@@ -1610,8 +1589,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update height of rows in the worksheet.
@@ -1623,8 +1601,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Hide rows in worksheet.
@@ -1636,8 +1613,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unhide rows in the worksheet.
@@ -1649,8 +1625,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Group rows in the worksheet.
@@ -1662,8 +1637,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Ungroup rows in the worksheet.
@@ -1675,8 +1649,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Copy data and formats from specific entire rows in the worksheet.
@@ -1688,8 +1661,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Apply formats to an entire row in the worksheet.
@@ -1701,8 +1673,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve cell descriptions in a specified format.
@@ -1714,8 +1685,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Aspose.Cells Cloud service health status check.
@@ -1727,8 +1697,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart area description in the worksheet.
@@ -1740,8 +1709,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ChartAreaResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart area fill format description in the worksheet.
@@ -1753,8 +1721,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FillFormatResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart area border description.
@@ -1766,8 +1733,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\LineResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of charts in the worksheet.
@@ -1779,21 +1745,24 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ChartsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the chart in a specified format.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetChartRequest" /></param>
-    public function getWorksheetChart( $request)
+    public function getWorksheetChart( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Add a new chart in the worksheet.
@@ -1805,8 +1774,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a chart by index in the worksheet.
@@ -1818,8 +1786,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart properties in the worksheet.
@@ -1831,8 +1798,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart legend description in the worksheet.
@@ -1844,8 +1810,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\LegendResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart legend in the worksheet.
@@ -1857,8 +1822,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Show chart legend in the worksheet.
@@ -1870,8 +1834,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Hides chart legend in the worksheet.
@@ -1883,8 +1846,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Clear the charts in the worksheets.
@@ -1896,8 +1858,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart title description in the worksheet.
@@ -1909,8 +1870,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\TitleResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart title in the worksheet.
@@ -1922,8 +1882,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set chart title in the worksheet.
@@ -1935,8 +1894,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Hide chart title in the worksheet.
@@ -1948,8 +1906,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of chart seriesaxis in the chart.
@@ -1961,8 +1918,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of chart series axis in the chart.
@@ -1974,8 +1930,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart value axis in the chart.
@@ -1987,8 +1942,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart second category axis in the chart
@@ -2000,8 +1954,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve chart second value axis in the chart.
@@ -2013,8 +1966,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\AxisResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart series axis in the chart.
@@ -2026,8 +1978,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart category axis in the chart.
@@ -2039,8 +1990,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart value axis in the chart.
@@ -2052,8 +2002,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart sencond category axis in the chart.
@@ -2065,8 +2014,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update chart sencond value axis in the chart.
@@ -2078,8 +2026,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of conditional formattings in a worksheet.
@@ -2091,8 +2038,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve conditional formatting descriptions in the worksheet.
@@ -2104,8 +2050,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ConditionalFormattingResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add conditional formatting in the worksheet.
@@ -2117,8 +2062,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a format condition in the worksheet.
@@ -2130,8 +2074,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a cell area for the format condition in the worksheet.
@@ -2143,8 +2086,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a condition for the format condition in the worksheet.
@@ -2156,8 +2098,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Clear all conditional formattings in the worksheet.
@@ -2169,8 +2110,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Remove a conditional formatting.
@@ -2182,8 +2122,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Remove cell area from conditional formatting.
@@ -2195,34 +2134,41 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve workbooks in various formats.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorkbookRequest" /></param>
-    public function getWorkbook( $request)
+    public function getWorkbook( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Convert the workbook from the requested content into files in different formats.
     /// </summary>
     /// <param name="request">Request. <see cref="PutConvertWorkbookRequest" /></param>
-    public function putConvertWorkbook( $request)
+    public function putConvertWorkbook( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Save an Excel file in various formats.
@@ -2234,8 +2180,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\SaveResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to PDF files.
@@ -2247,8 +2192,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to PNG files.
@@ -2260,8 +2204,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to Docx files.
@@ -2273,8 +2216,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to Pptx files.
@@ -2286,8 +2228,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to HTML files.
@@ -2299,8 +2240,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to Markdown files.
@@ -2312,8 +2252,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to Json files.
@@ -2325,8 +2264,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to SQL Script files.
@@ -2338,8 +2276,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert Excel file to Csv files.
@@ -2351,8 +2288,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -2363,8 +2299,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -2375,8 +2310,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Export Excel internal elements or the workbook itself to various format files.
@@ -2388,8 +2322,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CheckedExternalReferenceResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -2400,8 +2333,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CheckedFormulaErrorsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Export Excel internal elements or the workbook itself to various format files.
@@ -2413,48 +2345,59 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Export XML data from an Excel file.
     /// When there are XML Maps in an Excel file, export XML data. When there is no XML map in the Excel file, convert the Excel file to an XML file.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookExportXMLRequest" /></param>
-    public function postWorkbookExportXML( $request)
+    public function postWorkbookExportXML( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Import a JSON data file into the workbook. The JSON data file can either be a cloud file or data from an HTTP URI.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookImportJsonRequest" /></param>
-    public function postWorkbookImportJson( $request)
+    public function postWorkbookImportJson( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Import an XML data file into an Excel file. The XML data file can either be a cloud file or data from an HTTP URI.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookImportXMLRequest" /></param>
-    public function postWorkbookImportXML( $request)
+    public function postWorkbookImportXML( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Import data into the Excel file.
@@ -2466,8 +2409,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Data cleaning of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.
@@ -2479,8 +2421,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Data cleansing of spreadsheet files is a data management process used to identify, correct, and remove errors, incompleteness, duplicates, or inaccuracies in tables and ranges.
@@ -2492,8 +2433,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.
@@ -2505,8 +2445,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges.
@@ -2518,8 +2457,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.
@@ -2531,8 +2469,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges.
@@ -2544,8 +2481,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Deleting incomplete rows of spreadsheet files is mainly used to eliminate incomplete rows in tables and ranges.
@@ -2557,8 +2493,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Transform spreadsheet data is mainly used to pivot columns, unpivot columns.
@@ -2570,8 +2505,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of hyperlinks in the worksheet.
@@ -2583,8 +2517,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve hyperlink description by index in the worksheet.
@@ -2596,8 +2529,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\HyperlinkResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete hyperlink by index in the worksheet.
@@ -2609,8 +2541,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update hyperlink by index in the worksheet.
@@ -2622,8 +2553,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add hyperlink in the worksheet.
@@ -2635,8 +2565,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all hyperlinks in the worksheet.
@@ -2648,8 +2577,19 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
+
+    /// <summary>
+    /// Get publi key.
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
+    public function getPublicKey( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
 
     /// <summary>
     /// Assemble data files with template files to generate files in various formats.
@@ -2661,8 +2601,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more.
@@ -2674,8 +2613,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Merge cells in the worksheet.
@@ -2687,8 +2625,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Split Excel spreadsheet files based on worksheets and create output files in various formats.
@@ -2700,8 +2637,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Search for specified text within Excel files.
@@ -2713,8 +2649,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\TextItem[]';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Replace specified text with new text in Excel files.
@@ -2726,8 +2661,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Import data into an Excel file and generate output files in various formats.
@@ -2739,8 +2673,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add Text Watermark to Excel files and generate output files in various formats.
@@ -2752,8 +2685,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Clear internal elements in Excel files and generate output files in various formats.
@@ -2765,8 +2697,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Reverse rows or columns in Excel files and create output files in various formats.
@@ -2778,8 +2709,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Repair abnormal files and generate files in various formats.
@@ -2791,8 +2721,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Rotate rows, columns, or other objects in Excel files and save them in various formats.
@@ -2804,8 +2733,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update document properties in Excel file, and save them is various formats.
@@ -2817,8 +2745,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get cells document properties.
@@ -2830,8 +2757,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentProperty[]';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete cells document properties in Excel file, and save them is various formats.
@@ -2843,8 +2769,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of ListObjects in the worksheet.
@@ -2856,21 +2781,24 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ListObjectsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve list object description by index in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetListObjectRequest" /></param>
-    public function getWorksheetListObject( $request)
+    public function getWorksheetListObject( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Add a ListObject in the worksheet.
@@ -2882,8 +2810,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete ListObjects in the worksheet.
@@ -2895,8 +2822,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete list object by index in the worksheet.
@@ -2908,8 +2834,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update list object by index in the worksheet.
@@ -2921,8 +2846,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Convert list object to range in the worksheet.
@@ -2934,8 +2858,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Create a pivot table with a list object in the worksheet.
@@ -2947,8 +2870,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Sort list object in the worksheet.
@@ -2960,8 +2882,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Remove duplicates in list object.
@@ -2973,8 +2894,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Insert slicer for list object.
@@ -2986,8 +2906,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update list column in list object.
@@ -2999,8 +2918,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update total of list columns in the table.
@@ -3012,8 +2930,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of OLE objects in the worksheet.
@@ -3025,21 +2942,24 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\OleObjectsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the OLE object in a specified format in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetOleObjectRequest" /></param>
-    public function getWorksheetOleObject( $request)
+    public function getWorksheetOleObject( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Delete all OLE objects in the worksheet.
@@ -3051,8 +2971,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete an OLE object in the worksheet.
@@ -3064,8 +2983,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update an OLE object in worksheet.
@@ -3077,8 +2995,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add an OLE object in the worksheet.
@@ -3090,8 +3007,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of vertical page breaks in the worksheet.
@@ -3103,8 +3019,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreaksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of horizontal page breaks in the worksheet.
@@ -3116,8 +3031,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreaksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve a vertical page break description in the worksheet.
@@ -3129,8 +3043,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\VerticalPageBreakResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve a horizontal page break descripton in the worksheet.
@@ -3142,8 +3055,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\HorizontalPageBreakResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a vertical page break in the worksheet.
@@ -3155,8 +3067,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a horizontal page breaks in the worksheet.
@@ -3168,8 +3079,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete vertical page breaks in the worksheet.
@@ -3181,8 +3091,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete horizontal page breaks in the worksheet.
@@ -3194,8 +3103,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a vertical page break in the worksheet.
@@ -3207,8 +3115,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a horizontal page break in the worksheet.
@@ -3220,8 +3127,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve page setup description in the worksheet.
@@ -3233,8 +3139,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PageSetupResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update page setup in the worksheet.
@@ -3246,8 +3151,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Clear header and footer in the worksheet.
@@ -3259,8 +3163,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve page header description in the worksheet.
@@ -3272,8 +3175,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update page header in the worksheet.
@@ -3285,8 +3187,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve page footer description in the worksheet.
@@ -3298,8 +3199,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PageSectionsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update page footer in the worksheet.
@@ -3311,8 +3211,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set the scale at which the page will fit wide when printed on the sheet.
@@ -3324,8 +3223,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set the scale at which the page will fit tall when printed on the sheet.
@@ -3337,8 +3235,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of pictures in the worksheet.
@@ -3350,21 +3247,24 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PicturesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve a picture by number in the worksheet.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetPictureWithFormatRequest" /></param>
-    public function getWorksheetPictureWithFormat( $request)
+    public function getWorksheetPictureWithFormat( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Add a new picture in the worksheet.
@@ -3376,8 +3276,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// add new picture in the cells.
@@ -3389,8 +3288,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update a picture by index in the worksheet.
@@ -3402,8 +3300,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a picture object by index in the worksheet.
@@ -3415,8 +3312,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all pictures in the worksheet.
@@ -3428,8 +3324,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of pivottables  in the worksheet.
@@ -3441,8 +3336,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTablesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve PivotTable information by index in the worksheet.
@@ -3454,8 +3348,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PivotTableResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of pivot fields in the PivotTable.
@@ -3467,8 +3360,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFieldResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Gets PivotTable filters in worksheet.
@@ -3480,8 +3372,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFiltersResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve PivotTable filters in the worksheet.
@@ -3493,8 +3384,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\PivotFilterResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a PivotTable in the worksheet.
@@ -3506,8 +3396,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a pivot field in the PivotTable.
@@ -3519,8 +3408,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a pivot filter to the PivotTable.
@@ -3532,8 +3420,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Hide a pivot field item in the PivotTable.
@@ -3545,8 +3432,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Move a pivot field in the PivotTable.
@@ -3558,8 +3444,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update cell style in the PivotTable.
@@ -3571,8 +3456,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update style in the PivotTable.
@@ -3584,8 +3468,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update pivot fields in the PivotTable.
@@ -3597,8 +3480,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update pivot field in the PivotTable.
@@ -3610,8 +3492,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Calculate pivottable's data to cells.
@@ -3623,8 +3504,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Move PivotTable in the worksheet.
@@ -3636,8 +3516,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete PivotTables in the worksheet.
@@ -3649,8 +3528,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete PivotTable by index in the worksheet.
@@ -3662,8 +3540,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a pivot field in the PivotTable.
@@ -3675,8 +3552,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all pivot filters in the PivotTable.
@@ -3688,8 +3564,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a pivot filter in the PivotTable.
@@ -3701,8 +3576,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of Excel file properties.
@@ -3714,8 +3588,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set or add an Excel property.
@@ -3727,8 +3600,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get Excel property by name.
@@ -3740,8 +3612,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete an Excel property.
@@ -3753,8 +3624,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all custom document properties and reset built-in ones.
@@ -3766,8 +3636,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel file digital signature.
@@ -3779,8 +3648,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel Encryption.
@@ -3792,8 +3660,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel files decryption.
@@ -3805,8 +3672,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel protection.
@@ -3818,8 +3684,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel unprotection.
@@ -3831,8 +3696,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel file write protection.
@@ -3844,8 +3708,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel file cancel write protection.
@@ -3857,8 +3720,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unlock Excel files.
@@ -3870,8 +3732,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Lock Excel files.
@@ -3883,8 +3744,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Excel files encryption.
@@ -3896,8 +3756,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Copy content from the source range to the destination range in the worksheet.
@@ -3909,8 +3768,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Merge a range of cells into a single cell.
@@ -3922,8 +3780,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unmerge merged cells within this range.
@@ -3935,8 +3792,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set the style for the specified range.
@@ -3948,8 +3804,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the values of cells within the specified range.
@@ -3961,8 +3816,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\RangeValueResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Assign a value to the range; if necessary, the value will be converted to another data type, and the cell's number format will be reset.
@@ -3974,8 +3828,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Move the current range to the destination range.
@@ -3987,8 +3840,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Perform data sorting around a range of cells.
@@ -4000,8 +3852,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Apply an outline border around a range of cells.
@@ -4013,8 +3864,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set the column width of the specified range.
@@ -4026,8 +3876,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Sets row height of range.
@@ -4039,20 +3888,23 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorksheetCellsRangeToImageRequest" /></param>
-    public function postWorksheetCellsRangeToImage( $request)
+    public function postWorksheetCellsRangeToImage( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Insert a range of cells and shift existing cells based on the specified shift option.
@@ -4064,8 +3916,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a range of cells and shift existing cells based on the specified shift option.
@@ -4077,8 +3928,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of shapes in the worksheet.
@@ -4090,8 +3940,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ShapesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve description of shape in the worksheet.
@@ -4103,8 +3952,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ShapeResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a shape in the worksheet.
@@ -4116,8 +3964,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all shapes in the worksheet.
@@ -4129,8 +3976,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a shape in the worksheet.
@@ -4142,8 +3988,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update a shape in the worksheet.
@@ -4155,8 +4000,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Group shapes in the worksheet.
@@ -4168,8 +4012,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Ungroup shapes in the worksheet.
@@ -4181,8 +4024,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of sparkline groups in the worksheet.
@@ -4194,8 +4036,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve description of a sparkline group in the worksheet.
@@ -4207,8 +4048,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\SparklineGroupResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete sparkline groups in the worksheet.
@@ -4220,8 +4060,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a sparkline group in the worksheet.
@@ -4233,8 +4072,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a sparkline group in the worksheet.
@@ -4246,8 +4084,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update a sparkline group in the worksheet.
@@ -4259,8 +4096,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4271,8 +4107,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4283,8 +4118,7 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4295,21 +4129,24 @@ class CellsApi
         $returnType = 'string';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Run tasks.
     /// </summary>
     /// <param name="request">Request. <see cref="PostRunTaskRequest" /></param>
-    public function postRunTask( $request)
+    public function postRunTask( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Adds text content to a workbook at specified positions within cells based on provided options using ASP.NET Core Web API.
@@ -4321,8 +4158,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4333,8 +4169,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4345,8 +4180,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4357,8 +4191,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4369,8 +4202,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4381,8 +4213,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4393,8 +4224,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -4405,8 +4235,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileInfo';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the description of the default style for the workbook .
@@ -4418,8 +4247,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\StyleResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve text items in the workbook.
@@ -4431,8 +4259,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve named ranges in the workbook.
@@ -4444,8 +4271,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\NamesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Define a new name in the workbook.
@@ -4457,8 +4283,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve description of a named range in the workbook.
@@ -4470,8 +4295,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\NameResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update a named range in the workbook.
@@ -4483,8 +4307,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the value of a named range in the workbook.
@@ -4496,8 +4319,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\RangeValueResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all named ranges in the workbook.
@@ -4509,8 +4331,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a named range in the workbook.
@@ -4522,8 +4343,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Merge a workbook into the existing workbook.
@@ -4535,8 +4355,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\WorkbookResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Search for text in the workbook.
@@ -4548,8 +4367,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Replace text in the workbook.
@@ -4561,21 +4379,24 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\WorkbookReplaceResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Smart marker processing.
     /// </summary>
     /// <param name="request">Request. <see cref="PostWorkbookGetSmartMarkerResultRequest" /></param>
-    public function postWorkbookGetSmartMarkerResult( $request)
+    public function postWorkbookGetSmartMarkerResult( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Create a new workbook using different methods.
@@ -4587,8 +4408,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Split the workbook with a specific format.
@@ -4600,8 +4420,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\SplitResultResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Calculate all formulas in the workbook.
@@ -4613,8 +4432,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Autofit rows in the workbook.
@@ -4626,8 +4444,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Autofit columns in the workbook.
@@ -4639,8 +4456,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of workbook settings.
@@ -4652,8 +4468,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\WorkbookSettingsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update setting in the workbook.
@@ -4665,8 +4480,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set background in the workbook.
@@ -4678,8 +4492,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete background in the workbook.
@@ -4691,8 +4504,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set water marker in the workbook.
@@ -4704,8 +4516,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get page count in the workbook.
@@ -4717,8 +4528,7 @@ class CellsApi
         $returnType = 'int';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get all style in the workbook.
@@ -4730,8 +4540,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\StylesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the description of worksheets from a workbook.
@@ -4743,21 +4552,24 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\WorksheetsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the worksheet in a specified format from the workbook.
     /// </summary>
     /// <param name="request">Request. <see cref="GetWorksheetWithFormatRequest" /></param>
-    public function getWorksheetWithFormat( $request)
+    public function getWorksheetWithFormat( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Change worksheet visibility in the workbook.
@@ -4769,8 +4581,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set active worksheet index in the workbook.
@@ -4782,8 +4593,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Insert a new worksheet in the workbook.
@@ -4795,8 +4605,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a new worksheet in the workbook.
@@ -4808,8 +4617,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a worksheet in the workbook.
@@ -4821,8 +4629,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete matched worksheets in the workbook.
@@ -4834,8 +4641,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Move worksheet in the workbook.
@@ -4847,8 +4653,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Protect worksheet.
@@ -4860,8 +4665,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unprotect worksheet.
@@ -4873,8 +4677,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve text items in the worksheet.
@@ -4886,8 +4689,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the description of comments in the worksheet.
@@ -4899,8 +4701,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CommentsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve the description of comment in the worksheet.
@@ -4912,8 +4713,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CommentResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add cell comment in the worksheet.
@@ -4925,8 +4725,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CommentResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update cell comment in the worksheet.
@@ -4938,8 +4737,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete cell comment in the worksheet.
@@ -4951,8 +4749,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all comments in the worksheet.
@@ -4964,8 +4761,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get worksheet merged cells.
@@ -4977,8 +4773,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\MergedCellsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve description of a merged cell by its index in the worksheet.
@@ -4990,8 +4785,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\MergedCellResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Calculate formula in the worksheet.
@@ -5003,8 +4797,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\SingleValueResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Calculate formula in the worksheet.
@@ -5016,8 +4809,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\SingleValueResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Search for text in the worksheet.
@@ -5029,8 +4821,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\TextItemsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Replace old text with new text in the worksheet.
@@ -5042,8 +4833,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\WorksheetReplaceResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Sort a range in the worksheet.
@@ -5055,8 +4845,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Autofit a row in the worksheet.
@@ -5068,8 +4857,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Autofit rows in the worksheet.
@@ -5081,8 +4869,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Autofit columns in the worksheet.
@@ -5094,8 +4881,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set background image in the worksheet.
@@ -5107,8 +4893,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete background image in the worksheet.
@@ -5120,8 +4905,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Set freeze panes in the worksheet.
@@ -5133,8 +4917,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Unfreeze panes in worksheet.
@@ -5146,8 +4929,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Copy contents and formats from another worksheet.
@@ -5159,8 +4941,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Rename worksheet in the workbook.
@@ -5172,8 +4953,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update worksheet properties in the workbook.
@@ -5185,8 +4965,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of ranges in the worksheets.
@@ -5198,8 +4977,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\RangesResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve values in range.
@@ -5211,8 +4989,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\RangeValueResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update the scaling percentage in the worksheet. It should be between 10 and 400.
@@ -5224,8 +5001,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Get page count in the worksheet.
@@ -5237,8 +5013,7 @@ class CellsApi
         $returnType = 'int';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve descriptions of validations in the worksheet.
@@ -5250,8 +5025,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationsResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Retrieve a validation by its index in the worksheet.
@@ -5263,8 +5037,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ValidationResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Add a validation at index in the worksheet.
@@ -5276,8 +5049,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Update a validation by index in the worksheet.
@@ -5289,8 +5061,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete a validation by index in worksheet.
@@ -5302,8 +5073,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// Delete all validations in the worksheet.
@@ -5315,20 +5085,23 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
     /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
-    public function downloadFile( $request)
+    public function downloadFile( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// </summary>
@@ -5339,8 +5112,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesUploadResult';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5351,8 +5123,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5363,8 +5134,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5375,8 +5145,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5387,8 +5156,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FilesList';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5399,8 +5167,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5411,8 +5178,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5423,8 +5189,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5435,8 +5200,7 @@ class CellsApi
         $returnType = '';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5447,8 +5211,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\StorageExist';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5459,8 +5222,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\ObjectExist';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5471,8 +5233,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\DiscUsage';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     /// <summary>
     /// </summary>
@@ -5483,8 +5244,7 @@ class CellsApi
         $returnType = '\Aspose\Cells\Cloud\Model\FileVersions';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
-        return  $response;
-    }
+        return  $response;}
 
     private function execute( $request , $returnType)
     {

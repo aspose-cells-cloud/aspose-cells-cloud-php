@@ -133,23 +133,26 @@ class GetWorksheetSparklineGroupRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sparkline_index' is set
         if ($this->sparkline_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sparkline_index when calling GetWorksheetSparklineGroup'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklineGroups/{sparklineIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/sparklineGroups/{sparklineIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

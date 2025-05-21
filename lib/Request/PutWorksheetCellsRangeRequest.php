@@ -149,30 +149,34 @@ class PutWorksheetCellsRangeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetCellsRange'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetCellsRange'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PutWorksheetCellsRange'
             );
-        } 
+        }
+
 
         // verify the required parameter 'shift' is set
         if ($this->shift === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $shift when calling PutWorksheetCellsRange'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

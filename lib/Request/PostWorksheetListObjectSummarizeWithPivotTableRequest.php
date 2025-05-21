@@ -165,37 +165,42 @@ class PostWorksheetListObjectSummarizeWithPivotTableRequest extends BaseApiReque
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetListObjectSummarizeWithPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetListObjectSummarizeWithPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'list_object_index' is set
         if ($this->list_object_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $list_object_index when calling PostWorksheetListObjectSummarizeWithPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'destsheet_name' is set
         if ($this->destsheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $destsheet_name when calling PostWorksheetListObjectSummarizeWithPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'create_pivot_table_request' is set
         if ($this->create_pivot_table_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $create_pivot_table_request when calling PostWorksheetListObjectSummarizeWithPivotTable'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

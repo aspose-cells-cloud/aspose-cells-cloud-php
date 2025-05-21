@@ -132,16 +132,18 @@ class PostWorkbooksMergeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbooksMerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'merge_with' is set
         if ($this->merge_with === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $merge_with when calling PostWorkbooksMerge'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/merge';
+
+        $resourcePath = 'v3.0/cells/{name}/merge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

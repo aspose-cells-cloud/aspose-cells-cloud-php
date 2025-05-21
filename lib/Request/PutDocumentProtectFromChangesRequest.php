@@ -117,16 +117,18 @@ class PutDocumentProtectFromChangesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutDocumentProtectFromChanges'
             );
-        } 
+        }
+
 
         // verify the required parameter 'password' is set
         if ($this->password === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $password when calling PutDocumentProtectFromChanges'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/writeProtection';
+
+        $resourcePath = 'v3.0/cells/{name}/writeProtection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

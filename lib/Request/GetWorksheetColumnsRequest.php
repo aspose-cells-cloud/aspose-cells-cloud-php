@@ -141,7 +141,7 @@ class GetWorksheetColumnsRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/columns/';
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

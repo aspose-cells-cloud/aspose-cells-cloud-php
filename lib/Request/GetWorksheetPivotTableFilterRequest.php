@@ -149,30 +149,34 @@ class GetWorksheetPivotTableFilterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetPivotTableFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetPivotTableFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivot_table_index' is set
         if ($this->pivot_table_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivot_table_index when calling GetWorksheetPivotTableFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'filter_index' is set
         if ($this->filter_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $filter_index when calling GetWorksheetPivotTableFilter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -101,9 +101,10 @@ class DeleteDocumentUnProtectFromChangesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteDocumentUnProtectFromChanges'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/writeProtection';
+
+        $resourcePath = 'v3.0/cells/{name}/writeProtection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -71,9 +71,10 @@ class PostBatchSplitRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $batch_split_request when calling PostBatchSplit'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/batch/split';
+
+        $resourcePath = 'v3.0/cells/batch/split';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

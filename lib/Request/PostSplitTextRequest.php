@@ -71,9 +71,10 @@ class PostSplitTextRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $split_text_options when calling PostSplitText'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/splittext';
+
+        $resourcePath = 'v3.0/cells/splittext';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

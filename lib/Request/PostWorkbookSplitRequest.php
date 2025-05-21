@@ -221,9 +221,10 @@ class PostWorkbookSplitRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookSplit'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/split';
+
+        $resourcePath = 'v3.0/cells/{name}/split';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

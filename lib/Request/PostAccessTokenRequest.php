@@ -51,7 +51,7 @@ class PostAccessTokenRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = '/cells/connect/token';
+        $resourcePath = 'v3.0/cells/connect/token';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

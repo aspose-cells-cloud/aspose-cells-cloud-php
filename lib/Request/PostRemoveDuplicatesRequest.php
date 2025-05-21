@@ -71,9 +71,10 @@ class PostRemoveDuplicatesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $remove_duplicates_options when calling PostRemoveDuplicates'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/removeduplicates';
+
+        $resourcePath = 'v3.0/cells/removeduplicates';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

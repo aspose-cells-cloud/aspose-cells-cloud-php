@@ -71,9 +71,10 @@ class PostExtractTextRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $extract_text_options when calling PostExtractText'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/extracttext';
+
+        $resourcePath = 'v3.0/cells/extracttext';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -117,16 +117,18 @@ class PostEncryptWorkbookRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostEncryptWorkbook'
             );
-        } 
+        }
+
 
         // verify the required parameter 'encryption' is set
         if ($this->encryption === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $encryption when calling PostEncryptWorkbook'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/encryption';
+
+        $resourcePath = 'v3.0/cells/{name}/encryption';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

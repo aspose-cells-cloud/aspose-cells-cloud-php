@@ -149,30 +149,34 @@ class PostWorksheetHyperlinkRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'hyperlink_index' is set
         if ($this->hyperlink_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $hyperlink_index when calling PostWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'hyperlink' is set
         if ($this->hyperlink === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $hyperlink when calling PostWorksheetHyperlink'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

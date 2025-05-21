@@ -117,16 +117,18 @@ class DeleteWorksheetConditionalFormattingsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetConditionalFormattings'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetConditionalFormattings'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/conditionalFormattings';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

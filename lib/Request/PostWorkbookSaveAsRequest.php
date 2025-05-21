@@ -225,6 +225,21 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
     }
 
     /*
+    * onePagePerSheet : 
+    */ 
+    public $one_page_per_sheet;
+
+    public function getOnePagePerSheet()
+    {
+        return $this->one_page_per_sheet;
+    }
+
+    public function setOnePagePerSheet($value)
+    {
+        $this->one_page_per_sheet = $value;
+    }
+
+    /*
     * FontsLocation : Use Custom fonts.
     */ 
     public $fonts_location;
@@ -252,16 +267,18 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookSaveAs'
             );
-        } 
+        }
+
 
         // verify the required parameter 'newfilename' is set
         if ($this->newfilename === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $newfilename when calling PostWorkbookSaveAs'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/SaveAs';
+
+        $resourcePath = 'v3.0/cells/{name}/SaveAs';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -314,6 +331,10 @@ class PostWorkbookSaveAsRequest extends BaseApiRequest
         // query params : page_tall_fit_on_per_sheet
         if ($this->page_tall_fit_on_per_sheet !== null) {
             $queryParams['pageTallFitOnPerSheet'] = ObjectSerializer::toQueryValue($this->page_tall_fit_on_per_sheet);
+        }
+        // query params : one_page_per_sheet
+        if ($this->one_page_per_sheet !== null) {
+            $queryParams['onePagePerSheet'] = ObjectSerializer::toQueryValue($this->one_page_per_sheet);
         }
         // query params : fonts_location
         if ($this->fonts_location !== null) {

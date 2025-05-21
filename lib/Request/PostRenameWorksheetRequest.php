@@ -133,23 +133,26 @@ class PostRenameWorksheetRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostRenameWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostRenameWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'newname' is set
         if ($this->newname === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $newname when calling PostRenameWorksheet'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/rename';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/rename';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -165,37 +165,42 @@ class PostSetCellRangeValueRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostSetCellRangeValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostSetCellRangeValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cellarea' is set
         if ($this->cellarea === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cellarea when calling PostSetCellRangeValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'value' is set
         if ($this->value === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $value when calling PostSetCellRangeValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'type' is set
         if ($this->type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $type when calling PostSetCellRangeValue'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -161,9 +161,10 @@ class PutWorkbookCreateRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorkbookCreate'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}';
+
+        $resourcePath = 'v3.0/cells/{name}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

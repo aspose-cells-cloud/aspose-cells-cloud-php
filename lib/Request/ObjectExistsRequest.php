@@ -101,9 +101,10 @@ class ObjectExistsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $path when calling ObjectExists'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/storage/exist/{path}';
+
+        $resourcePath = 'v3.0/cells/storage/exist/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

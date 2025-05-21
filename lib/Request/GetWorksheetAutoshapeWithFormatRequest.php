@@ -148,23 +148,26 @@ class GetWorksheetAutoshapeWithFormatRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetAutoshapeWithFormat'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetAutoshapeWithFormat'
             );
-        } 
+        }
+
 
         // verify the required parameter 'autoshape_number' is set
         if ($this->autoshape_number === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $autoshape_number when calling GetWorksheetAutoshapeWithFormat'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

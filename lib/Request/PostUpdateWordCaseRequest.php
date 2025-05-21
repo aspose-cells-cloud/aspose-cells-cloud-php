@@ -71,9 +71,10 @@ class PostUpdateWordCaseRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $word_case_options when calling PostUpdateWordCase'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/updatewordcase';
+
+        $resourcePath = 'v3.0/cells/updatewordcase';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

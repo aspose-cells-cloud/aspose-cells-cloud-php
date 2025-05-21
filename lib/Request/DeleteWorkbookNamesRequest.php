@@ -101,9 +101,10 @@ class DeleteWorkbookNamesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorkbookNames'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/names';
+
+        $resourcePath = 'v3.0/cells/{name}/names';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

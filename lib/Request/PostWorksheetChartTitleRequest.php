@@ -149,30 +149,34 @@ class PostWorksheetChartTitleRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetChartTitle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetChartTitle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'chart_index' is set
         if ($this->chart_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $chart_index when calling PostWorksheetChartTitle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'title' is set
         if ($this->title === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $title when calling PostWorksheetChartTitle'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

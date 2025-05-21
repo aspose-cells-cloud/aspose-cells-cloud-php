@@ -192,16 +192,18 @@ class PostWorkbookImportXMLRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookImportXML'
             );
-        } 
+        }
+
 
         // verify the required parameter 'import_xml_request' is set
         if ($this->import_xml_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $import_xml_request when calling PostWorkbookImportXML'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/importxml';
+
+        $resourcePath = 'v3.0/cells/{name}/importxml';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

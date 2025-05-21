@@ -149,30 +149,34 @@ class PostWorksheetCellsRangeRowHeightRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeRowHeight'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeRowHeight'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PostWorksheetCellsRangeRowHeight'
             );
-        } 
+        }
+
 
         // verify the required parameter 'value' is set
         if ($this->value === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $value when calling PostWorksheetCellsRangeRowHeight'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/rowHeight';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/rowHeight';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

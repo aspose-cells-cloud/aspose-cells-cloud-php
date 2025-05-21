@@ -180,37 +180,42 @@ class PostCopyWorksheetColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostCopyWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostCopyWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'source_column_index' is set
         if ($this->source_column_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $source_column_index when calling PostCopyWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'destination_column_index' is set
         if ($this->destination_column_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $destination_column_index when calling PostCopyWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'column_number' is set
         if ($this->column_number === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $column_number when calling PostCopyWorksheetColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/columns/copy';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/copy';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

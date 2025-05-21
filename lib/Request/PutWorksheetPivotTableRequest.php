@@ -177,16 +177,18 @@ class PutWorksheetPivotTableRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetPivotTable'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

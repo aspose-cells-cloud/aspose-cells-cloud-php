@@ -66,7 +66,7 @@ class GetDiscUsageRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = '/cells/storage/disc';
+        $resourcePath = 'v3.0/cells/storage/disc';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

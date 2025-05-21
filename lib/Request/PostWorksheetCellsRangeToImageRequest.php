@@ -133,23 +133,26 @@ class PostWorksheetCellsRangeToImageRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeToImage'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeToImage'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range_convert_request' is set
         if ($this->range_convert_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range_convert_request when calling PostWorksheetCellsRangeToImage'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/convertToImage';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/convertToImage';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

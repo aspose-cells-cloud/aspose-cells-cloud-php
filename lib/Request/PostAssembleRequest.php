@@ -147,16 +147,18 @@ class PostAssembleRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PostAssemble'
             );
-        } 
+        }
+
 
         // verify the required parameter 'datasource' is set
         if ($this->datasource === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $datasource when calling PostAssemble'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/assemble';
+
+        $resourcePath = 'v3.0/cells/assemble';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -186,10 +188,10 @@ class PostAssembleRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

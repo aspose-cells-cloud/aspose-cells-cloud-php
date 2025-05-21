@@ -133,23 +133,26 @@ class GetWorksheetCellRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cell_or_method_name' is set
         if ($this->cell_or_method_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cell_or_method_name when calling GetWorksheetCell'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

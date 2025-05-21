@@ -10,3 +10,5 @@ phpunit_onecase.xml.dist
 integration_tests_result.xml
 .phpunit.result.cache
 composer.lock
+cacert.pem
+integrationtests/composer.phar

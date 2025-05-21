@@ -133,23 +133,26 @@ class PostWorkbookNameRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookName'
             );
-        } 
+        }
+
 
         // verify the required parameter 'name_name' is set
         if ($this->name_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name_name when calling PostWorkbookName'
             );
-        } 
+        }
+
 
         // verify the required parameter 'new_name' is set
         if ($this->new_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $new_name when calling PostWorkbookName'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/names/{nameName}';
+
+        $resourcePath = 'v3.0/cells/{name}/names/{nameName}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

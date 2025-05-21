@@ -101,9 +101,10 @@ class GetWorkbookDefaultStyleRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorkbookDefaultStyle'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/defaultstyle';
+
+        $resourcePath = 'v3.0/cells/{name}/defaultstyle';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -71,9 +71,10 @@ class PostAnalyzeExcelRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $analyze_excel_request when calling PostAnalyzeExcel'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/analyze';
+
+        $resourcePath = 'v3.0/cells/analyze';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

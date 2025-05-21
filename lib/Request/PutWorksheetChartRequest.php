@@ -328,23 +328,26 @@ class PutWorksheetChartRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetChart'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetChart'
             );
-        } 
+        }
+
 
         // verify the required parameter 'chart_type' is set
         if ($this->chart_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $chart_type when calling PutWorksheetChart'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/charts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

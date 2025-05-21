@@ -117,16 +117,18 @@ class GetWorksheetOleObjectsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetOleObjects'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetOleObjects'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/oleobjects';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/oleobjects';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

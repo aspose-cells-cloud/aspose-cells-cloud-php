@@ -133,23 +133,26 @@ class PostWorksheetCellsRangeUnMergeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeUnMerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeUnMerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PostWorksheetCellsRangeUnMerge'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/unmerge';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/unmerge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

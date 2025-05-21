@@ -133,23 +133,26 @@ class GetChartSecondValueAxisRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetChartSecondValueAxis'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetChartSecondValueAxis'
             );
-        } 
+        }
+
 
         // verify the required parameter 'chart_index' is set
         if ($this->chart_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $chart_index when calling GetChartSecondValueAxis'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/secondvalueaxis';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

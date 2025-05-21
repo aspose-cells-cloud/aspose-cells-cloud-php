@@ -149,13 +149,26 @@ class PostAutofitWorksheetRowRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
-    public function __construct( $name = null,$sheet_name = null,$row_index = null,$first_column = null,$last_column = null )
+    /*
+    * rowCount : 
+    */ 
+    public $row_count;
+
+    public function getRowCount()
+    {
+        return $this->row_count;
+    }
+
+    public function setRowCount($value)
+    {
+        $this->row_count = $value;
+    }
+
+    public function __construct( $name = null,$sheet_name = null,$row_index = null )
     {        
         $this->name = $name; 
         $this->sheet_name = $sheet_name; 
         $this->row_index = $row_index; 
-        $this->first_column = $first_column; 
-        $this->last_column = $last_column; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -165,37 +178,26 @@ class PostAutofitWorksheetRowRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostAutofitWorksheetRow'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostAutofitWorksheetRow'
             );
-        } 
+        }
+
 
         // verify the required parameter 'row_index' is set
         if ($this->row_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $row_index when calling PostAutofitWorksheetRow'
             );
-        } 
+        }
 
-        // verify the required parameter 'first_column' is set
-        if ($this->first_column === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $first_column when calling PostAutofitWorksheetRow'
-            );
-        } 
 
-        // verify the required parameter 'last_column' is set
-        if ($this->last_column === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $last_column when calling PostAutofitWorksheetRow'
-            );
-        } 
-
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autofitrow';
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autofitrow';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -236,6 +238,10 @@ class PostAutofitWorksheetRowRequest extends BaseApiRequest
         // query params : storage_name
         if ($this->storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
+        }
+        // query params : row_count
+        if ($this->row_count !== null) {
+            $queryParams['rowCount'] = ObjectSerializer::toQueryValue($this->row_count);
         }
     // body params
         $_tempBody = null;

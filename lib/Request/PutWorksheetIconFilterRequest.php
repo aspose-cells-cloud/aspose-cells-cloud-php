@@ -211,44 +211,50 @@ class PutWorksheetIconFilterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetIconFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetIconFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PutWorksheetIconFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling PutWorksheetIconFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'icon_set_type' is set
         if ($this->icon_set_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $icon_set_type when calling PutWorksheetIconFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'icon_id' is set
         if ($this->icon_id === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $icon_id when calling PutWorksheetIconFilter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

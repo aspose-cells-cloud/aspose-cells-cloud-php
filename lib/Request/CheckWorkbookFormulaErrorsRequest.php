@@ -71,9 +71,10 @@ class CheckWorkbookFormulaErrorsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $formula_error_options when calling CheckWorkbookFormulaErrors'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/checkformulaerrors';
+
+        $resourcePath = 'v3.0/cells/checkformulaerrors';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

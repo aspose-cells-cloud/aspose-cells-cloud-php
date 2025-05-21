@@ -71,9 +71,10 @@ class PostTrimContentRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $trim_content_options when calling PostTrimContent'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/trimcontent';
+
+        $resourcePath = 'v3.0/cells/trimcontent';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

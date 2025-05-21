@@ -181,44 +181,50 @@ class PutWorksheetSparklineGroupRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'type' is set
         if ($this->type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $type when calling PutWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'data_range' is set
         if ($this->data_range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_range when calling PutWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_vertical' is set
         if ($this->is_vertical === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_vertical when calling PutWorksheetSparklineGroup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'location_range' is set
         if ($this->location_range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $location_range when calling PutWorksheetSparklineGroup'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sparklineGroups';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/sparklineGroups';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

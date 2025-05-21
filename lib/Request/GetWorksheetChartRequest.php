@@ -148,23 +148,26 @@ class GetWorksheetChartRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetChart'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetChart'
             );
-        } 
+        }
+
 
         // verify the required parameter 'chart_number' is set
         if ($this->chart_number === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $chart_number when calling GetWorksheetChart'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

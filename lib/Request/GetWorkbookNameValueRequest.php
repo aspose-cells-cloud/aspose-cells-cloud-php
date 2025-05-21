@@ -117,16 +117,18 @@ class GetWorkbookNameValueRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorkbookNameValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'name_name' is set
         if ($this->name_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name_name when calling GetWorkbookNameValue'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/names/{nameName}/value';
+
+        $resourcePath = 'v3.0/cells/{name}/names/{nameName}/value';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

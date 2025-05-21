@@ -192,16 +192,18 @@ class PutHorizontalPageBreakRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutHorizontalPageBreak'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutHorizontalPageBreak'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

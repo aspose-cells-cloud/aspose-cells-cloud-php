@@ -133,23 +133,26 @@ class GetWorksheetMergedCellRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetMergedCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetMergedCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'merged_cell_index' is set
         if ($this->merged_cell_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $merged_cell_index when calling GetWorksheetMergedCell'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

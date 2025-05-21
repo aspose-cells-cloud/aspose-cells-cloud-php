@@ -149,30 +149,34 @@ class PostWorksheetListObjectRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetListObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetListObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'list_object_index' is set
         if ($this->list_object_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $list_object_index when calling PostWorksheetListObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'list_object' is set
         if ($this->list_object === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $list_object when calling PostWorksheetListObject'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -133,23 +133,26 @@ class PostWorksheetUngroupShapeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetUngroupShape'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetUngroupShape'
             );
-        } 
+        }
+
 
         // verify the required parameter 'shapeindex' is set
         if ($this->shapeindex === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $shapeindex when calling PostWorksheetUngroupShape'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}/ungroup';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}/ungroup';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -146,9 +146,10 @@ class PostWorkbookGetSmartMarkerResultRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookGetSmartMarkerResult'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/smartmarker';
+
+        $resourcePath = 'v3.0/cells/{name}/smartmarker';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

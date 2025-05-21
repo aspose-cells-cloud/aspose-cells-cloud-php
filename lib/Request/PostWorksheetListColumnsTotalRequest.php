@@ -149,30 +149,34 @@ class PostWorksheetListColumnsTotalRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetListColumnsTotal'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetListColumnsTotal'
             );
-        } 
+        }
+
 
         // verify the required parameter 'list_object_index' is set
         if ($this->list_object_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $list_object_index when calling PostWorksheetListColumnsTotal'
             );
-        } 
+        }
+
 
         // verify the required parameter 'table_total_requests' is set
         if ($this->table_total_requests === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $table_total_requests when calling PostWorksheetListColumnsTotal'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/listcolumns/total';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/listcolumns/total';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

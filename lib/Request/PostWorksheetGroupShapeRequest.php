@@ -133,23 +133,26 @@ class PostWorksheetGroupShapeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetGroupShape'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetGroupShape'
             );
-        } 
+        }
+
 
         // verify the required parameter 'list_shape' is set
         if ($this->list_shape === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $list_shape when calling PostWorksheetGroupShape'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/shapes/group';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/shapes/group';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -192,16 +192,18 @@ class PostWorkbookImportJsonRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookImportJson'
             );
-        } 
+        }
+
 
         // verify the required parameter 'import_json_request' is set
         if ($this->import_json_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $import_json_request when calling PostWorkbookImportJson'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/importjson';
+
+        $resourcePath = 'v3.0/cells/{name}/importjson';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

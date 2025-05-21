@@ -101,9 +101,10 @@ class DeleteFolderRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $path when calling DeleteFolder'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/storage/folder/{path}';
+
+        $resourcePath = 'v3.0/cells/storage/folder/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -227,51 +227,58 @@ class PutWorksheetFilterTop10Request extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_top' is set
         if ($this->is_top === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_top when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_percent' is set
         if ($this->is_percent === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_percent when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
+
 
         // verify the required parameter 'item_count' is set
         if ($this->item_count === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $item_count when calling PutWorksheetFilterTop10'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

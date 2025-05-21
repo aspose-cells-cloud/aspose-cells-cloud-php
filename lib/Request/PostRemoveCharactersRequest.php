@@ -71,9 +71,10 @@ class PostRemoveCharactersRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $remove_characters_options when calling PostRemoveCharacters'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/removecharacters';
+
+        $resourcePath = 'v3.0/cells/removecharacters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

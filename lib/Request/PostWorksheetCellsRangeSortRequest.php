@@ -133,23 +133,26 @@ class PostWorksheetCellsRangeSortRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeSort'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeSort'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range_sort_request' is set
         if ($this->range_sort_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range_sort_request when calling PostWorksheetCellsRangeSort'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/sort';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/sort';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

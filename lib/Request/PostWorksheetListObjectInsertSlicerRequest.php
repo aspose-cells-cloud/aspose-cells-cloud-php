@@ -165,37 +165,42 @@ class PostWorksheetListObjectInsertSlicerRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetListObjectInsertSlicer'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetListObjectInsertSlicer'
             );
-        } 
+        }
+
 
         // verify the required parameter 'list_object_index' is set
         if ($this->list_object_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $list_object_index when calling PostWorksheetListObjectInsertSlicer'
             );
-        } 
+        }
+
 
         // verify the required parameter 'column_index' is set
         if ($this->column_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $column_index when calling PostWorksheetListObjectInsertSlicer'
             );
-        } 
+        }
+
 
         // verify the required parameter 'dest_cell_name' is set
         if ($this->dest_cell_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $dest_cell_name when calling PostWorksheetListObjectInsertSlicer'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/InsertSlicer';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/InsertSlicer';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

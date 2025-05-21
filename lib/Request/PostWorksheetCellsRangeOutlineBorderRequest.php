@@ -133,23 +133,26 @@ class PostWorksheetCellsRangeOutlineBorderRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeOutlineBorder'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeOutlineBorder'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range_operate' is set
         if ($this->range_operate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range_operate when calling PostWorksheetCellsRangeOutlineBorder'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -133,23 +133,26 @@ class PostWorksheetCalculateFormulaRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCalculateFormula'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCalculateFormula'
             );
-        } 
+        }
+
 
         // verify the required parameter 'formula' is set
         if ($this->formula === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $formula when calling PostWorksheetCalculateFormula'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/calculateformula';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/calculateformula';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

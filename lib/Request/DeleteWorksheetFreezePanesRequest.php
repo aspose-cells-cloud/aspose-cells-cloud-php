@@ -181,44 +181,50 @@ class DeleteWorksheetFreezePanesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetFreezePanes'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetFreezePanes'
             );
-        } 
+        }
+
 
         // verify the required parameter 'row' is set
         if ($this->row === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $row when calling DeleteWorksheetFreezePanes'
             );
-        } 
+        }
+
 
         // verify the required parameter 'column' is set
         if ($this->column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $column when calling DeleteWorksheetFreezePanes'
             );
-        } 
+        }
+
 
         // verify the required parameter 'freezed_rows' is set
         if ($this->freezed_rows === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $freezed_rows when calling DeleteWorksheetFreezePanes'
             );
-        } 
+        }
+
 
         // verify the required parameter 'freezed_columns' is set
         if ($this->freezed_columns === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $freezed_columns when calling DeleteWorksheetFreezePanes'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/freezepanes';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/freezepanes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

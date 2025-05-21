@@ -132,16 +132,18 @@ class PostSearchRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PostSearch'
             );
-        } 
+        }
+
 
         // verify the required parameter 'text' is set
         if ($this->text === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $text when calling PostSearch'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/search';
+
+        $resourcePath = 'v3.0/cells/search';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -167,10 +169,10 @@ class PostSearchRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

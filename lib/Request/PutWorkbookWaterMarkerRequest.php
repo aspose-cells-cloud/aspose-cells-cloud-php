@@ -117,16 +117,18 @@ class PutWorkbookWaterMarkerRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorkbookWaterMarker'
             );
-        } 
+        }
+
 
         // verify the required parameter 'text_water_marker_request' is set
         if ($this->text_water_marker_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $text_water_marker_request when calling PutWorkbookWaterMarker'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/watermarker';
+
+        $resourcePath = 'v3.0/cells/{name}/watermarker';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

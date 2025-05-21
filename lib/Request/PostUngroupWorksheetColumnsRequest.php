@@ -149,30 +149,34 @@ class PostUngroupWorksheetColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostUngroupWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostUngroupWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'first_index' is set
         if ($this->first_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $first_index when calling PostUngroupWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'last_index' is set
         if ($this->last_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $last_index when calling PostUngroupWorksheetColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

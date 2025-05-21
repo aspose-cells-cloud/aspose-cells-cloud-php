@@ -86,9 +86,10 @@ class PostConvertWorkbookRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $convert_workbook_options when calling PostConvertWorkbook'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/convertWorkbook';
+
+        $resourcePath = 'v3.0/cells/convertWorkbook';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

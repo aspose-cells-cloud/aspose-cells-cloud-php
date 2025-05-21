@@ -149,30 +149,34 @@ class PutWorksheetConditionalFormattingRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetConditionalFormatting'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetConditionalFormatting'
             );
-        } 
+        }
+
 
         // verify the required parameter 'formatcondition' is set
         if ($this->formatcondition === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $formatcondition when calling PutWorksheetConditionalFormatting'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cell_area' is set
         if ($this->cell_area === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cell_area when calling PutWorksheetConditionalFormatting'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/conditionalFormattings';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

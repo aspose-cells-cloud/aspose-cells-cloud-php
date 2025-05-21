@@ -162,16 +162,18 @@ class PutWorksheetBackgroundRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetBackground'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetBackground'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/background';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/background';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -213,10 +215,10 @@ class PutWorksheetBackgroundRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

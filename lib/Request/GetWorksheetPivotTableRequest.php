@@ -133,23 +133,26 @@ class GetWorksheetPivotTableRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetPivotTable'
             );
-        } 
+        }
+
 
         // verify the required parameter 'pivottable_index' is set
         if ($this->pivottable_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pivottable_index when calling GetWorksheetPivotTable'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

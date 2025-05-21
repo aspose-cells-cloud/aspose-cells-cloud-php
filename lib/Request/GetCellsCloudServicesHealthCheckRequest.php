@@ -51,7 +51,7 @@ class GetCellsCloudServicesHealthCheckRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = '/cells';
+        $resourcePath = 'v3.0/cells';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

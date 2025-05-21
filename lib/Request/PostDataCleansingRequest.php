@@ -71,9 +71,10 @@ class PostDataCleansingRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_cleansing_request when calling PostDataCleansing'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/datacleansing';
+
+        $resourcePath = 'v3.0/cells/datacleansing';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -117,16 +117,18 @@ class GetWorksheetShapesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetShapes'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetShapes'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/shapes';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/shapes';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

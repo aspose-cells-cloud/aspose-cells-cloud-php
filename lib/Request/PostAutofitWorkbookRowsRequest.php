@@ -134,6 +134,36 @@ class PostAutofitWorkbookRowsRequest extends BaseApiRequest
         $this->storage_name = $value;
     }
 
+    /*
+    * firstColumn : 
+    */ 
+    public $first_column;
+
+    public function getFirstColumn()
+    {
+        return $this->first_column;
+    }
+
+    public function setFirstColumn($value)
+    {
+        $this->first_column = $value;
+    }
+
+    /*
+    * lastColumn : 
+    */ 
+    public $last_column;
+
+    public function getLastColumn()
+    {
+        return $this->last_column;
+    }
+
+    public function setLastColumn($value)
+    {
+        $this->last_column = $value;
+    }
+
     public function __construct( $name = null )
     {        
         $this->name = $name; 
@@ -146,9 +176,10 @@ class PostAutofitWorkbookRowsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostAutofitWorkbookRows'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/autofitrows';
+
+        $resourcePath = 'v3.0/cells/{name}/autofitrows';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -181,6 +212,14 @@ class PostAutofitWorkbookRowsRequest extends BaseApiRequest
         // query params : storage_name
         if ($this->storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
+        }
+        // query params : first_column
+        if ($this->first_column !== null) {
+            $queryParams['firstColumn'] = ObjectSerializer::toQueryValue($this->first_column);
+        }
+        // query params : last_column
+        if ($this->last_column !== null) {
+            $queryParams['lastColumn'] = ObjectSerializer::toQueryValue($this->last_column);
         }
     // body params
         $_tempBody = null;

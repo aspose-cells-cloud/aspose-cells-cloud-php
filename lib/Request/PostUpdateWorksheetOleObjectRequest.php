@@ -149,30 +149,34 @@ class PostUpdateWorksheetOleObjectRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostUpdateWorksheetOleObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostUpdateWorksheetOleObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'ole_object_index' is set
         if ($this->ole_object_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ole_object_index when calling PostUpdateWorksheetOleObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'ole' is set
         if ($this->ole === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ole when calling PostUpdateWorksheetOleObject'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

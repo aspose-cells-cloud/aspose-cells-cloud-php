@@ -162,16 +162,18 @@ class PostWorkbookDataDeduplicationRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookDataDeduplication'
             );
-        } 
+        }
+
 
         // verify the required parameter 'deduplication_region' is set
         if ($this->deduplication_region === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $deduplication_region when calling PostWorkbookDataDeduplication'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/datadeduplication';
+
+        $resourcePath = 'v3.0/cells/{name}/datadeduplication';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

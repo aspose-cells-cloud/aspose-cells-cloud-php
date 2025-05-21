@@ -146,9 +146,10 @@ class PostImportDataRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostImportData'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/importdata';
+
+        $resourcePath = 'v3.0/cells/{name}/importdata';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

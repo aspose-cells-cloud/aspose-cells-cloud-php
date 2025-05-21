@@ -133,23 +133,26 @@ class PutChangeVisibilityWorksheetRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutChangeVisibilityWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutChangeVisibilityWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_visible' is set
         if ($this->is_visible === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_visible when calling PutChangeVisibilityWorksheet'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/visible';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/visible';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

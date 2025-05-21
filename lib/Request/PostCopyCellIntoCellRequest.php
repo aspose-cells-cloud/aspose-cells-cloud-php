@@ -194,30 +194,34 @@ class PostCopyCellIntoCellRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostCopyCellIntoCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'dest_cell_name' is set
         if ($this->dest_cell_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $dest_cell_name when calling PostCopyCellIntoCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostCopyCellIntoCell'
             );
-        } 
+        }
+
 
         // verify the required parameter 'worksheet' is set
         if ($this->worksheet === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $worksheet when calling PostCopyCellIntoCell'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

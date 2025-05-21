@@ -149,30 +149,34 @@ class GetWorksheetPictureWithFormatRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetPictureWithFormat'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetPictureWithFormat'
             );
-        } 
+        }
+
 
         // verify the required parameter 'picture_number' is set
         if ($this->picture_number === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $picture_number when calling GetWorksheetPictureWithFormat'
             );
-        } 
+        }
+
 
         // verify the required parameter 'format' is set
         if ($this->format === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $format when calling GetWorksheetPictureWithFormat'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pictures/{pictureNumber}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

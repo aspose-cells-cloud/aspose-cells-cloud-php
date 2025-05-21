@@ -195,37 +195,42 @@ class PutWorksheetFilterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PutWorksheetFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling PutWorksheetFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'criteria' is set
         if ($this->criteria === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $criteria when calling PutWorksheetFilter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoFilter/filter';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/filter';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

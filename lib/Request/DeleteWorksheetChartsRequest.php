@@ -117,16 +117,18 @@ class DeleteWorksheetChartsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetCharts'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetCharts'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/charts';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/charts';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

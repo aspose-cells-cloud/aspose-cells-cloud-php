@@ -71,9 +71,10 @@ class PostDataTransformationRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_transformation_request when calling PostDataTransformation'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/datatransformation';
+
+        $resourcePath = 'v3.0/cells/datatransformation';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

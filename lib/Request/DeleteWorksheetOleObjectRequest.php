@@ -133,23 +133,26 @@ class DeleteWorksheetOleObjectRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetOleObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetOleObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'ole_object_index' is set
         if ($this->ole_object_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $ole_object_index when calling DeleteWorksheetOleObject'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

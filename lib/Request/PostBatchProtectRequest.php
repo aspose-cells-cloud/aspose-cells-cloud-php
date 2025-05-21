@@ -71,9 +71,10 @@ class PostBatchProtectRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $batch_protect_request when calling PostBatchProtect'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/batch/protect';
+
+        $resourcePath = 'v3.0/cells/batch/protect';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

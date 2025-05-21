@@ -117,16 +117,18 @@ class GetWorksheetPageCountRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetPageCount'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetPageCount'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pagecount';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pagecount';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

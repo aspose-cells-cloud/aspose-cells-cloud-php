@@ -131,9 +131,10 @@ class PostConvertWorkbookToPptxRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PostConvertWorkbookToPptx'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/convert/pptx';
+
+        $resourcePath = 'v3.0/cells/convert/pptx';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -159,10 +160,10 @@ class PostConvertWorkbookToPptxRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

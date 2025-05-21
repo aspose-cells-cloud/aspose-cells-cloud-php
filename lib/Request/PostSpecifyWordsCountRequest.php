@@ -71,9 +71,10 @@ class PostSpecifyWordsCountRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $specify_words_count_options when calling PostSpecifyWordsCount'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/specifywordscount';
+
+        $resourcePath = 'v3.0/cells/specifywordscount';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

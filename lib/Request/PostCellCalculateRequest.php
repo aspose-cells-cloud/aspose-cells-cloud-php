@@ -148,23 +148,26 @@ class PostCellCalculateRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostCellCalculate'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostCellCalculate'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cell_name' is set
         if ($this->cell_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cell_name when calling PostCellCalculate'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

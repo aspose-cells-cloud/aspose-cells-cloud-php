@@ -71,9 +71,10 @@ class PostCharacterCountRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $character_count_options when calling PostCharacterCount'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/charactercount';
+
+        $resourcePath = 'v3.0/cells/charactercount';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

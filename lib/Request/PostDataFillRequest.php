@@ -71,9 +71,10 @@ class PostDataFillRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_fill_request when calling PostDataFill'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/datafill';
+
+        $resourcePath = 'v3.0/cells/datafill';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

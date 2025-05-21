@@ -133,23 +133,26 @@ class PostWorksheetCellsRangeMergeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangeMerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangeMerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range' is set
         if ($this->range === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range when calling PostWorksheetCellsRangeMerge'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/merge';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/merge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

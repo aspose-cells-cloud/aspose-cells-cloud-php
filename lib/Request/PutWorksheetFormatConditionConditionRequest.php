@@ -197,51 +197,58 @@ class PutWorksheetFormatConditionConditionRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
+
 
         // verify the required parameter 'index' is set
         if ($this->index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $index when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
+
 
         // verify the required parameter 'type' is set
         if ($this->type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $type when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
+
 
         // verify the required parameter 'operator_type' is set
         if ($this->operator_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $operator_type when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
+
 
         // verify the required parameter 'formula1' is set
         if ($this->formula1 === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $formula1 when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
+
 
         // verify the required parameter 'formula2' is set
         if ($this->formula2 === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $formula2 when calling PutWorksheetFormatConditionCondition'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

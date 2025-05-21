@@ -117,16 +117,18 @@ class PutWorkbookNameRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorkbookName'
             );
-        } 
+        }
+
 
         // verify the required parameter 'new_name' is set
         if ($this->new_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $new_name when calling PutWorkbookName'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/names';
+
+        $resourcePath = 'v3.0/cells/{name}/names';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -165,37 +165,42 @@ class PostHeaderRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostHeader'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostHeader'
             );
-        } 
+        }
+
 
         // verify the required parameter 'section' is set
         if ($this->section === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $section when calling PostHeader'
             );
-        } 
+        }
+
 
         // verify the required parameter 'script' is set
         if ($this->script === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $script when calling PostHeader'
             );
-        } 
+        }
+
 
         // verify the required parameter 'is_first_page' is set
         if ($this->is_first_page === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $is_first_page when calling PostHeader'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pagesetup/header';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pagesetup/header';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

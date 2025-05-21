@@ -101,9 +101,10 @@ class GetPageCountRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetPageCount'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/pagecount';
+
+        $resourcePath = 'v3.0/cells/{name}/pagecount';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -133,23 +133,26 @@ class PostWorkbookTextReplaceRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookTextReplace'
             );
-        } 
+        }
+
 
         // verify the required parameter 'old_value' is set
         if ($this->old_value === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $old_value when calling PostWorkbookTextReplace'
             );
-        } 
+        }
+
 
         // verify the required parameter 'new_value' is set
         if ($this->new_value === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $new_value when calling PostWorkbookTextReplace'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/replaceText';
+
+        $resourcePath = 'v3.0/cells/{name}/replaceText';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

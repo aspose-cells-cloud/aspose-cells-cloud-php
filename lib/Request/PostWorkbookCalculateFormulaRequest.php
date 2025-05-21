@@ -131,9 +131,10 @@ class PostWorkbookCalculateFormulaRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookCalculateFormula'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/calculateformula';
+
+        $resourcePath = 'v3.0/cells/{name}/calculateformula';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

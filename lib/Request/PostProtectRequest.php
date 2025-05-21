@@ -102,16 +102,18 @@ class PostProtectRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PostProtect'
             );
-        } 
+        }
+
 
         // verify the required parameter 'protect_workbook_request' is set
         if ($this->protect_workbook_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $protect_workbook_request when calling PostProtect'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/protect';
+
+        $resourcePath = 'v3.0/cells/protect';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -125,10 +127,10 @@ class PostProtectRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

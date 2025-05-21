@@ -165,37 +165,42 @@ class DeleteWorksheetColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'column_index' is set
         if ($this->column_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $column_index when calling DeleteWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'columns' is set
         if ($this->columns === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $columns when calling DeleteWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'update_reference' is set
         if ($this->update_reference === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $update_reference when calling DeleteWorksheetColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -117,16 +117,18 @@ class PostWorkbooksTextSearchRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbooksTextSearch'
             );
-        } 
+        }
+
 
         // verify the required parameter 'text' is set
         if ($this->text === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $text when calling PostWorkbooksTextSearch'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/findText';
+
+        $resourcePath = 'v3.0/cells/{name}/findText';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

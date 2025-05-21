@@ -117,16 +117,18 @@ class DeleteHeaderFooterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteHeaderFooter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteHeaderFooter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

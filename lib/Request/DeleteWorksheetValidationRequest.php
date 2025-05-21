@@ -133,23 +133,26 @@ class DeleteWorksheetValidationRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetValidation'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetValidation'
             );
-        } 
+        }
+
 
         // verify the required parameter 'validation_index' is set
         if ($this->validation_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $validation_index when calling DeleteWorksheetValidation'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

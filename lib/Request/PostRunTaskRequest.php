@@ -71,9 +71,10 @@ class PostRunTaskRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $task_data when calling PostRunTask'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/task/runtask';
+
+        $resourcePath = 'v3.0/cells/task/runtask';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

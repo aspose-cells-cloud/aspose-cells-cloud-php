@@ -86,9 +86,10 @@ class GetFileVersionsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $path when calling GetFileVersions'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/storage/version/{path}';
+
+        $resourcePath = 'v3.0/cells/storage/version/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -181,44 +181,50 @@ class PostWorksheetUnmergeRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetUnmerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetUnmerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'start_row' is set
         if ($this->start_row === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $start_row when calling PostWorksheetUnmerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'start_column' is set
         if ($this->start_column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $start_column when calling PostWorksheetUnmerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_rows' is set
         if ($this->total_rows === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_rows when calling PostWorksheetUnmerge'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_columns' is set
         if ($this->total_columns === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_columns when calling PostWorksheetUnmerge'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/unmerge';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/unmerge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

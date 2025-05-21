@@ -71,9 +71,10 @@ class PostDataDeduplicationRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_deduplication_request when calling PostDataDeduplication'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/datadeduplication';
+
+        $resourcePath = 'v3.0/cells/datadeduplication';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

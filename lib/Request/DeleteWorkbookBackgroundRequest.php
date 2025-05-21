@@ -101,9 +101,10 @@ class DeleteWorkbookBackgroundRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorkbookBackground'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/background';
+
+        $resourcePath = 'v3.0/cells/{name}/background';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

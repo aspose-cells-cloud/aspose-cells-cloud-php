@@ -101,9 +101,10 @@ class GetNamedRangesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetNamedRanges'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/ranges';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/ranges';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

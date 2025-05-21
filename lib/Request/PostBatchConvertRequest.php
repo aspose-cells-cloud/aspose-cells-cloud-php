@@ -71,9 +71,10 @@ class PostBatchConvertRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $batch_convert_request when calling PostBatchConvert'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/batch/convert';
+
+        $resourcePath = 'v3.0/cells/batch/convert';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

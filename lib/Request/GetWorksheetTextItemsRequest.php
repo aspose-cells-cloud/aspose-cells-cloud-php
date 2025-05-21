@@ -117,16 +117,18 @@ class GetWorksheetTextItemsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetTextItems'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetTextItems'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/textItems';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/textItems';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

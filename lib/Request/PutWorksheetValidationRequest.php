@@ -132,16 +132,18 @@ class PutWorksheetValidationRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutWorksheetValidation'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutWorksheetValidation'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/validations';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/validations';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

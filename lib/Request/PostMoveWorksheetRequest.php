@@ -133,23 +133,26 @@ class PostMoveWorksheetRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostMoveWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostMoveWorksheet'
             );
-        } 
+        }
+
 
         // verify the required parameter 'moving' is set
         if ($this->moving === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $moving when calling PostMoveWorksheet'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/position';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/position';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -239,30 +239,34 @@ class DeleteWorksheetDateFilterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetDateFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetDateFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'field_index' is set
         if ($this->field_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $field_index when calling DeleteWorksheetDateFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'date_time_grouping_type' is set
         if ($this->date_time_grouping_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $date_time_grouping_type when calling DeleteWorksheetDateFilter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

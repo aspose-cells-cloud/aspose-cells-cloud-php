@@ -148,23 +148,26 @@ class GetWorksheetListObjectRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetListObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetListObject'
             );
-        } 
+        }
+
 
         // verify the required parameter 'listobjectindex' is set
         if ($this->listobjectindex === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $listobjectindex when calling GetWorksheetListObject'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

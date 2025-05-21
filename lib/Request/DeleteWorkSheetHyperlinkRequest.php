@@ -133,23 +133,26 @@ class DeleteWorksheetHyperlinkRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetHyperlink'
             );
-        } 
+        }
+
 
         // verify the required parameter 'hyperlink_index' is set
         if ($this->hyperlink_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $hyperlink_index when calling DeleteWorksheetHyperlink'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

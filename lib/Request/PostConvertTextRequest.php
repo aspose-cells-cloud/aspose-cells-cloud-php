@@ -71,9 +71,10 @@ class PostConvertTextRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $convert_text_options when calling PostConvertText'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/converttext';
+
+        $resourcePath = 'v3.0/cells/converttext';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

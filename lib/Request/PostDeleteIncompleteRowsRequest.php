@@ -71,9 +71,10 @@ class PostDeleteIncompleteRowsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $delete_incomplete_rows_request when calling PostDeleteIncompleteRows'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/deleteincompleterows';
+
+        $resourcePath = 'v3.0/cells/deleteincompleterows';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

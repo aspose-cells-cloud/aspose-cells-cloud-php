@@ -117,16 +117,18 @@ class PostProtectWorkbookRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostProtectWorkbook'
             );
-        } 
+        }
+
 
         // verify the required parameter 'protect_workbook_request' is set
         if ($this->protect_workbook_request === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $protect_workbook_request when calling PostProtectWorkbook'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/protection';
+
+        $resourcePath = 'v3.0/cells/{name}/protection';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

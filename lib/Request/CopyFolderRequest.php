@@ -117,16 +117,18 @@ class CopyFolderRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $src_path when calling CopyFolder'
             );
-        } 
+        }
+
 
         // verify the required parameter 'dest_path' is set
         if ($this->dest_path === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $dest_path when calling CopyFolder'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/storage/folder/copy/{srcPath}';
+
+        $resourcePath = 'v3.0/cells/storage/folder/copy/{srcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

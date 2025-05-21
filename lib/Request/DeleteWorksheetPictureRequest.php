@@ -133,23 +133,26 @@ class DeleteWorksheetPictureRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling DeleteWorksheetPicture'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling DeleteWorksheetPicture'
             );
-        } 
+        }
+
 
         // verify the required parameter 'picture_index' is set
         if ($this->picture_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $picture_index when calling DeleteWorksheetPicture'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -176,9 +176,10 @@ class PostWorkbookExportXMLRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorkbookExportXML'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/exportxml';
+
+        $resourcePath = 'v3.0/cells/{name}/exportxml';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

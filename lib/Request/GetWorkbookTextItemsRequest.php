@@ -101,9 +101,10 @@ class GetWorkbookTextItemsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorkbookTextItems'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/textItems';
+
+        $resourcePath = 'v3.0/cells/{name}/textItems';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

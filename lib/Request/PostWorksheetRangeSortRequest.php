@@ -149,30 +149,34 @@ class PostWorksheetRangeSortRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetRangeSort'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetRangeSort'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cell_area' is set
         if ($this->cell_area === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cell_area when calling PostWorksheetRangeSort'
             );
-        } 
+        }
+
 
         // verify the required parameter 'data_sorter' is set
         if ($this->data_sorter === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $data_sorter when calling PostWorksheetRangeSort'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/sort';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/sort';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

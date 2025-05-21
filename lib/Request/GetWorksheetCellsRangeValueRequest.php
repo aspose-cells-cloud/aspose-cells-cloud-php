@@ -192,16 +192,18 @@ class GetWorksheetCellsRangeValueRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetCellsRangeValue'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetCellsRangeValue'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/value';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/value';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

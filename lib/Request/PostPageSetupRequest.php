@@ -133,23 +133,26 @@ class PostPageSetupRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostPageSetup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostPageSetup'
             );
-        } 
+        }
+
 
         // verify the required parameter 'page_setup' is set
         if ($this->page_setup === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $page_setup when calling PostPageSetup'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/pagesetup';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/pagesetup';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

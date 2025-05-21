@@ -133,23 +133,26 @@ class PostWorksheetCellsRangesCopyRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostWorksheetCellsRangesCopy'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostWorksheetCellsRangesCopy'
             );
-        } 
+        }
+
 
         // verify the required parameter 'range_operate' is set
         if ($this->range_operate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $range_operate when calling PostWorksheetCellsRangesCopy'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/ranges/copy';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/ranges/copy';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

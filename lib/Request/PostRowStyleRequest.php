@@ -149,30 +149,34 @@ class PostRowStyleRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostRowStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostRowStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'row_index' is set
         if ($this->row_index === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $row_index when calling PostRowStyle'
             );
-        } 
+        }
+
 
         // verify the required parameter 'style' is set
         if ($this->style === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $style when calling PostRowStyle'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -192,16 +192,18 @@ class PutVerticalPageBreakRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PutVerticalPageBreak'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PutVerticalPageBreak'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/verticalpagebreaks';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/verticalpagebreaks';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

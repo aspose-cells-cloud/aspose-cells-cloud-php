@@ -164,30 +164,34 @@ class PostUnhideWorksheetColumnsRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling PostUnhideWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling PostUnhideWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'start_column' is set
         if ($this->start_column === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $start_column when calling PostUnhideWorksheetColumns'
             );
-        } 
+        }
+
 
         // verify the required parameter 'total_columns' is set
         if ($this->total_columns === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $total_columns when calling PostUnhideWorksheetColumns'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/cells/columns/unhide';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/cells/columns/unhide';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

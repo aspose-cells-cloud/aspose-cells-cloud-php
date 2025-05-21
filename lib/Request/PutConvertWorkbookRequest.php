@@ -225,6 +225,51 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
+    * onePagePerSheet : 
+    */ 
+    public $one_page_per_sheet;
+
+    public function getOnePagePerSheet()
+    {
+        return $this->one_page_per_sheet;
+    }
+
+    public function setOnePagePerSheet($value)
+    {
+        $this->one_page_per_sheet = $value;
+    }
+
+    /*
+    * AutoRowsFit : 
+    */ 
+    public $auto_rows_fit;
+
+    public function getAutoRowsFit()
+    {
+        return $this->auto_rows_fit;
+    }
+
+    public function setAutoRowsFit($value)
+    {
+        $this->auto_rows_fit = $value;
+    }
+
+    /*
+    * AutoColumnsFit : 
+    */ 
+    public $auto_columns_fit;
+
+    public function getAutoColumnsFit()
+    {
+        return $this->auto_columns_fit;
+    }
+
+    public function setAutoColumnsFit($value)
+    {
+        $this->auto_columns_fit = $value;
+    }
+
+    /*
     * FontsLocation : Use Custom fonts.
     */ 
     public $fonts_location;
@@ -252,16 +297,18 @@ class PutConvertWorkbookRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PutConvertWorkbook'
             );
-        } 
+        }
+
 
         // verify the required parameter 'format' is set
         if ($this->format === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $format when calling PutConvertWorkbook'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/convert';
+
+        $resourcePath = 'v3.0/cells/convert';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -311,6 +358,18 @@ class PutConvertWorkbookRequest extends BaseApiRequest
         if ($this->page_index !== null) {
             $queryParams['pageIndex'] = ObjectSerializer::toQueryValue($this->page_index);
         }
+        // query params : one_page_per_sheet
+        if ($this->one_page_per_sheet !== null) {
+            $queryParams['onePagePerSheet'] = ObjectSerializer::toQueryValue($this->one_page_per_sheet);
+        }
+        // query params : auto_rows_fit
+        if ($this->auto_rows_fit !== null) {
+            $queryParams['AutoRowsFit'] = ObjectSerializer::toQueryValue($this->auto_rows_fit);
+        }
+        // query params : auto_columns_fit
+        if ($this->auto_columns_fit !== null) {
+            $queryParams['AutoColumnsFit'] = ObjectSerializer::toQueryValue($this->auto_columns_fit);
+        }
         // query params : fonts_location
         if ($this->fonts_location !== null) {
             $queryParams['FontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
@@ -319,10 +378,10 @@ class PutConvertWorkbookRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 

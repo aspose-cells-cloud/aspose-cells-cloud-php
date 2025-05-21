@@ -117,16 +117,18 @@ class GetWorksheetAutoFilterRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetWorksheetAutoFilter'
             );
-        } 
+        }
+
 
         // verify the required parameter 'sheet_name' is set
         if ($this->sheet_name === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sheet_name when calling GetWorksheetAutoFilter'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/worksheets/{sheetName}/autoFilter';
+
+        $resourcePath = 'v3.0/cells/{name}/worksheets/{sheetName}/autoFilter';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

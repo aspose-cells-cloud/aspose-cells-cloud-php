@@ -71,9 +71,10 @@ class PostBatchUnlockRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $batch_lock_request when calling PostBatchUnlock'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/batch/unlock';
+
+        $resourcePath = 'v3.0/cells/batch/unlock';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -101,9 +101,10 @@ class GetAllStylesRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $name when calling GetAllStyles'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/{name}/allstyles';
+
+        $resourcePath = 'v3.0/cells/{name}/allstyles';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

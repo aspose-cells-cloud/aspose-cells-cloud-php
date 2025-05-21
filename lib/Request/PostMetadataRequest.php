@@ -147,16 +147,18 @@ class PostMetadataRequest extends BaseApiRequest
             throw new \InvalidArgumentException(
                 'Missing the required parameter $file when calling PostMetadata'
             );
-        } 
+        }
+
 
         // verify the required parameter 'cells_documents' is set
         if ($this->cells_documents === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $cells_documents when calling PostMetadata'
             );
-        } 
+        }
 
-        $resourcePath = '/cells/metadata/update';
+
+        $resourcePath = 'v3.0/cells/metadata/update';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -182,10 +184,10 @@ class PostMetadataRequest extends BaseApiRequest
             $multipart = true;
             if( is_array($this->file)){
                 foreach($this->file as $key => $value) {
-                    $formParams[$key] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
                 }
             }else {
-                $formParams['File'] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
+                $formParams[basename($this->file)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->file), 'rb');
             }
         }
 
