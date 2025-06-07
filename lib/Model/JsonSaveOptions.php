@@ -397,7 +397,7 @@ class JsonSaveOptions
     /**
      * Sets export_area
      *
-     *  Gets or sets the exporting range.
+     *  
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class JsonSaveOptions
     /**
      * Sets has_header_row
      *
-     *  Indicates whether the range contains header row.
+     *  
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class JsonSaveOptions
     /**
      * Sets export_as_string
      *
-     *  Exports the string value of the cells to json.
+     *  
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class JsonSaveOptions
     /**
      * Sets indent
      *
-     *  Indicates the indent.
+     *  
      *
      * @return $this
      */

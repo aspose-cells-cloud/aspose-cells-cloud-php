@@ -89,7 +89,7 @@ class GetFileVersionsRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = 'v3.0/cells/storage/version/{path}';
+        $resourcePath = 'v4.0/cells/storage/version/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -169,7 +169,7 @@ class GetFileVersionsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

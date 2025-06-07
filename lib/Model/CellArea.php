@@ -241,7 +241,7 @@ class CellArea
     /**
      * Sets end_column
      *
-     *  The end column index.
+     *  
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class CellArea
     /**
      * Sets end_row
      *
-     *  The end row index.
+     *  
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class CellArea
     /**
      * Sets start_column
      *
-     *  The start column index.
+     *  
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class CellArea
     /**
      * Sets start_row
      *
-     *  The start row index.
+     *  
      *
      * @return $this
      */

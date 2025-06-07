@@ -229,7 +229,7 @@ class SaveResponse
     /**
      * Sets save_result
      *
-     *  This class property represents a "SaveResult" XML element.
+     *  
      *
      * @return $this
      */

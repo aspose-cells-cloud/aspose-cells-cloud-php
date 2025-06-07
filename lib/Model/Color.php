@@ -241,7 +241,7 @@ class Color
     /**
      * Sets a
      *
-     *  Gets the alpha component value of this System.Drawing.Color structure.            
+     *  
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class Color
     /**
      * Sets r
      *
-     *  Gets the red component value of this System.Drawing.Color structure.            
+     *  
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class Color
     /**
      * Sets g
      *
-     *  Gets the green component value of this System.Drawing.Color structure.
+     *  
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class Color
     /**
      * Sets b
      *
-     *  Gets the blue component value of this System.Drawing.Color structure.            
+     *  
      *
      * @return $this
      */

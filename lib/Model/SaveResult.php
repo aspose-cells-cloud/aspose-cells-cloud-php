@@ -205,7 +205,7 @@ class SaveResult
     /**
      * Sets documents
      *
-     *  Represents cells cloud file infomation.
+     *  
      *
      * @return $this
      */

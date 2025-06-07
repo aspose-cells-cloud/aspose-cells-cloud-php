@@ -529,7 +529,7 @@ class PaginatedSaveOptions
     /**
      * Sets default_font
      *
-     *  When characters in the Excel are Unicode and not be set with correct font in cell style,They may appear as block in pdf,image.Set the DefaultFont such as MingLiu or MS Gothic to show these characters. If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
+     *  
      *
      * @return $this
      */
@@ -552,7 +552,7 @@ class PaginatedSaveOptions
     /**
      * Sets check_workbook_default_font
      *
-     *  When characters in the Excel are Unicode and not be set with correct font in cell style,They may appear as block in pdf,image.Set this to true to try to use workbook's default font to show these characters first.
+     *  
      *
      * @return $this
      */
@@ -575,7 +575,7 @@ class PaginatedSaveOptions
     /**
      * Sets check_font_compatibility
      *
-     *  Indicates whether to check font compatibility for every character in text.
+     *  
      *
      * @return $this
      */
@@ -598,7 +598,7 @@ class PaginatedSaveOptions
     /**
      * Sets is_font_substitution_char_granularity
      *
-     *  Indicates whether to only substitute the font of character when the cell font is not compatibility for it.
+     *  
      *
      * @return $this
      */
@@ -621,7 +621,7 @@ class PaginatedSaveOptions
     /**
      * Sets one_page_per_sheet
      *
-     *  If OnePagePerSheet is true , all content of one sheet will output to only one page in result.The paper size of pagesetup will be invalid, and the other settings of pagesetup will still take effect.
+     *  
      *
      * @return $this
      */
@@ -644,7 +644,7 @@ class PaginatedSaveOptions
     /**
      * Sets all_columns_in_one_page_per_sheet
      *
-     *  If AllColumnsInOnePagePerSheet is true , all column content of one sheet will output to only one page in result.The width of paper size of pagesetup will be ignored, and the other settings of pagesetup will still take effect.
+     *  
      *
      * @return $this
      */
@@ -667,7 +667,7 @@ class PaginatedSaveOptions
     /**
      * Sets ignore_error
      *
-     *  Indicates if you need to hide the error while rendering.The error can be error in shape, image, chart rendering, etc.
+     *  
      *
      * @return $this
      */
@@ -690,7 +690,7 @@ class PaginatedSaveOptions
     /**
      * Sets output_blank_page_when_nothing_to_print
      *
-     *  Indicates whether to output a blank page when there is nothing to print.
+     *  
      *
      * @return $this
      */
@@ -713,7 +713,7 @@ class PaginatedSaveOptions
     /**
      * Sets page_index
      *
-     *  Gets or sets the 0-based index of the first page to save.
+     *  
      *
      * @return $this
      */
@@ -736,7 +736,7 @@ class PaginatedSaveOptions
     /**
      * Sets page_count
      *
-     *  Gets or sets the number of pages to save.
+     *  
      *
      * @return $this
      */
@@ -759,7 +759,7 @@ class PaginatedSaveOptions
     /**
      * Sets printing_page_type
      *
-     *  Indicates which pages will not be printed.
+     *  
      *
      * @return $this
      */
@@ -782,7 +782,7 @@ class PaginatedSaveOptions
     /**
      * Sets gridline_type
      *
-     *  Gets or sets gridline type.
+     *  
      *
      * @return $this
      */
@@ -805,7 +805,7 @@ class PaginatedSaveOptions
     /**
      * Sets text_cross_type
      *
-     *  Gets or sets displaying text type when the text width is larger than cell width.
+     *  
      *
      * @return $this
      */
@@ -828,7 +828,7 @@ class PaginatedSaveOptions
     /**
      * Sets default_edit_language
      *
-     *  Gets or sets default edit language.
+     *  
      *
      * @return $this
      */
@@ -851,7 +851,7 @@ class PaginatedSaveOptions
     /**
      * Sets emf_render_setting
      *
-     *  Setting for rendering Emf metafile.
+     *  
      *
      * @return $this
      */

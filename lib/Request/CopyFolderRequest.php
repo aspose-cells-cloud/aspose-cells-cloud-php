@@ -128,7 +128,7 @@ class CopyFolderRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = 'v3.0/cells/storage/folder/copy/{srcPath}';
+        $resourcePath = 'v4.0/cells/storage/folder/copy/{srcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -216,7 +216,7 @@ class CopyFolderRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

@@ -51,7 +51,7 @@ class PostAccessTokenRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = 'v3.0/cells/connect/token';
+        $resourcePath = 'v4.0/cells/connect/token';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -119,7 +119,7 @@ class PostAccessTokenRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

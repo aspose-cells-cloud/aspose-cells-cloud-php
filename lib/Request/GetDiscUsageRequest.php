@@ -66,7 +66,7 @@ class GetDiscUsageRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = 'v3.0/cells/storage/disc';
+        $resourcePath = 'v4.0/cells/storage/disc';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -138,7 +138,7 @@ class GetDiscUsageRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

@@ -385,7 +385,7 @@ class MarkdownSaveOptions
     /**
      * Sets encoding
      *
-     *  Gets and sets the default encoding.
+     *  
      *
      * @return $this
      */
@@ -408,7 +408,7 @@ class MarkdownSaveOptions
     /**
      * Sets format_strategy
      *
-     *  The Data provider to provide cells data for saving workbook in light mode.
+     *  
      *
      * @return $this
      */
@@ -431,7 +431,7 @@ class MarkdownSaveOptions
     /**
      * Sets line_separator
      *
-     *  Gets and sets the line separator.
+     *  
      *
      * @return $this
      */

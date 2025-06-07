@@ -37,6 +37,39 @@ use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
+use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
+use Aspose\Cells\Cloud\Request\GetAsposeCellsCloudStatusRequest;
+use Aspose\Cells\Cloud\Request\CheckCloudServiceHealthRequest;
+use Aspose\Cells\Cloud\Request\GetWorkbookWithFormatRequest;
+use Aspose\Cells\Cloud\Request\ConvertWorkbookRequest;
+use Aspose\Cells\Cloud\Request\WorkbookSaveAsRequest;
+use Aspose\Cells\Cloud\Request\MergeFilesRequest;
+use Aspose\Cells\Cloud\Request\MergeFilesInRemoteFolderRequest;
+use Aspose\Cells\Cloud\Request\SplitFileRequest;
+use Aspose\Cells\Cloud\Request\SplitFileInRemoteRequest;
+use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
+use Aspose\Cells\Cloud\Request\SearchTextRequest;
+use Aspose\Cells\Cloud\Request\SearchTextInRemoteRequest;
+use Aspose\Cells\Cloud\Request\ReplaceTextRequest;
+use Aspose\Cells\Cloud\Request\ReplaceTextInRemoteRequest;
+use Aspose\Cells\Cloud\Request\SearchBrokenLinksRequest;
+use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteRequest;
+use Aspose\Cells\Cloud\Request\SpecRequest;
+use Aspose\Cells\Cloud\Request\CodegenSpecRequest;
+use Aspose\Cells\Cloud\Request\DownloadFileRequest;
+use Aspose\Cells\Cloud\Request\UploadFileRequest;
+use Aspose\Cells\Cloud\Request\CopyFileRequest;
+use Aspose\Cells\Cloud\Request\MoveFileRequest;
+use Aspose\Cells\Cloud\Request\DeleteFileRequest;
+use Aspose\Cells\Cloud\Request\GetFilesListRequest;
+use Aspose\Cells\Cloud\Request\CreateFolderRequest;
+use Aspose\Cells\Cloud\Request\CopyFolderRequest;
+use Aspose\Cells\Cloud\Request\MoveFolderRequest;
+use Aspose\Cells\Cloud\Request\DeleteFolderRequest;
+use Aspose\Cells\Cloud\Request\StorageExistsRequest;
+use Aspose\Cells\Cloud\Request\ObjectExistsRequest;
+use Aspose\Cells\Cloud\Request\GetDiscUsageRequest;
+use Aspose\Cells\Cloud\Request\GetFileVersionsRequest;
 use Aspose\Cells\Cloud\Request\PostAnalyzeExcelRequest;
 use Aspose\Cells\Cloud\Request\GetWorksheetAutoFilterRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetDateFilterRequest;
@@ -58,7 +91,6 @@ use Aspose\Cells\Cloud\Request\PostBatchProtectRequest;
 use Aspose\Cells\Cloud\Request\PostBatchLockRequest;
 use Aspose\Cells\Cloud\Request\PostBatchUnlockRequest;
 use Aspose\Cells\Cloud\Request\PostBatchSplitRequest;
-use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
 use Aspose\Cells\Cloud\Request\PostClearContentsRequest;
 use Aspose\Cells\Cloud\Request\PostClearFormatsRequest;
 use Aspose\Cells\Cloud\Request\PostUpdateWorksheetRangeStyleRequest;
@@ -172,7 +204,6 @@ use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\PutWorksheetHyperlinkRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetHyperlinksRequest;
-use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
 use Aspose\Cells\Cloud\Request\PostAssembleRequest;
 use Aspose\Cells\Cloud\Request\PostCompressRequest;
 use Aspose\Cells\Cloud\Request\PostMergeRequest;
@@ -379,20 +410,6 @@ use Aspose\Cells\Cloud\Request\PutWorksheetValidationRequest;
 use Aspose\Cells\Cloud\Request\PostWorksheetValidationRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetValidationRequest;
 use Aspose\Cells\Cloud\Request\DeleteWorksheetValidationsRequest;
-use Aspose\Cells\Cloud\Request\DownloadFileRequest;
-use Aspose\Cells\Cloud\Request\UploadFileRequest;
-use Aspose\Cells\Cloud\Request\CopyFileRequest;
-use Aspose\Cells\Cloud\Request\MoveFileRequest;
-use Aspose\Cells\Cloud\Request\DeleteFileRequest;
-use Aspose\Cells\Cloud\Request\GetFilesListRequest;
-use Aspose\Cells\Cloud\Request\CreateFolderRequest;
-use Aspose\Cells\Cloud\Request\CopyFolderRequest;
-use Aspose\Cells\Cloud\Request\MoveFolderRequest;
-use Aspose\Cells\Cloud\Request\DeleteFolderRequest;
-use Aspose\Cells\Cloud\Request\StorageExistsRequest;
-use Aspose\Cells\Cloud\Request\ObjectExistsRequest;
-use Aspose\Cells\Cloud\Request\GetDiscUsageRequest;
-use Aspose\Cells\Cloud\Request\GetFileVersionsRequest;
 use Aspose\Cells\Cloud\Model\DiscUsage;
 use Aspose\Cells\Cloud\Model\ObjectExist;
 use Aspose\Cells\Cloud\Model\ObjectExistsExtensions;
@@ -403,6 +420,50 @@ use Aspose\Cells\Cloud\Model\FilesList;
 use Aspose\Cells\Cloud\Model\FilesUploadResult;
 use Aspose\Cells\Cloud\Model\StorageFile;
 use Aspose\Cells\Cloud\Model\GoogleDriveStorageFile;
+use Aspose\Cells\Cloud\Model\BrokenLink;
+use Aspose\Cells\Cloud\Model\CellArea;
+use Aspose\Cells\Cloud\Model\CellsCloudFileInfo;
+use Aspose\Cells\Cloud\Model\CellsCloudPublicKey;
+use Aspose\Cells\Cloud\Model\Color;
+use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
+use Aspose\Cells\Cloud\Model\Range;
+use Aspose\Cells\Cloud\Model\SaveResult;
+use Aspose\Cells\Cloud\Model\PaginatedSaveOptions;
+use Aspose\Cells\Cloud\Model\TextItem;
+use Aspose\Cells\Cloud\Model\DbfSaveOptions;
+use Aspose\Cells\Cloud\Model\DifSaveOptions;
+use Aspose\Cells\Cloud\Model\DocxSaveOptions;
+use Aspose\Cells\Cloud\Model\HtmlSaveOptions;
+use Aspose\Cells\Cloud\Model\ImageSaveOptions;
+use Aspose\Cells\Cloud\Model\JsonSaveOptions;
+use Aspose\Cells\Cloud\Model\MarkdownSaveOptions;
+use Aspose\Cells\Cloud\Model\MHtmlSaveOptions;
+use Aspose\Cells\Cloud\Model\OdsSaveOptions;
+use Aspose\Cells\Cloud\Model\OoxmlSaveOptions;
+use Aspose\Cells\Cloud\Model\PclSaveOptions;
+use Aspose\Cells\Cloud\Model\PdfSaveOptions;
+use Aspose\Cells\Cloud\Model\PptxSaveOptions;
+use Aspose\Cells\Cloud\Model\SaveOptions;
+use Aspose\Cells\Cloud\Model\SaveOptionsData;
+use Aspose\Cells\Cloud\Model\SpreadsheetML2003SaveOptions;
+use Aspose\Cells\Cloud\Model\SqlScriptSaveOptions;
+use Aspose\Cells\Cloud\Model\SvgSaveOptions;
+use Aspose\Cells\Cloud\Model\TxtSaveOptions;
+use Aspose\Cells\Cloud\Model\XlsbSaveOptions;
+use Aspose\Cells\Cloud\Model\XlsSaveOptions;
+use Aspose\Cells\Cloud\Model\XmlSaveOptions;
+use Aspose\Cells\Cloud\Model\XpsSaveOptions;
+use Aspose\Cells\Cloud\Model\BrokenLinksReponse;
+use Aspose\Cells\Cloud\Model\CellsCloudFileInfoResponse;
+use Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse;
+use Aspose\Cells\Cloud\Model\CellsCloudResponse;
+use Aspose\Cells\Cloud\Model\SaveResponse;
+use Aspose\Cells\Cloud\Model\SearchResponse;
+use Aspose\Cells\Cloud\Model\ImageOrPrintOptions;
+use Aspose\Cells\Cloud\Model\RenderingFont;
+use Aspose\Cells\Cloud\Model\RenderingWatermark;
+use Aspose\Cells\Cloud\Model\Error;
+use Aspose\Cells\Cloud\Model\ErrorDetails;
 use Aspose\Cells\Cloud\Model\AboveAverage;
 use Aspose\Cells\Cloud\Model\AbstractCalculationEngine;
 use Aspose\Cells\Cloud\Model\AbstractCalculationMonitor;
@@ -411,14 +472,10 @@ use Aspose\Cells\Cloud\Model\AutoFitterOptions;
 use Aspose\Cells\Cloud\Model\Border;
 use Aspose\Cells\Cloud\Model\CalculationOptions;
 use Aspose\Cells\Cloud\Model\Cell;
-use Aspose\Cells\Cloud\Model\CellArea;
 use Aspose\Cells\Cloud\Model\Cells;
-use Aspose\Cells\Cloud\Model\CellsCloudFileInfo;
-use Aspose\Cells\Cloud\Model\CellsCloudPublicKey;
 use Aspose\Cells\Cloud\Model\CellsColor;
 use Aspose\Cells\Cloud\Model\CellsDocumentProperties;
 use Aspose\Cells\Cloud\Model\CellsDocumentProperty;
-use Aspose\Cells\Cloud\Model\Color;
 use Aspose\Cells\Cloud\Model\ColorFilter;
 use Aspose\Cells\Cloud\Model\ColorScale;
 use Aspose\Cells\Cloud\Model\Column;
@@ -474,15 +531,11 @@ use Aspose\Cells\Cloud\Model\NegativeBarFormat;
 use Aspose\Cells\Cloud\Model\PageSection;
 use Aspose\Cells\Cloud\Model\PageSetup;
 use Aspose\Cells\Cloud\Model\PasteOptions;
-use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
 use Aspose\Cells\Cloud\Model\Protection;
 use Aspose\Cells\Cloud\Model\ProtectSheetParameter;
-use Aspose\Cells\Cloud\Model\Range;
 use Aspose\Cells\Cloud\Model\Ranges;
 use Aspose\Cells\Cloud\Model\Row;
 use Aspose\Cells\Cloud\Model\Rows;
-use Aspose\Cells\Cloud\Model\SaveResult;
-use Aspose\Cells\Cloud\Model\PaginatedSaveOptions;
 use Aspose\Cells\Cloud\Model\SingleValue;
 use Aspose\Cells\Cloud\Model\SortKey;
 use Aspose\Cells\Cloud\Model\SplitResult;
@@ -490,7 +543,6 @@ use Aspose\Cells\Cloud\Model\Style;
 use Aspose\Cells\Cloud\Model\StyleFormatCondition;
 use Aspose\Cells\Cloud\Model\Styles;
 use Aspose\Cells\Cloud\Model\TextFormatCondition;
-use Aspose\Cells\Cloud\Model\TextItem;
 use Aspose\Cells\Cloud\Model\TextItems;
 use Aspose\Cells\Cloud\Model\TextOptions;
 use Aspose\Cells\Cloud\Model\ThemeColor;
@@ -538,28 +590,6 @@ use Aspose\Cells\Cloud\Model\ListColumn;
 use Aspose\Cells\Cloud\Model\ListObject;
 use Aspose\Cells\Cloud\Model\ListObjects;
 use Aspose\Cells\Cloud\Model\PivotGlobalizationSettings;
-use Aspose\Cells\Cloud\Model\DbfSaveOptions;
-use Aspose\Cells\Cloud\Model\DifSaveOptions;
-use Aspose\Cells\Cloud\Model\DocxSaveOptions;
-use Aspose\Cells\Cloud\Model\HtmlSaveOptions;
-use Aspose\Cells\Cloud\Model\ImageSaveOptions;
-use Aspose\Cells\Cloud\Model\JsonSaveOptions;
-use Aspose\Cells\Cloud\Model\MarkdownSaveOptions;
-use Aspose\Cells\Cloud\Model\MHtmlSaveOptions;
-use Aspose\Cells\Cloud\Model\OdsSaveOptions;
-use Aspose\Cells\Cloud\Model\OoxmlSaveOptions;
-use Aspose\Cells\Cloud\Model\PclSaveOptions;
-use Aspose\Cells\Cloud\Model\PdfSaveOptions;
-use Aspose\Cells\Cloud\Model\PptxSaveOptions;
-use Aspose\Cells\Cloud\Model\SaveOptions;
-use Aspose\Cells\Cloud\Model\SpreadsheetML2003SaveOptions;
-use Aspose\Cells\Cloud\Model\SqlScriptSaveOptions;
-use Aspose\Cells\Cloud\Model\SvgSaveOptions;
-use Aspose\Cells\Cloud\Model\TxtSaveOptions;
-use Aspose\Cells\Cloud\Model\XlsbSaveOptions;
-use Aspose\Cells\Cloud\Model\XlsSaveOptions;
-use Aspose\Cells\Cloud\Model\XmlSaveOptions;
-use Aspose\Cells\Cloud\Model\XpsSaveOptions;
 use Aspose\Cells\Cloud\Model\ArcShapeResponse;
 use Aspose\Cells\Cloud\Model\AutoFilterResponse;
 use Aspose\Cells\Cloud\Model\AutoShapeResponse;
@@ -569,9 +599,6 @@ use Aspose\Cells\Cloud\Model\BorderResponse;
 use Aspose\Cells\Cloud\Model\ButtonResponse;
 use Aspose\Cells\Cloud\Model\CalculateFormulaResponse;
 use Aspose\Cells\Cloud\Model\CellResponse;
-use Aspose\Cells\Cloud\Model\CellsCloudFileInfoResponse;
-use Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse;
-use Aspose\Cells\Cloud\Model\CellsCloudResponse;
 use Aspose\Cells\Cloud\Model\CellsDocumentPropertiesResponse;
 use Aspose\Cells\Cloud\Model\CellsDocumentPropertyResponse;
 use Aspose\Cells\Cloud\Model\CellsDrawingResponse;
@@ -641,7 +668,6 @@ use Aspose\Cells\Cloud\Model\RectangleShapeResponse;
 use Aspose\Cells\Cloud\Model\RowResponse;
 use Aspose\Cells\Cloud\Model\RowsResponse;
 use Aspose\Cells\Cloud\Model\SaveFilesToCloudResultResponse;
-use Aspose\Cells\Cloud\Model\SaveResponse;
 use Aspose\Cells\Cloud\Model\ScrollBarResponse;
 use Aspose\Cells\Cloud\Model\SeriesesResponse;
 use Aspose\Cells\Cloud\Model\SeriesResponse;
@@ -703,9 +729,6 @@ use Aspose\Cells\Cloud\Model\TextWaterMarkerRequest;
 use Aspose\Cells\Cloud\Model\WorkbookEncryptionRequest;
 use Aspose\Cells\Cloud\Model\WorkbookProtectionRequest;
 use Aspose\Cells\Cloud\Model\WorksheetMovingRequest;
-use Aspose\Cells\Cloud\Model\ImageOrPrintOptions;
-use Aspose\Cells\Cloud\Model\RenderingFont;
-use Aspose\Cells\Cloud\Model\RenderingWatermark;
 use Aspose\Cells\Cloud\Model\AppliedOperate;
 use Aspose\Cells\Cloud\Model\AppliedStep;
 use Aspose\Cells\Cloud\Model\DataQuery;
@@ -834,8 +857,6 @@ use Aspose\Cells\Cloud\Model\DiscoverChart;
 use Aspose\Cells\Cloud\Model\DiscoverPivotTable;
 use Aspose\Cells\Cloud\Model\ExcelDataStatistics;
 use Aspose\Cells\Cloud\Model\WorksheetDataStatistics;
-use Aspose\Cells\Cloud\Model\Error;
-use Aspose\Cells\Cloud\Model\ErrorDetails;
 
 class CellsApi
 {    
@@ -900,6 +921,428 @@ class CellsApi
     {
         return $this->config;
     }
+
+    /// <summary>
+    /// Get Access Token Result: The Cells Cloud Get Token API acts as a proxy service,
+    /// forwarding user requests to the Aspose Cloud authentication server and returning the resulting access token to the client.
+    /// </summary>
+    /// <param name="request">Request. <see cref="PostAccessTokenRequest" /></param>
+    public function postAccessToken( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Check the Health Status of Aspose.Cells Cloud Service.
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetAsposeCellsCloudStatusRequest" /></param>
+    public function getAsposeCellsCloudStatus( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Check the Health Status of Aspose.Cells Cloud Service.
+    /// </summary>
+    /// <param name="request">Request. <see cref="CheckCloudServiceHealthRequest" /></param>
+    public function checkCloudServiceHealth( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = 'string';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Converts a spreadsheet in cloud storage to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetWorkbookWithFormatRequest" /></param>
+    public function getWorkbookWithFormat( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a spreadsheet on a local drive to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertWorkbookRequest" /></param>
+    public function convertWorkbook( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a spreadsheet in cloud storage to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="WorkbookSaveAsRequest" /></param>
+    public function workbookSaveAs( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Merge local spreadsheet files into a specified format file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="MergeFilesRequest" /></param>
+    public function mergeFiles( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Merge spreadsheet files in cloud storage into a specified format file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="MergeFilesInRemoteFolderRequest" /></param>
+    public function mergeFilesInRemoteFolder( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Split a local spreadsheet into the specified format, multi-file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SplitFileRequest" /></param>
+    public function splitFile( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Split a spreadsheet in cloud storage into the specified format, multi-file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SplitFileInRemoteRequest" /></param>
+    public function splitFileInRemote( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Get an asymmetric public key.
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
+    public function getPublicKey( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search text in the local spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchTextRequest" /></param>
+    public function searchText( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SearchResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search text in the remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchTextInRemoteRequest" /></param>
+    public function searchTextInRemote( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SearchResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Replace text in the local spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ReplaceTextRequest" /></param>
+    public function replaceText( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Replace text in the remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ReplaceTextInRemoteRequest" /></param>
+    public function replaceTextInRemote( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search broken links in the local spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchBrokenLinksRequest" /></param>
+    public function searchBrokenLinks( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search broken links in the remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchBrokenLinksInRemoteRequest" /></param>
+    public function searchBrokenLinksInRemote( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Get the specifications
+    /// </summary>
+    /// <param name="request">Request. <see cref="SpecRequest" /></param>
+    public function spec( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CodegenSpecRequest" /></param>
+    public function codegenSpec( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
+    public function downloadFile( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="UploadFileRequest" /></param>
+    public function uploadFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesUploadResult';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CopyFileRequest" /></param>
+    public function copyFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="MoveFileRequest" /></param>
+    public function moveFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>
+    public function deleteFile( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetFilesListRequest" /></param>
+    public function getFilesList( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FilesList';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>
+    public function createFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>
+    public function copyFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>
+    public function moveFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>
+    public function deleteFolder( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="StorageExistsRequest" /></param>
+    public function storageExists( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\StorageExist';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ObjectExistsRequest" /></param>
+    public function objectExists( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\ObjectExist';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetDiscUsageRequest" /></param>
+    public function getDiscUsage( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\DiscUsage';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="GetFileVersionsRequest" /></param>
+    public function getFileVersions( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\FileVersions';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
 
     /// <summary>
     /// Perform business analysis of data in Excel files.
@@ -1182,18 +1625,6 @@ class CellsApi
                 copy($response->getPathname(),$localOutPath);
                 return $localOutPath;
             }}
-
-    /// <summary>
-    /// Get Access Token Result
-    /// </summary>
-    /// <param name="request">Request. <see cref="PostAccessTokenRequest" /></param>
-    public function postAccessToken( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = 'string';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
 
     /// <summary>
     /// Clear cell area contents in the worksheet.
@@ -2575,18 +3006,6 @@ class CellsApi
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// Get publi key.
-    /// </summary>
-    /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
-    public function getPublicKey( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
@@ -5083,165 +5502,6 @@ class CellsApi
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="DownloadFileRequest" /></param>
-    public function downloadFile( $request , $localOutPath = null)
-    {
-        $this->checkAccessToken();
-        $returnType = '\SplFileObject';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        if ($localOutPath === null) {  
-                return  $response;
-            }else{
-                copy($response->getPathname(),$localOutPath);
-                return $localOutPath;
-            }}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="UploadFileRequest" /></param>
-    public function uploadFile( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\FilesUploadResult';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="CopyFileRequest" /></param>
-    public function copyFile( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="MoveFileRequest" /></param>
-    public function moveFile( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="DeleteFileRequest" /></param>
-    public function deleteFile( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="GetFilesListRequest" /></param>
-    public function getFilesList( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\FilesList';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="CreateFolderRequest" /></param>
-    public function createFolder( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="CopyFolderRequest" /></param>
-    public function copyFolder( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="MoveFolderRequest" /></param>
-    public function moveFolder( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="DeleteFolderRequest" /></param>
-    public function deleteFolder( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="StorageExistsRequest" /></param>
-    public function storageExists( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\StorageExist';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="ObjectExistsRequest" /></param>
-    public function objectExists( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\ObjectExist';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="GetDiscUsageRequest" /></param>
-    public function getDiscUsage( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\DiscUsage';
-        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
-        list($response) = $this->execute($requesData,$returnType);
-        return  $response;}
-
-    /// <summary>
-    /// </summary>
-    /// <param name="request">Request. <see cref="GetFileVersionsRequest" /></param>
-    public function getFileVersions( $request)
-    {
-        $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\FileVersions';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}

@@ -349,7 +349,7 @@ class SaveOptions
     /**
      * Sets save_format
      *
-     *  Save format name
+     *  
      *
      * @return $this
      */
@@ -372,7 +372,7 @@ class SaveOptions
     /**
      * Sets cached_file_folder
      *
-     *  The cached file folder is used to store some large data.
+     *  
      *
      * @return $this
      */
@@ -395,7 +395,7 @@ class SaveOptions
     /**
      * Sets clear_data
      *
-     *  Make the workbook empty after saving the file.
+     *  
      *
      * @return $this
      */
@@ -418,7 +418,7 @@ class SaveOptions
     /**
      * Sets create_directory
      *
-     *  If true and the directory does not exist, the directory will be automatically created before saving the file.            
+     *  
      *
      * @return $this
      */
@@ -441,7 +441,7 @@ class SaveOptions
     /**
      * Sets enable_http_compression
      *
-     *  whether http compression is to be used.
+     *  
      *
      * @return $this
      */
@@ -464,7 +464,7 @@ class SaveOptions
     /**
      * Sets refresh_chart_cache
      *
-     *  Indicates whether refreshing chart cache data
+     *  
      *
      * @return $this
      */
@@ -487,7 +487,7 @@ class SaveOptions
     /**
      * Sets sort_names
      *
-     *  Indicates whether sorting defined names before saving file.
+     *  
      *
      * @return $this
      */
@@ -510,7 +510,7 @@ class SaveOptions
     /**
      * Sets validate_merged_areas
      *
-     *  Indicates whether validate merged areas before saving the file.The default value is false.            
+     *  
      *
      * @return $this
      */

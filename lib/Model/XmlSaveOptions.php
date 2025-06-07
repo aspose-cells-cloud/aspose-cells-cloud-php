@@ -421,7 +421,7 @@ class XmlSaveOptions
     /**
      * Sets sheet_indexes
      *
-     *  Represents the indexes of exported sheets.
+     *  
      *
      * @return $this
      */
@@ -444,7 +444,7 @@ class XmlSaveOptions
     /**
      * Sets export_area
      *
-     *  Gets or sets the exporting range.
+     *  
      *
      * @return $this
      */
@@ -467,7 +467,7 @@ class XmlSaveOptions
     /**
      * Sets has_header_row
      *
-     *  Indicates whether the range contains header row.
+     *  
      *
      * @return $this
      */
@@ -490,7 +490,7 @@ class XmlSaveOptions
     /**
      * Sets xml_map_name
      *
-     *  Indicates whether exporting xml map in the file.
+     *  
      *
      * @return $this
      */
@@ -513,7 +513,7 @@ class XmlSaveOptions
     /**
      * Sets sheet_name_as_element_name
      *
-     *  Indicates whether exporting sheet's name as the name of the element.
+     *  
      *
      * @return $this
      */
@@ -536,7 +536,7 @@ class XmlSaveOptions
     /**
      * Sets data_as_attribute
      *
-     *  Indicates whether exporting data as attributes of element.
+     *  
      *
      * @return $this
      */

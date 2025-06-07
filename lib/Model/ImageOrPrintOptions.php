@@ -493,7 +493,7 @@ class ImageOrPrintOptions
     /**
      * Sets text_cross_type
      *
-     *  TextCrossType
+     *  
      *
      * @return $this
      */
@@ -516,7 +516,7 @@ class ImageOrPrintOptions
     /**
      * Sets gridline_type
      *
-     *  GridlineType
+     *  
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class ImageOrPrintOptions
     /**
      * Sets output_blank_page_when_nothing_to_print
      *
-     *  Indicates whether to output a blank page when there is nothing to print.
+     *  
      *
      * @return $this
      */
@@ -884,7 +884,7 @@ class ImageOrPrintOptions
     /**
      * Sets default_edit_language
      *
-     *  DefaultEditLanguage
+     *  
      *
      * @return $this
      */
@@ -907,7 +907,7 @@ class ImageOrPrintOptions
     /**
      * Sets tiff_color_depth
      *
-     *  ColorDepth
+     *  
      *
      * @return $this
      */
@@ -930,7 +930,7 @@ class ImageOrPrintOptions
     /**
      * Sets tiff_compression
      *
-     *  TiffCompression
+     *  
      *
      * @return $this
      */
@@ -953,7 +953,7 @@ class ImageOrPrintOptions
     /**
      * Sets printing_page
      *
-     *  PrintingPageType
+     *  
      *
      * @return $this
      */
@@ -999,7 +999,7 @@ class ImageOrPrintOptions
     /**
      * Sets image_type
      *
-     *  ImageType
+     *  
      *
      * @return $this
      */
@@ -1045,7 +1045,7 @@ class ImageOrPrintOptions
     /**
      * Sets tiff_binarization_method
      *
-     *  ImageBinarizationMethod
+     *  
      *
      * @return $this
      */

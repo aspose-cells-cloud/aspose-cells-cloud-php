@@ -241,7 +241,7 @@ class CellsCloudFileInfo
     /**
      * Sets name
      *
-     *  The file name.
+     *  
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class CellsCloudFileInfo
     /**
      * Sets size
      *
-     *  The file size.
+     *  
      *
      * @return $this
      */
@@ -287,7 +287,7 @@ class CellsCloudFileInfo
     /**
      * Sets folder
      *
-     *  The file position.
+     *  
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class CellsCloudFileInfo
     /**
      * Sets storage
      *
-     *  The storage name.
+     *  
      *
      * @return $this
      */

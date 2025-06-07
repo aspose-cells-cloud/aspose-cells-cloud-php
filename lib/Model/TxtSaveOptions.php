@@ -397,7 +397,7 @@ class TxtSaveOptions
     /**
      * Sets quote_type
      *
-     *  Gets or sets how to quote values in the exported text file.
+     *  
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class TxtSaveOptions
     /**
      * Sets separator
      *
-     *  Gets and sets char Delimiter of text file.
+     *  
      *
      * @return $this
      */
@@ -443,7 +443,7 @@ class TxtSaveOptions
     /**
      * Sets separator_string
      *
-     *  Gets and sets the a string value as separator.
+     *  
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class TxtSaveOptions
     /**
      * Sets always_quoted
      *
-     *  Indicates whether always adding '"' for each field. If true then all values will be quoted; If false then values will only be quoted when needed(for example, when values contain special characters such as '"' , '\n' or separator character). Default is false.
+     *  
      *
      * @return $this
      */

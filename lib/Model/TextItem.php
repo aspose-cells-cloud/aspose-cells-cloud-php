@@ -46,8 +46,10 @@ class TextItem
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'text' => 'string',
-        'link' => '\Aspose\Cells\Cloud\Model\Link'
+        'filename' => 'string',
+        'worksheet' => 'string',
+        'position' => 'string',
+        'content' => 'string'
     ];
 
     /**
@@ -56,8 +58,10 @@ class TextItem
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'text' => null  ,
-        'link' => null  
+        'filename' => null  ,
+        'worksheet' => null  ,
+        'position' => null  ,
+        'content' => null  
     ];
 
     /**
@@ -87,8 +91,10 @@ class TextItem
      * @var string[]
      */
     protected static $attributeMap = [
-         'text' => 'Text' ,
-         'link' => 'link' 
+         'filename' => 'Filename' ,
+         'worksheet' => 'Worksheet' ,
+         'position' => 'Position' ,
+         'content' => 'Content' 
     ];
 
     /**
@@ -97,8 +103,10 @@ class TextItem
      * @var string[]
      */
     protected static $setters = [
-        'text' => 'setText' ,
-        'link' => 'setlink' 
+        'filename' => 'setFilename' ,
+        'worksheet' => 'setWorksheet' ,
+        'position' => 'setPosition' ,
+        'content' => 'setContent' 
     ];
 
     /**
@@ -107,8 +115,10 @@ class TextItem
      * @var string[]
      */
     protected static $getters = [
-        'text' => 'getText' ,
-        'link' => 'getlink' 
+        'filename' => 'getFilename' ,
+        'worksheet' => 'getWorksheet' ,
+        'position' => 'getPosition' ,
+        'content' => 'getContent' 
     ];
 
     /**
@@ -167,8 +177,10 @@ class TextItem
      */
     public function __construct(array $data = null)
     {
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
+        $this->container['filename'] = isset($data['filename']) ? $data['filename'] : null;
+        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
+        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
     }
 
     /**
@@ -179,11 +191,17 @@ class TextItem
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
+        if ($this->container['filename'] === null) {
+            $invalidProperties[] = "'filename' can't be null";
         }
-        if ($this->container['link'] === null) {
-            $invalidProperties[] = "'link' can't be null";
+        if ($this->container['worksheet'] === null) {
+            $invalidProperties[] = "'worksheet' can't be null";
+        }
+        if ($this->container['position'] === null) {
+            $invalidProperties[] = "'position' can't be null";
+        }
+        if ($this->container['content'] === null) {
+            $invalidProperties[] = "'content' can't be null";
         }
         return $invalidProperties;
     }
@@ -196,57 +214,109 @@ class TextItem
      */
     public function valid()
     {
-        if ($this->container['text'] === null) {
+        if ($this->container['filename'] === null) {
                     return false;
                 }
-        if ($this->container['link'] === null) {
+        if ($this->container['worksheet'] === null) {
+                    return false;
+                }
+        if ($this->container['position'] === null) {
+                    return false;
+                }
+        if ($this->container['content'] === null) {
                     return false;
                 }
         return true;
     }
    /**
-     * Gets text
+     * Gets filename
      *
      * @return string
      */
-    public function getText()
+    public function getFilename()
     {
-        return $this->container['text'];
+        return $this->container['filename'];
     }
 
     /**
-     * Sets text
-     *
-     *  Represents text content.
-     *
-     * @return $this
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-   /**
-     * Gets link
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link
-     */
-    public function getlink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
+     * Sets filename
      *
      *  
      *
      * @return $this
      */
-    public function setlink($link)
+    public function setFilename($filename)
     {
-        $this->container['link'] = $link;
+        $this->container['filename'] = $filename;
+
+        return $this;
+    }
+   /**
+     * Gets worksheet
+     *
+     * @return string
+     */
+    public function getWorksheet()
+    {
+        return $this->container['worksheet'];
+    }
+
+    /**
+     * Sets worksheet
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setWorksheet($worksheet)
+    {
+        $this->container['worksheet'] = $worksheet;
+
+        return $this;
+    }
+   /**
+     * Gets position
+     *
+     * @return string
+     */
+    public function getPosition()
+    {
+        return $this->container['position'];
+    }
+
+    /**
+     * Sets position
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setPosition($position)
+    {
+        $this->container['position'] = $position;
+
+        return $this;
+    }
+   /**
+     * Gets content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     *
+     *  
+     *
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->container['content'] = $content;
 
         return $this;
     }

@@ -325,7 +325,7 @@ class RenderingWatermark
     /**
      * Sets rotation
      *
-     *  Gets or sets roation of the watermark in degrees.
+     *  
      *
      * @return $this
      */

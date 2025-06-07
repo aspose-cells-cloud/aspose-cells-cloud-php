@@ -51,7 +51,7 @@ class GetPublicKeyRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = 'v3.0/cells/publickey';
+        $resourcePath = 'v4.0/cells/publickey';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -119,7 +119,7 @@ class GetPublicKeyRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

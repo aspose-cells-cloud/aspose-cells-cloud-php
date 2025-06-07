@@ -81,7 +81,7 @@ class GetFilesListRequest extends BaseApiRequest
     public function createHttpRequest($headerSelector,$config)
     {
 
-        $resourcePath = 'v3.0/cells/storage/folder/{path}';
+        $resourcePath = 'v4.0/cells/storage/folder/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -161,7 +161,7 @@ class GetFilesListRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

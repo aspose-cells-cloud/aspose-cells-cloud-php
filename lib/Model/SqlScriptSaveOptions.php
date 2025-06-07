@@ -517,7 +517,7 @@ class SqlScriptSaveOptions
     /**
      * Sets check_if_table_exists
      *
-     *  Check if the table name exists before creating
+     *  
      *
      * @return $this
      */
@@ -540,7 +540,7 @@ class SqlScriptSaveOptions
     /**
      * Sets column_type_map
      *
-     *  Gets and sets the map of column type for different database.
+     *  
      *
      * @return $this
      */
@@ -563,7 +563,7 @@ class SqlScriptSaveOptions
     /**
      * Sets check_all_data_for_column_type
      *
-     *  Check all data to find columns' data type.
+     *  
      *
      * @return $this
      */
@@ -586,7 +586,7 @@ class SqlScriptSaveOptions
     /**
      * Sets add_blank_line_between_rows
      *
-     *  Insert blank line between each data.
+     *  
      *
      * @return $this
      */
@@ -609,7 +609,7 @@ class SqlScriptSaveOptions
     /**
      * Sets separator
      *
-     *  Gets and sets character separator of sql script.
+     *  
      *
      * @return $this
      */
@@ -632,7 +632,7 @@ class SqlScriptSaveOptions
     /**
      * Sets operator_type
      *
-     *  Gets and sets the operator type of sql.
+     *  
      *
      * @return $this
      */
@@ -655,7 +655,7 @@ class SqlScriptSaveOptions
     /**
      * Sets primary_key
      *
-     *  Represents which column is primary key of the data table.
+     *  
      *
      * @return $this
      */
@@ -678,7 +678,7 @@ class SqlScriptSaveOptions
     /**
      * Sets create_table
      *
-     *  Indicates whether exporting sql of creating table.
+     *  
      *
      * @return $this
      */
@@ -701,7 +701,7 @@ class SqlScriptSaveOptions
     /**
      * Sets id_name
      *
-     *  Gets and sets the name of id column.
+     *  
      *
      * @return $this
      */
@@ -724,7 +724,7 @@ class SqlScriptSaveOptions
     /**
      * Sets start_id
      *
-     *  Gets and sets the start id.
+     *  
      *
      * @return $this
      */
@@ -747,7 +747,7 @@ class SqlScriptSaveOptions
     /**
      * Sets table_name
      *
-     *  Gets and sets the table name.
+     *  
      *
      * @return $this
      */
@@ -770,7 +770,7 @@ class SqlScriptSaveOptions
     /**
      * Sets export_as_string
      *
-     *  Indicates whether exporting all data as string value.
+     *  
      *
      * @return $this
      */
@@ -793,7 +793,7 @@ class SqlScriptSaveOptions
     /**
      * Sets export_area
      *
-     *  Gets or sets the exporting range.
+     *  
      *
      * @return $this
      */
@@ -816,7 +816,7 @@ class SqlScriptSaveOptions
     /**
      * Sets has_header_row
      *
-     *  Indicates whether the range contains header row.
+     *  
      *
      * @return $this
      */

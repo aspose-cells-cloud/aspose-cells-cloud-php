@@ -217,7 +217,7 @@ class CellsCloudResponse
     /**
      * Sets code
      *
-     *  The property "Code" allows for accessing and modifying the HTTP status code of the response.
+     *  
      *
      * @return $this
      */

@@ -229,7 +229,7 @@ class CellsCloudFileInfoResponse
     /**
      * Sets file_info
      *
-     *  A property named `FileInfo` of type `CellsCloudFileInfo` is defined for the class.
+     *  
      *
      * @return $this
      */

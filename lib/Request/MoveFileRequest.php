@@ -143,7 +143,7 @@ class MoveFileRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = 'v3.0/cells/storage/file/move/{srcPath}';
+        $resourcePath = 'v4.0/cells/storage/file/move/{srcPath}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -235,7 +235,7 @@ class MoveFileRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5';
+        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
