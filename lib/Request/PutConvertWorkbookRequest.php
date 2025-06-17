@@ -195,7 +195,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * sheetName : 
+    * sheetName : Convert the specified worksheet. 
     */ 
     public $sheet_name;
 
@@ -210,7 +210,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * pageIndex : 
+    * pageIndex : Convert the specified page  of worksheet, sheetName is required. 
     */ 
     public $page_index;
 
@@ -225,7 +225,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * onePagePerSheet : 
+    * onePagePerSheet : When converting to PDF format, one page per sheet. 
     */ 
     public $one_page_per_sheet;
 
@@ -240,7 +240,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * AutoRowsFit : 
+    * AutoRowsFit : Auto-fits all rows in this workbook.
     */ 
     public $auto_rows_fit;
 
@@ -255,7 +255,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
     }
 
     /*
-    * AutoColumnsFit : 
+    * AutoColumnsFit : Auto-fits the columns width in this workbook.
     */ 
     public $auto_columns_fit;
 
@@ -447,7 +447,7 @@ class PutConvertWorkbookRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
+        $defaultHeaders['x-aspose-client-version'] = '25.6.1';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

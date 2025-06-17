@@ -135,7 +135,7 @@ class PostAutofitWorkbookRowsRequest extends BaseApiRequest
     }
 
     /*
-    * firstColumn : 
+    * firstColumn : First column index.
     */ 
     public $first_column;
 
@@ -150,7 +150,7 @@ class PostAutofitWorkbookRowsRequest extends BaseApiRequest
     }
 
     /*
-    * lastColumn : 
+    * lastColumn : Last column index.
     */ 
     public $last_column;
 
@@ -283,7 +283,7 @@ class PostAutofitWorkbookRowsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
+        $defaultHeaders['x-aspose-client-version'] = '25.6.1';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

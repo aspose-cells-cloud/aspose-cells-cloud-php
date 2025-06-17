@@ -295,7 +295,7 @@ class PostGroupWorksheetColumnsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.5.2';
+        $defaultHeaders['x-aspose-client-version'] = '25.6.1';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

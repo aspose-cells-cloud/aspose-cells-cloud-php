@@ -1,16 +1,38 @@
-# AsposeCellsCloud::Request::Spec 
+# **Spreadsheet Cloud API: spec**
 
-## Load the model package
-```perl
-use AsposeCellsCloud::Request::Spec;
+Get the specifications 
+
+
+## **Quick Start**
+
+- **Base URL**: `http://api.aspose.cloud/v4.0`
+- **Authentication Method**: `JWT (OAuth2, application)`  **Token URL**: `https://api.aspose.cloud/connect/token`
+## **Interface Details**
+
+### **Endpoint** 
+
+```
+GET http://api.aspose.cloud/v4.0/cells/swagger/spec
+```
+### **Function Description**
+
+### The request parameters of **spec** API are: 
+
+| Parameter Name | Type | Path/Query String/HTTPBody | Description | 
+| :- | :- | :- |:- | 
+|version|String|Query||
+|regoin|String|Query|The spreadsheet region setting.|
+|password|String|Query|The password for opening spreadsheet file.|
+
+### **Response Description**
+```json
+{
+Void
+}
 ```
 
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**version** | **string** |  |
-**regoin** | **string** | The spreadsheet region setting. |
-**password** | **string** | The password for opening spreadsheet file. |  
 
-[[Back to Model list]](../README.md#documentation-for-requests) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+## OpenAPI Specification
+
+The [OpenAPI Specification](https://reference.aspose.cloud/cells/#/SpecificationController/Spec) defines a publicly accessible programming interface and lets you carry out REST interactions directly from a web browser.
 

@@ -40,22 +40,35 @@ use Aspose\Cells\Cloud\ObjectSerializer;
 use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
 use Aspose\Cells\Cloud\Request\GetAsposeCellsCloudStatusRequest;
 use Aspose\Cells\Cloud\Request\CheckCloudServiceHealthRequest;
-use Aspose\Cells\Cloud\Request\GetWorkbookWithFormatRequest;
-use Aspose\Cells\Cloud\Request\ConvertWorkbookRequest;
-use Aspose\Cells\Cloud\Request\WorkbookSaveAsRequest;
-use Aspose\Cells\Cloud\Request\MergeFilesRequest;
-use Aspose\Cells\Cloud\Request\MergeFilesInRemoteFolderRequest;
-use Aspose\Cells\Cloud\Request\SplitFileRequest;
-use Aspose\Cells\Cloud\Request\SplitFileInRemoteRequest;
+use Aspose\Cells\Cloud\Request\ExportSpreadsheetAsFormatRequest;
+use Aspose\Cells\Cloud\Request\ExportChartAsFormatRequest;
+use Aspose\Cells\Cloud\Request\ConvertSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ConvertChartToImageRequest;
+use Aspose\Cells\Cloud\Request\ConvertChartToPdfRequest;
+use Aspose\Cells\Cloud\Request\SaveSpreadsheetAsRequest;
+use Aspose\Cells\Cloud\Request\MergeSpreadsheetsRequest;
+use Aspose\Cells\Cloud\Request\MergeSpreadsheetsInRemoteFolderRequest;
+use Aspose\Cells\Cloud\Request\MergeRemoteSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\SplitSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\SplitRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
-use Aspose\Cells\Cloud\Request\SearchTextRequest;
-use Aspose\Cells\Cloud\Request\SearchTextInRemoteRequest;
-use Aspose\Cells\Cloud\Request\ReplaceTextRequest;
-use Aspose\Cells\Cloud\Request\ReplaceTextInRemoteRequest;
-use Aspose\Cells\Cloud\Request\SearchBrokenLinksRequest;
-use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteRequest;
+use Aspose\Cells\Cloud\Request\SearchSpreadsheetContentRequest;
+use Aspose\Cells\Cloud\Request\SearchContentInRemoteSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\SearchContentInRemoteWorksheetRequest;
+use Aspose\Cells\Cloud\Request\SearchContentInRemoteRangeRequest;
+use Aspose\Cells\Cloud\Request\ReplaceSpreadsheetContentRequest;
+use Aspose\Cells\Cloud\Request\ReplaceContentInRemoteSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ReplaceContentInRemoteWorksheetRequest;
+use Aspose\Cells\Cloud\Request\ReplaceContentInRemoteRangeRequest;
+use Aspose\Cells\Cloud\Request\SearchSpreadsheetBrokenLinksRequest;
+use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteWorksheetRequest;
+use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteRangeRequest;
 use Aspose\Cells\Cloud\Request\SpecRequest;
 use Aspose\Cells\Cloud\Request\CodegenSpecRequest;
+use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankRowsRequest;
+use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankColumnsRequest;
+use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankWorksheetsRequest;
 use Aspose\Cells\Cloud\Request\DownloadFileRequest;
 use Aspose\Cells\Cloud\Request\UploadFileRequest;
 use Aspose\Cells\Cloud\Request\CopyFileRequest;
@@ -962,8 +975,25 @@ class CellsApi
     /// <summary>
     /// Converts a spreadsheet in cloud storage to the specified format.
     /// </summary>
-    /// <param name="request">Request. <see cref="GetWorkbookWithFormatRequest" /></param>
-    public function getWorkbookWithFormat( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="ExportSpreadsheetAsFormatRequest" /></param>
+    public function exportSpreadsheetAsFormat( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a chart of spreadsheet in cloud storage to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ExportChartAsFormatRequest" /></param>
+    public function exportChartAsFormat( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -979,8 +1009,42 @@ class CellsApi
     /// <summary>
     /// Converts a spreadsheet on a local drive to the specified format.
     /// </summary>
-    /// <param name="request">Request. <see cref="ConvertWorkbookRequest" /></param>
-    public function convertWorkbook( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="ConvertSpreadsheetRequest" /></param>
+    public function convertSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a chart of spreadsheet on a local drive to image.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertChartToImageRequest" /></param>
+    public function convertChartToImage( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a chart of spreadsheet on a local drive to pdf.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertChartToPdfRequest" /></param>
+    public function convertChartToPdf( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -996,8 +1060,8 @@ class CellsApi
     /// <summary>
     /// Converts a spreadsheet in cloud storage to the specified format.
     /// </summary>
-    /// <param name="request">Request. <see cref="WorkbookSaveAsRequest" /></param>
-    public function workbookSaveAs( $request)
+    /// <param name="request">Request. <see cref="SaveSpreadsheetAsRequest" /></param>
+    public function saveSpreadsheetAs( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -1008,8 +1072,8 @@ class CellsApi
     /// <summary>
     /// Merge local spreadsheet files into a specified format file.
     /// </summary>
-    /// <param name="request">Request. <see cref="MergeFilesRequest" /></param>
-    public function mergeFiles( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="MergeSpreadsheetsRequest" /></param>
+    public function mergeSpreadsheets( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1023,10 +1087,27 @@ class CellsApi
             }}
 
     /// <summary>
-    /// Merge spreadsheet files in cloud storage into a specified format file.
+    /// Merge spreadsheet files in folder of cloud storage into a specified format file.
     /// </summary>
-    /// <param name="request">Request. <see cref="MergeFilesInRemoteFolderRequest" /></param>
-    public function mergeFilesInRemoteFolder( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="MergeSpreadsheetsInRemoteFolderRequest" /></param>
+    public function mergeSpreadsheetsInRemoteFolder( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Merge a spreadsheet file into other spreadsheet in cloud storage, and output a specified format file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="MergeRemoteSpreadsheetRequest" /></param>
+    public function mergeRemoteSpreadsheet( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1042,8 +1123,8 @@ class CellsApi
     /// <summary>
     /// Split a local spreadsheet into the specified format, multi-file.
     /// </summary>
-    /// <param name="request">Request. <see cref="SplitFileRequest" /></param>
-    public function splitFile( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="SplitSpreadsheetRequest" /></param>
+    public function splitSpreadsheet( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1059,8 +1140,8 @@ class CellsApi
     /// <summary>
     /// Split a spreadsheet in cloud storage into the specified format, multi-file.
     /// </summary>
-    /// <param name="request">Request. <see cref="SplitFileInRemoteRequest" /></param>
-    public function splitFileInRemote( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="SplitRemoteSpreadsheetRequest" /></param>
+    public function splitRemoteSpreadsheet( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1088,8 +1169,8 @@ class CellsApi
     /// <summary>
     /// Search text in the local spreadsheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="SearchTextRequest" /></param>
-    public function searchText( $request)
+    /// <param name="request">Request. <see cref="SearchSpreadsheetContentRequest" /></param>
+    public function searchSpreadsheetContent( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\SearchResponse';
@@ -1100,8 +1181,32 @@ class CellsApi
     /// <summary>
     /// Search text in the remoted spreadsheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="SearchTextInRemoteRequest" /></param>
-    public function searchTextInRemote( $request)
+    /// <param name="request">Request. <see cref="SearchContentInRemoteSpreadsheetRequest" /></param>
+    public function searchContentInRemoteSpreadsheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SearchResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search text in the worksheet of remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchContentInRemoteWorksheetRequest" /></param>
+    public function searchContentInRemoteWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\SearchResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search text in the range of remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchContentInRemoteRangeRequest" /></param>
+    public function searchContentInRemoteRange( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\SearchResponse';
@@ -1112,8 +1217,8 @@ class CellsApi
     /// <summary>
     /// Replace text in the local spreadsheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="ReplaceTextRequest" /></param>
-    public function replaceText( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="ReplaceSpreadsheetContentRequest" /></param>
+    public function replaceSpreadsheetContent( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1129,8 +1234,32 @@ class CellsApi
     /// <summary>
     /// Replace text in the remoted spreadsheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="ReplaceTextInRemoteRequest" /></param>
-    public function replaceTextInRemote( $request)
+    /// <param name="request">Request. <see cref="ReplaceContentInRemoteSpreadsheetRequest" /></param>
+    public function replaceContentInRemoteSpreadsheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Replace text in the worksheet of remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ReplaceContentInRemoteWorksheetRequest" /></param>
+    public function replaceContentInRemoteWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Replace text in the range of remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ReplaceContentInRemoteRangeRequest" /></param>
+    public function replaceContentInRemoteRange( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\CellsCloudResponse';
@@ -1141,8 +1270,8 @@ class CellsApi
     /// <summary>
     /// Search broken links in the local spreadsheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="SearchBrokenLinksRequest" /></param>
-    public function searchBrokenLinks( $request)
+    /// <param name="request">Request. <see cref="SearchSpreadsheetBrokenLinksRequest" /></param>
+    public function searchSpreadsheetBrokenLinks( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
@@ -1153,8 +1282,32 @@ class CellsApi
     /// <summary>
     /// Search broken links in the remoted spreadsheet.
     /// </summary>
-    /// <param name="request">Request. <see cref="SearchBrokenLinksInRemoteRequest" /></param>
-    public function searchBrokenLinksInRemote( $request)
+    /// <param name="request">Request. <see cref="SearchBrokenLinksInRemoteSpreadsheetRequest" /></param>
+    public function searchBrokenLinksInRemoteSpreadsheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search broken links in the worksheet of remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchBrokenLinksInRemoteWorksheetRequest" /></param>
+    public function searchBrokenLinksInRemoteWorksheet( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// Search broken links in the range of remoted spreadsheet.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SearchBrokenLinksInRemoteRangeRequest" /></param>
+    public function searchBrokenLinksInRemoteRange( $request)
     {
         $this->checkAccessToken();
         $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
@@ -1184,6 +1337,57 @@ class CellsApi
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
+
+    /// <summary>
+    /// Delete all blank rows which do not contain any data or other object.
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankRowsRequest" /></param>
+    public function deleteSpreadsheetBlankRows( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Delete all blank columns which do not contain any data.
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankColumnsRequest" /></param>
+    public function deleteSpreadsheetBlankColumns( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Delete all blank worksheets which do not contain any data or other object.
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankWorksheetsRequest" /></param>
+    public function deleteSpreadsheetBlankWorksheets( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// </summary>

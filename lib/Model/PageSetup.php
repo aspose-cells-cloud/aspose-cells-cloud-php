@@ -79,8 +79,7 @@ class PageSetup
         'top_margin' => 'double',
         'zoom' => 'int',
         'header' => '\Aspose\Cells\Cloud\Model\PageSection[]',
-        'footer' => '\Aspose\Cells\Cloud\Model\PageSection[]',
-        'link' => '\Aspose\Cells\Cloud\Model\Link'
+        'footer' => '\Aspose\Cells\Cloud\Model\PageSection[]'
     ];
 
     /**
@@ -122,8 +121,7 @@ class PageSetup
         'top_margin' => null  ,
         'zoom' => null  ,
         'header' => null  ,
-        'footer' => null  ,
-        'link' => null  
+        'footer' => null  
     ];
 
     /**
@@ -186,8 +184,7 @@ class PageSetup
          'top_margin' => 'TopMargin' ,
          'zoom' => 'Zoom' ,
          'header' => 'Header' ,
-         'footer' => 'Footer' ,
-         'link' => 'link' 
+         'footer' => 'Footer' 
     ];
 
     /**
@@ -229,8 +226,7 @@ class PageSetup
         'top_margin' => 'setTopMargin' ,
         'zoom' => 'setZoom' ,
         'header' => 'setHeader' ,
-        'footer' => 'setFooter' ,
-        'link' => 'setlink' 
+        'footer' => 'setFooter' 
     ];
 
     /**
@@ -272,8 +268,7 @@ class PageSetup
         'top_margin' => 'getTopMargin' ,
         'zoom' => 'getZoom' ,
         'header' => 'getHeader' ,
-        'footer' => 'getFooter' ,
-        'link' => 'getlink' 
+        'footer' => 'getFooter' 
     ];
 
     /**
@@ -366,7 +361,6 @@ class PageSetup
         $this->container['zoom'] = isset($data['zoom']) ? $data['zoom'] : null;
         $this->container['header'] = isset($data['header']) ? $data['header'] : null;
         $this->container['footer'] = isset($data['footer']) ? $data['footer'] : null;
-        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
     }
 
     /**
@@ -478,9 +472,6 @@ class PageSetup
         }
         if ($this->container['footer'] === null) {
             $invalidProperties[] = "'footer' can't be null";
-        }
-        if ($this->container['link'] === null) {
-            $invalidProperties[] = "'link' can't be null";
         }
         return $invalidProperties;
     }
@@ -595,9 +586,6 @@ class PageSetup
         if ($this->container['footer'] === null) {
                     return false;
                 }
-        if ($this->container['link'] === null) {
-                    return false;
-                }
         return true;
     }
    /**
@@ -613,7 +601,7 @@ class PageSetup
     /**
      * Sets black_and_white
      *
-     *  Represents if elements of the document will be printed in black and white.
+     *  Represents if elements of the document will be printed in black and white. 
      *
      * @return $this
      */
@@ -636,7 +624,7 @@ class PageSetup
     /**
      * Sets bottom_margin
      *
-     *  Represents the size of the bottom margin, in unit of centimeters.
+     *  Represents the size of the bottom margin, in unit of centimeters. 
      *
      * @return $this
      */
@@ -659,7 +647,7 @@ class PageSetup
     /**
      * Sets center_horizontally
      *
-     *  Represent if the sheet is printed centered horizontally.
+     *  Represent if the sheet is printed centered horizontally. 
      *
      * @return $this
      */
@@ -682,7 +670,7 @@ class PageSetup
     /**
      * Sets center_vertically
      *
-     *  Represent if the sheet is printed centered vertically.
+     *  Represent if the sheet is printed centered vertically. 
      *
      * @return $this
      */
@@ -705,7 +693,7 @@ class PageSetup
     /**
      * Sets first_page_number
      *
-     *  Represents the first page number that will be used when this sheet is printed.
+     *  Represents the first page number that will be used when this sheet is printed. 
      *
      * @return $this
      */
@@ -728,7 +716,7 @@ class PageSetup
     /**
      * Sets fit_to_pages_tall
      *
-     *  Represents  the number of pages tall the worksheet will be scaled to when it's printed.                        The default value is 1.
+     *  Represents  the number of pages tall the worksheet will be scaled to when it's printed.            The default value is 1. 
      *
      * @return $this
      */
@@ -751,7 +739,7 @@ class PageSetup
     /**
      * Sets fit_to_pages_wide
      *
-     *  Represents the number of pages wide the worksheet will be scaled to when it's printed.                        The default value is 1.
+     *  Represents the number of pages wide the worksheet will be scaled to when it's printed.            The default value is 1. 
      *
      * @return $this
      */
@@ -774,7 +762,7 @@ class PageSetup
     /**
      * Sets footer_margin
      *
-     *  Represents the distance from the bottom of the page to the footer, in unit of centimeters.
+     *  Represents the distance from the bottom of the page to the footer, in unit of centimeters. 
      *
      * @return $this
      */
@@ -797,7 +785,7 @@ class PageSetup
     /**
      * Sets header_margin
      *
-     *  Represents the distance from the top of the page to the header, in unit of centimeters.
+     *  Represents the distance from the top of the page to the header, in unit of centimeters. 
      *
      * @return $this
      */
@@ -820,7 +808,7 @@ class PageSetup
     /**
      * Sets is_auto_first_page_number
      *
-     *  Indicates whether the first the page number is automatically assigned.
+     *  Indicates whether the first the page number is automatically assigned. 
      *
      * @return $this
      */
@@ -843,7 +831,7 @@ class PageSetup
     /**
      * Sets is_hf_align_margins
      *
-     *  Indicates whether header and footer margins are aligned with the page margins.                        If this property is true, the left header and footer will be aligned with the left margin,                        and the right header and footer will be aligned with the right margin.                        This option is enabled by default.
+     *  Indicates whether header and footer margins are aligned with the page margins.            If this property is true, the left header and footer will be aligned with the left margin,            and the right header and footer will be aligned with the right margin.            This option is enabled by default. 
      *
      * @return $this
      */
@@ -866,7 +854,7 @@ class PageSetup
     /**
      * Sets is_hf_diff_first
      *
-     *  True means that the header/footer of the first page is different with other pages.
+     *  True means that the header/footer of the first page is different with other pages. 
      *
      * @return $this
      */
@@ -889,7 +877,7 @@ class PageSetup
     /**
      * Sets is_hf_diff_odd_even
      *
-     *  True means that the header/footer of the odd pages is different with odd pages.
+     *  True means that the header/footer of the odd pages is different with odd pages. 
      *
      * @return $this
      */
@@ -912,7 +900,7 @@ class PageSetup
     /**
      * Sets is_hf_scale_with_doc
      *
-     *  Indicates whether header and footer are scaled with document scaling.                        Only applies for Excel 2007.
+     *  Indicates whether header and footer are scaled with document scaling.            Only applies for Excel 2007. 
      *
      * @return $this
      */
@@ -935,7 +923,7 @@ class PageSetup
     /**
      * Sets is_percent_scale
      *
-     *  If this property is False, the FitToPagesWide and FitToPagesTall properties control how the worksheet is scaled.
+     *  If this property is False, the FitToPagesWide and FitToPagesTall properties control how the worksheet is scaled. 
      *
      * @return $this
      */
@@ -958,7 +946,7 @@ class PageSetup
     /**
      * Sets left_margin
      *
-     *  Represents the size of the left margin, in unit of centimeters.
+     *  Represents the size of the left margin, in unit of centimeters. 
      *
      * @return $this
      */
@@ -981,7 +969,7 @@ class PageSetup
     /**
      * Sets order
      *
-     *  Represents the order that Microsoft Excel uses to number pages when printing a large worksheet.
+     *  Represents the order that Microsoft Excel uses to number pages when printing a large worksheet. 
      *
      * @return $this
      */
@@ -1004,7 +992,7 @@ class PageSetup
     /**
      * Sets orientation
      *
-     *  Represents page print orientation.
+     *  Represents page print orientation. 
      *
      * @return $this
      */
@@ -1027,7 +1015,7 @@ class PageSetup
     /**
      * Sets paper_size
      *
-     *  Represents the size of the paper.
+     *  Represents the size of the paper. 
      *
      * @return $this
      */
@@ -1050,7 +1038,7 @@ class PageSetup
     /**
      * Sets print_area
      *
-     *  Represents the range to be printed.
+     *  Represents the range to be printed. 
      *
      * @return $this
      */
@@ -1073,7 +1061,7 @@ class PageSetup
     /**
      * Sets print_comments
      *
-     *  Represents the way comments are printed with the sheet.
+     *  Represents the way comments are printed with the sheet. 
      *
      * @return $this
      */
@@ -1096,7 +1084,7 @@ class PageSetup
     /**
      * Sets print_copies
      *
-     *  Get and sets number of copies to print.
+     *  Get and sets number of copies to print. 
      *
      * @return $this
      */
@@ -1119,7 +1107,7 @@ class PageSetup
     /**
      * Sets print_draft
      *
-     *  Represents if the sheet will be printed without graphics.
+     *  Represents if the sheet will be printed without graphics. 
      *
      * @return $this
      */
@@ -1142,7 +1130,7 @@ class PageSetup
     /**
      * Sets print_errors
      *
-     *  Specifies the type of print error displayed.
+     *  Specifies the type of print error displayed. 
      *
      * @return $this
      */
@@ -1165,7 +1153,7 @@ class PageSetup
     /**
      * Sets print_gridlines
      *
-     *  Represents if cell gridlines are printed on the page.
+     *  Represents if cell gridlines are printed on the page. 
      *
      * @return $this
      */
@@ -1188,7 +1176,7 @@ class PageSetup
     /**
      * Sets print_headings
      *
-     *  Represents if row and column headings are printed with this page.
+     *  Represents if row and column headings are printed with this page. 
      *
      * @return $this
      */
@@ -1211,7 +1199,7 @@ class PageSetup
     /**
      * Sets print_quality
      *
-     *  Represents the print quality.
+     *  Represents the print quality. 
      *
      * @return $this
      */
@@ -1234,7 +1222,7 @@ class PageSetup
     /**
      * Sets print_title_columns
      *
-     *  Represents the columns that contain the cells to be repeated on the left side of each page.
+     *  Represents the columns that contain the cells to be repeated on the left side of each page. 
      *
      * @return $this
      */
@@ -1257,7 +1245,7 @@ class PageSetup
     /**
      * Sets print_title_rows
      *
-     *  Represents the rows that contain the cells to be repeated at the top of each page.
+     *  Represents the rows that contain the cells to be repeated at the top of each page. 
      *
      * @return $this
      */
@@ -1280,7 +1268,7 @@ class PageSetup
     /**
      * Sets right_margin
      *
-     *  Represents the size of the right margin, in unit of centimeters.
+     *  Represents the size of the right margin, in unit of centimeters. 
      *
      * @return $this
      */
@@ -1303,7 +1291,7 @@ class PageSetup
     /**
      * Sets top_margin
      *
-     *  Represents the size of the top margin, in unit of centimeters.
+     *  Represents the size of the top margin, in unit of centimeters. 
      *
      * @return $this
      */
@@ -1326,7 +1314,7 @@ class PageSetup
     /**
      * Sets zoom
      *
-     *  Represents the scaling factor in percent. It should be between 10 and 400.
+     *  Represents the scaling factor in percent. It should be between 10 and 400. 
      *
      * @return $this
      */
@@ -1379,29 +1367,6 @@ class PageSetup
     public function setFooter($footer)
     {
         $this->container['footer'] = $footer;
-
-        return $this;
-    }
-   /**
-     * Gets link
-     *
-     * @return \Aspose\Cells\Cloud\Model\Link
-     */
-    public function getlink()
-    {
-        return $this->container['link'];
-    }
-
-    /**
-     * Sets link
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setlink($link)
-    {
-        $this->container['link'] = $link;
 
         return $this;
     }
