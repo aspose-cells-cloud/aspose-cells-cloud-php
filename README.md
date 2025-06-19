@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-25.5.1-green?style=for-the-badge&logo=php) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/php/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/Examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) ![Packagist PHP Version Support](https://img.shields.io/badge/PHP->7.4-777BB4?style=for-the-badge&logo=php&logoColor=white) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php?style=for-the-badge) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE?style=for-the-badge) [![PHP](https://img.shields.io/badge/Composer-require%20aspose/cells--sdk--php-8892BF?logo=php&style=for-the-badge)](https://packagist.org/packages/aspose/cells-sdk-php) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.5?style=for-the-badge)
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-25.6-green?style=for-the-badge&logo=php) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/php/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/Examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) ![Packagist PHP Version Support](https://img.shields.io/badge/PHP->7.4-777BB4?style=for-the-badge&logo=php&logoColor=white) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php?style=for-the-badge) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE?style=for-the-badge) [![PHP](https://img.shields.io/badge/Composer-require%20aspose/cells--sdk--php-8892BF?logo=php&style=for-the-badge)](https://packagist.org/packages/aspose/cells-sdk-php) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.6?style=for-the-badge)
 
 # PHP package for Aspose.Cells Cloud
 
@@ -19,7 +19,7 @@ To begin with Aspose.Cells Cloud, here's what you need to do:
    ```json
    {
        "require": {
-           "aspose/cells-cloud": "^25.3"
+           "aspose/cells-cloud": "^25.6"
        }
    }
    ```
@@ -116,16 +116,17 @@ copy($response->getPathname(),"EmployeeSalesSummary.pdf");
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version 25.5
+## Feature & Enhancements in Version 25.6
 
 Full list of issues covering all changes in this release:
 
 |**Summary**| **Category** |
 | :- |:-------------|
-| Add the new API for getting the public key for encrypting the password. | New Feature |
-| Optimize the convert workbook feature: Add auto-fit row parameter. | Improvement |
-| Optimize auto-fit rows for the worksheet. | Improvement |
-| Optimize auto fit rows for worksheet: Add firstColumn and lastColumn. | Improvement |
+| Support delete blank rows, columns, and worksheets. | New Feature |
+| Optimize search context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize search broken links for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+| Optimize replace context for remote spreadsheet features by splitting them into independent APIs, each dedicated to a specific operational area. | New Feature |
+
 
 ## Available SDKs
 
