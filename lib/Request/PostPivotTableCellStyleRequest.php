@@ -355,7 +355,7 @@ class PostPivotTableCellStyleRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.6.1';
+        $defaultHeaders['x-aspose-client-version'] = '25.6';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
