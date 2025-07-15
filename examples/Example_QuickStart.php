@@ -7,5 +7,5 @@ use \Aspose\Cells\Cloud\Request\PutConvertWorkbookRequest;
 #get CellsCloudClientSecret from https://dashboard.aspose.cloud/#/applications
 
 $cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"));
-$response = $cellsApi->putConvertWorkbook(new PutConvertWorkbookRequest( 'examples\EmployeeSalesSummary.xlsx', 'pdf'));
-copy($response->getPathname(),"EmployeeSalesSummary.pdf");
+$response = $cellsApi->convertSpreadsheet(new \Aspose\Cells\Cloud\Request\ConvertSpreadsheetRequest( 'examples\EmployeeSalesSummary.xlsx', 'pdf'),"EmployeeSalesSummary.pdf");
+

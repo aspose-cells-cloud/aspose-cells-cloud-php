@@ -313,7 +313,7 @@ class TrimContentOptions
     /**
      * Sets data_source
      *
-     *  This class has a public property named DataSource of type DataSource that has both a getter and a setter method.            
+     *  Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
      *
      * @return $this
      */
@@ -336,7 +336,7 @@ class TrimContentOptions
     /**
      * Sets file_info
      *
-     *  
+     *  Represents file information. Include of filename, filesize, and file content(base64String).
      *
      * @return $this
      */
@@ -359,7 +359,7 @@ class TrimContentOptions
     /**
      * Sets trim_content
      *
-     *  
+     *  Trim Content
      *
      * @return $this
      */
@@ -382,7 +382,7 @@ class TrimContentOptions
     /**
      * Sets trim_leading
      *
-     *  
+     *  If the trim leading value is true, the trim content before and after cell values will be deleted.
      *
      * @return $this
      */
@@ -405,7 +405,7 @@ class TrimContentOptions
     /**
      * Sets trim_trailing
      *
-     *  
+     *  If the trim trailing value is true, the trim content before and after cell values will be deleted.
      *
      * @return $this
      */
@@ -428,7 +428,7 @@ class TrimContentOptions
     /**
      * Sets trim_space_between_word_to1
      *
-     *  
+     *  When the trim space between word to 1 parameter is true, it enables the removal of extra spaces between words within a cell, ensuring that only a single space is maintained between words.
      *
      * @return $this
      */
@@ -474,7 +474,7 @@ class TrimContentOptions
     /**
      * Sets remove_extra_line_breaks
      *
-     *  
+     *  When this parameter is enabled (set to True), it deletes extra line breaks within the selected range, ensuring that only necessary line breaks are retained.
      *
      * @return $this
      */
@@ -497,7 +497,7 @@ class TrimContentOptions
     /**
      * Sets remove_all_line_breaks
      *
-     *  
+     *  When this parameter is enabled (set to True), it removes all line breaks within the selected range, resulting in a continuous block of text without any line breaks.
      *
      * @return $this
      */
@@ -520,7 +520,7 @@ class TrimContentOptions
     /**
      * Sets scope_options
      *
-     *  
+     *  Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
      *
      * @return $this
      */

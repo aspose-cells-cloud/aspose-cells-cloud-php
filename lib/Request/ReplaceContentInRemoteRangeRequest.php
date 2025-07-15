@@ -230,7 +230,7 @@ class ReplaceContentInRemoteRangeRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = 'v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellarea}/replace/content';
+        $resourcePath = 'v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/replace/content';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -346,7 +346,7 @@ class ReplaceContentInRemoteRangeRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.6';
+        $defaultHeaders['x-aspose-client-version'] = '25.7';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

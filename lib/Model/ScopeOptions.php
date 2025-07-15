@@ -217,7 +217,7 @@ class ScopeOptions
     /**
      * Sets scope
      *
-     *  Property Summary: The Scope property in the class is decorated with a JsonConverter attribute using StringEnumConverter.            
+     *  ScopeOptionsType is a type that represents options or settings that are specific to a particular scope.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class ScopeOptions
     /**
      * Sets scope_items
      *
-     *  
+     *  Specifies the designated work area within the worksheet where operations are to be performed. 
      *
      * @return $this
      */

@@ -49,9 +49,7 @@ class RemoveDuplicatesOptions
         'name' => 'string',
         'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'worksheet' => 'string',
-        'remove_duplicates_area' => 'string',
-        'remove_duplicates_area_value' => 'string'
+        'scope_options' => '\Aspose\Cells\Cloud\Model\ScopeOptions'
     ];
 
     /**
@@ -63,9 +61,7 @@ class RemoveDuplicatesOptions
         'name' => null  ,
         'data_source' => null  ,
         'file_info' => null  ,
-        'worksheet' => null  ,
-        'remove_duplicates_area' => null  ,
-        'remove_duplicates_area_value' => null  
+        'scope_options' => null  
     ];
 
     /**
@@ -98,9 +94,7 @@ class RemoveDuplicatesOptions
          'name' => 'Name' ,
          'data_source' => 'DataSource' ,
          'file_info' => 'FileInfo' ,
-         'worksheet' => 'Worksheet' ,
-         'remove_duplicates_area' => 'RemoveDuplicatesArea' ,
-         'remove_duplicates_area_value' => 'RemoveDuplicatesAreaValue' 
+         'scope_options' => 'ScopeOptions' 
     ];
 
     /**
@@ -112,9 +106,7 @@ class RemoveDuplicatesOptions
         'name' => 'setName' ,
         'data_source' => 'setDataSource' ,
         'file_info' => 'setFileInfo' ,
-        'worksheet' => 'setWorksheet' ,
-        'remove_duplicates_area' => 'setRemoveDuplicatesArea' ,
-        'remove_duplicates_area_value' => 'setRemoveDuplicatesAreaValue' 
+        'scope_options' => 'setScopeOptions' 
     ];
 
     /**
@@ -126,9 +118,7 @@ class RemoveDuplicatesOptions
         'name' => 'getName' ,
         'data_source' => 'getDataSource' ,
         'file_info' => 'getFileInfo' ,
-        'worksheet' => 'getWorksheet' ,
-        'remove_duplicates_area' => 'getRemoveDuplicatesArea' ,
-        'remove_duplicates_area_value' => 'getRemoveDuplicatesAreaValue' 
+        'scope_options' => 'getScopeOptions' 
     ];
 
     /**
@@ -190,9 +180,7 @@ class RemoveDuplicatesOptions
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
-        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
-        $this->container['remove_duplicates_area'] = isset($data['remove_duplicates_area']) ? $data['remove_duplicates_area'] : null;
-        $this->container['remove_duplicates_area_value'] = isset($data['remove_duplicates_area_value']) ? $data['remove_duplicates_area_value'] : null;
+        $this->container['scope_options'] = isset($data['scope_options']) ? $data['scope_options'] : null;
     }
 
     /**
@@ -212,14 +200,8 @@ class RemoveDuplicatesOptions
         if ($this->container['file_info'] === null) {
             $invalidProperties[] = "'file_info' can't be null";
         }
-        if ($this->container['worksheet'] === null) {
-            $invalidProperties[] = "'worksheet' can't be null";
-        }
-        if ($this->container['remove_duplicates_area'] === null) {
-            $invalidProperties[] = "'remove_duplicates_area' can't be null";
-        }
-        if ($this->container['remove_duplicates_area_value'] === null) {
-            $invalidProperties[] = "'remove_duplicates_area_value' can't be null";
+        if ($this->container['scope_options'] === null) {
+            $invalidProperties[] = "'scope_options' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,13 +223,7 @@ class RemoveDuplicatesOptions
         if ($this->container['file_info'] === null) {
                     return false;
                 }
-        if ($this->container['worksheet'] === null) {
-                    return false;
-                }
-        if ($this->container['remove_duplicates_area'] === null) {
-                    return false;
-                }
-        if ($this->container['remove_duplicates_area_value'] === null) {
+        if ($this->container['scope_options'] === null) {
                     return false;
                 }
         return true;
@@ -288,7 +264,7 @@ class RemoveDuplicatesOptions
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
      *
      * @return $this
      */
@@ -311,7 +287,7 @@ class RemoveDuplicatesOptions
     /**
      * Sets file_info
      *
-     *  
+     *  Represents file information. Include of filename, filesize, and file content(base64String).
      *
      * @return $this
      */
@@ -322,71 +298,25 @@ class RemoveDuplicatesOptions
         return $this;
     }
    /**
-     * Gets worksheet
+     * Gets scope_options
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\ScopeOptions
      */
-    public function getWorksheet()
+    public function getScopeOptions()
     {
-        return $this->container['worksheet'];
+        return $this->container['scope_options'];
     }
 
     /**
-     * Sets worksheet
+     * Sets scope_options
      *
-     *  
-     *
-     * @return $this
-     */
-    public function setWorksheet($worksheet)
-    {
-        $this->container['worksheet'] = $worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets remove_duplicates_area
-     *
-     * @return string
-     */
-    public function getRemoveDuplicatesArea()
-    {
-        return $this->container['remove_duplicates_area'];
-    }
-
-    /**
-     * Sets remove_duplicates_area
-     *
-     *  
+     *  Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
      *
      * @return $this
      */
-    public function setRemoveDuplicatesArea($remove_duplicates_area)
+    public function setScopeOptions($scope_options)
     {
-        $this->container['remove_duplicates_area'] = $remove_duplicates_area;
-
-        return $this;
-    }
-   /**
-     * Gets remove_duplicates_area_value
-     *
-     * @return string
-     */
-    public function getRemoveDuplicatesAreaValue()
-    {
-        return $this->container['remove_duplicates_area_value'];
-    }
-
-    /**
-     * Sets remove_duplicates_area_value
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setRemoveDuplicatesAreaValue($remove_duplicates_area_value)
-    {
-        $this->container['remove_duplicates_area_value'] = $remove_duplicates_area_value;
+        $this->container['scope_options'] = $scope_options;
 
         return $this;
     }

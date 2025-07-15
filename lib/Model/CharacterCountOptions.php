@@ -217,7 +217,7 @@ class CharacterCountOptions
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
      *
      * @return $this
      */
@@ -240,7 +240,7 @@ class CharacterCountOptions
     /**
      * Sets file_info
      *
-     *  
+     *  Represents file information. Include of filename, filesize, and file content(base64String).
      *
      * @return $this
      */

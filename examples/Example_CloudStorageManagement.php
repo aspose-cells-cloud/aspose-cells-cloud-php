@@ -43,12 +43,3 @@ foreach($filesList->getValue() as $stroageFile)
 {
     print ($stroageFile->getName());
 }
-//        print(storageFile.name)
-//    instance.delete_folder( DeleteFolderRequest( 'SDKPython/CellsCloud2' , recursive=True))
-//    print('Deleted Folder.')
-//    instance.delete_folder(DeleteFolderRequest('SDKPython/CellsCloud', recursive=True))
-//else :
-//    print('CompanySales.xlsx exists.')
-//
-//instance.delete_file(  DeleteFileRequest(remote_folder +'/'+ CompanySalesXlsx ))
-//print('Delete CompanySales.xlsx.')

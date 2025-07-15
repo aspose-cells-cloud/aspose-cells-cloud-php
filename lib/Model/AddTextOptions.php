@@ -49,9 +49,8 @@ class AddTextOptions
         'name' => 'string',
         'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
+        'scope_options' => '\Aspose\Cells\Cloud\Model\ScopeOptions',
         'text' => 'string',
-        'worksheet' => 'string',
-        'range' => 'string',
         'select_poistion' => 'string',
         'select_text' => 'string',
         'skip_empty_cells' => 'bool'
@@ -66,9 +65,8 @@ class AddTextOptions
         'name' => null  ,
         'data_source' => null  ,
         'file_info' => null  ,
+        'scope_options' => null  ,
         'text' => null  ,
-        'worksheet' => null  ,
-        'range' => null  ,
         'select_poistion' => null  ,
         'select_text' => null  ,
         'skip_empty_cells' => null  
@@ -104,9 +102,8 @@ class AddTextOptions
          'name' => 'Name' ,
          'data_source' => 'DataSource' ,
          'file_info' => 'FileInfo' ,
+         'scope_options' => 'ScopeOptions' ,
          'text' => 'Text' ,
-         'worksheet' => 'Worksheet' ,
-         'range' => 'Range' ,
          'select_poistion' => 'SelectPoistion' ,
          'select_text' => 'SelectText' ,
          'skip_empty_cells' => 'SkipEmptyCells' 
@@ -121,9 +118,8 @@ class AddTextOptions
         'name' => 'setName' ,
         'data_source' => 'setDataSource' ,
         'file_info' => 'setFileInfo' ,
+        'scope_options' => 'setScopeOptions' ,
         'text' => 'setText' ,
-        'worksheet' => 'setWorksheet' ,
-        'range' => 'setRange' ,
         'select_poistion' => 'setSelectPoistion' ,
         'select_text' => 'setSelectText' ,
         'skip_empty_cells' => 'setSkipEmptyCells' 
@@ -138,9 +134,8 @@ class AddTextOptions
         'name' => 'getName' ,
         'data_source' => 'getDataSource' ,
         'file_info' => 'getFileInfo' ,
+        'scope_options' => 'getScopeOptions' ,
         'text' => 'getText' ,
-        'worksheet' => 'getWorksheet' ,
-        'range' => 'getRange' ,
         'select_poistion' => 'getSelectPoistion' ,
         'select_text' => 'getSelectText' ,
         'skip_empty_cells' => 'getSkipEmptyCells' 
@@ -205,9 +200,8 @@ class AddTextOptions
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
+        $this->container['scope_options'] = isset($data['scope_options']) ? $data['scope_options'] : null;
         $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
         $this->container['select_poistion'] = isset($data['select_poistion']) ? $data['select_poistion'] : null;
         $this->container['select_text'] = isset($data['select_text']) ? $data['select_text'] : null;
         $this->container['skip_empty_cells'] = isset($data['skip_empty_cells']) ? $data['skip_empty_cells'] : null;
@@ -230,14 +224,11 @@ class AddTextOptions
         if ($this->container['file_info'] === null) {
             $invalidProperties[] = "'file_info' can't be null";
         }
+        if ($this->container['scope_options'] === null) {
+            $invalidProperties[] = "'scope_options' can't be null";
+        }
         if ($this->container['text'] === null) {
             $invalidProperties[] = "'text' can't be null";
-        }
-        if ($this->container['worksheet'] === null) {
-            $invalidProperties[] = "'worksheet' can't be null";
-        }
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
         }
         if ($this->container['select_poistion'] === null) {
             $invalidProperties[] = "'select_poistion' can't be null";
@@ -268,13 +259,10 @@ class AddTextOptions
         if ($this->container['file_info'] === null) {
                     return false;
                 }
+        if ($this->container['scope_options'] === null) {
+                    return false;
+                }
         if ($this->container['text'] === null) {
-                    return false;
-                }
-        if ($this->container['worksheet'] === null) {
-                    return false;
-                }
-        if ($this->container['range'] === null) {
                     return false;
                 }
         if ($this->container['select_poistion'] === null) {
@@ -324,7 +312,7 @@ class AddTextOptions
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
      *
      * @return $this
      */
@@ -347,13 +335,36 @@ class AddTextOptions
     /**
      * Sets file_info
      *
-     *  
+     *  Represents file information. Include of filename, filesize, and file content(base64String).
      *
      * @return $this
      */
     public function setFileInfo($file_info)
     {
         $this->container['file_info'] = $file_info;
+
+        return $this;
+    }
+   /**
+     * Gets scope_options
+     *
+     * @return \Aspose\Cells\Cloud\Model\ScopeOptions
+     */
+    public function getScopeOptions()
+    {
+        return $this->container['scope_options'];
+    }
+
+    /**
+     * Sets scope_options
+     *
+     *  Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
+     *
+     * @return $this
+     */
+    public function setScopeOptions($scope_options)
+    {
+        $this->container['scope_options'] = $scope_options;
 
         return $this;
     }
@@ -370,59 +381,13 @@ class AddTextOptions
     /**
      * Sets text
      *
-     *  
+     *  Add text content.
      *
      * @return $this
      */
     public function setText($text)
     {
         $this->container['text'] = $text;
-
-        return $this;
-    }
-   /**
-     * Gets worksheet
-     *
-     * @return string
-     */
-    public function getWorksheet()
-    {
-        return $this->container['worksheet'];
-    }
-
-    /**
-     * Sets worksheet
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setWorksheet($worksheet)
-    {
-        $this->container['worksheet'] = $worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets range
-     *
-     * @return string
-     */
-    public function getRange()
-    {
-        return $this->container['range'];
-    }
-
-    /**
-     * Sets range
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setRange($range)
-    {
-        $this->container['range'] = $range;
 
         return $this;
     }
@@ -439,7 +404,7 @@ class AddTextOptions
     /**
      * Sets select_poistion
      *
-     *  
+     *  Represents where text should be inserted or selected in the spreadsheet.
      *
      * @return $this
      */
@@ -462,7 +427,7 @@ class AddTextOptions
     /**
      * Sets select_text
      *
-     *  
+     *  Selected text of cell where text should be inserted or selected in the spreadsheet.
      *
      * @return $this
      */
@@ -485,7 +450,7 @@ class AddTextOptions
     /**
      * Sets skip_empty_cells
      *
-     *  
+     *  Indicates whether empty cells should be skipped during processing.
      *
      * @return $this
      */

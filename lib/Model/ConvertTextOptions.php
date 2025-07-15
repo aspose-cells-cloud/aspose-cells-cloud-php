@@ -49,8 +49,7 @@ class ConvertTextOptions
         'name' => 'string',
         'data_source' => '\Aspose\Cells\Cloud\Model\DataSource',
         'file_info' => '\Aspose\Cells\Cloud\Model\FileInfo',
-        'worksheet' => 'string',
-        'range' => 'string',
+        'scope_options' => '\Aspose\Cells\Cloud\Model\ScopeOptions',
         'convert_text_type' => 'string',
         'source_characters' => 'string',
         'target_characters' => 'string'
@@ -65,8 +64,7 @@ class ConvertTextOptions
         'name' => null  ,
         'data_source' => null  ,
         'file_info' => null  ,
-        'worksheet' => null  ,
-        'range' => null  ,
+        'scope_options' => null  ,
         'convert_text_type' => null  ,
         'source_characters' => null  ,
         'target_characters' => null  
@@ -102,8 +100,7 @@ class ConvertTextOptions
          'name' => 'Name' ,
          'data_source' => 'DataSource' ,
          'file_info' => 'FileInfo' ,
-         'worksheet' => 'Worksheet' ,
-         'range' => 'Range' ,
+         'scope_options' => 'ScopeOptions' ,
          'convert_text_type' => 'ConvertTextType' ,
          'source_characters' => 'SourceCharacters' ,
          'target_characters' => 'TargetCharacters' 
@@ -118,8 +115,7 @@ class ConvertTextOptions
         'name' => 'setName' ,
         'data_source' => 'setDataSource' ,
         'file_info' => 'setFileInfo' ,
-        'worksheet' => 'setWorksheet' ,
-        'range' => 'setRange' ,
+        'scope_options' => 'setScopeOptions' ,
         'convert_text_type' => 'setConvertTextType' ,
         'source_characters' => 'setSourceCharacters' ,
         'target_characters' => 'setTargetCharacters' 
@@ -134,8 +130,7 @@ class ConvertTextOptions
         'name' => 'getName' ,
         'data_source' => 'getDataSource' ,
         'file_info' => 'getFileInfo' ,
-        'worksheet' => 'getWorksheet' ,
-        'range' => 'getRange' ,
+        'scope_options' => 'getScopeOptions' ,
         'convert_text_type' => 'getConvertTextType' ,
         'source_characters' => 'getSourceCharacters' ,
         'target_characters' => 'getTargetCharacters' 
@@ -200,8 +195,7 @@ class ConvertTextOptions
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['data_source'] = isset($data['data_source']) ? $data['data_source'] : null;
         $this->container['file_info'] = isset($data['file_info']) ? $data['file_info'] : null;
-        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
-        $this->container['range'] = isset($data['range']) ? $data['range'] : null;
+        $this->container['scope_options'] = isset($data['scope_options']) ? $data['scope_options'] : null;
         $this->container['convert_text_type'] = isset($data['convert_text_type']) ? $data['convert_text_type'] : null;
         $this->container['source_characters'] = isset($data['source_characters']) ? $data['source_characters'] : null;
         $this->container['target_characters'] = isset($data['target_characters']) ? $data['target_characters'] : null;
@@ -224,11 +218,8 @@ class ConvertTextOptions
         if ($this->container['file_info'] === null) {
             $invalidProperties[] = "'file_info' can't be null";
         }
-        if ($this->container['worksheet'] === null) {
-            $invalidProperties[] = "'worksheet' can't be null";
-        }
-        if ($this->container['range'] === null) {
-            $invalidProperties[] = "'range' can't be null";
+        if ($this->container['scope_options'] === null) {
+            $invalidProperties[] = "'scope_options' can't be null";
         }
         if ($this->container['convert_text_type'] === null) {
             $invalidProperties[] = "'convert_text_type' can't be null";
@@ -259,10 +250,7 @@ class ConvertTextOptions
         if ($this->container['file_info'] === null) {
                     return false;
                 }
-        if ($this->container['worksheet'] === null) {
-                    return false;
-                }
-        if ($this->container['range'] === null) {
+        if ($this->container['scope_options'] === null) {
                     return false;
                 }
         if ($this->container['convert_text_type'] === null) {
@@ -312,7 +300,7 @@ class ConvertTextOptions
     /**
      * Sets data_source
      *
-     *  
+     *  Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
      *
      * @return $this
      */
@@ -335,7 +323,7 @@ class ConvertTextOptions
     /**
      * Sets file_info
      *
-     *  
+     *  Represents file information. Include of filename, filesize, and file content(base64String).
      *
      * @return $this
      */
@@ -346,48 +334,25 @@ class ConvertTextOptions
         return $this;
     }
    /**
-     * Gets worksheet
+     * Gets scope_options
      *
-     * @return string
+     * @return \Aspose\Cells\Cloud\Model\ScopeOptions
      */
-    public function getWorksheet()
+    public function getScopeOptions()
     {
-        return $this->container['worksheet'];
+        return $this->container['scope_options'];
     }
 
     /**
-     * Sets worksheet
+     * Sets scope_options
      *
-     *  
-     *
-     * @return $this
-     */
-    public function setWorksheet($worksheet)
-    {
-        $this->container['worksheet'] = $worksheet;
-
-        return $this;
-    }
-   /**
-     * Gets range
-     *
-     * @return string
-     */
-    public function getRange()
-    {
-        return $this->container['range'];
-    }
-
-    /**
-     * Sets range
-     *
-     *  
+     *  Specifies the range of cells within the worksheet where the spreadsheet operations will be performed. This parameter allows users to define the exact area to be processed, ensuring that operations are applied only to the designated cells.
      *
      * @return $this
      */
-    public function setRange($range)
+    public function setScopeOptions($scope_options)
     {
-        $this->container['range'] = $range;
+        $this->container['scope_options'] = $scope_options;
 
         return $this;
     }

@@ -46,7 +46,7 @@ class ScopeItem
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'worksheet_name' => 'string',
+        'worksheet' => 'string',
         'ranges' => 'string[]'
     ];
 
@@ -56,7 +56,7 @@ class ScopeItem
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'worksheet_name' => null  ,
+        'worksheet' => null  ,
         'ranges' => null  
     ];
 
@@ -87,7 +87,7 @@ class ScopeItem
      * @var string[]
      */
     protected static $attributeMap = [
-         'worksheet_name' => 'WorksheetName' ,
+         'worksheet' => 'Worksheet' ,
          'ranges' => 'Ranges' 
     ];
 
@@ -97,7 +97,7 @@ class ScopeItem
      * @var string[]
      */
     protected static $setters = [
-        'worksheet_name' => 'setWorksheetName' ,
+        'worksheet' => 'setWorksheet' ,
         'ranges' => 'setRanges' 
     ];
 
@@ -107,7 +107,7 @@ class ScopeItem
      * @var string[]
      */
     protected static $getters = [
-        'worksheet_name' => 'getWorksheetName' ,
+        'worksheet' => 'getWorksheet' ,
         'ranges' => 'getRanges' 
     ];
 
@@ -167,7 +167,7 @@ class ScopeItem
      */
     public function __construct(array $data = null)
     {
-        $this->container['worksheet_name'] = isset($data['worksheet_name']) ? $data['worksheet_name'] : null;
+        $this->container['worksheet'] = isset($data['worksheet']) ? $data['worksheet'] : null;
         $this->container['ranges'] = isset($data['ranges']) ? $data['ranges'] : null;
     }
 
@@ -179,8 +179,8 @@ class ScopeItem
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if ($this->container['worksheet_name'] === null) {
-            $invalidProperties[] = "'worksheet_name' can't be null";
+        if ($this->container['worksheet'] === null) {
+            $invalidProperties[] = "'worksheet' can't be null";
         }
         if ($this->container['ranges'] === null) {
             $invalidProperties[] = "'ranges' can't be null";
@@ -196,7 +196,7 @@ class ScopeItem
      */
     public function valid()
     {
-        if ($this->container['worksheet_name'] === null) {
+        if ($this->container['worksheet'] === null) {
                     return false;
                 }
         if ($this->container['ranges'] === null) {
@@ -205,25 +205,25 @@ class ScopeItem
         return true;
     }
    /**
-     * Gets worksheet_name
+     * Gets worksheet
      *
      * @return string
      */
-    public function getWorksheetName()
+    public function getWorksheet()
     {
-        return $this->container['worksheet_name'];
+        return $this->container['worksheet'];
     }
 
     /**
-     * Sets worksheet_name
+     * Sets worksheet
      *
-     *  A property "WorksheetName" of type string with an initial value of an empty string.            
+     *  The specific worksheet of spreadsheet.
      *
      * @return $this
      */
-    public function setWorksheetName($worksheet_name)
+    public function setWorksheet($worksheet)
     {
-        $this->container['worksheet_name'] = $worksheet_name;
+        $this->container['worksheet'] = $worksheet;
 
         return $this;
     }
@@ -240,7 +240,7 @@ class ScopeItem
     /**
      * Sets ranges
      *
-     *  
+     *  The specific ranges of worksheet.
      *
      * @return $this
      */

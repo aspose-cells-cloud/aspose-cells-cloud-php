@@ -60,7 +60,7 @@ class ExportChartAsFormatRequest extends BaseApiRequest
     }
 
     /*
-    * worksheet : 
+    * worksheet : worksheet name
     */ 
     public $worksheet;
 
@@ -75,7 +75,7 @@ class ExportChartAsFormatRequest extends BaseApiRequest
     }
 
     /*
-    * chartIndex : 
+    * chartIndex : chart index
     */ 
     public $chart_index;
 
@@ -375,7 +375,7 @@ class ExportChartAsFormatRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.6';
+        $defaultHeaders['x-aspose-client-version'] = '25.7';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

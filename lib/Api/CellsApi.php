@@ -41,8 +41,23 @@ use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
 use Aspose\Cells\Cloud\Request\GetAsposeCellsCloudStatusRequest;
 use Aspose\Cells\Cloud\Request\CheckCloudServiceHealthRequest;
 use Aspose\Cells\Cloud\Request\ExportSpreadsheetAsFormatRequest;
+use Aspose\Cells\Cloud\Request\ExportWorksheetAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ExportChartAsFormatRequest;
+use Aspose\Cells\Cloud\Request\ExportTableAsFormatRequest;
+use Aspose\Cells\Cloud\Request\ExportRangeAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ConvertSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ConvertWorksheetToImageRequest;
+use Aspose\Cells\Cloud\Request\ConvertWorksheetToPdfRequest;
+use Aspose\Cells\Cloud\Request\ConvertTableToImageRequest;
+use Aspose\Cells\Cloud\Request\ConvertTableToPdfRequest;
+use Aspose\Cells\Cloud\Request\ConvertTableToCsvRequest;
+use Aspose\Cells\Cloud\Request\ConvertTableToHtmlRequest;
+use Aspose\Cells\Cloud\Request\ConvertTableToJsonRequest;
+use Aspose\Cells\Cloud\Request\ConvertRangeToImageRequest;
+use Aspose\Cells\Cloud\Request\ConvertRangeToPdfRequest;
+use Aspose\Cells\Cloud\Request\ConvertRangeToCsvRequest;
+use Aspose\Cells\Cloud\Request\ConvertRangeToHtmlRequest;
+use Aspose\Cells\Cloud\Request\ConvertRangeToJsonRequest;
 use Aspose\Cells\Cloud\Request\ConvertChartToImageRequest;
 use Aspose\Cells\Cloud\Request\ConvertChartToPdfRequest;
 use Aspose\Cells\Cloud\Request\SaveSpreadsheetAsRequest;
@@ -52,6 +67,8 @@ use Aspose\Cells\Cloud\Request\MergeRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SplitSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SplitRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
+use Aspose\Cells\Cloud\Request\ProtectSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\UnprotectSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SearchSpreadsheetContentRequest;
 use Aspose\Cells\Cloud\Request\SearchContentInRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SearchContentInRemoteWorksheetRequest;
@@ -990,6 +1007,23 @@ class CellsApi
             }}
 
     /// <summary>
+    /// Converts a worksheet of spreadsheet in cloud storage to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ExportWorksheetAsFormatRequest" /></param>
+    public function exportWorksheetAsFormat( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
     /// Converts a chart of spreadsheet in cloud storage to the specified format.
     /// </summary>
     /// <param name="request">Request. <see cref="ExportChartAsFormatRequest" /></param>
@@ -1007,10 +1041,248 @@ class CellsApi
             }}
 
     /// <summary>
+    /// Converts a table of spreadsheet in cloud storage to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ExportTableAsFormatRequest" /></param>
+    public function exportTableAsFormat( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts the range of spreadsheet in cloud storage to the specified format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ExportRangeAsFormatRequest" /></param>
+    public function exportRangeAsFormat( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
     /// Converts a spreadsheet on a local drive to the specified format.
     /// </summary>
     /// <param name="request">Request. <see cref="ConvertSpreadsheetRequest" /></param>
     public function convertSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a worksheet of spreadsheet on a local drive to the image format.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertWorksheetToImageRequest" /></param>
+    public function convertWorksheetToImage( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a worksheet of spreadsheet on a local drive to the pdf file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertWorksheetToPdfRequest" /></param>
+    public function convertWorksheetToPdf( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a table of spreadsheet on a local drive to the image file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertTableToImageRequest" /></param>
+    public function convertTableToImage( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a table of spreadsheet on a local drive to the pdf file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertTableToPdfRequest" /></param>
+    public function convertTableToPdf( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a table of spreadsheet on a local drive to the csv file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertTableToCsvRequest" /></param>
+    public function convertTableToCsv( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a table of spreadsheet on a local drive to the html file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertTableToHtmlRequest" /></param>
+    public function convertTableToHtml( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a table of spreadsheet on a local drive to the json file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertTableToJsonRequest" /></param>
+    public function convertTableToJson( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a range of spreadsheet on a local drive to the image file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertRangeToImageRequest" /></param>
+    public function convertRangeToImage( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a range of spreadsheet on a local drive to the pdf file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertRangeToPdfRequest" /></param>
+    public function convertRangeToPdf( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a range of spreadsheet on a local drive to the csv file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertRangeToCsvRequest" /></param>
+    public function convertRangeToCsv( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a range of spreadsheet on a local drive to the html file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertRangeToHtmlRequest" /></param>
+    public function convertRangeToHtml( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a range of spreadsheet on a local drive to the json file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertRangeToJsonRequest" /></param>
+    public function convertRangeToJson( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1165,6 +1437,40 @@ class CellsApi
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
+
+    /// <summary>
+    /// Applies dual-layer password protection to Excel spreadsheets, supporting both open and modify passwords with encryption.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ProtectSpreadsheetRequest" /></param>
+    public function protectSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Removes dual-layer password protection from Excel spreadsheets, supporting both open and modify passwords with encryption.
+    /// </summary>
+    /// <param name="request">Request. <see cref="UnprotectSpreadsheetRequest" /></param>
+    public function unprotectSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Search text in the local spreadsheet.
@@ -4772,7 +5078,7 @@ class CellsApi
             }}
 
     /// <summary>
-    /// Adds text content to a workbook at specified positions within cells based on provided options using ASP.NET Core Web API.
+    /// Adds text content to a specified location within a document. It requires an object that defines the text to be added and the insertion location.
     /// </summary>
     /// <param name="request">Request. <see cref="PostAddTextContentRequest" /></param>
     public function postAddTextContent( $request)
@@ -4784,6 +5090,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// The PostTrimContent API is designed to process and trim content within a specified range in a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting
     /// </summary>
     /// <param name="request">Request. <see cref="PostTrimContentRequest" /></param>
     public function postTrimContent( $request)
@@ -4795,6 +5102,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// Managing inconsistent text case in spreadsheets (Excel, Google Sheets, CSV) can be frustrating, especially with large datasets. The PostUpdateWordCase WEB API solves this by automating text case conversions, ensuring clean and standardized data.
     /// </summary>
     /// <param name="request">Request. <see cref="PostUpdateWordCaseRequest" /></param>
     public function postUpdateWordCase( $request)
@@ -4806,6 +5114,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// A comprehensive set of tools for cleaning text content within selected cells. It allows users to remove specific characters, character sets, and substrings, ensuring that the text is standardized and free from unwanted symbols or sequences.
     /// </summary>
     /// <param name="request">Request. <see cref="PostRemoveCharactersRequest" /></param>
     public function postRemoveCharacters( $request)
@@ -4817,6 +5126,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// Enhance Excel data through essential text conversions: convert text to numbers, replace characters and line breaks, and remove accents.
     /// </summary>
     /// <param name="request">Request. <see cref="PostConvertTextRequest" /></param>
     public function postConvertText( $request)
@@ -4828,6 +5138,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// Efficiently remove duplicate substrings from Excel cells. Select a range, specify delimiters, and apply options to eliminate repeated text segments.
     /// </summary>
     /// <param name="request">Request. <see cref="PostRemoveDuplicatesRequest" /></param>
     public function postRemoveDuplicates( $request)
@@ -4839,6 +5150,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// Effortlessly extract text and numbers from Excel cells with precise options. This API allows extraction of first/last characters, text between delimiters, and numbers from strings, with output as static values or formulas.
     /// </summary>
     /// <param name="request">Request. <see cref="PostExtractTextRequest" /></param>
     public function postExtractText( $request)
@@ -4850,6 +5162,7 @@ class CellsApi
         return  $response;}
 
     /// <summary>
+    /// Efficiently divides Excel cell content into columns or rows based on specified delimiters or patterns. Supports Character-based splitting, Custom string splitting, Mask and wildcard splitting for pattern-based division, Line break division, Column or row splitting, Delimiter removal or retention.
     /// </summary>
     /// <param name="request">Request. <see cref="PostSplitTextRequest" /></param>
     public function postSplitText( $request)

@@ -241,7 +241,7 @@ class WordCaseOptions
     /**
      * Sets data_source
      *
-     *  This class has a public property named "DataSource" of type DataSource that has both a getter and a setter.            
+     *  Represents data source.  There are three types of data, they are CloudFileSystem, RequestFiles, HttpUri.
      *
      * @return $this
      */
@@ -264,7 +264,7 @@ class WordCaseOptions
     /**
      * Sets file_info
      *
-     *  
+     *  Represents file information. Include of filename, filesize, and file content(base64String).
      *
      * @return $this
      */
