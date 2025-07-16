@@ -12,3 +12,4 @@ integration_tests_result.xml
 composer.lock
 cacert.pem
 integrationtests/composer.phar
+TestData
