@@ -37,6 +37,8 @@ use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
+use Aspose\Cells\Cloud\Request\AggregateCellsByColorRequest;
+use Aspose\Cells\Cloud\Request\MathCalculateRequest;
 use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
 use Aspose\Cells\Cloud\Request\GetAsposeCellsCloudStatusRequest;
 use Aspose\Cells\Cloud\Request\CheckCloudServiceHealthRequest;
@@ -66,7 +68,14 @@ use Aspose\Cells\Cloud\Request\MergeSpreadsheetsInRemoteFolderRequest;
 use Aspose\Cells\Cloud\Request\MergeRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SplitSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SplitRemoteSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ImportDataIntoSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
+use Aspose\Cells\Cloud\Request\CreateSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\AddWorksheetToSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\DeleteWorksheetFromSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\RenameWorksheetInSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\MoveWorksheetInSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\CompressSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\ProtectSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\UnprotectSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SearchSpreadsheetContentRequest;
@@ -86,6 +95,7 @@ use Aspose\Cells\Cloud\Request\CodegenSpecRequest;
 use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankRowsRequest;
 use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankColumnsRequest;
 use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankWorksheetsRequest;
+use Aspose\Cells\Cloud\Request\SawpRangeRequest;
 use Aspose\Cells\Cloud\Request\DownloadFileRequest;
 use Aspose\Cells\Cloud\Request\UploadFileRequest;
 use Aspose\Cells\Cloud\Request\CopyFileRequest;
@@ -450,6 +460,7 @@ use Aspose\Cells\Cloud\Model\FilesList;
 use Aspose\Cells\Cloud\Model\FilesUploadResult;
 use Aspose\Cells\Cloud\Model\StorageFile;
 use Aspose\Cells\Cloud\Model\GoogleDriveStorageFile;
+use Aspose\Cells\Cloud\Model\AggregateResultByColor;
 use Aspose\Cells\Cloud\Model\BrokenLink;
 use Aspose\Cells\Cloud\Model\CellArea;
 use Aspose\Cells\Cloud\Model\CellsCloudFileInfo;
@@ -459,6 +470,7 @@ use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
 use Aspose\Cells\Cloud\Model\Range;
 use Aspose\Cells\Cloud\Model\SaveResult;
 use Aspose\Cells\Cloud\Model\PaginatedSaveOptions;
+use Aspose\Cells\Cloud\Model\SpreadsheetTemplate;
 use Aspose\Cells\Cloud\Model\TextItem;
 use Aspose\Cells\Cloud\Model\DbfSaveOptions;
 use Aspose\Cells\Cloud\Model\DifSaveOptions;
@@ -483,6 +495,7 @@ use Aspose\Cells\Cloud\Model\XlsbSaveOptions;
 use Aspose\Cells\Cloud\Model\XlsSaveOptions;
 use Aspose\Cells\Cloud\Model\XmlSaveOptions;
 use Aspose\Cells\Cloud\Model\XpsSaveOptions;
+use Aspose\Cells\Cloud\Model\AggregateResultByColorResponse;
 use Aspose\Cells\Cloud\Model\BrokenLinksReponse;
 use Aspose\Cells\Cloud\Model\CellsCloudFileInfoResponse;
 use Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse;
@@ -951,6 +964,35 @@ class CellsApi
     {
         return $this->config;
     }
+
+    /// <summary>
+    /// The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions.
+    /// </summary>
+    /// <param name="request">Request. <see cref="AggregateCellsByColorRequest" /></param>
+    public function aggregateCellsByColor( $request)
+    {
+        $this->checkAccessToken();
+        $returnType = '\Aspose\Cells\Cloud\Model\AggregateResultByColorResponse';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        return  $response;}
+
+    /// <summary>
+    /// The Math Calculate API enables you to perform a variety of mathematical operations on a selected range of cells. You can add or subtract a specific number from all selected cells, as well as multiply or divide individual cells and entire columns. This API simplifies complex calculations and enhances data manipulation capabilities.
+    /// </summary>
+    /// <param name="request">Request. <see cref="MathCalculateRequest" /></param>
+    public function mathCalculate( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Get Access Token Result: The Cells Cloud Get Token API acts as a proxy service,
@@ -1427,6 +1469,22 @@ class CellsApi
             }}
 
     /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ImportDataIntoSpreadsheetRequest" /></param>
+    public function importDataIntoSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
     /// Get an asymmetric public key.
     /// </summary>
     /// <param name="request">Request. <see cref="GetPublicKeyRequest" /></param>
@@ -1437,6 +1495,108 @@ class CellsApi
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
+
+    /// <summary>
+    /// The Web API allows users to create a new spreadsheet with a specified name. Optionally, a template can be provided to initialize the spreadsheet with predefined content or formatting.
+    /// </summary>
+    /// <param name="request">Request. <see cref="CreateSpreadsheetRequest" /></param>
+    public function createSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// The Web API enables users to add a new worksheet to a workbook, specifying the worksheet's type, position, and name. This function provides flexibility in managing workbook structure by allowing detailed control over worksheet addition.
+    /// </summary>
+    /// <param name="request">Request. <see cref="AddWorksheetToSpreadsheetRequest" /></param>
+    public function addWorksheetToSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// The Web API endpoint allows users to delete a specified worksheet from a workbook. This function provides a straightforward way to manage workbook structure by removing unnecessary or redundant worksheets.
+    /// </summary>
+    /// <param name="request">Request. <see cref="DeleteWorksheetFromSpreadsheetRequest" /></param>
+    public function deleteWorksheetFromSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// The Web API endpoint allows users to rename a specified worksheet within a workbook. This function provides a straightforward way to update worksheet names, enhancing workbook organization and readability.
+    /// </summary>
+    /// <param name="request">Request. <see cref="RenameWorksheetInSpreadsheetRequest" /></param>
+    public function renameWorksheetInSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// The Web API endpoint allows users to move a specified worksheet within a workbook. This function provides a straightforward way to move a worksheet, enhancing workbook organization.
+    /// </summary>
+    /// <param name="request">Request. <see cref="MoveWorksheetInSpreadsheetRequest" /></param>
+    public function moveWorksheetInSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// The Web API endpoint allows users to compress a spreadsheet to reduce its file size. This function provides a straightforward way to optimize the storage and performance of spreadsheets by applying a specified compression level.
+    /// </summary>
+    /// <param name="request">Request. <see cref="CompressSpreadsheetRequest" /></param>
+    public function compressSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
 
     /// <summary>
     /// Applies dual-layer password protection to Excel spreadsheets, supporting both open and modify passwords with encryption.
@@ -1683,6 +1843,23 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankWorksheetsRequest" /></param>
     public function deleteSpreadsheetBlankWorksheets( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SawpRangeRequest" /></param>
+    public function sawpRange( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';

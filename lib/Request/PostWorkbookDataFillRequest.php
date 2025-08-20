@@ -273,7 +273,7 @@ class PostWorkbookDataFillRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.7';
+        $defaultHeaders['x-aspose-client-version'] = '25.8';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
