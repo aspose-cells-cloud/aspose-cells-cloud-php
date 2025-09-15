@@ -60,7 +60,7 @@ class AggregateCellsByColorRequest extends BaseApiRequest
     }
 
     /*
-    * worksheet : 
+    * worksheet : Specified worksheet.
     */ 
     public $worksheet;
 
@@ -75,7 +75,7 @@ class AggregateCellsByColorRequest extends BaseApiRequest
     }
 
     /*
-    * range : 
+    * range : Specified range.
     */ 
     public $range;
 
@@ -90,7 +90,7 @@ class AggregateCellsByColorRequest extends BaseApiRequest
     }
 
     /*
-    * operation : 
+    * operation : Specify calculation operation methods, including Sum, Count, Average, Min, and Max.
     */ 
     public $operation;
 
@@ -105,7 +105,7 @@ class AggregateCellsByColorRequest extends BaseApiRequest
     }
 
     /*
-    * colorPosition : 
+    * colorPosition : Indicates the content to sum and count based on background color and/or font color.
     */ 
     public $color_position;
 
@@ -120,18 +120,18 @@ class AggregateCellsByColorRequest extends BaseApiRequest
     }
 
     /*
-    * regoin : The spreadsheet region setting.
+    * region : The spreadsheet region setting.
     */ 
-    public $regoin;
+    public $region;
 
-    public function getRegoin()
+    public function getRegion()
     {
-        return $this->regoin;
+        return $this->region;
     }
 
-    public function setRegoin($value)
+    public function setRegion($value)
     {
-        $this->regoin = $value;
+        $this->region = $value;
     }
 
     /*
@@ -186,9 +186,9 @@ class AggregateCellsByColorRequest extends BaseApiRequest
         if ($this->color_position !== null) {
             $queryParams['colorPosition'] = ObjectSerializer::toQueryValue($this->color_position);
         }
-        // query params : regoin
-        if ($this->regoin !== null) {
-            $queryParams['regoin'] = ObjectSerializer::toQueryValue($this->regoin);
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         // query params : password
         if ($this->password !== null) {
@@ -267,7 +267,7 @@ class AggregateCellsByColorRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.8';
+        $defaultHeaders['x-aspose-client-version'] = '25.9';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

@@ -48,6 +48,8 @@ use Aspose\Cells\Cloud\Request\ExportChartAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ExportTableAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ExportRangeAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ConvertSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToPdfRequest;
+use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToCsvRequest;
 use Aspose\Cells\Cloud\Request\ConvertWorksheetToImageRequest;
 use Aspose\Cells\Cloud\Request\ConvertWorksheetToPdfRequest;
 use Aspose\Cells\Cloud\Request\ConvertTableToImageRequest;
@@ -92,10 +94,12 @@ use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteWorksheetRequest;
 use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteRangeRequest;
 use Aspose\Cells\Cloud\Request\SpecRequest;
 use Aspose\Cells\Cloud\Request\CodegenSpecRequest;
+use Aspose\Cells\Cloud\Request\TrimSpreadsheetContentRequest;
+use Aspose\Cells\Cloud\Request\TrimWorksheetRangeRequest;
 use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankRowsRequest;
 use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankColumnsRequest;
 use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankWorksheetsRequest;
-use Aspose\Cells\Cloud\Request\SawpRangeRequest;
+use Aspose\Cells\Cloud\Request\SwapRangeRequest;
 use Aspose\Cells\Cloud\Request\DownloadFileRequest;
 use Aspose\Cells\Cloud\Request\UploadFileRequest;
 use Aspose\Cells\Cloud\Request\CopyFileRequest;
@@ -496,7 +500,7 @@ use Aspose\Cells\Cloud\Model\XlsSaveOptions;
 use Aspose\Cells\Cloud\Model\XmlSaveOptions;
 use Aspose\Cells\Cloud\Model\XpsSaveOptions;
 use Aspose\Cells\Cloud\Model\AggregateResultByColorResponse;
-use Aspose\Cells\Cloud\Model\BrokenLinksReponse;
+use Aspose\Cells\Cloud\Model\BrokenLinksResponse;
 use Aspose\Cells\Cloud\Model\CellsCloudFileInfoResponse;
 use Aspose\Cells\Cloud\Model\CellsCloudPublicKeyResponse;
 use Aspose\Cells\Cloud\Model\CellsCloudResponse;
@@ -978,7 +982,6 @@ class CellsApi
         return  $response;}
 
     /// <summary>
-    /// The Math Calculate API enables you to perform a variety of mathematical operations on a selected range of cells. You can add or subtract a specific number from all selected cells, as well as multiply or divide individual cells and entire columns. This API simplifies complex calculations and enhances data manipulation capabilities.
     /// </summary>
     /// <param name="request">Request. <see cref="MathCalculateRequest" /></param>
     public function mathCalculate( $request , $localOutPath = null)
@@ -1121,6 +1124,40 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="ConvertSpreadsheetRequest" /></param>
     public function convertSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a spreadsheet on a local drive to the pdf file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertSpreadsheetToPdfRequest" /></param>
+    public function convertSpreadsheetToPdf( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a spreadsheet on a local drive to the csv file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertSpreadsheetToCsvRequest" /></param>
+    public function convertSpreadsheetToCsv( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1469,6 +1506,7 @@ class CellsApi
             }}
 
     /// <summary>
+    /// Import data into a spreadsheet from a supported data file format.
     /// </summary>
     /// <param name="request">Request. <see cref="ImportDataIntoSpreadsheetRequest" /></param>
     public function importDataIntoSpreadsheet( $request , $localOutPath = null)
@@ -1740,7 +1778,7 @@ class CellsApi
     public function searchSpreadsheetBrokenLinks( $request)
     {
         $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
@@ -1752,7 +1790,7 @@ class CellsApi
     public function searchBrokenLinksInRemoteSpreadsheet( $request)
     {
         $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
@@ -1764,7 +1802,7 @@ class CellsApi
     public function searchBrokenLinksInRemoteWorksheet( $request)
     {
         $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
@@ -1776,7 +1814,7 @@ class CellsApi
     public function searchBrokenLinksInRemoteRange( $request)
     {
         $this->checkAccessToken();
-        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksReponse';
+        $returnType = '\Aspose\Cells\Cloud\Model\BrokenLinksResponse';
         $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
         list($response) = $this->execute($requesData,$returnType);
         return  $response;}
@@ -1805,7 +1843,40 @@ class CellsApi
         return  $response;}
 
     /// <summary>
-    /// Delete all blank rows which do not contain any data or other object.
+    /// The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting
+    /// </summary>
+    /// <param name="request">Request. <see cref="TrimSpreadsheetContentRequest" /></param>
+    public function trimSpreadsheetContent( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="TrimWorksheetRangeRequest" /></param>
+    public function trimWorksheetRange( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Delete all blank rows that do not contain any data or other objects.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankRowsRequest" /></param>
     public function deleteSpreadsheetBlankRows( $request , $localOutPath = null)
@@ -1822,7 +1893,7 @@ class CellsApi
             }}
 
     /// <summary>
-    /// Delete all blank columns which do not contain any data.
+    /// Delete all blank rows that do not contain any data or other objects.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankColumnsRequest" /></param>
     public function deleteSpreadsheetBlankColumns( $request , $localOutPath = null)
@@ -1839,7 +1910,7 @@ class CellsApi
             }}
 
     /// <summary>
-    /// Delete all blank worksheets which do not contain any data or other object.
+    /// Delete all blank rows that do not contain any data or other objects.
     /// </summary>
     /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankWorksheetsRequest" /></param>
     public function deleteSpreadsheetBlankWorksheets( $request , $localOutPath = null)
@@ -1858,8 +1929,8 @@ class CellsApi
     /// <summary>
     /// The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets.
     /// </summary>
-    /// <param name="request">Request. <see cref="SawpRangeRequest" /></param>
-    public function sawpRange( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="SwapRangeRequest" /></param>
+    public function swapRange( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';

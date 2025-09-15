@@ -90,18 +90,18 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
     }
 
     /*
-    * regoin : The spreadsheet region setting.
+    * region : The spreadsheet region setting.
     */ 
-    public $regoin;
+    public $region;
 
-    public function getRegoin()
+    public function getRegion()
     {
-        return $this->regoin;
+        return $this->region;
     }
 
-    public function setRegoin($value)
+    public function setRegion($value)
     {
-        $this->regoin = $value;
+        $this->region = $value;
     }
 
     /*
@@ -148,9 +148,9 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
         if ($this->out_storage_name !== null) {
             $queryParams['outStorageName'] = ObjectSerializer::toQueryValue($this->out_storage_name);
         }
-        // query params : regoin
-        if ($this->regoin !== null) {
-            $queryParams['regoin'] = ObjectSerializer::toQueryValue($this->regoin);
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         // query params : password
         if ($this->password !== null) {
@@ -229,7 +229,7 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.8';
+        $defaultHeaders['x-aspose-client-version'] = '25.9';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

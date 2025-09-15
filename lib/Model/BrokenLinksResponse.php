@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="BrokenLinksReponse.cs">
+ * <copyright company="Aspose" file="BrokenLinksResponse.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -30,7 +30,7 @@ namespace Aspose\Cells\Cloud\Model;
 
 use \Aspose\Cells\Cloud\ObjectSerializer;
 
-class BrokenLinksReponse
+class BrokenLinksResponse
 {
      const DISCRIMINATOR = null;
     /**
@@ -38,7 +38,7 @@ class BrokenLinksReponse
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BrokenLinksReponse';     
+    protected static $swaggerModelName = 'BrokenLinksResponse';     
 
     /**
       * Array of property to type mappings. Used for (de)serialization

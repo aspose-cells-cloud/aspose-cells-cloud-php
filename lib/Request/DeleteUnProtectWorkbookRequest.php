@@ -216,7 +216,7 @@ class DeleteUnProtectWorkbookRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.8';
+        $defaultHeaders['x-aspose-client-version'] = '25.9';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

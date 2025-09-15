@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SawpRangeRequest.cs">
+ * <copyright company="Aspose" file="ConvertSpreadsheetToPdfRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  SawpRange operation.
+ * Request model for  ConvertSpreadsheetToPdf operation.
  */
 
-class SawpRangeRequest extends BaseApiRequest
+class ConvertSpreadsheetToPdfRequest extends BaseApiRequest
 {
 
     /*
@@ -57,66 +57,6 @@ class SawpRangeRequest extends BaseApiRequest
     public function setSpreadsheet($value)
     {
         $this->spreadsheet = $value;
-    }
-
-    /*
-    * worksheet1 : 
-    */ 
-    public $worksheet1;
-
-    public function getWorksheet1()
-    {
-        return $this->worksheet1;
-    }
-
-    public function setWorksheet1($value)
-    {
-        $this->worksheet1 = $value;
-    }
-
-    /*
-    * range1 : 
-    */ 
-    public $range1;
-
-    public function getRange1()
-    {
-        return $this->range1;
-    }
-
-    public function setRange1($value)
-    {
-        $this->range1 = $value;
-    }
-
-    /*
-    * worksheet2 : 
-    */ 
-    public $worksheet2;
-
-    public function getWorksheet2()
-    {
-        return $this->worksheet2;
-    }
-
-    public function setWorksheet2($value)
-    {
-        $this->worksheet2 = $value;
-    }
-
-    /*
-    * range2 : 
-    */ 
-    public $range2;
-
-    public function getRange2()
-    {
-        return $this->range2;
-    }
-
-    public function setRange2($value)
-    {
-        $this->range2 = $value;
     }
 
     /*
@@ -150,18 +90,33 @@ class SawpRangeRequest extends BaseApiRequest
     }
 
     /*
-    * regoin : The spreadsheet region setting.
+    * fontsLocation : Use Custom fonts.
     */ 
-    public $regoin;
+    public $fonts_location;
 
-    public function getRegoin()
+    public function getFontsLocation()
     {
-        return $this->regoin;
+        return $this->fonts_location;
     }
 
-    public function setRegoin($value)
+    public function setFontsLocation($value)
     {
-        $this->regoin = $value;
+        $this->fonts_location = $value;
+    }
+
+    /*
+    * region : The spreadsheet region setting.
+    */ 
+    public $region;
+
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    public function setRegion($value)
+    {
+        $this->region = $value;
     }
 
     /*
@@ -179,13 +134,9 @@ class SawpRangeRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null,$worksheet1 = null,$range1 = null,$worksheet2 = null,$range2 = null )
+    public function __construct( $spreadsheet = null )
     {        
         $this->spreadsheet = $spreadsheet; 
-        $this->worksheet1 = $worksheet1; 
-        $this->range1 = $range1; 
-        $this->worksheet2 = $worksheet2; 
-        $this->range2 = $range2; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -193,65 +144,17 @@ class SawpRangeRequest extends BaseApiRequest
         // verify the required parameter 'spreadsheet' is set
         if ($this->spreadsheet === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $spreadsheet when calling SawpRange'
+                'Missing the required parameter $spreadsheet when calling ConvertSpreadsheetToPdf'
             );
         }
 
 
-        // verify the required parameter 'worksheet1' is set
-        if ($this->worksheet1 === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $worksheet1 when calling SawpRange'
-            );
-        }
-
-
-        // verify the required parameter 'range1' is set
-        if ($this->range1 === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $range1 when calling SawpRange'
-            );
-        }
-
-
-        // verify the required parameter 'worksheet2' is set
-        if ($this->worksheet2 === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $worksheet2 when calling SawpRange'
-            );
-        }
-
-
-        // verify the required parameter 'range2' is set
-        if ($this->range2 === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $range2 when calling SawpRange'
-            );
-        }
-
-
-        $resourcePath = 'v4.0/cells/swap/range';
+        $resourcePath = 'v4.0/cells/convert/spreadsheet/pdf';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : worksheet1
-        if ($this->worksheet1 !== null) {
-            $queryParams['worksheet1'] = ObjectSerializer::toQueryValue($this->worksheet1);
-        }
-        // query params : range1
-        if ($this->range1 !== null) {
-            $queryParams['range1'] = ObjectSerializer::toQueryValue($this->range1);
-        }
-        // query params : worksheet2
-        if ($this->worksheet2 !== null) {
-            $queryParams['worksheet2'] = ObjectSerializer::toQueryValue($this->worksheet2);
-        }
-        // query params : range2
-        if ($this->range2 !== null) {
-            $queryParams['range2'] = ObjectSerializer::toQueryValue($this->range2);
-        }
         // query params : out_path
         if ($this->out_path !== null) {
             $queryParams['outPath'] = ObjectSerializer::toQueryValue($this->out_path);
@@ -260,9 +163,13 @@ class SawpRangeRequest extends BaseApiRequest
         if ($this->out_storage_name !== null) {
             $queryParams['outStorageName'] = ObjectSerializer::toQueryValue($this->out_storage_name);
         }
-        // query params : regoin
-        if ($this->regoin !== null) {
-            $queryParams['regoin'] = ObjectSerializer::toQueryValue($this->regoin);
+        // query params : fonts_location
+        if ($this->fonts_location !== null) {
+            $queryParams['fontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
+        }
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         // query params : password
         if ($this->password !== null) {
@@ -341,7 +248,7 @@ class SawpRangeRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.8';
+        $defaultHeaders['x-aspose-client-version'] = '25.9';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

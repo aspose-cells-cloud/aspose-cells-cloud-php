@@ -52,8 +52,7 @@ class AggregateResultByColor
         'sum' => 'double',
         'max_value' => 'double',
         'min_value' => 'double',
-        'average_value' => 'double',
-        'value' => 'double'
+        'average_value' => 'double'
     ];
 
     /**
@@ -68,8 +67,7 @@ class AggregateResultByColor
         'sum' => null  ,
         'max_value' => null  ,
         'min_value' => null  ,
-        'average_value' => null  ,
-        'value' => null  
+        'average_value' => null  
     ];
 
     /**
@@ -105,8 +103,7 @@ class AggregateResultByColor
          'sum' => 'Sum' ,
          'max_value' => 'MaxValue' ,
          'min_value' => 'MinValue' ,
-         'average_value' => 'AverageValue' ,
-         'value' => 'Value' 
+         'average_value' => 'AverageValue' 
     ];
 
     /**
@@ -121,8 +118,7 @@ class AggregateResultByColor
         'sum' => 'setSum' ,
         'max_value' => 'setMaxValue' ,
         'min_value' => 'setMinValue' ,
-        'average_value' => 'setAverageValue' ,
-        'value' => 'setValue' 
+        'average_value' => 'setAverageValue' 
     ];
 
     /**
@@ -137,8 +133,7 @@ class AggregateResultByColor
         'sum' => 'getSum' ,
         'max_value' => 'getMaxValue' ,
         'min_value' => 'getMinValue' ,
-        'average_value' => 'getAverageValue' ,
-        'value' => 'getValue' 
+        'average_value' => 'getAverageValue' 
     ];
 
     /**
@@ -204,7 +199,6 @@ class AggregateResultByColor
         $this->container['max_value'] = isset($data['max_value']) ? $data['max_value'] : null;
         $this->container['min_value'] = isset($data['min_value']) ? $data['min_value'] : null;
         $this->container['average_value'] = isset($data['average_value']) ? $data['average_value'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
     /**
@@ -236,9 +230,6 @@ class AggregateResultByColor
         if ($this->container['average_value'] === null) {
             $invalidProperties[] = "'average_value' can't be null";
         }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -269,9 +260,6 @@ class AggregateResultByColor
                     return false;
                 }
         if ($this->container['average_value'] === null) {
-                    return false;
-                }
-        if ($this->container['value'] === null) {
                     return false;
                 }
         return true;
@@ -434,29 +422,6 @@ class AggregateResultByColor
     public function setAverageValue($average_value)
     {
         $this->container['average_value'] = $average_value;
-
-        return $this;
-    }
-   /**
-     * Gets value
-     *
-     * @return double
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     *  
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
 
         return $this;
     }

@@ -45,7 +45,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
 {
 
     /*
-    * name : 
+    * name : Specify the search workbook file name.
     */ 
     public $name;
 
@@ -60,7 +60,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
     }
 
     /*
-    * worksheet : 
+    * worksheet : Specify the search worksheet name.
     */ 
     public $worksheet;
 
@@ -75,7 +75,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
     }
 
     /*
-    * cellArea : 
+    * cellArea : Specify the search cell area.
     */ 
     public $cell_area;
 
@@ -90,7 +90,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
     }
 
     /*
-    * searchText : 
+    * searchText : Specify the search content.
     */ 
     public $search_text;
 
@@ -105,7 +105,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
     }
 
     /*
-    * ignoringCase : 
+    * ignoringCase : Ignore the text of the search.
     */ 
     public $ignoring_case;
 
@@ -120,7 +120,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
     }
 
     /*
-    * folder : 
+    * folder : The folder path where the workbook is stored.
     */ 
     public $folder;
 
@@ -150,18 +150,18 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
     }
 
     /*
-    * regoin : The spreadsheet region setting.
+    * region : The spreadsheet region setting.
     */ 
-    public $regoin;
+    public $region;
 
-    public function getRegoin()
+    public function getRegion()
     {
-        return $this->regoin;
+        return $this->region;
     }
 
-    public function setRegoin($value)
+    public function setRegion($value)
     {
-        $this->regoin = $value;
+        $this->region = $value;
     }
 
     /*
@@ -267,9 +267,9 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
         if ($this->storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
         }
-        // query params : regoin
-        if ($this->regoin !== null) {
-            $queryParams['regoin'] = ObjectSerializer::toQueryValue($this->regoin);
+        // query params : region
+        if ($this->region !== null) {
+            $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
         // query params : password
         if ($this->password !== null) {
@@ -337,7 +337,7 @@ class SearchContentInRemoteRangeRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.8';
+        $defaultHeaders['x-aspose-client-version'] = '25.9';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
