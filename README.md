@@ -1,8 +1,10 @@
 ![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-25.9-green?style=for-the-badge&logo=php) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/php/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/Examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) ![Packagist PHP Version Support](https://img.shields.io/badge/PHP->7.4-777BB4?style=for-the-badge&logo=php&logoColor=white) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php?style=for-the-badge) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE?style=for-the-badge) [![PHP](https://img.shields.io/badge/Composer-require%20aspose/cells--sdk--php-8892BF?logo=php&style=for-the-badge)](https://packagist.org/packages/aspose/cells-sdk-php) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.9?style=for-the-badge)
 
-# PHP package for Aspose.Cells Cloud
+Aspose.Cells Cloud SDK for PHP empowers developers to programmatically manage Excel files with precision. This comprehensive PHP library supports advanced Excel operations like cell data formatting, dynamic formulas, pivot tables, conditional styling, charts, hyperlinks, comments, and data validation. It also enables seamless Excel file conversion (XLSX, CSV, PDF, ODS), document splitting/merging, and file repair. Designed for cloud integration, this API-first solution accelerates spreadsheet automation while ensuring data integrity across platforms like AWS, Azure, and Google Cloud.
 
-Enhance your PHP applications with the [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) , enabling seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). With its powerful APIs, developers can effortlessly read, convert, create, edit, and manipulate the contents of Excel documents without the need for any office software installed on the machine.
+## PHP SDK package for Aspose.Cells Cloud
+
+Enhance your PHP applications with [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) – a powerful, cloud-based SDK that enables seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). Leveraging its robust REST API, developers can effortlessly create, read, edit, convert, and manipulate spreadsheet content programmatically—without requiring any local office software.
 
 ## Quick Start Guide
 
@@ -119,7 +121,6 @@ $response = $cellsApi->convertSpreadsheet(new \Aspose\Cells\Cloud\Request\Conver
 Full list of issues covering all changes in this release:
 
 |**Summary**|**Category**|
-| :- | :- |
 | :- | :- |
 | Support trim spreadsheet content in Cells Cloud 4.0. | Improvement  |
 | Support trim worksheet range content in Cells Cloud 4.0. | Improvement  |
