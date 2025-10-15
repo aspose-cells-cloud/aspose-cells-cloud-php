@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteSpreadsheetBlankRowsRequest.cs">
+ * <copyright company="Aspose" file="SpreadsheetDigitalsignatureRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  DeleteSpreadsheetBlankRows operation.
+ * Request model for  SpreadsheetDigitalsignature operation.
  */
 
-class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
+class SpreadsheetDigitalsignatureRequest extends BaseApiRequest
 {
 
     /*
@@ -57,6 +57,21 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
     public function setSpreadsheet($value)
     {
         $this->spreadsheet = $value;
+    }
+
+    /*
+    * password : 
+    */ 
+    public $password;
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setPassword($value)
+    {
+        $this->password = $value;
     }
 
     /*
@@ -104,24 +119,10 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
         $this->region = $value;
     }
 
-    /*
-    * password : The password for opening spreadsheet file.
-    */ 
-    public $password;
-
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    public function setPassword($value)
-    {
-        $this->password = $value;
-    }
-
-    public function __construct( $spreadsheet = null )
+    public function __construct( $spreadsheet = null,$password = null )
     {        
         $this->spreadsheet = $spreadsheet; 
+        $this->password = $password; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -129,17 +130,29 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
         // verify the required parameter 'spreadsheet' is set
         if ($this->spreadsheet === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $spreadsheet when calling DeleteSpreadsheetBlankRows'
+                'Missing the required parameter $spreadsheet when calling SpreadsheetDigitalsignature'
             );
         }
 
 
-        $resourcePath = 'v4.0/cells/delete/blank-rows';
+        // verify the required parameter 'password' is set
+        if ($this->password === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $password when calling SpreadsheetDigitalsignature'
+            );
+        }
+
+
+        $resourcePath = 'v4.0/cells/digitalsignature/spreadsheet';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        // query params : password
+        if ($this->password !== null) {
+            $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
         // query params : out_path
         if ($this->out_path !== null) {
             $queryParams['outPath'] = ObjectSerializer::toQueryValue($this->out_path);
@@ -151,10 +164,6 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
         // query params : region
         if ($this->region !== null) {
             $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
-        }
-        // query params : password
-        if ($this->password !== null) {
-            $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
         }
         if ($this->spreadsheet !== null) {
             $multipart = true;
@@ -229,7 +238,7 @@ class DeleteSpreadsheetBlankRowsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.9';
+        $defaultHeaders['x-aspose-client-version'] = '25.10';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteSpreadsheetBlankWorksheetsRequest.cs">
+ * <copyright company="Aspose" file="SplitTextRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  DeleteSpreadsheetBlankWorksheets operation.
+ * Request model for  SplitText operation.
  */
 
-class DeleteSpreadsheetBlankWorksheetsRequest extends BaseApiRequest
+class SplitTextRequest extends BaseApiRequest
 {
 
     /*
@@ -57,6 +57,111 @@ class DeleteSpreadsheetBlankWorksheetsRequest extends BaseApiRequest
     public function setSpreadsheet($value)
     {
         $this->spreadsheet = $value;
+    }
+
+    /*
+    * splitDelimitersType : Indicates split delimiters type.
+    */ 
+    public $split_delimiters_type;
+
+    public function getSplitDelimitersType()
+    {
+        return $this->split_delimiters_type;
+    }
+
+    public function setSplitDelimitersType($value)
+    {
+        $this->split_delimiters_type = $value;
+    }
+
+    /*
+    * customDelimiter : Indicates the custom delimiter.
+    */ 
+    public $custom_delimiter;
+
+    public function getCustomDelimiter()
+    {
+        return $this->custom_delimiter;
+    }
+
+    public function setCustomDelimiter($value)
+    {
+        $this->custom_delimiter = $value;
+    }
+
+    /*
+    * keepDelimitersInResultingCells : Indicates keep delimiters in resulting cells.
+    */ 
+    public $keep_delimiters_in_resulting_cells;
+
+    public function getKeepDelimitersInResultingCells()
+    {
+        return $this->keep_delimiters_in_resulting_cells;
+    }
+
+    public function setKeepDelimitersInResultingCells($value)
+    {
+        $this->keep_delimiters_in_resulting_cells = $value;
+    }
+
+    /*
+    * keepDelimitersPosition : Indicates keep delimiters position.
+    */ 
+    public $keep_delimiters_position;
+
+    public function getKeepDelimitersPosition()
+    {
+        return $this->keep_delimiters_position;
+    }
+
+    public function setKeepDelimitersPosition($value)
+    {
+        $this->keep_delimiters_position = $value;
+    }
+
+    /*
+    * HowToSplit : Indicates
+    */ 
+    public $how_to_split;
+
+    public function getHowToSplit()
+    {
+        return $this->how_to_split;
+    }
+
+    public function setHowToSplit($value)
+    {
+        $this->how_to_split = $value;
+    }
+
+    /*
+    * worksheet : Specify the worksheet of spreadsheet.
+    */ 
+    public $worksheet;
+
+    public function getWorksheet()
+    {
+        return $this->worksheet;
+    }
+
+    public function setWorksheet($value)
+    {
+        $this->worksheet = $value;
+    }
+
+    /*
+    * range : Specify the worksheet range of spreadsheet.
+    */ 
+    public $range;
+
+    public function getRange()
+    {
+        return $this->range;
+    }
+
+    public function setRange($value)
+    {
+        $this->range = $value;
     }
 
     /*
@@ -119,9 +224,14 @@ class DeleteSpreadsheetBlankWorksheetsRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null )
+    public function __construct( $spreadsheet = null,$split_delimiters_type = null,$custom_delimiter = null,$keep_delimiters_in_resulting_cells = null,$keep_delimiters_position = null,$how_to_split = null )
     {        
         $this->spreadsheet = $spreadsheet; 
+        $this->split_delimiters_type = $split_delimiters_type; 
+        $this->custom_delimiter = $custom_delimiter; 
+        $this->keep_delimiters_in_resulting_cells = $keep_delimiters_in_resulting_cells; 
+        $this->keep_delimiters_position = $keep_delimiters_position; 
+        $this->how_to_split = $how_to_split; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -129,17 +239,85 @@ class DeleteSpreadsheetBlankWorksheetsRequest extends BaseApiRequest
         // verify the required parameter 'spreadsheet' is set
         if ($this->spreadsheet === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $spreadsheet when calling DeleteSpreadsheetBlankWorksheets'
+                'Missing the required parameter $spreadsheet when calling SplitText'
             );
         }
 
 
-        $resourcePath = 'v4.0/cells/delete/blank-worksheets';
+        // verify the required parameter 'split_delimiters_type' is set
+        if ($this->split_delimiters_type === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $split_delimiters_type when calling SplitText'
+            );
+        }
+
+
+        // verify the required parameter 'custom_delimiter' is set
+        if ($this->custom_delimiter === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $custom_delimiter when calling SplitText'
+            );
+        }
+
+
+        // verify the required parameter 'keep_delimiters_in_resulting_cells' is set
+        if ($this->keep_delimiters_in_resulting_cells === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $keep_delimiters_in_resulting_cells when calling SplitText'
+            );
+        }
+
+
+        // verify the required parameter 'keep_delimiters_position' is set
+        if ($this->keep_delimiters_position === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $keep_delimiters_position when calling SplitText'
+            );
+        }
+
+
+        // verify the required parameter 'how_to_split' is set
+        if ($this->how_to_split === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $how_to_split when calling SplitText'
+            );
+        }
+
+
+        $resourcePath = 'v4.0/cells/content/split/text';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        // query params : split_delimiters_type
+        if ($this->split_delimiters_type !== null) {
+            $queryParams['splitDelimitersType'] = ObjectSerializer::toQueryValue($this->split_delimiters_type);
+        }
+        // query params : custom_delimiter
+        if ($this->custom_delimiter !== null) {
+            $queryParams['customDelimiter'] = ObjectSerializer::toQueryValue($this->custom_delimiter);
+        }
+        // query params : keep_delimiters_in_resulting_cells
+        if ($this->keep_delimiters_in_resulting_cells !== null) {
+            $queryParams['keepDelimitersInResultingCells'] = ObjectSerializer::toQueryValue($this->keep_delimiters_in_resulting_cells);
+        }
+        // query params : keep_delimiters_position
+        if ($this->keep_delimiters_position !== null) {
+            $queryParams['keepDelimitersPosition'] = ObjectSerializer::toQueryValue($this->keep_delimiters_position);
+        }
+        // query params : how_to_split
+        if ($this->how_to_split !== null) {
+            $queryParams['HowToSplit'] = ObjectSerializer::toQueryValue($this->how_to_split);
+        }
+        // query params : worksheet
+        if ($this->worksheet !== null) {
+            $queryParams['worksheet'] = ObjectSerializer::toQueryValue($this->worksheet);
+        }
+        // query params : range
+        if ($this->range !== null) {
+            $queryParams['range'] = ObjectSerializer::toQueryValue($this->range);
+        }
         // query params : out_path
         if ($this->out_path !== null) {
             $queryParams['outPath'] = ObjectSerializer::toQueryValue($this->out_path);
@@ -229,7 +407,7 @@ class DeleteSpreadsheetBlankWorksheetsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.9';
+        $defaultHeaders['x-aspose-client-version'] = '25.10';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

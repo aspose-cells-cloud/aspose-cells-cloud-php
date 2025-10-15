@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TrimSpreadsheetContentRequest.cs">
+ * <copyright company="Aspose" file="RemoveSpreadsheetBlankColumnsRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  TrimSpreadsheetContent operation.
+ * Request model for  RemoveSpreadsheetBlankColumns operation.
  */
 
-class TrimSpreadsheetContentRequest extends BaseApiRequest
+class RemoveSpreadsheetBlankColumnsRequest extends BaseApiRequest
 {
 
     /*
@@ -57,111 +57,6 @@ class TrimSpreadsheetContentRequest extends BaseApiRequest
     public function setSpreadsheet($value)
     {
         $this->spreadsheet = $value;
-    }
-
-    /*
-    * trimContent : 
-    */ 
-    public $trim_content;
-
-    public function getTrimContent()
-    {
-        return $this->trim_content;
-    }
-
-    public function setTrimContent($value)
-    {
-        $this->trim_content = $value;
-    }
-
-    /*
-    * trimLeading : 
-    */ 
-    public $trim_leading;
-
-    public function getTrimLeading()
-    {
-        return $this->trim_leading;
-    }
-
-    public function setTrimLeading($value)
-    {
-        $this->trim_leading = $value;
-    }
-
-    /*
-    * trimTrailing : 
-    */ 
-    public $trim_trailing;
-
-    public function getTrimTrailing()
-    {
-        return $this->trim_trailing;
-    }
-
-    public function setTrimTrailing($value)
-    {
-        $this->trim_trailing = $value;
-    }
-
-    /*
-    * trimSpaceBetweenWordTo1 : 
-    */ 
-    public $trim_space_between_word_to1;
-
-    public function getTrimSpaceBetweenWordTo1()
-    {
-        return $this->trim_space_between_word_to1;
-    }
-
-    public function setTrimSpaceBetweenWordTo1($value)
-    {
-        $this->trim_space_between_word_to1 = $value;
-    }
-
-    /*
-    * trimNonBreakingSpaces : 
-    */ 
-    public $trim_non_breaking_spaces;
-
-    public function getTrimNonBreakingSpaces()
-    {
-        return $this->trim_non_breaking_spaces;
-    }
-
-    public function setTrimNonBreakingSpaces($value)
-    {
-        $this->trim_non_breaking_spaces = $value;
-    }
-
-    /*
-    * removeExtraLineBreaks : 
-    */ 
-    public $remove_extra_line_breaks;
-
-    public function getRemoveExtraLineBreaks()
-    {
-        return $this->remove_extra_line_breaks;
-    }
-
-    public function setRemoveExtraLineBreaks($value)
-    {
-        $this->remove_extra_line_breaks = $value;
-    }
-
-    /*
-    * removeAllLineBreaks : 
-    */ 
-    public $remove_all_line_breaks;
-
-    public function getRemoveAllLineBreaks()
-    {
-        return $this->remove_all_line_breaks;
-    }
-
-    public function setRemoveAllLineBreaks($value)
-    {
-        $this->remove_all_line_breaks = $value;
     }
 
     /*
@@ -234,45 +129,17 @@ class TrimSpreadsheetContentRequest extends BaseApiRequest
         // verify the required parameter 'spreadsheet' is set
         if ($this->spreadsheet === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $spreadsheet when calling TrimSpreadsheetContent'
+                'Missing the required parameter $spreadsheet when calling RemoveSpreadsheetBlankColumns'
             );
         }
 
 
-        $resourcePath = 'v4.0/cells/content/trim';
+        $resourcePath = 'v4.0/cells/remove/blank-columns';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : trim_content
-        if ($this->trim_content !== null) {
-            $queryParams['trimContent'] = ObjectSerializer::toQueryValue($this->trim_content);
-        }
-        // query params : trim_leading
-        if ($this->trim_leading !== null) {
-            $queryParams['trimLeading'] = ObjectSerializer::toQueryValue($this->trim_leading);
-        }
-        // query params : trim_trailing
-        if ($this->trim_trailing !== null) {
-            $queryParams['trimTrailing'] = ObjectSerializer::toQueryValue($this->trim_trailing);
-        }
-        // query params : trim_space_between_word_to1
-        if ($this->trim_space_between_word_to1 !== null) {
-            $queryParams['trimSpaceBetweenWordTo1'] = ObjectSerializer::toQueryValue($this->trim_space_between_word_to1);
-        }
-        // query params : trim_non_breaking_spaces
-        if ($this->trim_non_breaking_spaces !== null) {
-            $queryParams['trimNonBreakingSpaces'] = ObjectSerializer::toQueryValue($this->trim_non_breaking_spaces);
-        }
-        // query params : remove_extra_line_breaks
-        if ($this->remove_extra_line_breaks !== null) {
-            $queryParams['removeExtraLineBreaks'] = ObjectSerializer::toQueryValue($this->remove_extra_line_breaks);
-        }
-        // query params : remove_all_line_breaks
-        if ($this->remove_all_line_breaks !== null) {
-            $queryParams['removeAllLineBreaks'] = ObjectSerializer::toQueryValue($this->remove_all_line_breaks);
-        }
         // query params : out_path
         if ($this->out_path !== null) {
             $queryParams['outPath'] = ObjectSerializer::toQueryValue($this->out_path);
@@ -362,7 +229,7 @@ class TrimSpreadsheetContentRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.9';
+        $defaultHeaders['x-aspose-client-version'] = '25.10';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

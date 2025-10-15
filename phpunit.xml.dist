@@ -7,7 +7,6 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite>
-            <directory>./integrationtests/DataProcessing</directory>
             <directory>./integrationtests/Dynabic</directory>
             <directory>./integrationtests/CellsCloud30</directory>
         </testsuite>

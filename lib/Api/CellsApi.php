@@ -78,8 +78,10 @@ use Aspose\Cells\Cloud\Request\DeleteWorksheetFromSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\RenameWorksheetInSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\MoveWorksheetInSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\CompressSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\RepairSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\ProtectSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\UnprotectSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\SpreadsheetDigitalsignatureRequest;
 use Aspose\Cells\Cloud\Request\SearchSpreadsheetContentRequest;
 use Aspose\Cells\Cloud\Request\SearchContentInRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SearchContentInRemoteWorksheetRequest;
@@ -94,11 +96,17 @@ use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteWorksheetRequest;
 use Aspose\Cells\Cloud\Request\SearchBrokenLinksInRemoteRangeRequest;
 use Aspose\Cells\Cloud\Request\SpecRequest;
 use Aspose\Cells\Cloud\Request\CodegenSpecRequest;
-use Aspose\Cells\Cloud\Request\TrimSpreadsheetContentRequest;
-use Aspose\Cells\Cloud\Request\TrimWorksheetRangeRequest;
-use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankRowsRequest;
-use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankColumnsRequest;
-use Aspose\Cells\Cloud\Request\DeleteSpreadsheetBlankWorksheetsRequest;
+use Aspose\Cells\Cloud\Request\TrimCharacterRequest;
+use Aspose\Cells\Cloud\Request\UpdateWordCaseRequest;
+use Aspose\Cells\Cloud\Request\RemoveCharactersRequest;
+use Aspose\Cells\Cloud\Request\AddTextRequest;
+use Aspose\Cells\Cloud\Request\ConvertTextRequest;
+use Aspose\Cells\Cloud\Request\ExtractTextRequest;
+use Aspose\Cells\Cloud\Request\SplitTextRequest;
+use Aspose\Cells\Cloud\Request\RemoveSpreadsheetBlankRowsRequest;
+use Aspose\Cells\Cloud\Request\RemoveSpreadsheetBlankColumnsRequest;
+use Aspose\Cells\Cloud\Request\RemoveSpreadsheetBlankWorksheetsRequest;
+use Aspose\Cells\Cloud\Request\RemoveDuplicatesRequest;
 use Aspose\Cells\Cloud\Request\SwapRangeRequest;
 use Aspose\Cells\Cloud\Request\DownloadFileRequest;
 use Aspose\Cells\Cloud\Request\UploadFileRequest;
@@ -472,6 +480,7 @@ use Aspose\Cells\Cloud\Model\CellsCloudPublicKey;
 use Aspose\Cells\Cloud\Model\Color;
 use Aspose\Cells\Cloud\Model\PdfSecurityOptions;
 use Aspose\Cells\Cloud\Model\Range;
+use Aspose\Cells\Cloud\Model\RemoveCharactersByPosition;
 use Aspose\Cells\Cloud\Model\SaveResult;
 use Aspose\Cells\Cloud\Model\PaginatedSaveOptions;
 use Aspose\Cells\Cloud\Model\SpreadsheetTemplate;
@@ -802,7 +811,6 @@ use Aspose\Cells\Cloud\Model\DataOutputLocation;
 use Aspose\Cells\Cloud\Model\ExtractTextOptions;
 use Aspose\Cells\Cloud\Model\MergeTableOptions;
 use Aspose\Cells\Cloud\Model\RemoveCharactersByCharacter;
-use Aspose\Cells\Cloud\Model\RemoveCharactersByPosition;
 use Aspose\Cells\Cloud\Model\RemoveCharactersOptions;
 use Aspose\Cells\Cloud\Model\RemoveDuplicatesOptions;
 use Aspose\Cells\Cloud\Model\ScopeItem;
@@ -1637,6 +1645,22 @@ class CellsApi
             }}
 
     /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="RepairSpreadsheetRequest" /></param>
+    public function repairSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
     /// Applies dual-layer password protection to Excel spreadsheets, supporting both open and modify passwords with encryption.
     /// </summary>
     /// <param name="request">Request. <see cref="ProtectSpreadsheetRequest" /></param>
@@ -1658,6 +1682,22 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="UnprotectSpreadsheetRequest" /></param>
     public function unprotectSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="SpreadsheetDigitalsignatureRequest" /></param>
+    public function spreadsheetDigitalsignature( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1845,8 +1885,8 @@ class CellsApi
     /// <summary>
     /// The TrimSpreadsheetContent API is designed to process and trim content within a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting
     /// </summary>
-    /// <param name="request">Request. <see cref="TrimSpreadsheetContentRequest" /></param>
-    public function trimSpreadsheetContent( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="TrimCharacterRequest" /></param>
+    public function trimCharacter( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1860,9 +1900,95 @@ class CellsApi
             }}
 
     /// <summary>
+    /// Specify changing the text case in a spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs.
     /// </summary>
-    /// <param name="request">Request. <see cref="TrimWorksheetRangeRequest" /></param>
-    public function trimWorksheetRange( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="UpdateWordCaseRequest" /></param>
+    public function updateWordCase( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Perform operations or delete any custom characters, character sets, and substrings within a selected range for a specific position.
+    /// </summary>
+    /// <param name="request">Request. <see cref="RemoveCharactersRequest" /></param>
+    public function removeCharacters( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell.
+    /// </summary>
+    /// <param name="request">Request. <see cref="AddTextRequest" /></param>
+    public function addText( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertTextRequest" /></param>
+    public function convertText( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Indicates extracting substrings, text characters, and numbers from a spreadsheet cell into another cell without having to use complex FIND, MIN, LEFT, or RIGHT formulas.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ExtractTextRequest" /></param>
+    public function extractText( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Indicates performing text segmentation on the specified area according to the segmentation method, and outputting to the designated interval.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SplitTextRequest" /></param>
+    public function splitText( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1878,8 +2004,8 @@ class CellsApi
     /// <summary>
     /// Delete all blank rows that do not contain any data or other objects.
     /// </summary>
-    /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankRowsRequest" /></param>
-    public function deleteSpreadsheetBlankRows( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="RemoveSpreadsheetBlankRowsRequest" /></param>
+    public function removeSpreadsheetBlankRows( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1895,8 +2021,8 @@ class CellsApi
     /// <summary>
     /// Delete all blank rows that do not contain any data or other objects.
     /// </summary>
-    /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankColumnsRequest" /></param>
-    public function deleteSpreadsheetBlankColumns( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="RemoveSpreadsheetBlankColumnsRequest" /></param>
+    public function removeSpreadsheetBlankColumns( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1912,8 +2038,24 @@ class CellsApi
     /// <summary>
     /// Delete all blank rows that do not contain any data or other objects.
     /// </summary>
-    /// <param name="request">Request. <see cref="DeleteSpreadsheetBlankWorksheetsRequest" /></param>
-    public function deleteSpreadsheetBlankWorksheets( $request , $localOutPath = null)
+    /// <param name="request">Request. <see cref="RemoveSpreadsheetBlankWorksheetsRequest" /></param>
+    public function removeSpreadsheetBlankWorksheets( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="RemoveDuplicatesRequest" /></param>
+    public function removeDuplicates( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';

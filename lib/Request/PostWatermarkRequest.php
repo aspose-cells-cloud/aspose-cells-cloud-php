@@ -285,7 +285,7 @@ class PostWatermarkRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.9';
+        $defaultHeaders['x-aspose-client-version'] = '25.10';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

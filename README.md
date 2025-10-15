@@ -1,10 +1,6 @@
-![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-25.9-green?style=for-the-badge&logo=php) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/php/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/Examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) ![Packagist PHP Version Support](https://img.shields.io/badge/PHP->7.4-777BB4?style=for-the-badge&logo=php&logoColor=white) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php?style=for-the-badge) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE?style=for-the-badge) [![PHP](https://img.shields.io/badge/Composer-require%20aspose/cells--sdk--php-8892BF?logo=php&style=for-the-badge)](https://packagist.org/packages/aspose/cells-sdk-php) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.9?style=for-the-badge)
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK-25.10-green?style=for-the-badge&logo=php) [![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/php/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-php/tree/master/Examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) ![Packagist PHP Version Support](https://img.shields.io/badge/PHP->7.4-777BB4?style=for-the-badge&logo=php&logoColor=white) ![Packagist Downloads](https://img.shields.io/packagist/dt/aspose/cells-sdk-php?style=for-the-badge) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-go?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-go/blob/master/LICENSE?style=for-the-badge) [![PHP](https://img.shields.io/badge/Composer-require%20aspose/cells--sdk--php-8892BF?logo=php&style=for-the-badge)](https://packagist.org/packages/aspose/cells-sdk-php) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/aspose-cells-cloud/aspose-cells-cloud-php/25.10?style=for-the-badge)
 
-Aspose.Cells Cloud SDK for PHP empowers developers to programmatically manage Excel files with precision. This comprehensive PHP library supports advanced Excel operations like cell data formatting, dynamic formulas, pivot tables, conditional styling, charts, hyperlinks, comments, and data validation. It also enables seamless Excel file conversion (XLSX, CSV, PDF, ODS), document splitting/merging, and file repair. Designed for cloud integration, this API-first solution accelerates spreadsheet automation while ensuring data integrity across platforms like AWS, Azure, and Google Cloud.
-
-## PHP SDK package for Aspose.Cells Cloud
-
-Enhance your PHP applications with [Aspose.Cells Cloud](https://products.aspose.cloud/cells/php) – a powerful, cloud-based SDK that enables seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). Leveraging its robust REST API, developers can effortlessly create, read, edit, convert, and manipulate spreadsheet content programmatically—without requiring any local office software.
+[Aspose.Cells Cloud SDK for PHP](https://products.aspose.cloud/cells/php) is a cloud-first REST API that lets PHP applications create, read, edit, convert, and repair [Excel, ODS, CSV, JSON, and other spreadsheet files](https://docs.aspose.cloud/cells/supported-file-formats/) without installing Microsoft Office. It supports advanced features, including cell formatting, formulas, pivot tables, conditional styling, charts, hyperlinks, comments, data validation, document splitting, and merging, and runs on AWS, Azure, and Google Cloud, while ensuring data integrity.
 
 ## Quick Start Guide
 
@@ -20,7 +16,7 @@ To begin with Aspose.Cells Cloud, here's what you need to do:
    ```json
    {
        "require": {
-           "aspose/cells-cloud": "^25.9"
+           "aspose/cells-cloud": "^25.10"
        }
    }
    ```
@@ -116,15 +112,20 @@ $response = $cellsApi->convertSpreadsheet(new \Aspose\Cells\Cloud\Request\Conver
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version 25.9
+## Feature & Enhancements in Version 25.10
 
 Full list of issues covering all changes in this release:
 
-|**Summary**|**Category**|
-| :- | :- |
-| Support trim spreadsheet content in Cells Cloud 4.0. | Improvement  |
-| Support trim worksheet range content in Cells Cloud 4.0. | Improvement  |
-| Fix few issues about spelling error. | Bug  |
+|**ID**|**Summary**|**Category**|
+| :- | :- | :- |
+| 57421 | Optimize data Transform API: replace delete with remove. | Improvement  |
+| 57574 | Support to update the spreadsheet content words case in Cells Cloud 4.0. | Improvement  |
+| 57575 | Support to remove characters from spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| 57576 | Support to add text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| 57577 | Support to convert text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| 57578 | Support to extract text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| 57579 | Support to extract text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
+| 57580 | Support to split text for spreadsheet content in Cells Cloud 4.0. | Improvement  |
 
 ## Available SDKs
 
@@ -146,4 +147,4 @@ The Aspose.Cells Cloud SDK is available in multiple popular programming language
 
 [![Ruby](https://img.shields.io/badge/Ruby-CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-ruby) [![Ruby](https://img.shields.io/badge/Gem-aspose__cells__cloud-red?logo=ruby&style=for-the-badge)](https://rubygems.org/gems/aspose_cells_cloud)
 
-## [Release history version](HistoryVersion.md)
+## [Release history version](CHANGELOG.md)

@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteSpreadsheetBlankColumnsRequest.cs">
+ * <copyright company="Aspose" file="AddTextRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  DeleteSpreadsheetBlankColumns operation.
+ * Request model for  AddText operation.
  */
 
-class DeleteSpreadsheetBlankColumnsRequest extends BaseApiRequest
+class AddTextRequest extends BaseApiRequest
 {
 
     /*
@@ -57,6 +57,96 @@ class DeleteSpreadsheetBlankColumnsRequest extends BaseApiRequest
     public function setSpreadsheet($value)
     {
         $this->spreadsheet = $value;
+    }
+
+    /*
+    * text : Specify the added text content.
+    */ 
+    public $text;
+
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    public function setText($value)
+    {
+        $this->text = $value;
+    }
+
+    /*
+    * position : Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.  
+    */ 
+    public $position;
+
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($value)
+    {
+        $this->position = $value;
+    }
+
+    /*
+    * selectText : Indicates selecting the specific position to add text based on the content of the text.
+    */ 
+    public $select_text;
+
+    public function getSelectText()
+    {
+        return $this->select_text;
+    }
+
+    public function setSelectText($value)
+    {
+        $this->select_text = $value;
+    }
+
+    /*
+    * skipEmptyCells : Indicates skip empty cells.
+    */ 
+    public $skip_empty_cells;
+
+    public function getSkipEmptyCells()
+    {
+        return $this->skip_empty_cells;
+    }
+
+    public function setSkipEmptyCells($value)
+    {
+        $this->skip_empty_cells = $value;
+    }
+
+    /*
+    * worksheet : Specify the worksheet of spreadsheet.
+    */ 
+    public $worksheet;
+
+    public function getWorksheet()
+    {
+        return $this->worksheet;
+    }
+
+    public function setWorksheet($value)
+    {
+        $this->worksheet = $value;
+    }
+
+    /*
+    * range : Specify the worksheet range of spreadsheet.
+    */ 
+    public $range;
+
+    public function getRange()
+    {
+        return $this->range;
+    }
+
+    public function setRange($value)
+    {
+        $this->range = $value;
     }
 
     /*
@@ -119,9 +209,12 @@ class DeleteSpreadsheetBlankColumnsRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null )
+    public function __construct( $spreadsheet = null,$text = null,$position = null,$select_text = null )
     {        
         $this->spreadsheet = $spreadsheet; 
+        $this->text = $text; 
+        $this->position = $position; 
+        $this->select_text = $select_text; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -129,17 +222,65 @@ class DeleteSpreadsheetBlankColumnsRequest extends BaseApiRequest
         // verify the required parameter 'spreadsheet' is set
         if ($this->spreadsheet === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $spreadsheet when calling DeleteSpreadsheetBlankColumns'
+                'Missing the required parameter $spreadsheet when calling AddText'
             );
         }
 
 
-        $resourcePath = 'v4.0/cells/delete/blank-columns';
+        // verify the required parameter 'text' is set
+        if ($this->text === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $text when calling AddText'
+            );
+        }
+
+
+        // verify the required parameter 'position' is set
+        if ($this->position === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $position when calling AddText'
+            );
+        }
+
+
+        // verify the required parameter 'select_text' is set
+        if ($this->select_text === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $select_text when calling AddText'
+            );
+        }
+
+
+        $resourcePath = 'v4.0/cells/content/add/text';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        // query params : text
+        if ($this->text !== null) {
+            $queryParams['text'] = ObjectSerializer::toQueryValue($this->text);
+        }
+        // query params : position
+        if ($this->position !== null) {
+            $queryParams['position'] = ObjectSerializer::toQueryValue($this->position);
+        }
+        // query params : select_text
+        if ($this->select_text !== null) {
+            $queryParams['selectText'] = ObjectSerializer::toQueryValue($this->select_text);
+        }
+        // query params : skip_empty_cells
+        if ($this->skip_empty_cells !== null) {
+            $queryParams['skipEmptyCells'] = ObjectSerializer::toQueryValue($this->skip_empty_cells);
+        }
+        // query params : worksheet
+        if ($this->worksheet !== null) {
+            $queryParams['worksheet'] = ObjectSerializer::toQueryValue($this->worksheet);
+        }
+        // query params : range
+        if ($this->range !== null) {
+            $queryParams['range'] = ObjectSerializer::toQueryValue($this->range);
+        }
         // query params : out_path
         if ($this->out_path !== null) {
             $queryParams['outPath'] = ObjectSerializer::toQueryValue($this->out_path);
@@ -229,7 +370,7 @@ class DeleteSpreadsheetBlankColumnsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.9';
+        $defaultHeaders['x-aspose-client-version'] = '25.10';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
