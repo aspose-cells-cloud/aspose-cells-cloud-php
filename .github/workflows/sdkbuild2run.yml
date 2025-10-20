@@ -49,5 +49,7 @@ jobs:
       shell: cmd
       run: |
         echo "API Key: ${{ secrets.PRODUCTCLIENTID }}"
-        echo "API Key: $env:CellsCloudClientId  "
-        php .\examples\Example_QuickStart.php
+        echo "API Key: $env:CellsCloudClientId"
+        cd examples
+        composer install --prefer-dist --no-progress
+        php .\Example_QuickStart.php

@@ -7,8 +7,9 @@ use  \Aspose\Cells\Cloud\Model\ScopeOptions;
 use  \Aspose\Cells\Cloud\Model\DataSource;
 use \Aspose\Cells\Cloud\Model\TrimContentOptions;
 
-#get CellsCloudClientId from https://dashboard.aspose.cloud/#/applications
-#get CellsCloudClientSecret from https://dashboard.aspose.cloud/#/applications
+//  get CellsCloudClientId from https://dashboard.aspose.cloud/#/applications
+//  get CellsCloudClientSecret from https://dashboard.aspose.cloud/#/applications
+//  $cellsApi = new CellsApi($CellsCloudClientId,$CellsCloudClientSecret));
 
 $cellsApi = new CellsApi(getenv("CellsCloudClientId"),getenv("CellsCloudClientSecret"));
 $dataSource = new DataSource( );

@@ -25,12 +25,12 @@ if (!$response->getExists())
 }
 $response = $instance->objectExists( new ObjectExistsRequest( $RemoteFolder ."/" . $CompanySalesXlsx));
 if (!$response->getExists()) {
-    $instance->uploadFile(new  UploadFileRequest( "examples\\".$CompanySalesXlsx ,$RemoteFolder ."/" . $CompanySalesXlsx));
+    $instance->uploadFile(new  UploadFileRequest($CompanySalesXlsx ,$RemoteFolder ."/" . $CompanySalesXlsx));
     print("Upload file $CompanySalesXlsx.");
 }
 $response = $instance->objectExists( new ObjectExistsRequest( $RemoteFolder ."/" . $EmployeeSalesSummaryXlsx));
 if (!$response->getExists()) {
-    $instance->uploadFile(new  UploadFileRequest( "examples\\".$EmployeeSalesSummaryXlsx ,$RemoteFolder ."/" . $EmployeeSalesSummaryXlsx));
+    $instance->uploadFile(new  UploadFileRequest($EmployeeSalesSummaryXlsx ,$RemoteFolder ."/" . $EmployeeSalesSummaryXlsx));
     print("Upload file $EmployeeSalesSummaryXlsx.");
 }
 $instance->createFolder(new  CreateFolderRequest($RemoteFolder."/CellsCloud") );
@@ -39,7 +39,7 @@ $instance->copyFile(new CopyFileRequest( $RemoteFolder."/CompanySales.xlsx",$Rem
 $instance->copyFolder(new CopyFolderRequest($RemoteFolder."/CellsCloud2",$RemoteFolder."/CellsCloud" ));
 $filesList = $instance->getFilesList(new GetFilesListRequest( $RemoteFolder."/CellsCloud"));
 print($filesList->getValue());
-foreach($filesList->getValue() as $stroageFile)
-{
-    print ($stroageFile->getName());
-}
+// foreach($filesList->getValue() as $stroageFile)
+// {
+//     print ($stroageFile->getName());
+// }
