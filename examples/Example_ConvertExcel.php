@@ -12,7 +12,8 @@ use \Aspose\Cells\Cloud\Request\DownloadFileRequest;
 use \Aspose\Cells\Cloud\Request\ConvertChartToImageRequest;
 use \Aspose\Cells\Cloud\Request\ConvertRangeToImageRequest;
 use \Aspose\Cells\Cloud\Request\ConvertTableToPdfRequest;
-
+use \Aspose\Cells\Cloud\Request\ConvertTableToJsonRequest;
+use \Aspose\Cells\Cloud\Request\ConvertRangeToHtmlRequest;
 
 $EmployeeSalesSummaryXlsx = "EmployeeSalesSummary.xlsx";
 
@@ -74,9 +75,21 @@ $request->setRange( "B28:L36");
 $request->setFormat( "svg");
 $instance->convertRangeToImage($request, "convert-range-out.svg");
 
+$request = new ConvertRangeToHtmlRequest();
+$request->setSpreadsheet( $EmployeeSalesSummaryXlsx);
+$request->setWorksheet( "Sales");
+$request->setRange( "B28:L36");
+$instance->convertRangeToImage($request, "convert-range-out.html");
+
 
 $request = new ConvertTableToPdfRequest();
 $request->setSpreadsheet( $EmployeeSalesSummaryXlsx);
 $request->setWorksheet( "SalesChartData");
 $request->setTableName( "Table1");
 $instance->convertTableToPdf($request, "convert-table-out.pdf");
+
+$request = new ConvertTableToJsonRequest();
+$request->setSpreadsheet( $EmployeeSalesSummaryXlsx);
+$request->setWorksheet( "SalesChartData");
+$request->setTableName( "Table1");
+$instance->convertTableToJson($request, "convert-table-out.json");
