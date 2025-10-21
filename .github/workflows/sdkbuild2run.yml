@@ -58,4 +58,5 @@ jobs:
         php .\Example_ConvertExcel.php
         php .\Example_FixExcelSpacesAndLineBreaks.php
         php .\Example_ExcelSplit.php
-        
+        php .\Example_TextProcessing.php
+        php .\Example_DataCleaning.php
