@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class PostAddTextContentRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * addTextOptions : that specifies the text content and the position where the text should be added.
@@ -80,6 +86,11 @@ class PostAddTextContentRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
+        }
     // body params
         $_tempBody = null;
         $_tempBodyName =null;
@@ -146,7 +157,7 @@ class PostAddTextContentRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

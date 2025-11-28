@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class SearchBrokenLinksInRemoteRangeRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * name : The name of the workbook file to be search.
@@ -182,7 +188,7 @@ class SearchBrokenLinksInRemoteRangeRequest extends BaseApiRequest
         }
 
 
-        $resourcePath = 'v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}search/broken-links';
+        $resourcePath = 'v4.0/cells/{name}/worksheets/{worksheet}/ranges/{cellArea}/search/broken-links';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -227,6 +233,11 @@ class SearchBrokenLinksInRemoteRangeRequest extends BaseApiRequest
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
     // body params
         $_tempBody = null;
@@ -290,7 +301,7 @@ class SearchBrokenLinksInRemoteRangeRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

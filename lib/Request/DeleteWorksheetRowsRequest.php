@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class DeleteWorksheetRowsRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * name : The file name.
@@ -224,6 +230,11 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
         if ($this->storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
         }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
+        }
     // body params
         $_tempBody = null;
         $_tempBodyName =null;
@@ -286,7 +297,7 @@ class DeleteWorksheetRowsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

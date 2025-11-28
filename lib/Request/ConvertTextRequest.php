@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class ConvertTextRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * Spreadsheet : Upload spreadsheet file.
@@ -194,12 +200,10 @@ class ConvertTextRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null,$convert_text_type = null,$source_characters = null,$target_characters = null )
+    public function __construct( $spreadsheet = null,$convert_text_type = null )
     {        
         $this->spreadsheet = $spreadsheet; 
         $this->convert_text_type = $convert_text_type; 
-        $this->source_characters = $source_characters; 
-        $this->target_characters = $target_characters; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -216,22 +220,6 @@ class ConvertTextRequest extends BaseApiRequest
         if ($this->convert_text_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $convert_text_type when calling ConvertText'
-            );
-        }
-
-
-        // verify the required parameter 'source_characters' is set
-        if ($this->source_characters === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $source_characters when calling ConvertText'
-            );
-        }
-
-
-        // verify the required parameter 'target_characters' is set
-        if ($this->target_characters === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $target_characters when calling ConvertText'
             );
         }
 
@@ -277,6 +265,11 @@ class ConvertTextRequest extends BaseApiRequest
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
         if ($this->spreadsheet !== null) {
             $multipart = true;
@@ -351,7 +344,7 @@ class ConvertTextRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

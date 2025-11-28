@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class RemoveCharactersRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * Spreadsheet : Upload spreadsheet file.
@@ -57,66 +63,6 @@ class RemoveCharactersRequest extends BaseApiRequest
     public function setSpreadsheet($value)
     {
         $this->spreadsheet = $value;
-    }
-
-    /*
-    * theFirstNCharacters : Specify removing the first n characters from selected cells.
-    */ 
-    public $the_first_n_characters;
-
-    public function getTheFirstNCharacters()
-    {
-        return $this->the_first_n_characters;
-    }
-
-    public function setTheFirstNCharacters($value)
-    {
-        $this->the_first_n_characters = $value;
-    }
-
-    /*
-    * theLastNCharacters : Specify removing the last n characters from selected cells.
-    */ 
-    public $the_last_n_characters;
-
-    public function getTheLastNCharacters()
-    {
-        return $this->the_last_n_characters;
-    }
-
-    public function setTheLastNCharacters($value)
-    {
-        $this->the_last_n_characters = $value;
-    }
-
-    /*
-    * allCharactersBeforeText : Specify using targeted removal options to delete text that is located before certain characters.
-    */ 
-    public $all_characters_before_text;
-
-    public function getAllCharactersBeforeText()
-    {
-        return $this->all_characters_before_text;
-    }
-
-    public function setAllCharactersBeforeText($value)
-    {
-        $this->all_characters_before_text = $value;
-    }
-
-    /*
-    * allCharactersAfterText : Specify using targeted removal options to delete text that is located after certain characters.
-    */ 
-    public $all_characters_after_text;
-
-    public function getAllCharactersAfterText()
-    {
-        return $this->all_characters_after_text;
-    }
-
-    public function setAllCharactersAfterText($value)
-    {
-        $this->all_characters_after_text = $value;
     }
 
     /*
@@ -162,6 +108,21 @@ class RemoveCharactersRequest extends BaseApiRequest
     public function setRemoveCustomValue($value)
     {
         $this->remove_custom_value = $value;
+    }
+
+    /*
+    * caseSensitive : 
+    */ 
+    public $case_sensitive;
+
+    public function getCaseSensitive()
+    {
+        return $this->case_sensitive;
+    }
+
+    public function setCaseSensitive($value)
+    {
+        $this->case_sensitive = $value;
     }
 
     /*
@@ -254,18 +215,9 @@ class RemoveCharactersRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null,$the_first_n_characters = null,$the_last_n_characters = null,$all_characters_before_text = null,$all_characters_after_text = null,$remove_text_method = null,$character_sets = null,$remove_custom_value = null,$worksheet = null,$range = null )
+    public function __construct( $spreadsheet = null )
     {        
         $this->spreadsheet = $spreadsheet; 
-        $this->the_first_n_characters = $the_first_n_characters; 
-        $this->the_last_n_characters = $the_last_n_characters; 
-        $this->all_characters_before_text = $all_characters_before_text; 
-        $this->all_characters_after_text = $all_characters_after_text; 
-        $this->remove_text_method = $remove_text_method; 
-        $this->character_sets = $character_sets; 
-        $this->remove_custom_value = $remove_custom_value; 
-        $this->worksheet = $worksheet; 
-        $this->range = $range; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -278,100 +230,12 @@ class RemoveCharactersRequest extends BaseApiRequest
         }
 
 
-        // verify the required parameter 'the_first_n_characters' is set
-        if ($this->the_first_n_characters === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $the_first_n_characters when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'the_last_n_characters' is set
-        if ($this->the_last_n_characters === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $the_last_n_characters when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'all_characters_before_text' is set
-        if ($this->all_characters_before_text === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $all_characters_before_text when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'all_characters_after_text' is set
-        if ($this->all_characters_after_text === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $all_characters_after_text when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'remove_text_method' is set
-        if ($this->remove_text_method === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $remove_text_method when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'character_sets' is set
-        if ($this->character_sets === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $character_sets when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'remove_custom_value' is set
-        if ($this->remove_custom_value === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $remove_custom_value when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'worksheet' is set
-        if ($this->worksheet === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $worksheet when calling RemoveCharacters'
-            );
-        }
-
-
-        // verify the required parameter 'range' is set
-        if ($this->range === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $range when calling RemoveCharacters'
-            );
-        }
-
-
         $resourcePath = 'v4.0/cells/content/remove/characters';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : the_first_n_characters
-        if ($this->the_first_n_characters !== null) {
-            $queryParams['theFirstNCharacters'] = ObjectSerializer::toQueryValue($this->the_first_n_characters);
-        }
-        // query params : the_last_n_characters
-        if ($this->the_last_n_characters !== null) {
-            $queryParams['theLastNCharacters'] = ObjectSerializer::toQueryValue($this->the_last_n_characters);
-        }
-        // query params : all_characters_before_text
-        if ($this->all_characters_before_text !== null) {
-            $queryParams['allCharactersBeforeText'] = ObjectSerializer::toQueryValue($this->all_characters_before_text);
-        }
-        // query params : all_characters_after_text
-        if ($this->all_characters_after_text !== null) {
-            $queryParams['allCharactersAfterText'] = ObjectSerializer::toQueryValue($this->all_characters_after_text);
-        }
         // query params : remove_text_method
         if ($this->remove_text_method !== null) {
             $queryParams['removeTextMethod'] = ObjectSerializer::toQueryValue($this->remove_text_method);
@@ -383,6 +247,10 @@ class RemoveCharactersRequest extends BaseApiRequest
         // query params : remove_custom_value
         if ($this->remove_custom_value !== null) {
             $queryParams['removeCustomValue'] = ObjectSerializer::toQueryValue($this->remove_custom_value);
+        }
+        // query params : case_sensitive
+        if ($this->case_sensitive !== null) {
+            $queryParams['caseSensitive'] = ObjectSerializer::toQueryValue($this->case_sensitive);
         }
         // query params : worksheet
         if ($this->worksheet !== null) {
@@ -407,6 +275,11 @@ class RemoveCharactersRequest extends BaseApiRequest
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
         if ($this->spreadsheet !== null) {
             $multipart = true;
@@ -481,7 +354,7 @@ class RemoveCharactersRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

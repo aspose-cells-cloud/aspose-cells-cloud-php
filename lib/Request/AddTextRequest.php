@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class AddTextRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * Spreadsheet : Upload spreadsheet file.
@@ -209,12 +215,11 @@ class AddTextRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null,$text = null,$position = null,$select_text = null )
+    public function __construct( $spreadsheet = null,$text = null,$position = null )
     {        
         $this->spreadsheet = $spreadsheet; 
         $this->text = $text; 
         $this->position = $position; 
-        $this->select_text = $select_text; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -239,14 +244,6 @@ class AddTextRequest extends BaseApiRequest
         if ($this->position === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $position when calling AddText'
-            );
-        }
-
-
-        // verify the required parameter 'select_text' is set
-        if ($this->select_text === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $select_text when calling AddText'
             );
         }
 
@@ -296,6 +293,11 @@ class AddTextRequest extends BaseApiRequest
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
         if ($this->spreadsheet !== null) {
             $multipart = true;
@@ -370,7 +372,7 @@ class AddTextRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

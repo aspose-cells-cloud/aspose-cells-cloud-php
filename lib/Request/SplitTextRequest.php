@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class SplitTextRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * Spreadsheet : Upload spreadsheet file.
@@ -60,33 +66,18 @@ class SplitTextRequest extends BaseApiRequest
     }
 
     /*
-    * splitDelimitersType : Indicates split delimiters type.
+    * delimiters : Indicates the custom delimiter.
     */ 
-    public $split_delimiters_type;
+    public $delimiters;
 
-    public function getSplitDelimitersType()
+    public function getDelimiters()
     {
-        return $this->split_delimiters_type;
+        return $this->delimiters;
     }
 
-    public function setSplitDelimitersType($value)
+    public function setDelimiters($value)
     {
-        $this->split_delimiters_type = $value;
-    }
-
-    /*
-    * customDelimiter : Indicates the custom delimiter.
-    */ 
-    public $custom_delimiter;
-
-    public function getCustomDelimiter()
-    {
-        return $this->custom_delimiter;
-    }
-
-    public function setCustomDelimiter($value)
-    {
-        $this->custom_delimiter = $value;
+        $this->delimiters = $value;
     }
 
     /*
@@ -132,6 +123,21 @@ class SplitTextRequest extends BaseApiRequest
     public function setHowToSplit($value)
     {
         $this->how_to_split = $value;
+    }
+
+    /*
+    * outPositionRange : Indicates split delimiters type.
+    */ 
+    public $out_position_range;
+
+    public function getOutPositionRange()
+    {
+        return $this->out_position_range;
+    }
+
+    public function setOutPositionRange($value)
+    {
+        $this->out_position_range = $value;
     }
 
     /*
@@ -224,14 +230,10 @@ class SplitTextRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null,$split_delimiters_type = null,$custom_delimiter = null,$keep_delimiters_in_resulting_cells = null,$keep_delimiters_position = null,$how_to_split = null )
+    public function __construct( $spreadsheet = null,$delimiters = null )
     {        
         $this->spreadsheet = $spreadsheet; 
-        $this->split_delimiters_type = $split_delimiters_type; 
-        $this->custom_delimiter = $custom_delimiter; 
-        $this->keep_delimiters_in_resulting_cells = $keep_delimiters_in_resulting_cells; 
-        $this->keep_delimiters_position = $keep_delimiters_position; 
-        $this->how_to_split = $how_to_split; 
+        $this->delimiters = $delimiters; 
     }
 
     public function createHttpRequest($headerSelector,$config)
@@ -244,42 +246,10 @@ class SplitTextRequest extends BaseApiRequest
         }
 
 
-        // verify the required parameter 'split_delimiters_type' is set
-        if ($this->split_delimiters_type === null) {
+        // verify the required parameter 'delimiters' is set
+        if ($this->delimiters === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $split_delimiters_type when calling SplitText'
-            );
-        }
-
-
-        // verify the required parameter 'custom_delimiter' is set
-        if ($this->custom_delimiter === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $custom_delimiter when calling SplitText'
-            );
-        }
-
-
-        // verify the required parameter 'keep_delimiters_in_resulting_cells' is set
-        if ($this->keep_delimiters_in_resulting_cells === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $keep_delimiters_in_resulting_cells when calling SplitText'
-            );
-        }
-
-
-        // verify the required parameter 'keep_delimiters_position' is set
-        if ($this->keep_delimiters_position === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $keep_delimiters_position when calling SplitText'
-            );
-        }
-
-
-        // verify the required parameter 'how_to_split' is set
-        if ($this->how_to_split === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $how_to_split when calling SplitText'
+                'Missing the required parameter $delimiters when calling SplitText'
             );
         }
 
@@ -290,13 +260,9 @@ class SplitTextRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : split_delimiters_type
-        if ($this->split_delimiters_type !== null) {
-            $queryParams['splitDelimitersType'] = ObjectSerializer::toQueryValue($this->split_delimiters_type);
-        }
-        // query params : custom_delimiter
-        if ($this->custom_delimiter !== null) {
-            $queryParams['customDelimiter'] = ObjectSerializer::toQueryValue($this->custom_delimiter);
+        // query params : delimiters
+        if ($this->delimiters !== null) {
+            $queryParams['delimiters'] = ObjectSerializer::toQueryValue($this->delimiters);
         }
         // query params : keep_delimiters_in_resulting_cells
         if ($this->keep_delimiters_in_resulting_cells !== null) {
@@ -309,6 +275,10 @@ class SplitTextRequest extends BaseApiRequest
         // query params : how_to_split
         if ($this->how_to_split !== null) {
             $queryParams['HowToSplit'] = ObjectSerializer::toQueryValue($this->how_to_split);
+        }
+        // query params : out_position_range
+        if ($this->out_position_range !== null) {
+            $queryParams['outPositionRange'] = ObjectSerializer::toQueryValue($this->out_position_range);
         }
         // query params : worksheet
         if ($this->worksheet !== null) {
@@ -333,6 +303,11 @@ class SplitTextRequest extends BaseApiRequest
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
         if ($this->spreadsheet !== null) {
             $multipart = true;
@@ -407,7 +382,7 @@ class SplitTextRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

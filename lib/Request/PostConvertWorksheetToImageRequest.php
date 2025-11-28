@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class PostConvertWorksheetToImageRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * convertWorksheetOptions : 
@@ -98,6 +104,11 @@ class PostConvertWorksheetToImageRequest extends BaseApiRequest
         // query params : fonts_location
         if ($this->fonts_location !== null) {
             $queryParams['FontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
     // body params
         $_tempBody = null;
@@ -165,7 +176,7 @@ class PostConvertWorksheetToImageRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

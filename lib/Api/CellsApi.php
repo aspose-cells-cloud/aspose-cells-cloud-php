@@ -37,6 +37,8 @@ use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
+use Aspose\Cells\Cloud\Request\TranslationSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\TranslateTextFileRequest;
 use Aspose\Cells\Cloud\Request\AggregateCellsByColorRequest;
 use Aspose\Cells\Cloud\Request\MathCalculateRequest;
 use Aspose\Cells\Cloud\Request\PostAccessTokenRequest;
@@ -49,6 +51,7 @@ use Aspose\Cells\Cloud\Request\ExportTableAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ExportRangeAsFormatRequest;
 use Aspose\Cells\Cloud\Request\ConvertSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToPdfRequest;
+use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToJsonRequest;
 use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToCsvRequest;
 use Aspose\Cells\Cloud\Request\ConvertWorksheetToImageRequest;
 use Aspose\Cells\Cloud\Request\ConvertWorksheetToPdfRequest;
@@ -99,6 +102,8 @@ use Aspose\Cells\Cloud\Request\CodegenSpecRequest;
 use Aspose\Cells\Cloud\Request\TrimCharacterRequest;
 use Aspose\Cells\Cloud\Request\UpdateWordCaseRequest;
 use Aspose\Cells\Cloud\Request\RemoveCharactersRequest;
+use Aspose\Cells\Cloud\Request\RemoveCharactersByPositionRequest;
+use Aspose\Cells\Cloud\Request\RemoveDuplicateSubstringsRequest;
 use Aspose\Cells\Cloud\Request\AddTextRequest;
 use Aspose\Cells\Cloud\Request\ConvertTextRequest;
 use Aspose\Cells\Cloud\Request\ExtractTextRequest;
@@ -978,6 +983,39 @@ class CellsApi
     }
 
     /// <summary>
+    /// Translates the entire spreadsheet to the specified target language.
+    /// </summary>
+    /// <param name="request">Request. <see cref="TranslationSpreadsheetRequest" /></param>
+    public function translationSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="TranslateTextFileRequest" /></param>
+    public function translateTextFile( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
     /// The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions.
     /// </summary>
     /// <param name="request">Request. <see cref="AggregateCellsByColorRequest" /></param>
@@ -1149,6 +1187,22 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="ConvertSpreadsheetToPdfRequest" /></param>
     public function convertSpreadsheetToPdf( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertSpreadsheetToJsonRequest" /></param>
+    public function convertSpreadsheetToJson( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1917,10 +1971,44 @@ class CellsApi
             }}
 
     /// <summary>
-    /// Perform operations or delete any custom characters, character sets, and substrings within a selected range for a specific position.
+    /// Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation.
     /// </summary>
     /// <param name="request">Request. <see cref="RemoveCharactersRequest" /></param>
     public function removeCharacters( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation.
+    /// </summary>
+    /// <param name="request">Request. <see cref="RemoveCharactersByPositionRequest" /></param>
+    public function removeCharactersByPosition( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation.
+    /// </summary>
+    /// <param name="request">Request. <see cref="RemoveDuplicateSubstringsRequest" /></param>
+    public function removeDuplicateSubstrings( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';

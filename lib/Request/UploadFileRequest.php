@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class UploadFileRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * UploadFiles : Upload files to cloud storage.
@@ -131,6 +137,11 @@ class UploadFileRequest extends BaseApiRequest
         if ($this->storage_name !== null) {
             $queryParams['storageName'] = ObjectSerializer::toQueryValue($this->storage_name);
         }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
+        }
         if ($this->upload_files !== null) {
             $multipart = true;
             if( is_array($this->upload_files)){
@@ -204,7 +215,7 @@ class UploadFileRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class ExtractTextRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * Spreadsheet : Upload spreadsheet file.
@@ -72,6 +78,21 @@ class ExtractTextRequest extends BaseApiRequest
     public function setExtractTextType($value)
     {
         $this->extract_text_type = $value;
+    }
+
+    /*
+    * outPositionRange : Indicates the output location for the extracted text.
+    */ 
+    public $out_position_range;
+
+    public function getOutPositionRange()
+    {
+        return $this->out_position_range;
+    }
+
+    public function setOutPositionRange($value)
+    {
+        $this->out_position_range = $value;
     }
 
     /*
@@ -132,21 +153,6 @@ class ExtractTextRequest extends BaseApiRequest
     public function setAfterPosition($value)
     {
         $this->after_position = $value;
-    }
-
-    /*
-    * outPositionRange : Indicates the output location for the extracted text.
-    */ 
-    public $out_position_range;
-
-    public function getOutPositionRange()
-    {
-        return $this->out_position_range;
-    }
-
-    public function setOutPositionRange($value)
-    {
-        $this->out_position_range = $value;
     }
 
     /*
@@ -239,14 +245,10 @@ class ExtractTextRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct( $spreadsheet = null,$extract_text_type = null,$before_text = null,$after_text = null,$before_position = null,$after_position = null,$out_position_range = null )
+    public function __construct( $spreadsheet = null,$extract_text_type = null,$out_position_range = null )
     {        
         $this->spreadsheet = $spreadsheet; 
         $this->extract_text_type = $extract_text_type; 
-        $this->before_text = $before_text; 
-        $this->after_text = $after_text; 
-        $this->before_position = $before_position; 
-        $this->after_position = $after_position; 
         $this->out_position_range = $out_position_range; 
     }
 
@@ -264,38 +266,6 @@ class ExtractTextRequest extends BaseApiRequest
         if ($this->extract_text_type === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $extract_text_type when calling ExtractText'
-            );
-        }
-
-
-        // verify the required parameter 'before_text' is set
-        if ($this->before_text === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $before_text when calling ExtractText'
-            );
-        }
-
-
-        // verify the required parameter 'after_text' is set
-        if ($this->after_text === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $after_text when calling ExtractText'
-            );
-        }
-
-
-        // verify the required parameter 'before_position' is set
-        if ($this->before_position === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $before_position when calling ExtractText'
-            );
-        }
-
-
-        // verify the required parameter 'after_position' is set
-        if ($this->after_position === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $after_position when calling ExtractText'
             );
         }
 
@@ -318,6 +288,10 @@ class ExtractTextRequest extends BaseApiRequest
         if ($this->extract_text_type !== null) {
             $queryParams['extractTextType'] = ObjectSerializer::toQueryValue($this->extract_text_type);
         }
+        // query params : out_position_range
+        if ($this->out_position_range !== null) {
+            $queryParams['outPositionRange'] = ObjectSerializer::toQueryValue($this->out_position_range);
+        }
         // query params : before_text
         if ($this->before_text !== null) {
             $queryParams['beforeText'] = ObjectSerializer::toQueryValue($this->before_text);
@@ -333,10 +307,6 @@ class ExtractTextRequest extends BaseApiRequest
         // query params : after_position
         if ($this->after_position !== null) {
             $queryParams['afterPosition'] = ObjectSerializer::toQueryValue($this->after_position);
-        }
-        // query params : out_position_range
-        if ($this->out_position_range !== null) {
-            $queryParams['outPositionRange'] = ObjectSerializer::toQueryValue($this->out_position_range);
         }
         // query params : worksheet
         if ($this->worksheet !== null) {
@@ -361,6 +331,11 @@ class ExtractTextRequest extends BaseApiRequest
         // query params : password
         if ($this->password !== null) {
             $queryParams['password'] = ObjectSerializer::toQueryValue($this->password);
+        }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
         }
         if ($this->spreadsheet !== null) {
             $multipart = true;
@@ -435,7 +410,7 @@ class ExtractTextRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

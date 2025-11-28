@@ -43,6 +43,12 @@ use Asapose\Cells\Cloud\Configuration;
 
 class PostClearObjectsRequest extends BaseApiRequest
 {
+    public $expandQueryParameters;
+
+    public function setExpandQueryParameters($name,$value)
+    {
+        $this->expandQueryParameters[$name] = $value;
+    }
 
     /*
     * File : File to upload
@@ -203,6 +209,11 @@ class PostClearObjectsRequest extends BaseApiRequest
         if ($this->region !== null) {
             $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
         }
+        if( $this->expandQueryParameters !== null){
+            foreach($this->expandQueryParameters as $queryName => $queryValue) {
+                $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
+            }
+        }
         if ($this->file !== null) {
             $multipart = true;
             if( is_array($this->file)){
@@ -276,7 +287,7 @@ class PostClearObjectsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.10';
+        $defaultHeaders['x-aspose-client-version'] = '25.11';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
