@@ -1,6 +1,6 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="CreateSpreadsheetRequest.cs">
+ * <copyright company="Aspose" file="SplitTableRequest.cs">
  *   Copyright (c) 2025 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -38,10 +38,10 @@ use Aspose\Cells\Cloud\HeaderSelector;
 use Asapose\Cells\Cloud\Configuration;
 
 /*
- * Request model for  CreateSpreadsheet operation.
+ * Request model for  SplitTable operation.
  */
 
-class CreateSpreadsheetRequest extends BaseApiRequest
+class SplitTableRequest extends BaseApiRequest
 {
     public $expandQueryParameters;
 
@@ -51,33 +51,108 @@ class CreateSpreadsheetRequest extends BaseApiRequest
     }
 
     /*
-    * format : Specifies the name of the new spreadsheet. This name will be used to identify the spreadsheet in the system.
+    * Spreadsheet : Upload spreadsheet file.
     */ 
-    public $format;
+    public $spreadsheet;
 
-    public function getFormat()
+    public function getSpreadsheet()
     {
-        return $this->format;
+        return $this->spreadsheet;
     }
 
-    public function setFormat($value)
+    public function setSpreadsheet($value)
     {
-        $this->format = $value;
+        $this->spreadsheet = $value;
     }
 
     /*
-    * template : template: Optional.If provided, the new spreadsheet will be created based on the specified template.This can be useful for applying predefined layouts and styles.
+    * worksheet : Worksheet containing the table.
     */ 
-    public $template;
+    public $worksheet;
 
-    public function getTemplate()
+    public function getWorksheet()
     {
-        return $this->template;
+        return $this->worksheet;
     }
 
-    public function setTemplate($value)
+    public function setWorksheet($value)
     {
-        $this->template = $value;
+        $this->worksheet = $value;
+    }
+
+    /*
+    * tableName : Data table that needs to be split.
+    */ 
+    public $table_name;
+
+    public function getTableName()
+    {
+        return $this->table_name;
+    }
+
+    public function setTableName($value)
+    {
+        $this->table_name = $value;
+    }
+
+    /*
+    * splitColumnName : Column name to split by.
+    */ 
+    public $split_column_name;
+
+    public function getSplitColumnName()
+    {
+        return $this->split_column_name;
+    }
+
+    public function setSplitColumnName($value)
+    {
+        $this->split_column_name = $value;
+    }
+
+    /*
+    * saveSplitColumn : Whether to keep the data in the split column.
+    */ 
+    public $save_split_column;
+
+    public function getSaveSplitColumn()
+    {
+        return $this->save_split_column;
+    }
+
+    public function setSaveSplitColumn($value)
+    {
+        $this->save_split_column = $value;
+    }
+
+    /*
+    * toNewWorkbook : Export destination control: true - Creates new workbook files containing the split data; false - Adds a new worksheet to the current workbook.
+    */ 
+    public $to_new_workbook;
+
+    public function getToNewWorkbook()
+    {
+        return $this->to_new_workbook;
+    }
+
+    public function setToNewWorkbook($value)
+    {
+        $this->to_new_workbook = $value;
+    }
+
+    /*
+    * toMultipleFiles : true - Exports table data as **multiple separate files** (returned as ZIP archive);false - Stores all data in a **single file** with multiple sheets. Default: false.
+    */ 
+    public $to_multiple_files;
+
+    public function getToMultipleFiles()
+    {
+        return $this->to_multiple_files;
+    }
+
+    public function setToMultipleFiles($value)
+    {
+        $this->to_multiple_files = $value;
     }
 
     /*
@@ -111,6 +186,21 @@ class CreateSpreadsheetRequest extends BaseApiRequest
     }
 
     /*
+    * fontsLocation : Use Custom fonts.
+    */ 
+    public $fonts_location;
+
+    public function getFontsLocation()
+    {
+        return $this->fonts_location;
+    }
+
+    public function setFontsLocation($value)
+    {
+        $this->fonts_location = $value;
+    }
+
+    /*
     * region : The spreadsheet region setting.
     */ 
     public $region;
@@ -140,26 +230,104 @@ class CreateSpreadsheetRequest extends BaseApiRequest
         $this->password = $value;
     }
 
-    public function __construct(  )
+    public function __construct( $spreadsheet = null,$worksheet = null,$table_name = null,$split_column_name = null,$save_split_column = null,$to_new_workbook = null,$to_multiple_files = null )
     {        
+        $this->spreadsheet = $spreadsheet; 
+        $this->worksheet = $worksheet; 
+        $this->table_name = $table_name; 
+        $this->split_column_name = $split_column_name; 
+        $this->save_split_column = $save_split_column; 
+        $this->to_new_workbook = $to_new_workbook; 
+        $this->to_multiple_files = $to_multiple_files; 
     }
 
     public function createHttpRequest($headerSelector,$config)
     {
+        // verify the required parameter 'spreadsheet' is set
+        if ($this->spreadsheet === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $spreadsheet when calling SplitTable'
+            );
+        }
 
-        $resourcePath = 'v4.0/cells/spreadsheet/create';
+
+        // verify the required parameter 'worksheet' is set
+        if ($this->worksheet === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $worksheet when calling SplitTable'
+            );
+        }
+
+
+        // verify the required parameter 'table_name' is set
+        if ($this->table_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $table_name when calling SplitTable'
+            );
+        }
+
+
+        // verify the required parameter 'split_column_name' is set
+        if ($this->split_column_name === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $split_column_name when calling SplitTable'
+            );
+        }
+
+
+        // verify the required parameter 'save_split_column' is set
+        if ($this->save_split_column === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $save_split_column when calling SplitTable'
+            );
+        }
+
+
+        // verify the required parameter 'to_new_workbook' is set
+        if ($this->to_new_workbook === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_new_workbook when calling SplitTable'
+            );
+        }
+
+
+        // verify the required parameter 'to_multiple_files' is set
+        if ($this->to_multiple_files === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $to_multiple_files when calling SplitTable'
+            );
+        }
+
+
+        $resourcePath = 'v4.0/cells/split/table';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : format
-        if ($this->format !== null) {
-            $queryParams['format'] = ObjectSerializer::toQueryValue($this->format);
+        // query params : worksheet
+        if ($this->worksheet !== null) {
+            $queryParams['worksheet'] = ObjectSerializer::toQueryValue($this->worksheet);
         }
-        // query params : template
-        if ($this->template !== null) {
-            $queryParams['template'] = ObjectSerializer::toQueryValue($this->template);
+        // query params : table_name
+        if ($this->table_name !== null) {
+            $queryParams['tableName'] = ObjectSerializer::toQueryValue($this->table_name);
+        }
+        // query params : split_column_name
+        if ($this->split_column_name !== null) {
+            $queryParams['splitColumnName'] = ObjectSerializer::toQueryValue($this->split_column_name);
+        }
+        // query params : save_split_column
+        if ($this->save_split_column !== null) {
+            $queryParams['saveSplitColumn'] = ObjectSerializer::toQueryValue($this->save_split_column);
+        }
+        // query params : to_new_workbook
+        if ($this->to_new_workbook !== null) {
+            $queryParams['toNewWorkbook'] = ObjectSerializer::toQueryValue($this->to_new_workbook);
+        }
+        // query params : to_multiple_files
+        if ($this->to_multiple_files !== null) {
+            $queryParams['toMultipleFiles'] = ObjectSerializer::toQueryValue($this->to_multiple_files);
         }
         // query params : out_path
         if ($this->out_path !== null) {
@@ -168,6 +336,10 @@ class CreateSpreadsheetRequest extends BaseApiRequest
         // query params : out_storage_name
         if ($this->out_storage_name !== null) {
             $queryParams['outStorageName'] = ObjectSerializer::toQueryValue($this->out_storage_name);
+        }
+        // query params : fonts_location
+        if ($this->fonts_location !== null) {
+            $queryParams['fontsLocation'] = ObjectSerializer::toQueryValue($this->fonts_location);
         }
         // query params : region
         if ($this->region !== null) {
@@ -182,6 +354,17 @@ class CreateSpreadsheetRequest extends BaseApiRequest
                 $queryParams[$queryName] = ObjectSerializer::toQueryValue($queryValue);
             }
         }
+        if ($this->spreadsheet !== null) {
+            $multipart = true;
+            if( is_array($this->spreadsheet)){
+                foreach($this->spreadsheet as $key => $value) {
+                    $formParams[basename($key)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($value), 'rb');
+                }
+            }else {
+                $formParams[basename($this->spreadsheet)] = \GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($this->spreadsheet), 'rb');
+            }
+        }
+
     // body params
         $_tempBody = null;
         $_tempBodyName =null;

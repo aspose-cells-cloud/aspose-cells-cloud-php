@@ -72,6 +72,7 @@ use Aspose\Cells\Cloud\Request\MergeSpreadsheetsRequest;
 use Aspose\Cells\Cloud\Request\MergeSpreadsheetsInRemoteFolderRequest;
 use Aspose\Cells\Cloud\Request\MergeRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SplitSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\SplitTableRequest;
 use Aspose\Cells\Cloud\Request\SplitRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\ImportDataIntoSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
@@ -1538,6 +1539,23 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="SplitSpreadsheetRequest" /></param>
     public function splitSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Split an Excel worksheet into multiple sheets by column value.
+    /// </summary>
+    /// <param name="request">Request. <see cref="SplitTableRequest" /></param>
+    public function splitTable( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';

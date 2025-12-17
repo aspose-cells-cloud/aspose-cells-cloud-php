@@ -66,7 +66,7 @@ class RemoveDuplicateSubstringsRequest extends BaseApiRequest
     }
 
     /*
-    * delimiters : 
+    * delimiters : comma, semicolon, space, tab, line-break 
     */ 
     public $delimiters;
 
@@ -81,7 +81,7 @@ class RemoveDuplicateSubstringsRequest extends BaseApiRequest
     }
 
     /*
-    * treatConsecutiveDelimitersAsOne : 
+    * treatConsecutiveDelimitersAsOne : collapse adjacent delimiters into a single separator.
     */ 
     public $treat_consecutive_delimiters_as_one;
 
@@ -344,7 +344,7 @@ class RemoveDuplicateSubstringsRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.11';
+        $defaultHeaders['x-aspose-client-version'] = '25.12';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
