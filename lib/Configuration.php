@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Configurationphp.cs">
- *   Copyright (c) 2025 Aspose.Cells Cloud
+ *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -87,7 +87,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Aspose-Cells-Cloud/25.12/php';
+    protected $userAgent = 'Aspose-Cells-Cloud/26.1/php';
 
     /**
      * Debug switch (default set to false)
@@ -396,7 +396,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 4.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 25.12' . PHP_EOL;
+        $report .= '    SDK Package Version: 26.1' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;

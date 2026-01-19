@@ -1,4 +1,5 @@
 /vendor/
+examples/vendor/
 .idea
 .settings
 integrationtests/

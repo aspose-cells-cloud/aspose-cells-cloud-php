@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AddTextRequest.cs">
- *   Copyright (c) 2025 Aspose.Cells Cloud
+ *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -81,7 +81,7 @@ class AddTextRequest extends BaseApiRequest
     }
 
     /*
-    * position : Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.  
+    * position : Indicates the specific location for adding text content.None, AtTheBeginning, AtTheEnd, BeforeText, AfterText.
     */ 
     public $position;
 
@@ -372,7 +372,7 @@ class AddTextRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '25.12';
+        $defaultHeaders['x-aspose-client-version'] = '26.1';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,

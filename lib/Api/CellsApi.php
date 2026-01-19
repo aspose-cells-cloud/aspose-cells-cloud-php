@@ -1,7 +1,7 @@
 <?php
 /*--------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CellsApi.cs">
- *   Copyright (c) 2025 Aspose.Cells Cloud
+ *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,6 +37,7 @@ use Aspose\Cells\Cloud\ApiException;
 use Aspose\Cells\Cloud\Configuration;
 use Aspose\Cells\Cloud\HeaderSelector;
 use Aspose\Cells\Cloud\ObjectSerializer;
+use Aspose\Cells\Cloud\Request\DecomposeUserTaskRequest;
 use Aspose\Cells\Cloud\Request\TranslationSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\TranslateTextFileRequest;
 use Aspose\Cells\Cloud\Request\AggregateCellsByColorRequest;
@@ -55,6 +56,8 @@ use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToJsonRequest;
 use Aspose\Cells\Cloud\Request\ConvertSpreadsheetToCsvRequest;
 use Aspose\Cells\Cloud\Request\ConvertWorksheetToImageRequest;
 use Aspose\Cells\Cloud\Request\ConvertWorksheetToPdfRequest;
+use Aspose\Cells\Cloud\Request\ConvertWorksheetToHtmlRequest;
+use Aspose\Cells\Cloud\Request\ConvertWorksheetToHtmlTableRequest;
 use Aspose\Cells\Cloud\Request\ConvertTableToImageRequest;
 use Aspose\Cells\Cloud\Request\ConvertTableToPdfRequest;
 use Aspose\Cells\Cloud\Request\ConvertTableToCsvRequest;
@@ -75,6 +78,9 @@ use Aspose\Cells\Cloud\Request\SplitSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\SplitTableRequest;
 use Aspose\Cells\Cloud\Request\SplitRemoteSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\ImportDataIntoSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ImportJSONDataIntoSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ImportXMLDataIntoSpreadsheetRequest;
+use Aspose\Cells\Cloud\Request\ImportCSVDataIntoSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\GetPublicKeyRequest;
 use Aspose\Cells\Cloud\Request\CreateSpreadsheetRequest;
 use Aspose\Cells\Cloud\Request\AddWorksheetToSpreadsheetRequest;
@@ -114,6 +120,7 @@ use Aspose\Cells\Cloud\Request\RemoveSpreadsheetBlankColumnsRequest;
 use Aspose\Cells\Cloud\Request\RemoveSpreadsheetBlankWorksheetsRequest;
 use Aspose\Cells\Cloud\Request\RemoveDuplicatesRequest;
 use Aspose\Cells\Cloud\Request\SwapRangeRequest;
+use Aspose\Cells\Cloud\Request\FlipDataRequest;
 use Aspose\Cells\Cloud\Request\DownloadFileRequest;
 use Aspose\Cells\Cloud\Request\UploadFileRequest;
 use Aspose\Cells\Cloud\Request\CopyFileRequest;
@@ -986,6 +993,23 @@ class CellsApi
     /// <summary>
     /// Translates the entire spreadsheet to the specified target language.
     /// </summary>
+    /// <param name="request">Request. <see cref="DecomposeUserTaskRequest" /></param>
+    public function decomposeUserTask( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Translates the entire spreadsheet to the specified target language.
+    /// </summary>
     /// <param name="request">Request. <see cref="TranslationSpreadsheetRequest" /></param>
     public function translationSpreadsheet( $request , $localOutPath = null)
     {
@@ -1255,6 +1279,39 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="ConvertWorksheetToPdfRequest" /></param>
     public function convertWorksheetToPdf( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// Converts a worksheet of spreadsheet on a local drive to the html file.
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertWorksheetToHtmlRequest" /></param>
+    public function convertWorksheetToHtml( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ConvertWorksheetToHtmlTableRequest" /></param>
+    public function convertWorksheetToHtmlTable( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -1590,6 +1647,54 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="ImportDataIntoSpreadsheetRequest" /></param>
     public function importDataIntoSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ImportJSONDataIntoSpreadsheetRequest" /></param>
+    public function importJSONDataIntoSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ImportXMLDataIntoSpreadsheetRequest" /></param>
+    public function importXMLDataIntoSpreadsheet( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="ImportCSVDataIntoSpreadsheetRequest" /></param>
+    public function importCSVDataIntoSpreadsheet( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
@@ -2179,6 +2284,22 @@ class CellsApi
     /// </summary>
     /// <param name="request">Request. <see cref="SwapRangeRequest" /></param>
     public function swapRange( $request , $localOutPath = null)
+    {
+        $this->checkAccessToken();
+        $returnType = '\SplFileObject';
+        $requesData = $request->createHttpRequest($this->headerSelector, $this->config);
+        list($response) = $this->execute($requesData,$returnType);
+        if ($localOutPath === null) {  
+                return  $response;
+            }else{
+                copy($response->getPathname(),$localOutPath);
+                return $localOutPath;
+            }}
+
+    /// <summary>
+    /// </summary>
+    /// <param name="request">Request. <see cref="FlipDataRequest" /></param>
+    public function flipData( $request , $localOutPath = null)
     {
         $this->checkAccessToken();
         $returnType = '\SplFileObject';
