@@ -53,10 +53,13 @@ jobs:
         cd examples
         .\composer.bat install --prefer-dist --no-progress
         php .\Example_QuickStart.php
-        php .\Example_CloudStorageManagement.php
-        php .\Example_ConvertChartToImage.php
-        php .\Example_ConvertExcel.php
-        php .\Example_FixExcelSpacesAndLineBreaks.php
-        php .\Example_ExcelSplit.php
-        php .\Example_TextProcessing.php
-        php .\Example_DataCleaning.php
+        php .\Conversion\Example_ConvertChart.php
+        php .\Conversion\Example_ConvertExcel.php
+        php .\Conversion\Example_ConvertRange.php
+        php .\Conversion\Example_ConvertTable.php
+        php .\Conversion\Example_ConvertWorksheet.php
+        php .\Management\Example_CloudStorageManagement.php
+        php .\DataProcessing\Example_ExcelSplit.php
+        php .\TextProcessing\Example_TextProcessing.php
+        php .\Transform\Example_DataCleaning.php
+        php .\Transform\Example_FixExcelSpacesAndLineBreaks.php

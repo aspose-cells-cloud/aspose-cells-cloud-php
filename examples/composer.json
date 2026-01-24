@@ -18,7 +18,7 @@
 		"ext-json" : "*",
 		"ext-mbstring" : "*",
 		"guzzlehttp/guzzle" : "^7.4",
-		"aspose/cells-sdk-php":"25.10"
+		"aspose/cells-sdk-php":"26.1"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "^4.8",

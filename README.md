@@ -108,6 +108,36 @@ $response = $cellsApi->convertSpreadsheet(new \Aspose\Cells\Cloud\Request\Conver
 | [EPUB](https://docs.fileformat.com/database/dbf/)                 | database file                                                                                                                                                                       |          | &radic;  |
 | [XHTML](https://docs.fileformat.com/web/xhtml/)                   | XHTML File Format                                                                                                                                                                   |          | &radic;  |
 
+## Architecture
+
+```mermaid
+graph TB
+
+    subgraph "Client Layer"
+        C1[Web Application]
+        C2[Mobile Application]
+        C3[Desktop Application]
+    end
+    
+    subgraph "API Gateway Layer"
+        G1[Gateway Service]
+        G2[Authentication Services]
+        G3[Load Balancing]
+    end
+    
+    subgraph "Cloud Microservices layer"
+        S1[User Application]
+        S2[Product Services]
+    end
+ 
+    C1 & C2 & C3 --> G1
+    G1 --> S1 & S2
+    
+    style C1 fill:#e1f5fe
+    style G1 fill:#f3e5f5
+    style S1 fill:#e8f5e8
+```
+
 ## Manipulate Excel and other spreadsheet files in the Cloud
 
 - File Manipulation: Users can upload, download, delete, and manage Excel files stored in the cloud.
@@ -131,6 +161,12 @@ Full list of issues covering all changes in this release:
 | Optimization of the data import API: adding support for importing individual data types. | New Feature  |
 | Support to convert worksheet to html table.                                              | New Feature  |
 | Support to flip data in worksheet.                                                       | New Feature  |
+
+### Fix version v26.1.1
+
+| **Summary**                                                                              | **Category** |
+| :--------------------------------------------------------------------------------------- |:-------------|
+| Fix object reference not set to an instance of an object.                                | Bug          |
 
 ## Available SDKs
 

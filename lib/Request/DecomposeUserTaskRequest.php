@@ -116,10 +116,7 @@ class DecomposeUserTaskRequest extends BaseApiRequest
         $headerParams = [];
         $httpBody = '';
         $multipart = false;    
-        // query params : task_description
-        if ($this->task_description !== null) {
-            $queryParams['TaskDescription'] = ObjectSerializer::toQueryValue($this->task_description);
-        }
+
         // query params : region
         if ($this->region !== null) {
             $queryParams['region'] = ObjectSerializer::toQueryValue($this->region);
@@ -136,6 +133,10 @@ class DecomposeUserTaskRequest extends BaseApiRequest
     // body params
         $_tempBody = null;
         $_tempBodyName =null;
+        if (isset($this->task_description)) {
+            $_tempBody = $this->task_description;
+            $_tempBodyName =str_replace('_','', 'task_description');
+        }
         if ($multipart) {
             $headers = $headerSelector->selectHeadersForMultipart(
                 ['application/json']
@@ -184,7 +185,6 @@ class DecomposeUserTaskRequest extends BaseApiRequest
             else if (gettype($httpBody) == 'array' && $headers['Content-Type'] === 'application/json') {
                 $httpBody = json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
             }
-
         }
 
         $defaultHeaders = [];
@@ -195,7 +195,7 @@ class DecomposeUserTaskRequest extends BaseApiRequest
             $defaultHeaders['Authorization']= 'Bearer ' . $config->getAccessToken();
         }
         $defaultHeaders['x-aspose-client'] = 'php sdk';
-        $defaultHeaders['x-aspose-client-version'] = '26.1';
+        $defaultHeaders['x-aspose-client-version'] = '26.1.1';
         $headers = array_merge(
             $defaultHeaders,
             $headerParams,
