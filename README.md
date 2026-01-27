@@ -138,7 +138,9 @@ graph TB
     style S1 fill:#e8f5e8
 ```
 
-## Manipulate Excel and other spreadsheet files in the Cloud
+## [Developer Reference](docs/DeveloperGuide.md#overview)
+
+### Manipulate Excel and other spreadsheet files in the Cloud
 
 - File Manipulation: Users can upload, download, delete, and manage Excel files stored in the cloud.
 - Formatting: Supports formatting of cells, fonts, colors, and alignment modes in Excel files to cater to users' specific requirements.
